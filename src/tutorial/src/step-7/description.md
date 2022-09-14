@@ -1,6 +1,6 @@
-# List Rendering
+# Interpretação de Lista
 
-We can use the `v-for` directive to render a list of elements based on a source array:
+Nós podemos utilizar a diretiva `v-for` para interpretar uma lista de elementos com em um arranjo (*array*, em Inglês) de conteúdo:
 
 ```vue-html
 <ul>
@@ -10,13 +10,13 @@ We can use the `v-for` directive to render a list of elements based on a source 
 </ul>
 ```
 
-Here `todo` is a local variable representing the array element currently being iterated on. It's only accessible on or inside the `v-for` element, similar to a function scope.
+Aqui `todo` é uma variável local representando um elemento de arranjo que está sendo iterado atualmente. Só é acessível no ou dentro do elemento `v-for`.
 
-Notice how we are also giving each todo object a unique `id`, and binding it as the <a target="_blank" href="/api/built-in-special-attributes.html#key">special `key` attribute</a> for each `<li>`. The `key` allows Vue to accurately move each `<li>` to match the position of its corresponding object in the array.
+Repare em como também estamos atribuindo para cada objeto `todo` um `id` único, e vinculando-o com o <a target="_blank" href="/api/built-in-special-attributes.html#key">atributo especial `key`</a> de cada `<li>`. O `key` permite a Vue mover com precisão cada `<li>` a corresponder com a posição do seu objeto correspondente no arranjo.
 
-There are two ways to update the list:
+Há duas maneiras de atualizar a lista:
 
-1. Call [mutating methods](https://stackoverflow.com/questions/9009879/which-javascript-array-functions-are-mutating) on the source array:
+1. Chamar [métodos de mutação](https://stackoverflow.com/questions/9009879/which-javascript-array-functions-are-mutating) sobre o arranjo de conteúdo:
 
    <div class="composition-api">
 
@@ -33,7 +33,7 @@ There are two ways to update the list:
 
    </div>
 
-2. Replace the array with a new one:
+2. Substituir o arranjo por um novo:
 
    <div class="composition-api">
 
@@ -50,6 +50,6 @@ There are two ways to update the list:
 
    </div>
 
-Here we have a simple todo list - try to implement the logic for `addTodo()` and `removeTodo()` methods to make it work!
+Aqui temos um lista de tarefas a fazer simples - experimente implementar a lógica para métodos `addTodo()` e `removeTodo()` para fazer o exercício funcionar!
 
-More details on `v-for`: <a target="_blank" href="/guide/essentials/list.html">Guide - List Rendering</a>
+Mais detalhes a respeito de `v-for`: <a target="_blank" href="/guide/essentials/list.html">Guia - Interpretação de Lista</a>

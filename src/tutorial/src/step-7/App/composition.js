@@ -2,7 +2,7 @@ import { ref } from 'vue'
 
 export default {
   setup() {
-    // give each todo a unique id
+    // dê a cada afazer "todo" um "id" único
     let id = 0
 
     const newTodo = ref('')
