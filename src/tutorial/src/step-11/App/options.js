@@ -1,3 +1,3 @@
 export default {
-  // register child component
+  // regista o componente filho
 }

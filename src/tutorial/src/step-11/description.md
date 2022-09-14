@@ -1,8 +1,8 @@
-# Components
+# Componentes
 
-So far, we've only been working with a single component. Real Vue applications are typically created with nested components.
+Até aqui, apenas temos estado trabalhando com um componente único. Aplicações de Vue reais normalmente são criadas com componentes encaixados.
 
-A parent component can render another component in its template as a child component. To use a child component, we need to first import it:
+Um componente pai pode interpretar um outro componente no seu modelo de marcação como um componente filho. Para utilizar um componente filho, precisamos importá-lo primeiro:
 
 <div class="composition-api">
 <div class="sfc">
@@ -27,14 +27,14 @@ export default {
 }
 ```
 
-We also need to register the component using the `components` option. Here we are using the object property shorthand to register the `ChildComp` component under the `ChildComp` key.
+Também precisamos registar o componente utilizando a opção `components`. Cá estamos utilizando a abreviação da propriedade do objeto para registar o componente `ChildComp` sob a chave `ChildComp`.
 
 </div>
 </div>
 
 <div class="sfc">
 
-Then, we can use the component in the template as:
+Depois, podemos utilizar o componente no modelo de marcação como:
 
 ```vue-html
 <ChildComp />
@@ -54,9 +54,10 @@ createApp({
 })
 ```
 
-We also need to register the component using the `components` option. Here we are using the object property shorthand to register the `ChildComp` component under the `ChildComp` key.
+Também precisamos registar o componente utilizando a opção `components`. Cá estamos utilizando a abreviação da propriedade do objeto para registar o componente `ChildComp` sob a chave `ChildComp`.
 
-Because we are writing the template in the DOM, it will be subject to browser's parsing rules, which is case-insensitive for tag names. Therefore, we need to use the kebab-cased name to reference the child component:
+Uma vez que estamos escrevendo o modelo de marcação no DOM, ele será sujeito as regras de analise do navegador, que é insensível a caixa para nomes de marcador. Portanto, precisamos utilizar o nome no padrão *kebab-case* para referenciar o componente filho:
+
 
 ```vue-html
 <child-comp></child-comp>
@@ -65,4 +66,4 @@ Because we are writing the template in the DOM, it will be subject to browser's 
 </div>
 
 
-Now try it yourself - import the child component and render it in the template.
+Agora experimente-o tu mesmo - importe o componente filho e interprete-o no modelo de marcação.
