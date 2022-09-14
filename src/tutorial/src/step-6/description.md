@@ -1,20 +1,20 @@
-# Conditional Rendering
+# Interpretação Condicional
 
-We can use the `v-if` directive to conditionally render an element:
+Nós podemos utilizar a diretiva `v-if` para interpretar um elemento condicionalmente:
 
 ```vue-html
 <h1 v-if="awesome">Vue is awesome!</h1>
 ```
 
-This `<h1>` will be rendered only if the value of `awesome` is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). If `awesome` changes to a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value, it will be removed from the DOM.
+Este `<h1>` será interpretado apenas se o valor de `awesome` for [verdadeiro](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). Se `awesome` mudar para um valor [falso](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), ele será removido do DOM.
 
-We can also use `v-else` and `v-else-if` to denote other branches of the condition:
+Nós também podemos utilizar `v-else` e `v-else-if` para indicar outros ramos da condição:
 
 ```vue-html
 <h1 v-if="awesome">Vue is awesome!</h1>
 <h1 v-else>Oh no 😢</h1>
 ```
 
-Currently, the demo is showing both `<h1>`s at the same time, and the button does nothing. Try to add `v-if` and `v-else` directives to them, and implement the `toggle()` method so that we can use the button to toggle between them.
+Atualmente, a demonstração está exibindo ambos `<h1>` ao mesmo tempo, e o botão não faz nada. Experimente adicionar as diretivas `v-if` e `v-else` a eles, e implementar o método `toggle()` para que assim possamos utilizar o botão para alternar entre eles.
 
-More details on `v-if`: <a target="_blank" href="/guide/essentials/conditional.html">Guide - Conditional Rendering</a>
+Mais detalhes a respeito de `v-if`: <a target="_blank" href="/guide/essentials/conditional.html">Guia - Interpretação Condicional</a>
