@@ -1,19 +1,19 @@
-# Attribute Bindings
+# Vinculação de Atributo
 
-In Vue, mustaches are only used for text interpolation. To bind an attribute to a dynamic value, we use the `v-bind` directive:
+Na Vua, os bigodes são utilizados apenas para interpolação de texto. Para vincular um atributo à um valor dinâmico, utilizamos a diretiva `v-bind`:
 
 ```vue-html
 <div v-bind:id="dynamicId"></div>
 ```
 
-A **directive** is a special attribute that starts with the `v-` prefix. They are part of Vue's template syntax. Similar to text interpolations, directive values are JavaScript expressions that have access to the component's state. The full details of `v-bind` and directive syntax are discussed in <a target="_blank" href="/guide/essentials/template-syntax.html">Guide - Template Syntax</a>.
+Uma **diretiva** é um atributo especial que começa com o prefixo `v-`. Elas são parte da sintaxe de modelo de marcação de hipertexto da Vue. Similar as interpolações de texto, os valores de diretiva são expressões de JavaScript que têm acesso ao estado do componente. Os detalhes a respeito de `v-bind` e a sintaxe de diretiva são discutidos no <a target="_blank" href="/guide/essentials/template-syntax.html">Guia - Sintaxe de Modelo de Marcação `template`</a>.
 
-The part after the colon (`:id`) is the "argument" of the directive. Here, the element's `id` attribute will be synced with the `dynamicId` property from the component's state.
+A parte depois do sinal de dois pontos (`:id`) é o "argumento" da diretiva. Aqui, o atributo `id` do elemento será sincronizado com a propriedade `dynamicId` do estado do componente.
 
-Because `v-bind` is used so frequently, it has a dedicated shorthand syntax:
+Uma vez que `v-bind` é utilizado com frequência, ele tem uma sintaxe abreviada dedicada: 
 
 ```vue-html
 <div :id="dynamicId"></div>
 ```
 
-Now, try to add a dynamic `class` binding to the `<h1>`, using the `titleClass` <span class="options-api">data property</span><span class="composition-api">ref</span> as its value. If it's bound correctly, the text should turn red.
+Agora, experimente adicionar uma vinculo de `class` dinâmica ao `<h1>`, utilizando a <span class="options-api">propriedade de dados</span><span class="composition-api">referência</span> `titleClass` como seu valor. Se for vinculado corretamente, o texto deve tornar-se vermelho.
