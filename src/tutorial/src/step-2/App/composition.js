@@ -2,11 +2,10 @@ import { ref } from 'vue'
 
 export default {
   setup() {
-    // component logic
-    // declare some reactive state here.
+    // lógica do componente
 
     return {
-      // exposed to template
+      // exposto para modelo de marcação de hipertexto (template)
     }
   }
 }
