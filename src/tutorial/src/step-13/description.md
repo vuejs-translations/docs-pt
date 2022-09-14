@@ -1,16 +1,16 @@
-# Emits
+# Emissões
 
-In addition to receiving props, a child component can also emit events to the parent:
+Além do recebimento de propriedades, um componente filho também pode emitir eventos para o componente pai:
 
 <div class="composition-api">
 <div class="sfc">
 
 ```vue
 <script setup>
-// declare emitted events
+// declara eventos emitidos
 const emit = defineEmits(['response'])
 
-// emit with argument
+// emitir com argumento
 emit('response', 'hello from child')
 </script>
 ```
@@ -21,10 +21,10 @@ emit('response', 'hello from child')
 
 ```js
 export default {
-  // declare emitted events
+  // declara eventos emitidos
   emits: ['response'],
   setup(props, { emit }) {
-    // emit with argument
+    // emitir com argumento
     emit('response', 'hello from child')
   }
 }
@@ -38,10 +38,10 @@ export default {
 
 ```js
 export default {
-  // declare emitted events
+  // declara eventos emitidos
   emits: ['response'],
   created() {
-    // emit with argument
+    // emitir com argumento
     this.$emit('response', 'hello from child')
   }
 }
@@ -49,9 +49,9 @@ export default {
 
 </div>
 
-The first argument to <span class="options-api">`this.$emit()`</span><span class="composition-api">`emit()`</span> is the event name. Any additional arguments are passed on to the event listener.
+O primeiro argumento para <span class="options-api">`this.$emit()`</span><span class="composition-api">`emit()`</span> é um nome de evento. Quaisquer argumentos além do primeiro são passados para o ouvinte de evento. 
 
-The parent can listen to child-emitted events using `v-on` - here the handler receives the extra argument from the child emit call and assigns it to local state:
+O componente pai pode ouvir os eventos emitidos pelo componente filho utilizando o `v-on` - aqui o manipulador recebe o argumento adicional a partir da chamada da emissão do componente filho e atribui-o para o estado local:
 
 <div class="sfc">
 
@@ -68,4 +68,4 @@ The parent can listen to child-emitted events using `v-on` - here the handler re
 
 </div>
 
-Now try it yourself in the editor.
+Agora experimente-o tu mesmo no editor.
