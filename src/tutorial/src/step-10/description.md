@@ -1,6 +1,6 @@
-# Watchers
+# Observadores
 
-Sometimes we may need to perform "side effects" reactively - for example, logging a number to the console when it changes. We can achieve this with watchers:
+Algumas vezes podemos precisar executar "efeitos colaterais" de forma reativa - por exemplo, registando um número na consola no momento que ele mudar. Nós podemos alcançar isto com os observadores: 
 
 <div class="composition-api">
 
@@ -10,12 +10,12 @@ import { ref, watch } from 'vue'
 const count = ref(0)
 
 watch(count, (newCount) => {
-  // yes, console.log() is a side effect
+  // sim, console.log() é um efeito colateral
   console.log(`new count is: ${newCount}`)
 })
 ```
 
-`watch()` can directly watch a ref, and the callback gets fired whenever `count`'s value changes. `watch()` can also watch other types of data sources - more details are covered in <a target="_blank" href="/guide/essentials/watchers.html">Guide - Watchers</a>.
+O `watch()` pode observar uma referência diretamente, e a resposta é disparada sempre que o valor da `count` mudar. O `watch` também pode observar outros tipos de fontes de dados - mais detalhes são cobridos no <a target="_blank" href="/guide/essentials/watchers.html">Guia - Observadores</a>.
 
 </div>
 <div class="options-api">
@@ -29,15 +29,15 @@ export default {
   },
   watch: {
     count(newCount) {
-      // yes, console.log() is a side effect
+      // sim, console.log() é um efeito colateral
       console.log(`new count is: ${newCount}`)
     }
   }
 }
 ```
 
-Here, we are using the `watch` option to watch changes to the `count` property. The watch callback is called when `count` changes, and receives the new value as the argument. More details are covered in <a target="_blank" href="/guide/essentials/watchers.html">Guide - Watchers</a>.
+Aqui, estamos utilizando a opção `watch` para observar as mudanças da propriedade `count`. A resposta de `watch` é chamada quando a `count` mudar, e recebe o novo valor como argumento. Mais detalhes são cobertos na <a target="_blank" href="/guide/essentials/watchers.html">Guia - Observadores</a>.
 
 </div>
 
-A more practical example than logging to the console would be fetching new data when an ID changes. The code we have is fetching todos data from a mock API on component mount. There is also a button that increments the todo ID that should be fetched. Try to implement a watcher that fetches a new todo when the button is clicked.
+Um exemplo mais prático do que o de registo na consola seria a requisição de novos dados quando uma `id` mudar. O código que nós temos está requisitando os dados de afazeres `todos` a partir de uma API de imitação na montagem do componente. Também existe um botão que incrementa o `id` de afazer `todo` que deveria ser requisitado. Experimente implementar um observador que requisita um novo afazer `todo` quando o botão é clicado.
