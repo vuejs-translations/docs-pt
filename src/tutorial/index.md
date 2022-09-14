@@ -1,6 +1,6 @@
 ---
 page: true
-title: Tutorial
+title: Aula
 sidebar: false
 aside: false
 footer: false
@@ -9,7 +9,7 @@ returnToTop: false
 
 <script>
 import { defineAsyncComponent } from 'vue'
-import ReplLoading from '@theme/components/ReplLoading.vue'
+import ReplLoading from '/@theme/components/ReplLoading.vue'
 
 export default {
   components: {
