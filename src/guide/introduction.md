@@ -10,7 +10,7 @@ footer: false
 - Atualizando a partir da Vue 2? Consulte o [Guia de Migração](https://v3-migration.vuejs.org/).
 :::
 
-<style src="/@theme/styles/vue-mastery.css"></style>
+<style src="@theme/styles/vue-mastery.css"></style>
 <div class="vue-mastery-link">
   <a href="https://www.vuemastery.com/courses-path/beginner" target="_blank">
     <div class="banner-wrapper">
