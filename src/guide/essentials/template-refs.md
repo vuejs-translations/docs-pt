@@ -1,25 +1,25 @@
-# Template Refs
+# Referências do Modelo de Marcação
 
-While Vue's declarative rendering model abstracts away most of the direct DOM operations for you, there may still be cases where we need direct access to the underlying DOM elements. To achieve this, we can use the special `ref` attribute:
+Embora o modelo de interpretação declarativa da Vue abstraia a maior parte das operações diretas do DOM por ti, ainda existe casos onde precisamos de acesso direto aos elementos do DOM subjacentes. Para conseguir isto, podemos utilizar o atributo especial `ref`:
 
 ```vue-html
 <input ref="input">
 ```
 
-`ref` is a special attribute, similar to the `key` attribute discussed in the `v-for` chapter. It allows us to obtain a direct reference to a specific DOM element or child component instance after it's mounted. This may be useful when you want to, for example, programmatically focus an input on component mount, or initialize a 3rd party library on an element.
+O `ref` é um atributo especial, similar ao atributo `key` discutido no capitulo `v-for`. Ele permite-nos obter uma referência direta para um elemento de DOM especifico ou instância de componente depois de ser montada. Isto pode ser útil quando quiseres, por exemplo, focar programaticamente uma entrada (`input`) na montagem do componente, ou inicializar uma biblioteca de terceiro sobre um elemento.
 
-## Accessing the Refs
+## Acessando as Referências
 
 <div class="composition-api">
 
-To obtain the reference with Composition API, we need to declare a ref with the same name:
+Para obter a referência com a API de Composição, precisamos declarar uma `ref` com o mesmo nome:
 
 ```vue
 <script setup>
 import { ref, onMounted } from 'vue'
 
-// declare a ref to hold the element reference
-// the name must match template ref value
+// declara uma `ref` para segurar a referência de elemento
+// o nome deve corresponder ao valor de `ref` do modelo de marcação
 const input = ref(null)
 
 onMounted(() => {
@@ -32,7 +32,7 @@ onMounted(() => {
 </template>
 ```
 
-If not using `<script setup>`, make sure to also return the ref from `setup()`:
+Se não estiveres utilizando a `<script setup>`, certifica-te de também retornar a referência a partir de `setup()`:
 
 ```js{6}
 export default {
@@ -49,7 +49,7 @@ export default {
 </div>
 <div class="options-api">
 
-The resulting ref is exposed on `this.$refs`:
+A referência resultante é exposta sobre `this.$refs`:
 
 ```vue
 <script>
@@ -67,33 +67,33 @@ export default {
 
 </div>
 
-Note that you can only access the ref **after the component is mounted.** If you try to access <span class="options-api">`$refs.input`</span><span class="composition-api">`input`</span> in a template expression, it will be `null` on the first render. This is because the element doesn't exist until after the first render!
+Nota que só podes acessar a referência **depois do componente ser montado.** Se tentares acessar <span class="options-api">`$refs.input`</span><span class="composition-api">`input`</span> em uma expressão de modelo de marcação, será `null` na primeira interpretação. Isto porque o elemento não existe até depois da primeira interpretação!
 
 <div class="composition-api">
 
-If you are trying to watch the changes of a template ref, make sure to account for the case where the ref has `null` value:
+Se estiveres tentando observar as mudanças de uma referência de modelo de marcação, certifica-te de representar o caso onde a referência tem o valor `null`:
 
 ```js
 watchEffect(() => {
   if (input.value) {
     input.value.focus()
   } else {
-    // not mounted yet, or the element was unmounted (e.g. by v-if)
+    // ainda não está montado, ou o elemento foi desmontado (por exemplo, pelo v-if)
   }
 })
 ```
 
-See also: [Typing Template Refs](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
+Consulte também: [Tipando Referências de Modelo de Marcação](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
 
 </div>
 
-## Refs inside `v-for`
+## Referências dentro de `v-for`
 
-> Requires v3.2.25 or above
+> Exige a versão 3.2.25 em diante
 
 <div class="composition-api">
 
-When `ref` is used inside `v-for`, the corresponding ref should contain an Array value, which will be populated with the elements after mount:
+Quando o `ref` é utilizado dentro de `v-for`, a referência correspondente deve conter uma valor de arranjo (`Array`), que será povoada com os elementos depois de montar:
 
 ```vue
 <script setup>
@@ -117,12 +117,12 @@ onMounted(() => console.log(itemRefs.value))
 </template>
 ```
 
-[Try it in the Playground](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgb25Nb3VudGVkIH0gZnJvbSAndnVlJ1xuXG5jb25zdCBsaXN0ID0gcmVmKFsxLCAyLCAzXSlcblxuY29uc3QgaXRlbVJlZnMgPSByZWYoW10pXG5cbm9uTW91bnRlZCgoKSA9PiB7XG4gIGFsZXJ0KGl0ZW1SZWZzLnZhbHVlLm1hcChpID0+IGkudGV4dENvbnRlbnQpKVxufSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDx1bD5cbiAgICA8bGkgdi1mb3I9XCJpdGVtIGluIGxpc3RcIiByZWY9XCJpdGVtUmVmc1wiPlxuICAgICAge3sgaXRlbSB9fVxuICAgIDwvbGk+XG4gIDwvdWw+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
+[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgb25Nb3VudGVkIH0gZnJvbSAndnVlJ1xuXG5jb25zdCBsaXN0ID0gcmVmKFsxLCAyLCAzXSlcblxuY29uc3QgaXRlbVJlZnMgPSByZWYoW10pXG5cbm9uTW91bnRlZCgoKSA9PiB7XG4gIGFsZXJ0KGl0ZW1SZWZzLnZhbHVlLm1hcChpID0+IGkudGV4dENvbnRlbnQpKVxufSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDx1bD5cbiAgICA8bGkgdi1mb3I9XCJpdGVtIGluIGxpc3RcIiByZWY9XCJpdGVtUmVmc1wiPlxuICAgICAge3sgaXRlbSB9fVxuICAgIDwvbGk+XG4gIDwvdWw+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
 
 </div>
 <div class="options-api">
 
-When `ref` is used inside `v-for`, the resulting ref value will be an array containing the corresponding elements:
+Quando o `ref` é utilizado dentro de `v-for`, o valor de referência resultante será um arranjo (`array`) contendo os elementos correspondentes:
 
 ```vue
 <script>
@@ -149,27 +149,27 @@ export default {
 </template>
 ```
 
-[Try it in the Playground](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgbGlzdDogWzEsIDIsIDNdXG4gICAgfVxuICB9LFxuICBtb3VudGVkKCkge1xuICAgIGNvbnNvbGUubG9nKHRoaXMuJHJlZnMuaXRlbXMpXG4gIH1cbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDx1bD5cbiAgICA8bGkgdi1mb3I9XCJpdGVtIGluIGxpc3RcIiByZWY9XCJpdGVtc1wiPlxuICAgICAge3sgaXRlbSB9fVxuICAgIDwvbGk+XG4gIDwvdWw+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
+[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgbGlzdDogWzEsIDIsIDNdXG4gICAgfVxuICB9LFxuICBtb3VudGVkKCkge1xuICAgIGNvbnNvbGUubG9nKHRoaXMuJHJlZnMuaXRlbXMpXG4gIH1cbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDx1bD5cbiAgICA8bGkgdi1mb3I9XCJpdGVtIGluIGxpc3RcIiByZWY9XCJpdGVtc1wiPlxuICAgICAge3sgaXRlbSB9fVxuICAgIDwvbGk+XG4gIDwvdWw+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
 
 </div>
 
-It should be noted that the ref array does **not** guarantee the same order as the source array.
+Deve ser notado que o arranjo de referência **não** garante a mesma ordem conforme o arranjo (`array`) de origem.
 
-## Function Refs
+## Referências de Função
 
-Instead of a string key, the `ref` attribute can also be bound to a function, which will be called on each component update and gives you full flexibility on where to store the element reference. The function receives the element reference as the first argument:
+No lugar de uma chave de sequência de caracteres, o atributo `key` também pode ser atado a uma função, que será chamada em cada atualização do componente e dar-te-á completa flexibilidade sobre onde guardar a referência do elemento. A função recebe a referência do elemento como primeiro argumento:
 
 ```vue-html
-<input :ref="(el) => { /* assign el to a property or ref */ }">
+<input :ref="(el) => { /* atribui `el` a uma propriedade ou referência */ }">
 ```
 
-Note we are using a dynamic `:ref` binding so we can pass it a function instead of a ref name string. When the element is unmounted, the argument will be `null`. You can, of course, use a method instead of an inline function.
+Nota que estamos utilizando uma vinculação de `:ref` dinâmica assim podemos passar nela uma função no lugar de uma sequência de caracteres de nome de referência. Quando o elemento é desmontado, o argumento será `null`. Tu podes, claro, utilizar um método no lugar de uma função em linha.
 
-## Ref on Component
+## Referência no Componente
 
-> This section assumes knowledge of [Components](/guide/essentials/component-basics). Feel free to skip it and come back later.
+> Esta secção presume conhecimento de [Componentes](/guide/essentials/component-basics). Esteja a vontade para saltá-la e voltar mais tarde.
 
-`ref` can also be used on a child component. In this case the reference will be that of a component instance:
+O `ref` também pode ser utilizado sobre um componente filho. Neste caso a referência será aquela de uma instância de componente:
 
 <div class="composition-api">
 
@@ -181,7 +181,7 @@ import Child from './Child.vue'
 const child = ref(null)
 
 onMounted(() => {
-  // child.value will hold an instance of <Child />
+  // child.value segurará uma instância de <Child />
 })
 </script>
 
@@ -202,7 +202,7 @@ export default {
     Child
   },
   mounted() {
-    // this.$refs.child will hold an instance of <Child />
+    // this.$refs.child segurará uma instância de <Child />
   }
 }
 </script>
@@ -214,11 +214,11 @@ export default {
 
 </div>
 
-<span class="composition-api">If the child component is using Options API or not using `<script setup>`, the</span><span class="options-api">The</span> referenced instance will be identical to the child component's `this`, which means the parent component will have full access to every property and method of the child component. This makes it easy to create tightly coupled implementation details between the parent and the child, so component refs should be only used when absolutely needed - in most cases, you should try to implement parent / child interactions using the standard props and emit interfaces first.
+<span class="composition-api">Se o componente filho estiver utilizando a API de Opções ou não utilizando `<script setup>`, a</span><span class="options-api">A</span> instância referenciada será idêntica ao `this` do componente filho, o que significa que o componente pai terá total acesso as todas propriedades e métodos do componente filho. Isto torna-o fácil de criar detalhes de implementação atrelados firmemente entre o pai e o filho, assim as referências do componente só deve ser utilizadas quando forem absolutamente necessários - na maioria dos casos, deves tentar implementar interações entre o pai e o filho utilizando as interfaces de propriedades e emissão padrão primeiro.
 
 <div class="composition-api">
 
-An exception here is that components using `<script setup>` are **private by default**: a parent component referencing a child component using `<script setup>` won't be able to access anything unless the child component chooses to expose a public interface using the `defineExpose` macro:
+Uma exceção é que componentes utilizando `<script setup>` são **privados por padrão**: um componente pai referenciando um componente filho utilizando `<script setup>` não será capaz de acessar nada a menos que o componente filho escolha expor uma interface publica utilizando a macro `defineExpose`:
 
 ```vue
 <script setup>
@@ -234,14 +234,14 @@ defineExpose({
 </script>
 ```
 
-When a parent gets an instance of this component via template refs, the retrieved instance will be of the shape `{ a: number, b: number }` (refs are automatically unwrapped just like on normal instances).
+Quando um pai recebe uma instância deste componente através de referências de modelo de marcação, a instância recuperada será da forma `{ a: number, b: number }` (referências são desembrulhadas automaticamente como instâncias normais).
 
-See also: [Typing Component Template Refs](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
+Consulte também: [Tipando Referências de Modelo de Marcação do Componente](/guide/typescript/composition-api.html#tipando-referências-de-modelo-de-marcação-do-componente) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
 
-The `expose` option can be used to limit the access to a child instance:
+A opção `expose` pode ser utilizada para limitar o acesso a instância do filho:
 
 ```js
 export default {
@@ -263,6 +263,6 @@ export default {
 }
 ```
 
-In the above example, a parent referencing this component via template ref will only be able to access `publicData` and `publicMethod`.
+No exemplo acima, um pai referenciando este componente através de referência de modelo de marcação só será capaz de acessar `publicData` e `publicMethod`. 
 
 </div>
