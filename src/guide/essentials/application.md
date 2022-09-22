@@ -1,35 +1,35 @@
-# Creating a Vue Application
+# Criando uma Aplicação de Vue
 
-## The application instance
+## A instância de aplicação
 
-Every Vue application starts by creating a new **application instance** with the [`createApp`](/api/application#createapp) function:
+Toda aplicação de Vue inicia com a criação de uma nova **instância de aplicação** com a função [`createApp`](/api/application#createapp):
 
 ```js
 import { createApp } from 'vue'
 
 const app = createApp({
-  /* root component options */
+  /* opções do componente de raiz */
 })
 ```
 
-## The Root Component
+## O Componente de Raiz
 
-The object we are passing into `createApp` is in fact a component. Every app requires a "root component" that can contain other components as its children.
+O objeto que estamos passando para `createApp` é na realidade um componente. Toda aplicação exige um "componente de raiz" que contém outros componentes como seus filhos.
 
-If you are using Single-File Components, we typically import the root component from another file:
+Se estiveres utilizando Componentes de Ficheiro Único, normalmente importamos o componente de raiz a partir de um outro ficheiro:
 
 ```js
 import { createApp } from 'vue'
-// import the root component App from a single-file component.
+// importa o componente de raiz `App` de um componente de ficheiro único.
 import App from './App.vue'
 
 const app = createApp(App)
 ```
 
-While many examples in this guide only need a single component, most real applications are organized into a tree of nested, reusable components. For example, a Todo application's component tree might look like this:
+Enquanto que muitos exemplos neste guia apenas precisam de um único componente, a maioria das aplicações reais são organizadas em uma árvore de componentes reutilizáveis encaixados. Por exemplo, uma árvore de componente da aplicação _Todo_ poderia parecer-se com isto:
 
 ```
-App (root component)
+App (componente de raiz)
 ├─ TodoList
 │  └─ TodoItem
 │     ├─ TodoDeleteButton
@@ -39,11 +39,11 @@ App (root component)
    └─ TodoStatistics
 ```
 
-We will discuss how to define and compose multiple components together in later sections of the guide. Before that, we will focus on what happens inside a single component.
+Nós discutiremos como definir e compor vários componentes juntos nas secções mais adiante do guia. Antes disto, concentraremos-nos no que acontece dentro de um único componente.
 
-## Mounting the App
+## Montando a Aplicação
 
-An application instance won't render anything until its `.mount()` method is called. It expects a "container" argument, which can either be an actual DOM element or a selector string:
+Uma instância de aplicação não interpretará nada até seu método `.mount()` ser chamado. Ela espera que um argumento "container (contentor)", que pode ser tanto um elemento do DOM ou uma sequência de caracteres de seletor:
 
 ```html
 <div id="app"></div>
@@ -53,13 +53,13 @@ An application instance won't render anything until its `.mount()` method is cal
 app.mount('#app')
 ```
 
-The content of the app's root component will be rendered inside the container element. The container element itself is not considered part of the app.
+O conteúdo do componente de raiz da aplicação será interpretado dentro do elemento contentor. O elemento contentor por si só não é considerado parte da aplicação.
 
-The `.mount()` method should always be called after all app configurations and asset registrations are done. Also note that its return value, unlike the asset registration methods, is the root component instance instead of the application instance.
+O método `.mount()` deve ser chamado sempre depois de todas as configurações e registos de recurso da aplicação forem terminados. Nota também que seu valor de retorno, ao contrário dos métodos de registo de recurso, é a instância do componente de raiz ao invés da instância da aplicação.
 
-### In-DOM Root Component Template
+### Modelo de Marcação do Componente de Raiz no DOM
 
-When using Vue without a build step, we can write our root component's template directly inside the mount container:
+Quando estivermos utilizando a Vue sem uma etapa de construção, podemos escrever o nosso modelo de marcação do componente de raiz imediatamente dentro do contentor de montar `mount`:
 
 ```html
 <div id="app">
@@ -81,31 +81,31 @@ const app = createApp({
 app.mount('#app')
 ```
 
-Vue will automatically use the container's `innerHTML` as the template if the root component does not already have a `template` option.
+A Vue utilizará automaticamente o `innerHTML` do contentor como modelo de marcação se o componente de raiz já não tiver uma opção `template`.
 
-## App Configurations
+## Configurações da Aplicação
 
-The application instance exposes a `.config` object that allows us to configure a few app-level options, for example defining an app-level error handler that captures errors from all descendent components:
+A instância de aplicação expõe um objeto `.config` que permite-nos configurar algumas opções de nível de aplicação, por exemplo definindo um manipulador de erro de nível de aplicação que captura os erros de todos os componentes descendentes: 
 
 ```js
 app.config.errorHandler = (err) => {
-  /* handle error */
+  /* manipule o erro */
 }
 ```
 
-The application instance also provides a few methods for registering app-scoped assets. For example, registering a component:
+A instância de aplicação também oferece alguns métodos para o registo de recursos isolados para aplicação. Por exemplo, registando um componente:
 
 ```js
 app.component('TodoDeleteButton', TodoDeleteButton)
 ```
 
-This makes the `TodoDeleteButton` available for use anywhere in our app. We will discuss registration for components and other types of assets in later sections of the guide. You can also browse the full list of application instance APIs in its [API reference](/api/application).
+Isto torna o `TodoDeleteButton` disponível para uso em qualquer lugar na nossa aplicação. Nós discutiremos o registo para os componentes e outros tipos de recursos nas secções adiante do guia. Tu também podes pesquisar a lista completa de APIs da instância de aplicação na sua [referência de API](/api/application).
 
-Make sure to apply all app configurations before mounting the app!
+Certifica-te de aplicar todas as configurações de aplicação antes da montagem da aplicação!
 
-## Multiple application instances
+## Várias instâncias de aplicação
 
-You are not limited to a single application instance on the same page. The `createApp` API allows multiple Vue applications to co-exist on the same page, each with its own scope for configuration and global assets:
+Tu não estás restrito a uma única instância de aplicação na mesma página. A API de `createApp` permite que várias aplicações de Vue coexistam na mesma página, cada uma com seu próprio escopo para configuração e recursos globais:
 
 ```js
 const app1 = createApp({
@@ -119,4 +119,4 @@ const app2 = createApp({
 app2.mount('#container-2')
 ```
 
-If you are using Vue to enhance server-rendered HTML and only need Vue to control specific parts of a large page, avoid mounting a single Vue application instance on the entire page. Instead, create multiple small application instances and mount them on the elements they are responsible for.
+Se estiveres utilizando a Vue para otimizar a HTML interpretada no servidor e só precisas da Vue para controlar partes especificas de uma página grande, evite montar uma única instância de aplicação de Vue sobre a página inteira. Ao invés disto, crie várias instâncias de aplicação pequenas e monte-as nos elementos pelos quais elas são responsáveis.
