@@ -1,11 +1,11 @@
-# Conditional Rendering
+# Interpretação Condicional
 
 <div class="options-api">
-  <VueSchoolLink href="https://vueschool.io/lessons/conditional-rendering-in-vue-3" title="Free Vue.js Conditional Rendering Lesson"/>
+  <VueSchoolLink href="https://vueschool.io/lessons/conditional-rendering-in-vue-3" title="Aula gratuita a respeito da Intepretação Condicional de Vue"/>
 </div>
 
 <div class="composition-api">
-  <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-conditionals-in-vue" title="Free Vue.js Conditional Rendering Lesson"/>
+  <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-conditionals-in-vue" title="Aula gratuita a respeito da Intepretação Condicional de Vue"/>
 </div>
 
 <script setup>
@@ -15,7 +15,7 @@ const awesome = ref(true)
 
 ## `v-if`
 
-The directive `v-if` is used to conditionally render a block. The block will only be rendered if the directive's expression returns a truthy value.
+A diretiva `v-if` é utilizada para interpretar um bloco condicionalmente. O bloco só será interpretado se a expressão da diretiva retornar um valor verdadeiro.
 
 ```vue-html
 <h1 v-if="awesome">Vue is awesome!</h1>
@@ -23,7 +23,7 @@ The directive `v-if` is used to conditionally render a block. The block will onl
 
 ## `v-else`
 
-You can use the `v-else` directive to indicate an "else block" for `v-if`:
+Tu podes utilizar a diretiva `v-else` para indicar um bloco "`else`" para a `v-if`:
 
 ```vue-html
 <button @click="awesome = !awesome">Toggle</button>
@@ -40,20 +40,20 @@ You can use the `v-else` directive to indicate an "else block" for `v-if`:
 
 <div class="composition-api">
 
-[Try it in the Playground](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgYXdlc29tZSA9IHJlZih0cnVlKVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJhd2Vzb21lID0gIWF3ZXNvbWVcIj50b2dnbGU8L2J1dHRvbj5cblxuXHQ8aDEgdi1pZj1cImF3ZXNvbWVcIj5WdWUgaXMgYXdlc29tZSE8L2gxPlxuXHQ8aDEgdi1lbHNlPk9oIG5vIPCfmKI8L2gxPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
+[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgYXdlc29tZSA9IHJlZih0cnVlKVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJhd2Vzb21lID0gIWF3ZXNvbWVcIj50b2dnbGU8L2J1dHRvbj5cblxuXHQ8aDEgdi1pZj1cImF3ZXNvbWVcIj5WdWUgaXMgYXdlc29tZSE8L2gxPlxuXHQ8aDEgdi1lbHNlPk9oIG5vIPCfmKI8L2gxPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
 
 </div>
 <div class="options-api">
 
-[Try it in the Playground](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgZGF0YSgpIHtcbiAgXHRyZXR1cm4ge1xuXHQgICAgYXdlc29tZTogdHJ1ZVxuICBcdH1cblx0fVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJhd2Vzb21lID0gIWF3ZXNvbWVcIj50b2dnbGU8L2J1dHRvbj5cblxuXHQ8aDEgdi1pZj1cImF3ZXNvbWVcIj5WdWUgaXMgYXdlc29tZSE8L2gxPlxuXHQ8aDEgdi1lbHNlPk9oIG5vIPCfmKI8L2gxPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
+[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgZGF0YSgpIHtcbiAgXHRyZXR1cm4ge1xuXHQgICAgYXdlc29tZTogdHJ1ZVxuICBcdH1cblx0fVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJhd2Vzb21lID0gIWF3ZXNvbWVcIj50b2dnbGU8L2J1dHRvbj5cblxuXHQ8aDEgdi1pZj1cImF3ZXNvbWVcIj5WdWUgaXMgYXdlc29tZSE8L2gxPlxuXHQ8aDEgdi1lbHNlPk9oIG5vIPCfmKI8L2gxPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
 
 </div>
 
-A `v-else` element must immediately follow a `v-if` or a `v-else-if` element - otherwise it will not be recognized.
+Um elemento `v-else` deve imediatamente seguir um elemento `v-if` ou `v-else-if` - de outra maneira ele não será reconhedico.
 
 ## `v-else-if`
 
-The `v-else-if`, as the name suggests, serves as an "else if block" for `v-if`. It can also be chained multiple times:
+A `v-else-if`, conforme o nome sugere, serve como um bloco "`else if`" para `v-if`. Ela também pode ser encadeiada várias vezes:
 
 ```vue-html
 <div v-if="type === 'A'">
@@ -70,11 +70,11 @@ The `v-else-if`, as the name suggests, serves as an "else if block" for `v-if`. 
 </div>
 ```
 
-Similar to `v-else`, a `v-else-if` element must immediately follow a `v-if` or a `v-else-if` element.
+Similar ao `v-else`, um elemento `v-else-if` deve imediatamente seguir um elemento `v-if` ou um `v-else-if`. 
 
-## `v-if` on `<template>`
+## `v-if` no `<template>`
 
-Because `v-if` is a directive, it has to be attached to a single element. But what if we want to toggle more than one element? In this case we can use `v-if` on a `<template>` element, which serves as an invisible wrapper. The final rendered result will not include the `<template>` element.
+Uma vez que a `v-if` é uma diretiva, ela tem que ser atribuida à um único elemento. Porém e se quisessemos alternar mais de um elemento? Neste caso podemos utilizar a `v-if` sobre um elemento `<template>`, que serve como um envolvedor invisível. O resultado interpretado final não incluirá o elemento `<template>`.
 
 ```vue-html
 <template v-if="ok">
@@ -84,34 +84,34 @@ Because `v-if` is a directive, it has to be attached to a single element. But wh
 </template>
 ```
 
-`v-else` and `v-else-if` can also be used on `<template>`.
+A `v-else` e a `v-else-if` também podem ser utilizadas sobre o elemento `<template>`.
 
 ## `v-show`
 
-Another option for conditionally displaying an element is the `v-show` directive. The usage is largely the same:
+Uma outra opção para exibir condicionalmente um elemento é a diretiva `v-show`. A forma de utilização é em grande parte a mesma:
 
 ```vue-html
 <h1 v-show="ok">Hello!</h1>
 ```
 
-The difference is that an element with `v-show` will always be rendered and remain in the DOM; `v-show` only toggles the `display` CSS property of the element.
+A diferença é que um elemento com `v-show` sempre será interpretado e permanecerá no DOM; A `v-show` só alterna a propriedade `display` de CSS do elemento.
 
-`v-show` doesn't support the `<template>` element, nor does it work with `v-else`.
+A `v-show` não suporta o elemento `<template>`, nem funciona com a `v-else`.
 
 ## `v-if` vs `v-show`
 
-`v-if` is "real" conditional rendering because it ensures that event listeners and child components inside the conditional block are properly destroyed and re-created during toggles.
+A `v-if` é a interpretação condicional "real" porque ela garante que os ouvintes de evento e componentes filhos dentro de um bloco condicional sejam aproprieamente destroidos e recriados durante as alternâncias.
 
-`v-if` is also **lazy**: if the condition is false on initial render, it will not do anything - the conditional block won't be rendered until the condition becomes true for the first time.
+A `v-if` também é **preguiçosa**: se a condição for falsa na interpretação inicial, ela não fará nada - o bloco condicional não será interpretado até a condição tornar-se verdadeira pela primeira vez.
 
-In comparison, `v-show` is much simpler - the element is always rendered regardless of initial condition, with CSS-based toggling.
+Em comparação, a `v-show` é muito mais simples - o elemento é intepretado sempre apesar da condição inicial, com alternância baseada em CSS.
 
-Generally speaking, `v-if` has higher toggle costs while `v-show` has higher initial render costs. So prefer `v-show` if you need to toggle something very often, and prefer `v-if` if the condition is unlikely to change at runtime.
+Duma maneira geral, a `v-if` tem custos de alternância altos enquanto a `v-show` tem custos de intepretação inicial altos. Então prefira a `v-show` se precisares de alternar alguma coisa com frequência, e prefira a `v-if` se é pouco provável a condição mudar em tempo de execução.
 
-## `v-if` with `v-for`
+## `v-if` com `v-for`
 
-::: warning Note
-It's **not** recommended to use `v-if` and `v-for` on the same element due to implicit precedence. Refer to [style guide](/style-guide/rules-essential.html#avoid-v-if-with-v-for) for details.
+::: warning Nota
+**Não** é recomendado utiliziar a `v-if` e `v-for` no mesmo elemento por causa da precedência implicita. Consulte o [guia de estilo](/style-guide/rules-essential.html#evite-v-if-com-v-for) para obter mais detalhes.
 :::
 
-When `v-if` and `v-for` are both used on the same element, `v-if` will be evaluated first. See the [list rendering guide](list#v-for-with-v-if) for details.
+Quando a `v-if` e `v-for` forem ambas utilizadas no mesmo elemento, a `v-if` será avaliada primeiro. Consulte a [guia de interpretação de lista](list#v-for-com-v-if) para obter mais detalhes.
