@@ -4,29 +4,29 @@ footer: false
 
 # Inicio Rápido
 
-Dependendo do teu caso de uso e preferência, podes utilizar a Vue com ou sem uma etapa de construção.
+## Experimente a Vue Online
 
-## Com Ferramentas de Construção
+- Para ter um gosto da Vue rapidamente, podes experimentá-la diretamente na nossa [Zona de Testes](https://sfc.vuejs.org/#eNo9j01qAzEMha+iapMWOjbdDm6gu96gG2/cjJJM8B+2nBaGuXvlpBMwtj4/JL234EfO6toIRzT1UObMexvpN6fCMNHRNc+w2AgwOXbPL/caoBC3EjcCCPU0wu6TvE/wlYqfnnZ3ae2PXHKMfiwQYArZOyYhAHN+2y9LnwLrarTQ7XeOuTFch5Am8u8WRbcoktGPbnzFOXS3Q3BZXWqKkuRmy/4L1eK4GbUoUTtbPDPnOmpdj4ee/1JVKictlSot8hxIUQ3Dd0k/lYoMtrglwfUPkXdoJg==).
 
-Uma configuração de construção permite-te utilizar [Componentes de Ficheiro Único (SFCs, sigla em Inglês)](/guide/scaling-up/sfc) de Vue. A configuração de construção de Vue oficial está baseada sobre a [Vite](https://vitejs.dev), uma ferramenta de construção de frontend que é moderna, leve e extremamente rápida.
+- Se preferires uma configuração de HTML simples sem etapas de construção, podes utilizar este [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/) como teu ponto de partida.
 
-### Online
+- Se já estiveres familiarizado com a Node.js e o conceito de ferramentas de construção, também podes experimentar uma configuração de construção completa diretamente de dentro do teu navegador no [StackBlitz](https://vite.new/vue).
 
-Tu podes experimentar a Vue com os Componentes de Ficheiro Único online na [StackBlitz](https://vite.new/vue). A StackBlitz executa uma configuração de construção baseada na Vite diretamente no navegador, assim é quase idêntico a configuração local porém não requer a instalação de nada na tua máquina.
-
-### Local
+## Criando uma Aplicação de Vue
 
 :::tip Pré-requisitos
 
 - Familiaridade com a linha de comando
-- Instalar a [Node.js](https://nodejs.org/)
+- Instale a versão 16.0 ou superior da [Node.js](https://nodejs.org/)
 :::
 
-Para criar um projeto de Vue com ferramenta de construção ativada na tua máquina, execute o seguinte comando na tua linha de comando (sem o sinal `>`):
+Nesta secção introduziremos como estruturar uma [Aplicação de Página Única](/guide/extras/ways-of-using-vue.html#single-page-application-spa) de Vue na tua máquina local. O projeto criado estará utilizando uma configuração de construção baseada na [Vite](https://vitejs.dev), e permite-nos utilizar os [Componentes de Ficheiro Único](/guide/scaling-up/sfc) de Vue.
+
+Certifica-te de tens uma versão atualizada da [Node.js](https://nodejs.org) instalada, depois execute o seguinte comando na tua linha de comando (sem o sinal `>`):
 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt;</span> <span style="color:#A6ACCD;">npm init vue@latest</span></span></code></pre></div>
 
-Este comando instalará e executará [create-vue](https://github.com/vuejs/create-vue), a ferramenta de andaimes de projeto de Vue oficial. Tu serás presenteado com os pontos para um número de funcionalidades opcionais tais como TypeScript e suporte a testagem:
+Este comando instalará e executará [create-vue](https://github.com/vuejs/create-vue), a ferramenta oficial de estruturação de projeto de Vue. Tu serás presenteado com uma lista com um número de funcionalidades opcionais tais como TypeScript e suporte a testagem:
 
 <div class="language-sh"><pre><code><span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Project name: <span style="color:#888;">… <span style="color:#89DDFF;">&lt;</span><span style="color:#888;">your-project-name</span><span style="color:#89DDFF;">&gt;</span></span></span>
 <span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add TypeScript? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
@@ -48,7 +48,7 @@ Se estiveres inseguro a respeito de uma opção, por agora simplesmente escolha 
 <span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run dev</span></span>
 <span class="line"></span></code></pre></div>
 
-Agora deves ter o teu primeiro projeto em Vue executando! Nota que os componentes de exemplo no projeto gerado estão escritos utilizando a [API de Composição](/guide/introduction.html#api-de-composição) e `<script setup>`, no lugar da [API de Opções](/guide/introduction.html#api-de-opções). Cá estão alguns dicas adicionais:
+Agora deves ter o teu primeiro projeto em Vue executando! Nota que os componentes de exemplo no projeto gerado estão escritos utilizando a [API de Composição](/guide/introduction.html#api-de-composição) e `<script setup>`, no lugar da [API de Opções](/guide/introduction.html#api-de-opções). Cá estão algumas dicas adicionais:
 
 - A configuração de IDE recomendada é [Visual Studio Code](https://code.visualstudio.com/) + [extensão Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Se utilizas outros editores, consulte a [seção de suporte de IDE](/guide/scaling-up/tooling.html#suporte-de-ide).
 - Mais detalhes do ferramental, incluindo integração com abstrações de backend, são discutidas no [Guia de Ferramental](/guide/scaling-up/tooling.html).
@@ -64,12 +64,25 @@ Isto criará a construção pronta para produção da tua aplicação no diretó
 
 [Próximos passos >](#próximos-passos)
 
-## Sem Ferramentas de Construção
+## Utilizando a Vue a partir da CDN
 
-Para começar com a Vua sem uma etapa de construção, simplesmente copie o seguinte código para dentro de um ficheiro HTML e abra-o no navegador:
+Tu podes utilizar a Vue diretamente a partir de uma CDN através de um marcador de `script`:
 
 ```html
-<script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+```
+
+Cá estamos utilizando [unpkg](https://unpkg.com/), mas também podes utilizar qualquer CDN que sirva pacotes de npm, por exemplo [jsdelivr](https://www.jsdelivr.com/package/npm/vue) ou [cdnjs](https://cdnjs.com/libraries/vue). Claro, também podes descarregar este ficheiro e servi-lo tu mesmo.
+
+Quando estiveres utilizando a Vue a partir de um CDN, não existe "etapa de construção" envolvida. Isto torna a configuração muito mais simples, e é adequado para a otimização da HTML estática ou integração com uma abstração de backend. No entanto, não serás capaz de utilizar a sintaxe de Componente de Ficheiro Único.
+
+### Utilizando a Construção Global
+
+A ligação acima está carregando a **construção global** de Vue, onde todas APIs de alto nível estão expostas como propriedades sobre o objeto `Vue` global. Cá está um exemplo completo de utilização da construção global:
+
+
+```html
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">{{ message }}</div>
 
@@ -86,13 +99,42 @@ Para começar com a Vua sem uma etapa de construção, simplesmente copie o segu
 </script>
 ```
 
-O exemplo acima utiliza a construção global de Vue onde todas APIs são expostas sob a variável `Vue` global. Por exemplo, para também utilizar a API `ref`, podes fazer:
+[Demonstração do JSFiddle](https://jsfiddle.net/yyx990803/nw1xg8Lj/)
 
-```js
-const { createApp, ref } = Vue
+### Utilizando a Construção de Módulo de EcmaScript
+
+Ao longo do resto da documentação, estaremos essencialmente utilizando a sintaxe de [módulos de EcmaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Agora a maioria dos navegadores suportam os módulos de EcmaScript de maneira nativa, assim a podemos utilizar a Vue a partir de um CDN através dos módulos de EcmaScript desta maneira:
+
+```html{3,4}
+<div id="app">{{ message }}</div>
+
+<script type="module">
+  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+  createApp({
+    data() {
+      return {
+        message: 'Hello Vue!'
+      }
+    }
+  }).mount('#app')
+</script>
 ```
 
-Enquanto a construção global funciona, estaremos primariamente utilizando a sintaxe de [módulos de ES](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) por todo o resto da documentação por questão consistência. Para utilizar a Vue sobre os módulos de ES nativos, utilize a seguinte HTML:
+Repara que estamos utilizando `<script type="module">`, e a URL do CDN importado está apontando para a **construção de módulos de EcmaScript** da Vue.
+
+[Demonstração de JSFiddle](https://jsfiddle.net/yyx990803/vo23c470/)
+
+### Ativando os Mapas de Importação
+
+No exemplo acima estamos importando a partir de um URL de CDN completa, mas no resto da documentação verás o código desta maneira:
+
+```js
+import { createApp } from 'vue'
+```
+
+Nós podemos instruir o navegador sobre onde localizar a importação de `vue` utilizando [Mapas de Importação](https://caniuse.com/import-maps):
+
 
 ```html
 <script type="importmap">
@@ -118,25 +160,25 @@ Enquanto a construção global funciona, estaremos primariamente utilizando a si
 </script>
 ```
 
-Repare em como podemos importar diretamente de `'vue'` no nosso código - isto é feito possível pelo bloco `<script type="importmap">`, entregando uma funcionalidade nativa de navegador chamada [Import Maps (Importar Mapas)](https://caniuse.com/import-maps).
+[Demonstração de JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/)
 
-Tu podes adicionar entradas para outras dependências no `importmap` (importar mapa) - apenas certifica-te que elas apontam para versão de módulos de ES da biblioteca que tencionas utilizar.
+Tu também podes adicionar entradas para outras dependências ao mapa de importação - mas certifica-te de que eles apontam para as versões de módulos de EcmaScript da biblioteca que tencionas utilizar.
 
-:::tip Suporte do Navegador ao Importar Mapas
-Importar mapas são suportados por padrão nos navegadores baseados no Chromium, assim recomendamos a utilização do Chrome ou Edge durante o processo de aprendizado.
+:::tip Suporte do Navegador aos Mapas de Importação
+Os mapas de importação são suportados por padrão nos navegadores baseados no Chromium, assim recomendamos a utilização do Chrome ou Edge durante o processo de aprendizado.
 
-Se estiveres utilizando o Firefox, ela só é suportada a partir da versão 102 a diante e atualmente precisa ser ativada através da opção `dom.importMaps.enabled` no `about:config`.
+Se estiveres utilizando o Firefox, ele só é suportado a partir da versão 102 a diante e atualmente precisa ser ativada através da opção `dom.importMaps.enabled` no `about:config`.
 
-Se o teu navegador preferido ainda não suporta importar mapas, podes adicionar um "polyfill" para ela com [es-module-shims](https://github.com/guybedford/es-module-shims).
+Se o teu navegador preferido ainda não suporta os mapas de importação, podes adicionar um "polyfill" para ele com [es-module-shims](https://github.com/guybedford/es-module-shims).
 :::
 
-:::warning Não para produção
-A configuração baseada no importar de mapas está destinada apenas para o aprendizado - se tencionas utilizar a Vue sem ferramentas de construção em produção, certifica-te de consultar o [Guia de Desdobramento de Produção](/guide/best-practices/production-deployment.html#sem-ferramentas-de-construção).
+:::warning Notas a respeito Uso em Produção
+Os exemplos até aqui estão utilizando a construção de desenvolvimento de Vue - se tencionas utilizar a Vue a partir de um CDN em produção, certifica-te de consultar o [Guia de Desdobramento de Produção](/guide/best-practices/production-deployment.html#sem-ferramentas-de-construção).
 :::
 
-### Servindo sobre o HTTP
+### Dividindo os Módulos
 
-Conforme mergulhamos mais a fundo no guia, poderemos precisar separar o nosso código em ficheiros de JavaScript separados para que sejam mais fácil de gerir. Por exemplo:
+A medida que mergulhamos mais fundo no guia, poderemos precisar dividir o nosso código para dentro de ficheiros de JavaScript separados para que eles sejam mais fáceis de gerir. Por exemplo:
 
 ```html
 <!-- index.html -->
@@ -158,11 +200,16 @@ export default {
 }
 ```
 
-Para isto funcionar, precisas servir o tua HTML sobre o protocolo `http://` no lugar do protocolo `file://`. Para iniciar um servidor de HTTP local, primeiro instale a [Node.js](https://nodejs.org/en/), e depois execute `npx serve` a partir da linha de comando no mesmo diretório onde o teu ficheiro de HTML está. Tu também podes utilizar qualquer outro servidor de HTTP que possa servir ficheiros estáticos com os tipos de MIME corretos.
+Se abrires o `index.html` acima diretamente no teu navegador, descobrirás que ela lança um erro porque os módulos de EcmaScript não podem funcionar sobre o protocolo `file://`. Para isto funcionar, precisas servir o teu `index.html` sobre o protocolo `http://`, com um servidor de HTTP local.
+
+Para iniciar um servidor de HTTP local, primeiro instale a [Node.js](https://nodejs.org/en/), e depois execute `npx serve` a partir da linha de comando no mesmo diretório onde o teu ficheiro HTML está. Tu também podes utilizar qualquer outro servidor de HTTP que pode servir os ficheiros estáticos com os tipos de MIME corretos.
 
 Tu podes ter notado que o modelo de marcação do componente importado está em linha como uma sequência de caracteres de JavaScript. Se estiveres utilizando o VSCode, podes instalar a extensão [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) e prefixar as sequências de caracteres com um comentário `/*html*/` para obteres o destacamento de sintaxe para elas.
 
-## Next Steps
+### Utilizando a API de Composição sem uma Etapa de Construção
+
+Muitos dos exemplos para API de Composição estarão utilizando a sintaxe `<script setup>`. Se tencionas utilizar a API de Composição sem uma etapa de construção, consulte a utilização da [opção `setup()`](/api/composition-api-setup.html).
+
 ## Próximos Passos
 
 Se saltaste a [Introdução](/guide/introduction), recomendamos fortemente a leitura dela antes de avançar para o resto da documentação.
