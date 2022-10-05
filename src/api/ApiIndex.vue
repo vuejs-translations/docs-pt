@@ -68,30 +68,22 @@ function slugify(text: string): string {
 <template>
   <div id="api-index">
     <div class="header">
-      <h1>API Reference</h1>
+      <h1>Referência de API</h1>
       <div class="api-filter">
-        <label for="api-filter">Filter</label>
+        <label for="api-filter">Filtrar</label>
         <input
           type="search"
-          placeholder="Enter keyword"
+          placeholder="Introduza a palavra-chave"
           id="api-filter"
           v-model="query"
         />
       </div>
     </div>
 
-    <div
-      v-for="section of filtered"
-      :key="section.text"
-      class="api-section"
-    >
+    <div v-for="section of filtered" :key="section.text" class="api-section">
       <h2 :id="slugify(section.text)">{{ section.text }}</h2>
       <div class="api-groups">
-        <div
-          v-for="item of section.items"
-          :key="item.text"
-          class="api-group"
-        >
+        <div v-for="item of section.items" :key="item.text" class="api-group">
           <h3>{{ item.text }}</h3>
           <ul>
             <li v-for="h of item.headers" :key="h.anchor">
@@ -102,9 +94,10 @@ function slugify(text: string): string {
       </div>
     </div>
 
-    <div v-if="!filtered.length" class="no-match">
-      No API matching "{{ query }}" found.
-    </div>
+    <div
+      v-if="!filtered.length"
+      class="no-match"
+    >Não foi encontrado nada na API que corresponda a "{{ query }}".</div>
   </div>
 </template>
 
