@@ -13,18 +13,19 @@ onMounted(async () => {
 <template>
   <section id="hero">
     <h1 class="tagline">
-      The
-      <span class="accent">Progressive</span>
-      <br />JavaScript Framework
+      A
+      Abstração
+      <span class="accent">Progressiva</span>
+      <br />de JavaScript
     </h1>
     <p class="description">
-      An approachable, performant and versatile framework for building web
-      user interfaces.
+      Uma abstração acessível, de ótimo desempenho e versátil para construção
+      de interfaces de utilizador de web.
     </p>
     <p class="actions">
       <vue-mastery-modal />
       <a class="get-started" href="/guide/introduction.html">
-        Get Started
+        Começar
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,12 +38,12 @@ onMounted(async () => {
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">Install</a>
+      <a class="setup" href="/guide/quick-start.html">Instalar</a>
     </p>
   </section>
 
   <section id="special-sponsor">
-    <span class="lead">Special Sponsor</span>
+    <span class="lead">Patrocinador Especial</span>
     <template v-if="data && data.special">
       <template v-for="{ url, img, name, description } of data.special">
         <a :href="url" target="_blank" rel="sponsored noopener">
@@ -59,32 +60,32 @@ onMounted(async () => {
 
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
-      <h2>Approachable</h2>
+      <h2>Acessível</h2>
       <p>
-        Builds on top of standard HTML, CSS and JavaScript with intuitive
-        API and world-class documentation.
+        Construa sobre a HTML, CSS e JavaScript padrão com uma API intuitiva
+        e documentação de classe mundial.
       </p>
     </div>
     <div class="vt-box">
-      <h2>Performant</h2>
+      <h2>Ótimo Desempenho</h2>
       <p>
-        Truly reactive, compiler-optimized rendering system that rarely
-        requires manual optimization.
+        Verdadeiramente reativa, sistema de interpretação do compilador otimizado
+        que raramente precisa de otimização manual.
       </p>
     </div>
     <div class="vt-box">
-      <h2>Versatile</h2>
+      <h2>Versátil</h2>
       <p>
-        A rich, incrementally adoptable ecosystem that scales between a
-        library and a full-featured framework.
+        Um ecossistema rico de adoção incremental que escala entre uma
+        biblioteca e uma abstração cheia de funcionalidades.
       </p>
     </div>
   </section>
 
   <section id="sponsors">
-    <h2>Platinum Sponsors</h2>
+    <h2>Patrocinadores Platina</h2>
     <SponsorsGroup tier="platinum" placement="landing" />
-    <h2>Gold Sponsors</h2>
+    <h2>Patrocinadores Ouro</h2>
     <SponsorsGroup tier="gold" placement="landing" />
   </section>
 
