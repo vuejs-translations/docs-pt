@@ -5,7 +5,7 @@ import { VTLink } from '@vue/theme'
 <template>
   <section id="newsletter" class="NewsLetter">
     <div class="container">
-      <h2 class="title">Subscribe to our weekly newsletter.</h2>
+      <h2 class="title">Subscreva-te no nosso boletim informativo semanal.</h2>
 
       <div class="form">
         <form
@@ -22,7 +22,7 @@ import { VTLink } from '@vue/theme'
             id="member_email"
             name="member[email]"
             type="email"
-            placeholder="Email address"
+            placeholder="Endereço de Correio Eletrónico"
             required
           />
 
@@ -32,20 +32,17 @@ import { VTLink } from '@vue/theme'
               id="member_submit"
               name="member[subscribe]"
               type="submit"
-              value="SUBSCRIBE"
+              value="SUBSCREVER"
             />
           </div>
         </form>
       </div>
 
       <p class="help">
-        You can read the previous issues and listen to our podcast at
-        <VTLink
-          class="link"
-          href="https://news.vuejs.org/"
-          no-icon
-        >news.vuejs.org</VTLink>. You may also go social at
-        <VTLink class="link" href="https://twitter.com/vuejs" no-icon>Twitter</VTLink>, or join our home at
+        Tu podes ler as questões anteriores e ouvir a nossa rádio digital em
+        <VTLink class="link" href="https://news.vuejs.org/" no-icon>news.vuejs.org</VTLink>. Tu também podes socializar-te na
+        <VTLink class="link" href="https://twitter.com/vuejs" no-icon>Twitter</VTLink>,
+        ou juntar-te a nossa casa na
         <VTLink class="link" href="https://chat.vuejs.org/" no-icon>Discord</VTLink>.
       </p>
     </div>
