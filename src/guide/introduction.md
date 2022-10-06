@@ -14,11 +14,11 @@ footer: false
 <div class="vue-mastery-link">
   <a href="https://www.vuemastery.com/courses-path/beginner" target="_blank">
     <div class="banner-wrapper">
-      <img class="banner" alt="Vue Mastery banner" width="96px" height="56px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vuemastery-graphical-link-96x56.png" />
+      <img class="banner" alt="Faixa da Vue Mastery" width="96px" height="56px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vuemastery-graphical-link-96x56.png" />
     </div>
-    <p class="description">Aprenda Vue com aulas em vídeo na <span>VueMastery.com</span></p>
+    <p class="description">Aprenda Vue com as aulas em vídeo da <span>VueMastery.com</span></p>
     <div class="logo-wrapper">
-        <img alt="Vue Mastery Logo" width="25px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vue-mastery-logo.png" />
+        <img alt="Logótipo da Vue Mastery" width="25px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vue-mastery-logo.png" />
     </div>
   </a>
 </div>
