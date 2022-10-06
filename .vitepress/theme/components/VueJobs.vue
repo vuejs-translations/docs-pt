@@ -21,15 +21,9 @@ onMounted(async () => {
 <template>
   <div class="vuejobs-wrapper" ref="vuejobs">
     <div class="vj-container">
-      <a
-        class="vj-item"
-        v-for="(job, n) in openings"
-        :key="n"
-        :href="job.link"
-        target="_blank"
-      >
+      <a class="vj-item" v-for="(job, n) in openings" :key="n" :href="job.link" target="_blank">
         <div class="vj-company-logo">
-          <img :src="job.organization.avatar" alt="" />
+          <img :src="job.organization.avatar" alt />
         </div>
         <div
           style="
@@ -41,23 +35,21 @@ onMounted(async () => {
         >
           <div class="vj-job-title">{{ job.title }}</div>
           <div class="vj-job-info">
-            {{ job.organization.name }} <span>· </span>
-            <span v-if="['ONLY', 'ALLOWED'].includes(job.remote)"
-              >Remote</span
-            >
+            {{ job.organization.name }}
+            <span>·</span>
+            <span v-if="['ONLY', 'ALLOWED'].includes(job.remote)">Remoto</span>
             <span v-else>{{ job.locations[0] }}</span>
           </div>
         </div>
       </a>
     </div>
     <div class="vj-link">
-      Jobs by
+      Empregos pela
       <a
         href="https://vuejobs.com/?utm_source=vuejs&utm_medium=referral&utm_campaign=jobs_widget&utm_content=bottom_link"
         target="_blank"
-        title="Hire Vue.js developers"
-        >vuejobs.com</a
-      >
+        title="Contrate Programadores de Vue.js"
+      >vuejobs.com</a>
     </div>
   </div>
 </template>
