@@ -1,6 +1,6 @@
 # Sintaxe do Modelo de Marcação
 
-A Vua utiliza uma sintaxe de modelo de marcação baseada na HTML que permite-te vincular de maneira declarativa o DOM interpretado aos dados da instância do componente subjacente. Todos modelos de marcação de Vue são HTML sintaticamente validos que podem ser analisados por navegadores e analisadores de HTML compatíveis a especificação.
+A Vue utiliza uma sintaxe de modelo de marcação baseada na HTML que permite-te vincular de maneira declarativa o DOM interpretado aos dados da instância do componente subjacente. Todos modelos de marcação de Vue são HTML sintaticamente validos que podem ser analisados por navegadores e analisadores de HTML compatíveis a especificação.
 
 Nos bastidores, a Vua compila os modelos de marcação para um código de JavaScript altamente otimizado. Combinada com o sistema de reatividade, a Vue é capaz de compreender inteligentemente o número mínimo de componentes à reinterpretar e aplicar a quantidade mínima de manipulações do DOM quando o estado da aplicação mudar.
 
