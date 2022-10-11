@@ -13,8 +13,7 @@ import {
   VTFlyout,
   VTIconChevronLeft,
   VTIconChevronRight,
-  VTLink,
-  useCopyCode
+  VTLink
 } from '@vue/theme'
 
 const store = new ReplStore({
@@ -116,23 +115,20 @@ updateExample()
           class="vt-menu-link"
           :class="{ active: i + 1 === currentStepIndex }"
           :href="step.link"
-          >{{ step.text }}</VTLink
-        >
+        >{{ step.text }}</VTLink>
       </VTFlyout>
       <div class="vt-doc" v-html="currentDescription"></div>
       <div class="hint" v-if="data[currentStep]?._hint">
-        <button @click="toggleResult">
-          {{ showingHint ? 'Reset' : 'Show me!' }}
-        </button>
+        <button @click="toggleResult">{{ showingHint ? 'Reiniciar' : 'Mostra-me!' }}</button>
       </div>
       <footer>
-        <a v-if="prevStep" :href="`#${prevStep}`"
-          ><VTIconChevronLeft class="vt-link-icon" style="margin: 0" />
-          Prev</a
-        >
-        <a class="next-step" v-if="nextStep" :href="`#${nextStep}`"
-          >Next <VTIconChevronRight class="vt-link-icon"
-        /></a>
+        <a v-if="prevStep" :href="`#${prevStep}`">
+          <VTIconChevronLeft class="vt-link-icon" style="margin: 0" />Anterior
+        </a>
+        <a class="next-step" v-if="nextStep" :href="`#${nextStep}`">
+          Próximo
+          <VTIconChevronRight class="vt-link-icon" />
+        </a>
       </footer>
     </article>
     <Repl
@@ -151,9 +147,7 @@ updateExample()
   display: flex;
   max-width: 1440px;
   margin: 0 auto;
-  --height: calc(
-    100vh - var(--vt-nav-height) - var(--vt-banner-height, 0px)
-  );
+  --height: calc(100vh - var(--vt-nav-height) - var(--vt-banner-height, 0px));
 }
 
 .preference-switch {
@@ -267,9 +261,7 @@ button {
   }
   .vue-repl {
     width: 100%;
-    height: calc(
-      70vh - var(--vt-nav-height) - var(--vt-banner-height, 0px)
-    );
+    height: calc(70vh - var(--vt-nav-height) - var(--vt-banner-height, 0px));
   }
   :deep(.wide) {
     display: none;
