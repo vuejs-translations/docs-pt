@@ -21,7 +21,7 @@ function genMailLink(email: string) {
 <template>
   <div class="partner-page">
     <div class="back">
-      <a href="/partners/all.html"></a>
+      <a href="/partners/all.html">
         <VTIconChevronLeft class="icon" />Recuar para todos parceiros
       </a>
     </div>
