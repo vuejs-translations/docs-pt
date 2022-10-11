@@ -1,17 +1,16 @@
 <script setup lang="ts">
-const { title = 'Vue Partners' } = defineProps<{ title?: string }>()
+const { title = 'Parceiros da Vue' } = defineProps<{ title?: string }>()
 </script>
 
 <template>
   <div class="PartnerHero">
     <h1 class="title">{{ title }}</h1>
     <p class="lead">
-      Vue Partners are Vue-team endorsed agencies that provide first-class
-      Vue consulting and development services. If your company is
-      interested in being listed as a partner, please
-      <a href="https://airtable.com/shrCQhat57SApJI2l" target="_blank"
-        >register your interest here</a
-      >.
+      Os parceiros da Vue são agências endossadas pela equipa da Vue que oferecem consultoria em Vue e serviços de desenvolvimento de primeira classe. Se a tua empresa estiver interessada em ser listada como uma parceira, por favor
+      <a
+        href="https://airtable.com/shrCQhat57SApJI2l"
+        target="_blank"
+      >registe o teu interesse aqui</a>.
     </p>
   </div>
 </template>
