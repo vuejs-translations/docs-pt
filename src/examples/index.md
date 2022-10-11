@@ -1,6 +1,6 @@
 ---
 page: true
-title: Examples
+title: Exemplos
 aside: false
 footer: false
 returnToTop: false
