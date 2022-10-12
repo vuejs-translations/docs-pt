@@ -34,7 +34,7 @@ const avatarUrl = computed(() => {
       :href="`https://github.com/sponsors/${member.socials.github}`"
       no-icon
     >
-      <VTIconHeart class="sponsor-icon" />Patrocinador
+      <VTIconHeart class="sponsor-icon" />Patrocinar
     </VTLink>
 
     <figure class="avatar">
