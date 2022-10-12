@@ -34,15 +34,11 @@ const avatarUrl = computed(() => {
       :href="`https://github.com/sponsors/${member.socials.github}`"
       no-icon
     >
-      <VTIconHeart class="sponsor-icon" /> Sponsor
+      <VTIconHeart class="sponsor-icon" />Patrocinador
     </VTLink>
 
     <figure class="avatar">
-      <img
-        class="avatar-img"
-        :src="avatarUrl"
-        :alt="`${member.name}'s Profile Picture`"
-      />
+      <img class="avatar-img" :src="avatarUrl" :alt="`${member.name}'s Profile Picture`" />
     </figure>
 
     <div class="data">
@@ -56,51 +52,35 @@ const avatarUrl = computed(() => {
             class="company link"
             :href="member.companyLink"
             :no-icon="true"
-          >
-            {{ member.company }}
-          </VTLink>
-          <span v-else class="company">
-            {{ member.company }}
-          </span>
+          >{{ member.company }}</VTLink>
+          <span v-else class="company">{{ member.company }}</span>
         </span>
       </p>
 
       <div class="profiles">
         <section v-if="member.projects" class="desc">
           <div class="desc-title">
-            <h2 class="sr-only">Projects</h2>
+            <h2 class="sr-only">Projetos</h2>
             <VTIconCode class="desc-icon code" />
           </div>
           <ul class="desc-list">
-            <li
-              v-for="project in member.projects"
-              :key="project.label"
-              class="desc-item"
-            >
-              <VTLink
-                class="desc-link"
-                :href="project.url"
-                :no-icon="true"
-              >
-                {{ project.label }}
-              </VTLink>
+            <li v-for="project in member.projects" :key="project.label" class="desc-item">
+              <VTLink class="desc-link" :href="project.url" :no-icon="true">{{ project.label }}</VTLink>
             </li>
           </ul>
         </section>
 
         <section class="desc">
           <div class="desc-title">
-            <h2 class="sr-only">Location</h2>
+            <h2 class="sr-only">Localização</h2>
             <VTIconMapPin class="desc-icon" />
           </div>
-          <p class="desc-text">
-            {{ member.location }}
-          </p>
+          <p class="desc-text">{{ member.location }}</p>
         </section>
 
         <section class="desc">
           <div class="desc-title">
-            <h2 class="sr-only">Languages</h2>
+            <h2 class="sr-only">Linguagens</h2>
             <VTIconGlobe class="desc-icon" />
           </div>
           <ul class="desc-list">
@@ -108,15 +88,13 @@ const avatarUrl = computed(() => {
               v-for="language in member.languages"
               :key="language"
               class="desc-item"
-            >
-              {{ language }}
-            </li>
+            >{{ language }}</li>
           </ul>
         </section>
 
         <section v-if="member.website" class="desc">
           <div class="desc-title">
-            <h2 class="sr-only">Website</h2>
+            <h2 class="sr-only">Sítio Na Web</h2>
             <VTIconLink class="desc-icon" />
           </div>
           <p class="desc-text">
@@ -124,9 +102,7 @@ const avatarUrl = computed(() => {
               class="desc-link"
               :href="member.website.url"
               :no-icon="true"
-            >
-              {{ member.website.label }}
-            </VTLink>
+            >{{ member.website.label }}</VTLink>
           </p>
         </section>
 
@@ -329,7 +305,7 @@ const avatarUrl = computed(() => {
 
 .desc-item::after {
   margin-left: 8px;
-  content: '•';
+  content: "•";
   color: var(--vt-c-text-3);
   transition: color 0.25s;
 }
