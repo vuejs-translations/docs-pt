@@ -20,12 +20,9 @@ defineProps<{
       </div>
 
       <div class="members">
-        <!-- to skip SSG since the members are shuffled -->
-        <ClientOnly>
-          <div v-for="member in members" :key="member.name" class="member">
-            <TeamMember :member="member" />
-          </div>
-        </ClientOnly>
+        <div v-for="member in members" :key="member.name" class="member">
+          <TeamMember :member="member" />
+        </div>
       </div>
     </div>
   </section>
