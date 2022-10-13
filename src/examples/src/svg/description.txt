@@ -1,1 +1,1 @@
-Say Hello World with Vue!
+Diga "Olá Mundo ou Hello World" com a Vue!
