@@ -1,1 +1,1 @@
-We can render content conditionally or in a loop with the v-if and v-for directives.
+Nós podemos interpretar conteúdo condicionalmente ou percorrer um objeto com as diretivas v-if e v-for.
