@@ -1,9 +1,7 @@
 <table v-if="filteredData.length">
   <thead>
     <tr>
-      <th v-for="key in columns"
-        @click="sortBy(key)"
-        :class="{ active: sortKey == key }">
+      <th v-for="key in columns" @click="sortBy(key)" :class="{ active: sortKey == key }">
         {{ capitalize(key) }}
         <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
         </span>
@@ -18,4 +16,4 @@
     </tr>
   </tbody>
 </table>
-<p v-else>No matches found.</p>
+<p v-else>Nenhuma correspondência encontrada.</p>

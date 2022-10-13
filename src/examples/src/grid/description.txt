@@ -1,1 +1,1 @@
-An example of creating a reusable grid component and using it with external data.
+Um exemplo de criação de um componente de grade reutilizável e utilizando-o com dado externo.
