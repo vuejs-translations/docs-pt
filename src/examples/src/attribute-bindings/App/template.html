@@ -1,18 +1,18 @@
 <p>
   <span :title="message">
-    Hover your mouse over me for a few seconds to see my dynamically bound title!
+    Paire o ponteiro do teu rato sobre mim por alguns segundos para veres o título saltar dinamicamente!
   </span>
 </p>
 
 <!--
-class bindings have special support for objects and arrays
-in addition to plain strings
+as vinculações de classe têm suporte especial para objetos e arranjos
+para além do suporte para sequência de caracteres simples.
 -->
 <p :class="{ red: isRed }" @click="toggleRed">
-  This should be red... but click me to toggle it.
+  Isto deveria ser vermelho... porém clica-me para alterná-lo.
 </p>
 
-<!-- style bindings also support object and arrays -->
+<!-- as vinculações de estilo também suportam objetos e arranjos -->
 <p :style="{ color }" @click="toggleColor">
-  This should be green, and should toggle between green and blue on click.
+  Isto deve ser verde, e deve alternar entre verde e azul sobre clique.
 </p>
