@@ -7,14 +7,14 @@ const filters = {
 }
 
 export default {
-  // app initial state
+  // estado inicial da aplicação
   data: () => ({
     todos: JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'),
     editedTodo: null,
     visibility: 'all'
   }),
 
-  // watch todos change for localStorage persistence
+  // observar a mudança de `todos` para persistência do localStorage
   watch: {
     todos: {
       handler(todos) {
@@ -38,8 +38,8 @@ export default {
     }
   },
 
-  // methods that implement data logic.
-  // note there's no DOM manipulation here at all.
+  // métodos que implementam a lógica dos dados.
+  // nota que não há manipulação de nada do DOM.
   methods: {
     toggleAll(e) {
       this.todos.forEach((todo) => (todo.completed = e.target.checked))

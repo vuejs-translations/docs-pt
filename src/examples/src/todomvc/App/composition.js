@@ -10,20 +10,20 @@ const filters = {
 
 export default {
   setup() {
-    // state
+    // estado
     const todos = ref(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'))
     const visibility = ref('all')
     const editedTodo = ref()
 
-    // derived state
+    // estado derivado
     const filteredTodos = computed(() => filters[visibility.value](todos.value))
     const remaining = computed(() => filters.active(todos.value).length)
 
-    // handle routing
+    // manipular roteamento
     window.addEventListener('hashchange', onHashChange)
     onHashChange()
 
-    // persist state
+    // persistir estado
     watchEffect(() => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(todos.value))
     })
