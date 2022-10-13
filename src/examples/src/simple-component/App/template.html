@@ -1,13 +1,9 @@
 <ol>
   <!--
-    We are providing each todo-item with the todo object
-    it's representing, so that its content can be dynamic.
-    We also need to provide each component with a "key",
-    which is explained in the guide section on v-for.
+    Estamos fornecendo cada item de `todo` com o objeto que `todo`
+    está representando, para que o seu conteúdo possa ser dinâmico.
+    Também precisamos fornecer cada componente com um "key",
+    o qual é explicado na secção do guia sobre v-for.
   -->
-  <TodoItem
-    v-for="item in groceryList"
-    :todo="item"
-    :key="item.id"
-  ></TodoItem>
+  <TodoItem v-for="item in groceryList" :todo="item" :key="item.id"></TodoItem>
 </ol>
