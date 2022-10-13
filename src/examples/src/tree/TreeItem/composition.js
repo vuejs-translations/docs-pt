@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 
 export default {
-  name: 'TreeItem', // necessary for self-reference
+  name: 'TreeItem', // necessário para a auto-referência
   props: {
     model: Object
   },
