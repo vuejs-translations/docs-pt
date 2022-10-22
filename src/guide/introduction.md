@@ -16,7 +16,7 @@ footer: false
     <div class="banner-wrapper">
       <img class="banner" alt="Faixa da Vue Mastery" width="96px" height="56px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vuemastery-graphical-link-96x56.png" />
     </div>
-    <p class="description">Aprenda Vue com as aulas em vídeo da <span>VueMastery.com</span></p>
+    <p class="description">Aprenda Vue com o Curso em Vídeo da <span>VueMastery.com</span></p>
     <div class="logo-wrapper">
         <img alt="Logótipo da Vue Mastery" width="25px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vue-mastery-logo.png" />
     </div>
