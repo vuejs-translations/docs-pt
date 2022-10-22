@@ -63,7 +63,7 @@ watch(
                 target="_blank"
                 rel="sponsored noopener"
                 title="Cursos de Vue.js na Vue Mastery"
-              >Vue Mastery.</a> Assista a Vua Mastery de graça
+              >Vue Mastery.</a> Assista a Vue Mastery de graça
               <a
                 href="https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3"
                 target="_blank"
