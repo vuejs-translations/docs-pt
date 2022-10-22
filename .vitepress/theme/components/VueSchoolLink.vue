@@ -1,12 +1,7 @@
 <template>
   <div class="vueschool">
-    <a
-      :href="`${href}?friend=vuejs`"
-      target="_blank"
-      rel="sponsored noopener"
-      :title="title"
-    >
-      <slot>Assista uma aula em vídeo gratuita na Vue School</slot>
+    <a :href="`${href}?friend=vuejs`" target="_blank" rel="sponsored noopener" :title="title">
+      <slot>Assista Uma Aula Gratuita Sobre Isto na Vue School</slot>
     </a>
   </div>
 </template>
@@ -34,7 +29,7 @@ export default {
   padding-left: 36px;
 }
 .vueschool a:before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 30px;
@@ -45,7 +40,7 @@ export default {
   background-color: #73abfe;
 }
 .vueschool a:after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 0;
