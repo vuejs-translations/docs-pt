@@ -106,14 +106,14 @@
   {
     "name": "Curotec",
     "logo": "curotec.png",
-    "intro": "Our clients leverage our deep Vue.js & Nuxt.js expertise to develop better digital products and quickly expand their product development team velocity.",
+    "intro": "Os nossos clientes influenciam a nossa profunda competência em Nuxt.js e Vue.js para programar os melhores produtos digitais e expandir rapidamente a velocidade da sua equipa de desenvolvimento de produto.",
     "description": [
-      "Curotec approaches software development and IT support differently – address the business problems that our clients tell us they need to have solved with technology and with the right resources at the right time. That starts with understanding your challenges and pairing it with solutions and talent to get the outcome you’re driving for.",
-      "The result? Products that are responsive to your needs and primed for your growth, while ensuring your applications have a clean and straightforward end-user experience. And with well-developed and elegantly written code, it’s seamless for us to support and maintain as your needs evolve."
+      "A Curotec aborda o desenvolvimento de software e suporte em tecnologia de informação de maneira diferente - trata os problemas de negócio que os nossos clientes dizem-nos que precisam ter resolvidas com tecnologia e com os recursos corretos no momento certo. Isto começa com o entendimento dos teus desafios e emparelhando-o com soluções e talento para conseguir o resultado que estás procurando.",
+      "O resultado? Os produtos que são recetivos as tuas necessidades e preparados para o teu crescimento, quanto garantimos que as tuas aplicações tenham uma experiência utilizador final limpa e direta. E com código bem desenvolvido e elegantemente escrito, para nós suportar e manter conforme as tuas necessidade evoluírem."
     ],
     "region": [
-      "North America",
-      "Latin America"
+      "América do Norte",
+      "América Latina"
     ],
     "proficiencies": [
       "Vue",
