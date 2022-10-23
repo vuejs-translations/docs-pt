@@ -3,29 +3,39 @@
     "name": "Vehikl",
     "logo": "vehikl.svg",
     "flipLogo": true,
-    "intro": "Vehikl has deep knowledge of Vue and will act as an extension of your team. We focus on writing clean, maintainable code. We are passionate about continual improvement, and we practice Mob Programming and Pair Programming on a daily basis.",
+    "intro": "Vehikl tem conhecimento profundo de Vue e agirá como uma extensão da tua equipa. Nós concentramos-nos na escrita de código limpo e sustentável. Nós somos apaixonados por aprimoramento contínuo, e praticamos o 'Mob Programming' e 'Pair Programming' sobre uma base diária.",
     "description": [
-      "Vehikl is a Team that values Caring, Growing, and Delivering. We instill those values in everything we do, and everyone we work with. Our goal is to be an extension of your development efforts, and build exceptional web and mobile applications.",
-      "Our Team has a strong specialty and deep knowledge of Vue, Laravel, and React frameworks. In addition to this, our Team of 75 has worked with every tech stack you can imagine. We’re proud test-driven developers who focus on writing clean, maintainable code. Our Team is passionate about continual improvement, and we practice Mob Programming and Pair Programming on a daily basis.",
-      "We’ve worked on projects from a wide range of companies ranging from startups to enterprise-level organizations. We are one team with our clients and we share in their successes.",
-      "So what does working with us look like?",
-      "- Daily communication with your team",
-      "- Collaborate with you on weekly or bi-weekly Sprint Planning",
-      "- Demos & Retrospectives at the end of each Sprint",
-      "- Collaborative PR reviews",
-      "- Daily Pairing and Mobbing sessions",
-      "We’re always looking for opportunities to learn new things and refine our skills using lean Agile development, open communication, and collaboration. We combine one-on-one communication, and the iterative values of the Agile methodology to deliver high quality code.",
-      "We’re active members of the JavaScript and PHP community, and love to collaborate with other enthusiasts."
+      "Vehikl é uma equipa que valoriza o Cuidado, Crescimento, e a Entrega. Nós infundimos estes valores em tudo que fazemos e em tudo com que trabalhamos. Nosso objetivo é ser uma extensão dos teus esforços de desenvolvimento, construir aplicações de web e móveis excecionais.",
+      "Nossa equipa tem uma forte especialidade e conhecimento profundo das abstrações Vue, Laravel e React. Além disto para isto, nossa equipa de 75 tem trabalhado com toda pilha tecnológica que podes imaginar. Somos programadores orientados a teste que concentram-se em escrever código limpo e sustentável. Nossa equipa é apaixonado por aprimoramento contínuo, e praticamos 'Mob Programming' e 'Pair Programming' sobre uma base diária.",
+      "Temos trabalhado sobre projetos de uma grande gama de companhias abrangendo 'startups' à organizações de nível empresarial. Nós somos uma equipa com os nossos cliente e partilhamos de seus sucessos.",
+      "Então como é trabalhar connosco?",
+      "- Comunicação diária com a nossa equipa",
+      "- Colaborar contigo sobre o Planeamento de Corrida semanal ou bi-semanal",
+      "- Demonstrações e Retrospetivas no final de cada Corrida",
+      "- Revisões de PR colaborativas",
+      "- Sessões de 'Pairing' e 'Mobbing' diárias",
+      "Estamos sempre procurando por oportunidades para aprender coisas novas e refinar as nossas habilidades utilizando o desenvolvimento ágil, comunicação aberta, e a colaboração. Nós combinamos a comunicação um em um, e os valores iterativos da Metodologia Ágil para entregar código de alta qualidade.",
+      "Somos membros ativos da comunidade de JavaScript e PHP, e amamos colaborar com os outros entusiastas."
     ],
-    "proficiencies": ["Vue", "Laravel", "React", "Node.js", "Unity"],
-    "region": ["North America"],
-    "location": ["Ontario, Canada"],
+    "proficiencies": [
+      "Vue",
+      "Laravel",
+      "React",
+      "Node.js",
+      "Unity"
+    ],
+    "region": [
+      "América do Norte"
+    ],
+    "location": [
+      "Ontário, Canadá"
+    ],
     "website": {
       "text": "www.vehikl.com",
       "url": "https://www.vehikl.com?utm_source=vue_partners_page"
     },
     "contact": "go+vuepartner@vehikl.com",
-    "hiring": "https://vehikl.com/jobs/developer/",
+    "hiring": "www.vehikl.com/jobs/developer",
     "platinum": true
   },
   {
@@ -40,9 +50,18 @@
       "Besides being the leading JavaScript Consultancy in the Netherlands, Passionate People is also proud to host the largest tech conferences and community events in the world.",
       "Starting in February 2018 with Frontend Love and Vue.js Amsterdam, we are now responsible for many other conferences in Europe under the Frontend Love brand: React Live, AngularNL, Vue.js Amsterdam, and JS World Conference."
     ],
-    "proficiencies": ["Vue", "Nuxt", "Node.js", "JAMStack"],
-    "region": ["Europe"],
-    "location": ["Amsterdam, Netherlands"],
+    "proficiencies": [
+      "Vue",
+      "Nuxt",
+      "Node.js",
+      "JAMStack"
+    ],
+    "region": [
+      "Europe"
+    ],
+    "location": [
+      "Amsterdam, Netherlands"
+    ],
     "website": {
       "text": "passionatepeople.io",
       "url": "https://passionatepeople.io/"
@@ -73,7 +92,9 @@
       "React Native",
       "Flutter"
     ],
-    "region": ["Europe"],
+    "region": [
+      "Europe"
+    ],
     "website": {
       "text": "www.monterail.com",
       "url": "https://www.monterail.com/?utm_source=vuejs.org&utm_medium=referral&utm_campaign=partners"
@@ -90,8 +111,16 @@
       "Curotec approaches software development and IT support differently – address the business problems that our clients tell us they need to have solved with technology and with the right resources at the right time. That starts with understanding your challenges and pairing it with solutions and talent to get the outcome you’re driving for.",
       "The result? Products that are responsive to your needs and primed for your growth, while ensuring your applications have a clean and straightforward end-user experience. And with well-developed and elegantly written code, it’s seamless for us to support and maintain as your needs evolve."
     ],
-    "region": ["North America", "Latin America"],
-    "proficiencies": ["Vue", "Nuxt", "Laravel", "Jamstack"],
+    "region": [
+      "North America",
+      "Latin America"
+    ],
+    "proficiencies": [
+      "Vue",
+      "Nuxt",
+      "Laravel",
+      "Jamstack"
+    ],
     "website": {
       "text": "www.curotec.com",
       "url": "https://www.curotec.com/services/technologies/vuejs/"
@@ -109,8 +138,18 @@
       "We love working with companies of all sizes. We've guided early-stage, funded startups to a successful launch and helped large international companies refactor and rebuild existing products to scale into the future. Whatever your needs, we'll help you make the right technology decisions and build a polished product that will put you on the path to success.",
       "We set ourselves apart by our level of involvement in your product. Think of us as an extension of your team. Whether augmenting an existing team or stepping in as de facto CTO to make the technical decisions, we're there for you. We're selective in the products that we take on, as we truly want to believe in our work and do everything we can to make them successful. Your success is our success."
     ],
-    "region": ["North America", "Europe", "Africa"],
-    "proficiencies": ["Vue", "Nuxt", "Laravel", "Flutter", "Node.js"],
+    "region": [
+      "North America",
+      "Europe",
+      "Africa"
+    ],
+    "proficiencies": [
+      "Vue",
+      "Nuxt",
+      "Laravel",
+      "Flutter",
+      "Node.js"
+    ],
     "website": {
       "text": "64robots.com",
       "url": "https://64robots.com/"
@@ -127,8 +166,14 @@
       "Instead of the bug-filled code, you may have received in the past, we write robust software and test the hell out of it. But instead of just testing manually, we write additional code to test your code. This ensures bugs are spotted quickly and automatically before your employees or customers ever touch the software. And it prevents bigger problems down the road when you try to scale usage or add new features.",
       "DevSquad gives you the proven proves and all the experience you need to build your software better, faster, and right the first time."
     ],
-    "region": ["North America"],
-    "proficiencies": ["Vue.js", "Laravel", "Node.js"],
+    "region": [
+      "North America"
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Laravel",
+      "Node.js"
+    ],
     "website": {
       "text": "devsquad.com",
       "url": "https://devsquad.com/vuejs-developers/"
@@ -147,8 +192,18 @@
       "Whether you’re looking to simply enhance a user interface or build a sophisticated JavaScript-based application, we’ve got you covered. Vue.js is a flexible and robust framework, capable of powering a complex single-page application. We typically combine it with a Laravel-based API.",
       "If you're building a development team, you know it takes time and diligence, and it could be the make-or-break factor for your business. Companies turn to Tighten at key turning points, to propel their technology forward while they assemble the <b>right</b> team for their business."
     ],
-    "region": ["North America", "Europe", "Latin America"],
-    "proficiencies": ["Vue", "Nuxt", "Laravel", "Inertia", "Tailwind"],
+    "region": [
+      "North America",
+      "Europe",
+      "Latin America"
+    ],
+    "proficiencies": [
+      "Vue",
+      "Nuxt",
+      "Laravel",
+      "Inertia",
+      "Tailwind"
+    ],
     "website": {
       "text": "tighten.com",
       "url": "https://tighten.com/vue"
@@ -167,7 +222,9 @@
       "As for the methodology, running our startup studio has imprinted agile into our DNA. We have built a dozen MVPs and continued developing them over time according to the ever-changing business requirements, honing our ability to optimize for low initial time-to-market and high development velocity on any project we take on. We also internalized and standardized setting up and maintaining adequate codebase test coverage and regularly using CI/CD pipelines, making our lives and codes that much more manageable.",
       "If you would like to collaborate on extending your product team, you can contact us through our website."
     ],
-    "region": ["Europe"],
+    "region": [
+      "Europe"
+    ],
     "proficiencies": [
       "Vue",
       "Laravel",
@@ -190,8 +247,18 @@
       "Our team loves to follow the industry standards, some of which are managing git repo, code review, release deployments via CI/CD (DevOps), automated software testing, maintaining detailed technical documentation, application performance monitoring, etc.",
       "Email us, and let's build your software product."
     ],
-    "region": ["North America", "Asia", "Europe"],
-    "proficiencies": ["Vue", "Laravel", "Nuxt", "Ionic", "Node.js"],
+    "region": [
+      "North America",
+      "Asia",
+      "Europe"
+    ],
+    "proficiencies": [
+      "Vue",
+      "Laravel",
+      "Nuxt",
+      "Ionic",
+      "Node.js"
+    ],
     "website": {
       "text": "webreinvent.com",
       "url": "https://webreinvent.com/?utm_source=vuejs.org&utm_medium=website&utm_campaign=partners"
@@ -221,8 +288,12 @@
       "Kotlin",
       ".NET"
     ],
-    "region": ["North America"],
-    "location": ["Leadwood, Kansas, USA"],
+    "region": [
+      "North America"
+    ],
+    "location": [
+      "Leadwood, Kansas, USA"
+    ],
     "website": {
       "text": "activelogic.io",
       "url": "https://activelogic.io/services/vue-js-development/"
