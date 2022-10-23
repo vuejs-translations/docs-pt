@@ -42,13 +42,13 @@
     "name": "Passionate People",
     "logo": "passionatepeople.png",
     "flipLogo": true,
-    "intro": "We provide you with additional technical capacity to power-up your digital transformation journeys with our teams of first-class engineers and consultants. Full stack JavaScript Cloud Engineers ready to work with you and your teams.",
+    "intro": "Nós fornecemos-te a capacidade técnica adicional para alimentar as tuas jornadas de transformação digital com as nossas equipas de engenheiros e consultores de primeira classe. Engenheiros de JavaScript e Engenheiros da Nuvem prontos para trabalharem contigo e com as tuas equipas.",
     "description": [
-      "Founded in October 2017, Passionate People is the leading JavaScript consultancy in the Netherlands.",
-      "Our aim is to help our customers speed up their digital transformation initiatives at scale, and our standard is the highest in the sector.",
-      "We have a wide client base spanning industries such as FinTech, E-commerce, Logistics, Supply Chain, Industrial Automation, etc. To achieve their digital goals and to make their products scalable and secure for millions of users, companies such as Albert Heijn Digital, GrandVision, Nationale Nederlanden, Talpa and AKQA have trusted us to deliver top-notch work.",
-      "Besides being the leading JavaScript Consultancy in the Netherlands, Passionate People is also proud to host the largest tech conferences and community events in the world.",
-      "Starting in February 2018 with Frontend Love and Vue.js Amsterdam, we are now responsible for many other conferences in Europe under the Frontend Love brand: React Live, AngularNL, Vue.js Amsterdam, and JS World Conference."
+      "Fundada em Outubro de 2016, a Passionate People é a principal consultoria de JavaScript nos Países Baixos.",
+      "O nosso objetivo é ajudar os nossos clientes a acelerarem as suas iniciativas de transformação digital em escala, e o nosso padrão é o mais alto no setor.",
+      "Nós temos uma base de cliente ampla atravessando industrias tais como Tecnologia de Finanças, Comercio Eletrónico, Logística, Cadeia de Suplemento, Automação Industrial, etc. Para alcançar os seus objetivos digitais e tornar os seus produtos escaláveis e seguros para milhões de utilizadores, empresas tais como Albert Heijn Digital, GrandVision, Nationale Nederlanden, Talpa e AKQA têm confiado em nós para entregar trabalho da mais alta qualidade.",
+      "Além de ser a principal Consultoria de JavaScript nos Países Baixos, a Passionate People é também orgulhosa em receber as maiores conferências de tecnologia e eventos da comunidade no mundo.",
+      "Começando em Fevereiro de 2018 com Frontend Love e a Vue.js Amsterdam, somos agora responsáveis por muitas outras conferências na Europa sob a marca Frontend Love: React Live, AngularNL, Vue.js Amsterdam, e a JS World Conference."
     ],
     "proficiencies": [
       "Vue",
@@ -57,10 +57,10 @@
       "JAMStack"
     ],
     "region": [
-      "Europe"
+      "Europa"
     ],
     "location": [
-      "Amsterdam, Netherlands"
+      "Amesterdão, Países Baixos"
     ],
     "website": {
       "text": "passionatepeople.io",
