@@ -72,18 +72,18 @@
   {
     "name": "Monterail",
     "logo": "monterail.png",
-    "intro": "Monterail is a full-service software development company from Poland. Since 2010, we have been building innovative software for start-ups, SMBs, and enterprises from various industries globally. Our Vue experts, using battle-tested technologies and frameworks, have delivered more than 30 Vue-based projects.",
+    "intro": "A Monterail é uma empresa de desenvolvimento de software de serviço completo da Polónia. Desde 2010, temos estado a construir software inovador para novas empresas, SMBs, e empresas de várias industrias globalmente. Os nossos especialistas em Vue, utilizando tecnologias testadas em combate e abstrações, têm entregado mais de 30 projetos baseados em Vue.",
     "description": [
-      "At a full-service consultancy like Monterail, you get every competence under one roof. From concept, to design, and product release. Depending on the product lifecycle stage, we guide clients through building applications from scratch or scaling them quickly.",
-      "A diverse pool of experts, including Product Designers, QA specialists and Business Analysts, take care of professional tech stack consultation and business idea validation. We work within the Agile methodology ensuring smooth communication flow and aim for long-term partnerships. We've developed all kinds of Vue applications from virtual real estate tours to donation platforms.",
-      "Why Monterail?",
-      "- Listed in the Financial Times 1000 rank twice in a row (2018 & 2019)",
-      "- Recognized by Deloitte as one of the fastest-growing tech companies in Central Europe (2016 & 2017)",
-      "- Rated 4.7/5 on Clutch.",
-      "- NPS Score - 71",
-      "- Experts in software development and design with solid business experience",
-      "- A team experienced with remote work in a multicultural environment",
-      "- Detailed budget estimation received in weeks, not months"
+      "Em uma consultoria de serviço completo como a Monterail, recebes toda competência sob um teto. Desde o conceito, ao desenho, e lançamento do produto. Dependendo do estágio do ciclo de vida do produto, guiamos os clientes através da construção das aplicações desde o zero ou escalamos-os rapidamente.",
+      "Uma piscina diversa de especialistas, incluindo Desenhador de Produto, especialistas em Teste de Qualidade e Analistas de Negócio, tratam da consulta da pilha tecnológica profissional e a validação da ideia de negócio. Nós trabalhamos dentro da Metodologia Ágil garantido fluxo de comunicação agradável e aspiramos parcerias de longo prazo. Temos desenvolvido todos tipos de aplicações de Vue desde digressões de estado real virtual à plataformas de doação.",
+      "Porquê Monterail?",
+      "- Listada duas vezes consecutiva na categoria do Financial Times 1000 (2018 & 2019)",
+      "- Reconhecida pela Deloitte como uma das empresas de tecnologia em mais rápido crescimento na Europa Central (2016 & 2017)",
+      "- Avaliada em 4.7/5 na Clutch.",
+      "- Pontuação NPS - 71",
+      "- Especialistas em desenvolvimento de software e desenho com experiência de negócio sólida",
+      "- Uma equipa experiente com trabalho remoto em um ambiente multicultural",
+      "- Cálculo de orçamento detalhado recebido em semanas, e não meses"
     ],
     "proficiencies": [
       "Vue.js",
@@ -93,7 +93,7 @@
       "Flutter"
     ],
     "region": [
-      "Europe"
+      "Europa"
     ],
     "website": {
       "text": "www.monterail.com",
