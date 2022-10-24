@@ -160,14 +160,14 @@
   {
     "name": "DevSquad",
     "logo": "devsquad.png",
-    "intro": "You can think of DevSquad as the Navy SEALs of software development. Our team members have unique and diverse skills, and this cross-functionality lets us successfully complete any mission.",
+    "intro": "Tu podes pensar da DevSquad como Focas Marinhas do desenvolvimento de software. Os membros da nossa equipa possuem habilidades diversas e únicas, e esta funcionalidade cruzada permite-nos completar qualquer missão com sucesso.",
     "description": [
-      "All of our clients get their own dedicated Squad. Even if you need 30 developers, everyone working on your project is split into small agile teams of 2-6 people. A battle-tested small team can move quicker and with more precision than larger teams, just like the Navy SEALs.",
-      "Instead of the bug-filled code, you may have received in the past, we write robust software and test the hell out of it. But instead of just testing manually, we write additional code to test your code. This ensures bugs are spotted quickly and automatically before your employees or customers ever touch the software. And it prevents bigger problems down the road when you try to scale usage or add new features.",
-      "DevSquad gives you the proven proves and all the experience you need to build your software better, faster, and right the first time."
+      "Todos os nossos clientes recebem sua própria Equipa dedicada. Mesmo se precisares de 30 programadores, todos trabalhando sobre o teu projeto são separados em pequenas equipas ágeis de 2-6 pessoas. Uma equipa pequena testada em combate pode mover-se muito rápido e com mais precisão do que equipas grandes, tal como as Focas Marinhas.",
+      "No lugar do código cheio de bug, que podes ter recebido no passado, escrevemos software robusto e o testamos. Mas no lugar de apenas testar manualmente, escrevemos código adicional para testar o código da tua aplicação. Isto garante que os bugs são avistados rapidamente e automaticamente antes dos teus empregados e clientes cheguem alguma vez a tocar no software. E isto preveni problemas maiores mais tarde quando tentares escalar a utilização ou adicionar novas funcionalidades.",
+      "A DevSquad dá-te provas provadas e toda a experiência que precisares para construires o teu software melhor, mais rápido e direito a primeira vez."
     ],
     "region": [
-      "North America"
+      "América do Norte"
     ],
     "proficiencies": [
       "Vue.js",
