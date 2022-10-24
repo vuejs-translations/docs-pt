@@ -132,16 +132,16 @@
   {
     "name": "64 Robots",
     "logo": "64robots.svg",
-    "intro": "We're a team of Vue / Nuxt experts creating beautifully designed, cutting edge modern applications. Whether building something new, refactoring an existing project or moving to Vue/Nuxt 3, we'll give you a personal and thoughtful approach to development.",
+    "intro": "Somos uma equipa especialista em Vue e Nuxt criando e lapidando aplicações modernas lindamente desenhadas. Seja construindo algo novo, refatorando um projeto existente ou movendo para Vue 3 e Nuxt 3, iremos dar-te uma abordagem pessoal e cuidadosa para o desenvolvimento.",
     "description": [
-      "We specialize in building Laravel APIs, Vue.js 2/3 SPAs, Nuxt.js 2/3 SSR applications, and Flutter mobile applications.",
-      "We love working with companies of all sizes. We've guided early-stage, funded startups to a successful launch and helped large international companies refactor and rebuild existing products to scale into the future. Whatever your needs, we'll help you make the right technology decisions and build a polished product that will put you on the path to success.",
-      "We set ourselves apart by our level of involvement in your product. Think of us as an extension of your team. Whether augmenting an existing team or stepping in as de facto CTO to make the technical decisions, we're there for you. We're selective in the products that we take on, as we truly want to believe in our work and do everything we can to make them successful. Your success is our success."
+      "Nos especializamos em construir APIs em Laravel, SPAs em Vue.js 2 e Vue.js 3, Aplicações de SSR em Nuxt.js 2 e Nuxt.js 3, e Aplicações Móveis em Flutter.",
+      "Nós amamos trabalhar com empresas de todos os tamanhos. Temos guiado novas empresas seus primeiros estágios para um lançamento bem-sucedido e ajudado grandes empresas internacionais a refatorar e reconstruir produtos existentes para escalarem no futuro. Seja qual for as tuas necessidades, iremos ajudar-te a tomar as decisões corretas a respeito da tecnologia e ajudar-te a construir um produto polido que colocar-te-á no caminho para o sucesso.",
+      "Nós colocamos a nós mesmos à parte pelo nosso nível de envolvimento no teu produto. Pense em nós como uma extensão da tua equipa. Seja aumentando uma equipa existente ou intervindo como CTO de facto para tomar as decisões técnicas, estamos lá por ti. Somos seletivos nos produtos que aceitamos, já que nós sinceramente queremos acreditar no nosso trabalho e fazer tudo que podermos para torná-los bem-sucedido. O teu sucesso é o nosso sucesso."
     ],
     "region": [
-      "North America",
-      "Europe",
-      "Africa"
+      "América do Norte",
+      "Europa",
+      "África"
     ],
     "proficiencies": [
       "Vue",
