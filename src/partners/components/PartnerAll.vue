@@ -19,13 +19,10 @@ function includes(a: string, b: string) {
 </script>
 
 <template>
-  <PartnerHero title="Browser All Partners" />
+  <PartnerHero title="Pesquisar Todos Parceiros" />
   <div class="container">
     <VTIconSearch class="icon" />
-    <input
-      placeholder="Search partners by name or region"
-      v-model="query"
-    />
+    <input placeholder="Procurar parceiros pelo nome ou por região" v-model="query" />
     <PartnerList :filter="filter" />
   </div>
   <PartnerJoin />
