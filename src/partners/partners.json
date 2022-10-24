@@ -185,17 +185,17 @@
     "name": "Tighten",
     "logo": "tighten.svg",
     "flipLogo": true,
-    "intro": "Treat people well, solve the right problems, build spectacular software—that's how we roll. We're ultra-focused and deeply experienced in the technology powering modern business, including Vue.js. Via our signature method, our meticulously assembled team delivers unparalleled service, helping you do more with your software, and do right by your business.",
+    "intro": "Tratar bem as pessoas, resolver os problemas certos, construir software espetacular—é como trabalhamos. Somos ultra concentrados e verdadeiramente experientes em tecnologia alimentando negócios modernos, incluindo Vue.js. Através do nosso método de assinatura, a nossa equipa meticulosamente reunida entrega serviço em igual, ajudando-te a fazer mais com o teu software, e fazer direto pelo teu negócio.",
     "description": [
-      "Empathetically opinionated, expertly executed development. That's what we deliver.",
-      "At Tighten, we sweat the hell out of the details to give your app the fit-and-finish today's users expect, while giving you the clarity and confidence to charge ahead.",
-      "Whether you’re looking to simply enhance a user interface or build a sophisticated JavaScript-based application, we’ve got you covered. Vue.js is a flexible and robust framework, capable of powering a complex single-page application. We typically combine it with a Laravel-based API.",
-      "If you're building a development team, you know it takes time and diligence, and it could be the make-or-break factor for your business. Companies turn to Tighten at key turning points, to propel their technology forward while they assemble the <b>right</b> team for their business."
+      "Empaticamente opiniosa, desenvolvimento executado habilmente. É o que nós entregamos.",
+      "Na Tighten, nós preocupamos com os detalhes para dar a tua aplicação o toque final esperado pelos utilizadores de hoje, enquanto damos-te a clareza e confiança para ires adiante.",
+      "Quer estejas procurando simplesmente melhorar uma interface de utilizador ou construir uma aplicação baseada em JavaScript sofisticada, nós cobrimos-te. A Vue.js é uma abstração flexível e robusta, capaz de alimentar uma aplicação de página única complexa. Nós normalmente a combinamos com uma API baseada em Laravel.",
+      "Se estás construindo uma equipa de desenvolvimento, sabes que leva tempo e diligência, e poderia ser o fator decisivo para o teu negócio. As empresas viram-se para a Tighten no pontos de viragem chave, para impulsionar a sua tecnologia adiante enquanto reúnem a equipa <b>certa</b> para o seu negócio."
     ],
     "region": [
-      "North America",
-      "Europe",
-      "Latin America"
+      "América do Norte",
+      "Europa",
+      "América Latina"
     ],
     "proficiencies": [
       "Vue",
