@@ -2,24 +2,24 @@
 aside: false
 ---
 
-# Translations <sup class="vt-badge wip" />
+# Traduções <sup class="vt-badge wip" />
 
-## Languages
+## Línguas
 
 - [✅ English](https://vuejs.org/)
 - [✅ 简体中文](https://cn.vuejs.org/)
 
-## Translations
+## Traduções
 
-The Vue documentation has recently undergone a major revision, so there are no completed translations in other languages yet.
+A documentação da Vue tem passado recentemente por uma revisão maior, assim ainda não existe traduções concluídas em outras línguas.
 
-Translation efforts are managed in the [vuejs-translations](https://github.com/vuejs-translations/) GitHub organization. There are currently the following translations underway. If you want to contribute, you can open an issue to express your interest.
+Os esforços de tradução são dirigidos na organização da GitHub [vuejs-translations](https://github.com/vuejs-translations/). Existem atualmente as seguintes traduções em curso. Se quiseres contribuir, podes abrir uma questão ("issue") para expressar o teu interesse.
 
 - [🚧 Simplified Chinese](https://github.com/vuejs-translations/docs-zh-cn)
 - [🚧 Japanese](https://github.com/vuejs-translations/docs-ja)
 
-## Starting a new Translation
+## Começando uma nova Tradução
 
-We are hoping to establish a standard workflow for community translations so that we can more easily coordinate community efforts. Please keep an eye on the [Translation Guidelines repo](https://github.com/vuejs-translations/guidelines/blob/main/README.md) for updates.
+Nós estamos esperando estabelecer um fluxo de trabalho padrão para as traduções da comunidade para que possamos mais facilmente coordenar os esforços da comunidade. Por favor vigie o [repositório das Diretrizes de Tradução](https://github.com/vuejs-translations/guidelines/blob/main/README.md) por atualizações
 
-In the meanwhile, if you are interested in starting translation for a new language, please open a thread in the [Discussions](https://github.com/vuejs-translations/guidelines/discussions) (and check if there is already one created for your language). This can help you find fellow collaborators and avoid duplicated efforts.
+Entretanto, se estiveres interessado em começar a tradução para uma nova linguagem, por favor abra uma linha nas [Discussões](https://github.com/vuejs-translations/guidelines/discussions) (e consulte se já existe uma criada para a tua linguagem). Isto pode ajudar-te a encontrar colaboradores camaradas e evitar esforços duplicados.
