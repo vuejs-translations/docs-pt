@@ -1,8 +1,8 @@
-﻿# Plugins
+﻿# Extensões
 
-## Introduction
+## Introdução
 
-Plugins are self-contained code that usually add app-level functionality to Vue. This is how we install a plugin:
+As extensões são códigos auto-contidos que normalmente adicionam funcionalidade de nível de aplicação para a Vue. Isto é como instalamos uma extensão:
 
 ```js
 import { createApp } from 'vue'
@@ -10,61 +10,55 @@ import { createApp } from 'vue'
 const app = createApp({})
 
 app.use(myPlugin, {
-  /* optional options */
+  /* opções opcionais */
 })
 ```
 
-A plugin is defined as either an object that exposes an `install()` method, or simply a function that acts as the install function itself. The install function receives the [app instance](/api/application.html) along with additional options passed to `app.use()`, if any:
+Uma extensão é definida tanto como um objeto que expõe um método `install()`, ou simplesmente como uma função que atua como a própria função de instalação. A função de instalação recebe a [instância de aplicação](/api/application.html) juntamente com as opções adicionais passadas para `app.use()`, se houverem:
 
 ```js
 const myPlugin = {
   install(app, options) {
-    // configure the app
+    // configura a aplicação
   }
 }
 ```
 
-There is no strictly defined scope for a plugin, but common scenarios where plugins are useful include:
+Não existe escopo definido estritamente para uma extensão, mas os cenários comuns onde as extensões são úteis incluem:
 
-1. Register one or more global components or custom directives with [`app.component()`](/api/application.html#app-component) and [`app.directive()`](/api/application.html#app-directive).
+1. Registar um ou mais componentes globais ou diretivas personalizas com [`app.component()`](/api/application.html#app-component) e [`app.directive()`](/api/application.html#app-directive).
 
-2. Make a resource [injectable](/guide/components/provide-inject.html) throughout the app by calling [`app.provide()`](/api/application.html#app-provide).
+2. Tornar um recurso [injetável](/guide/components/provide-inject.html) em toda a aplicação chamando [`app.provide()`](/api/application.html#app-provide).
 
-3. Add some global instance properties or methods by attaching them to [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+3. Adicionar propriedades de instância global ou métodos atribuindo-os à [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
 
-4. A library that needs to perform some combination of the above (e.g. [vue-router](https://github.com/vuejs/vue-router-next)).
+4. Uma biblioteca que precisa realizar alguma combinação do que está acima (por exemplo [vue-router](https://github.com/vuejs/vue-router-next)).
 
-## Writing a Plugin
+## Escrevendo uma Extensão
 
-In order to better understand how to create your own Vue.js plugins, we will create a very simplified version of a plugin that displays `i18n` (short for [Internationalization](https://en.wikipedia.org/wiki/Internationalization_and_localization)) strings.
+Para melhor entender como criar as tuas próprias extensões de Vue.js, criaremos uma versão muito simplificada de uma extensão que exibe sequências de caracteres de `i18n` (forma abreviada para [Internacionalização](https://en.wikipedia.org/wiki/Internationalization_and_localization)).
 
-Let's begin by setting up the plugin object. It is recommended to create it in a separate file and export it, as shown below to keep the logic contained and separate.
+Vamos começar definindo o objeto da extensão. É recomendado criá-lo em um ficheiro separado e exportá-lo, como mostrado abaixo para manter a lógica contida e separada.
 
 ```js
 // plugins/i18n.js
 export default {
   install: (app, options) => {
-    // Plugin code goes here
+    // O código da extensão vai cá
   }
 }
 ```
 
-We want to create a translation function. This function will receive a dot-delimited `key` string, which we will use to look up the translated string in the user-provided options. This is the intended usage in templates:
-
-```vue-html
-<h1>{{ $translate('greetings.hello') }}</h1>
-```
-
-Since this function should be globally available in all templates, we will make it so by attaching it to `app.config.globalProperties` in our plugin:
+Nós queremos fazer uma função para traduzir as chaves disponíveis para aplicação inteira, assim exporemos utilizando `app.config.globalProperties`. Esta função receberá uma sequência de caracteres `key` delimitada por ponto, a qual utilizaremos para procurar a sequência de caracteres traduzida nas opções fornecidas pelo utilizador.
 
 ```js{4-11}
 // plugins/i18n.js
 export default {
   install: (app, options) => {
-    // inject a globally available $translate() method
+    // injeta um método "$translate()" disponível globalmente
     app.config.globalProperties.$translate = (key) => {
-      // retrieve a nested property in `options`
-      // using `key` as the path
+      // recupera uma propriedade encaixada nas `options`
+      // utilizando `key` como caminho
       return key.split('.').reduce((o, i) => {
         if (o) return o[i]
       }, options)
@@ -73,9 +67,7 @@ export default {
 }
 ```
 
-Our `$translate` function will take a string such as `greetings.hello`, look inside the user provided configuration and return the translated value.
-
-The object containing the translated keys should be passed to the plugin during installation via additional parameters to `app.use()`:
+A extensão espera que os utilizadores passem um objeto contendo as chaves traduzidas através das opções quando eles utilizarem a extensão, assim deveria ser utilizado desta maneira:
 
 ```js
 import i18nPlugin from './plugins/i18n'
@@ -87,17 +79,21 @@ app.use(i18nPlugin, {
 })
 ```
 
-Now, our initial expression `$translate('greetings.hello')` will be replaced by `Bonjour!` at runtime.
+A nossa função `$translate` pegará uma sequência de caracteres tal como `greetings.hello`, procura dentro da configuração fornecida pelo utilizador e retorna o valor traduzido - neste caso, `Bonjour!`:
 
-See also: [Augmenting Global Properties](/guide/typescript/options-api.html#augmenting-global-properties) <sup class="vt-badge ts" />
+```vue-html
+<h1>{{ $translate('greetings.hello') }}</h1>
+```
+
+Consulte também: [Aumentando Propriedades Globais](/guide/typescript/options-api.html#aumentando-propriedades-globais) <sup class="vt-badge ts" />
 
 :::tip
-Use global properties scarcely, since it can quickly become confusing if too many global properties injected by different plugins are used throughout an app.
+Utilize as propriedades globais cuidadosamente, já que pode rapidamente tornar-se as coisas confusas se muitas propriedades globais injetadas por extensões diferentes forem utilizadas em toda uma aplicação.
 :::
 
-### Provide / Inject with Plugins
+### Fornecer / Injetar com as Extensões
 
-Plugins also allow us to use `inject` to provide a function or attribute to the plugin's users. For example, we can allow the application to have access to the `options` parameter to be able to use the translations object.
+As extensões também permitem-nos utilizar `inject` para fornecer uma função ou atributo aos utilizadores da extensão. Por exemplo, podemos permitir que a aplicação tenha acesso ao parâmetro `options` para ser capaz de utilizar o objeto de traduções.
 
 ```js{10}
 // plugins/i18n.js
@@ -114,7 +110,7 @@ export default {
 }
 ```
 
-Plugin users will now be able to inject the plugin options into their components using the `i18n` key:
+Os utilizadores da extensão agora serão capazes de injetar as opções da extensão em seus componentes utilizando a chave `i18n`:
 
 <div class="composition-api">
 
