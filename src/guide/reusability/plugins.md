@@ -49,7 +49,13 @@ export default {
 }
 ```
 
-Nós queremos fazer uma função para traduzir as chaves disponíveis para aplicação inteira, assim exporemos utilizando `app.config.globalProperties`. Esta função receberá uma sequência de caracteres `key` delimitada por ponto, a qual utilizaremos para procurar a sequência de caracteres traduzida nas opções fornecidas pelo utilizador.
+Nós queremos criar uma função de tradução. Esta função receberá uma sequência de caracteres `key` delimitada por ponto, a qual utilizaremos para procurar a sequência de caracteres traduzida nas opções fornecidas pelo utilizador. Isto é a utilização tencionada nos modelos de marcação:
+
+```vue-html
+<h1>{{ $translate('greetings.hello') }}</h1>
+```
+
+Já que esta função deve estar disponível globalmente em todos os modelos de marcação, faremos isto atribuindo-a ao `app.config.globalProperties` na nossa extensão:
 
 ```js{4-11}
 // plugins/i18n.js
@@ -67,7 +73,9 @@ export default {
 }
 ```
 
-A extensão espera que os utilizadores passem um objeto contendo as chaves traduzidas através das opções quando eles utilizarem a extensão, assim deveria ser utilizado desta maneira:
+A nossa função `$translate()` receberá uma sequência de caracteres tal como `greetings.hello`, procura dentro da configuração fornecida pelo utilizar e retorna o valor traduzido.
+
+O objeto contendo as chaves traduzidas devem ser passados para extensão durante a instalação através de parâmetros adicionais para `app.use()`:
 
 ```js
 import i18nPlugin from './plugins/i18n'
@@ -79,11 +87,7 @@ app.use(i18nPlugin, {
 })
 ```
 
-A nossa função `$translate` pegará uma sequência de caracteres tal como `greetings.hello`, procura dentro da configuração fornecida pelo utilizador e retorna o valor traduzido - neste caso, `Bonjour!`:
-
-```vue-html
-<h1>{{ $translate('greetings.hello') }}</h1>
-```
+Agora, a nossa expressão inicial `$translate('greetings.hello')` será substituído pelo `Bonjour!` em tempo de execução.
 
 Consulte também: [Aumentando Propriedades Globais](/guide/typescript/options-api.html#aumentando-propriedades-globais) <sup class="vt-badge ts" />
 
