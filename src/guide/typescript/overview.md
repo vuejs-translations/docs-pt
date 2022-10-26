@@ -129,8 +129,7 @@ export default defineComponent({
 ```
 
 Consulte também:
-
-- [Nota sobre a Sacudidura de Árvore de Webpack](/api/general.html#nota-sobre-a-sacudidura-de-árvore-de-webpack)
+- [Nota sobre a Sacudidura de Árvore de Webpack](/api/general.html#note-on-webpack-treeshaking)
 - [Testes de Tipo para `defineComponent`](https://github.com/vuejs/core/blob/main/test-dts/defineComponent.test-d.tsx)
 
 :::tip
