@@ -20,7 +20,7 @@ Com uma configuração baseada na Vite, o servidor de desenvolvimento e o empaco
 
 - Se estiveres utilizando Componentes de Ficheiro Único, utilize o utilitário [`vue-tsc`](https://github.com/johnsoncodehk/volar/tree/master/packages/vue-tsc) para verificação de tipo na linha de comando e para geração de declaração de tipo. O `vue-tsc` é um embrulhador em torno de `tsc`, a interface de linha de comando do próprio TypeScript. Ele funciona em grande parte da mesma maneira que a `tsc` exceto que suporta Componentes de Ficheiro Único de Vue além de ficheiros de TypeScript. Tu podes executar `vue-tsc` no modo observador em paralelo ao servidor de desenvolvimento da Vite.
 
-- A Interface de Linha de Comando da Vue também fornece suporte a TypeScript, mas não é mais recomendado. Consulte as [notas abaixo]()
+- A Interface de Linha de Comando da Vue também fornece suporte a TypeScript, mas não é mais recomendado. Consulte as [notas abaixo](#nota-sobre-a-linha-de-comando-de-vue-e-o-ts-loader)
 
 ### Suporte de IDE
 
