@@ -241,16 +241,16 @@
   {
     "name": "WebReinvent",
     "logo": "webreinvent.png",
-    "intro": "WebReinvent is a software development company that provides a range of end-to-end software products, real-time apps, multi-tenant SaaS applications, low latency API & mobile app development services. We have delivered MVP to enterprise-level software globally from startup to MNC. Email us, and let's build your software product.",
+    "intro": "WebReinvent é uma empresa de desenvolvimento de software que fornece uma gama de produtos de software do princípio ao fim, aplicações que trabalham em tempo real, aplicações SaaS de vários inquilinos, API de latência baixa e serviços de desenvolvimento de aplicações para dispositivos móveis. Nós temos entregado MVP à software de nível empresarial globalmente desde novas empresas à MNC. Envie-nos um correio eletrónico, e deixe-nos construir a teu produto de software.",
     "description": [
-      "WebReinvent is a process-oriented software development company that provides a range of end-to-end software products, real-time apps, multi-tenant SaaS applications, low latency API & mobile apps development services. Our team is well versed with VueJs and its ecosystem. We have delivered MVP to enterprise-level software from startup to MNC. Not only client projects we have developed multiple open-source products which are based on VueJs. We are proud to mention that we are one of the few official Laravel & NuxtJS partners too.",
-      "Our team loves to follow the industry standards, some of which are managing git repo, code review, release deployments via CI/CD (DevOps), automated software testing, maintaining detailed technical documentation, application performance monitoring, etc.",
-      "Email us, and let's build your software product."
+      "WebReinvent é uma empresa de desenvolvimento de software orientada a processo que fornece uma gama de produtos de software do princípio ao fim, aplicações que trabalham em tempo real, aplicações SaaS de vários inquilinos, API de latência baixa e serviços de desenvolvimento de aplicações para dispositivos móveis. A nossa equipa é bem versada em Vue.js e seu ecossistema. Nós temos entregado MVP à software de nível empresarial globalmente desde novas empresas à MNC. Não somente projetos de cliente, temos desenvolvido vários produtos de código-aberto os quais são baseados na Vue.js. Nós estamos orgulhosos em mencionar que somos uma dos poucos parceiros oficiais da Laravel e também da NuxtJS.",
+      "A nossa equipa ama seguir os padrões da industria, alguns dos quais são de gestão de repositório de git, revisão de código, desdobramento de lançamento através CI/CD (DevOps), testagem de software automatizada, manutenção detalhada da documentação técnica, acompanhamento do desempenho da aplicação, etc.",
+      "Envie-nos um correio eletrónico, e deixe-nos construir a teu produto de software."
     ],
     "region": [
-      "North America",
-      "Asia",
-      "Europe"
+      "América do Norte",
+      "Ásia",
+      "Europa"
     ],
     "proficiencies": [
       "Vue",
