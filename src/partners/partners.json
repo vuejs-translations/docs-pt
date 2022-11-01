@@ -270,12 +270,12 @@
     "name": "Active Logic",
     "logo": "activelogic.png",
     "flipLogo": true,
-    "intro": "We’re not just an extension of your Vue.JS development team, we’re a rapid-speed injector. Since 2014, we have been providing premium software development & staff augmentation solutions for various organizations nationwide. By utilizing our 100% on-shore development team, we can conduct the groundwork for a new application, or continue to engineer existing software that needs modifications.",
+    "intro": "Não somos apenas uma extensão da tua equipa de desenvolvimento de Vue.js, somos um injetor de velocidade rápida. Desde 2014, temos estado a fornecer desenvolvimento de software premium e soluções de aumento de pessoal para várias organizações a nível nacional. Com a utilização da equipa de desenvolvimento 100% em terra, podemos conduzir o trabalho preliminar para uma nova aplicação, ou continuar a engendrar software existente que precisa de modificações.",
     "description": [
-      "Headquartered in the heart of America, our mission is simple - provide nationwide organizations with tailored, technical solutions; one system at a time. We are proud to say that we continue to fulfill our mission on a daily basis.",
-      "We believe that a project, regardless of size or tech stack, should always be managed by a dedicated Software Lead who works closely with you and your team. Their expertise and guidance will better allow you to focus on your daily business operations while we do the heavy lifting.",
-      "We have produced over 200 final projects for our clients in the past 8 years, all of which follow well-known industry standards to ensure their functionality, security, and scalability.",
-      "Optimizing your business operations has never been easier; reach out to us here at Active Logic today!"
+      "Sediados no coração da América, nossa missão é simples - fornecer as organizações a nível nacional soluções técnicas feitas à medida; um sistema de cada vez. Nós estamos orgulhosos em dizer que continuamos a cumprir a nossa missão diariamente.",
+      "Nós acreditamos que um projeto, independente do tamanho ou pilha tecnológica, deveria sempre ser administrado por um Líder de Software dedicado que trabalha bem de perto contigo e a tua equipa. A sua competência e orientação irá permitir-te concentrares-te melhor nos tuas operações de negócios diários enquanto fazemos levantamento de pesos.",
+      "Nós temos produzido mais de 200 projetos finais para os nossos clientes nos últimos 8 anos, todos dos quais seguem padrões de industria bem conhecido para garantir sua funcionalidade, segurança, e escalabilidade.",
+      "A otimização das tuas operações de negócio nunca foi tão fácil; encontre-nos hoje aqui na Active Logic!"
     ],
     "proficiencies": [
       "Vue",
@@ -289,7 +289,7 @@
       ".NET"
     ],
     "region": [
-      "North America"
+      "América do Norte"
     ],
     "location": [
       "Leadwood, Kansas, USA"
