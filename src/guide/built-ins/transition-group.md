@@ -4,7 +4,7 @@ import ListMove from './transition-demos/ListMove.vue'
 import ListStagger from './transition-demos/ListStagger.vue'
 </script>
 
-# TransitionGroup ou Grupo de Transição
+# Grupo de Transição
 
 `<TransitionGroup>` é um componente embutido desenhado para animação da inserção, remoção, e mudança da ordem dos elementos ou componentes que são interpretados em uma lista.
 
