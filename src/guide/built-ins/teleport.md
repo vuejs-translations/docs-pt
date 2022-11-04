@@ -1,4 +1,4 @@
-# Teleport ou Teletransportar
+# Teletransporte
 
  <VueSchoolLink href="https://vueschool.io/lessons/vue-3-teleport" title="Aula Gratuita sobre Teleport de Vue.js"/>
 
