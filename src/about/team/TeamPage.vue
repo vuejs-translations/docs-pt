@@ -44,7 +44,7 @@ import type { Member } from './Member'
       <template #title>Parceiros da Comunidade</template>
       <template
         #lead
-      >Alguns membros da comunidade de Vue a tem enriquecido tanto, que merecem menção especial. Temos desenvolvido um relacionamento mais intimo com estes parceiros chave, muitas vezes coordenando com eles a respeito de futuras funcionalidades e novidades.</template>
+      >Alguns membros da comunidade de Vue a tem enriquecido tanto, que merecem menção especial. Temos desenvolvido um relacionamento mais intimo com estes parceiros chaves, muitas vezes coordenando com eles a respeito de futuras funcionalidades e novidades.</template>
     </TeamList>
   </div>
 </template>
