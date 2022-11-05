@@ -9,10 +9,10 @@
         "url": "https://github.com/vuejs/events"
       }
     ],
-    "location": "Raleigh, NC, USA",
+    "location": "Raleigh, NC, EUA",
     "languages": [
-      "English",
-      "Spanish"
+      "Inglês",
+      "Espanhol"
     ],
     "socials": {
       "github": "mlama007",
@@ -35,7 +35,7 @@
     ],
     "location": "United Kingdom",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "socials": {
       "github": "danielroe",
@@ -54,9 +54,9 @@
         "url": "https://us.vuejs.org/"
       }
     ],
-    "location": "Atlanta, GA, USA",
+    "location": "Atlanta, GA, EUA",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "socials": {
       "twitter": "prpatel"
@@ -73,9 +73,9 @@
         "url": "https://us.vuejs.org/"
       }
     ],
-    "location": "Atlanta, GA, USA",
+    "location": "Atlanta, GA, EUA",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "socials": {
       "twitter": "vincentmayers"
@@ -94,9 +94,9 @@
     ],
     "location": "Amsterdam, Netherlands",
     "languages": [
-      "Dutch",
-      "English",
-      "German"
+      "Neerlandês",
+      "Inglês",
+      "Alemão"
     ],
     "socials": {
       "twitter": "lukevscostas",
@@ -114,11 +114,11 @@
         "url": "https://vuejs.amsterdam"
       }
     ],
-    "location": "Amsterdam, Netherlands",
+    "location": "Amesterdão, Países Baixos",
     "languages": [
-      "Dutch",
-      "English",
-      "German"
+      "Neerlandês",
+      "Inglês",
+      "Alemão"
     ],
     "socials": {
       "twitter": "josgerards88",
@@ -139,10 +139,10 @@
         "url": "https://nativescript-vue.org/"
       }
     ],
-    "location": "Boston, MA, USA",
+    "location": "Boston, MA, EUA",
     "languages": [
-      "English",
-      "French"
+      "Inglês",
+      "Francês"
     ],
     "socials": {
       "github": "jlooper",
@@ -167,10 +167,10 @@
         "url": "https://github.com/alexjoverm/vue-testing-series"
       }
     ],
-    "location": "Alicante, Spain",
+    "location": "Alicante, Espanha",
     "languages": [
-      "Spanish",
-      "English"
+      "Espanhol",
+      "Inglês"
     ],
     "website": {
       "label": "alexjover.com",
@@ -186,10 +186,10 @@
     "title": "#1 Irmão da Nuxt",
     "company": "NuxtJS",
     "companyLink": "https://nuxtjs.org",
-    "location": "Bordeaux, France",
+    "location": "Bordeaux, França",
     "languages": [
-      "French",
-      "English"
+      "Francês",
+      "Inglês"
     ],
     "projects": [
       {
@@ -215,10 +215,10 @@
     "title": "#1 Irmão da Nuxt",
     "company": "NuxtJS",
     "companyLink": "https://nuxtjs.org",
-    "location": "Bordeaux, France",
+    "location": "Bordeaux, França",
     "languages": [
-      "French",
-      "English"
+      "Francês",
+      "Inglês"
     ],
     "projects": [
       {
@@ -244,7 +244,7 @@
     "title": "Pivô Viral",
     "location": "Kingston, Jamaica",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "projects": [
       {
@@ -268,8 +268,8 @@
     "companyLink": "https://fandogh.org",
     "location": "Tehran, Iran",
     "languages": [
-      "Persian",
-      "English"
+      "Persa",
+      "Inglês"
     ],
     "projects": [
       {
@@ -293,10 +293,10 @@
   {
     "name": "Xin Du",
     "title": "Especialista em Nuxt",
-    "location": "Dublin, Ireland",
+    "location": "Dublin, Irlanda",
     "languages": [
-      "Chinese",
-      "English"
+      "Chinês",
+      "Inglês"
     ],
     "projects": [
       {
@@ -320,8 +320,8 @@
     "companyLink": "https://www.ele.me",
     "location": "Shanghai, China",
     "languages": [
-      "Chinese",
-      "English"
+      "Chinês",
+      "Inglês"
     ],
     "projects": [
       {
@@ -356,10 +356,10 @@
         "url": "https://node-atlas.js.org/"
       }
     ],
-    "location": "Annecy, France",
+    "location": "Annecy, França",
     "languages": [
-      "French",
-      "English"
+      "Francês",
+      "Inglês"
     ],
     "website": {
       "label": "blog.lesieur.name/",
@@ -373,10 +373,10 @@
   {
     "name": "ChangJoo Park",
     "title": "Organizador da Comunidade Coreana de Entusiastas de Vue",
-    "location": "Seoul, South Korea",
+    "location": "Seul, Coreia do Sul",
     "languages": [
-      "Korean",
-      "English"
+      "Coreano",
+      "Inglês"
     ],
     "projects": [
       {
@@ -402,10 +402,10 @@
     "title": "Diretor de Engenharia",
     "company": "Airbank",
     "companyLink": "https://www.joinairbank.com/",
-    "location": "João Pessoa, Brazil",
+    "location": "João Pessoa, Brasil",
     "languages": [
-      "Portuguese",
-      "English"
+      "Português",
+      "Inglês"
     ],
     "projects": [
       {
@@ -424,10 +424,10 @@
     "title": "Criador da Quasar do Espaço Profundo",
     "company": "Quasar Framework",
     "companyLink": "https://quasar.dev/",
-    "location": "Bucharest, Romania",
+    "location": "Bucareste, Roménia",
     "languages": [
-      "Romanian",
-      "English"
+      "Romeno",
+      "Inglês"
     ],
     "projects": [
       {
@@ -455,9 +455,9 @@
         "url": "https://vuejobs.com"
       }
     ],
-    "location": "Toronto, Canada",
+    "location": "Toronto, Canadá",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "socials": {
       "github": "JillzTom",
@@ -466,7 +466,7 @@
   },
   {
     "name": "Israel Ortuño",
-    "title": "Programador Web de Pilha Completa",
+    "title": "Programador de Web de Pilha Completa",
     "company": "Freelance",
     "projects": [
       {
@@ -474,10 +474,10 @@
         "url": "https://vuejobs.com"
       }
     ],
-    "location": "Alicante, Spain",
+    "location": "Alicante, Espanha",
     "languages": [
-      "Spanish",
-      "English"
+      "Espanhol",
+      "Inglês"
     ],
     "socials": {
       "github": "IsraelOrtuno",
@@ -489,9 +489,9 @@
     "title": "CEO",
     "company": "Vuetify LLC",
     "companyLink": "https://vuetifyjs.com",
-    "location": "Fort Worth, TX, USA",
+    "location": "Fort Worth, TX, EUA",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "projects": [
       {
@@ -506,14 +506,14 @@
   },
   {
     "name": "Grigoriy Beziuk",
-    "title": "Programador Web de Pilha Completa",
+    "title": "Programador de Web de Pilha Completa",
     "company": "Self Employed",
     "companyLink": "http://gbezyuk.ru",
-    "location": "Moscow, Russia",
+    "location": "Moscovo, Rússia",
     "languages": [
-      "Russian",
-      "German",
-      "English"
+      "Russo",
+      "Alemão",
+      "Inglês"
     ],
     "projects": [
       {
@@ -530,8 +530,8 @@
     "title": "Olho Aguçado da Tradução Russa",
     "location": "Krasnodar, Russia",
     "languages": [
-      "Russian",
-      "English"
+      "Russo",
+      "Inglês"
     ],
     "projects": [
       {
@@ -550,7 +550,7 @@
     "companyLink": "https://vuejsdevelopers.com/",
     "location": "Sydney, Australia",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "website": {
       "label": "vuejsdevelopers.com",
@@ -580,8 +580,8 @@
       }
     ],
     "languages": [
-      "Chinese",
-      "English"
+      "Chinês",
+      "Inglês"
     ],
     "socials": {
       "github": "egoist",
@@ -591,10 +591,10 @@
   {
     "name": "Alex Kyriakidis",
     "title": "Consultor / Autor",
-    "location": "Thessaloniki, Greece",
+    "location": "Thessaloniki, Grécia",
     "languages": [
       "el",
-      "English"
+      "Inglês"
     ],
     "socials": {
       "github": "hootlex",
@@ -628,9 +628,9 @@
     "title": "Educador & Consultor",
     "company": "Vue School",
     "companyLink": "https://vueschool.io/",
-    "location": "Oslo, Norway",
+    "location": "Oslo, Noruega",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "projects": [
       {
@@ -652,9 +652,9 @@
     "title": "O Servidor do Servidor",
     "company": "Michigan State University",
     "companyLink": "https://msu.edu/",
-    "location": "East Lansing, MI, USA",
+    "location": "East Lansing, MI, EUA",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "projects": [
       {
@@ -676,9 +676,9 @@
     "title": "Engenheiro de Software",
     "company": "Attest",
     "companyLink": "https://www.askattest.com/",
-    "location": "London, UK",
+    "location": "Londrês, Reino Unido",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "projects": [
       {
@@ -696,10 +696,10 @@
     "title": "Co-fundador da Vue Storefront",
     "company": "Divante",
     "companyLink": "https://divante.co/",
-    "location": "Wrocław, Poland",
+    "location": "Wrocław, Polonia",
     "languages": [
-      "Polish",
-      "English"
+      "Polaco",
+      "Inglês"
     ],
     "projects": [
       {
@@ -721,9 +721,9 @@
     "title": "Instrutor de Vue",
     "company": "Vue Mastery",
     "companyLink": "https://www.vuemastery.com/",
-    "location": "Orlando, FL, USA",
+    "location": "Orlando, FL, EUA",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "projects": [
       {
@@ -745,9 +745,9 @@
     "title": "Instrutor de Vue",
     "company": "Vue Mastery",
     "companyLink": "https://www.vuemastery.com/",
-    "location": "Orlando, FL, USA",
+    "location": "Orlando, FL, EUA",
     "languages": [
-      "English"
+      "Inglês"
     ],
     "projects": [
       {
