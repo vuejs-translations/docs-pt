@@ -38,7 +38,7 @@ const avatarUrl = computed(() => {
     </VTLink>
 
     <figure class="avatar">
-      <img class="avatar-img" :src="avatarUrl" :alt="`${member.name}'s Profile Picture`" />
+      <img class="avatar-img" :src="avatarUrl" :alt="`Foto de Perfil de ${member.name}`" />
     </figure>
 
     <div class="data">
