@@ -1,7 +1,7 @@
 [
   {
     "name": "Sarah Drasner",
-    "title": "Director of Engineering, Core Developer Web",
+    "title": "Diretora de Engenharia, Programadora de Web Principal",
     "company": "Google",
     "companyLink": "https://google.com",
     "projects": [
@@ -26,8 +26,10 @@
         "url": "https://github.com/sdras/ecommerce-netlify"
       }
     ],
-    "location": "Denver, CO, USA",
-    "languages": ["English"],
+    "location": "Denver, CO, EUA",
+    "languages": [
+      "Inglês"
+    ],
     "website": {
       "label": "sarah.dev",
       "url": "https://sarah.dev/"
@@ -40,20 +42,27 @@
   },
   {
     "name": "Chris Fritz",
-    "title": "Educator & Consultant",
-    "location": "Durham, NC, USA",
-    "languages": ["English", "German"],
+    "title": "Educador e Consultor",
+    "location": "Durham, NC, EUA",
+    "languages": [
+      "Inglês",
+      "Alemão"
+    ],
     "socials": {
       "github": "chrisvfritz",
       "twitter": "chrisvfritz"
     },
-    "reposPersonal": ["vue-enterprise-boilerplate"]
+    "reposPersonal": [
+      "vue-enterprise-boilerplate"
+    ]
   },
   {
     "name": "Blake Newman",
-    "title": "Performance Specializer & Code Deleter",
-    "location": "London, UK",
-    "languages": ["English"],
+    "title": "Especialista em Desempenho & Eliminador de Código",
+    "location": "Londrês, Reino Unido",
+    "languages": [
+      "Inglês"
+    ],
     "socials": {
       "github": "blake-newman",
       "twitter": "blakenewman"
@@ -61,7 +70,7 @@
   },
   {
     "name": "kingwl",
-    "title": "Software Development Engineer",
+    "title": "Engenheiro de Desenvolvimento de Software",
     "company": "Chaitin",
     "companyLink": "https://chaitin.cn/",
     "projects": [
@@ -71,14 +80,16 @@
       }
     ],
     "location": "Beijing, China",
-    "languages": ["Chinese"],
+    "languages": [
+      "Chinês"
+    ],
     "socials": {
       "github": "kingwl"
     }
   },
   {
     "name": "Alan Song",
-    "title": "Cofounder",
+    "title": "Co-fundador",
     "company": "Futurenda",
     "companyLink": "https://www.futurenda.com/",
     "projects": [
@@ -88,40 +99,52 @@
       }
     ],
     "location": "Hangzhou, China",
-    "languages": ["Chinese", "English"],
+    "languages": [
+      "Chinês",
+      "Inglês"
+    ],
     "socials": {
       "github": "fnlctrl"
     }
   },
   {
     "name": "defcc",
-    "title": "Details Deity & Bug Surgeon",
+    "title": "Divindade dos Detalhes e Cirurgião de Bug",
     "company": "zbj.com",
     "companyLink": "http://www.zbj.com/",
     "location": "Chongqing, China",
-    "languages": ["Chinese", "English"],
+    "languages": [
+      "Chinês",
+      "Inglês"
+    ],
     "socials": {
       "github": "defcc"
     }
   },
   {
     "name": "gebilaoxiong",
-    "title": "Issue Annihilator",
+    "title": "Aniquilador de Problema",
     "company": "zbj.com",
     "companyLink": "http://www.zbj.com/",
     "location": "Chongqing, China",
-    "languages": ["Chinese", "English"],
+    "languages": [
+      "Chinês",
+      "Inglês"
+    ],
     "socials": {
       "github": "gebilaoxiong"
     }
   },
   {
     "name": "Denis Karabaza",
-    "title": "Software Engineer",
+    "title": "Engenheiro de Software",
     "company": "Neolant",
     "companyLink": "http://neolant.ru/",
-    "location": "Dubna, Russia",
-    "languages": ["Russian", "English"],
+    "location": "Dubna, Rússia",
+    "languages": [
+      "Russo",
+      "Inglês"
+    ],
     "socials": {
       "github": "simplesmiler",
       "twitter": "simplesmiler"
@@ -129,7 +152,7 @@
   },
   {
     "name": "Edd Yerburgh",
-    "title": "Full Stack Developer",
+    "title": "Programador de Pilha Completa",
     "projects": [
       {
         "label": "vue-test-utils",
@@ -140,8 +163,10 @@
         "url": "https://github.com/avoriaz"
       }
     ],
-    "location": "London, UK",
-    "languages": ["English"],
+    "location": "Londres, Reino Unido",
+    "languages": [
+      "Inglês"
+    ],
     "socials": {
       "github": "eddyerburgh",
       "twitter": "EddYerburgh"
@@ -153,7 +178,7 @@
   },
   {
     "name": "Pine Wu",
-    "title": "Nomad",
+    "title": "Nómada",
     "projects": [
       {
         "label": "vetur",
@@ -161,7 +186,11 @@
       }
     ],
     "location": "Shanghai, China",
-    "languages": ["Chinese", "English", "Japanese"],
+    "languages": [
+      "Chinês",
+      "Inglês",
+      "Japonês"
+    ],
     "socials": {
       "github": "octref",
       "twitter": "octref"
@@ -169,7 +198,7 @@
   },
   {
     "name": "ULIVZ",
-    "title": "Senior Frontend Developer",
+    "title": "Programador de Frontend Sénior",
     "company": "AntFinancial",
     "companyLink": "https://www.antfin.com",
     "projects": [
@@ -179,12 +208,18 @@
       }
     ],
     "location": "Hangzhou, China",
-    "languages": ["Chinese", "English"],
-    "socials": { "github": "ulivz", "twitter": "_ulivz" }
+    "languages": [
+      "Chinês",
+      "Inglês"
+    ],
+    "socials": {
+      "github": "ulivz",
+      "twitter": "_ulivz"
+    }
   },
   {
     "name": "Katashin",
-    "title": "Software Engineer",
+    "title": "Engenheiro de Software",
     "company": "ClassDo",
     "companyLink": "https://classdo.com",
     "projects": [
@@ -201,8 +236,11 @@
         "url": "https://github.com/ktsn/vue-designer"
       }
     ],
-    "location": "Singapore",
-    "languages": ["Japanese", "English"],
+    "location": "Singapura",
+    "languages": [
+      "Japonês",
+      "Inglês"
+    ],
     "socials": {
       "github": "ktsn",
       "twitter": "ktsn"
@@ -210,11 +248,14 @@
   },
   {
     "name": "Michał Sajnóg",
-    "title": "Senior Frontend Developer / Team Leader",
+    "title": "Programador de Frontend Sénior / Líder de Equipa",
     "company": "Netguru",
     "companyLink": "https://netguru.co/",
-    "location": "Poznań, Poland",
-    "languages": ["Polish", "English"],
+    "location": "Poznań, Polónia",
+    "languages": [
+      "Polaco",
+      "Inglês"
+    ],
     "projects": [
       {
         "label": "eslint-plugin-vue",
