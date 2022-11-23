@@ -8,20 +8,20 @@ import { jobsPlugin } from './jobsMdPlugin'
 
 const nav = [
   {
-    text: 'Docs',
+    text: 'Documentação',
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
     items: [
-      { text: 'Guide', link: '/guide/introduction' },
-      { text: 'Tutorial', link: '/tutorial/' },
-      { text: 'Examples', link: '/examples/' },
-      { text: 'Quick Start', link: '/guide/quick-start' },
+      { text: 'Guia', link: '/guide/introduction' },
+      { text: 'Aulas', link: '/tutorial/' },
+      { text: 'Exemplos', link: '/examples/' },
+      { text: 'Inicio Rápido', link: '/guide/quick-start' },
       // { text: 'Style Guide', link: '/style-guide/' },
       {
-        text: 'Vue 2 Docs',
+        text: 'Documentação da Vue 2',
         link: 'https://v2.vuejs.org'
       },
       {
-        text: 'Migration from Vue 2',
+        text: 'Migração a partir da Vue 2',
         link: 'https://v3-migration.vuejs.org/'
       }
     ]
@@ -32,32 +32,32 @@ const nav = [
     link: '/api/'
   },
   {
-    text: 'Playground',
+    text: 'Zona de Experimentos',
     link: 'https://sfc.vuejs.org'
   },
   {
-    text: 'Ecosystem',
+    text: 'Ecossistema',
     activeMatch: `^/ecosystem/`,
     items: [
       {
-        text: 'Resources',
+        text: 'Recursos',
         items: [
-          { text: 'Partners', link: '/partners/' },
-          { text: 'Themes', link: '/ecosystem/themes' },
-          { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' },
-          { text: 'T-Shirt Shop', link: 'https://vue.threadless.com/' }
+          { text: 'Parceiros', link: '/partners/' },
+          { text: 'Temas', link: '/ecosystem/themes' },
+          { text: 'Empregos', link: 'https://vuejobs.com/?ref=vuejs' },
+          { text: 'Loja de T-Shirt', link: 'https://vue.threadless.com/' }
         ]
       },
       {
-        text: 'Official Libraries',
+        text: 'Bibliotecas Oficiais',
         items: [
           { text: 'Vue Router', link: 'https://router.vuejs.org/' },
           { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
-          { text: 'Tooling Guide', link: '/guide/scaling-up/tooling.html' }
+          { text: 'Guia do Ferramental', link: '/guide/scaling-up/tooling.html' }
         ]
       },
       {
-        text: 'Video Courses',
+        text: 'Cursos em Vídeo',
         items: [
           {
             text: 'Vue Mastery',
@@ -70,54 +70,54 @@ const nav = [
         ]
       },
       {
-        text: 'Help',
+        text: 'Ajuda',
         items: [
           {
-            text: 'Discord Chat',
+            text: 'Conversas na Discord',
             link: 'https://discord.com/invite/HBherRA'
           },
           {
-            text: 'GitHub Discussions',
+            text: 'Discussões na GitHub',
             link: 'https://github.com/vuejs/core/discussions'
           },
-          { text: 'DEV Community', link: 'https://dev.to/t/vue' }
+          { text: 'Comunidade na DEV', link: 'https://dev.to/t/vue' }
         ]
       },
       {
-        text: 'News',
+        text: 'Novidades',
         items: [
-          { text: 'Blog', link: 'https://blog.vuejs.org/' },
+          { text: 'Blogue', link: 'https://blog.vuejs.org/' },
           { text: 'Twitter', link: 'https://twitter.com/vuejs' },
-          { text: 'Newsletter', link: 'https://news.vuejs.org/' },
-          { text: 'Events', link: 'https://events.vuejs.org/' }
+          { text: 'Boletim Informativo', link: 'https://news.vuejs.org/' },
+          { text: 'Eventos', link: 'https://events.vuejs.org/' }
         ]
       }
     ]
   },
   {
-    text: 'About',
+    text: 'Sobre',
     activeMatch: `^/about/`,
     items: [
       { text: 'FAQ', link: '/about/faq' },
-      { text: 'Team', link: '/about/team' },
-      { text: 'Releases', link: '/about/releases' },
+      { text: 'Equipa', link: '/about/team' },
+      { text: 'Lançamentos', link: '/about/releases' },
       {
-        text: 'Community Guide',
+        text: 'Guia da Comunidade',
         link: '/about/community-guide'
       },
-      { text: 'Code of Conduct', link: '/about/coc' },
+      { text: 'Código de Conduta', link: '/about/coc' },
       {
-        text: 'The Documentary',
+        text: 'O Documentário',
         link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
       }
     ]
   },
   {
-    text: 'Sponsor',
+    text: 'Patrocinador',
     link: '/sponsor/'
   },
   {
-    text: 'Partners',
+    text: 'Parceiros',
     link: '/partners/',
     activeMatch: `^/partners/`
   }
@@ -126,100 +126,100 @@ const nav = [
 export const sidebar = {
   '/guide/': [
     {
-      text: 'Getting Started',
+      text: 'Começar',
       items: [
-        { text: 'Introduction', link: '/guide/introduction' },
+        { text: 'Introdução', link: '/guide/introduction' },
         {
-          text: 'Quick Start',
+          text: 'Inicio Rápido',
           link: '/guide/quick-start'
         }
       ]
     },
     {
-      text: 'Essentials',
+      text: 'O Essencial',
       items: [
         {
-          text: 'Creating an Application',
+          text: 'Criando uma Aplicação',
           link: '/guide/essentials/application'
         },
         {
-          text: 'Template Syntax',
+          text: 'Sintaxe do Modelo de Marcação',
           link: '/guide/essentials/template-syntax'
         },
         {
-          text: 'Reactivity Fundamentals',
+          text: 'Fundamentos de Reatividade',
           link: '/guide/essentials/reactivity-fundamentals'
         },
         {
-          text: 'Computed Properties',
+          text: 'Propriedades Computadas',
           link: '/guide/essentials/computed'
         },
         {
-          text: 'Class and Style Bindings',
+          text: 'Vinculação de Estilo e Classe',
           link: '/guide/essentials/class-and-style'
         },
         {
-          text: 'Conditional Rendering',
+          text: 'Interpretação Condicional',
           link: '/guide/essentials/conditional'
         },
-        { text: 'List Rendering', link: '/guide/essentials/list' },
+        { text: 'Interpretação de Lista', link: '/guide/essentials/list' },
         {
-          text: 'Event Handling',
+          text: 'Manipulação de Evento',
           link: '/guide/essentials/event-handling'
         },
-        { text: 'Form Input Bindings', link: '/guide/essentials/forms' },
+        { text: 'Vinculação de Entrada de Formulário', link: '/guide/essentials/forms' },
         {
-          text: 'Lifecycle Hooks',
+          text: 'Gatilhos do Ciclo de Vida',
           link: '/guide/essentials/lifecycle'
         },
-        { text: 'Watchers', link: '/guide/essentials/watchers' },
-        { text: 'Template Refs', link: '/guide/essentials/template-refs' },
+        { text: 'Observadores', link: '/guide/essentials/watchers' },
+        { text: 'Referências do Modelo de Marcação', link: '/guide/essentials/template-refs' },
         {
-          text: 'Components Basics',
+          text: 'Fundamentos de Componentes',
           link: '/guide/essentials/component-basics'
         }
       ]
     },
     {
-      text: 'Components In-Depth',
+      text: 'Componentes em Profundidade',
       items: [
         {
-          text: 'Registration',
+          text: 'Registo',
           link: '/guide/components/registration'
         },
-        { text: 'Props', link: '/guide/components/props' },
-        { text: 'Events', link: '/guide/components/events' },
+        { text: 'Propriedades', link: '/guide/components/props' },
+        { text: 'Eventos', link: '/guide/components/events' },
         {
-          text: 'Fallthrough Attributes',
+          text: 'Atributos',
           link: '/guide/components/attrs'
         },
-        { text: 'Slots', link: '/guide/components/slots' },
+        { text: 'Ranhuras', link: '/guide/components/slots' },
         {
-          text: 'Provide / inject',
+          text: 'Fornecer / Injetar',
           link: '/guide/components/provide-inject'
         },
         {
-          text: 'Async Components',
+          text: 'Componentes Assíncronos',
           link: '/guide/components/async'
         }
       ]
     },
     {
-      text: 'Reusability',
+      text: 'Reutilização',
       items: [
         {
-          text: 'Composables',
+          text: 'Constituíveis',
           link: '/guide/reusability/composables'
         },
         {
-          text: 'Custom Directives',
+          text: 'Diretivas Personalizadas',
           link: '/guide/reusability/custom-directives'
         },
-        { text: 'Plugins', link: '/guide/reusability/plugins' }
+        { text: 'Extensões (Plugins)', link: '/guide/reusability/plugins' }
       ]
     },
     {
-      text: 'Built-in Components',
+      text: 'Componentes Embutidos',
       items: [
         { text: 'Transition', link: '/guide/built-ins/transition' },
         {
@@ -232,39 +232,39 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Scaling Up',
+      text: 'Escalando à Cima',
       items: [
-        { text: 'Single-File Components', link: '/guide/scaling-up/sfc' },
-        { text: 'Tooling', link: '/guide/scaling-up/tooling' },
-        { text: 'Routing', link: '/guide/scaling-up/routing' },
+        { text: 'Componentes de Ficheiro Único', link: '/guide/scaling-up/sfc' },
+        { text: 'Ferramental', link: '/guide/scaling-up/tooling' },
+        { text: 'Roteamento', link: '/guide/scaling-up/routing' },
         {
-          text: 'State Management',
+          text: 'Gestão de Estado',
           link: '/guide/scaling-up/state-management'
         },
-        { text: 'Testing', link: '/guide/scaling-up/testing' },
+        { text: 'Testagem', link: '/guide/scaling-up/testing' },
         {
-          text: 'Server-Side Rendering (SSR)',
+          text: 'Interpretação no Lado do Servidor (SSR)',
           link: '/guide/scaling-up/ssr'
         }
       ]
     },
     {
-      text: 'Best Practices',
+      text: 'Boas Práticas',
       items: [
         {
-          text: 'Production Deployment',
+          text: 'Implementação em Produção',
           link: '/guide/best-practices/production-deployment'
         },
         {
-          text: 'Performance',
+          text: 'Desempenho',
           link: '/guide/best-practices/performance'
         },
         {
-          text: 'Accessibility',
+          text: 'Acessibilidade',
           link: '/guide/best-practices/accessibility'
         },
         {
-          text: 'Security',
+          text: 'Segurança',
           link: '/guide/best-practices/security'
         }
       ]
@@ -272,50 +272,50 @@ export const sidebar = {
     {
       text: 'TypeScript',
       items: [
-        { text: 'Overview', link: '/guide/typescript/overview' },
+        { text: 'Visão de Conjunto', link: '/guide/typescript/overview' },
         {
-          text: 'TS with Composition API',
+          text: 'TypeScript com a API de Composição',
           link: '/guide/typescript/composition-api'
         },
         {
-          text: 'TS with Options API',
+          text: 'TypeScript com a API de Opções',
           link: '/guide/typescript/options-api'
         }
       ]
     },
     {
-      text: 'Extra Topics',
+      text: 'Tópicos Adicionais',
       items: [
         {
-          text: 'Ways of Using Vue',
+          text: 'Maneiras de Utilizar Vue',
           link: '/guide/extras/ways-of-using-vue'
         },
         {
-          text: 'Composition API FAQ',
+          text: 'FAQ sobre a API de Composição',
           link: '/guide/extras/composition-api-faq'
         },
         {
-          text: 'Reactivity in Depth',
+          text: 'Reatividade em Profundidade',
           link: '/guide/extras/reactivity-in-depth'
         },
         {
-          text: 'Rendering Mechanism',
+          text: 'Mecanismo de Interpretação',
           link: '/guide/extras/rendering-mechanism'
         },
         {
-          text: 'Render Functions & JSX',
+          text: 'Funções "render" & JSX',
           link: '/guide/extras/render-function'
         },
         {
-          text: 'Vue and Web Components',
+          text: 'Vue e o Componentes de Web',
           link: '/guide/extras/web-components'
         },
         {
-          text: 'Animation Techniques',
+          text: 'Técnicas de Animação',
           link: '/guide/extras/animation'
         },
         {
-          text: 'Reactivity Transform',
+          text: 'Transformação de Reatividade',
           link: '/guide/extras/reactivity-transform'
         }
         // {
@@ -332,153 +332,153 @@ export const sidebar = {
   ],
   '/api/': [
     {
-      text: 'Global API',
+      text: 'API Global',
       items: [
-        { text: 'Application', link: '/api/application' },
+        { text: 'Aplicação', link: '/api/application' },
         {
-          text: 'General',
+          text: 'Geral',
           link: '/api/general'
         }
       ]
     },
     {
-      text: 'Composition API',
+      text: 'API de Composição',
       items: [
         { text: 'setup()', link: '/api/composition-api-setup' },
         {
-          text: 'Reactivity: Core',
+          text: 'Reatividade: Núcleo',
           link: '/api/reactivity-core'
         },
         {
-          text: 'Reactivity: Utilities',
+          text: 'Reatividade: Utilitários',
           link: '/api/reactivity-utilities'
         },
         {
-          text: 'Reactivity: Advanced',
+          text: 'Reatividade: Avançado',
           link: '/api/reactivity-advanced'
         },
         {
-          text: 'Lifecycle Hooks',
+          text: 'Gatilhos do Ciclo de Vida',
           link: '/api/composition-api-lifecycle'
         },
         {
-          text: 'Dependency Injection',
+          text: 'Injeção de Dependência',
           link: '/api/composition-api-dependency-injection'
         }
       ]
     },
     {
-      text: 'Options API',
+      text: 'API de Opções',
       items: [
-        { text: 'Options: State', link: '/api/options-state' },
-        { text: 'Options: Rendering', link: '/api/options-rendering' },
+        { text: 'Opções: Estado', link: '/api/options-state' },
+        { text: 'Opções: Interpretação', link: '/api/options-rendering' },
         {
-          text: 'Options: Lifecycle',
+          text: 'Opções: Ciclo de Vida',
           link: '/api/options-lifecycle'
         },
         {
-          text: 'Options: Composition',
+          text: 'Opções: Composição',
           link: '/api/options-composition'
         },
-        { text: 'Options: Misc', link: '/api/options-misc' },
+        { text: 'Opções: Misturar', link: '/api/options-misc' },
         {
-          text: 'Component Instance',
+          text: 'Instância do Componente',
           link: '/api/component-instance'
         }
       ]
     },
     {
-      text: 'Built-ins',
+      text: 'Embutidos',
       items: [
-        { text: 'Directives', link: '/api/built-in-directives' },
-        { text: 'Components', link: '/api/built-in-components' },
+        { text: 'Diretivas', link: '/api/built-in-directives' },
+        { text: 'Componentes', link: '/api/built-in-components' },
         {
-          text: 'Special Elements',
+          text: 'Elementos Especiais',
           link: '/api/built-in-special-elements'
         },
         {
-          text: 'Special Attributes',
+          text: 'Atributos Especiais',
           link: '/api/built-in-special-attributes'
         }
       ]
     },
     {
-      text: 'Single-File Component',
+      text: 'Componente de Ficheiro Único',
       items: [
-        { text: 'Syntax Specification', link: '/api/sfc-spec' },
+        { text: 'Especificação da Sintaxe', link: '/api/sfc-spec' },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
-        { text: 'CSS Features', link: '/api/sfc-css-features' }
+        { text: 'Funcionalidades de CSS', link: '/api/sfc-css-features' }
       ]
     },
     {
-      text: 'Advanced APIs',
+      text: 'APIs Avançadas',
       items: [
-        { text: 'Render Function', link: '/api/render-function' },
-        { text: 'Server-Side Rendering', link: '/api/ssr' },
-        { text: 'TypeScript Utility Types', link: '/api/utility-types' },
-        { text: 'Custom Renderer', link: '/api/custom-renderer' }
+        { text: 'Função "render"', link: '/api/render-function' },
+        { text: 'Interpretação no Lado do Servidor', link: '/api/ssr' },
+        { text: 'Tipos Utilitário de TypeScript', link: '/api/utility-types' },
+        { text: 'Interpretador Personalizado', link: '/api/custom-renderer' }
       ]
     }
   ],
   '/examples/': [
     {
-      text: 'Basic',
+      text: 'Fundamental',
       items: [
         {
           text: 'Hello World',
           link: '/examples/#hello-world'
         },
         {
-          text: 'Handling User Input',
+          text: 'Manipulando a Entrada do Utilizador',
           link: '/examples/#handling-input'
         },
         {
-          text: 'Attribute Bindings',
+          text: 'Vinculações de Atributo',
           link: '/examples/#attribute-bindings'
         },
         {
-          text: 'Conditionals and Loops',
+          text: 'Condicionais e Laços',
           link: '/examples/#conditionals-and-loops'
         },
         {
-          text: 'Form Bindings',
+          text: 'Vinculações de Formulário',
           link: '/examples/#form-bindings'
         },
         {
-          text: 'Simple Component',
+          text: 'Componente Simples',
           link: '/examples/#simple-component'
         }
       ]
     },
     {
-      text: 'Practical',
+      text: 'Aula Prática',
       items: [
         {
-          text: 'Markdown Editor',
+          text: 'Editor de Markdown',
           link: '/examples/#markdown'
         },
         {
-          text: 'Fetching Data',
+          text: 'Requisição de Dados',
           link: '/examples/#fetching-data'
         },
         {
-          text: 'Grid with Sort and Filter',
+          text: 'Grade com Ordenar e Filtrar',
           link: '/examples/#grid'
         },
         {
-          text: 'Tree View',
+          text: 'Visão de Árvore',
           link: '/examples/#tree'
         },
         {
-          text: 'SVG Graph',
+          text: 'Gráfico em SVG',
           link: '/examples/#svg'
         },
         {
-          text: 'Modal with Transitions',
+          text: 'Modal com Transições',
           link: '/examples/#modal'
         },
         {
-          text: 'List with Transitions',
+          text: 'Lista com Transições',
           link: '/examples/#list-transition'
         },
         {
@@ -492,19 +492,19 @@ export const sidebar = {
       text: '7 GUIs',
       items: [
         {
-          text: 'Counter',
+          text: 'Contador',
           link: '/examples/#counter'
         },
         {
-          text: 'Temperature Converter',
+          text: 'Conversor de Temperatura',
           link: '/examples/#temperature-converter'
         },
         {
-          text: 'Flight Booker',
+          text: 'Marcador de Voo',
           link: '/examples/#flight-booker'
         },
         {
-          text: 'Timer',
+          text: 'Temporizador',
           link: '/examples/#timer'
         },
         {
@@ -512,11 +512,11 @@ export const sidebar = {
           link: '/examples/#crud'
         },
         {
-          text: 'Circle Drawer',
+          text: 'Desenhador de Circulo',
           link: '/examples/#circle-drawer'
         },
         {
-          text: 'Cells',
+          text: 'Células',
           link: '/examples/#cells'
         }
       ]
@@ -524,26 +524,26 @@ export const sidebar = {
   ],
   '/style-guide/': [
     {
-      text: 'Style Guide',
+      text: 'Guia de Estilo',
       items: [
         {
-          text: 'Overview',
+          text: 'Visão de Conjunto',
           link: '/style-guide/'
         },
         {
-          text: 'A - Essential',
+          text: 'A - Indispensável',
           link: '/style-guide/rules-essential'
         },
         {
-          text: 'B - Strongly Recommended',
+          text: 'B - Fortemente Recomendado',
           link: '/style-guide/rules-strongly-recommended'
         },
         {
-          text: 'C - Recommended',
+          text: 'C - Recomendado',
           link: '/style-guide/rules-recommended'
         },
         {
-          text: 'D - Use with Caution',
+          text: 'D - Utilize com Cautela',
           link: '/style-guide/rules-use-with-caution'
         }
       ]
@@ -554,9 +554,9 @@ export const sidebar = {
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
-  lang: 'en-US',
+  lang: 'pt-PT',
   title: 'Vue.js',
-  description: 'Vue.js - The Progressive JavaScript Framework',
+  description: 'Vue.js - A Abstração Progressiva de JavaScript',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',
@@ -624,13 +624,13 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     editLink: {
-      repo: 'vuejs/docs',
-      text: 'Edit this page on GitHub'
+      repo: 'nazarepiedady/vue3-docs-pt',
+      text: 'Editar esta página na GitHub'
     },
 
     footer: {
       license: {
-        text: 'MIT License',
+        text: 'Licença MIT',
         link: 'https://opensource.org/licenses/MIT'
       },
       copyright: `Copyright © 2014-${new Date().getFullYear()} Evan You`
