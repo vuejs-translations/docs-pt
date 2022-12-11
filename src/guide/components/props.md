@@ -1,4 +1,4 @@
-# Propriedades
+# Propriedades {#props}
 
 > Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
 
@@ -6,7 +6,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/vue-3-reusable-components-with-props" title="Aula Gratuita Sobre Propriedades de Vue.js"/>
 </div>
 
-## Declaração de Propriedades
+## Declaração de Propriedades {#props-declaration}
 
 Os componentes de Vue requerem declaração de propriedades explícita para que a Vue saiba quais propriedades externas passadas para o componente devem ser tratadas como atributos que caiem (os quais discutiremos na [sua secção dedicada](/guide/components/attrs)).
 
@@ -96,7 +96,7 @@ Isto não apenas documenta o teu componente, mas também avisará outros program
 
 <div class="options-api">
 
-Consulte também: [Tipando Propriedades de Componente](/guide/typescript/options-api.html#tipando-propriedades-de-componente) <sup class="vt-badge ts" />
+Consulte também: [Atribuindo Tipos as Propriedades de Componente](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
@@ -113,13 +113,13 @@ defineProps<{
 </script>
 ```
 
-Mais detalhes: [Tipando Propriedades de Componente](/guide/typescript/composition-api.html#tipando-propriedades-de-componente) <sup class="vt-badge ts" />
+Mais detalhes: [Atribuindo Tipos as Propriedades de Componente](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
-## Propriedade Passando Detalhes
+## Propriedade Passando Detalhes {#prop-passing-details}
 
-### Caixa de Nome de Propriedade
+### Caixa do Nome de Propriedade {#prop-name-casing}
 
 Nós declaramos nomes de propriedade longos utilizando "camelCase" porque isto evita ter que utilizar aspas quando estivermos utiliza-os como chaves de propriedade, e permite-nos referenciá-los diretamente nas expressões de modelo de marcação porque são identificadores de JavaScript válidos:
 
@@ -147,15 +147,15 @@ export default {
 ```vue-html
 <span>{{ greetingMessage }}</span>
 ```
-Tecnicamente, também podemos utilizar a "camelCase" quando estamos passando propriedades para um componente filho (exceto nos [modelos de marcação de DOM](/guide/essentials/component-basics.html#advertências-de-analise-de-modelo-de-marcação-de-dom)). No entanto, a convenção é a utilização de "kebab-case" em todos os casos para alinhar com os atributos de HTML:
+Tecnicamente, também podemos utilizar a "camelCase" quando estamos passando propriedades para um componente filho (exceto nos [modelos de marcação de DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats)). No entanto, a convenção é a utilização de "kebab-case" em todos os casos para alinhar com os atributos de HTML:
 
 ```vue-html
 <MyComponent greeting-message="hello" />
 ```
 
-Nós utilizamos ["PascalCase" para marcadores de componente](/guide/components/registration.html#caixa-de-nome-de-componente) quando possível porque ele melhora a legibilidade do modelo de marcação diferenciando componentes de Vue dos elementos nativos. No entanto, não existe tantos benefícios práticos para utilização de "camelCase" quando estivermos passando propriedades, então escolhemos seguir cada uma das convenções da linguagem.
+Nós utilizamos ["PascalCase" para marcadores de componente](/guide/components/registration.html#component-name-casing) quando possível porque ele melhora a legibilidade do modelo de marcação diferenciando componentes de Vue dos elementos nativos. No entanto, não existe tantos benefícios práticos para utilização de "camelCase" quando estivermos passando propriedades, então escolhemos seguir cada uma das convenções da linguagem.
 
-### Propriedades Estáticas versus Propriedades Dinâmicas
+### Propriedades Estáticas versus Propriedades Dinâmicas {#static-vs-dynamic-props}
 
 Até aqui, vimos propriedades passadas como valores estáticos, desta maneira:
 
@@ -173,11 +173,11 @@ Também temos visto propriedades atribuídas dinamicamente com a `v-bind` ou com
 <BlogPost :title="post.title + ' by ' + post.author.name" />
 ```
 
-### Passando Tipos de Valor Diferentes
+### Passando Tipos de Valor Diferentes {#passing-different-value-types}
 
 Nos dois exemplos acima, nós passamos valores de sequência de caracteres, mas _qualquer_ tipo de valor pode ser passado para uma propriedade.
 
-#### Number (Número)
+#### Number (Número) {#number}
 
 ```vue-html
 <!-- Embora `42` seja estático, precisamos de `v-bind` para dizer a Vue que -->
@@ -188,7 +188,7 @@ Nos dois exemplos acima, nós passamos valores de sequência de caracteres, mas 
 <BlogPost :likes="post.likes" />
 ```
 
-#### Boolean (Booleano)
+#### Boolean (Booleano) {#boolean}
 
 ```vue-html
 <!-- Incluir a propriedade sem valor implicará o `true`. -->
@@ -202,7 +202,7 @@ Nos dois exemplos acima, nós passamos valores de sequência de caracteres, mas 
 <BlogPost :is-published="post.isPublished" />
 ```
 
-#### Array (Arranjo)
+#### Array (Arranjo) {#array}
 
 ```vue-html
 <!-- Embora o arranjo seja estático, precisamos de `v-bind` para dizer a Vue que -->
@@ -213,7 +213,7 @@ Nos dois exemplos acima, nós passamos valores de sequência de caracteres, mas 
 <BlogPost :comment-ids="post.commentIds" />
 ```
 
-#### Object (Objeto)
+#### Object (Objeto) {#object}
 
 ```vue-html
 <!-- Embora o objeto seja estático, precisamos de `v-bind` para dizer a Vue que -->
@@ -229,7 +229,7 @@ Nos dois exemplos acima, nós passamos valores de sequência de caracteres, mas 
 <BlogPost :author="post.author" />
 ```
 
-### Vinculando Várias Propriedades Utilizando um Objeto
+### Vinculando Várias Propriedades Utilizando um Objeto {#binding-multiple-properties-using-an-object}
 
 Se quiseres passar todas as propriedades de um objeto como propriedades, podes utilizar a [`v-bind` sem nenhum argumento](/guide/essentials/template-syntax.html#vincular-vários-atributos-dinamicamente) (`v-bind` no lugar de `:prop-name`). Por exemplo, dado um objeto `post`:
 
@@ -272,7 +272,7 @@ Será equivalente a:
 <BlogPost :id="post.id" :title="post.title" />
 ```
 
-## Fluxo de Dados de Uma Via
+## Fluxo de Dados de Uma Via {#one-way-data-flow}
 
 Todas as propriedades criam uma **vinculação de uma via para baixo** entre a propriedade do componente filho e a propriedade do componente pai: quando a propriedade do componente pai atualiza, ela afluirá para baixo para o componente filho, mas não ao contrário. Isto impedi os componentes filho de acidentalmente alterar o estado do componente pai, o que pode tornar o fluxo de dados da tua aplicação muito mais difícil de entender.
 
@@ -362,13 +362,13 @@ Existem normalmente dois casos onde é tentador alterar uma propriedade:
 
    </div>
 
-### Alterando Propriedades de Objeto / Arranjo
+### Alterando Propriedades de Objeto / Arranjo {#mutating-object-array-props}
 
 Quando objetos e arranjos são passados como propriedades, embora o componente filho não possa alterar a vinculação da propriedade, ele **será** capaz de alterar o objeto ou propriedades encaixadas do arranjo. Isto é porque na JavaScript os objetos e arranjos são passados por referência, e é exorbitantemente dispendioso para a Vue impedir tais mutações.
 
 A principal desvantagem de tais mutações é que ela permite ao componente filho afetar o estado do componente pai de uma maneira que não é óbvia para o componente pai, potencialmente tornando mais difícil raciocinar a respeito do fluxo de dados no futuro. Como uma boa prática, deves evitar tais mutações a menos que o componente pai e componente filho estejam fortemente atrelados de propósito. Na maioria dos casos, o componente filho deve [emitir um evento](/guide/components/events.html) para deixar o componente pai realizar a mutação.
 
-## Validação de Propriedade
+## Validação de Propriedade {#prop-validation}
 
 Os componentes podem especificar requisitos para suas propriedades, tais como os tipos que já viste. Se um requisito não for cumprido, a Vue avisar-te-á na consola de JavaScript do navegador. Isto é especialmente útil quando estamos programando um componente que está destinado a ser utilizado por outros.
 
@@ -425,7 +425,7 @@ defineProps({
 })
 ```
 
-:::tip
+:::tip Dica
 O código dentro argumento de `defineProps()` **não pode acessar outras variáveis declaradas na `<script setup>`**, porque a expressão inteira é movida para um escopo da função externa quando compilado.
 :::
 
@@ -504,13 +504,13 @@ Se estiveres utilizando [declarações de propriedades baseadas em tipo](/api/sf
 </div>
 <div class="options-api">
 
-::: tip Nota
+:::tip Nota
 Nota que as propriedades são validadas **antes** da instância do componente ser criada, assim as propriedades da instância (por exemplo, `data`, `computed`, etc) não estarão disponíveis dentro das funções `default` ou `validator`.
 :::
 
 </div>
 
-### Verificações de Tipo de Tempo de Execução
+### Verificações de Tipo de Tempo de Execução {#runtime-type-checks}
 
 Os `type` podem ser um dos seguintes construtores nativos:
 
@@ -559,7 +559,7 @@ export default {
 
 para validar aquele valor da propriedade `author` que foi criado com `new Person`.
 
-## Fundição de Booleano
+## Fundição de Booleano {#boolean-casting}
 
 As propriedades com tipo `Boolean` têm regras de fundição especiais para imitarem o comportamento dos atributos booleanos nativos. Dado o `<MyComponent>` com a seguinte declaração:
 
