@@ -1,6 +1,6 @@
-# Componentes Assíncronos
+# Componentes Assíncronos {#async-components}
 
-## Utilização Básica
+## Utilização Básica {#basic-usage}
 
 Em aplicações grandes, podemos precisar dividir a aplicação em pedaços mais pequenos e apenas carregar um componente a partir do servidor quando for necessário. Para tornar isto possível, a Vue tem uma função [`defineAsyncComponent`](/api/general.html#defineasynccomponent):
 
@@ -30,7 +30,7 @@ const AsyncComp = defineAsyncComponent(() =>
 
 O `AsyncComp` resultante é um componente embrulhador que só chama a função carregadora quando estiver realmente interpretado na página. Além disto, ele passará adiante quaisquer propriedades e ranhuras para o componente interno, assim podes utilizar o embrulhador assíncrono para substituir continuamente o componente original enquanto estiver realizando o carregamento preguiçoso.
 
-Tal como os componentes normais, os componentes assíncronos podem ser [registados globalmente](/guide/components/registration.html#registo-global) utilizando `app.component()`:
+Tal como os componentes normais, os componentes assíncronos podem ser [registados globalmente](/guide/components/registration.html#global-registration) utilizando `app.component()`:
 
 ```js
 app.component('MyComponent', defineAsyncComponent(() =>
@@ -40,7 +40,7 @@ app.component('MyComponent', defineAsyncComponent(() =>
 
 <div class="options-api">
 
-Tu também podes utilizar a `defineAsyncComponent` quando estiveres [registando um componente localmente](/guide/components/registration.html#registo-local):
+Tu também podes utilizar a `defineAsyncComponent` quando estiveres [registando um componente localmente](/guide/components/registration.html#local-registration):
 
 ```vue
 <script>
@@ -82,9 +82,9 @@ const AdminPage = defineAsyncComponent(() =>
 
 </div>
 
-## Estados de Erro e Carregamento
+## Carregamento e Estados de Erro {#loading-and-error-states}
 
-Operações assíncronas inevitavelmente envolvem estados de erro e carregamento - a `defineAsyncComponent()` suporta a manipulação destes estados através de opções avançadas:
+Operações assíncronas inevitavelmente envolvem carregamento e estados de erro - a `defineAsyncComponent()` suporta a manipulação destes estados através de opções avançadas:
 
 ```js
 const AsyncComp = defineAsyncComponent({
@@ -108,6 +108,6 @@ Se um componente de carregamento for fornecido, ele será mostrado primeiro enqu
 
 Se um componente de erro for fornecido, ele será mostrado quando a Promessa retorna pela função carregadora for rejeitada. Tu também podes especificar uma pausa para mostrar o componente de erro quando a requisição estiver demorando muito.
 
-## Utilizando com Suspense
+## Utilizando com Suspense {#using-with-suspense}
 
 Os componentes assíncronos podem ser utilizados com o componente embutido `<Suspense>`. A interação entre o `<Suspense>` e os componentes assíncronos estão documentadas num [capítulo dedicado ao `<Suspense>`](/guide/built-ins/suspense.html).
