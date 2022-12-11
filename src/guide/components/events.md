@@ -1,4 +1,4 @@
-# Eventos de Componente
+# Eventos de Componente {#component-events}
 
 > Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
 
@@ -6,7 +6,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/defining-custom-events-emits" title="Aula Gratuita Sobre a Definição de Eventos Personalizados na Vue.js"/>
 </div>
 
-## Emitindo e Ouvindo Eventos
+## Emitindo e Ouvindo Eventos {#emitting-and-listening-to-events}
 
 Um componente pode emitir eventos personalizados diretamente nas expressões de modelo de marcação (por exemplo, num manipulador de `v-on`) utilizando o método `$emit` embutido:
 
@@ -43,13 +43,13 @@ O modificador `.once` também é suportado nos ouvintes de evento do componente:
 <MyComponent @some-event.once="callback" />
 ```
 
-Tal como os componentes e propriedades, os nomes de eventos fornecem uma transformação de caixa automática. Repara que nós emitimos um evento em "camelCase", mas podemos ouvir ele utilizando um ouvinte em "kebab-case" no componente pai. De acordo com a [caixa das propriedades](/guide/components/props.html#prop-name-casing), recomendamos a utilização de ouvintes de evento em "kebab-case" nos modelos de marcação.
+Tal como os componentes e propriedades, os nomes de eventos fornecem uma transformação de caixa automática. Repara que nós emitimos um evento em "camelCase", mas podemos ouvir ele utilizando um ouvinte em "kebab-case" no componente pai. De acordo com a [caixa dos caracteres das propriedades](/guide/components/props.html#prop-name-casing), recomendamos a utilização de ouvintes de evento em "kebab-case" nos modelos de marcação.
 
-:::tip
+:::tip Dica
 Ao contrário os eventos de DOM nativos, os eventos emitidos do componente **não** transbordam. Tu só podes ouvir os eventos emitidos por um componente filho direto.
 :::
 
-## Argumentos de Evento
+## Argumentos de Evento {#event-arguments}
 
 Algumas vezes é útil emitir um valor especifico com um evento. Por exemplo, podemos desejar que o componente `<BlogPost>` esteja encarregado do por quanto aumentar o texto. Naqueles casos, podemos passar argumentos adicionais para a `$emit` para fornecer este valor:
 
@@ -98,7 +98,7 @@ function increaseCount(n) {
 Todos os argumentos adicionais passados para o `$emit()` depois do nome do evento serão enviados para o ouvinte. Por exemplo, com `$emit('foo', 1, 2, 3)` a função ouvinte receberá três argumentos.
 :::
 
-## Declarando Eventos Emitidos
+## Declarando Eventos Emitidos {#declaring-emitted-events}
 
 Os eventos emitidos podem ser explicitamente declarados no componente através da <span class="composition-api">macro [`defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)</span><span class="options-api">opção [`emits`](/api/options-state.html#emits)</span>:
 
@@ -183,7 +183,7 @@ const emit = defineEmits<{
 </script>
 ```
 
-Mais detalhes: [Tipando Emissões de Componente](/guide/typescript/composition-api.html#tipando-emissões-de-componente) <sup class="vt-badge ts" />
+Mais detalhes: [Atribuindo Tipos as Emissões de Componente](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
@@ -199,17 +199,17 @@ export default {
 }
 ```
 
-Consulte também: [Tipando Emissões de Componente](/guide/typescript/options-api.html#tipando-emissões-de-componente) <sup class="vt-badge ts" />
+Consulte também: [Atribuindo Tipos as Emissões de Componente](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 
 Ainda que opção, é recomendado definir todos eventos emitidos em ordem para documentar melhor como um componente deveria funcionar. Também permite a Vue excluir ouvintes conhecidos dos [atributos que caiem](/guide/components/attrs.html#v-on-listener-inheritance).
 
-:::tip
+:::tip Dica
 Se um evento nativo (por exemplo, `click`) for definido na opção `emits`, o ouvinte agora apenas ouvirá os eventos `click` emitidos pelo componente e não mais responderá aos outros eventos `click` nativos.
 :::
 
-## Validação de Eventos
+## Validação de Eventos {#events-validation}
 
 Semelhante a validação de tipo de propriedade, um evento emitido pode ser validado se for definido com a sintaxe de objeto no lugar da sintaxe de arranjo.
 
@@ -269,7 +269,7 @@ export default {
 
 </div>
 
-## Utilização com `v-model`
+## Utilização com `v-model` {#usage-with-v-model}
 
 Os eventos personalizados também podem ser utilizados para criar entradas personalizadas que funcionam com a `v-model`. Lembra-te de que:
 
@@ -414,7 +414,7 @@ const value = computed({
 
 </div>
 
-### Argumentos de `v-model`
+### Argumentos de `v-model` {#v-model-arguments}
 
 Por padrão, a `v-model` sobre um componente utiliza `modelValue` como propriedade e `update:modelValue` como evento. Nós podemos modificar estes nomes passando um argumento para a `v-model`:
 
@@ -469,9 +469,9 @@ export default {
 
 </div>
 
-### Várias Vinculações de `v-model`
+### Várias Vinculações de `v-model` {#multiple-v-model-bindings}
 
-Com a influência da habilidade para apontar uma propriedade e um evento particular conforme aprendemos antes com [argumentos de `v-model`](#argumentos-de-v-model), podemos agora criar várias vinculações de `v-model` sobre uma única instância de componente.
+Com a influência da habilidade para apontar uma propriedade e um evento particular conforme aprendemos antes com [argumentos de `v-model`](#v-model-arguments), podemos agora criar várias vinculações de `v-model` sobre uma única instância de componente.
 
 Cada `v-model` se sincronizará a uma propriedade diferente, sem a necessidade de opções adicionais no componente:
 
@@ -542,9 +542,9 @@ export default {
 
 </div>
 
-### Manipulando modificadores de `v-model`
+### Manipulando modificadores de `v-model` {#handling-v-model-modifiers}
 
-Quando estávamos aprendendo a respeito de vinculações de entrada de formulário, vimos que a `v-model` tem [modificadores embutidos](/guide/essentials/forms.html#modificadores) - `.trim`, `.number`, e `.lazy`. Em alguns casos, no entanto, também podes desejar adicionar os teus próprios modificadores personalizados.
+Quando estávamos aprendendo a respeito de vinculações de entrada de formulário, vimos que a `v-model` tem [modificadores embutidos](/guide/essentials/forms.html#modifiers) - `.trim`, `.number`, e `.lazy`. Em alguns casos, no entanto, também podes desejar adicionar os teus próprios modificadores personalizados.
 
 Vamos criar um exemplo de modificador personalizado, `capitalize`, que escreve em maiúsculas a primeira letra da sequência de caracteres fornecida pela vinculação de `v-model`:
 
