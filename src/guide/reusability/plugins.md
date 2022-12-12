@@ -1,6 +1,6 @@
-﻿# Extensões
+﻿# Extensões {#plugins}
 
-## Introdução
+## Introdução {#introduction}
 
 As extensões são códigos auto-contidos que normalmente adicionam funcionalidade de nível de aplicação para a Vue. Isto é como instalamos uma extensão:
 
@@ -34,7 +34,7 @@ Não existe escopo definido estritamente para uma extensão, mas os cenários co
 
 4. Uma biblioteca que precisa realizar alguma combinação do que está acima (por exemplo [vue-router](https://github.com/vuejs/vue-router-next)).
 
-## Escrevendo uma Extensão
+## Escrevendo uma Extensão {#writing-a-plugin}
 
 Para melhor entender como criar as tuas próprias extensões de Vue.js, criaremos uma versão muito simplificada de uma extensão que exibe sequências de caracteres de `i18n` (forma abreviada para [Internacionalização](https://en.wikipedia.org/wiki/Internationalization_and_localization)).
 
@@ -89,13 +89,13 @@ app.use(i18nPlugin, {
 
 Agora, a nossa expressão inicial `$translate('greetings.hello')` será substituído pelo `Bonjour!` em tempo de execução.
 
-Consulte também: [Aumentando Propriedades Globais](/guide/typescript/options-api.html#aumentando-propriedades-globais) <sup class="vt-badge ts" />
+Consulte também: [Aumentando Propriedades Globais](/guide/typescript/options-api.html#augmenting-global-properties) <sup class="vt-badge ts" />
 
-:::tip
+:::tip Dica
 Utilize as propriedades globais cuidadosamente, já que pode rapidamente tornar-se as coisas confusas se muitas propriedades globais injetadas por extensões diferentes forem utilizadas em toda uma aplicação.
 :::
 
-### Fornecer / Injetar com as Extensões
+### Fornecer / Injetar com as Extensões {#provide-inject-with-plugins}
 
 As extensões também permitem-nos utilizar `inject` para fornecer uma função ou atributo aos utilizadores da extensão. Por exemplo, podemos permitir que a aplicação tenha acesso ao parâmetro `options` para ser capaz de utilizar o objeto de traduções.
 
