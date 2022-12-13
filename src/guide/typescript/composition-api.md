@@ -1,10 +1,10 @@
-# TypeScript com a API de Composição
+# TypeScript com a API de Composição {#typescript-with-composition-api}
 
 > Esta página presume que já leste a visão geral no [Utilizando a Vue com a TypeScript](./overview).
 
-## Tipando Propriedades de Componente
+## Atribuindo Tipos as Propriedades do Componente {#typing-component-props}
 
-### Utilizando `<script setup>`
+### Utilizando `<script setup>` {#using-script-setup}
 
 Quando estiveres utilizando `<script setup>`, a macro `defineProps()` suporta a inferência de tipos de propriedades baseado no seu argumento:
 
@@ -50,7 +50,7 @@ const props = defineProps<Props>()
 </script>
 ```
 
-#### Limitações de Sintaxe
+#### Limitações de Sintaxe {#syntax-limitations}
 
 Para gerar o código de tempo de execução correto, o argumento genérico para `defineProps()` deve ser um dos seguintes:
 
@@ -79,26 +79,42 @@ defineProps<Props>()
 
 Isto é porque os componentes de Vue são compilados separadamente e o compilador atualmente não rastreia os ficheiros importados para analisar o tipo da fonte. Esta limitação poderia ser removida em um futuro lançamento.
 
-### Valores Padrão das Propriedades <sup class="vt-badge experimental" />
+### Valores Padrão das Propriedades {#props-default-values}
 
-Quando estamos utilizando a declaração baseada em tipo, perdemos a habilidade de declarar valores padrão para as propriedades. Isto pode ser resolvido pela atualmente experimental [Transformação de Reatividade](/guide/extras/reactivity-transform.html):
+Quando estamo a usar a declaração baseada no tipo, perdemos a habilidade de declarar valores padrão para as propriedades. Isto pode ser resolvido pela macro `withDefaults` do compilador:
+
+```ts
+export interface Props {
+  msg?: string
+  labels?: string[]
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  msg: 'hello',
+  labels: () => ['one', 'two']
+})
+```
+
+Isto será compilado para as opções `default` das propriedades de tempo de execução equivalentes. Além disto, o auxiliar `withDefaults` fornece verificação de tipo para os valores padrão, e garante que os tipo de `props` retornado tenha opções opcionais removidas para as propriedades que tiverem valores padrão declarados.
+
+Alternativamente, podes usar a atualmente experimental [Transformação da Reatividade](/guide/extras/reactivity-transform.html):
 
 ```vue
 <script setup lang="ts">
 interface Props {
-  foo: string
-  bar?: number
+  name: string
+  count?: number
 }
 
-// desestruturação reativa para "defineProps()"
-// valor padrão é compilado para opção de tempo de execução equivalente
-const { foo, bar = 100 } = defineProps<Props>()
+// desestruturação reativa para defineProps()
+// valor padrão é compilado para a opção de tempo de execução equivalente
+const { name, count = 100 } = defineProps<Props>()
 </script>
 ```
 
 Este comportamento atualmente requer [opção de inclusão explícita](/guide/extras/reactivity-transform.html#explicit-opt-in).
 
-### Sem `<script setup>`
+### Sem `<script setup>` {#without-script-setup}
 
 Se não estiveres utilizando `<script setup>`, é necessário utilizar `defineComponent()` para ativar a inferência de tipo das propriedades. O tipo do objeto de propriedades passadas para `setup()` é inferida a partir da opção `props`.
 
@@ -115,9 +131,9 @@ export default defineComponent({
 })
 ```
 
-## Tipando Emissões do Componente
+## Atribuindo Tipos as Emissões do Componente
 
-No `<script setup>`, a função `emit` pode também ser tipada utilizando ou a declaração de tempo de execução OU a declaração de tipo:
+No `<script setup>`, o tipo da função `emit` pode também ser atribuindo utilizando ou a declaração de tempo de execução OU a declaração de tipo:
 
 ```vue
 <script setup lang="ts">
@@ -147,7 +163,7 @@ export default defineComponent({
 })
 ```
 
-## Tipando `ref()`
+## Atribuindo Tipo ao `ref()` {#typing-ref}
 
 As referências inferem o tipo a partir do valor inicial:
 
@@ -188,7 +204,7 @@ Se especificares um argumento de tipo genérico mas omitir o valor inicial, o ti
 const n = ref<number>()
 ```
 
-## Tipando `reactive()`
+## Atribuindo Tipo ao `reactive()` {#typing-reactive}
 
 A `reactive()` também infere implicitamente o tipo a partir do seu argumento:
 
@@ -212,11 +228,11 @@ interface Book {
 const book: Book = reactive({ title: 'Vue 3 Guide' })
 ```
 
-:::tip
+:::tip Dica
 Não é recomendado utilizar o argumento genérico da `reactive()` porque o tipo retornado, o qual manipula o desembrulhar da referência encaixada, é diferente do tipo do argumento genérico.
 :::
 
-## Tipando `computed()`
+## Atribuindo Tipo ao `computed()` {#typing-computed}
 
 A `computed()` infere o seu tipo baseado no valor de retorno do recuperador (ou getter se preferires):
 
@@ -240,9 +256,9 @@ const double = computed<number>(() => {
 })
 ```
 
-## Tipando Manipuladores de Evento
+## Atribuindo Tipos aos Manipuladores de Evento {#typing-event-handlers}
 
-Quando estiveres lidando com eventos de DOM nativo, pode ser útil tipar o argumento que passamos para o manipulador corretamente. Vamos dar um vista de olhos neste exemplo:
+Quando estiveres lidando com eventos de DOM nativo, pode ser útil definir tipo para o argumento que passamos para o manipulador corretamente. Vamos dar um vista de olhos neste exemplo:
 
 ```vue
 <script setup lang="ts">
@@ -265,9 +281,9 @@ function handleChange(event: Event) {
 }
 ```
 
-## Tipando `provide()` / `inject()`
+## Atribuindo Tipo ao `provide()` / `inject()` {#typing-provide-inject}
 
-O fornecer e injetar são normalmente realizados em componentes separados. Para tipar corretamente os valores injetados, a Vue fornece uma interface `InjectionKey`, que é um tipo genérico que estende o `Symbol`. Ela pode ser utilizada para sincronizar o tipo do valor injetado entre o fornecedor e o consumidor:
+O fornecer e injetar são normalmente realizados em componentes separados. Para corretamente definir os tipos dos valores injetados, a Vue fornece uma interface `InjectionKey`, que é um tipo genérico que estende o `Symbol`. Ela pode ser utilizada para sincronizar o tipo do valor injetado entre o fornecedor e o consumidor:
 
 ```ts
 import { provide, inject } from 'vue'
@@ -302,7 +318,7 @@ Se estiveres certo de que o valor é sempre fornecido, podes também forçar o l
 const foo = inject('foo') as string
 ```
 
-## Tipando Referências de Modelo de Marcação
+## Atribuindo Tipos as Referências do Modelo de Marcação {#typing-template-refs}
 
 As referências de modelo de marcação devem ser criadas com um argumento de tipo genérico explícito e um valor inicial de `null`:
 
@@ -324,7 +340,7 @@ onMounted(() => {
 
 Nota que para a segurança de tipo restrito, é necessário utilizar o encadeamento opcional ou sentinelas de tipo quando estiveres acessando `el.value`. Isto é porque o valor da referência inicial é `null` até o componente ser montado, e também pode ser definido para `null` se o elemento referenciado for desmontado pelo `v-if`.
 
-## Tipando Referências de Modelo de Marcação de Componente
+## Atribuindo Tipos as Referências do Modelo de Marcação de Componente {#typing-component-template-refs}
 
 Algumas vezes podes precisar anotar uma referência de modelo de marcação para um componente filho para chamar o seu método público. Por exemplo, temos um componente filho `MyModal` com um método que abre o modal:
 
@@ -357,4 +373,4 @@ const openModal = () => {
 </script>
 ```
 
-Nota que se quiseres utilizar esta técnica nos ficheiros de TypeScript dos Componentes de Ficheiro Único de Vue, precisamos ativar o [Modo de Aquisição (Takeover Mode)](./overview.html#modo-de-aquisição) da Volar.
+Nota que se quiseres utilizar esta técnica nos ficheiros de TypeScript dos Componentes de Ficheiro Único de Vue, precisamos ativar o [Modo de Aquisição (Takeover Mode)](./overview.html#volar-takeover-mode) da Volar.
