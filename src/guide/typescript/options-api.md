@@ -1,12 +1,12 @@
-# TypeScript com a API de Opções
+# TypeScript com a API de Opções {#typescript-with-options-api}
 
 > Esta página presume que já leste a visão geral no [Utilizando a Vue com a TypeScript](./overview).
 
-:::tip
+:::tip Dica
 Embora a Vue suporte a utilização da TypeScript com a API de Opções, é recomendado utilizar a Vue com a TypeScript através da API de Composição visto que ela oferece a inferência de tipo mais simples, mais eficiente e mais robusta.
 :::
 
-## Tipando Propriedades do Componente
+## Atribuindo Tipos as Propriedades do Componente {#typing-component-props}
 
 A inferência de tipo para as propriedades na API de Opções exige o envolvimento do componente com `defineComponent()`. Com isto, a Vue é capaz de inferir os tipos para as propriedades baseada na opção `props`, levando opções adicionais tais como `required: true` e `default` em conta:
 
@@ -65,9 +65,9 @@ export default defineComponent({
 })
 ```
 
-### Advertências
+### Advertências {#caveats}
 
-Devido a uma [limitação de desenho](https://github.com/microsoft/TypeScript/issues/38845) na TypeScript, tens que ser cuidadoso quando estiveres utilizando valores de função para as opções de propriedade `validator` e `default` - certifica-te de que utilizas funções em flecha:
+Se a tua versão de TypeScript for menor do que `4.7`, tens que ser cuidadoso quando estiveres a usar os valores de função para as opções das propriedades `validator` e `default` - certifica-te de que utilizar funções em flecha:
 
 ```ts
 import { defineComponent } from 'vue'
@@ -92,9 +92,9 @@ export default defineComponent({
 })
 ```
 
-Isto impedi a TypeScript de ter que inferir o tipo do `this` dentro destas funções, o que, infelizmente, pode causar falha na inferência de tipo.
+Isto impedi a TypeScript de ter que inferir o tipo do `this` dentro destas funções, o que, infelizmente, pode causar a inferência de tipo falhar na realização do seu trabalho. Isto era uma anterior [limitação do desenho](https://github.com/microsoft/TypeScript/issues/38845), e agora foi melhorada na [TypeScript 4.7](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html#improved-function-inference-in-objects-and-methods).
 
-## Tipando Emissões do Componente
+## Atribuindo Tipos as Emissões do Componente {#typing-component-emits}
 
 Nós podemos declarar o tipo da carga esperada para um evento emitido utilizando a sintaxe de objeto da opção `emits`. Além disto, todos os eventos emitidos não declarados lançarão um erro de tipo quando chamados:
 
@@ -120,7 +120,7 @@ export default defineComponent({
 })
 ```
 
-## Tipando Propriedades Computadas
+## Atribuindo Tipos as Propriedades Computadas {#typing-computed-properties}
 
 Uma propriedade computada infere o seu tipo baseado no seu valor de retorno:
 
@@ -176,9 +176,9 @@ export default defineComponent({
 
 As anotações explícitas também podem ser exigidas em alguns casos extremos onde a TypeScript falha em inferir o tipo de uma propriedade computada por causa de laços de inferência circular.
 
-## Tipando Manipuladores de Evento
+## Atribuindo Tipos aos Manipuladores de Evento {#typing-event-handlers}
 
-Quando estiveres lidando com eventos de DOM nativos, pode ser útil tipar o argumento que passamos para o manipulador corretamente. Vamos dar uma vista de olhos neste exemplo:
+Quando estiveres lidando com eventos de DOM nativos, pode ser útil definir um tipo para o argumento que passamos para o manipulador corretamente. Vamos dar uma vista de olhos neste exemplo:
 
 ```vue
 <script lang="ts">
@@ -213,7 +213,7 @@ export default defineComponent({
 })
 ```
 
-## Aumentando Propriedades Globais
+## Aumentando Propriedades Globais {#augmenting-global-properties}
 
 Algumas extensões são instaladas globalmente e suas propriedades estão disponíveis para todas instâncias de componente através de [`app.config.globalProperties`](/api/application.html#app-config-globalproperties). Por exemplo, podemos instalar `this.$http` para requisição de dados ou `this.$translate` para internacionalização. Para fazer isto funcionar bem com a TypeScript, a Vue expõe uma interface `ComponentCustomProperties` desenhada para ser aumentada através da [aumentação de módulo de TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation):
 
@@ -232,7 +232,7 @@ Consulte também:
 
 - [Testes unitários de TypeScript para as extensões de tipo de componente](https://github.com/vuejs/core/blob/main/test-dts/componentTypeExtensions.test-d.tsx)
 
-### Colocação de Aumentação de Tipo
+### Colocação de Aumentação de Tipo {#type-augmentation-placement}
 
 Nós podemos colocar esta aumentação de tipo em um ficheiro `.ts`, ou em um ficheiro `*.d.ts` de largura de projeto. De um modo ou outro, certifica-te de que é incluída no `tsconfig.json`. Para autores de extensão ou biblioteca, este ficheiro deve ser especificado na propriedade `types` no `package.json`.
 
@@ -258,7 +258,7 @@ declare module 'vue' {
 }
 ```
 
-## Aumentando Opções Personalizadas
+## Aumentando Opções Personalizadas {#augmenting-custom-options}
 
 Algumas extensões, por exemplo `vue-router`, fornecem suporta para opções de componente personalizadas tais como `beforeRouterEnter`:
 
@@ -284,9 +284,9 @@ declare module 'vue' {
 }
 ```
 
-Agora a opção `beforeRouteEnter` será apropriadamente tipada. Nota que isto é apenas um exemplo - bibliotecas bem tipadas como `vue-router` devem automaticamente realizar estas aumentações em suas próprias definições de tipo.
+Agora a opção `beforeRouteEnter` terá o seu tipo apropriadamente definido. Nota que isto é apenas um exemplo - bibliotecas com os tipos corretamente definidos como `vue-router` devem automaticamente realizar estas aumentações em suas próprias definições de tipo.
 
-A colocação desta aumentação está sujeita as [mesmas restrições](#colocação-de-aumentação-de-tipo) que as aumentações de propriedade globais.
+A colocação desta aumentação está sujeita as [mesmas restrições](#type-augmentation-placement) que as aumentações de propriedade globais.
 
 Consulte também:
 
