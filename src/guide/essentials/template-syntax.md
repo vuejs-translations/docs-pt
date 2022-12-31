@@ -66,7 +66,7 @@ Os atributos que começam com `:` podem parecer um pouco diferente da HTML norma
 
 ### Atributos Booleano
 
-Os [atributos booleano](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) são atributos que podem indicar valores verdadeiro ou false pela sua presença em um elemento. Por exemplo, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) é uma dos atributos booleano comummente utilizadas.
+Os [atributos booleano](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) são atributos que podem indicar valores verdadeiro ou falso pelos valores por sua presença sobre um elemento. Por exemplo, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) é um dos atributos booleano comummente utilizados.
 
 A `v-bind` funciona um pouco de forma diferente neste caso:
 
