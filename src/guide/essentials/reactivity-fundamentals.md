@@ -101,7 +101,7 @@ export default {
 <div>{{ state.count }}</div>
 ```
 
-Semelhantemente, podemos declarar funções que alteram o estado reativo no mesmo escopo, e expor ele como um método junto do estado:
+Semelhantemente, podemos declarar funções que alteram o estado reativo no mesmo escopo, e expó-los como métodos junto do estado:
 
 ```js{7-9,14}
 import { reactive } from 'vue'
