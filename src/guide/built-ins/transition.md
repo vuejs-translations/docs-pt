@@ -77,7 +77,6 @@ Quando um elemento em um componente `<Transition>` é inserido ou removido, isto
 
 ### Classes de Transição
 
-There are six classes applied for enter / leave transitions.
 Existem seis classes aplicadas para as transições de entrada e saída.
 
 ![Diagrama de Transição](./images/transition-classes.png)
@@ -100,7 +99,7 @@ Existem seis classes aplicadas para as transições de entrada e saída.
 
 ### Transições Nomeadas
 
-Um transição pode ser nomeada através da propriedade `name`: 
+Um transição pode ser nomeada através da propriedade `name`:
 
 ```vue-html
 <Transition name="fade">
@@ -366,7 +365,7 @@ function onEnter(el, done) {
   done()
 }
 
-// chamada quando a transição de entrada termina. 
+// chamada quando a transição de entrada termina.
 function onAfterEnter(el) {}
 function onEnterCancelled(el) {}
 
@@ -409,7 +408,7 @@ export default {
       done()
     },
 
-    // chamada quando a transição de entrada termina. 
+    // chamada quando a transição de entrada termina.
     onAfterEnter(el) {},
     onEnterCancelled(el) {},
 
