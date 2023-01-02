@@ -1,7 +1,21 @@
 <script lang="ts">
 // shared data across instances so we load only once
-const base = `https://app.vuejobs.com/feed/vuejs/docs?format=json`
-let items = $ref([])
+const base = 'https://app.vuejobs.com/feed/vuejs/docs?format=json'
+
+let items = $ref<Jobs[]>([])
+
+type Jobs = {
+  organization: Organization;
+  title: string;
+  link: string;
+  locations: string[];
+  remote: false | 'ALLOWED' | 'ONLY';
+};
+
+type Organization = {
+  name: string;
+  avatar: string;
+};
 </script>
 
 <script setup lang="ts">
@@ -21,9 +35,17 @@ onMounted(async () => {
 <template>
   <div class="vuejobs-wrapper" ref="vuejobs">
     <div class="vj-container">
-      <a class="vj-item" v-for="(job, n) in openings" :key="n" :href="job.link" target="_blank">
+      <a
+        class="vj-item"
+        v-for="(job, n) in openings"
+        :key="n"
+        :href="job.link"
+        target="_blank"
+      >
         <div class="vj-company-logo">
-          <img :src="job.organization.avatar" alt />
+          <img
+            :src="job.organization.avatar"
+            :alt="`Logótipo da ${job.organization.name}`" />
         </div>
         <div
           style="
@@ -31,25 +53,23 @@ onMounted(async () => {
             display: flex;
             flex-direction: column;
             justify-content: center;
-          "
-        >
+          ">
           <div class="vj-job-title">{{ job.title }}</div>
           <div class="vj-job-info">
-            {{ job.organization.name }}
-            <span>·</span>
-            <span v-if="['ONLY', 'ALLOWED'].includes(job.remote)">Remoto</span>
-            <span v-else>{{ job.locations[0] }}</span>
+            {{ job.organization.name }} <span>· </span>
+            <span>{{ job.remote ? 'Remote' : job.locations[0] }}</span>
           </div>
         </div>
       </a>
     </div>
     <div class="vj-link">
-      Empregos pela
+      Trabalhos pela
       <a
         href="https://vuejobs.com/?utm_source=vuejs&utm_medium=referral&utm_campaign=jobs_widget&utm_content=bottom_link"
         target="_blank"
         title="Contrate Programadores de Vue.js"
-      >vuejobs.com</a>
+        >vuejobs.com</a
+      >
     </div>
   </div>
 </template>
