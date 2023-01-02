@@ -6,7 +6,7 @@ import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
 import { jobsPlugin } from './jobsMdPlugin'
 
-const nav = [
+const nav: ThemeConfig['nav'] = [
   {
     text: 'Documentação',
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
@@ -14,8 +14,8 @@ const nav = [
       { text: 'Guia', link: '/guide/introduction' },
       { text: 'Aulas', link: '/tutorial/' },
       { text: 'Exemplos', link: '/examples/' },
-      { text: 'Inicio Rápido', link: '/guide/quick-start' },
-      // { text: 'Style Guide', link: '/style-guide/' },
+      { text: 'Introdução Rápida', link: '/guide/quick-start' },
+      // { text: 'Guia de Estilo', link: '/style-guide/' },
       {
         text: 'Documentação da Vue 2',
         link: 'https://v2.vuejs.org'
@@ -113,7 +113,7 @@ const nav = [
     ]
   },
   {
-    text: 'Patrocinador',
+    text: 'Patrocinar',
     link: '/sponsor/'
   },
   {
@@ -123,20 +123,20 @@ const nav = [
   }
 ]
 
-export const sidebar = {
+export const sidebar: ThemeConfig['sidebar'] = {
   '/guide/': [
     {
       text: 'Começar',
       items: [
         { text: 'Introdução', link: '/guide/introduction' },
         {
-          text: 'Inicio Rápido',
+          text: 'Introdução Rápida',
           link: '/guide/quick-start'
         }
       ]
     },
     {
-      text: 'O Essencial',
+      text: 'Os Essenciais',
       items: [
         {
           text: 'Criando uma Aplicação',
@@ -195,7 +195,7 @@ export const sidebar = {
         },
         { text: 'Ranhuras', link: '/guide/components/slots' },
         {
-          text: 'Fornecer / Injetar',
+          text: 'Fornecimento / Injeção',
           link: '/guide/components/provide-inject'
         },
         {
@@ -215,7 +215,7 @@ export const sidebar = {
           text: 'Diretivas Personalizadas',
           link: '/guide/reusability/custom-directives'
         },
-        { text: 'Extensões (Plugins)', link: '/guide/reusability/plugins' }
+        { text: 'Extensões', link: '/guide/reusability/plugins' }
       ]
     },
     {
@@ -232,7 +232,7 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Escalando à Cima',
+      text: 'Escalando para Cima',
       items: [
         { text: 'Componentes de Ficheiro Único', link: '/guide/scaling-up/sfc' },
         { text: 'Ferramental', link: '/guide/scaling-up/tooling' },
@@ -287,7 +287,7 @@ export const sidebar = {
       text: 'Tópicos Adicionais',
       items: [
         {
-          text: 'Maneiras de Utilizar Vue',
+          text: 'Maneiras de Usar Vue',
           link: '/guide/extras/ways-of-using-vue'
         },
         {
@@ -307,7 +307,7 @@ export const sidebar = {
           link: '/guide/extras/render-function'
         },
         {
-          text: 'Vue e o Componentes de Web',
+          text: 'Vue e os Componentes de Web',
           link: '/guide/extras/web-components'
         },
         {
@@ -315,16 +315,16 @@ export const sidebar = {
           link: '/guide/extras/animation'
         },
         {
-          text: 'Transformação de Reatividade',
+          text: 'Transformação da Reatividade',
           link: '/guide/extras/reactivity-transform'
         }
         // {
-        //   text: 'Building a Library for Vue',
+        //   text: 'Construindo uma Biblioteca para Vue',
         //   link: '/guide/extras/building-a-library'
         // },
-        // { text: 'Custom Renderers', link: '/guide/extras/custom-renderer' },
+        // { text: 'Interpretadores Personalizados', link: '/guide/extras/custom-renderer' },
         // {
-        //   text: 'Vue for React Devs',
+        //   text: 'Vue para Programadores de React',
         //   link: '/guide/extras/vue-for-react-devs'
         // }
       ]
@@ -388,7 +388,7 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Embutidos',
+      text: 'Recursos Embutidos',
       items: [
         { text: 'Diretivas', link: '/api/built-in-directives' },
         { text: 'Componentes', link: '/api/built-in-components' },
@@ -413,9 +413,9 @@ export const sidebar = {
     {
       text: 'APIs Avançadas',
       items: [
-        { text: 'Função "render"', link: '/api/render-function' },
+        { text: 'Função de Interpretação', link: '/api/render-function' },
         { text: 'Interpretação no Lado do Servidor', link: '/api/ssr' },
-        { text: 'Tipos Utilitário de TypeScript', link: '/api/utility-types' },
+        { text: 'Tipos de Utilitário de TypeScript', link: '/api/utility-types' },
         { text: 'Interpretador Personalizado', link: '/api/custom-renderer' }
       ]
     }
@@ -451,7 +451,7 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Aula Prática',
+      text: 'Exemplos Práticos',
       items: [
         {
           text: 'Editor de Markdown',
@@ -551,6 +551,10 @@ export const sidebar = {
   ]
 }
 
+// Placeholder of the i18n config for @vuejs-translations.
+// const i18n: ThemeConfig['i18n'] = {
+// }
+
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
@@ -601,6 +605,31 @@ export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     nav,
     sidebar,
+    // Placeholder of the i18n config for @vuejs-translations.
+    // i18n,
+
+    localeLinks: [
+    	{
+    		link: 'https://vuejs.org',
+        text: 'English',
+        repo: 'https://github.com/vuejs/docs'
+    	},
+      {
+        link: 'https://cn.vuejs.org',
+        text: '简体中文',
+        repo: 'https://github.com/vuejs-translations/docs-zh-cn'
+      },
+      {
+        link: 'https://ja.vuejs.org',
+        text: '日本語',
+        repo: 'https://github.com/vuejs-translations/docs-ja'
+      },
+      {
+        link: '/translations/',
+        text: 'Ajude-nos a Traduzir!',
+        isTranslationsDesc: true
+      }
+    ],
 
     algolia: {
       indexName: 'vuejs',
@@ -617,7 +646,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     socialLinks: [
-      { icon: 'languages', link: '/translations/' },
       { icon: 'github', link: 'https://github.com/vuejs/' },
       { icon: 'twitter', link: 'https://twitter.com/vuejs' },
       { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
