@@ -80,7 +80,7 @@ const avatarUrl = computed(() => {
 
         <section class="desc">
           <div class="desc-title">
-            <h2 class="sr-only">Linguagens</h2>
+            <h2 class="sr-only">Idiomas</h2>
             <VTIconGlobe class="desc-icon" />
           </div>
           <ul class="desc-list">
@@ -94,7 +94,7 @@ const avatarUrl = computed(() => {
 
         <section v-if="member.website" class="desc">
           <div class="desc-title">
-            <h2 class="sr-only">Sítio Na Web</h2>
+            <h2 class="sr-only">Página da Web</h2>
             <VTIconLink class="desc-icon" />
           </div>
           <p class="desc-text">
@@ -305,7 +305,7 @@ const avatarUrl = computed(() => {
 
 .desc-item::after {
   margin-left: 8px;
-  content: "•";
+  content: '•';
   color: var(--vt-c-text-3);
   transition: color 0.25s;
 }

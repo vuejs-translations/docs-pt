@@ -1,3 +1,25 @@
+<script lang="ts">
+const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
+  let offset = pinTheFirstMember ? 1 : 0
+  // `i` is between `1` and `length - offset`
+  // `j` is between `0` and `length - offset - 1`
+  // `offset + i - 1` is between `offset` and `length - 1`
+  // `offset + j` is between `offset` and `length - 1`
+  let i = members.length - offset
+  while (i > 0) {
+    const j = Math.floor(Math.random() * i);
+    [
+      members[offset + i - 1],
+      members[offset + j]
+    ] = [
+      members[offset + j],
+      members[offset + i - 1]
+    ]
+    i--
+  }
+}
+</script>
+
 <script setup lang="ts">
 import { VTLink } from '@vue/theme'
 import membersCoreData from './members-core.json'
@@ -6,6 +28,9 @@ import membersPartnerData from './members-partner.json'
 import TeamHero from './TeamHero.vue'
 import TeamList from './TeamList.vue'
 import type { Member } from './Member'
+shuffleMembers(membersCoreData as Member[], true)
+shuffleMembers(membersEmeritiData as Member[])
+shuffleMembers(membersPartnerData as Member[])
 </script>
 
 <template>
@@ -13,7 +38,7 @@ import type { Member } from './Member'
     <TeamHero>
       <template #title>Conheça a Equipa</template>
       <template #lead>
-        O desenvolvimento da Vue e seu ecossistema é guiado por uma equipa internacional, alguns dos quais escolhidos para serem
+        O desenvolvimento da Vue e seu ecossistema é orientado por uma equipa internacional, alguns dos quais escolhidos para serem
         <span
           class="nowrap"
         >mencionados abaixo.</span>
@@ -37,7 +62,7 @@ import type { Member } from './Member'
       <template #title>Equipa Principal Emerita</template>
       <template
         #lead
-      >Cá honramos alguns membros da equipa principal que não mais são ativos os quais fizeram contribuições valiosas no passado.</template>
+      >Nesta seção honramos alguns membros da equipa principal que não mais são ativos os quais fizeram contribuições valiosas no passado.</template>
     </TeamList>
 
     <TeamList :members="membersPartnerData as Member[]">

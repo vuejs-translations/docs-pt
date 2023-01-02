@@ -30,7 +30,7 @@
   },
   {
     "name": "Ben Hong",
-    "title": "Engenheiro de Experiência de Desenvolvimento de Pessoal",
+    "title": "Engenheiro da Experiência de Desenvolvimento de Pessoal",
     "company": "Netlify",
     "companyLink": "https://www.netlify.com/",
     "projects": [
@@ -158,7 +158,7 @@
   },
   {
     "name": "Kazupon",
-    "title": "Engenheiro & Colaborador de Projetos de Código-Aberto",
+    "title": "Engenheiro & Programador de Código-Aberto",
     "company": "PLAID, Inc.",
     "companyLink": "https://plaid.co.jp",
     "projects": [
@@ -179,7 +179,7 @@
         "url": "https://jp.vuejs.org"
       }
     ],
-    "location": "Tokyo, Japão",
+    "location": "Tóquio, Japão",
     "languages": [
       "Japonês",
       "Inglês"
@@ -230,7 +230,7 @@
   },
   {
     "name": "Linusborg",
-    "title": "Disputador da Comunidade Hive-Mind (Provavelmente um Robô)",
+    "title": "Mente Organizadora da Comunidade (Provavelmente um Robô)",
     "location": "Mannheim, Alemanha",
     "languages": [
       "Alemão",
@@ -261,7 +261,7 @@
   },
   {
     "name": "Guillaume Chau",
-    "title": "Programador de Frontend",
+    "title": "Programador do Frontend",
     "company": "Livestorm",
     "companyLink": "https://livestorm.co/",
     "projects": [
@@ -294,14 +294,14 @@
         "url": "https://github.com/Akyrum/v-tooltip"
       }
     ],
-    "location": "Lyon, França",
+    "location": "Bordeaux, França",
     "languages": [
       "Francês",
       "Inglês"
     ],
     "website": {
-      "label": "patreon.com/akryum",
-      "url": "http://patreon.com/akryum"
+      "label": "guillaume-chau.info",
+      "url": "https://guillaume-chau.info/"
     },
     "socials": {
       "github": "Akryum",
@@ -335,7 +335,7 @@
   },
   {
     "name": "GU Yiling",
-    "title": "Programador de Web Sénior",
+    "title": "Programador da Web Sénior",
     "company": "Baidu, inc.",
     "companyLink": "https://www.baidu.com/",
     "projects": [
@@ -437,7 +437,7 @@
   },
   {
     "name": "Yosuke Ota",
-    "title": "Engenheiro de Web Líder",
+    "title": "Engenheiro Chefe da Web",
     "company": "Future Corporation",
     "companyLink": "https://www.future.co.jp/",
     "projects": [
@@ -492,7 +492,7 @@
   },
   {
     "name": "Anthony Fu",
-    "title": "Produtor de Código-Aberto",
+    "title": "Programador de Código-Aberto",
     "projects": [
       {
         "label": "composition-api",
@@ -570,7 +570,7 @@
         "url": "https://github.com/vuejs/core"
       }
     ],
-    "location": "London, United Kingdom",
+    "location": "Londres, Reindo Unido",
     "languages": [
       "Inglês",
       "Português"

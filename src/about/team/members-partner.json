@@ -1,7 +1,7 @@
 [
   {
     "name": "Maria Lamardo",
-    "title": "Engenheira de Frontend",
+    "title": "Engenheira do Frontend",
     "company": "Pendo",
     "projects": [
       {
@@ -92,7 +92,7 @@
         "url": "https://vuejs.amsterdam"
       }
     ],
-    "location": "Amsterdam, Netherlands",
+    "location": "Amesterdão, Países Baixos",
     "languages": [
       "Neerlandês",
       "Inglês",
@@ -151,7 +151,7 @@
   },
   {
     "name": "Alex Jover",
-    "title": "Consultor de Desempenho de Web e PWA",
+    "title": "Consultor de Desempenho da Web e PWA",
     "company": "Freelance",
     "projects": [
       {
@@ -266,7 +266,7 @@
     "title": "Conselheiro Técnico",
     "company": "Fandogh (AUT University)",
     "companyLink": "https://fandogh.org",
-    "location": "Tehran, Iran",
+    "location": "Teerão, Irão",
     "languages": [
       "Persa",
       "Inglês"
@@ -400,8 +400,8 @@
   {
     "name": "Erick Petrucelli",
     "title": "Diretor de Engenharia",
-    "company": "Airbank",
-    "companyLink": "https://www.joinairbank.com/",
+    "company": "Friday Finance",
+    "companyLink": "https://www.fridayfinance.com/",
     "location": "João Pessoa, Brasil",
     "languages": [
       "Português",
@@ -446,7 +446,7 @@
   },
   {
     "name": "Jilson Thomas",
-    "title": "Programador de Frontend Sénior",
+    "title": "Programador Sénior do Frontend",
     "company": "Nominator",
     "companyLink": "https://nominator.com/",
     "projects": [
@@ -466,7 +466,7 @@
   },
   {
     "name": "Israel Ortuño",
-    "title": "Programador de Web de Pilha Completa",
+    "title": "Programador de Pilha Completa da Web",
     "company": "Freelance",
     "projects": [
       {
@@ -506,8 +506,8 @@
   },
   {
     "name": "Grigoriy Beziuk",
-    "title": "Programador de Web de Pilha Completa",
-    "company": "Self Employed",
+    "title": "Programador de Pilha Completa da Web",
+    "company": "Trabalhador Independente",
     "companyLink": "http://gbezyuk.ru",
     "location": "Moscovo, Rússia",
     "languages": [
