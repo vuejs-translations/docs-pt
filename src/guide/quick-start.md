@@ -2,9 +2,9 @@
 footer: false
 ---
 
-# Inicio Rápido
+# Inicio Rápido {#quick-start}
 
-## Experimente a Vue Online
+## Experimente a Vue Online {#try-vue-online}
 
 - Para ter um gosto da Vue rapidamente, podes experimentá-la diretamente na nossa [Zona de Testes](https://sfc.vuejs.org/#eNo9j01qAzEMha+iapMWOjbdDm6gu96gG2/cjJJM8B+2nBaGuXvlpBMwtj4/JL234EfO6toIRzT1UObMexvpN6fCMNHRNc+w2AgwOXbPL/caoBC3EjcCCPU0wu6TvE/wlYqfnnZ3ae2PXHKMfiwQYArZOyYhAHN+2y9LnwLrarTQ7XeOuTFch5Am8u8WRbcoktGPbnzFOXS3Q3BZXWqKkuRmy/4L1eK4GbUoUTtbPDPnOmpdj4ee/1JVKictlSot8hxIUQ3Dd0k/lYoMtrglwfUPkXdoJg==).
 
@@ -12,7 +12,7 @@ footer: false
 
 - Se já estiveres familiarizado com a Node.js e o conceito de ferramentas de construção, também podes experimentar uma configuração de construção completa diretamente de dentro do teu navegador no [StackBlitz](https://vite.new/vue).
 
-## Criando uma Aplicação de Vue
+## Criando uma Aplicação de Vue {#creating-a-vue-application}
 
 :::tip Pré-requisitos
 
@@ -64,7 +64,7 @@ Isto criará a construção pronta para produção da tua aplicação no diretó
 
 [Próximos passos >](#próximos-passos)
 
-## Utilizando a Vue a partir da CDN
+## Utilizando a Vue a partir da CDN {#using-vue-from-cdn}
 
 Tu podes utilizar a Vue diretamente a partir de uma CDN através de um marcador de `script`:
 
@@ -76,7 +76,7 @@ Cá estamos utilizando [unpkg](https://unpkg.com/), mas também podes utilizar q
 
 Quando estiveres utilizando a Vue a partir de um CDN, não existe "etapa de construção" envolvida. Isto torna a configuração muito mais simples, e é adequado para a otimização da HTML estática ou integração com uma abstração de backend. No entanto, não serás capaz de utilizar a sintaxe de Componente de Ficheiro Único.
 
-### Utilizando a Construção Global
+### Utilizando a Construção Global {#using-the-global-build}
 
 A ligação acima está carregando a **construção global** de Vue, onde todas APIs de alto nível estão expostas como propriedades sobre o objeto `Vue` global. Cá está um exemplo completo de utilização da construção global:
 
@@ -101,7 +101,7 @@ A ligação acima está carregando a **construção global** de Vue, onde todas 
 
 [Demonstração do JSFiddle](https://jsfiddle.net/yyx990803/nw1xg8Lj/)
 
-### Utilizando a Construção de Módulo de EcmaScript
+### Utilizando a Construção de Módulo de EcmaScript {#using-the-es-module-build}
 
 Ao longo do resto da documentação, estaremos essencialmente utilizando a sintaxe de [módulos de EcmaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Agora a maioria dos navegadores suportam os módulos de EcmaScript de maneira nativa, assim a podemos utilizar a Vue a partir de um CDN através dos módulos de EcmaScript desta maneira:
 
@@ -125,7 +125,7 @@ Repara que estamos utilizando `<script type="module">`, e a URL do CDN importado
 
 [Demonstração de JSFiddle](https://jsfiddle.net/yyx990803/vo23c470/)
 
-### Ativando os Mapas de Importação
+### Ativando os Mapas de Importação {#enabling-import-maps}
 
 No exemplo acima estamos importando a partir de um URL de CDN completa, mas no resto da documentação verás o código desta maneira:
 
@@ -176,7 +176,7 @@ Se o teu navegador preferido ainda não suporta os mapas de importação, podes 
 Os exemplos até aqui estão utilizando a construção de desenvolvimento de Vue - se tencionas utilizar a Vue a partir de um CDN em produção, certifica-te de consultar o [Guia de Desdobramento de Produção](/guide/best-practices/production-deployment.html#sem-ferramentas-de-construção).
 :::
 
-### Dividindo os Módulos
+### Dividindo os Módulos {#splitting-up-the-modules}
 
 A medida que mergulhamos mais fundo no guia, poderemos precisar dividir o nosso código para dentro de ficheiros de JavaScript separados para que eles sejam mais fáceis de gerir. Por exemplo:
 
@@ -206,11 +206,11 @@ Para iniciar um servidor de HTTP local, primeiro instale a [Node.js](https://nod
 
 Tu podes ter notado que o modelo de marcação do componente importado está em linha como uma sequência de caracteres de JavaScript. Se estiveres utilizando o VSCode, podes instalar a extensão [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) e prefixar as sequências de caracteres com um comentário `/*html*/` para obteres o destacamento de sintaxe para elas.
 
-### Utilizando a API de Composição sem uma Etapa de Construção
+### Utilizando a API de Composição sem uma Etapa de Construção {#using-composition-api-without-a-build-step}
 
 Muitos dos exemplos para API de Composição estarão utilizando a sintaxe `<script setup>`. Se tencionas utilizar a API de Composição sem uma etapa de construção, consulte a utilização da [opção `setup()`](/api/composition-api-setup.html).
 
-## Próximos Passos
+## Próximos Passos {#next-steps}
 
 Se saltaste a [Introdução](/guide/introduction), recomendamos fortemente a leitura dela antes de avançar para o resto da documentação.
 

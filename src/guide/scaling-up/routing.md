@@ -1,6 +1,6 @@
 # Roteamento {#routing}
 
-## Roteamento no Lado do Cliente vs Lado do Servidor
+## Roteamento no Lado do Cliente vs Lado do Servidor {#client-side-vs-server-side-routing}
 
 O roteamento no lado do servidor significa que o servidor envia uma resposta baseada no caminho da URL que o utilizador está visitando. Quando clicamos sobre uma ligação em uma aplicação de web interpretada no servidor tradicional, o navegador recebe uma resposta de HTML do servidor e recarrega a página inteira com o novo HTML.
 
