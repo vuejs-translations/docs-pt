@@ -44,7 +44,10 @@ onMounted(async () => {
         rel="sponsored noopener"
       >
         <picture v-if="img.endsWith('png')">
-          <source type="image/avif" :srcset="`${base}/images/${img.replace(/\.png$/, '.avif')}`" />
+          <source
+            type="image/avif"
+            :srcset="`${base}/images/${img.replace(/\.png$/, '.avif')}`"
+          />
           <img :src="`${base}/images/${img}`" :alt="name" />
         </picture>
         <img v-else :src="`${base}/images/${img}`" :alt="name" />
@@ -54,7 +57,8 @@ onMounted(async () => {
       v-if="placement !== 'page' && tier !== 'special'"
       href="/sponsor/"
       class="sponsor-item action"
-    >O teu logótipo</a>
+      >O teu logótipo</a
+    >
   </div>
 </template>
 
