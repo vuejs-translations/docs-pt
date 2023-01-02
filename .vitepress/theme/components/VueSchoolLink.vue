@@ -29,7 +29,7 @@ export default {
   padding-left: 36px;
 }
 .vueschool a:before {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 30px;
@@ -40,7 +40,7 @@ export default {
   background-color: #73abfe;
 }
 .vueschool a:after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 0;
