@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Suspense
+# Suspense {#suspense}
 
 :::warning Funcionalidade Experimental
 `<Suspense>` é uma funcionalidade experimental. Não é garantido de que chegue a estado estável e a API pode mudar antes disso acontecer.
@@ -10,7 +10,7 @@ outline: deep
 
 `<Suspense>` é um componente embutido para orquestração de dependências assíncronas em uma árvore de componente. Ele pode interpretar um estado de carregamento enquanto espera por várias dependências assíncronas encaixadas em baixo da árvore de componente ser resolvida.
 
-## Dependências Assíncronas
+## Dependências Assíncronas {#async-dependencies}
 
 Para explicar o problema que `<Suspense>` está tentando solucionar e como ele interage com estas dependências assíncronas, vamos imaginar uma hierarquia de componente como a seguinte:
 
@@ -34,7 +34,7 @@ Existem dois tipos das dependências assíncronas que `<Suspense>` pode servir:
 
 2. [Componentes Assíncronos](/guide/components/async.html).
 
-### `async setup()`
+### `async setup()` {#async-setup}
 
 Um gatilho de `setup()` do componente da API de Composição pode ser assíncrono:
 
@@ -63,13 +63,13 @@ const posts = await res.json()
 </template>
 ```
 
-### Componentes Assíncronos
+### Componentes Assíncronos {#async-components}
 
 Os componentes assíncronos são **"suspensivos"** por padrão. Isto significa que se ele tiver um `<Suspense>` na cadeia do componente pai, ele será tratado como uma dependência assíncrona daquele `<Suspense>`. Neste caso, o estado de carregamento será controlado pelo `<Suspense>`, e as opções de carregamento (loading, em Inglês), erro (error, em Inglês), atraso (delay, em Inglês), e pausa (timeout, em Inglês) do próprio componente serão ignorados.
 
 O componente assíncrono pode sair do controlo do `Suspense` e permitir que o componente sempre controle o seu próprio estado de carregamento especificando `suspensible: false` nas suas opções.
 
-## Estado de Carregamento
+## Estado de Carregamento {#loading-state}
 
 O componente `<Suspense>` tem duas ranhuras: `#default` e `#fallback`. Ambas ranhuras apenas têm em conta **um** nó filho imediato. O nó na ranhura padrão é mostrado se possível. Se não, o nó na ranhura retrocessiva (fallback, em Inglês) será mostrada.
 
@@ -93,17 +93,17 @@ Uma vez em um estado resolvido, `<Suspense>` apenas reverterá para um estado pe
 
 Quanto uma reversão acontece, conteúdo retrocessivo não será imediatamente exibido. Ao invés do, `<Suspense>` exibirá conteúdo `#default` anterior enquanto espera que o novo conteúdo e suas dependências assíncronas sejam resolvidas. Este comportamento pode ser configurado com a propriedade `timeout`: `<Suspense>` mudará para conteúdo retrocessivo se demorar mais que o `timeout` para interpretar o novo conteúdo padrão. Um valor de `timeout` de `0` causará o conteúdo retrocessivo ser exibido imediatamente quando o conteúdo for substituído.
 
-## Eventos
+## Eventos {#events}
 
 O componente `<Suspense>` emite 3 eventos: `pending`, `resolve` e `fallback`. O evento `pending` ocorre quando estiveres entrando em um estado pendente. O evento `resolve` é emitido quando o novo conteúdo termina a resolução na ranhura `default`. O evento `fallback` é disparado quando os conteúdos da ranhura `fallback` são exibidos.
 
 Os eventos poderiam ser utilizado, por exemplo, para mostrar o indicador de carregamento na frente do DOM antigo enquanto os novos componentes estavam carregando.
 
-## Manipulação de Erro
+## Manipulação de Erro {#error-handling}
 
 `<Suspense>` atualmente não fornece manipulação de erro através do próprio componente - no entanto, podes utilizar a opção [`errorCaptured`](/api/options-lifecycle.html#errorcaptured) ou o gatilho [`onErrorCaptured()`](/api/composition-api-lifecycle.html#onerrorcaptured) para capturar e manipular erros assíncronos no componente pai de `<Suspense>`.
 
-## Combinando com Outros Componentes
+## Combinando com Outros Componentes {#combining-with-other-components}
 
 É comum querer utilizar `<Suspense>` em conjunto com os componentes [`<Transition>`](./transition) e [`<KeepAlive>`](./keep-alive). A ordem de encaixamento destes componentes é importante para conseguir que todos eles funcionem corretamente.
 

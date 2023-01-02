@@ -4,11 +4,11 @@ import ListMove from './transition-demos/ListMove.vue'
 import ListStagger from './transition-demos/ListStagger.vue'
 </script>
 
-# Grupo de Transição
+# Grupo de Transição {#transitiongroup}
 
 `<TransitionGroup>` é um componente embutido desenhado para animação da inserção, remoção, e mudança da ordem dos elementos ou componentes que são interpretados em uma lista.
 
-## Diferenças em relação ao `<Transition>`
+## Diferenças em relação ao `<Transition>` {#differences-from-transition}
 
 `<TransitionGroup>` suporta as mesmas propriedades, classes de transição de CSS, e ouvintes de gatilhos de JavaScript tal como o `<Transition>`, com as seguintes diferenças:
 
@@ -24,7 +24,7 @@ import ListStagger from './transition-demos/ListStagger.vue'
 Quando usada nos [modelos de marcação do DOM](/guide/essentials/component-basics.html#advertências-de-analise-de-modelo-de-marcação-de-dom), deve ser referenciado como `<transition-group>`.
 :::
 
-## Transições de Entrada e Saída
+## Transições de Entrada e Saída {#enter-leave-transitions}
 
 Cá está um exemplo de aplicação de transições de entrada e saída à uma lista `v-for` usando `<TransitionGroup>`:
 
@@ -50,7 +50,7 @@ Cá está um exemplo de aplicação de transições de entrada e saída à uma l
 
 <ListBasic />
 
-## Transições de Movimento
+## Transições de Movimento {#move-transitions}
 
 A demonstração acima tem defeitos óbvios: quando um item é inserido ou removido, seus itens circundantes "saltam" instantaneamente para lugar ao invés de moverem-se suavemente. Nós podemos corrigir isto adicionando algumas regras de CSS a mais:
 
@@ -80,7 +80,7 @@ Agora está muito melhor - ainda animando suavemente quando a lista inteira é b
 
 [Exemplo Completo](/examples/#list-transition)
 
-## Transições de Lista Surpreendente
+## Transições de Lista Surpreendente {#staggering-list-transitions}
 
 Ao comunicar com as transições de JavaScript através dos atributos de dados, é também possível alterar o horário de transições em uma lista. Primeiro, interpretamos o índice de um item como um atributo de dados no elemento de DOM:
 

@@ -2,11 +2,11 @@
 import SwitchComponent from './keep-alive-demos/SwitchComponent.vue'
 </script>
 
-# Manter Vivo
+# Manter Vivo {#keepalive}
 
 O `<KeepAlive>` é um componente embutido que permite-nos cachear condicionalmente as instâncias de componente quando mudamos dinamicamente entre vários componentes.
 
-## Utilização Básica
+## Utilização Básica {#basic-usage}
 
 No capítulo de Fundamentos de Componente, introduzimos a sintaxe para [Componentes Dinâmicos](/guide/essentials/component-basics.html#componentes-dinâmicos), utilizando o elemento especial `<component>`:
 
@@ -16,7 +16,7 @@ No capítulo de Fundamentos de Componente, introduzimos a sintaxe para [Componen
 
 Por padrão, uma instância de componente ativa será desmontada quando mudamos para outra instância de componente. Isto causará que qualquer estado mudado que ele segura ser perdido.
 
-No exemplo abaixo, temos dois componentes com conteúdo - (A) contém um contador, enquando (B) contém uma messagem síncronizada com uma entrada através `v-model`. Tente atualizar o estado de um deles, mude para outro, e então mude de volta para ele: 
+No exemplo abaixo, temos dois componentes com conteúdo - (A) contém um contador, enquando (B) contém uma messagem síncronizada com uma entrada através `v-model`. Tente atualizar o estado de um deles, mude para outro, e então mude de volta para ele:
 
 <SwitchComponent />
 
@@ -50,7 +50,7 @@ Agora, o estado será persistido através das mudanças de componente:
 Quando utilizada nos [modelos de marcação de DOM](/guide/essentials/component-basics.html#advertências-de-analise-de-modelo-marcação-de-dom), ele deve ser referenciado como `<keep-alive>`.
 :::
 
-## Incluir / Excluir
+## Incluir / Excluir {#include-exclude}
 
 Por padrão, `<KeepAlive>` cacheará qualquer instância de componente no lado de dentro. Nós podemos personalizar este comportamento através das propriedades `include` e `exclude`. Ambas propriedades podem ser uma sequência de caracteres delimitada por vírgula, uma `RegExp` (Expressão Regular), ou arranjo contendo quaisquer tipos:
 
@@ -73,7 +73,7 @@ Por padrão, `<KeepAlive>` cacheará qualquer instância de componente no lado d
 
 A correspondência é verificada contra a opção [name](/api/options-misc.html#name) do componente, assim os componentes que precisam ser cacheados condicionalmente pelo `KeepAlive` devem declarar de maneira explícita uma opção `name`.
 
-## Máximo de Instâncias Cacheadas
+## Máximo de Instâncias Cacheadas {#max-cached-instances}
 
 Nós podemos limitar o número máximo de instâncias de componente que podem ser cacheadas através da propriedade `max`. Quando `max` é especificada, `<KeepAlive>` comporta-se como um [cache de LRU](<https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)>): se o número de instâncias cacheadas exceder a contagem máxima especidada, a menor instância cacheada acessada recentemente será destruída para arranjar espaço para uma nova.
 
@@ -83,7 +83,7 @@ Nós podemos limitar o número máximo de instâncias de componente que podem se
 </KeepAlive>
 ```
 
-## Ciclo de Vida da Instância Cacheada
+## Ciclo de Vida da Instância Cacheada {#lifecycle-of-cached-instance}
 
 Quando uma instância de componente for removida do DOM mas for parte de uma árvore de componente cacheada pelo  `<KeepAlive>`, ele entra em um estado **desativado** no lugar de ser desmontada. Quando uma instância de componente for inserida no DOM como parte de uma árvore cacheada, ele é **ativado**.
 
