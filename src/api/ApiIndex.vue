@@ -46,29 +46,12 @@ const filtered = computed(() => {
     })
     .filter((i) => i) as APIGroup[]
 })
-
-// same as vitepress' slugify logic
-function slugify(text: string): string {
-  return (
-    text
-      // Replace special characters
-      .replace(/[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g, '-')
-      // Remove continuous separators
-      .replace(/\-{2,}/g, '-')
-      // Remove prefixing and trailing separators
-      .replace(/^\-+|\-+$/g, '')
-      // ensure it doesn't start with a number (#121)
-      .replace(/^(\d)/, '_$1')
-      // lowercase
-      .toLowerCase()
-  )
-}
 </script>
 
 <template>
   <div id="api-index">
     <div class="header">
-      <h1>Referência de API</h1>
+      <h1>Referência da API</h1>
       <div class="api-filter">
         <label for="api-filter">Filtrar</label>
         <input
@@ -80,25 +63,31 @@ function slugify(text: string): string {
       </div>
     </div>
 
-    <div v-for="section of filtered" :key="section.text" class="api-section">
-      <h2 :id="slugify(section.text)">{{ section.text }}</h2>
+    <div
+      v-for="section of filtered"
+      :key="section.text"
+      class="api-section"
+    >
+      <h2 :id="section.anchor">{{ section.text }}</h2>
       <div class="api-groups">
-        <div v-for="item of section.items" :key="item.text" class="api-group">
+        <div
+          v-for="item of section.items"
+          :key="item.text"
+          class="api-group"
+        >
           <h3>{{ item.text }}</h3>
           <ul>
             <li v-for="h of item.headers" :key="h.anchor">
-              <a :href="item.link + '.html#' + slugify(h.anchor)">{{ h.anchor }}</a>
+              <a :href="item.link + '.html#' + h.anchor">{{ h.text }}</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div
-      v-if="!filtered.length"
-      class="no-match"
-    >Não foi encontrado nada na API que corresponda a "{{ query }}".</div>
-  </div>
+    <div v-if="!filtered.length" class="no-match">
+      Não foi encontrado nada na API que corresponda a "{{ query }}".
+    </div>
 </template>
 
 <style scoped>
