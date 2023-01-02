@@ -1,4 +1,4 @@
-# Referências do Modelo de Marcação
+# Referências do Modelo de Marcação {#template-refs}
 
 Embora o modelo de interpretação declarativa da Vue abstraia a maior parte das operações diretas do DOM por ti, ainda existe casos onde precisamos de acesso direto aos elementos do DOM subjacentes. Para conseguir isto, podemos utilizar o atributo especial `ref`:
 
@@ -8,7 +8,7 @@ Embora o modelo de interpretação declarativa da Vue abstraia a maior parte das
 
 O `ref` é um atributo especial, similar ao atributo `key` discutido no capitulo `v-for`. Ele permite-nos obter uma referência direta para um elemento de DOM especifico ou instância de componente depois de ser montada. Isto pode ser útil quando quiseres, por exemplo, focar programaticamente uma entrada (`input`) na montagem do componente, ou inicializar uma biblioteca de terceiro sobre um elemento.
 
-## Acessando as Referências
+## Acessando as Referências {#accessing-the-refs}
 
 <div class="composition-api">
 
@@ -87,7 +87,7 @@ Consulte também: [Tipando Referências de Modelo de Marcação](/guide/typescri
 
 </div>
 
-## Referências dentro de `v-for`
+## Referências dentro de `v-for` {#refs-inside-v-for}
 
 > Exige a versão 3.2.25 em diante
 
@@ -155,7 +155,7 @@ export default {
 
 Deve ser notado que o arranjo de referência **não** garante a mesma ordem conforme o arranjo (`array`) de origem.
 
-## Referências de Função
+## Referências de Função {#function-refs}
 
 No lugar de uma chave de sequência de caracteres, o atributo `key` também pode ser atado a uma função, que será chamada em cada atualização do componente e dar-te-á completa flexibilidade sobre onde guardar a referência do elemento. A função recebe a referência do elemento como primeiro argumento:
 
@@ -165,7 +165,7 @@ No lugar de uma chave de sequência de caracteres, o atributo `key` também pode
 
 Nota que estamos utilizando uma vinculação de `:ref` dinâmica assim podemos passar nela uma função no lugar de uma sequência de caracteres de nome de referência. Quando o elemento é desmontado, o argumento será `null`. Tu podes, claro, utilizar um método no lugar de uma função em linha.
 
-## Referência no Componente
+## Referência no Componente {#ref-on-component}
 
 > Esta secção presume conhecimento de [Componentes](/guide/essentials/component-basics). Esteja a vontade para saltá-la e voltar mais tarde.
 
@@ -227,6 +227,7 @@ import { ref } from 'vue'
 const a = 1
 const b = ref(2)
 
+// Macros do compilador, tais como `defineExpose`, não precisam ser importados.
 defineExpose({
   a,
   b
@@ -263,6 +264,6 @@ export default {
 }
 ```
 
-No exemplo acima, um pai referenciando este componente através de referência de modelo de marcação só será capaz de acessar `publicData` e `publicMethod`. 
+No exemplo acima, um pai referenciando este componente através de referência de modelo de marcação só será capaz de acessar `publicData` e `publicMethod`.
 
 </div>
