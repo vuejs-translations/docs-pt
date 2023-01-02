@@ -1,4 +1,4 @@
-# Code Of Conduct {#code-of-conduct}
+# Código de Conduta {#code-of-conduct}
 
 ## Our Pledge {#our-pledge}
 
