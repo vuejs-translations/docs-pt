@@ -88,6 +88,7 @@ const filtered = computed(() => {
     <div v-if="!filtered.length" class="no-match">
       Não foi encontrado nada na API que corresponda a "{{ query }}".
     </div>
+  </div>
 </template>
 
 <style scoped>
