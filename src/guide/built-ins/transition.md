@@ -545,7 +545,7 @@ Cá está a demonstração anterior com `mode="out-in"`:
 
 `<Transition>` também suporta `mode="in-out"`, embora que seja muito menos usada com frequência.
 
-## Transição Entre Componentes {#dynamic-transitions}
+## Transição Entre Componentes {#transition-between-components}
 
 `<Transition>` também pode ser usada em torno dos [componentes dinâmicos](/guide/essentials/component-basics.html#componentes-dinâmicos):
 
