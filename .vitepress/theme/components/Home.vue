@@ -67,7 +67,7 @@ onMounted(async () => {
       </p>
     </div>
     <div class="vt-box">
-      <h2>Ótimo Desempenho</h2>
+      <h2>Otimizada</h2>
       <p>
         Verdadeiramente reativa, sistema de interpretação de compilador otimizado
         que raramente precisa de otimização manual.
@@ -180,6 +180,7 @@ html:not(.dark) .accent,
   border-bottom: 1px solid var(--vt-c-divider-light);
   padding: 12px 24px;
   display: flex;
+  align-items: center;
 }
 
 #special-sponsor span {
