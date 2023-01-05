@@ -64,7 +64,7 @@ Isto é uma representação simples do conceito do "fluxo de dados de uma via":
 
 No entanto, a simplicidade começa a decompor-se quando temos **vários componentes que partilham um estado comum**:
 
-1. Várias visões que podem depender do mesmo pedaço de estado. 
+1. Várias visões que podem depender do mesmo pedaço de estado.
 2. Ações de visões diferentes que podem precisar mudar o mesmo pedaço de estado.
 
 Para o primeiro caso, uma possível solução é "transportando" o estado partilhado para cima para um componente ancestral comum, e depois passar para baixo como propriedades. No entanto, isto torna-se rapidamente entediante em árvores de componente com hierarquias profundas, levando para um outro problema conhecido como [Perfuração de Propriedade](/guide/components/provide-inject.html#prop-drilling).
@@ -225,7 +225,7 @@ O fato do sistema de reatividade da Vue estar separado do modelo do componente t
 
 Se estiveres construindo uma aplicação que influencia a [Interpretação no Lado do Servidor (SSR, sigla em Inglês)](./ssr), o padrão acima pode levar a problemas devido a memória ser uma monotónica (singleton, em Inglês) partilhada através de várias requisições. Isto é discutido em [mais detalhes](./ssr#cross-request-state-pollution) no guia da SSR.
 
-## Pinia
+## Pinia {#pinia}
 
 Enquanto a nossa solução de gestão de estado simples será suficiente em cenários simples, existem muitas outras coisas a considerar aplicações de produção de grande escala:
 
