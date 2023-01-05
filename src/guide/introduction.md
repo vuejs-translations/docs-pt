@@ -216,7 +216,7 @@ Se fores novo para Vue, cá está nossa recomendação geral:
 
 Tu não precisas comprometeres-te com apenas um estilo durante a fase de aprendizado. O resto da documentação fornecerá exemplos de código em ambos estilos onde for aplicável, e podes alternar entre eles em qualquer momento utilizando **interruptores de Preferência de API** no cimo da barra lateral esquerda.
 
-## Continua Com Dúvidas? {#still-got-questions
+## Continua Com Dúvidas? {#still-got-questions}
 
 Consulte a nossa [FAQ](/about/faq).
 
