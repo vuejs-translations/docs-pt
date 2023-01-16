@@ -4,7 +4,7 @@ footer: false
 
 # Introdução {#introduction}
 
-:::info Tu estás a ler documentação da Vue 3!
+:::info Tu estás a ler a documentação da Vue 3!
 
 - O suporte para a Vue 2 terminará no dia 31 de Dezembro de 2023. Saiba mais a respeito da [LTS Extendida da Vue 2](https://v2.vuejs.org/lts/).
 - A documentação da Vue 2 foi movida para [v2.vuejs.org](https://v2.vuejs.org/).
