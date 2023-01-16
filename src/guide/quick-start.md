@@ -2,7 +2,7 @@
 footer: false
 ---
 
-# Inicio Rápido {#quick-start}
+# Introdução Rápida {#quick-start}
 
 ## Experimente a Vue Online {#try-vue-online}
 
@@ -172,7 +172,7 @@ Se estiveres utilizando o Firefox, ele só é suportado a partir da versão 102 
 Se o teu navegador preferido ainda não suporta os mapas de importação, podes adicionar um "polyfill" para ele com [es-module-shims](https://github.com/guybedford/es-module-shims).
 :::
 
-:::warning Notas a respeito Uso em Produção
+:::warning Notas a respeito do Uso em Produção
 Os exemplos até aqui estão utilizando a construção de desenvolvimento de Vue - se tencionas utilizar a Vue a partir de um CDN em produção, certifica-te de consultar o [Guia de Desdobramento de Produção](/guide/best-practices/production-deployment.html#sem-ferramentas-de-construção).
 :::
 
