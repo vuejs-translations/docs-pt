@@ -2,33 +2,33 @@
 import TestingApiSwitcher from './TestingApiSwitcher.vue'
 </script>
 
-# Testing {#testing}
+# Testagem {#testing}
 
-## Why Test? {#why-test}
+## Porquê Testar? {#why-test}
 
-Automated tests help you and your team build complex Vue applications quickly and confidently by preventing regressions and encouraging you to break apart your application into testable functions, modules, classes, and components. As with any application, your new Vue app can break in many ways, and it's important that you can catch these issues and fix them before releasing.
+Os testes automatizados ajudam-te e a tua construir aplicações de Vue complexas rapidamente e com confiança pela prevenção de regressões e encorajam-te a quebrar a tua aplicação em funções, módulos, classes, e componentes testáveis. Tal como em qualquer aplicação, a tua nova aplicação de Vue pode quebrar-se de muitas maneiras e é importante que possas capturar estes problemas e corrigi-los antes do lançamento.
 
-In this guide, we'll cover basic terminology and provide our recommendations on which tools to choose for your Vue 3 application.
+Neste guia, cobriremos a terminologia fundamental e forneceremos as nossas recomendações a respeito de quais ferramentas escolher para a tua aplicação de Vue 3.
 
-There is one Vue-specific section covering composables. See [Testing Composables](#testing-composables) below for more details.
+Existe uma seção específica da Vue que cobre os constituíveis. Consulte abaixo a [Testagem das Constituíveis](#testing-composables) para mais detalhes.
 
-## When to Test {#when-to-test}
+## Quando Testar {#when-to-test}
 
-Start testing early! We recommend you begin writing tests as soon as you can. The longer you wait to add tests to your application, the more dependencies your application will have, and the harder it will be to start.
+Comece a testar desde o inicio! Nós recomendamos-te começar a escrever testes o mais cedo que puderes. Quanto mais tempo esperares para adicionar testes à tua aplicação, mas dependências a tua aplicação terá, e mais difícil será começar.
 
-## Testing Types {#testing-types}
+## Tipos de Testagem {#testing-types}
 
-When designing your Vue application's testing strategy, you should leverage the following testing types:
+Quando estiveres a desenhar a estratégia de testagem da tua aplicação de Vue, deves influenciar os seguintes tipos de testagem:
 
-- **Unit**: Checks that inputs to a given function, class, or composable are producing the expected output or side effects.
-- **Component**: Checks that your component mounts, renders, can be interacted with, and behaves as expected. These tests import more code than unit tests, are more complex, and require more time to execute.
-- **End-to-end**: Checks features that span multiple pages and make real network requests against your production-built Vue application. These tests often involve standing up a database or other backend.
+- **Unitário**: Verifica se as entradas para uma dada função, classe, ou constituível estão a produzir o resultado esperado ou efeitos colaterais.
+- **Componente**: Verifica se o teu componente monta, apresenta, pode ser interagido com, e comporta-se como esperado. Estes testes importam mais código do que os testes unitários, são mais complexos, e exigem mais tempo para serem executados.
+- **Final-à-Final**: Verifica se as funcionalidades que abrangem várias páginas e realizam requisições de rede reais contra a tua aplicação de Vue construída para produção. Estes testes muitas vezes envolvem levantar uma base de dado ou outro backend.
 
-Each testing type plays a role in your application's testing strategy and each will protect you against different types of issues.
+Cada tipo de testagem desempenha um papel na estratégia de testagem da tua aplicação e cada um proteger-te-á contra diferentes tipos de problemas. 
 
-## Overview {#overview}
+## Visão Geral {#overview}
 
-We will briefly discuss what each of these are, how they can be implemented for Vue applications, and provide some general recommendations.
+Nós discutiremos brevemente o que cada um destes é, como eles podem ser implementados em aplicações de Vue, e forneceremos algumas recomendações gerais.
 
 ## Unit Testing {#unit-testing}
 
