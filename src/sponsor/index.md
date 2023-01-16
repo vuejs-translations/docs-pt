@@ -9,69 +9,68 @@ sponsors: false
 import SponsorsGroup from '@theme/components/SponsorsGroup.vue'
 </script>
 
-# Become a Vue.js Sponsor {#become-a-vue-js-sponsor}
+# Torna-te um Patrocinador da Vue.js {#become-a-vue-js-sponsor}
 
-Vue.js is an MIT licensed open source project and completely free to use.
-The tremendous amount of effort needed to maintain such a large ecosystem and develop new features for the project is only made sustainable thanks to the generous financial backing of our sponsors.
+A Vue.js é um projeto de código-aberto sob a licença MIT e completamente gratuita para uso. A tremenda quantidade de esforço necessária para manter um ecossistema tão grande e programar novas funcionalidades para o projeto só é sustentável graças ao generoso financiamento dos nossos patrocinadores.
 
-## How to Sponsor {#how-to-sponsor}
+## Como Patrocinar {#how-to-sponsor}
 
-Sponsorships can be done via [GitHub Sponsors](https://github.com/sponsors/yyx990803) or [OpenCollective](https://opencollective.com/vuejs). Invoices can be obtained via GitHub's payment system. Both monthly-recurring sponsorships and one-time donations are accepted. Recurring sponsorships are entitled to logo placements as specified in [Sponsorship Tiers](#tier-benefits).
+Os apadrinhamentos podem ser feito através da [GitHub Sponsors](https://github.com/sponsors/yyx990803) ou [OpenCollective](https://opencollective.com/vuejs). As faturas podem ser obtidas através do sistema de pagamento da GitHub. Tanto os apadrinhamentos mensais recorrentes e doações únicas são aceitas. Os apadrinhamentos recorrentes são intitulados para colocação de logótipo como especificado nas [Fileiras de Apadrinhamento](#tier-benefits).
 
-## Sponsoring Vue as a Business {#sponsoring-vue-as-a-business}
+## Patrocinar a Vue como um Negócio {#sponsoring-vue-as-a-business}
 
-Sponsoring Vue gives you great exposure to over **1.7 million** Vue developers around the world through our website and GitHub project READMEs. In addition, supporting OSS improves the reputation of your brand, which is an important asset for any company that interacts with developers.
+Apadrinhar a Vue dá-te excelente exposição sobre **1.7 milhões** de programadores de Vue em todo o mundo através da nossa página e READMEs do projeto da GitHub. Além disto, o apoio ao OSS melhora a reputação da tua marca, o que é um recurso importante para qualquer empresa que interage com programadores.
 
-If you are using Vue to build a revenue-generating product, it makes business sense to sponsor Vue's development: **it ensures the project that your product relies on stays healthy and actively maintained.** The exposure and positive brand image in the Vue community also makes it easier to attract and recruit Vue developers.
+Se estiveres a usar a Vue para construir um produto que gera receitas, faz sentido a nível de negócio patrocinar o desenvolvimento da Vue: **isto garante que o projeto que o teu produto depende continue a ser saudavelmente e ativamente mantido.** A exposição e a imagem positiva da marca na comunidade de Vue facilita a atração e recrutamento de programadores de Vue.
 
-If you are building a product where your target customers are developers, you will gain high quality traffic through the sponsorship exposure, since all our visitors are developers. The sponsorship also builds brand recognition and improves conversion.
+Se estiveres a construir um produto onde os teu público-alvo são programadores, ganharás alto tráfego de qualidade através da exposição do apadrinhamento, já que todos os nossos visitantes são programadores. O apadrinhamento também constrói o reconhecimento da marca e melhora a conversão.
 
-## Sponsoring Vue as an Individual {#sponsoring-vue-as-an-individual}
+## Patrocinar a Vue como Indivíduo {#sponsoring-vue-as-an-individual}
 
-If you are an individual user and have enjoyed the productivity of using Vue, consider donating as a sign of appreciation - like buying us coffee once in a while. Many of our team members accept sponsorships and donations via GitHub Sponsors. Look for the "Sponsor" button on each team member's profile on our [team page](/about/team).
+Se fores um utilizador individual e tens desfrutado da produtividade oferecida pela Vue, considere doar como um sinal de apreciação - como comprando-nos uma vez a outra. Muitos dos membros da nossa equipa aceitam patrocínios e doações através da GitHub Sponsors. Procure pelo botão "Sponsor" ou "Patrocinar" no perfil de cada membro da equipa na nossa [página da equipa](/about/team).
 
-You can also try to convince your employer to sponsor Vue as a business. This may not be easy, but business sponsorships typically make a much larger impact on the sustainability of OSS projects than individual donations, so you will help us much more if you succeed.
+Tu podes também tentar convencer o teu empregador a patrocinar a Vue como um negócio. Isto pode não ser fácil, mas os apadrinhamentos de negócios normalmente causa um maior impacto na sustentabilidade de projetos de OSS do que as doações individuais, assim nos ajudarás muito mais se fores bem-sucedido.
 
-## Tier Benefits {#tier-benefits}
+## Nível de Benefícios {#tier-benefits}
 
-- **Global Special**:
-  - Limited to one sponsor globally (currently filled).
-  - Exclusive above the fold logo placement on the front page of [vuejs.org](/).
-  - Most prominent logo placement in all locations from tiers below.
-- **Platinum (USD$2,000/mo)**:
-  - Prominent logo placement on the front page of [vuejs.org](/).
-  - Prominent logo placement in sidebar of all content pages.
-  - Prominent logo placement in the README of [`vuejs/core`](https://github.com/vuejs/core) and [`vuejs/vue`](https://github.com/vuejs/core).
-- **Gold (USD$500/mo)**:
-  - Large logo placement on the front page of [vuejs.org](/).
-  - Large Logo placement in the README of `vuejs/core` and `vuejs/vue`.
-- **Silver (USD$250/mo)**:
-  - Medium logo placement in the `BACKERS.md` file of `vuejs/core` and `vuejs/vue`.
+- **Especial Global**
+  - Limitados àquele que patrocina globalmente (atualmente cheio).
+  - Exclusivo acima da colocação de logótipo na primeira página da [vuejs.org](/).
+  - Colocação de logótipo mais proeminente em todas localizações a partir dos níveis abaixo.
+- **Platina (USD$2,000/mo)**:
+  - Colocação de logótipo proeminente na primeira página da [vuejs.org](/).
+  - Colocação proeminente de logótipo na barra lateral de todas páginas de conteúdo.
+  - Colocação proeminente de logótipo no ficheiro README da [`vuejs/core`](https://github.com/vuejs/core) e da [`vuejs/vue`](https://github.com/vuejs/core).
+- **Ouro (USD$500/mo)**:
+  - Colocação de logótipo em tamanho grande na primeira página da [vuejs.org](/).
+  - Colocação de logótipo em tamanho grande no ficheiro README da `vuejs/core` e `vuejs/vue`.
+- **Prata (USD$250/mo)**:
+  - Colocação de logótipo em tamanho médio no ficheiro `BACKERS.md` da `vuejs/core` e `vuejs/vue`.
 - **Bronze (USD$100/mo)**:
-  - Small logo placement in the `BACKERS.md` file of `vuejs/core` and `vuejs/vue`.
-- **Generous Backer (USD$50/mo)**:
-  - Name listed in the `BACKERS.md` file of `vuejs/core` and `vuejs/vue`, above other individual backers.
-- **Individual Backer (USD$5/mo)**:
-  - Name listed in the `BACKERS.md` file of `vuejs/core` and `vuejs/vue`.
+  - Colocação de logótipo em tamanho pequeno no ficheiro `BACKERS.md` da `vuejs/core` e `vuejs/vue`.
+- **Financiador Generoso (USD$50/mo)**:
+  - Nome listado no ficheiro `BACKERS.md` da `vuejs/core` e `vuejs/vue`, acima dos financiadores individuais.
+- **Financiador Individual (USD$5/mo)**:
+  - Nome listado no ficheiro `BACKERS.md` da `vuejs/core` e `vuejs/vue`.
 
-## Current Sponsors {#current-sponsors}
+## Patrocinadores Atuais {#current-sponsors}
 
-### Special Global Sponsor {#special-global-sponsor}
+### Patrocinador Especial Global {#special-global-sponsor}
 
 <SponsorsGroup tier="special" placement="page" />
 
-### Platinum {#platinum}
+### Platina {#platinum}
 
 <SponsorsGroup tier="platinum" placement="page" />
 
-### Platinum (China) {#platinum-china}
+### Platina (China) {#platinum-china}
 
 <SponsorsGroup tier="platinum_china" placement="page" />
 
-### Gold {#gold}
+### Ouro {#gold}
 
 <SponsorsGroup tier="gold" placement="page" />
 
-### Silver {#silver}
+### Prata {#silver}
 
 <SponsorsGroup tier="silver" placement="page" />
