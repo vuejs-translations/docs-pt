@@ -30,13 +30,13 @@ Cada tipo de testagem desempenha um papel na estratégia de testagem da tua apli
 
 Nós discutiremos brevemente o que cada um destes é, como eles podem ser implementados em aplicações de Vue, e forneceremos algumas recomendações gerais.
 
-## Unit Testing {#unit-testing}
+## Testes Unitários {#unit-testing}
 
-Unit tests are written to verify that small, isolated units of code are working as expected. A unit test usually covers a single function, class, composable, or module. Unit tests focus on logical correctness and only concern themselves with a small portion of the application's overall functionality. They may mock large parts of your application's environment (e.g. initial state, complex classes, 3rd party modules, and network requests).
+Os testes unitários são escritos para verificar se aquelas pequenas e isoladas unidades de código são estão a funcionar como esperado. Um teste unitário normalmente cobre uma única função, classe, constituível, ou módulo. Os testes unitários focam-se na correção da lógica e apenas diz respeito a elas mesmas com uma pequena porção da funcionalidade global da aplicação. Eles podem imitar grandes partes do ambiente da tua aplicação (por exemplo, estado inicial, classes complexas, módulos de terceiros, e requisições da rede).
 
-In general, unit tests will catch issues with a function's business logic and logical correctness.
+Em geral, os testes unitários capturarão os problemas com a lógica de negócio da função e correção da lógica.
 
-Take for example this `increment` function:
+Tome como exemplo esta função `increment`:
 
 ```js
 // helpers.js
@@ -48,9 +48,9 @@ export function increment (current, max = 10) {
 }
 ```
 
-Because it's very self-contained, it'll be easy to invoke the increment function and assert that it returns what it's supposed to, so we'll write a Unit Test.
+Uma vez que está muito autossuficiente, será fácil invocar a função `increment` e afirmar que ela retorna o que é suposto retornar, assim escreveremos um Teste Unitário.
 
-If any of these assertions fail, it's clear that the issue is contained within the `increment` function.
+Se quaisquer destas afirmações falhar, é claro que o problema está contido dentro da `increment` função.
 
 ```js{4-16}
 // helpers.spec.js
