@@ -2,17 +2,17 @@
 outline: deep
 ---
 
-# Utilizando a Vue com TypeScript
+# Utilizando a Vue com TypeScript {#using-vue-with-typescript}
 
 Um sistema de tipo como TypeScript pode detetar muitos erros comuns através da analise estática em tempo de execução. Isto reduz a risco de erros de tempo de execução na produção, e também permite-nos refatorar o código com mais confiança em aplicações de grande escala. A TypeScript também melhora a ergonomia do programador através da conclusão automática baseada em tipo nas IDEs.
 
 A Vue está escrita ele própria em TypeScript e fornece suporte de TypeScript de primeira classe. Todos os pacotes de Vue oficiais vêm com as declarações de tipo empacotada que deve funcionar fora da caixa.
 
-## Configuração de Projeto
+## Configuração de Projeto {#project-setup}
 
 A [`create-vue`](https://github.com/vuejs/create-vue), a ferramenta de estruturante de projeto oficial, oferece as opções para estruturar um projeto de Vue preparado com TypeScript e alimentado com a [Vite](https://vitejs.dev/).
 
-### Visão Geral
+### Visão Geral {#overview}
 
 Com uma configuração baseada na Vite, o servidor de desenvolvimento e o empacotador são apenas para tradução de código e realizam qualquer verificação de tipo. Isto garante que o servidor de desenvolvimento da Vite permaneça extremamente rápido mesmo quando estiveres utilizando a TypeScript.
 
@@ -22,7 +22,7 @@ Com uma configuração baseada na Vite, o servidor de desenvolvimento e o empaco
 
 - A Interface de Linha de Comando da Vue também fornece suporte a TypeScript, mas não é mais recomendado. Consulte as [notas abaixo](#nota-sobre-a-linha-de-comando-de-vue-e-o-ts-loader)
 
-### Suporte de IDE
+### Suporte de IDE {#ide-support}
 
 - O [Visual Studio Code](https://code.visualstudio.com/) é fortemente recomendado para o seu excelente suporte fora da caixa para TypeScript.
 
@@ -36,7 +36,7 @@ Com uma configuração baseada na Vite, o servidor de desenvolvimento e o empaco
 
 - O [WebStorm](https://www.jetbrains.com/webstorm/) também fornece suporte fora da caixa para ambos TypeScript e Vue. Outras IDEs da JetBrains suportam-os também, ou fora da caixa ou através de [uma extensão gratuita](https://plugins.jetbrains.com/plugin/9442-vue-js).
 
-### Configurando o `tsconfig.json`
+### Configurando o `tsconfig.json` {#configuring-tsconfig-json}
 
 Os projetos estruturados através da `create-vue` inclui o `tsconfig.json` pré-configurado. A configuração de base é abstraída no pacote [`@vue/tsconfig`](https://github.com/vuejs/tsconfig). Dentro do projeto, utilizamos [Referências de Projeto](https://www.typescriptlang.org/docs/handbook/project-references.html) para garantir os tipos correto para execução de código em ambientes diferentes (por exemplo, aplicação versus teste).
 
@@ -54,7 +54,7 @@ Consulte também:
 - [Documentação das opções do compilador de TypeScript oficial](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
 - [Advertências de compilação de TypeScript da esbuild](https://esbuild.github.io/content-types/#typescript-caveats)
 
-### Modo de Aquisição
+### Modo de Aquisição da Volar {#volar-takeover-mode}
 
 > Esta secção apenas aplica-se para VSCode + Volar.
 
@@ -72,7 +72,7 @@ Para ativar o Modo de Aquisição, precisas desativar o serviço da linguagem Ty
 
 <img src="./images/takeover-mode.png" width="590" height="426" style="margin:0px auto;border-radius:8px">
 
-### Nota sobre a Linha de Comando de Vue e o `ts-loader`
+### Nota sobre a Linha de Comando de Vue e o `ts-loader` {#note-on-vue-cli-and-ts-loader}
 
 Em configurações baseadas em Webpack tais como Linha de Comando de Vue, é comum se realizar verificação de tipo como parte da conduta de transformação de módulo, por exemplo com `ts-loader`. Isto, no entanto, não é uma solução decente porque o sistema de tipo precisa ter conhecimento do gráfico de módulo inteiro para realizar as verificações de tipo. A etapa de transformação de módulo individual simplesmente não é o lugar correto para a tarefa. Isto leva aos seguintes problemas:
 
@@ -84,9 +84,9 @@ Em configurações baseadas em Webpack tais como Linha de Comando de Vue, é com
 
 Se estiveres atualmente utilizando a Vue 3 + TypeScript através da Linha de Comando de Vue, recomendamos fortemente a migração para a Vite. Nós também estamos trabalhando sobre opções de Linha de Comando para possibilitar o suporte de TypeScript de tradução de código apenas, para que possas mudar para `vue-tsc` pela verificação de tipo.
 
-## Notas de Utilização Geral
+## Notas de Utilização Geral {#general-usage-notes}
 
-### `defineComponent()`
+### `defineComponent()` {#definecomponent}
 
 Para permitir que a TypeScript infira os tipos apropriadamente dentro das opções do componente, precisamos definir componentes com [`defineComponent()`](/api/general.html#definecomponent):
 
@@ -136,7 +136,7 @@ Consulte também:
 A `defineComponent()` também ativa a inferência de tipo para os componentes definidos em JavaScript simples.
 :::
 
-### Utilização em Componentes de Ficheiro Único
+### Utilização em Componentes de Ficheiro Único {#usage-in-single-file-components}
 
 Para utilizar a TypeScript nos Componentes de Ficheiro Único, adicione o atributo `lang="ts"` aos marcadores de `<script>`. Quando `lang="ts"` estiver presente, todas as expressões de modelo de marcação também gozam de verificação de tipo rigorosa.
 
@@ -175,7 +175,7 @@ const count = ref(1)
 </template>
 ```
 
-### TypeScript nos Modelos de Marcação
+### TypeScript nos Modelos de Marcação {#typescript-in-templates}
 
 O `<template>` também suporta a TypeScript nas expressões de vinculação quando `<script lang="ts">` ou `<script setup lang="ts">` serem utilizado. Isto é útil nos casos onde precisas realizar fusão de tipo nas expressões de modelo de marcação.
 
@@ -204,11 +204,11 @@ let x: string | number = 1
 </template>
 ```
 
-:::tip
+:::tip Dica
 Se estiveres utilizando a Linha de Comando de Vue ou uma configuração baseada em Webpack, a TypeScript nas expressões de modelo de marcação exigem `vue-loader@^16.8.0`.
 :::
 
-## Receitas Especificas da API
+## Receitas Especificas da API {#api-specific-recipes}
 
 - [TypeScript com a API de Composição](./composition-api)
 - [TypeScript com a API de Opções](./options-api)

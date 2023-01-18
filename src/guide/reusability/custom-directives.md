@@ -1,4 +1,4 @@
-# Diretivas Personalizadas
+# Diretivas Personalizadas {#custom-directives}
 
 <script setup>
 const vFocus = {
@@ -8,7 +8,7 @@ const vFocus = {
 }
 </script>
 
-## Introdução
+## Introdução {#introduction}
 
 Além do conjunto padrão de diretivas disponibilizadas no núcleo (tais como `v-model` ou `v-show`), a Vue também permite-te registar as tuas próprias diretivas personalizadas.
 
@@ -103,7 +103,7 @@ app.directive('focus', {
 As diretivas personalizadas devem apenas ser utilizadas quando a funcionalidade desejada pode ser apenas alcançado através da manipulação direta do DOM. Prefira a marcação de modelos declarativa utilizando as diretivas embutidas tais como `v-bind` quando possível porque elas são mais eficientes e amigáveis a interpretação no lado do servidor.
 :::
 
-## Gatilhos de Diretiva
+## Gatilhos de Diretiva {#directive-hooks}
 
 Um objeto de definição de diretiva pode fornecer várias funções de gatilho (todas opcionais):
 
@@ -131,7 +131,7 @@ const myDirective = {
 }
 ```
 
-### Argumentos de Gatilho
+### Argumentos de Gatilho {#hook-arguments}
 
 Aos gatilhos de diretiva são passados estes argumentos:
 
@@ -178,7 +178,7 @@ Aqui o argumento da diretiva será atualizado de maneira reativa baseada na prop
 Para além de `el`, deves tratar estes argumentos como de apenas-leitura e nunca modificá-los. Se precisares de partilhar a informação através dos gatilhos, é recomendado fazer isto através do atributo [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) do elemento.
 :::
 
-## Abreviação de Função
+## Abreviação de Função {#function-shorthand}
 
 É comum para uma diretiva personalizada ter o mesmo comportamento para `mounted` e `updated`, sem precisar de outros gatilhos. Nestes casos podemos definir a diretiva como uma função:
 
@@ -193,7 +193,7 @@ app.directive('color', (el, binding) => {
 })
 ```
 
-## Literais de Objeto
+## Literais de Objeto {#object-literals}
 
 Se a tua diretiva precisar de vários valores, podes também um literal de objeto de JavaScript. Lembra-te de que, as diretivas podem receber qualquer expressão de JavaScript válida.
 
@@ -208,7 +208,7 @@ app.directive('demo', (el, binding) => {
 })
 ```
 
-## Utilização sobre Componentes
+## Utilização sobre Componentes {#usage-on-components}
 
 Quando utilizadas sobre os componentes, as diretivas personalizadas sempre aplicar-se-ão à um nó de raiz do componente, semelhante aos [Atributos que Caiem](/guide/components/attrs.html).
 

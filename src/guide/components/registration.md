@@ -1,4 +1,4 @@
-# Registo de Componente
+# Registo de Componente {#component-registration}
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-global-vs-local-vue-components" title="Aula Gratuita Sobre Registo de Componente de Vue.js"/>
 
@@ -6,7 +6,7 @@
 
 Um componente de Vue precisa ser "registado" para que a Vue saiba onde localizar a sua implementação quando for encontrado num modelo de marcação. Existem duas maneiras de registar os componentes: global e local.
 
-## Registo Global
+## Registo Global {#global-registration}
 
 Nós podemos tornar os componentes disponíveis globalmente na [aplicação de Vue](/guide/essentials/application.html) atual usando o método `app.component()`:
 
@@ -53,7 +53,7 @@ Os componentes registados globalmente podem ser utilizados no modelo de marcaç�
 
 Isto ainda aplica-se a todos subcomponentes, significando que todos estes três componentes também estão disponíveis _dentro de uns dos outros_.
 
-## Registo Local
+## Registo Local {#local-registration}
 
 Embora conveniente, o registo global tem algumas desvantagens:
 
@@ -128,7 +128,7 @@ export default {
 
 Nota que **os componentes registados localmente também não _estão_ disponíveis nos componentes descendentes**. Neste caso, `ComponentA` será feito disponível para o componente atual apenas, mas não para quaisquer dos seu componentes filho ou descendente.
 
-## Caixa de Nome de Componente
+## Caixa do Nome do Componente {#component-name-casing}
 
 Ao longo deste guia, estamos utilizando nomes em `PascalCase` quando estamos registando componentes. Isto é porque:
 

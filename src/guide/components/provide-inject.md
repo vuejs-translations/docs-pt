@@ -1,8 +1,8 @@
-# Fornecer / Injetar
+# Fornecer / Injetar {#provide-inject}
 
 > Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
 
-## Perfuração de Propriedade
+## Perfuração de Propriedade {#prop-drilling}
 
 Usualmente, quando precisamos passar dados do componente pai para um componente filho, utilizamos as [propriedades](/guide/components/props). No entanto, imagine o caso onde temos uma grande árvore de componente, e um componente encaixado profundamente precisa de alguma coisa de um componente ancestral distante. Apenas com as propriedades, teríamos de passar a mesmo propriedade através da corrente do componente pai inteira:
 
@@ -18,7 +18,7 @@ Nós podemos resolver a perfuração de propriedades com `provide` e `inject`. U
 
 <!-- https://www.figma.com/file/PbTJ9oXis5KUawEOWdy2cE/provide-inject -->
 
-## Fornecer
+## Fornecer {#provide}
 
 <div class="composition-api">
 
@@ -95,7 +95,7 @@ No entanto, anote que isto **não** torna a injeção reativa. Nós discutiremos
 
 </div>
 
-## Fornecimento a Nível de Aplicação
+## Fornecimento a Nível de Aplicação {#app-level-provide}
 
 Além do fornecimento de dados em um componente, podemos também fornecer no nível da aplicação:
 
@@ -109,7 +109,7 @@ app.provide(/* chave */ 'message', /* valor */ 'hello!')
 
 Os fornecimentos de nível da aplicação estão disponíveis para todos os componentes interpretados na aplicação. Isto é especialmente útil quando estamos escrevendo [extensões](/guide/reusability/plugins.html), visto que as extensões normalmente não seriam capazes de fornecer valores utilizando componentes.
 
-## Injetar
+## Injetar {#inject}
 
 <div class="composition-api">
 
@@ -127,7 +127,6 @@ Se o valor fornecido for uma referência, ela será injetada como está e **não
 
 [Exemplo de fornecer + injetar com Reatividade completo](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgcHJvdmlkZSB9IGZyb20gJ3Z1ZSdcbmltcG9ydCBDaGlsZCBmcm9tICcuL0NoaWxkLnZ1ZSdcblxuLy8gYnkgcHJvdmlkaW5nIGEgcmVmLCB0aGUgR3JhbmRDaGlsZFxuLy8gY2FuIHJlYWN0IHRvIGNoYW5nZXMgaGFwcGVuaW5nIGhlcmUuXG5jb25zdCBtZXNzYWdlID0gcmVmKCdoZWxsbycpXG5wcm92aWRlKCdtZXNzYWdlJywgbWVzc2FnZSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxpbnB1dCB2LW1vZGVsPVwibWVzc2FnZVwiPlxuICA8Q2hpbGQgLz5cbjwvdGVtcGxhdGU+IiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCJcbiAgfVxufSIsIkNoaWxkLnZ1ZSI6IjxzY3JpcHQgc2V0dXA+XG5pbXBvcnQgR3JhbmRDaGlsZCBmcm9tICcuL0dyYW5kQ2hpbGQudnVlJ1xuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPEdyYW5kQ2hpbGQgLz5cbjwvdGVtcGxhdGU+IiwiR3JhbmRDaGlsZC52dWUiOiI8c2NyaXB0IHNldHVwPlxuaW1wb3J0IHsgaW5qZWN0IH0gZnJvbSAndnVlJ1xuXG5jb25zdCBtZXNzYWdlID0gaW5qZWN0KCdtZXNzYWdlJylcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxwPlxuICAgIE1lc3NhZ2UgdG8gZ3JhbmQgY2hpbGQ6IHt7IG1lc3NhZ2UgfX1cbiAgPC9wPlxuPC90ZW1wbGF0ZT4ifQ==)
 
-Again, if not using `<script setup>`, `inject()` should only be called synchronously inside `setup()`:
 Novamente, se não estiveres utilizando `<script setup>`, `inject()` deve apenas ser chamada de maneira síncrona dentro de `setup()`:
 
 ```js
@@ -145,7 +144,6 @@ export default {
 
 <div class="options-api">
 
-To inject data provided by an ancestor component, use the [`inject`](/api/options-composition.html#inject) option:
 Para injetar os dados fornecidos por um componente ancestral, utilize a opção [`inject`](/api/options-composition.html#inject):
 
 ```js
@@ -157,7 +155,6 @@ export default {
 }
 ```
 
-Injections are resolved **before** the component's own state, so you can access injected properties in `data()`:
 As injeções são resolvidas **antes** do estado do próprio componente, assim podes acessar as propriedades injetas na `data()`:
 
 ```js
@@ -174,7 +171,7 @@ export default {
 
 [Exemplo de fornecer + injetar completo](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBDaGlsZCBmcm9tICcuL0NoaWxkLnZ1ZSdcblxuZXhwb3J0IGRlZmF1bHQge1xuICBjb21wb25lbnRzOiB7IENoaWxkIH0sXG4gIHByb3ZpZGUoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIG1lc3NhZ2U6ICdoZWxsbydcbiAgICB9XG4gIH1cbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxDaGlsZCAvPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59IiwiQ2hpbGQudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBHcmFuZENoaWxkIGZyb20gJy4vR3JhbmRDaGlsZC52dWUnXG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgY29tcG9uZW50czoge1xuICAgIEdyYW5kQ2hpbGRcbiAgfVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPEdyYW5kQ2hpbGQgLz5cbjwvdGVtcGxhdGU+IiwiR3JhbmRDaGlsZC52dWUiOiI8c2NyaXB0PlxuZXhwb3J0IGRlZmF1bHQge1xuICBpbmplY3Q6IFsnbWVzc2FnZSddXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8cD5cbiAgICBNZXNzYWdlIHRvIGdyYW5kIGNoaWxkOiB7eyBtZXNzYWdlIH19XG4gIDwvcD5cbjwvdGVtcGxhdGU+In0=)
 
-### Pseudónimo da Injeção \*
+### Pseudónimo da Injeção \* {#injection-aliasing}
 
 Quando estiveres utilizando uma sintaxe de arranjo para a `inject`, as propriedades injetadas são expostas sobre a instância do componente utilizando a mesma chave. No exemplo acima, a propriedade foi fornecida sob a chave `"message"`, e injetados como `this.message`. A chave local é a mesma que a chave da injeção.
 
@@ -194,7 +191,7 @@ Aqui, o componente localizará a propriedade fornecida com a chave `"message"`, 
 
 </div>
 
-### Valores Padrão da Injeção
+### Valores Padrão da Injeção {#injection-default-values}
 
 Por padrão, a `inject` presume que a chave injetada é fornecida em algum lugar na corrente do componente pai. No caso onde a chave não é fornecida, haverá um aviso de tempo de execução.
 
@@ -238,7 +235,7 @@ export default {
 
 </div>
 
-## Trabalhando com Reatividade
+## Trabalhando com Reatividade {#working-with-reactivity}
 
 <div class="composition-api">
 
@@ -316,13 +313,13 @@ export default {
 
 A função `computed()` é normalmente utilizada nos componentes da API de Composição, mas podem também ser utilizadas para complementar certos casos de uso na API de Opções. Tu podes aprender mais a respeito disto lendo os [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals.html) e as [Propriedades Computadas](/guide/essentials/computed.html) com a Preferência de API definida para API de Composição.
 
-:::warning Configuração Temporária Requerida
+:::warning Configuração Temporária Obrigatória
 A utilização acima requer a definição `app.config.unwrapInjectedRef = true` para fazer as injeções desembrulharem automaticamente as referências computadas. Isto tornar-se-á o comportamento padrão na Vue 3.3 e esta configuração é introduzida temporariamente para evitar rutura. Não mais será necessária depois da versão 3.3.
 :::
 
 </div>
 
-## Trabalhando com Chaves de `Symbol`
+## Trabalhando com Chaves de `Symbol` {#working-with-symbol-keys}
 
 Até aqui, temos estado utilizando chaves de injeção de sequência de caracteres nos exemplos. Se estiveres trabalhando em uma aplicação grande com vários provedores de dependência, ou estiveres criando componentes que serão utilizados por outros programadores, é melhor utilizar as chaves de injeção de `Symbol` ("Símbolo") para evitar potenciais colisões.
 

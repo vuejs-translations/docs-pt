@@ -1,10 +1,10 @@
-# Ranhuras
+# Ranhuras {#slots}
 
 > Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-component-slots" title="Aula Gratuita Sobre Ranhuras de Vue.js"/>
 
-## Conteúdo da Ranhura e a Saída de Ranhura
+## Conteúdo da Ranhura e a Saída de Ranhura {#slot-content-and-outlet}
 
 Nós temos aprendido que os componentes podem aceitar propriedades, as quais podem ser valores de JavaScript de qualquer tipo. Mas quanto ao conteúdo do modelo de marcação? Em alguns casos, podemos desejar passar um fragmento de modelo de marcação para um componente filho, e permitir que o componente filho interprete o fragmento dentro do seu próprio modelo de marcação.
 
@@ -88,7 +88,7 @@ Ao utilizar as ranhuras, o nosso `<FancyButton>` é mais flexível e reutilizáv
 
 O mecanismo de ranhura dos componentes de Vue são insperados pelo [elemento `<slot>` de Componente de Web nativo](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot), mas com capacidades adicionais que veremos mais tarde.
 
-## Escopo de Interpretação
+## Escopo de Interpretação {#render-scope}
 
 O conteúdo de ranhura tem acesso ao escopo de dados do componente pai, porque é definido no componente pai. Por exemplo:
 
@@ -103,7 +103,7 @@ O conteúdo de ranhura **não** tem acesso aos dados do componente filho. As exp
 
 > As expressões no modelo de marcação do componente pai apenas têm acesso ao escopo do componente pai; as expressões no modelo de marcação do componente filho apenas têm acesso ao escopo do componente filho.
 
-## Conteúdo Retrocessivo
+## Conteúdo Retrocessivo {#fallback-content}
 
 Existem casos onde é útil especificar conteúdo retrocessivo (por exemplo, padrão) para uma ranhura, para ser interpretado apenas quando nenhum conteúdo for fornecido. Por exemplo, em um componente `<SubmitButton>`:
 
@@ -158,7 +158,7 @@ Então o conteúdo fornecido será interpretado no lugar:
 
 </div>
 
-## Ranhuras Nomeadas
+## Ranhuras Nomeadas {#named-slots}
 
 Existem momentos quando é útil ter várias saídas de ranhura em um único componente. Por exemplo, em um componente `<BaseLayout>` com o seguinte modelo de marcação:
 
@@ -297,7 +297,7 @@ function BaseLayout(slots) {
 }
 ```
 
-## Nomes de Ranhura Dinâmicos
+## Nomes de Ranhura Dinâmicos {#dynamic-slot-names}
 
 Os [argumentos de diretiva dinâmicos](/guide/essentials/template-syntax.md#argumentos-dinâmicos) também funcionam sobre a `v-slot`, permitindo a definição de nomes de ranhura dinâmicos:
 
@@ -316,7 +316,7 @@ Os [argumentos de diretiva dinâmicos](/guide/essentials/template-syntax.md#argu
 
 Toma nota que a expressão está sujeita às [restrições de sintaxe](/guide/essentials/template-syntax.html#diretivas) dos argumentos de diretiva dinâmicos.
 
-## Ranhuras Isoladas
+## Ranhuras Isoladas {#scoped-slots}
 
 Conforme discutido no [Escopo de Interpretação](#escope-de-interpretação), o conteúdo de ranhura não tem acesso ao estado no componente filho.
 
@@ -385,7 +385,7 @@ Repare que as `v-slot="slotProps"` correspondem a assinatura da função de ranh
 </MyComponent>
 ```
 
-### Ranhuras Isoladas Nomeadas
+### Ranhuras Isoladas Nomeadas {#named-scoped-slots}
 
 As ranhuras isoladas nomeadas funcionam de maneira semelhante - propriedades de ranhura são acessíveis como valor da diretiva `v-slot`: `v-slot:name="slotProps"`. Quando estiveres utilizando a forma abreviada, se parece com isto:
 
@@ -445,7 +445,7 @@ A utilização de um marcador `<template>` explícito para a ranhura padrão aju
 </template>
 ```
 
-### Exemplo de Lista Fantástica
+### Exemplo de Lista Fantástica {#fancy-list-example}
 
 Tu podes estar perguntando a si mesmo o que seria um bom caso de uso para ranhuras isoladas. Aqui está um exemplo: imagine um componente `<FancyList>` que interpreta uma lista de itens - ele pode resumir a lógica para o carregamento de dados remoto, utilizando os dados para exibir uma lista, ou mesmo funcionalidades avançadas como paginação ou rolamento infinito. No entanto, queremos ser flexíveis a respeito da aparência de cada item e deixar a estilização de cada item para componente pai que está consumindo-o. Assim a utilização desejada se parece com isto:
 
@@ -481,7 +481,7 @@ Dentro do `<FancyList>`, podemos interpretar o mesmo `<slot>` várias vezes com 
 
 </div>
 
-### Componentes Sem Interpretação
+### Componentes Sem Interpretação {#renderless-components}
 
 O caso de uso de `<FancyList>` que discutimos acima resume ambas a lógica reutilizável (requisição de dados, paginação etc) e a saída visual, enquanto está delegando parte da saída visual para o componente consumidor através das ranhuras isoladas.
 

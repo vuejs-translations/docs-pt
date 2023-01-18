@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-# Atributos que Caiem
+# Atributos que Caiem {#fallthrough-attributes}
 
 > Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
 
-## Herança de Atributo
+## Herança de Atributo {#attribute-inheritance}
 
 Um "atributo que cai" é um atributo ou ouvinte de evento `v-on` que é passado para um componente, mas não é explicitamente declarado nas [propriedades](./props) ou [emissões](./events.html#declarando-eventos-emitidos) do componente que está recebendo. Exemplos comuns disto incluem atributos de `class`, `style` e `id`.
 
@@ -29,7 +29,7 @@ O DOM interpretado final seria:
 <button class="large">click me</button>
 ```
 
-### Fundição de `class` e `style`
+### Combinação de `class` e `style` {#class-and-style-merging}
 
 Se o elemento de raiz do componente filho já tiver atributos `class` ou `style` existente, ele será fundido com os valores de `class` e `style` que são herdados do componente pai. Suponha que mudamos o modelo de marcação do `<MyButton>` no exemplo anterior para:
 
@@ -44,7 +44,7 @@ Então o DOM interpretado final agora tornar-se-ia:
 <button class="btn large">click me</button>
 ```
 
-### Herança de Ouvinte `v-on`
+### Herança do Ouvinte `v-on` {#v-on-listener-inheritance}
 
 A mesmo regra aplica-se aos ouvintes de evento `v-on`:
 
@@ -54,7 +54,7 @@ A mesmo regra aplica-se aos ouvintes de evento `v-on`:
 
 O ouvinte de `click` será adicionado ao elemento de raiz do `<MyButton>`, por exemplo, o elemento `<button>` nativo. Quando o `<button>` nativo for clicado, acionará o método `onClick` do componente pai. Se o `<button>` nativo já tiver um ouvinte de `click` vinculado com `v-on`, então ambos ouvintes acionarão.
 
-### Herança de Componente Encaixado
+### Herança de Componente Encaixado {#nested-component-inheritance}
 
 Se um componente interpretar um outro componente como seu nó de raiz, por exemplo, refatoramos `<MyButton>` para interpretar um `<BaseButton>` como seu raiz:
 
@@ -71,7 +71,7 @@ Nota que:
 
 2. Os atributos passados podem ser aceitados como propriedades pelo `<BaseButton>`, se declarados por ele.
 
-## Desativando a Herança de Atributo
+## Desativando a Herança de Atributo {#disabling-attribute-inheritance}
 
 Se **não** quiseres que um componente herde atributos automaticamente, podes definir `inheritAttrs: false` nas opções do componente.
 
@@ -126,9 +126,9 @@ Nós queremos que todos atributos que caiem como `class` e ouvintes de `v-on` se
 </div>
 ```
 
-Lembra-te de que a [`v-bind` sem um argumento](/guide/essentials/template-syntax.html#vincular-vários-atributos-dinamicamente) vincula todas as propriedades de um objeto como atributos do elemento alvo.
+Lembra-te de que a [`v-bind` sem um argumento](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) vincula todas as propriedades de um objeto como atributos do elemento alvo.
 
-## Herança de Atributo sobre Vários Nós de Raiz
+## Herança de Atributo sobre Vários Nós de Raiz {#attribute-inheritance-on-multiple-root-nodes}
 
 Ao contrário dos componentes com um único nó de raiz, os componente com vários nós de raiz não tem comportamento de cair de atributo. Se `$attrs` não for vinculado explicitamente, um aviso de tempo de execução será emitido.
 
@@ -152,7 +152,7 @@ O aviso será suprimido se `$attrs` for explicitamente vinculado:
 <footer>...</footer>
 ```
 
-## Acessando Atributos Que Caiem na JavaScript
+## Acessando Atributos Que Caiem na JavaScript {#accessing-fallthrough-attributes-in-javascript}
 
 <div class="composition-api">
 

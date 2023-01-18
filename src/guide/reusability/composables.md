@@ -1,4 +1,4 @@
-# Constituíveis
+# Constituíveis {#composables}
 
 <script setup>
 import { useMouse } from './mouse'
@@ -9,7 +9,7 @@ const { x, y } = useMouse()
 Esta secção presume conhecimento básico da API de Composição. Se tens estado a aprender a Vue com a API de Opções apenas, podes ajustar a Preferência de API para API de Composição (utilizando interruptor em cima da barra lateral) e re-ler os capítulos [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals.html) e [Gatilhos do Cíclo de Vida](/guide/essentials/lifecycle.html).
 :::
 
-## O que é um "Constituível"?
+## O que é um "Constituível"? {#what-is-a-composable}
 
 No contexto das aplicações de Vue, um "constituível" é uma função que influencia a API de Composição da Vue a resumir e reutilizar **lógica com estado**.
 
@@ -17,7 +17,7 @@ Quando estamos a construir aplicações de frontend, frequentemente precisamos r
 
 Em contrapartida, a lógica com estado envolve a gestão de estado que muda ao longo do tempo. Um exemplo simples seria o rastreiamento da posição atual do rato em uma página. Nos cenários do mundo real, poderia ser também lógica mais complexa tal como gestos de toque ou estado da conexão com uma base de dados.
 
-## Exemplo de Rastreador de Rato
+## Exemplo de Rastreador de Rato {#mouse-tracker-example}
 
 Se fossemos implementar a funcionalidade de rastreiamento de rato utilizando a API de Composição diretamente de dentro de um componente, ela se pareceria com isto:
 
@@ -130,7 +130,7 @@ export function useMouse() {
 Cada instância de componente chamando `useMouse()` criará as suas próprias cópias do estado `x` e `y` então elas não interferirão umas com as outras. Se quiseres lidar com o estado partilhado entre os componentes, leia o capítulo [Gestão de Estado](/guide/scaling-up/state-management.html).
 :::
 
-## Exemplo de Estado Assíncrono
+## Exemplo de Estado Assíncrono {#async-state-example}
 
 A constituível `useMouse()` não recebe quaisquer argumentos, então vamos dar uma vista de olhos em um outro exemplo que utiliza um argumento. Quando estamos a fazer requisição de dados assíncronos, frequentemente precisamos manipular estados diferentes: carregamento, sucesso e erro:
 
@@ -226,13 +226,13 @@ Esta versão de `useFetch()` agora aceita tanto sequências de caracteres de URL
 
 Cá está [a versão atualizada de `useFetch()`](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgY29tcHV0ZWQgfSBmcm9tICd2dWUnXG5pbXBvcnQgeyB1c2VGZXRjaCB9IGZyb20gJy4vdXNlRmV0Y2guanMnXG5cbmNvbnN0IGJhc2VVcmwgPSAnaHR0cHM6Ly9qc29ucGxhY2Vob2xkZXIudHlwaWNvZGUuY29tL3RvZG9zLydcbmNvbnN0IGlkID0gcmVmKCcxJylcbmNvbnN0IHVybCA9IGNvbXB1dGVkKCgpID0+IGJhc2VVcmwgKyBpZC52YWx1ZSlcblxuY29uc3QgeyBkYXRhLCBlcnJvciwgcmV0cnkgfSA9IHVzZUZldGNoKHVybClcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIExvYWQgcG9zdCBpZDpcbiAgPGJ1dHRvbiB2LWZvcj1cImkgaW4gNVwiIEBjbGljaz1cImlkID0gaVwiPnt7IGkgfX08L2J1dHRvbj5cblxuXHQ8ZGl2IHYtaWY9XCJlcnJvclwiPlxuICAgIDxwPk9vcHMhIEVycm9yIGVuY291bnRlcmVkOiB7eyBlcnJvci5tZXNzYWdlIH19PC9wPlxuICAgIDxidXR0b24gQGNsaWNrPVwicmV0cnlcIj5SZXRyeTwvYnV0dG9uPlxuICA8L2Rpdj5cbiAgPGRpdiB2LWVsc2UtaWY9XCJkYXRhXCI+RGF0YSBsb2FkZWQ6IDxwcmU+e3sgZGF0YSB9fTwvcHJlPjwvZGl2PlxuICA8ZGl2IHYtZWxzZT5Mb2FkaW5nLi4uPC9kaXY+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0iLCJ1c2VGZXRjaC5qcyI6ImltcG9ydCB7IHJlZiwgaXNSZWYsIHVucmVmLCB3YXRjaEVmZmVjdCB9IGZyb20gJ3Z1ZSdcblxuZXhwb3J0IGZ1bmN0aW9uIHVzZUZldGNoKHVybCkge1xuICBjb25zdCBkYXRhID0gcmVmKG51bGwpXG4gIGNvbnN0IGVycm9yID0gcmVmKG51bGwpXG5cbiAgYXN5bmMgZnVuY3Rpb24gZG9GZXRjaCgpIHtcbiAgICAvLyByZXNldCBzdGF0ZSBiZWZvcmUgZmV0Y2hpbmcuLlxuICAgIGRhdGEudmFsdWUgPSBudWxsXG4gICAgZXJyb3IudmFsdWUgPSBudWxsXG4gICAgXG4gICAgLy8gcmVzb2x2ZSB0aGUgdXJsIHZhbHVlIHN5bmNocm9ub3VzbHkgc28gaXQncyB0cmFja2VkIGFzIGFcbiAgICAvLyBkZXBlbmRlbmN5IGJ5IHdhdGNoRWZmZWN0KClcbiAgICBjb25zdCB1cmxWYWx1ZSA9IHVucmVmKHVybClcbiAgICBcbiAgICB0cnkge1xuICAgICAgLy8gYXJ0aWZpY2lhbCBkZWxheSAvIHJhbmRvbSBlcnJvclxuICBcdCAgYXdhaXQgdGltZW91dCgpXG4gIFx0ICAvLyB1bnJlZigpIHdpbGwgcmV0dXJuIHRoZSByZWYgdmFsdWUgaWYgaXQncyBhIHJlZlxuXHQgICAgLy8gb3RoZXJ3aXNlIHRoZSB2YWx1ZSB3aWxsIGJlIHJldHVybmVkIGFzLWlzXG4gICAgXHRjb25zdCByZXMgPSBhd2FpdCBmZXRjaCh1cmxWYWx1ZSlcblx0ICAgIGRhdGEudmFsdWUgPSBhd2FpdCByZXMuanNvbigpXG4gICAgfSBjYXRjaCAoZSkge1xuICAgICAgZXJyb3IudmFsdWUgPSBlXG4gICAgfVxuICB9XG5cbiAgaWYgKGlzUmVmKHVybCkpIHtcbiAgICAvLyBzZXR1cCByZWFjdGl2ZSByZS1mZXRjaCBpZiBpbnB1dCBVUkwgaXMgYSByZWZcbiAgICB3YXRjaEVmZmVjdChkb0ZldGNoKVxuICB9IGVsc2Uge1xuICAgIC8vIG90aGVyd2lzZSwganVzdCBmZXRjaCBvbmNlXG4gICAgZG9GZXRjaCgpXG4gIH1cblxuICByZXR1cm4geyBkYXRhLCBlcnJvciwgcmV0cnk6IGRvRmV0Y2ggfVxufVxuXG4vLyBhcnRpZmljaWFsIGRlbGF5XG5mdW5jdGlvbiB0aW1lb3V0KCkge1xuICByZXR1cm4gbmV3IFByb21pc2UoKHJlc29sdmUsIHJlamVjdCkgPT4ge1xuICAgIHNldFRpbWVvdXQoKCkgPT4ge1xuICAgICAgaWYgKE1hdGgucmFuZG9tKCkgPiAwLjMpIHtcbiAgICAgICAgcmVzb2x2ZSgpXG4gICAgICB9IGVsc2Uge1xuICAgICAgICByZWplY3QobmV3IEVycm9yKCdSYW5kb20gRXJyb3InKSlcbiAgICAgIH1cbiAgICB9LCAzMDApXG4gIH0pXG59In0=), com um atraso artificial e erro posto aleatório para propósitos de demonstração.
 
-## Convenções e Boas Práticas
+## Convenções e Boas Práticas {#conventions-and-best-practices}
 
-### Nomeação
+### Nomeação {#naming}
 
 É uma convenção nomear as funções constituíveis com nomes em "camelCase" que começam com o termo "use".
 
-### Argumentos de Entrada
+### Argumentos de Entrada {#input-arguments}
 
 Uma constituível pode aceitar argumentos de referência mesmo se não depender delas para a reatividade. Se estiveres a escrever uma constituível que pode ser utilizada por outros programadores, é uma boa ideia lidar com o caso de os argumentos de entrada serem referências no lugar de valores brutos. A função utilitária [`unref()`](/api/reactivity-utilities.html#unref) dará jeito para este propósito:
 
@@ -248,7 +248,7 @@ function useFeature(maybeRef) {
 
 Se a tua constituível produzir efeitos reativos quando a entrada é uma referência, certifica-te de ou explicitamente observar a referência com `watch()`, ou chamar `unref()` dentro de uma `watchEffect()` para que seja apropriadamente rastreada.
 
-### Valores de Retorno
+### Valores de Retorno {#return-values}
 
 Tu tens provavelmente reparado que tens estado exclusivamente utilizando `ref()` ao invés de `reactive()` nas constituíveis. A convenção recomendada é para os constituíveis sempre retornar um objeto não reativo simples contendo várias referências. Isto permite que seja desestruturada nos componentes enquanto preserva a reatividade:
 
@@ -271,7 +271,7 @@ console.log(mouse.x)
 Mouse position is at: {{ mouse.x }}, {{ mouse.y }}
 ```
 
-### Efeitos Colaterais
+### Efeitos Colaterais {#side-effects}
 
 É aceitável realizar efeitos colaterais (por exemplo, adicionando ouvintes de evento de DOM ou requisitando dados) nas constituíveis, porém preste atenção as seguintes regras:
 
@@ -279,7 +279,7 @@ Mouse position is at: {{ mouse.x }}, {{ mouse.y }}
 
 - Lembra-te de limpar os efeitos colaterais no `onUnmounted()`. Por exemplo, se uma constituível definir um ouvinte de evento de DOM, ele deve remover este ouvinte no `onUnmounted()` conforme temos visto no exemplo `useMouse()`. Pode ser uma boa ideia usar uma constituível que automaticamente faz isto por ti, como exemplo da `useEventListener()`.
 
-### Restrições de Uso
+### Restrições de Uso {#usage-restrictions}
 
 As constituíveis devem apenas ser chamadas de maneira **síncrona** no `<script setup>` ou no gatilho `setup()`. Em alguns casos, podes também chamá-las nos gatilhos de ciclo de vida tais como `onMounted()`.
 
@@ -293,7 +293,7 @@ Existem os contextos onde a Vue é capaz de determinar a atual instância de com
 O `<script setup>` é o único lugar onde podes chamar as constituíveis **depois** do uso de `await`. O compilador restaura automaticamente o contexto da instância ativa por ti depois da operação assíncrona.
 :::
 
-## Extraindo Constituíveis para Organização de Código
+## Extraindo Constituíveis para Organização de Código {#extracting-composables-for-code-organization}
 
 As constituíveis podem ser extraídas não apenas para reaproveitar, mas também para a organização de código. A medida que a complexidade dos teus componentes crescer, podes acabar com componentes que são muito grandes para navegar e compreender. A API de Composição dá-te completa flexibilidade para organizar o código do teu componente em funções mais pequenas baseadas nas preocupações lógicas:
 
@@ -311,7 +311,7 @@ const { qux } = useFeatureC(baz)
 
 Até certo ponto, podes pensar destas constituíveis extraídas como serviços isolados de componente que podem conversar uns com os outros.
 
-## Usando Constituíveis na API de Opções
+## Usando Constituíveis na API de Opções {#using-composables-in-options-api}
 
 Se estiveres usando a API de Opções, as constituíveis devem ser chamadas dentro de `setup()`, e as vinculações retornadas dem ser retornadas a partir de `setup()` para que elas sejam expostas ao `this` e para o modelo de marcação:
 
@@ -333,9 +333,9 @@ export default {
 }
 ```
 
-## Comparações com Outras Técnicas
+## Comparações com Outras Técnicas {#comparisons-with-other-techniques}
 
-### vs. Mixins
+### vs. Misturadores (Mixins) {#vs-mixins}
 
 Os utilizadores chegando da Vue 2 podem estar familiarizados com a opção [mixins](/api/options-composition.html#mixins), que também permite-nos extrair a lógica do componente em unidades reutilizáveis. Existem três desvantagens primarias em relação ao mixins:
 
@@ -347,19 +347,19 @@ Os utilizadores chegando da Vue 2 podem estar familiarizados com a opção [mixi
 
 Pelas razões acima, não mais recomendamos a utilização de mixins na Vue 3. A funcionalidade é mantida apenas por razões de migração e familiaridade.
 
-### vs. Componentes Sem Interpretação
+### vs. Componentes Sem Interpretação {#vs-renderless-components}
 
-No capítulo de ranhuras de componente, discutimos o padrão de [Componente Sem Interpretação](/guide/components/slots.html#componente-sem-interpretação) baseado nas ranhuras isoladas. Nós até implementamos a mesma demonstração de rastreamento de rato usando os componentes sem interpretação.
+No capítulo de ranhuras de componente, discutimos o padrão de [Componente Sem Interpretação](/guide/components/slots.html#renderless-components) baseado nas ranhuras isoladas. Nós até implementamos a mesma demonstração de rastreamento de rato usando os componentes sem interpretação.
 
 A principal vantagem das constituíveis sobre os componentes sem interpretação é que as constituíveis não incorrem em despesas gerais da instância de componente adicional. Quando utilizadas por uma aplicação inteira, a quantidade de instâncias de componente adicionais criadas pelo padrão de componente sem interpretação pode tornar-se em despesas gerais de desempenho visível.
 
 A recomendação é usar as constituíveis quando reutilizar a lógica pura, e usar os componentes quando estiveres reutilizando tanto a lógica e o esquema visual.
 
-### vs. Gatilhos de React (React Hooks)
+### vs. Gatilhos de React (React Hooks) {#vs-react-hooks}
 
 Se tens experiência com a React, talvez notes que isto parece muito semelhante aos gatilhos de React personalizados. A API de Composição foi em parte inspirada pelos gatilhos de React, e as constituíveis de Vue são de fato semelhantes aos gatilhos de React em termos de capacidades de composição lógica. No entanto, as constituíveis de Vue são baseadas no sistema de reatividade refinado da Vue, o qual é fundamentalmente diferente do modelo de execução dos gatilhos de React. Isto é discutido em mais detalhes nas [Perguntas Frequentes sobre API de Composição](/guide/extras/composition-api-faq#comparison-with-react-hooks).
 
-## Leituras Adicionais
+## Leituras Adicionais {#further-reading}
 
 - [Reatividade Em Profundidade](/guide/extras/reactivity-in-depth.html): para um entendimento de baixo nível de como o sistema de reatividade da Vue funciona.
 - [Gestão de Estado](/guide/scaling-up/state-management.html): para padrões de gerência de estado partilhado por vários componentes.

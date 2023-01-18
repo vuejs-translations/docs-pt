@@ -19,8 +19,8 @@ onMounted(async () => {
       <br />de JavaScript
     </h1>
     <p class="description">
-      Uma abstração acessível, de ótimo desempenho e versátil para construção
-      de interfaces de utilizador de web.
+      Uma abstração acessível, otimizada e versátil para construção
+      de interfaces de utilizadores da web.
     </p>
     <p class="actions">
       <vue-mastery-modal />
@@ -63,13 +63,13 @@ onMounted(async () => {
       <h2>Acessível</h2>
       <p>
         Construa sobre a HTML, CSS e JavaScript padrão com uma API intuitiva
-        e documentação de classe mundial.
+        e documentação de alta qualidade.
       </p>
     </div>
     <div class="vt-box">
       <h2>Ótimo Desempenho</h2>
       <p>
-        Verdadeiramente reativa, sistema de interpretação do compilador otimizado
+        Verdadeiramente reativa, sistema de interpretação de compilador otimizado
         que raramente precisa de otimização manual.
       </p>
     </div>
