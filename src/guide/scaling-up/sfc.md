@@ -34,7 +34,7 @@ Como podemos ver, SFCs no Vue são uma extensão natural do clássico trio HTML,
 Embora SFCs exijam uma etapa de compilação, há muitos benefícios em troca:
 
 - Criar componentes modularizados usando a sintaxe familiar de HTML, CSS e JavaScript
-- [Colocação de preocupações acopladas intrinsicamente](#what-about-separation-of-concerns)
+- [Colocação de preocupações acopladas intrinsecamente](#what-about-separation-of-concerns)
 - _Templates_ pré-compilados sem custo de compilação no _runtime_
 - [CSS isolado por componente](/api/sfc-css-features)
 - [Sintaxe mais ergonômica ao trabalhar com a API de Composição](/api/sfc-script-setup)
@@ -42,7 +42,7 @@ Embora SFCs exijam uma etapa de compilação, há muitos benefícios em troca:
 - [Suporte da IDE](/guide/scaling-up/tooling.html#ide-support) com preenchimento automático e verificação de tipos para expressões de _template_
 - Suporte de _Hot-Module Replacement_ (HMR) pronto para uso
 
-SFC é um recusro definidor do Vue como _framework_, e é a abordagem recomendada para usar o Vue nos seguintes cenários:
+SFC é um recurso definidor do Vue como _framework_, e é a abordagem recomendada para usar o Vue nos seguintes cenários:
 
 - Aplicações de Página Única (SPA)
 - Geração de Site Estático (SSG)
@@ -74,8 +74,8 @@ Em projetos reais, normalmente integramos o compilador SFC com uma ferramenta de
 
 Alguns usuários vindo de um contexto tradicional de desenvolvimento web podem ter preocupações de que SFCs misturam diferentes preocupações no mesmo local - em qual HTML/CSS/JS deveriam estar separados!
 
-Para responder esta pergunta, é importante concordarmos que **a separação de preocupações não é igual a separação de tipos de arquivo**. O objetivo fundamental dos princípios de engenharia é de melhorar a manutenção das bases de código. A separação de preocupações, quando aplicada dogmaticamente como separação de tipos de arquivo, não nos ajuda a alcançar este objetivo no contexto de aplicações _frontend_ cada vez mais complexas.
+Para responder esta pergunta, é importante concordarmos que **a separação de preocupações não é igual a separação de tipos de arquivo**. O objetivo fundamental dos princípios de engenharia é melhorar a manutenção das bases de código. A separação de preocupações, quando aplicada dogmaticamente como separação de tipos de arquivo, não nos ajuda a alcançar este objetivo no contexto de aplicações _frontend_ cada vez mais complexas.
 
-No desenvolvimento moderno de UI, descobrimos que ao invés de dividir a base de código em três enormes camadas que se entrelaçam, faz muito mais sentido dividí-las em componentes vagamente acoplados e compô-los. Dentro de um componente, seu _template_, lógica, e estilos são intrinsicamente acoplados, e mesclá-los na verdade tornam o seu componente mais coeso e sustentável.
+No desenvolvimento moderno de UI, descobrimos que ao invés de dividir a base de código em três enormes camadas que se entrelaçam, faz muito mais sentido dividi-las em componentes vagamente acoplados e compô-los. Dentro de um componente, seu _template_, lógica, e estilos são intrinsecamente acoplados, e mesclá-los na verdade tornam o seu componente mais coeso e sustentável.
 
 Note que mesmo que você não goste da ideia de Componentes Single-File, você ainda pode aproveitar seus recursos de carregamento instantâneo e pré-compilação separando o JavaScript e o CSS em arquivos diferentes usando [Src Imports](/api/sfc-spec.html#src-imports).
