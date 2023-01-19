@@ -1,6 +1,6 @@
-# Observadores
+# Observadores {#watchers}
 
-## Exemplo Básico
+## Exemplo Básico {#basic-example}
 
 As propriedades computadas permite-nos calcular declarativamente valores derivados. No entanto, existêm casos onde precisamos realizar "efeitos colaterais" em reação as mudanças de estado - por exemplo, alterando o DOM, ou mudando um outro pedaço do estado baseado no resultado de uma operação assíncrona.
 
@@ -99,7 +99,7 @@ watch(question, async (newQuestion, oldQuestion) => {
 
 [Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgd2F0Y2ggfSBmcm9tICd2dWUnXG5cbmNvbnN0IHF1ZXN0aW9uID0gcmVmKCcnKVxuY29uc3QgYW5zd2VyID0gcmVmKCdRdWVzdGlvbnMgdXN1YWxseSBjb250YWluIGEgcXVlc3Rpb24gbWFyay4gOy0pJylcblxud2F0Y2gocXVlc3Rpb24sIGFzeW5jIChuZXdRdWVzdGlvbikgPT4ge1xuICBpZiAobmV3UXVlc3Rpb24uaW5kZXhPZignPycpID4gLTEpIHtcbiAgICBhbnN3ZXIudmFsdWUgPSAnVGhpbmtpbmcuLi4nXG4gICAgdHJ5IHtcbiAgICAgIGNvbnN0IHJlcyA9IGF3YWl0IGZldGNoKCdodHRwczovL3llc25vLnd0Zi9hcGknKVxuICAgICAgYW5zd2VyLnZhbHVlID0gKGF3YWl0IHJlcy5qc29uKCkpLmFuc3dlclxuICAgIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgICBhbnN3ZXIudmFsdWUgPSAnRXJyb3IhIENvdWxkIG5vdCByZWFjaCB0aGUgQVBJLiAnICsgZXJyb3JcbiAgICB9XG4gIH1cbn0pXG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8cD5cbiAgICBBc2sgYSB5ZXMvbm8gcXVlc3Rpb246XG4gICAgPGlucHV0IHYtbW9kZWw9XCJxdWVzdGlvblwiIC8+XG4gIDwvcD5cbiAgPHA+e3sgYW5zd2VyIH19PC9wPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
 
-### Observar Tipos de Fonte
+### Observar Tipos de Fonte {#watch-source-types}
 
 O primeiro argumento do `watch` pode ser de diferentes tipos de "fontes" reativas: pode ser uma referência (incluindo referências computadas), um objeto reativo, uma função recuperada, ou um arranjo de várias fontes:
 
@@ -112,7 +112,6 @@ watch(x, (newX) => {
   console.log(`x is ${newX}`)
 })
 
-// getter
 // recuperador
 watch(
   () => x.value + y.value,
@@ -152,7 +151,7 @@ watch(
 
 </div>
 
-## Observadores Profundos
+## Observadores Profundos {#deep-watchers}
 
 <div class="options-api">
 
@@ -221,11 +220,11 @@ watch(
 A observação profunda precisa percorrer todas propriedades encaixadas dentro do objeto observado, e pode ser caro quando utilizada sobre grandes estruturas de dados. Utilize-a só quando necessário e esteja ciente das implicações de desempenho.
 :::
 
-<div class="options-api">
-
-## Observadores Incansáveis \*
+## Observadores Incansáveis {#eager-watchers}
 
 O `watch` é preguiçoso por padrão: a resposta não será chamada até que a fonte observada tenha mudado. Mas em alguns casos podemos querer que a mesma lógica de resposta seja executada incansavelmente - por exemplo, podemos querer pedir alguns dados iniciais, e depois pedir novamente os dados sempre que o estado relevante mudar.
+
+<div class="options-api">
 
 Nós podemos forçar que uma resposta do observador seja executada imediatamente declarando-a utilizando um objeto com uma função `handler` e a opção `immediate: true`:
 
@@ -249,43 +248,58 @@ export default {
 
 <div class="composition-api">
 
-## `watchEffect()` \*\*
-
-O `watch()` é preguiçoso: a resposta não será chamada até que a fonte observada tenha sido mudada. Mas em alguns casos podemos querer que a mesma lógica de resposta seja executada incansavelmente - por exemplo, podemos querer pedir alguns dados iniciais, e depois pedir novamente os dados sempre que o estado relevante mudar. Nós podemos nos encontrar fazendo isto:
+Nós podemos forçar uma resposta do observador a ser executada imediatamente passando a opção `immediate: true`:
 
 ```js
-const url = ref('https://...')
-const data = ref(null)
-
-async function fetchData() {
-  const response = await fetch(url.value)
-  data.value = await response.json()
-}
-
-// pedir imediatamente
-fetchData()
-// ...depois observar por mudanças na url
-watch(url, fetchData)
+watch(source, (newValue, oldValue) => {
+  // executado imediatamente, depois novamente quando `source` mudar
+}, { immediate: true })
 ```
 
-Isto pode ser simplificado com [`watchEffect()`](/api/reactivity-core.html#watcheffect). A `watchEffect()` permite-nos realizar um efeito colateral imediatamente enquanto rastreiamos as dependências reativas do efeito. O exemplo acima pode ser reescrito como:
+</div>
+
+<div class="composition-api">
+
+## `watchEffect()` \*\* {#watcheffect}
+
+É comum para a função de resposta do observador usar exatamente o mesmo estado reativo como fonte. Por exemplo, considere o seguinte código, que usa um observador para carregar um recurso remoto sempre que a referência `todoId` mudar:
+
+```js
+const todoId = ref(1)
+const data = ref(null)
+
+watch(todoId, async () => {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
+  )
+  data.value = await response.json()
+}, { immediate: true })
+```
+
+Em particular, repare em como o observador usa o `todoId` duas vezes, uma vez como fonte e depois novamente dentro da função de resposta.
+
+Isto pode ser simplificado com [`watchEffect()`](/api/reactivity-core.html#watcheffect). A `watchEffect()` permite-nos rastrear as dependências reativas da função de resposta automaticamente. O observador acima pode ser reescrito como:
 
 ```js
 watchEffect(async () => {
-  const response = await fetch(url.value)
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
+  )
   data.value = await response.json()
 })
 ```
 
-Cá, a resposta executará imediatamente. Durante a sua execução, também rastreiará automaticamente o `url.value` como uma dependência (semelhante as propriedades computadas). Sempre que `url.value` mudar, a resposta será executada novamente.
+Aqui, a função de resposta executará imediatamente, não há necessidade de especificar `immediate: true`. Durante a sua execução, ela rastreará automaticamente o `todoId.value` como uma dependência (similar as propriedades computadas). Sempre que `todoId.value` mudar, a função de resposta será executada novamente. Com a `watchEffect()`, já não precisamos passar `todoId` explicitamente como valor de fonte.
 
-Tu podes consultar [este exemplo](/examples/#fetching-data) com `watchEffect` e a requisição reativa de dados em ação.
+Tu podes consultar [este exemplo](/examples/#fetching-data) de `watchEffect` e da requisição reativa de dados em ação.
 
-:::tip
+Para exemplos como este, com apenas uma dependência, o benefício da `watchEffect()` é relativamente pequeno. Mas para os observadores que têm várias dependências, usar `watchEffect()` remove o fardo de ter que manter a lista de dependências manualmente. Além disto, se precisares observar várias propriedades em uma estrutura encaixada, a `watchEffect()` pode provar-se mais eficiente do que um observador profundo, já que ele apenas rastreará as propriedades que são usadas na função de resposta, em vez de rastrear recursivamente todos eles.
+
+:::tip Dica
 A `watchEffect` só rastreia dependências durante sua execução **síncrona**. Quando estiveres utilizando-a com uma resposta assíncrona, apenas as propriedades acessadas antes do primeiro visto `await` serão executadas.
 :::
 
-### `watch` vs. `watchEffect`
+### `watch` vs. `watchEffect` {#watch-vs-watcheffect}
 
 Ambos `watch` e `watchEffect` permitem-nos realizar efeitos colaterais de maneira reativa. A principal diferença entre elas está na maneira de como elas rasteiam as dependências reativas:
 
@@ -295,7 +309,7 @@ Ambos `watch` e `watchEffect` permitem-nos realizar efeitos colaterais de maneir
 
 </div>
 
-## Tempo de Fluxo de Resposta
+## Tempo de Fluxo de Resposta {#callback-flush-timing}
 
 Quando alterares o estado reativo, ele pode acionar tanto as atualizações de componente de Vue e respostas de observador criadados por ti.
 
@@ -345,7 +359,7 @@ watchPostEffect(() => {
 
 <div class="options-api">
 
-## `this.$watch()` \*
+## `this.$watch()` \* {#this-watch}
 
 Também é possível criar observadores imperativamente utilizando o [método de instância `$watch()`](/api/component-instance.html#watch):
 
@@ -363,7 +377,7 @@ Isto é útil para quando precisares definir um observador condicionalmente, ou 
 
 </div>
 
-## Parando um Observador
+## Parando um Observador {#stopping-a-watcher}
 
 <div class="options-api">
 
