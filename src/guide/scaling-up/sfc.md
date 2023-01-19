@@ -4,6 +4,8 @@
 
 Os Componentes de Ficheiro Único (também conhecido como ficheiros de `*.vue`, abreviados como **SFC (Single-File Component, em Inglês)**) é um formato de ficheiro especial que permite-nos resumir o modelo de marcação, a lógica, **e** os estilos de um componente de Vue em um único ficheiro. Cá está um exemplo de SFC:
 
+<div class="options-api">
+
 ```vue
 <script>
 export default {
@@ -26,6 +28,30 @@ export default {
 }
 </style>
 ```
+
+</div>
+
+<div class="composition-api">
+
+```vue
+<script setup>
+import { ref } from 'vue'
+const greeting = ref('Hello World!')
+</script>
+
+<template>
+  <p class="greeting">{{ greeting }}</p>
+</template>
+
+<style>
+.greeting {
+  color: red;
+  font-weight: bold;
+}
+</style>
+```
+
+</div>
 
 Conforme podemos observar, o Componente de Ficheiro Único de Vue é uma extensão natural do trio clássico HTML, CSS e JavaScript. Os blocos `<template>`, `<script>`, e `<style>` resumem e colocam o panorama, a lógica e o estilo de um componente no mesmo ficheiro. A sintaxe completa é definida na [Especificação da Sintaxe de SFC](/api/sfc-spec).
 
