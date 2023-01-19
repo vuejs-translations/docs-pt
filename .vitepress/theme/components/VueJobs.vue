@@ -5,16 +5,16 @@ const base = 'https://app.vuejobs.com/feed/vuejs/docs?format=json'
 let items = $ref<Jobs[]>([])
 
 type Jobs = {
-  organization: Organization;
-  title: string;
-  link: string;
-  locations: string[];
-  remote: false | 'ALLOWED' | 'ONLY';
+  organization: Organization
+  title: string
+  link: string
+  locations: string[]
+  remote: false | 'ALLOWED' | 'ONLY'
 };
 
 type Organization = {
-  name: string;
-  avatar: string;
+  name: string
+  avatar: string
 };
 </script>
 
