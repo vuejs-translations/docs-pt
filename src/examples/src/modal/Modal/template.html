@@ -1,21 +1,24 @@
 <Transition name="modal">
   <div v-if="show" class="modal-mask">
-    <div class="modal-wrapper">
-      <div class="modal-container">
-        <div class="modal-header">
-          <slot name="header">cabeçalho padrão</slot>
-        </div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <slot name="header">cabeçalho padrão</slot>
+      </div>
 
-        <div class="modal-body">
-          <slot name="body">corpo padrão</slot>
-        </div>
+      <div class="modal-body">
+        <slot name="body">corpo padrão</slot>
+      </div>
 
-        <div class="modal-footer">
-          <slot name="footer">
-            rodapé padrão
-            <button class="modal-default-button" @click="$emit('close')">OK</button>
-          </slot>
-        </div>
+      <div class="modal-footer">
+        <slot name="footer">
+          rodapé padrão
+          <button
+            class="modal-default-button"
+            @click="$emit('close')"
+          >
+            OK
+          </button>
+        </slot>
       </div>
     </div>
   </div>
