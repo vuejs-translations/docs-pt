@@ -310,30 +310,6 @@
     "sponsor": true
   },
   {
-    "name": "Damian Dulisz",
-    "title": "Consultor",
-    "projects": [
-      {
-        "label": "news.vuejs.org",
-        "url": "https://news.vuejs.org"
-      },
-      {
-        "label": "vue-multiselect",
-        "url": "https://vue-multiselect.js.org/"
-      }
-    ],
-    "location": "Wrocław, Polónia",
-    "languages": [
-      "Polaco",
-      "Inglês"
-    ],
-    "socials": {
-      "github": "shentao",
-      "twitter": "DamianDulisz"
-    },
-    "sponsor": true
-  },
-  {
     "name": "GU Yiling",
     "title": "Programador da Web Sénior",
     "company": "Baidu, inc.",
