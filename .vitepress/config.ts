@@ -88,7 +88,7 @@ const nav: ThemeConfig['nav'] = [
         items: [
           { text: 'Blogue', link: 'https://blog.vuejs.org/' },
           { text: 'Twitter', link: 'https://twitter.com/vuejs' },
-          { text: 'Boletim Informativo', link: 'https://news.vuejs.org/' },
+          //{ text: 'Boletim Informativo', link: 'https://news.vuejs.org/' },
           { text: 'Eventos', link: 'https://events.vuejs.org/' }
         ]
       }
@@ -136,7 +136,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Os Essenciais',
+      text: 'Os Fundamentos',
       items: [
         {
           text: 'Criando uma Aplicação',
