@@ -265,41 +265,5 @@
     },
     "contact": "we@webreinvent.com",
     "hiring": "https://webreinvent.com/career?utm_source=vuejs.org&utm_medium=website&utm_campaign=partner-hiring-link"
-  },
-  {
-    "name": "Active Logic",
-    "logo": "activelogic.png",
-    "flipLogo": true,
-    "intro": "Não somos apenas uma extensão da tua equipa de desenvolvimento de Vue.js, somos um injetor de velocidade rápida. Desde 2014, temos estado a fornecer desenvolvimento de software premium e soluções de aumento de pessoal para várias organizações a nível nacional. Com a utilização da equipa de desenvolvimento 100% em terra, podemos conduzir o trabalho preliminar para uma nova aplicação, ou continuar a engendrar software existente que precisa de modificações.",
-    "description": [
-      "Sediados no coração da América, nossa missão é simples - fornecer as organizações a nível nacional soluções técnicas feitas à medida; um sistema de cada vez. Nós estamos orgulhosos em dizer que continuamos a cumprir a nossa missão diariamente.",
-      "Nós acreditamos que um projeto, independente do tamanho ou pilha tecnológica, deveria sempre ser administrado por um Líder de Software dedicado que trabalha bem de perto contigo e a tua equipa. A sua competência e orientação irá permitir-te concentrares-te melhor nos tuas operações de negócios diários enquanto fazemos levantamento de pesos.",
-      "Nós temos produzido mais de 200 projetos finais para os nossos clientes nos últimos 8 anos, todos dos quais seguem padrões de industria bem conhecido para garantir sua funcionalidade, segurança, e escalabilidade.",
-      "A otimização das tuas operações de negócio nunca foi tão fácil; encontre-nos hoje aqui na Active Logic!"
-    ],
-    "proficiencies": [
-      "Vue",
-      "Laravel",
-      "Node.js",
-      "React",
-      "React Native",
-      "Angular",
-      "Swift",
-      "Kotlin",
-      ".NET"
-    ],
-    "region": [
-      "América do Norte"
-    ],
-    "location": [
-      "Leadwood, Kansas, USA"
-    ],
-    "website": {
-      "text": "activelogic.io",
-      "url": "https://activelogic.io/services/vue-js-development/"
-    },
-    "contact": "sales@activelogic.io",
-    "hiring": "https://activelogic.io/careers/",
-    "platinum": true
   }
 ]
