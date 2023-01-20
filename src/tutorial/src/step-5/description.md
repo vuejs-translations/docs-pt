@@ -42,6 +42,6 @@ Para simplificar vínculos de duas vias, a Vua fornece uma diretiva, `v-model`, 
 
 A `v-model` sincroniza automaticamente o valor do `<input>` com o estado vinculado, assim já não precisamos utilizar um manipulador de evento para isto.
 
-A `v-model` não funciona apenas em entradas de texto (`<input type="text">`), mas também em outros tipos de entrada tais como caixas de confirmação (`<input type="checkbox">`), botões de rádio (`<input type="radio">`), e menu de opções de seleção (`<select>`). Nós cobrimos mais detalhes no <a target="_blank" href="/guide/essentials/forms.html">Guia - Vinculação de Formulário</a>.
+A `v-model` não funciona apenas em entradas de texto (`<input type="text">`), mas também em outros tipos de entrada tais como caixas de confirmação (`<input type="checkbox">`), botões de rádio (`<input type="radio">`), e menu de opções de seleção (`<select>`). Nós cobrimos mais detalhes no <a target="_blank" href="/guide/essentials/forms.html">Guia - Vinculações de Formulário</a>.
 
 Agora, experimente refatorar o código para utilizar `v-model`.
