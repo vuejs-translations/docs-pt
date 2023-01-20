@@ -184,8 +184,8 @@
   {
     "name": "Sebastien Chopin",
     "title": "#1 Irmão da Nuxt",
-    "company": "NuxtJS",
-    "companyLink": "https://nuxtjs.org",
+    "company": "NuxtLabs",
+    "companyLink": "https://nuxtlabs.com",
     "location": "Bordeaux, França",
     "languages": [
       "Francês",
@@ -197,12 +197,12 @@
         "url": "https://github.com/nuxt"
       },
       {
-        "label": "nuxt-community/*",
-        "url": "https://github.com/nuxt-community"
+        "label": "nuxt-modules/*",
+        "url": "https://github.com/nuxt-modules"
       },
       {
-        "label": "nuxt/vue-meta",
-        "url": "https://github.com/nuxt/vue-meta"
+        "label": "nuxt-themes/*",
+        "url": "https://github.com/nuxt/nuxt-themes"
       }
     ],
     "socials": {
@@ -213,8 +213,8 @@
   {
     "name": "Alexandre Chopin",
     "title": "#1 Irmão da Nuxt",
-    "company": "NuxtJS",
-    "companyLink": "https://nuxtjs.org",
+    "company": "NuxtLabs",
+    "companyLink": "https://nuxtlabs.com",
     "location": "Bordeaux, França",
     "languages": [
       "Francês",
@@ -226,12 +226,8 @@
         "url": "https://github.com/nuxt"
       },
       {
-        "label": "nuxt-community/*",
-        "url": "https://github.com/nuxt-community"
-      },
-      {
-        "label": "vue-flexboxgrid",
-        "url": "https://github.com/alexchopin/vue-flexboxgrid"
+        "label": "nuxt-modules/*",
+        "url": "https://github.com/nuxt-modules"
       }
     ],
     "socials": {
