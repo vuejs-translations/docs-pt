@@ -2,7 +2,9 @@
   <div class="divider"></div>
   <div class="join-container">
     <h2>Desenvolva o teu negocio com a Vue</h2>
-    <p>Gere exemplos para os novos projetos, impulsiona a tua credibilidade para os teus clientes, e apoie a sustentabilidade de longo prazo da Vue.js e do seu ecossistema.</p>
+    <p>
+      Gere exemplos para os novos projetos, impulsiona a tua credibilidade para os teus clientes, e apoie a sustentabilidade de longo prazo da Vue.js e do seu ecossistema.
+    </p>
     <a
       class="join"
       href="https://airtable.com/shrCQhat57SApJI2l"

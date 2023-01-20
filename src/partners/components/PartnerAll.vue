@@ -22,7 +22,10 @@ function includes(a: string, b: string) {
   <PartnerHero title="Pesquisar Todos Parceiros" />
   <div class="container">
     <VTIconSearch class="icon" />
-    <input placeholder="Procurar parceiros pelo nome ou por região" v-model="query" />
+    <input
+      placeholder="Procurar parceiros pelo nome ou região"
+      v-model="query"
+    />
     <PartnerList :filter="filter" />
   </div>
   <PartnerJoin />
