@@ -36,7 +36,7 @@ function track(id: string, linkType: string) {
 
     <div class="description">
       <h2>Sobre a {{ name }}</h2>
-      <p v-for="desc description" v-html="desc"></p>
+      <p v-for="desc in description" v-html="desc"></p>
     </div>
 
     <div class="actions">
