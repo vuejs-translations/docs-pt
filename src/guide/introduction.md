@@ -88,7 +88,7 @@ A Vua é uma abstração e ecossistema que cobre a maioria das funcionalidades c
 
 Se considerares estes conceitos intimidantes, não te preocupes! A aula e o guia só exigem conhecimento básico em HTML, CSS e JavaScript, e deves ser capaz de seguir adiante sem ser um especialista em quaisquer um destes.
 
-Se fores um programador experiente interessado em como integrar melhor a Vue na tua pilha, ou estiveres curioso a respeito do que estes terms querem dizer, nós os discutimos em mais detalhes em [Maneiras de Utilização da Vue](/guide/extras/ways-of-using-vue).
+Se fores um programador experiente interessado em como integrar melhor a Vue na tua pilha, ou estiveres curioso a respeito do que estes termos querem dizer, nós os discutimos com mais detalhes em [Maneiras de Utilização da Vue](/guide/extras/ways-of-using-vue).
 
 Apesar da flexibilidade, o conhecimento principal a respeito de como a Vua funciona é partilhado por todos estes casos de uso. Mesmo se agora fores apenas um principiante, o conhecimento adquirido pelo caminho manter-se-á útil a medida que cresceres para lidares com objetivos mais ambiciosos no futuro. Se fores um veterano, podes escolher a maneira ideal de entregar a Vue baseado nos problemas que estás tentando resolver, enquanto conservas a mesma produtividade. Isto é a razão de nós chamarmos a Vue de "A Abstração Progressiva": é uma abstração que pode crescer contigo e adaptar-se as tuas necessidades.
 
