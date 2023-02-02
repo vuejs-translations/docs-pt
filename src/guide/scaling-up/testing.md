@@ -108,24 +108,24 @@ Um componente pode ser testado de duas maneiras:
 
 - [Jest](https://jestjs.io/) é uma abstração de testagem unitária popular, e pode ser posta a funcionar com a Vite através do pacote [vite-test](https://github.com/sodatea/vite-jest). No entanto, apenas recomendados a Jest se tiveres um conjunto de teste de Jest existente que precisa ser migrado para um projeto baseado na Vite, já que a Vitest oferece uma integração mais fluida e melhor desempenho.
 
-## Component Testing {#component-testing}
+## Testagem de Componente {#component-testing}
 
-In Vue applications, components are the main building blocks of the UI. Components are therefore the natural unit of isolation when it comes to validating your application's behavior. From a granularity perspective, component testing sits somewhere above unit testing and can be considered a form of integration testing. Much of your Vue Application should be covered by a component test and we recommend that each Vue component has its own spec file.
+Em aplicações de Vue, os componentes são os blocos de construção principais da interface do utilizador. Os componentes são portanto a unidade natural de isolamento quando isto aproxima-se da validação do comportamento da tua aplicação. A partir de uma perspetiva de granularidade, a testegam de componente situa-se em algum lugar acima da testagem unitária e pode ser considerada uma forma de testagem de integração. Grande parte da tua aplicação em Vue deve ser coberta por um teste de componente e recomendamos que cada componente de Vue tenha o seu próprio ficheiro de especificação `spec`.
 
-Component tests should catch issues relating to your component's props, events, slots that it provides, styles, classes, lifecycle hooks, and more.
+Os testes de componente devem capturar problemas relativos as propriedades do teu componente, eventos, ranhuras que ele fornece, estilos, classes, gatilhos do ciclo de vida, e muito mais.
 
-Component tests should not mock child components, but instead test the interactions between your component and its children by interacting with the components as a user would. For example, a component test should click on an element like a user would instead of programmatically interacting with the component.
+Os testes de componente não devem imitar os componentes filhos, mas testar as interações entre o teu componente e os seus componentes filhos ao interagir com os componentes como o utilizador faria. Por exemplo, um teste de componente deve clicar sobre um elemento como um utilizador faria ao invés de interagir programaticamente com o componente.
 
-Component tests should focus on the component's public interfaces rather than internal implementation details. For most components, the public interface is limited to: events emitted, props, and slots. When testing, remember to **test what a component does, not how it does it**.
+Os testes de componente deve concentrar-se sobre interfaces públicas do componente em vez dos detalhes de implementação interna. Para a maior parte dos componentes, a interface pública está limitada a: eventos emitidos, propriedades, e ranhuras. Quando estiveres a testar, lembra-te de **testar o que um componente faz, e não como ele o faz**.
 
-**DO**
+**FAZER**
 
-- For **Visual** logic: assert correct render output based on inputted props and slots.
-- For **Behavioral** logic: assert correct render updates or emitted events in response to user input events.
+- Para lógica **Visual**: afirmar saída correta do interpretador baseada nas propriedades e ranhuras introduzidas.
+- Para lógica **Comportamental**: afirmar atualizações ou eventos emitidos corretos do interpretador em resposta aos eventos de entrada do utilizador.
 
-  In the below example, we demonstrate a Stepper component that has a DOM element labeled "increment" and can be clicked. We pass a prop called `max` that prevents the Stepper from being incremented past `2`, so if we click the button 3 times, the UI should still say `2`.
+  No exemplo abaixo, demonstraremos um componente `Stepper` que tem um elemento de DOM rotulado "increment" e pode ser clicado. Nós passamos uma propriedade chamada `max` que impedi o `Stepper` de ser incrementado além de `2`, assim se clicarmos o botão 3 vezes, a interface do utilizador deve continuar a dizer `2`.
 
-  We know nothing about the implementation of Stepper, only that the "input" is the `max` prop and the "output" is the state of the DOM as the user will see it.
+  Nós não sabemos nada a respeito da implementação do `Stepper`, apenas que a "entrada" é a propriedade `max` e a "saída" é o estado do DOM como o utilizador o verá.
 
 <TestingApiSwitcher>
 
@@ -138,11 +138,11 @@ const { getByText } = render(Stepper, {
   }
 })
 
-getByText('0') // Implicit assertion that "0" is within the component
+getByText('0') // Afirma implicitamente que "0" está dentro do componente
 
 const button = getByText('increment')
 
-// Dispatch a click event to our increment button.
+// Despacha um evento de clique para o nosso botão de incrementar.
 await fireEvent.click(button)
 
 getByText('1')
@@ -194,15 +194,15 @@ cy.get(valueSelector).should('be.visible').and('contain.text', '0')
 
 </TestingApiSwitcher>
 
-- **DON'T**
+- **NÃO FAZER**
 
-  Don't assert the private state of a component instance or test the private methods of a component. Testing implementation details makes the tests brittle, as they are more likely to break and require updates when the implementation changes.
+  Não afirmar o estado privado de uma instância de componente ou testar métodos privados de um componente. Testar detalhes de implementação torna os testes frágeis, já que eles estão sujeitos a quebrarem ou exigirem atualizações quando a implementação mudar.
 
-  The component's ultimate job is rendering the correct DOM output, so tests focusing on the DOM output provide the same level of correctness assurance (if not more) while being more robust and resilient to change.
+  O derradeiro trabalho do componente é apresentar a saída correta do DOM, assim os testes que se concentram na saída do DOM fornecem o mesmo nível de garantia de correção (se não mais) enquanto é mais robusto e resiliente para mudar.
 
-  Don't rely exclusively on snapshot tests. Asserting HTML strings does not describe correctness. Write tests with intentionality.
+  Não depender exclusivamente de testes instantâneos. Afirmação de sequências de caracteres de HTML não descrevem correção. Escreve os testes com intencionalidade.
 
-  If a method needs to be tested thoroughly, consider extracting it into a standalone utility function and write a dedicated unit test for it. If it cannot be extracted cleanly, it may be tested as a part of a component, integration, or end-to-end test that covers it.
+  Se um método precisa ser testado meticulosamente, considere extraí-lo para uma função utilitária isolada e escrever um teste unitário dedicado para ele. Se poder ser extraído suavemente, pode ser testado como uma parte de um componente, integração, ou teste fim-à-fim que o cubra.
 
 ### Recommendation {#recommendation-1}
 
