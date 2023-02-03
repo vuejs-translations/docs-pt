@@ -242,49 +242,49 @@ Os testes ponta-a-ponta validam muitas camadas na tua aplicação. Eles podem ta
 
 Por testarem como as ações do utilizador impactam a tua aplicação, os testes E2E são muitas vezes a chave para segurança mais alta nos casos em queremos saber se uma aplicação está devidamente funcional ou não.
 
-### Choosing an E2E Testing Solution {#choosing-an-e2e-testing-solution}
+### Escolhendo uma Solução de Testagem E2E {#choosing-an-e2e-testing-solution}
 
-While end-to-end (E2E) testing on the web has gained a negative reputation for unreliable (flaky) tests and slowing down development processes, modern E2E tools have made strides forward to create more reliable, interactive, and useful tests. When choosing an E2E testing framework, the following sections provide some guidance on things to keep in mind when choosing a testing framework for your application.
+Enquanto a testagem de ponta-ponta (E2E) na Web tem ganhado uma reputação negativa por testes de pouca confiança e atraso do processos de desenvolvimento, ferramentas de E2E modernas têm feito progressos consideráveis para criar testes mais fiáveis, interativos, e úteis. Quando escolheres uma abstração de testagem E2E, as seguintes seções fornecem algum guia sobre coisas para manter em mente quando estiveres a escolher uma abstração de testagem para a tua aplicação.
 
-#### Cross-browser testing {#cross-browser-testing}
+#### Testagem Cruzada de Navegador {#cross-browser-testing}
 
-One of the primary benefits that end-to-end (E2E) testing is known for is its ability to test your application across multiple browsers. While it may seem desirable to have 100% cross-browser coverage, it is important to note that cross browser testing has diminishing returns on a team's resources due the additional time and machine power required to run them consistently. As a result, it is important to be mindful of this trade-off when choosing the amount of cross-browser testing your application needs.
+Um dos benefício primários que a testagem de ponta-a-ponta (E2E) é conhecida por ser sua capacidade de testar a tua aplicação através de vários navegadores. Enquanto isto pode parecer desejável para ter 100% cobertura cruzada de navegador, é importante notar que a testagem cruzada de navegador tem reduzido os retornos sobre os recursos de uma equipa devido ao tempo adicional e poder de máquina exigido para executá-los consistentemente. Como resultado, é importante ser cuidadoso a respeito deste compromisso quando estiveres a escolher a quantidade de testagem cruzada de navegador a tua aplicação precisa.
 
-#### Faster feedback loops {#faster-feedback-loops}
+#### Laços de Reações Mais Rápidos {#faster-feedback-loops}
 
-One of the primary problems with end-to-end (E2E) tests and development is that running the entire suite takes a long time. Typically, this is only done in continuous integration and deployment (CI/CD) pipelines. Modern E2E testing frameworks have helped to solve this by adding features like parallelization, which allows for CI/CD pipelines to often run magnitudes faster than before. In addition, when developing locally, the ability to selectively run a single test for the page you are working on while also providing hot reloading of tests can help to boost a developer's workflow and productivity.
+Um dos problemas primários com os testes de ponta-a-ponta (E2E) e o desenvolvimento é que executar o conjunto inteiro leva muito tempo. Normalmente, isto apenas é feito em condutas de integração e implementação contínua (CI/CD). As abstrações de testagem E2E modernas têm ajudado a resolver isto adicionado funcionalidades como execuções paralelas, que permitem as condutas de CI/CD muitas vezes executarem magnitudes mais rápido do que antes. Além disto, quando estiveres a programar localmente, a capacidade de executar seletivamente um único teste para a página sobre a qual estás a trabalhar enquanto também fornece o recarregamento instantâneo dos testes pode ajudar a impulsionar o fluxo de trabalho e produtividade do programador.
 
-#### First-class debugging experience {#first-class-debugging-experience}
+#### Experiência de Depuração de Primeira Classe {#first-class-debugging-experience}
 
-While developers have traditionally relied on scanning logs in a terminal window to help determine what went wrong in a test, modern end-to-end (E2E) test frameworks allow developers to leverage tools that they are already familiar with, e.g. browser developer tools.
+Embora os programadores têm tradicionalmente dependido dos exames de registos em uma janela de terminal para ajudar a determinar o que correu mal em um teste, as abstrações de teste de ponta-a-ponta (E2E) permitem os programadores influenciar ferramentas com as quais eles já estão familiarizados, por exemplo, ferramentas de programador do navegador.
 
-#### Visibility in headless mode {#visibility-in-headless-mode}
+#### Visibilidade no Modo Desgovernado {#visibility-in-headless-mode}
 
-When end-to-end (E2E) tests are run in continuous integration / deployment pipelines, they are often run in headless browsers (i.e., no visible browser is opened for the user to watch). A critical feature of modern E2E testing frameworks is the ability to see snapshots and/or videos of the application during testing, providing some insight into why errors are happening. Historically, it was tedious to maintain these integrations.
+Quando os testes de ponta-a-ponta (E2E) estão a executar em condutas de integração / implementação contínuas, eles estão muitas vezes a executar em navegadores desgovernados (por exemplo, nenhum navegador visível é aberto para o utilizador observar). Uma funcionalidade crítica das abstrações de testagem E2E modernas é a capacidade de ver fotografias e ou vídeos da aplicação durante a testagem, fornecendo alguma compreensão no do porquê dos erros estarem a acontecer. Historicamente, era tedioso manter estas integrações.
 
-### Recommendation {#recommendation-2}
+### Recomendação {#recommendation-2}
 
 - [Cypress](https://www.cypress.io/)
 
-  Overall, we believe Cypress provides the most complete E2E solution with features like an informative graphical interface, excellent debuggability, built-in assertions and stubs, flake-resistance, parallelization, and snapshots. As mentioned above, it also provides support for [Component Testing](https://docs.cypress.io/guides/component-testing/introduction). However, it only supports Chromium-based browsers and Firefox.
+  Em geral, acreditamos que a Cypress fornece a solução mais completa de E2E com funcionalidades como uma interface gráfica informativa, excelente depurabilidade, afirmações e implementações forjadas, execução paralela, fotografias e muito mais. Conforme mencionado acima, ela também fornece suporte para [Testagem de Componente](https://docs.cypress.io/guides/component-testing/introduction). No entanto, ela apenas suporta navegadores baseados no Chromium e a Firefox.
 
-### Other Options {#other-options-2}
+### Outras Opções {#other-options-2}
 
-- [Playwright](https://playwright.dev/) is also a great E2E testing solution with a wider range of browser support (mainly WebKit). See [Why Playwright](https://playwright.dev/docs/why-playwright) for more details.
+- [Playwright](https://playwright.dev/) é também uma excelente solução de testagem E2E com uma gama maior de suporte de navegador (principalmente o WebKit). Consulte o [Porquê a Playwright](https://playwright.dev/docs/why-playwright) para mais detalhes.
 
-- [Nightwatch v2](https://v2.nightwatchjs.org/) is an E2E testing solution based on [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). This gives it the widest browser support range.
+- [Nightwatch v2](https://v2.nightwatchjs.org/) é uma solução de testagem E2E baseada sno [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Isto dá-lhe a gama de suporte de navegador mais alargada.
 
-## Recipes {#recipes}
+## Receitas {#recipes}
 
-### Adding Vitest to a Project {#adding-vitest-to-a-project}
+### Adicionar a Vitest à um Projeto {#adding-vitest-to-a-project}
 
-In a Vite-based Vue project, run:
+Em um projeto de Vue baseado em Vite, execute:
 
 ```sh
 > npm install -D vitest happy-dom @testing-library/vue
 ```
 
-Next, update the Vite configuration to add the `test` option block:
+A seguir, atualize a configuração da Vite para adicionar o bloco da opção `test`:
 
 ```js{6-12}
 // vite.config.js
@@ -293,17 +293,17 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   // ...
   test: {
-    // enable jest-like global test APIs
+    // ativa as APIs de teste global parecidas com as de Jest
     globals: true,
-    // simulate DOM with happy-dom
-    // (requires installing happy-dom as a peer dependency)
+    // simular a DOM com `happy-dom`
+    // (exige a instalação de `happy-dom` como uma dependência par)
     environment: 'happy-dom'
   }
 })
 ```
 
-:::tip
-If you are using TypeScript, add `vitest/globals` to the `types` field in your `tsconfig.json`.
+:::tip Dica
+Se estiveres a usar a TypeScript, adicione `vitest/globals` ao campo `types` do teu ficheiro `tsconfig.json`.
 
 ```json
 // tsconfig.json
@@ -316,7 +316,7 @@ If you are using TypeScript, add `vitest/globals` to the `types` field in your `
 ```
 :::
 
-Then create a file ending in `*.test.js` in your project. You can place all test files in a test directory in project root, or in test directories next to your source files. Vitest will automatically search for them using the naming convention.
+Depois crie um ficheiro terminando em `*.test.js` no teu projeto. Tu podes colocar todos os ficheiros de teste em um diretório de teste na raiz do projeto, ou em diretórios de teste próximos do teus ficheiros de código-fonte. A Vitest procurará automaticamente por eles usando a convenção de nomeação.
 
 ```js
 // MyComponent.test.js
@@ -330,12 +330,12 @@ test('it should work', () => {
     }
   })
 
-  // assert output
+  // afirmar a saída
   getByText('...')
 })
 ```
 
-Finally, update `package.json` to add the test script and run it:
+Finalmente, atualizar o teu ficheiro `package.json` para adicionar o programa que executa o teste e executá-lo:
 
 ```json{4}
 {
@@ -350,18 +350,18 @@ Finally, update `package.json` to add the test script and run it:
 > npm test
 ```
 
-### Testing Composables {#testing-composables}
+### Testagem de Constituíveis {#testing-composables}
 
-> This section assumes you have read the [Composables](/guide/reusability/composables.html) section.
+> Esta seção presume que tens lido a seção [Constituíveis](/guide/reusability/composables.html).
 
-When it comes to testing composables, we can divide them into two categories: composables that do not rely on a host component instance, and composables that do.
+Quando chegasse a testagem de constituíveis, podemos dividi-los em duas categorias: constituíveis que não dependem de uma instância de componente hospedeira, e constituíveis que dependem. 
 
-A composable depends on a host component instance when it uses the following APIs:
+Um constituível que depende de uma instância de componente hospedeira quando usa as seguintes APIs:
 
-- Lifecycle hooks
-- Provide / Inject
+- Gatilhos do Ciclo de Vida
+- Fornecimento (`provide`) / Injeção (`inject`) 
 
-If a composable only uses Reactivity APIs, then it can be tested by directly invoking it and asserting its returned state / methods:
+Se uma constituível apenas usar as APis de Reatividade, então ela pode ser testada diretamente invocando-a e afirmando os seus métodos ou estados retornados:
 
 ```js
 // counter.js
@@ -391,7 +391,7 @@ test('useCounter', () => {
 })
 ```
 
-A composable that relies on lifecycle hooks or Provide / Inject needs to be wrapped in a host component to be tested. We can create a helper like the following:
+Uma constituível que depende dos gatilhos do ciclo de vida ou `provide` / `inject` precisam ser envolvidas em um componente hospedeiro para ser testado. Nós podemos criar um auxiliar como o seguinte:
 
 ```js
 // test-utils.js
@@ -402,13 +402,13 @@ export function withSetup(composable) {
   const app = createApp({
     setup() {
       result = composable()
-      // suppress missing template warning
+      // suprimir aviso de ausência do modelo de marcação
       return () => {}
     }
   })
   app.mount(document.createElement('div'))
-  // return the result and the app instance
-  // for testing provide / unmount
+  // retornar o resultado e a instância da aplicação
+  // para testagem do fornecimento ou desmontagem
   return [result, app]
 }
 ```
@@ -418,16 +418,16 @@ import { useFoo } from './foo'
 
 test('useFoo', () => {
   const [result, app] = withSetup(() => useFoo(123))
-  // mock provide for testing injections
+  // imitar o fornecimento para a testagem das injeções
   app.provide(...)
-  // run assertions
+  // executar as afirmações
   expect(result.foo.value).toBe(1)
-  // trigger onUnmounted hook if needed
+  // acionar o gatilho de desmontagem se necessário
   app.unmount()
 })
 ```
 
-For more complex composables, it could also be easier to test it by writing tests against the wrapper component using [Component Testing](#component-testing) techniques.
+Para constituíveis mais complexos, poderia também ser mais fácil testá-lo escrevendo os testes contra o componente envolvedor usando as técnicas de [Testagem de Componente](#component-testing).
 
 <!--
 TODO more testing recipes can be added in the future e.g.
