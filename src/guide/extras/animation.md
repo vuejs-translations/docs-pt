@@ -9,9 +9,9 @@ import AnimateWatcher from './demos/AnimateWatcher.vue'
 
 A Vue fornece os componentes [`<Transition>`](/guide/built-ins/transition.html) e [`<TransitionGroup>`](/guide/built-ins/transition-group.html) para manipular a transição de entrada / saída e lista de transições. No entanto, existem muitas outras maneiras de usar animações na Web, até mesmo em uma aplicação de Vue. Abaixo discutiremos algumas técnicas adicionais.
 
-## Class-based Animations {#class-based-animations}
+## Animações Baseadas em Classe {#class-based-animations}
 
-For elements that are not entering / leaving the DOM, we can trigger animations by dynamically adding a CSS class:
+Para os elementos que não estão a entrar / sair do DOM, podemos acionar animações ao dinamicamente adicionar uma classe de CSS:
 
 <div class="composition-api">
 
