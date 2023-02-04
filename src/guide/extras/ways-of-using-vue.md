@@ -2,16 +2,12 @@
 
 Nós acreditamos não existir "uma solução que resolva tudo" na Web. É por isto que a Vue é desenhada para ser flexível e adotável incrementalmente. Dependendo do teu caso de uso, a Vue pode ser usada de diferentes maneiras para encontrar a harmonia ideal entre a complexidade da pilha, experiência de programação e desempenho final.
 
-## Standalone Script {#standalone-script}
 ## Extensão Isolada {#standalone-script}
 
-Vue can be used as a standalone script file - no build step required! If you have a backend framework already rendering most of the HTML, or your frontend logic isn't complex enough to justify a build step, this is the easiest way to integrate Vue into your stack. You can think of Vue as a more declarative replacement of jQuery in such cases.
 A Vue pode ser usada como um ficheiro de extensão isolada - sem a necessidade da etapa de construção! se já tiveres uma abstração de backend a gerar a maior parte da HTML, ou a lógica do teu frontend não complexa o suficiente para justificar uma etapa de construção, esta é a maneira mais fácil de integrar a Vue na tua pilha. Nestes casos, podes pensar da Vue como sendo mais uma substituição declarativa da jQuery.
 
-Vue also provides an alternative distribution called [petite-vue](https://github.com/vuejs/petite-vue) that is specifically optimized for progressively enhancing existing HTML. It has a smaller feature set, but is extremely lightweight and uses an implementation that is more efficient in no-build-step scenarios.
 A Vue também fornece uma distribuição alternativa chamada [petite-vue](https://github.com/vuejs/petite-vue) que é especialmente otimizada para otimizar progressivamente a HTML existente. Ela tem um conjunto de funcionalidade mais pequeno, mas é extremamente leve e usa uma implementação que é mais eficiente em cenários onde não existem etapas de construção.
 
-## Embedded Web Components {#embedded-web-components}
 ## Componentes de Web Embutidos {#embedded-web-components}
 
 You can use Vue to [build standard Web Components](/guide/extras/web-components) that can be embedded in any HTML page, regardless of how they are rendered. This option allows you to leverage Vue in a completely consumer-agnostic fashion: the resulting web components can be embedded in legacy applications, static HTML, or even applications built with other frameworks.
