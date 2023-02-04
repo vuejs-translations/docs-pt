@@ -89,9 +89,9 @@ export default {
 
 <DisabledButton />
 
-## State-driven Animations {#state-driven-animations}
+## Animações Orientadas a Estado {#state-driven-animations}
 
-Some transition effects can be applied by interpolating values, for instance by binding a style to an element while an interaction occurs. Take this example for instance:
+Alguns efeitos de transição podem ser aplicados com a interpolação de valores, por exemplo ao vincular um estilo à um elemento enquanto uma interação ocorre. Considere o seguinte exemplo:
 
 <div class="composition-api">
 
@@ -143,7 +143,7 @@ export default {
 
 <Colors />
 
-In addition to color, you can also use style bindings to animate transform, width, or height. You can even animate SVG paths using spring physics - after all, they are all attribute data bindings:
+Além da cor, também podes usar as vinculações de estilo para animar a transformação com `transform`, a largura com `width` ou altura com `height`. Tu até podes animar os caminhos de SVG usando a física de salto - afinal de contas, são todos atributos de vinculações de dados:
 
 <ElasticHeader />
 
