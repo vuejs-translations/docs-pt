@@ -12,7 +12,7 @@ const nav: ThemeConfig['nav'] = [
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
     items: [
       { text: 'Guia', link: '/guide/introduction' },
-      { text: 'Aulas', link: '/tutorial/' },
+      { text: 'Passo-a-Passo', link: '/tutorial/' },
       { text: 'Exemplos', link: '/examples/' },
       { text: 'Introdução Rápida', link: '/guide/quick-start' },
       // { text: 'Guia de Estilo', link: '/style-guide/' },
@@ -21,7 +21,7 @@ const nav: ThemeConfig['nav'] = [
         link: 'https://v2.vuejs.org'
       },
       {
-        text: 'Migração a partir da Vue 2',
+        text: 'Migrar da Vue 2',
         link: 'https://v3-migration.vuejs.org/'
       }
     ]
