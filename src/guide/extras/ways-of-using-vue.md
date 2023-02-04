@@ -10,7 +10,7 @@ A Vue também fornece uma distribuição alternativa chamada [petite-vue](https:
 
 ## Componentes de Web Embutidos {#embedded-web-components}
 
-You can use Vue to [build standard Web Components](/guide/extras/web-components) that can be embedded in any HTML page, regardless of how they are rendered. This option allows you to leverage Vue in a completely consumer-agnostic fashion: the resulting web components can be embedded in legacy applications, static HTML, or even applications built with other frameworks.
+Tu podes usar a Vue para [construir Componentes de Web padronizados](/guide/extras/web-components) que podem ser embutidos em qualquer página de HTML, independentemente de como eles são apresentados. Esta opção permite-te influenciar a Vue de uma maneira completamente agnóstica em relação o consumidor: os componentes de web resultantes podem ser embutidos em aplicações legadas, HTML estático, ou mesmo em aplicações construídas com outras abstrações.
 
 ## Single-Page Application (SPA) {#single-page-application-spa}
 
