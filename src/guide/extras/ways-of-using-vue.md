@@ -12,20 +12,20 @@ A Vue também fornece uma distribuição alternativa chamada [petite-vue](https:
 
 Tu podes usar a Vue para [construir Componentes de Web padronizados](/guide/extras/web-components) que podem ser embutidos em qualquer página de HTML, independentemente de como eles são apresentados. Esta opção permite-te influenciar a Vue de uma maneira completamente agnóstica em relação o consumidor: os componentes de web resultantes podem ser embutidos em aplicações legadas, HTML estático, ou mesmo em aplicações construídas com outras abstrações.
 
-## Single-Page Application (SPA) {#single-page-application-spa}
+## Aplicação de Página Única (SPA) {#single-page-application-spa}
 
-Some applications require rich interactivity, deep session depth, and non-trivial stateful logic on the frontend. The best way to build such applications is to use an architecture where Vue not only controls the entire page, but also handles data updates and navigation without having to reload the page. This type of application is typically referred to as a Single-Page Application (SPA).
+Algumas aplicações exigem riqueza de interatividade, profundidade de sessão profunda, e lógica com estado não trivial no frontend. A melhor maneira de construir tais aplicações é usar uma arquitetura onde a Vue não apenas controla a página inteira, mas também manipula as atualizações de dados e a navegação sem ter de recarregar a página. Este tipo de aplicação é normalmente remetida para uma Aplicação de Página Única (SPA, sigla em Inglês).
 
-Vue provides core libraries and [comprehensive tooling support](/guide/scaling-up/tooling) with amazing developer experience for building modern SPAs, including:
+A Vue fornece as bibliotecas principais e [suporte ferramental exaustivo](/guide/scaling-up/tooling) com incrível experiência de programação para a construção de SPAs modernas, incluindo:
 
-- Client-side router
-- Blazing fast build tool chain
-- IDE support
-- Browser devtools
-- TypeScript integrations
-- Testing utilities
+- Roteador no lado do cliente
+- Cadeia de ferramenta de construção extremamente rápida
+- Suporte de IDE
+- Ferramentas de programação do navegador
+- Integrações de TypeScript
+- Utilitários de Testagem
 
-SPAs typically require the backend to expose API endpoints - but you can also pair Vue with solutions like [Inertia.js](https://inertiajs.com) to get the SPA benefits while retaining a server-centric development model.
+As SPAs normalmente exigem backend para expor os destinos da API - mas também podes parear a Vue com soluções como [Inertia.js](https://inertiajs.com) para teres os benefícios da SPA enquanto manténs um modelo de desenvolvimento centrado no servidor.
 
 ## Fullstack / SSR {#fullstack-ssr}
 
