@@ -27,13 +27,13 @@ A Vue fornece as bibliotecas principais e [suporte ferramental exaustivo](/guide
 
 As SPAs normalmente exigem backend para expor os destinos da API - mas também podes parear a Vue com soluções como [Inertia.js](https://inertiajs.com) para teres os benefícios da SPA enquanto manténs um modelo de desenvolvimento centrado no servidor.
 
-## Fullstack / SSR {#fullstack-ssr}
+## Pilha Completa (Fullstack) / SSR {#fullstack-ssr}
 
-Pure client-side SPAs are problematic when the app is sensitive to SEO and time-to-content. This is because the browser will receive a largely empty HTML page, and has to wait until the JavaScript is loaded before rendering anything.
+SPAs do lado do cliente puras são problemáticas quando a aplicação for sensível ao SEO e tempo-para-o-conteúdo. Isto é o porque que o navegador receberá uma página de HTML em grande parte vazia, e terá de esperar até o código JavaScript ser carregado antes da apresentação de qualquer coisa.
 
-Vue provides first-class APIs to "render" a Vue app into HTML strings on the server. This allows the server to send back already-rendered HTML, allowing end users to see the content immediately while the JavaScript is being downloaded. Vue will then "hydrate" the application on the client side to make it interactive. This is called [Server-Side Rendering (SSR)](/guide/scaling-up/ssr) and it greatly improves Core Web Vital metrics such as [Largest Contentful Paint (LCP)](https://web.dev/lcp/).
+A Vue fornece APIs de primeira classe para "gerar" uma aplicação de Vue em sequências de caracteres de HTML no servidor. Isto permite o servidor devolver o HTML pronto, permitindo os utilizadores finais ver o conteúdo imediatamente enquanto o JavaScript estiver a ser carregado. A Vue então "hidratará" a aplicação no lado do cliente para torná-la interativa. Isto é chamado [Interpretação no Lado do Servidor (SSR, sigla em Inglês)](/guide/scaling-up/ssr) e melhora grandemente as métricas Vitais da Núcleo da Web tais como [Pintura Alargada do Conteúdo (LCP)](https://web.dev/lcp/).
 
-There are higher-level Vue-based frameworks built on top of this paradigm, such as [Nuxt](https://nuxt.com/), which allow you to develop a fullstack application using Vue and JavaScript.
+Existem abstrações de alto nível baseadas na Vue construídas sobre este paradigma, tal com a [Nuxt](https://nuxt.com/), que permite-te programar uma aplicação de pilha completa usando a Vue e JavaScript (e TypeScript também).
 
 ## JAMStack / SSG {#jamstack-ssg}
 
