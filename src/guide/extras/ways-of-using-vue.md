@@ -37,17 +37,17 @@ Existem abstrações de alto nível baseadas na Vue construídas sobre este para
 
 ## JAMStack / SSG {#jamstack-ssg}
 
-Server-side rendering can be done ahead of time if the required data is static. This means we can pre-render an entire application into HTML and serve them as static files. This improves site performance and makes deployment a lot simpler since we no longer need to dynamically render pages on each request. Vue can still hydrate such applications to provide rich interactivity on the client. This technique is commonly referred to as Static-Site Generation (SSG), also known as [JAMStack](https://jamstack.org/what-is-jamstack/).
+A interpretação no lado do servidor pode ser feita antes da hora marcada se o dado necessário for estático. Isto significa que podemos pré-gerar uma aplicação inteira em HTML e servi-la como ficheiros estáticos. Isto melhora o desempenho da aplicação e torna a implementação em produção muito mais simples já que não mais precisamos gerar as páginas dinamicamente em cada requisição. A Vue pode continuar a hidratar tais aplicações para fornecer riqueza de interatividade no cliente. Esta técnica é comummente remetida para a "Static-Site Generation (SSG)" ou Geração de Páginas Estáticas em Português, também conhecida como [JAMStack](https://jamstack.org/what-is-jamstack/).
 
-There are two flavors of SSG: single-page and multi-page. Both flavors pre-render the site into static HTML, the difference is that:
+Existem dois sabores de SSG: "single-page" ou única-página e "multi-page" ou várias-páginas. Ambos sabores geram previamente a aplicação como HTML estático, a diferença é que:
 
-- After the initial page load, a single-page SSG "hydrates" the page into an SPA. This requires more upfront JS payload and hydration cost, but subsequent navigations will be faster, since it only needs to partially update the page content instead of reloading the entire page.
+- Depois do carregamento inicial da página, a abordagem de única página "hidrata" a página para uma SPA. Isto exige a carga de JavaScript mais adiantada e custo de hidratação, mas as navegações subsequentes serão mais rápidas, já que ela apenas precisa atualizar parcialmente a página ao invés de recarregar a página inteira.
 
-- A multi-page SSG loads a new page on every navigation. The upside is that it can ship minimal JS - or no JS at all if the page requires no interaction! Some multi-page SSG frameworks such as [Astro](https://astro.build/) also support "partial hydration" - which allows you to use Vue components to create interactive "islands" inside static HTML.
+- Um abordagem de várias páginas carrega uma nova página em cada navegação. A diferença é que ela pode entregar o mínimo de JavaScript - ou nenhum JavaScript de todo se a página não exigir nenhuma interação! Algumas das abstrações que aplicam a abordagem de várias páginas tais como a [Astro](https://astro.build/) também suportam a "hidratação parcial" - o qual permite-te usar os componentes de Vue para criar "ilhas" interativas dentro do HTML estático.
 
-Single-page SSGs are better suited if you expect non-trivial interactivity, deep session lengths, or persisted elements / state across navigations. Otherwise, multi-page SSG would be the better choice.
+As abstrações que suportam a abordagem de única página são mais adequadas se imaginas interatividade fora do comum, longas sessões, ou elementos e estados persistidos através da navegações. Caso contrário, a abordagem de várias páginas seria a melhor escolha.
 
-The Vue team also maintains a static-site generator called [VitePress](https://vitepress.vuejs.org/), which powers this website you are reading right now! VitePress supports both flavors of SSG. [Nuxt](https://nuxt.com/) also supports SSG. You can even mix SSR and SSG for different routes in the same Nuxt app.
+A equipa da Vue também mantém um gerador de aplicação estática chamado [VitePress](https://vitepress.vuejs.org/), o qual alimenta esta página que estás a ler neste preciso momento! a VitePress suporta ambos sabores de SSG. A [Nuxt](https://nuxt.com/) também suporta SSG. Tu podes até mesmo misturar SSR e SSG para diferentes rotas na mesma aplicação de Nuxt.
 
 ## Beyond the Web {#beyond-the-web}
 
