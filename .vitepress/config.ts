@@ -98,7 +98,7 @@ const nav: ThemeConfig['nav'] = [
     text: 'Sobre',
     activeMatch: `^/about/`,
     items: [
-      { text: 'FAQ', link: '/about/faq' },
+      { text: 'Questões Frequentes', link: '/about/faq' },
       { text: 'Equipa', link: '/about/team' },
       { text: 'Lançamentos', link: '/about/releases' },
       {
