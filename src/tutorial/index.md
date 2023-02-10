@@ -1,6 +1,6 @@
 ---
 page: true
-title: Aula
+title: Passo-a-Passo
 sidebar: false
 aside: false
 footer: false
