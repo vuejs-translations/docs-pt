@@ -1,32 +1,32 @@
-# Application API {#application-api}
+# API da Aplicação {#application-api}
 
 ## createApp() {#createapp}
 
-Creates an application instance.
+Cria uma instância da aplicacão.
 
-- **Type**
+- **Tipo**
 
   ```ts
   function createApp(rootComponent: Component, rootProps?: object): App
   ```
 
-- **Details**
+- **Detalhes**
 
-  The first argument is the root component. The second optional argument is the props to be passed to the root component.
+  O primeiro argumento é o componente raiz. O segundo argumento opcional são propriedades a ser passadas para o componente raiz.
 
-- **Example**
+- **Exemplo**
 
-  With inline root component:
+  Com o componente raiz em linha:
 
   ```js
   import { createApp } from 'vue'
 
   const app = createApp({
-    /* root component options */
+    /* opções do componente raiz */
   })
   ```
 
-  With imported component:
+  Com o componente importado:
 
   ```js
   import { createApp } from 'vue'
@@ -35,7 +35,7 @@ Creates an application instance.
   const app = createApp(App)
   ```
 
-- **See also:** [Guide - Creating a Vue Application](/guide/essentials/application.html)
+- **Veja também:** [Guia - Criando uma Aplicação Vue](/guide/essentials/application.html)
 
 ## createSSRApp() {#createssrapp}
 
