@@ -150,9 +150,9 @@ Fornece um valor que pode ser injetado em todos os componentes descendentes dent
 
 ## app.component() {#app-component}
 
-Registers a global component if passing both a name string and a component definition, or retrieves an already registered one if only the name is passed.
+Registra um componente global ao passar um nome como string e uma definição de componente, ou busca um componente já registrado se só o nome é passado.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface App {
@@ -161,23 +161,23 @@ Registers a global component if passing both a name string and a component defin
   }
   ```
 
-- **Example**
+- **Exemplo**
 
   ```js
   import { createApp } from 'vue'
 
   const app = createApp({})
 
-  // register an options object
+  // registra um objeto com opções
   app.component('my-component', {
     /* ... */
   })
 
-  // retrieve a registered component
+  // busca um componente registrado
   const MyComponent = app.component('my-component')
   ```
 
-- **See also:** [Component Registration](/guide/components/registration.html)
+- **Veja também:** [Registro de Componente](/guide/components/registration.html)
 
 ## app.directive() {#app-directive}
 
