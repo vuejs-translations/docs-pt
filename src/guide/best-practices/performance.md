@@ -2,99 +2,99 @@
 outline: deep
 ---
 
-# Performance {#performance}
+# Desempenho {#performance}
 
-## Overview {#overview}
+## Visão Geral {#overview}
 
-Vue is designed to be performant for most common use cases without much need for manual optimizations. However, there are always challenging scenarios where extra fine-tuning is needed. In this section, we will discuss what you should pay attention to when it comes to performance in a Vue application.
+A Vue é desenhada para ser otimizada para a maior parte dos casos de uso comuns sem muita necessidade de otimizações manuais. No entanto, existe sempre cenários desafiadores onde afinamento adicional é necessário. Nesta seção, discutiremos o que deverias prestar atenção quando toca o desempenho em uma aplicação de Vue.
 
-First, let's discuss the two major aspects of web performance:
+Primeiro, vamos discutir dois aspetos principais de desempenho da web:
 
-- **Page Load Performance**: how fast the application shows content and becomes interactive on the initial visit. This is usually measured using web vital metrics like [Largest Contentful Paint (LCP)](https://web.dev/lcp/) and [First Input Delay (FID)](https://web.dev/fid/).
+- **Desempenho do Carregamento da Página**: quão rápido a aplicação mostra o conteúdo e torna-se interativa na visita inicial. Isto é usualmente medido usando métricas vitais da web como [Pintura Alargada do Conteúdo (LCP)](https://web.dev/lcp/) e [Primeiro Atraso da Entrada (FID)](https://web.dev/fid/).
 
-- **Update Performance**: how fast the application updates in response to user input. For example, how fast a list updates when the user types in a search box, or how fast the page switches when the user clicks a navigation link in a Single-Page Application (SPA).
+- **Desempenho da Atualização**: quão rápido a aplicação atualiza-se em resposta a entrada do utilizador. Por exemplo, quão rápido uma lista atualiza quando o utilizador digita em uma caixa de pesquisa, ou quão rápido a página alterna quando o utilizador clica em uma ligação de navegação em uma Aplicação de Página Única (SPA).
 
-While it would be ideal to maximize both, different frontend architectures tend to affect how easy it is to attain desired performance in these aspects. In addition, the type of application you are building greatly influences what you should prioritize in terms of performance. Therefore, the first step of ensuring optimal performance is picking the right architecture for the type of application you are building:
+Enquanto seria ideal maximizar ambos, diferentes arquiteturas de frontend tendem a afetar o quão fácil é alcançar o desempenho desejado nestes aspetos. Além disto, o tipo de aplicação que estás a construir influencia grandemente no que deves priorizar em termos de desempenho. Portanto, o primeiro passo de garantir o desempenho ideal está em escolher a arquitetura correta para o tipo de aplicação que estás a construir:
 
-- Consult [Ways of Using Vue](/guide/extras/ways-of-using-vue.html) to see how you can leverage Vue in different ways.
+- Consulte a [Maneiras de Usar a Vue](/guide/extras/ways-of-using-vue) para veres como podes influenciar a Vue de maneiras diferentes.
 
-- Jason Miller discusses the types of web applications and their respective ideal implementation / delivery in [Application Holotypes](https://jasonformat.com/application-holotypes/).
+- O programador Jason Miller discute os tipos de aplicações de web e suas respetivas implementações ou entregas ideais nos [Holótipos de Aplicação](https://jasonformat.com/application-holotypes/).
 
-## Profiling Options {#profiling-options}
+## Opções de Perfilamento {#profiling-options}
 
-To improve performance, we need to first know how to measure it. There are a number of great tools that can help in this regard:
+Para melhorar o desempenho, precisamos de primeiro saber como medi-lo. Existem um número de excelentes ferramentas que podem ajudar neste aspeto:
 
-For profiling load performance of production deployments:
+Para o perfilamento do desempenho do carregamento das implementações de produção:
 
-- [PageSpeed Insights](https://pagespeed.web.dev/)
+- [Entendimentos da PageSpeed](https://pagespeed.web.dev/)
 - [WebPageTest](https://www.webpagetest.org/)
 
-For profiling performance during local development:
+Para perfilamento do desempenho durante o desenvolvimento local:
 
-- [Chrome DevTools Performance Panel](https://developer.chrome.com/docs/devtools/evaluate-performance/)
-  - [`app.config.performance`](/api/application.html#app-config-performance) enables Vue-specific performance markers in Chrome DevTools' performance timeline.
-- [Vue DevTools Extension](/guide/scaling-up/tooling.html#browser-devtools) also provides a performance profiling feature.
+- [Painel de Desempenho das Ferramentas de Programação do Chrome](https://developer.chrome.com/docs/devtools/evaluate-performance/)
+  - [`app.config.performance`](/api/application.html#app-config-performance) ativa marcadores de desempenho específicas da Vue na linha do tempo do desempenho das Ferramentas de Programação do Chrome.
+- [Extensão de Ferramentas de Programação de Vue](/guide/scaling-up/tooling#browser-devtools) também fornece uma funcionalidade de perfilamento do desempenho.
 
-## Page Load Optimizations {#page-load-optimizations}
+## Otimizações do Carregamento da Página {#page-load-optimizations}
 
-There are many framework-agnostic aspects for optimizing page load performance - check out [this web.dev guide](https://web.dev/fast/) for a comprehensive round up. Here, we will primarily focus on techniques that are specific to Vue.
+Existem muitas aspetos agnósticos de abstração para otimização do desempenho do carregamento da página - consulte [este guia da web.dev](https://web.dev/fast/) para um arredondamento para cima compreensivo. Nesta seção, iremos primeiramente concentrar-nos nas técnicas que são específicas para Vue.
 
-### Choosing the Right Architecture {#choosing-the-right-architecture}
+### Escolhendo a Arquitetura Correta {#choosing-the-right-architecture}
 
-If your use case is sensitive to page load performance, avoid shipping it as a pure client-side SPA. You want your server to be directly sending HTML containing the content the users want to see. Pure client-side rendering suffers from slow time-to-content. This can be mitigated with [Server-Side Rendering (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) or [Static Site Generation (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Check out the [SSR Guide](/guide/scaling-up/ssr.html) to learn about performing SSR with Vue. If your app doesn't have rich interactivity requirements, you can also use a traditional backend server to render the HTML and enhance it with Vue on the client.
+Se o teu caso de uso for sensível ao desempenho do carregamento da página, evite entregá-lo como uma Aplicação de Página Única (SPA) pura no lado do cliente. Tu queres que o teu servidor esteja enviando diretamente o HTML contendo o conteúdo que os utilizadores querem ver. A apresentação pura do lado do cliente sofre de lentidão de tempo para o conteúdo. Isto pode ser mitigado com a [Interpretação no Lado do Servidor (SSR, sigle em Inglês)](/guide/extras/ways-of-using-vue#fullstack-ssr) ou [Geração de Página Estática](/guide/extras/ways-of-using-vue#jamstack-ssg). Consulte o [Guia de SSR](/guide/scaling-up/ssr) para aprender a respeito de como realizar a Interpretação no Lado do Servidor com a Vue. Se a tua aplicação não tiver requisitos ricos de interatividade, também podes usar um servidor de backend tradicional para produzir o HTML e melhorá-lo com a Vue no cliente.
 
-If your main application has to be an SPA, but has marketing pages (landing, about, blog), ship them separately! Your marketing pages should ideally be deployed as static HTML with minimal JS, by using SSG.
+Se a tua aplicação principal tiver que ser uma Aplicação de Página Única, mas tem páginas de publicidade (chegada (landing, em Inglês), sobre, blogue), entregue-as separadamente! A tuas páginas de publicidade devem idealmente ser implementadas em produção como HTML estático com o mínimo de JavaScript, usando Geração de Página Estática (SSG).
 
-### Bundle Size and Tree-shaking {#bundle-size-and-tree-shaking}
+### Tamanho do Pacote e Sacudidura de Árvore {#bundle-size-and-tree-shaking}
 
-One of the most effective ways to improve page load performance is shipping smaller JavaScript bundles. Here are a few ways to reduce bundle size when using Vue:
+Uma das maneiras mais efetivas de melhorar o desempenho do carregamento da página é entregando pacotes de JavaScript mais pequenos. Listamos abaixo algumas maneiras de reduzir o tamanho do pacote quando estiveres a usar a Vue:
 
-- Use a build step if possible.
+- Utilize uma etapa de construção se possível
 
-  - Many of Vue's APIs are ["tree-shakable"](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) if bundled via a modern build tool. For example, if you don't use the built-in `<Transition>` component, it won't be included in the final production bundle. Tree-shaking can also remove other unused modules in your source code.
+  - Muitas das APIs da Vue são ["passíveis de sacudidura"](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) se empacotadas através de uma ferramenta de construção moderna. Por exemplo, se não usas o componente embutido `<Transition>`, não será incluído no pacote de produção final. A sacudidura de árvore também pode remover outros módulos que não são usados no teu código-fonte.
 
-  - When using a build step, templates are pre-compiled so we don't need to ship the Vue compiler to the browser. This saves **14kb** min+gzipped JavaScript and avoids the runtime compilation cost.
+  - Quando estiveres a usar uma etapa de construção, os modelos de marcação são pré-compilados assim não precisamos de entregar o compilador da Vue para o navegador. Isto economiza **14kb** de JavaScript gzipado minificado e evita o custo de compilação de tempo de execução.
 
-- Be cautious of size when introducing new dependencies! In real world applications, bloated bundles are most often a result of introducing heavy dependencies without realizing it.
+- Seja prudente quanto o tamanho quando estiveres introduzindo novas dependências! Em aplicações do mundo real, os pacotes inchados são mais frequentemente um resultado da introdução de dependências pesadas sem aperceber-se dele:
 
-  - If using a build step, prefer dependencies that offer ES module formats and are tree-shaking friendly. For example, prefer `lodash-es` over `lodash`.
+  - Se estiveres a usar uma etapa de construção, prefira dependências que oferecem formatos de módulos de ECMAScript e são amigáveis a sacudidura de árvore. Por exemplo, prefira `lodash-es` acima do `lodash`.
 
-  - Check a dependency's size and evaluate whether it is worth the functionality it provides. Note if the dependency is tree-shaking friendly, the actual size increase will depend on the APIs you actually import from it. Tools like [bundlejs.com](https://bundlejs.com/) can be used for quick checks, but measuring with your actual build setup will always be the most accurate.
+  - Consulte o tamanho de uma dependência e avaliar se a funcionalidade que fornece é digna. Nota se a dependência é amigável a sacudidura de árvore, o aumento do tamanho real dependerá das APIs que realmente estiveres a importar a partir dela. Ferramentas como [bundlejs.com](https://bundlejs.com/) podem ser usadas para verificações rápidas, mas medir com a tua configuração de construção real sempre será o mais preciso.
 
-- If you are using Vue primarily for progressive enhancement and prefer to avoid a build step, consider using [petite-vue](https://github.com/vuejs/petite-vue) (only **6kb**) instead.
+- Se estiveres a usar a Vue primariamente para otimização progressiva e preferes evitar uma etapa de construção, considere então usar a [petite-vue](https://github.com/vuejs/petite-vue) (apenas **6kb**).
 
-### Code Splitting {#code-splitting}
+### Separação de Código {#code-splitting}
 
-Code splitting is where a build tool splits the application bundle into multiple smaller chunks, which can then be loaded on demand or in parallel. With proper code splitting, features required at page load can be downloaded immediately, with additional chunks being lazy loaded only when needed, thus improving performance.
+A separação de código é onde uma ferramenta de construção separa o pacote da aplicação em vários pedaços mais pequenos, os quais podem então ser carregados sobre demanda ou em simultâneo. Com a separação de código apropriada, as funcionalidades exigidas no carregamento da página podem ser descarregados imediatamente, com pedaços adicionais sendo carregados preguiçosamente apenas quando necessário, assim melhorando o desempenho.
 
-Bundlers like Rollup (which Vite is based upon) or webpack can automatically create split chunks by detecting the ESM dynamic import syntax:
+Os empacotadores como o Rollup (que é sobre o qual a Vite é baseada) ou Webpack podem criar automaticamente pedaços separados detetando a sintaxe de importação dinâmica de Módulo de ECMAScript:
 
 ```js
-// lazy.js and its dependencies will be split into a separate chunk
-// and only loaded when `loadLazy()` is called.
+// lazy.js e suas dependências serão separadas em um pedaço separado
+// e apenas carregadas quando `loadLazy()` for chamada.
 function loadLazy() {
   return import('./lazy.js')
 }
 ```
 
-Lazy loading is best used on features that are not immediately needed after initial page load. In Vue applications, this can be used in combination with Vue's [Async Component](/guide/components/async.html) feature to create split chunks for component trees:
+O carregamento preguiçoso é melhor usado em funcionalidades que não são imediatamente necessárias depois do carregamento da página. Em aplicações de Vue, isto pode ser usado em conjunto com a funcionalidade de [Componente Assíncrono](/guide/components/async) da Vue para criar pedaços separados para as árvores de componente:
 
 ```js
 import { defineAsyncComponent } from 'vue'
 
-// a separate chunk is created for Foo.vue and its dependencies.
-// it is only fetched on demand when the async component is
-// rendered on the page.
+// um pedaço separado é criado para `Foo.vue` e suas dependências.
+// ele é apenas buscado sobre demanda quando o componente assíncrono for
+// apresentado na página.
 const Foo = defineAsyncComponent(() => import('./Foo.vue'))
 ```
 
-For applications using Vue Router, it is strongly recommended to use lazy loading for route components. Vue Router has explicit support for lazy loading, separate from `defineAsyncComponent`. See [Lazy Loading Routes](https://router.vuejs.org/guide/advanced/lazy-loading.html) for more details.
+Para as aplicações usando a Vue Router, é fortemente recomendado usar o carregamento preguiçoso para os componentes da rota. A Vue Router tem suporte explícito para o carregamento preguiçoso, separado a partir de `defineAsyncComponent`. Consulte [Rotas de Carregamento Preguiçoso](https://router.vuejs.org/guide/advanced/lazy-loading) para mais detalhes.
 
-## Update Optimizations {#update-optimizations}
+## Atualizar Otimizações {#update-optimizations}
 
-### Props Stability {#props-stability}
+### Estabilidade de Propriedades {#props-stability}
 
-In Vue, a child component only updates when at least one of its received props has changed. Consider the following example:
+Na Vue, um componente filho apenas atualiza quando pelo menos uma de suas propriedades recebidas tenha mudado. Considere o seguinte exemplo:
 
 ```vue-html
 <ListItem
@@ -103,9 +103,9 @@ In Vue, a child component only updates when at least one of its received props h
   :active-id="activeId" />
 ```
 
-Inside the `<ListItem>` component, it uses its `id` and `activeId` props to determine whether it is the currently active item. While this works, the problem is that whenever `activeId` changes, **every** `<ListItem>` in the list has to update!
+Dentro do componente `<ListItem>`, ele usa as suas propriedades`id` e `activeId` para determinar se ele é o item ativo atualmente. Embora isto funciona, o problema é que sempre que `activeId` mudar, **cada** `<ListItem>` na lista tem que atualizar!
 
-Ideally, only the items whose active status changed should update. We can achieve that by moving the active status computation into the parent, and make `<ListItem>` directly accept an `active` prop instead:
+Idealmente, apenas os itens cujos estados ativos mudados devem atualizar. Nós podemos alcançar isto movendo o cálculo de estado ativo para o pai, e fazer o `<ListItem>` aceitar diretamente uma propriedade `active`:
 
 ```vue-html
 <ListItem
@@ -114,51 +114,51 @@ Ideally, only the items whose active status changed should update. We can achiev
   :active="item.id === activeId" />
 ```
 
-Now, for most components the `active` prop will remain the same when `activeId` changes, so they no longer need to update. In general, the idea is keeping the props passed to child components as stable as possible.
+Agora, para a maior parte dos componentes a propriedade `active` continuarão a mesma quando `activeId` mudar, assim eles já não precisam de atualizar. No geral, a ideia é manter as propriedades passadas para os componentes filhos o mais estável possível.
 
 ### `v-once` {#v-once}
 
-`v-once` is a built-in directive that can be used to render content that relies on runtime data but never needs to update. The entire sub-tree it is used on will be skipped for all future updates. Consult its [API reference](/api/built-in-directives.html#v-once) for more details.
+`v-once` é uma diretiva embutida que pode ser usada para apresentar o conteúdo que depende de dados em tempo de execução mas nunca precisa de atualizar. A sub-árvore inteira sobre a qual é usado será ignorada para atualizações futuras. Consulte a [referência da sua API](/api/built-in-directives#v-once) para mais detalhes.
 
 ### `v-memo` {#v-memo}
 
-`v-memo` is a built-in directive that can be used to conditionally skip the update of large sub-trees or `v-for` lists. Consult its [API reference](/api/built-in-directives.html#v-memo) for more details.
+`v-memo` é uma diretiva embutida que pode ser usada para ignorar condicionalmente a atualização de sub-árvores grandes ou listas de `v-for`. Consulte a [referência da sua API](/api/built-in-directives#v-memo) para mais detalhes.
 
-## General Optimizations {#general-optimizations}
+## Otimizações Gerais {#general-optimizations}
 
-> The following tips affect both page load and update performance.
+> As seguintes dicas afetam tanto carregamento da página e a desempenho da atualização.
 
-### Virtualize Large Lists {#virtualize-large-lists}
+### Virtualizar Listas Grandes {#virtualize-large-lists}
 
-One of the most common performance issues in all frontend applications is rendering large lists. No matter how performant a framework is, rendering a list with thousands of items **will** be slow due to the sheer number of DOM nodes that the browser needs to handle.
+Um dos problemas de desempenho mais comuns em todas aplicações de frontend é apresentação de listas grandes. Não importa o quão otimizada uma abstração seja, apresentar uma lista com milhares de itens **será** lento por causa do número enorme de nós do DOM que o navegador precisa manipular.
 
-However, we don't necessarily have to render all these nodes upfront. In most cases, the user's screen size can display only a small subset of our large list. We can greatly improve the performance with **list virtualization**, the technique of only rendering the items that are currently in or close to the viewport in a large list.
+No entanto, não temos de necessariamente apresentar todos estes nós adiantado. Na maioria dos casos, o tamanho da tela do utilizador pode apresentar apenas um subconjunto pequeno da nossa lista grande. Nós podes melhorar grandemente o desempenho com a **virtualização da lista**, a técnica de apenas apresentar os itens que estão atualmente em ou próximos à janela de exibição em uma lista grande.
 
-Implementing list virtualization isn't easy, luckily there are existing community libraries that you can directly use:
+Implementar a virtualização de lista não é fácil, felizmente existem bibliotecas da comunidade existentes que podes usar diretamente:
 
 - [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller)
 - [vue-virtual-scroll-grid](https://github.com/rocwang/vue-virtual-scroll-grid)
 - [vueuc/VVirtualList](https://github.com/07akioni/vueuc)
 
-### Reduce Reactivity Overhead for Large Immutable Structures {#reduce-reactivity-overhead-for-large-immutable-structures}
+### Reduzir as Despesas Gerais de Reatividade para as Grandes Estruturas Imutáveis {#reduce-reactivity-overhead-for-large-immutable-structures}
 
-Vue's reactivity system is deep by default. While this makes state management intuitive, it does create a certain level of overhead when the data size is large, because every property access triggers proxy traps that perform dependency tracking. This typically becomes noticeable when dealing with large arrays of deeply nested objects, where a single render needs to access 100,000+ properties, so it should only affect very specific use cases.
+O sistema de reatividade da Vue é profundo por padrão. Enquanto isto torna a gestão de estado intuitiva, cria um certo nível de despesas gerais quando o tamanho dos dados é grande, porque cada acesso de propriedade aciona armadilhas de delegação que realizam o rastreamento de dependência. Isto normalmente torna-se evidente quando lidamos com grandes arranjos de objetos profundamente encaixados, onde uma única apresentação precisa acessar mais de 100.000 propriedades, assim ele deve apenas afetar casos de uso muito específicos.
 
-Vue does provide an escape hatch to opt-out of deep reactivity by using [`shallowRef()`](/api/reactivity-advanced.html#shallowref) and [`shallowReactive()`](/api/reactivity-advanced.html#shallowreactive). Shallow APIs create state that is reactive only at the root level, and exposes all nested objects untouched. This keeps nested property access fast, with the trade-off being that we must now treat all nested objects as immutable, and updates can only be triggered by replacing the root state:
+A Vue fornece uma escotilha de saída para abandonar a reatividade profunda usando a [`shallowRef()`](/api/reactivity-advanced#shallowref) e a [`shallowReactive()`](/api/reactivity-advanced#shallowreactive). As APIs Superficiais (Shallow, em Inglês) criam o estado que é reativo apenas no nível da raiz, e expõem todos os objetos encaixados intocados. Isto mantém o acesso de propriedade encaixada rápido, com o compromisso sendo que agora devemos tratar todos os objetos encaixados como imutáveis, e as atualizações apenas podem ser acionadas substituindo o estado de raiz:
 
 ```js
 const shallowArray = shallowRef([
-  /* big list of deep objects */
+  /* lista grande de objetos profundos */
 ])
 
-// this won't trigger updates...
+// isto não acionará atualizações...
 shallowArray.value.push(newObject)
-// this does:
+// isto faz:
 shallowArray.value = [...shallowArray.value, newObject]
 
-// this won't trigger updates...
+// isto não acionará atualizações...
 shallowArray.value[0].foo = 1
-// this does:
+// isto faz:
 shallowArray.value = [
   {
     ...shallowArray.value[0],
@@ -168,8 +168,8 @@ shallowArray.value = [
 ]
 ```
 
-### Avoid Unnecessary Component Abstractions {#avoid-unnecessary-component-abstractions}
+### Evitar Abstrações Desnecessárias de Componente {#avoid-unnecessary-component-abstractions}
 
-Sometimes we may create [renderless components](/guide/components/slots.html#renderless-components) or higher-order components (i.e. components that render other components with extra props) for better abstraction or code organization. While there is nothing wrong with this, do keep in mind that component instances are much more expensive than plain DOM nodes, and creating too many of them due to abstraction patterns will incur performance costs.
+Algumas vezes podemos criar [componentes sem apresentação](/guide/components/slots#renderless-components) ou componentes de ordem superior (por exemplo, componentes que apresentam outros componentes com propriedades adicionais) para melhor abstração ou organização do código. Embora não haja nada de errado com isto, lembra-te de que as instâncias de componente são mais dispendiosas do que nós simples do DOM, e criar muitos deles por causa de padrões de abstração incorrerá em custos de desempenho.
 
-Note that reducing only a few instances won't have noticeable effect, so don't sweat it if the component is rendered only a few times in the app. The best scenario to consider this optimization is again in large lists. Imagine a list of 100 items where each item component contains many child components. Removing one unnecessary component abstraction here could result in a reduction of hundreds of component instances.
+Nota que reduzir apenas algumas instâncias não terá efeito evidente, então não te preocupes se o componente for apresentado apenas algumas vezes na aplicação. O melhor cenário para considerar esta otimização é novamente listas grandes. Suponha uma lista de 100 itens onde cada componente de item contém muitos componentes filhos. Remover uma abstração desnecessária de componente aqui poderia resultar em uma redução de centenas de instâncias de componente.
