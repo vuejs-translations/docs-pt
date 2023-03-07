@@ -39,13 +39,13 @@ Cria uma instância da aplicacão.
 
 ## createSSRApp() {#createssrapp}
 
-Creates an application instance in [SSR Hydration](/guide/scaling-up/ssr.html#client-hydration) mode. Usage is exactly the same as `createApp()`.
+Cria uma instância da aplicação no modo [Hidratação SSR](/guide/scaling-up/ssr.html#client-hydration). A forma de uso é exatamente igual à `createApp()`.
 
 ## app.mount() {#app-mount}
 
-Mounts the application instance in a container element.
+Monta a instância da aplicação em um elemento recipiente.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface App {
@@ -53,17 +53,17 @@ Mounts the application instance in a container element.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  The argument can either be an actual DOM element or a CSS selector (the first matched element will be used). Returns the root component instance.
+  O argumento pode ser tanto o elemento real do DOM ou um seletor CSS (o primeiro elemento compatível será usado). Retorna a instância do componente raiz.
 
-  If the component has a template or a render function defined, it will replace any existing DOM nodes inside the container. Otherwise, if the runtime compiler is available, the `innerHTML` of the container will be used as the template.
+  Se o componente tem um modelo ou uma função _render_ definida, ele substituirá qualquer nódulo DOM existente dentro do recipiente. Caso contrário, se o compilador de tempo de execução estiver disponível, o `innerHTML` do recipiente será usado como modelo.
 
-  In SSR hydration mode, it will hydrate the existing DOM nodes inside the container. If there are [mismatches](/guide/scaling-up/ssr.html#hydration-mismatch), the existing DOM nodes will be morphed to match the expected output.
+  No modo de hidratação SSR, ele hidratará os nódulos DOM existentes dentro do recipiente. Se houverem [disparidades](/guide/scaling-up/ssr.html#hydration-mismatch), os nódulos DOM existentes serão transformados para corresponder ao resultado esperado.
 
-  For each app instance, `mount()` can only be called once.
+  O `mount()` poderá ser chamado apenas uma vez para cada instância da aplicação.
 
-- **Example**
+- **Exemplo**
 
   ```js
   import { createApp } from 'vue'
@@ -72,7 +72,7 @@ Mounts the application instance in a container element.
   app.mount('#app')
   ```
 
-  Can also mount to an actual DOM element:
+  Também se pode montar em um elemento DOM real:
 
   ```js
   app.mount(document.body.firstChild)
@@ -80,9 +80,9 @@ Mounts the application instance in a container element.
 
 ## app.unmount() {#app-unmount}
 
-Unmounts a mounted application instance, triggering the unmount lifecycle hooks for all components in the application's component tree.
+Desmonta uma instância de aplicação montada, disparando os gatilhos do ciclo de vida para todos os componentes na árvore de componentes da aplicação.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface App {
