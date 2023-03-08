@@ -181,9 +181,9 @@ Registra um componente global ao passar um nome como string e uma definição de
 
 ## app.directive() {#app-directive}
 
-Registers a global custom directive if passing both a name string and a directive definition, or retrieves an already registered one if only the name is passed.
+Registra uma diretiva global personalizada ao passar um nome como string e uma definição de diretiva, ou busca uma já registrada se apenas o nome é passado.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface App {
@@ -192,7 +192,7 @@ Registers a global custom directive if passing both a name string and a directiv
   }
   ```
 
-- **Example**
+- **Exemplo**
 
   ```js
   import { createApp } from 'vue'
@@ -201,21 +201,21 @@ Registers a global custom directive if passing both a name string and a directiv
     /* ... */
   })
 
-  // register (object directive)
+  // registrar (objeto da diretiva)
   app.directive('my-directive', {
-    /* custom directive hooks */
+    /* ganchos de diretiva personalizados */
   })
 
-  // register (function directive shorthand)
+  // registrar (atalho de função diretiva)
   app.directive('my-directive', () => {
     /* ... */
   })
 
-  // retrieve a registered directive
+  // busca uma diretiva registrada
   const myDirective = app.directive('my-directive')
   ```
 
-- **See also:** [Custom Directives](/guide/reusability/custom-directives.html)
+- **Veja também:** [Diretivas Personalizadas](/guide/reusability/custom-directives.html)
 
 ## app.use() {#app-use}
 
