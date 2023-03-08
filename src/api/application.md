@@ -219,9 +219,9 @@ Registra uma diretiva global personalizada ao passar um nome como string e uma d
 
 ## app.use() {#app-use}
 
-Installs a [plugin](/guide/reusability/plugins.html).
+Instala uma [extensão](/guide/reusability/plugins.html).
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface App {
@@ -229,15 +229,15 @@ Installs a [plugin](/guide/reusability/plugins.html).
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  Expects the plugin as the first argument, and optional plugin options as the second argument.
+  Exige a extensão como primeiro argumento, e opcionalmente configurações da extensão como segundo argumento.
 
-  The plugin can either be an object with an `install()` method, or just a function that will be used as the `install()` method. The options (second argument of `app.use()`) will be passed along to the plugin's `install()` method.
+  A extensão pode tanto ser um objeto com um método `install()`, ou apenas uma funcão que será usada como o método `install()`. As opções (segundo argumento do `app.use()`) serão passadas através do método `install()` da extensão.
 
-  When `app.use()` is called on the same plugin multiple times, the plugin will be installed only once.
+  Quando `app.use()` for chamado com a mesma extensão múltiplas vezes, a extensão será instalada apenas uma vez.
 
-- **Example**
+- **Exemplo**
 
   ```js
   import { createApp } from 'vue'
@@ -250,7 +250,7 @@ Installs a [plugin](/guide/reusability/plugins.html).
   app.use(MyPlugin)
   ```
 
-- **See also:** [Plugins](/guide/reusability/plugins.html)
+- **Veja também:** [Extensões](/guide/reusability/plugins.html)
 
 ## app.mixin() {#app-mixin}
 
