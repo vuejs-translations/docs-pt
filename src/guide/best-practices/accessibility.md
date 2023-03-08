@@ -1,10 +1,10 @@
-# Accessibility {#accessibility}
+# Acessibilidade {#accessibility}
 
-Web accessibility (also known as a11y) refers to the practice of creating websites that can be used by anyone — be that a person with a disability, a slow connection, outdated or broken hardware or simply someone in an unfavorable environment. For example, adding subtitles to a video would help both your deaf and hard-of-hearing users and your users who are in a loud environment and can't hear their phone. Similarly, making sure your text isn't too low contrast will help both your low-vision users and your users who are trying to use their phone in bright sunlight.
+A acessibilidade da web (também conhecida como a11y) refere-se a prática de criar páginas e aplicações de web que podem ser usadas por qualquer um — seja essa uma pessoa com uma deficiência, uma conexão lenta, hardware destroçado ou desatualizado ou simplesmente alguém em um ambiente desfavorável. Por exemplo, adicionar legendas à um vídeo ajuda tanto os teus utilizadores surdos e com dificuldades de audição quanto os teus utilizadores que estão em um ambiente ruidoso e que não podem ouvir seus telemóveis. Similarmente, certificar-te que o teu texto não é de muito contraste muito baixo ajudará tanto os teus utilizadores de visão fraca quanto os teus utilizadores que estão a tentar usar os seus telemóveis na luz do sol forte.
 
-Ready to start but aren’t sure where?
+Pronto para começar mas não sem a certeza de por onde?
 
-Checkout the [Planning and managing web accessibility guide](https://www.w3.org/WAI/planning-and-managing/) provided by [World Wide Web Consortium (W3C)](https://www.w3.org/)
+Consulte o [guia de planeamento e gerência da acessibilidade da web](https://www.w3.org/WAI/planning-and-managing/) fornecido pelo [Consórcio da World Wide Web (W3C)](https://www.w3.org/)
 
 ## Skip link {#skip-link}
 
