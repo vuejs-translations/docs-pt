@@ -203,10 +203,10 @@ Registra uma diretiva global personalizada ao passar um nome como string e uma d
 
   // registrar (objeto da diretiva)
   app.directive('my-directive', {
-    /* ganchos de diretiva personalizados */
+    /* ganchos personalizados da diretiva */
   })
 
-  // registrar (atalho de função diretiva)
+  // registrar (atalho da função diretiva)
   app.directive('my-directive', () => {
     /* ... */
   })
