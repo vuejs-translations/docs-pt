@@ -301,7 +301,7 @@ Fornece a versão do Vue com que a aplicação foi criada. Isto é útil dentro 
 
 ## app.config {#app-config}
 
-Every application instance exposes a `config` object that contains the configuration settings for that application. You can modify its properties (documented below) before mounting your application.
+Toda instância da aplicação expõe um objeto `config` que contém as preferências de configuracão para aquela aplicação. Você pode modificar essas propriedades (documentadas abaixo) antes de montar a sua aplicação.
 
 ```js
 import { createApp } from 'vue'
@@ -313,49 +313,49 @@ console.log(app.config)
 
 ## app.config.errorHandler {#app-config-errorhandler}
 
-Assign a global handler for uncaught errors propagating from within the application.
+Atribui um manipulador global para erros não capturados propagados dentro da aplicação.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface AppConfig {
     errorHandler?: (
       err: unknown,
       instance: ComponentPublicInstance | null,
-      // `info` is a Vue-specific error info,
-      // e.g. which lifecycle hook the error was thrown in
+      // `info` é uma informação de erro específica do Vue,
+      // e.g. qual gatilho do ciclo de vida o erro aconteceu
       info: string
     ) => void
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  The error handler receives three arguments: the error, the component instance that triggered the error, and an information string specifying the error source type.
+  O manipulador do erro recebe três argumentos: o erro, a instância do componente que disparou o erro, e uma string informativa que especifica o tipo de erro da fonte.
 
-  It can capture errors from the following sources:
+  Ele pode capturar erros das seguintes fontes:
 
-  - Component renders
-  - Event handlers
-  - Lifecycle hooks
-  - `setup()` function
-  - Watchers
-  - Custom directive hooks
-  - Transition hooks
+  - Interpretação de componente
+  - Manipuladores de evento
+  - Gatilhos de Ciclo de Vida
+  - Função `setup()`
+  - Observadores
+  - Gatilhos personalizados de diretiva
+  - Gatilhos de transição
 
-- **Example**
+- **Exemplo**
 
   ```js
   app.config.errorHandler = (err, instance, info) => {
-    // handle error, e.g. report to a service
+    // manusear o erro, e.g. informar para um serviço
   }
   ```
 
 ## app.config.warnHandler {#app-config-warnhandler}
 
-Assign a custom handler for runtime warnings from Vue.
+Atribui um manipulador personalizado para avisos em tempo de execução do Vue.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface AppConfig {
@@ -367,21 +367,21 @@ Assign a custom handler for runtime warnings from Vue.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  The warning handler receives the warning message as the first argument, the source component instance as the second argument, and a component trace string as the third.
+  O manipulador de avisos recebe uma mensagem de aviso como primeiro argumento, a instância do componente fonte como segundo argumento, e uma string de rastro de componentes como terceiro.
 
-  It can be used to filter out specific warnings to reduce console verbosity. All Vue warnings should be addressed during development, so this is only recommended during debug sessions to focus on specific warnings among many, and should be removed once the debugging is done.
+  Pode ser usado para filtrar avisos específicos a fim de reduzir a verbosidade no console. Todos os avisos Vue devem ser adereçados durante o desenvolvimento, então isto é recomendado apenas durante sessões de depuramento para focar em avisos específicos entre muitos, e deve ser removido uma vez que o depuramento tenha finalizado.
 
   :::tip
-  Warnings only work during development, so this config is ignored in production mode.
+  Avisos funcionam apenas durante o desenvolvimento, esta configuração é ignorada no modo de produção.
   :::
 
-- **Example**
+- **Exemplo**
 
   ```js
   app.config.warnHandler = (msg, instance, trace) => {
-    // `trace` is the component hierarchy trace
+    // `trace` é o rastro da hierarquia de componentes
   }
   ```
 
