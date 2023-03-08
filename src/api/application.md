@@ -254,15 +254,15 @@ Instala uma [extensão](/guide/reusability/plugins.html).
 
 ## app.mixin() {#app-mixin}
 
-Applies a global mixin (scoped to the application). A global mixin applies its included options to every component instance in the application.
+Aplica uma mixin global (com escopo na aplicação). Uma mixin global aplica suas opções embutidas em toda instância de componente na aplicação.
 
-:::warning Not Recommended
-Mixins are supported in Vue 3 mainly for backwards compatibility, due to their widespread use in ecosystem libraries. Use of mixins, especially global mixins, should be avoided in application code.
+:::warning Não Recomendado
+Mixins são suportadas no Vue 3 principalmente por compatibilidade retroativa, devido ao seu uso difundido no ecossistema de bibliotecas. O uso de mixins, especialmente mixins globais, deve ser evitado no código da aplicação.
 
-For logic reuse, prefer [Composables](/guide/reusability/composables.html) instead.
+Para reutilização de lógica, opte por [Constituíveis](/guide/reusability/composables.html).
 :::
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface App {
@@ -272,9 +272,9 @@ For logic reuse, prefer [Composables](/guide/reusability/composables.html) inste
 
 ## app.version {#app-version}
 
-Provides the version of Vue that the application was created with. This is useful inside [plugins](/guide/reusability/plugins.html), where you might need conditional logic based on different Vue versions.
+Fornece a versão do Vue com que a aplicação foi criada. Isto é útil dentro de [extensões](/guide/reusability/plugins.html), onde você pode precisar de lógica condicional para diferentes versões do Vue.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface App {
@@ -282,22 +282,22 @@ Provides the version of Vue that the application was created with. This is usefu
   }
   ```
 
-- **Example**
+- **Exemplo**
 
-  Performing a version check inside a plugin:
+  Conferindo a versão dentro de uma extensão:
 
   ```js
   export default {
     install(app) {
       const version = Number(app.version.split('.')[0])
       if (version < 3) {
-        console.warn('This plugin requires Vue 3')
+        console.warn('Esta extensão exige Vue 3')
       }
     }
   }
   ```
 
-- **See also:** [Global API - version](/api/general.html#version)
+- **Veja também:** [API Global - versão](/api/general.html#version)
 
 ## app.config {#app-config}
 
