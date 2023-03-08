@@ -387,11 +387,11 @@ Atribui um manipulador personalizado para avisos em tempo de execução do Vue.
 
 ## app.config.performance {#app-config-performance}
 
-Set this to `true` to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. Only works in development mode and in browsers that support the [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark) API.
+Defina isto como `true` para habilitar o rastreamento de desempenho de correção, compilacão e inicialização no painel de desempenho ou linha do tempo no devtool do navegador. Funciona apenas no modo de desenvolvimento e em navegadores que suportam a API [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark).
 
-- **Type**: `boolean`
+- **Tipo**: `boolean`
 
-- **See also:** [Guide - Performance](/guide/best-practices/performance.html)
+- **Veja também:** [Guia - Desempenho](/guide/best-practices/performance.html)
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
