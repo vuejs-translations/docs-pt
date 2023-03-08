@@ -150,7 +150,7 @@ Fornece um valor que pode ser injetado em todos os componentes descendentes dent
 
 ## app.component() {#app-component}
 
-Registra um componente global ao passar um nome como string e uma definição de componente, ou busca um componente já registrado se só o nome é passado.
+Registra um componente global ao passar um nome como string e uma definição de componente, ou busca um componente já registrado se apenas o nome é passado.
 
 - **Tipo**
 
