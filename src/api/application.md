@@ -473,17 +473,17 @@ Ajusta os delimitadores usados para a interpolação de texto dentro do modelo.
 
 ### app.config.compilerOptions.comments {#app-config-compileroptions-comments}
 
-Adjusts treatment of HTML comments in templates.
+Ajusta o tratamento de comentários HTML em modelos.
 
-- **Type:** `boolean`
+- **Tipo:** `boolean`
 
-- **Default:** `false`
+- **Padrão:** `false`
 
-- **Details**
+- **Detalhes**
 
-  By default, Vue will remove the comments in production. Setting this option to `true` will force Vue to preserve comments even in production. Comments are always preserved during development. This option is typically used when Vue is used with other libraries that rely on HTML comments.
+  Por padrão, o Vue irá remover todos os comentários em produção. Definir esta opção como `true` irá forçar o Vue a preservar os comentários até em produção. Comentários são sempre preservados durante o desenvolvimento. Esta opção é tipicamente usada para quando o Vue é utilizado com outras bibliotecas que dependem de comentários HTML.
 
-- **Example**
+- **Exemplo**
 
   ```js
   app.config.compilerOptions.comments = true
