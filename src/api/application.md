@@ -491,9 +491,9 @@ Ajusta o tratamento de comentários HTML em modelos.
 
 ## app.config.globalProperties {#app-config-globalproperties}
 
-An object that can be used to register global properties that can be accessed on any component instance inside the application.
+Um objeto pode ser usado para registrar propriedades globais que podem ser acessadas em qualquer instância de componente dentro da aplicação.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface AppConfig {
@@ -501,24 +501,24 @@ An object that can be used to register global properties that can be accessed on
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  This is a replacement of Vue 2's `Vue.prototype` which is no longer present in Vue 3. As with anything global, this should be used sparingly.
+  Isto é uma reposição do `Vue.prototype` do Vue 2, que não está mais presente no Vue 3. Como qualquer outra coisa global, isto deve ser usado com parcimônia.
 
-  If a global property conflicts with a component’s own property, the component's own property will have higher priority.
+  Se uma propriedade global conflitar com uma propriedade de um componente, a propriedade do componente terá maior prioridade.
 
-- **Usage**
+- **Utilização**
 
   ```js
-  app.config.globalProperties.msg = 'hello'
+  app.config.globalProperties.msg = 'olá'
   ```
 
-  This makes `msg` available inside any component template in the application, and also on `this` of any component instance:
+  Isto tornará `msg` disponível dentro de qualquer modelo em componentes dentro da aplicação, e também no `this` de qualquer instância de componente:
 
   ```js
   export default {
     mounted() {
-      console.log(this.msg) // 'hello'
+      console.log(this.msg) // 'olá'
     }
   }
   ```
