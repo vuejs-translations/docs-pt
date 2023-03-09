@@ -257,7 +257,7 @@ Instala uma [extensão](/guide/reusability/plugins.html).
 Aplica uma mixin global (com escopo na aplicação). Uma mixin global aplica suas opções embutidas em toda instância de componente na aplicação.
 
 :::warning Não Recomendado
-Mixins são suportadas no Vue 3 principalmente por compatibilidade retroativa, devido ao seu uso difundido no ecossistema de bibliotecas. O uso de mixins, especialmente mixins globais, deve ser evitado no código da aplicação.
+Mixins são suportadas no Vue 3 principalmente por compatibilidade retroativa, devido ao seu uso difundido nas bibliotecas do ecossistema. O uso de mixins, especialmente mixins globais, deve ser evitado no código da aplicação.
 
 Para reutilização de lógica, opte por [Constituíveis](/guide/reusability/composables.html).
 :::
