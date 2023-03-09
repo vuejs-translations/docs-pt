@@ -395,14 +395,14 @@ Defina isto como `true` para habilitar o rastreamento de desempenho de correçã
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
-Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the [`compilerOptions` option](/api/options-rendering.html#compileroptions).
+Configura opções do compilador em tempo de execução. Valores definidos neste objeto serão passados para o compilador de modelos do navegador e afetarão todo componente configurado na aplicação. Observe que você pode sobrepor essas opções com base em um componente usando a [opção `compilerOptions`](/api/options-rendering.html#compileroptions).
 
-::: warning Important
-This config option is only respected when using the full build (i.e. the standalone `vue.js` that can compile templates in the browser). If you are using the runtime-only build with a build setup, compiler options must be passed to `@vue/compiler-dom` via build tool configurations instead.
+::: warning Importante
+Esta opção da configuração é respeitada apenas ao usar a _build_ completa (i.e. o `vue.js` autônomo que pode compilar modelos no navegador). Se você ester usando uma _build_ que roda apenas no tempo de execução com uma configuração de _build_, as opções do compilador devem ser passadas para o `@vue/compiler-dom` através da ferramenta de configurações da _build_.
 
-- For `vue-loader`: [pass via the `compilerOptions` loader option](https://vue-loader.vuejs.org/options.html#compileroptions). Also see [how to configure it in `vue-cli`](https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-loader).
+- Para `vue-loader`: [passe através da opção do carregador `compilerOptions`](https://vue-loader.vuejs.org/options.html#compileroptions). Veja também [como configurar com `vue-cli`](https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-loader).
 
-- For `vite`: [pass via `@vitejs/plugin-vue` options](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#options).
+- Para `vite`: [passe através das opções `@vitejs/plugin-vue`](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#options).
   :::
 
 ### app.config.compilerOptions.isCustomElement {#app-config-compileroptions-iscustomelement}
