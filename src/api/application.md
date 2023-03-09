@@ -12,7 +12,7 @@ Cria uma instância da aplicacão.
 
 - **Detalhes**
 
-  O primeiro argumento é o componente raiz. O segundo argumento opcional são propriedades a ser passadas para o componente raiz.
+  O primeiro argumento é o componente raiz. O segundo argumento são propriedades opcionais a serem passadas para o componente raiz.
 
 - **Exemplo**
 
