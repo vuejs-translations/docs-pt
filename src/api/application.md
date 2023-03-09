@@ -454,20 +454,20 @@ Ajusta o tratamento de espaço em branco no modelo.
 
 ### app.config.compilerOptions.delimiters {#app-config-compileroptions-delimiters}
 
-Adjusts the delimiters used for text interpolation within the template.
+Ajusta os delimitadores usados para a interpolação de texto dentro do modelo.
 
-- **Type:** `[string, string]`
+- **Tipo:** `[string, string]`
 
-- **Default:** `{{ "['\u007b\u007b', '\u007d\u007d']" }}`
+- **Padrão:** `{{ "['\u007b\u007b', '\u007d\u007d']" }}`
 
-- **Details**
+- **Detalhes**
 
-  This is typically used to avoid conflicting with server-side frameworks that also use mustache syntax.
+  Isto é tipicamente usado para evitar conflitos com _frameworks_ do lado do servidor que também podem usar a sintaxe mustache.
 
-- **Example**
+- **Exemplo**
 
   ```js
-  // Delimiters changed to ES6 template string style
+  // Delimitadores modificados para o estilo de string do modelo ES6
   app.config.compilerOptions.delimiters = ['${', '}']
   ```
 
