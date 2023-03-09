@@ -407,26 +407,26 @@ Esta opção da configuração é respeitada apenas ao usar a _build_ completa (
 
 ### app.config.compilerOptions.isCustomElement {#app-config-compileroptions-iscustomelement}
 
-Specifies a check method to recognize native custom elements.
+Especifica um método de verificação para reconhecer elementos personalizados nativos.
 
-- **Type:** `(tag: string) => boolean`
+- **Tipo:** `(tag: string) => boolean`
 
-- **Details**
+- **Detalhes**
 
-  Should return `true` if the tag should be treated as a native custom element. For a matched tag, Vue will render it as a native element instead of attempting to resolve it as a Vue component.
+  Deve retornar `true` se a _tag_ deve ser tratada como elemento personalizado nativo. Para uma _tag_ correspondente, o Vue irá interpretar como um elemento nativo ao invés de tentar determinar um componente Vue.
 
-  Native HTML and SVG tags don't need to be matched in this function - Vue's parser recognizes them automatically.
+  _Tags_ HTML e SVG nativas não precisam ser correspondidas nesta função - o compilador do Vue reconhece elas automaticamente.
 
-- **Example**
+- **Exemplo**
 
   ```js
-  // treat all tags starting with 'ion-' as custom elements
+  // tratar todas as tags começando com 'ion-' como elementos personalizados
   app.config.compilerOptions.isCustomElement = (tag) => {
     return tag.startsWith('ion-')
   }
   ```
 
-- **See also:** [Vue and Web Components](/guide/extras/web-components.html)
+- **Veja também:** [Vue e Web Components](/guide/extras/web-components.html)
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
