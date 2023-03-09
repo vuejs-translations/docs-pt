@@ -430,23 +430,23 @@ Especifica um método de verificação para reconhecer elementos personalizados 
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
-Adjusts template whitespace handling behavior.
+Ajusta o tratamento de espaço em branco no modelo.
 
-- **Type:** `'condense' | 'preserve'`
+- **Tipo:** `'condense' | 'preserve'`
 
-- **Default:** `'condense'`
+- **Padrão:** `'condense'`
 
-- **Details**
+- **Detalhes**
 
-  Vue removes / condenses whitespace characters in templates to produce more efficient compiled output. The default strategy is "condense", with the following behavior:
+  Vue remove/condensa caracteres de espaço em branco em modelos para produzir um resultado compilado mais eficiente. A estratégia padrão é "condensar", com o seguinte comportamento:
 
-  1. Leading / ending whitespace characters inside an element are condensed into a single space.
-  2. Whitespace characters between elements that contain newlines are removed.
-  3. Consecutive whitespace characters in text nodes are condensed into a single space.
+  1. Caracteres de espaço em branco iniciais ou finais dentro de um elemento são condensados em um único espaço.
+  2. Caracteres de espaço em branco entre elementos que contêm novas linhas são removidos.
+  3. Caracteres de espaço em branco consecutivos em nódulos de texto são condensados em um único espaço.
 
-  Setting this option to `'preserve'` will disable (2) and (3).
+  Configurar essa opção como `'preserve'` irá desabilitar os itens (2) e (3).
 
-- **Example**
+- **Exemplo**
 
   ```js
   app.config.compilerOptions.whitespace = 'preserve'
