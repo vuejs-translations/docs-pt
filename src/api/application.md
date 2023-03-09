@@ -525,9 +525,9 @@ Um objeto pode ser usado para registrar propriedades globais que podem ser acess
 
 ## app.config.optionMergeStrategies {#app-config-optionmergestrategies}
 
-An object for defining merging strategies for custom component options.
+Um objeto para definir estratégias de mesclagem para opções personalizadas de componente.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface AppConfig {
@@ -537,39 +537,39 @@ An object for defining merging strategies for custom component options.
   type OptionMergeFunction = (to: unknown, from: unknown) => any
   ```
 
-- **Details**
+- **Detalhes**
 
-  Some plugins / libraries add support for custom component options (by injecting global mixins). These options may require special merging logic when the same option needs to be "merged" from multiple sources (e.g. mixins or component inheritance).
+  Algumas extensões/bibliotecas adicionam suporte para opções personalizadas de componente (ao injetar mixins globais). Essas opções podem exigir uma lógica de mesclagem especial quando a mesma opção precisa ser "mesclada" de múltiplas fontes (e.g. mixins ou herança de componente).
 
-  A merge strategy function can be registered for a custom option by assigning it on the `app.config.optionMergeStrategies` object using the option's name as the key.
+  Uma função de estratégia de mesclagem pode ser registrada por uma opção personalizada ao atribuí-la ao objeto `app.config.optionMergeStrategies` usando o nome da opção como a chave.
 
-  The merge strategy function receives the value of that option defined on the parent and child instances as the first and second arguments, respectively.
+  A estratégia de mesclagem recebe o valor da opção definida nas instâncias do pai e do filho como primeiro e segundo argumento, respectivamente.
 
-- **Example**
+- **Exemplo**
 
   ```js
   const app = createApp({
-    // option from self
+    // opção própria
     msg: 'Vue',
-    // option from a mixin
+    // opção de uma mixin
     mixins: [
       {
-        msg: 'Hello '
+        msg: 'Olá'
       }
     ],
     mounted() {
-      // merged options exposed on this.$options
+      // opçoes mescladas expostas em this.$options
       console.log(this.$options.msg)
     }
   })
 
-  // define a custom merge strategy for `msg`
+  // define uma estratégia de mesclagem personalizada para `msg`
   app.config.optionMergeStrategies.msg = (parent, child) => {
     return (parent || '') + (child || '')
   }
 
   app.mount('#app')
-  // logs 'Hello Vue'
+  // mostra 'Olá Vue'
   ```
 
-- **See also:** [Component Instance - `$options`](/api/component-instance.html#options)
+- **Veja também:** [Instância do Componente - `$options`](/api/component-instance.html#options)
