@@ -371,9 +371,9 @@ Atribui um manipulador personalizado para avisos em tempo de execução do Vue.
 
   O manipulador de avisos recebe uma mensagem de aviso como primeiro argumento, a instância do componente fonte como segundo argumento, e uma string de rastro de componentes como terceiro.
 
-  Pode ser usado para filtrar avisos específicos a fim de reduzir a verbosidade no console. Todos os avisos Vue devem ser adereçados durante o desenvolvimento, então isto é recomendado apenas durante sessões de depuramento para focar em avisos específicos entre muitos, e deve ser removido uma vez que o depuramento tenha finalizado.
+  Pode ser usado para filtrar avisos específicos a fim de reduzir a verbosidade no _console_. Todos os avisos Vue devem ser adereçados durante o desenvolvimento, então isto é recomendado apenas durante sessões de depuramento para focar em avisos específicos entre muitos, e deve ser removido uma vez que o depuramento tenha finalizado.
 
-  :::tip
+  :::tip DICA
   Avisos funcionam apenas durante o desenvolvimento, esta configuração é ignorada no modo de produção.
   :::
 
