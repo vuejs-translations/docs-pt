@@ -387,7 +387,7 @@ Atribui um manipulador personalizado para avisos em tempo de execução do Vue.
 
 ## app.config.performance {#app-config-performance}
 
-Defina isto como `true` para habilitar o rastreamento de desempenho de correção, compilacão e inicialização no painel de desempenho ou linha do tempo no devtool do navegador. Funciona apenas no modo de desenvolvimento e em navegadores que suportam a API [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark).
+Defina como `true` para habilitar o rastreamento de desempenho de correção, compilacão e inicialização no painel de desempenho ou linha do tempo no devtool do navegador. Funciona apenas no modo de desenvolvimento e em navegadores que suportam a API [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark).
 
 - **Tipo**: `boolean`
 
