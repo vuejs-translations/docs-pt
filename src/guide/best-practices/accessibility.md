@@ -6,11 +6,11 @@ Pronto para começar mas não sem a certeza de por onde?
 
 Consulte o [guia de planeamento e gerência da acessibilidade da web](https://www.w3.org/WAI/planning-and-managing/) fornecido pelo [Consórcio da World Wide Web (W3C)](https://www.w3.org/)
 
-## Skip link {#skip-link}
+## Lição Saltar {#skip-link}
 
-You should add a link at the top of each page that goes directly to the main content area so users can skip content that is repeated on multiple Web pages.
+Tu deves adicionar uma ligação no topo de cada página que vai diretamente para a área do conteúdo principal assim os utilizadores podem salter o conteúdo que é repetido em várias páginas de Web.
 
-Typically this is done on the top of `App.vue` as it will be the first focusable element on all your pages:
+Normalmente, isto é feito no topo de `App.vue` visto que será o primeiro elemento concentrável em todas as tuas páginas:
 
 ```vue-html
 <ul class="skip-links">
@@ -20,7 +20,7 @@ Typically this is done on the top of `App.vue` as it will be the first focusable
 </ul>
 ```
 
-To hide the link unless it is focused, you can add the following style:
+Para esconder a ligação se não ela é focada, podes adicionar o seguinte estilo:
 
 ```css
 .skip-link {
@@ -40,7 +40,7 @@ To hide the link unless it is focused, you can add the following style:
 }
 ```
 
-Once a user changes route, bring focus back to the skip link. This can be achieved by calling focus on the skip link's template ref (assuming usage of `vue-router`):
+Uma vez que o utilizador mudar a rota, traga o foco de volta para a ligação saltar. Isto pode ser alcançado chamando o foco na referência do modelo de marcação da ligação saltar (assumindo o uso da `vue-router`):
 
 <div class="options-api">
 
@@ -78,7 +78,7 @@ watch(
 
 </div>
 
-[Read documentation on skip link to main content](https://www.w3.org/WAI/WCAG21/Techniques/general/G1.html)
+[Leia a documentação sobre a ligação "saltar para o conteúdo principal"](https://www.w3.org/WAI/WCAG21/Techniques/general/G1.html)
 
 ## Content Structure {#content-structure}
 
