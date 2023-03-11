@@ -80,9 +80,9 @@ watch(
 
 [Leia a documentação sobre a ligação "saltar para o conteúdo principal"](https://www.w3.org/WAI/WCAG21/Techniques/general/G1.html)
 
-## Content Structure {#content-structure}
+## Estrutura de Conteúdo {#content-structure}
 
-One of the most important pieces of accessibility is making sure that design can support accessible implementation. Design should consider not only color contrast, font selection, text sizing, and language, but also how the content is structured in the application.
+Um dos pedaços mais importantes da acessibilidade é garantir que o desenho possa suportar a implementação acessível. O desenho deve considerar não apenas o contraste de cor, seleção de fonte, tamanho de texto, e linguagem mas também como o conteúdo é estruturado na aplicação.
 
 ### Headings {#headings}
 
