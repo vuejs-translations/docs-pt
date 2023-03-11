@@ -84,15 +84,15 @@ watch(
 
 Um dos pedaços mais importantes da acessibilidade é garantir que o desenho possa suportar a implementação acessível. O desenho deve considerar não apenas o contraste de cor, seleção de fonte, tamanho de texto, e linguagem mas também como o conteúdo é estruturado na aplicação.
 
-### Headings {#headings}
+### Cabeçalhos {#headings}
 
-Users can navigate an application through headings. Having descriptive headings for every section of your application makes it easier for users to predict the content of each section. When it comes to headings, there are a couple of recommended accessibility practices:
+Os utilizadores podem navegar em uma aplicação através dos cabeçalhos. Ter cabeçalhos descritivos para cada seção da tua aplicação torna mais fácil para os utilizadores prever o conteúdo de cada seção. Quando falamos de cabeçalhos, existem algumas práticas de acessibilidade recomendadas:
 
-- Nest headings in their ranking order: `<h1>` - `<h6>`
-- Don’t skip headings within a section
-- Use actual heading tags instead of styling text to give the visual appearance of headings
+- Encaixar cabeçalhos nas suas ordem de classificação: `<h1>` - `<h6>`
+- Não saltar cabeçalhos dentro de uma seção
+- Usar marcadores de cabeçalho verdadeiros ao invés da estilização de texto para dar a aparência visual dos cabeçalhos
 
-[Read more about headings](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html)
+[Leia mais sobre cabeçalhos](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html):
 
 ```vue-html
 <main role="main" aria-labelledby="main-title">
