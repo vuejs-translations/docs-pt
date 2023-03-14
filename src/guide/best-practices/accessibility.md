@@ -239,7 +239,7 @@ O uso de [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 
 #### `aria-describedby` {#aria-describedby}
 
-[aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) is used the same way as `aria-labelledby` except provides a description with additional information that the user might need. This can be used to describe the criteria for any input:
+O [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) é usado da mesma maneira que o `aria-labelledby` exceto que fornece uma descrição com informação adicional que o utilizador possa precisar. Isto pode ser usado para descrever o critério para qualquer entrada:
 
 ```vue-html
 <form
@@ -267,9 +267,9 @@ O uso de [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 
 <!-- <common-codepen-snippet title="Form ARIA describedby" slug="gOgxxQE" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-You can see the description by inspecting Chrome DevTools:
+Tu podes ver a descrição inspecionando as Ferramentas de Programação do Chrome:
 
-![Chrome Developer Tools showing input accessible name from aria-labelledby and description with aria-describedby](./images/AccessibleARIAdescribedby.png)
+![Ferramentas de Programação do Chrome exibindo o nome acessível da entrada do `aria-labelledby` e a descrição com o `aria-describedby`](./images/AccessibleARIAdescribedby.png)
 
 ### Placeholder {#placeholder}
 
