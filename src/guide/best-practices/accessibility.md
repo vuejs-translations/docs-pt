@@ -133,11 +133,11 @@ Os [marcos](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Role
 
 [Leia mais sobre os marcos](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles)
 
-## Semantic Forms {#semantic-forms}
+## Formulários Semânticos {#semantic-forms}
 
-When creating a form, you can use the following elements: `<form>`, `<label>`, `<input>`, `<textarea>`, and `<button>`
+Quando criares um formulário, podes usar os seguintes elementos: `<form>`, `<label>`, `<input>`, `<textarea>`, e `<button>`.
 
-Labels are typically placed on top or to the left of the form fields:
+Os rótulos são normalmente colocados no princípio ou a esquerda dos campos do formulário:
 
 ```vue-html
 <form action="/dataCollectionLocation" method="post" autocomplete="on">
@@ -156,7 +156,7 @@ Labels are typically placed on top or to the left of the form fields:
 
 <!-- <common-codepen-snippet title="Simple Form" slug="dyNzzWZ" :height="368" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Notice how you can include `autocomplete='on'` on the form element and it will apply to all inputs in your form. You can also set different [values for autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for each input.
+Nota como podes incluir `autocomplete='on'` no elemento de formulário e aplicar-se-á à todas entradas no teu formulário. Tu podes também definir [valores diferentes para o atributo `autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para cada entrada.
 
 ### Labels {#labels}
 
