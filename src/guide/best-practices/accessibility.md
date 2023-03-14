@@ -188,7 +188,7 @@ A definição explícita dos rótulos com um identificador correspondente é mel
 
 #### `aria-label` {#aria-label}
 
-You can also give the input an accessible name with [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label).
+Tu podes também atribuir a entrada um nome acessível com o [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label):
 
 ```vue-html
 <label for="name">Name</label>
@@ -203,9 +203,9 @@ You can also give the input an accessible name with [`aria-label`](https://devel
 
 <!-- <common-codepen-snippet title="Form ARIA label" slug="NWdvvYQ" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Feel free to inspect this element in Chrome DevTools to see how the accessible name has changed:
+Esteja a vontade para inspecionar este elemento nas Ferramentas de Programação do Chrome para veres como o nome acessível tem mudado:
 
-![Chrome Developer Tools showing input accessible name from aria-label](./images/AccessibleARIAlabelDevTools.png)
+![Ferramentas de Programação do Chrome exibindo o nome acessível da entrada do `aria-label`](./images/AccessibleARIAlabelDevTools.png)
 
 #### `aria-labelledby` {#aria-labelledby}
 
