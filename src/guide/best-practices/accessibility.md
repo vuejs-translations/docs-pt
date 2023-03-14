@@ -209,7 +209,7 @@ Esteja a vontade para inspecionar este elemento nas Ferramentas de Programação
 
 #### `aria-labelledby` {#aria-labelledby}
 
-Using [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) is similar to `aria-label` except it is used if the label text is visible on screen. It is paired to other elements by their `id` and you can link multiple `id`s:
+O uso de [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) é parecido com o `aria-label` exceto que é usado se o texto do rótulo estiver visível na tela. É emparelhado com os outros elementos pelo seu `id` e podes ligar vários `id`:
 
 ```vue-html
 <form
@@ -235,7 +235,7 @@ Using [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibi
 
 <!-- <common-codepen-snippet title="Form ARIA labelledby" slug="MWJvvBe" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-![Chrome Developer Tools showing input accessible name from aria-labelledby](./images/AccessibleARIAlabelledbyDevTools.png)
+![Ferramentas de Programação do Chrome exibindo o nome acessível da entrada do `aria-labelledby`](./images/AccessibleARIAlabelledbyDevTools.png)
 
 #### `aria-describedby` {#aria-describedby}
 
