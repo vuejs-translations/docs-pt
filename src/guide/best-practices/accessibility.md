@@ -112,26 +112,26 @@ Os utilizadores podem navegar em uma aplicação através dos cabeçalhos. Ter c
 </main>
 ```
 
-### Landmarks {#landmarks}
+### Marcos {#landmarks}
 
-[Landmarks](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) provide programmatic access to sections within an application. Users who rely on assistive technology can navigate to each section of the application and skip over content. You can use [ARIA roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) to help you achieve this.
+Os [marcos](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) fornecem acesso programático às seções dentro de uma aplicação. Os utilizadores que dependem de tecnologia ajustantes podem navegar para cada seção da aplicação e saltar sobre o conteúdo. Tu podes usar os [papeis de ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) para ajudar-te a alcançar isto.
 
-| HTML            | ARIA Role            | Landmark Purpose                                                                                                 |
+| HTML            | Papeis de ARIA            | Propósito do Marco                                                                                                |
 | --------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| header          | role="banner"        | Prime heading: title of the page                                                                                 |
-| nav             | role="navigation"    | Collection of links suitable for use when navigating the document or related documents                           |
-| main            | role="main"          | The main or central content of the document.                                                                     |
-| footer          | role="contentinfo"   | Information about the parent document: footnotes/copyrights/links to privacy statement                           |
-| aside           | role="complementary" | Supports the main content, yet is separated and meaningful on its own content                                    |
-| _Not available_ | role="search"        | This section contains the search functionality for the application                                               |
-| form            | role="form"          | Collection of form-associated elements                                                                           |
-| section         | role="region"        | Content that is relevant and that users will likely want to navigate to. Label must be provided for this element |
+| header          | role="banner"        | Cabeçalho principal: título da página.                                                                                 |
+| nav             | role="navigation"    | Coleção de ligações adequadas para uso quando estiveres a navegar pelo documento ou documentos relacionados.                          |
+| main            | role="main"          | O conteúdo principal ou central do documento.                                                                    |
+| footer          | role="contentinfo"   | Informação sobre o documento pai: notas de rodapé ou direitos de autor ou ligações para o relatório de privacidade.                         |
+| aside           | role="complementary" | Sustenta o conteúdo principal, mais é separado e significativo em seu próprio conteúdo.                                 |
+| _Not available_ | role="search"        | Esta seção contém a funcionalidade de pesquisa para a aplicação.                                            |
+| form            | role="form"          | Coleção de elementos associados ao formulário.                                                                         |
+| section         | role="region"        | O conteúdo que é relevante e para o qual que os utilizadores provavelmente quererão navegar. O rótulo deve ser fornecido para este elemento.|
 
-:::tip Tip:
-It is recommended to use landmark HTML elements with redundant landmark role attributes in order to maximize compatibility with legacy [browsers that don’t support HTML5 semantic elements](https://caniuse.com/#feat=html5semantic).
+:::tip Dica:
+É recomendado usar os elementos de HTML de marco com atributos do papel do marco redundante para maximizar a compatibilidade com [navegadores antigos que não suportam os elementos semânticos da HTML5](https://caniuse.com/#feat=html5semantic).
 :::
 
-[Read more about landmarks](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles)
+[Leia mais sobre os marcos](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles)
 
 ## Semantic Forms {#semantic-forms}
 
