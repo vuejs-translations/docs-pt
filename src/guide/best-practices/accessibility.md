@@ -158,9 +158,9 @@ Os rótulos são normalmente colocados no princípio ou a esquerda dos campos do
 
 Nota como podes incluir `autocomplete='on'` no elemento de formulário e aplicar-se-á à todas entradas no teu formulário. Tu podes também definir [valores diferentes para o atributo `autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para cada entrada.
 
-### Labels {#labels}
+### Rótulos {#labels}
 
-Provide labels to describe the purpose of all form control; linking `for` and `id`:
+Forneça rótulos para descrever o propósito de todos os mecanismo de controlo do formulário: ligando `for` e `id`:
 
 ```vue-html
 <label for="name">Name</label>
@@ -169,12 +169,12 @@ Provide labels to describe the purpose of all form control; linking `for` and `i
 
 <!-- <common-codepen-snippet title="Form Label" slug="XWpaaaj" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-If you inspect this element in your chrome developer tools and open the Accessibility tab inside the Elements tab, you will see how the input gets its name from the label:
+Se inspecionares este elemento nas ferramentas de programação do teu navegador Google Chrome e abrires a aba de Acessibilidade dentro da aba de Elementos, verás como a entrada recebe o seu nome a partir do rótulo:
 
-![Chrome Developer Tools showing input accessible name from label](./images/AccessibleLabelChromeDevTools.png)
+![Ferramentas de Programação do Chrome exibindo o nome acessível da entrada do rótulo](./images/AccessibleLabelChromeDevTools.png)
 
-:::warning Warning:
-Though you might have seen labels wrapping the input fields like this:
+:::warning Aviso:
+Embora tenhas visto rótulos envolvendo os campos de entrada como este:
 
 ```vue-html
 <label>
@@ -183,7 +183,7 @@ Though you might have seen labels wrapping the input fields like this:
 </label>
 ```
 
-Explicitly setting the labels with a matching id is better supported by assistive technology.
+A definição explícita dos rótulos com um identificador correspondente é melhor suportado pela tecnologia ajudante.
 :::
 
 #### `aria-label` {#aria-label}
