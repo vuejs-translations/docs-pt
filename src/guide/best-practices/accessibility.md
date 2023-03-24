@@ -461,9 +461,9 @@ A Iniciativa de Acessibilidade da Web (WAI, sigla em Inglês) do Consórcio da W
 - [Diretrizes de Acessibilidade do Conteúdo da Web (WCAG, sigla em Inglês)](https://www.w3.org/WAI/standards-guidelines/wcag/)
   - O conteúdo da web - usado por programadores, ferramentas de autoria, e ferramentas de avaliação da acessibilidade.
 
-### Web Content Accessibility Guidelines (WCAG) {#web-content-accessibility-guidelines-wcag}
+### Diretrizes de Acessibilidade do Conteúdo da Web (WCAG) {#web-content-accessibility-guidelines-wcag}
 
-[WCAG 2.1](https://www.w3.org/TR/WCAG21/) extends on [WCAG 2.0](https://www.w3.org/TR/WCAG20/) and allows implementation of new technologies by addressing changes to the web. The W3C encourages use of the most current version of WCAG when developing or updating Web accessibility policies.
+A [WCAG 2.1](https://www.w3.org/TR/WCAG21/) estende o [WCAG 2.0](https://www.w3.org/TR/WCAG20/) e permite a implementação de novas tecnologias endereçando as mudanças para a web. O W3C encoraja o uso da versão mais atual de WCAG quando estiveres a desenvolver ou a atualizar as políticas de acessibilidade da Web.
 
 #### WCAG 2.1 Four Main Guiding Principles (abbreviated as POUR): {#wcag-2-1-four-main-guiding-principles-abbreviated-as-pour}
 
