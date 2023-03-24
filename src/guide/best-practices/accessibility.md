@@ -322,10 +322,9 @@ Um dos problemas com os espaços reservados é que não cumprem com o [critério
 
 É melhor fornecer todas as informações que o utilizador precisa para preencher os formulários fora de quaisquer entradas.
 
-### Instructions {#instructions}
+### Instruções {#instructions}
 
-When adding instructions for your input fields, make sure to link it correctly to the input.
-You can provide additional instructions and bind multiple ids inside an [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby). This allows for more flexible design.
+Quando estiveres a adicionar as instruções para os teus campos de entrada, certifica-te de ligá-lo corretamente ao campo de entrada. Tu podes fornecer instruções adicionais e vincule vários identificadores dentro de um [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby). Isto permite um desenho mais flexível:
 
 ```vue-html
 <fieldset>
@@ -341,7 +340,7 @@ You can provide additional instructions and bind multiple ids inside an [`aria-l
 </fieldset>
 ```
 
-Alternatively, you can attach the instructions to the input with [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby):
+Alternativamente, podes atribuir as instruções ao campo de entrada com o [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby):
 
 ```vue-html
 <fieldset>
