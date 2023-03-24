@@ -450,16 +450,16 @@ Tu podes usar esta técnica para criar imagens funcionais.
 
 <!-- <common-codepen-snippet title="Functional Images" slug="jOyLGqM" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-## Standards {#standards}
+## Padrões {#standards}
 
-The World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) develops web accessibility standards for the different components:
+A Iniciativa de Acessibilidade da Web (WAI, sigla em Inglês) do Consórcio da World Wide Web (W3C, sigla em Inglês) desenvolve os padrões de acessibilidade da web para os diferentes componentes:
 
-- [User Agent Accessibility Guidelines (UAAG)](https://www.w3.org/WAI/standards-guidelines/uaag/)
-  - web browsers and media players, including some aspects of assistive technologies
-- [Authoring Tool Accessibility Guidelines (ATAG)](https://www.w3.org/WAI/standards-guidelines/atag/)
-  - authoring tools
-- [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-  - web content - used by developers, authoring tools, and accessibility evaluation tools
+- [Diretrizes de Acessibilidade do Agente do Utilizador (UAAG, sigla em Inglês)](https://www.w3.org/WAI/standards-guidelines/uaag/)
+  - Os navegadores da web e leitores de media, incluindo alguns aspetos de tecnologias assistivas.
+- [Diretrizes de Acessibilidade de Ferramenta de Autoria (ATAG, sigla em Inglês)](https://www.w3.org/WAI/standards-guidelines/atag/)
+  - As ferramentas de autoria
+- [Diretrizes de Acessibilidade do Conteúdo da Web (WCAG, sigla em Inglês)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+  - O conteúdo da web - usado por programadores, ferramentas de autoria, e ferramentas de avaliação da acessibilidade.
 
 ### Web Content Accessibility Guidelines (WCAG) {#web-content-accessibility-guidelines-wcag}
 
