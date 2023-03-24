@@ -271,13 +271,13 @@ Tu podes ver a descrição inspecionando as Ferramentas de Programação do Chro
 
 ![Ferramentas de Programação do Chrome exibindo o nome acessível da entrada do `aria-labelledby` e a descrição com o `aria-describedby`](./images/AccessibleARIAdescribedby.png)
 
-### Placeholder {#placeholder}
+### Espaço Reservado {#placeholder}
 
-Avoid using placeholders as they can confuse many users.
+Evite usar espaços reservados visto que podem confundir muitos utilizadores.
 
-One of the issues with placeholders is that they don't meet the [color contrast criteria](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) by default; fixing the color contrast makes the placeholder look like pre-populated data in the input fields. Looking at the following example, you can see that the Last Name placeholder which meets the color contrast criteria looks like pre-populated data:
+Um dos problemas com os espaços reservados é que não cumprem com o [critério de contraste de cor](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) por padrão; corrigir o contraste de cor faz o espaço reservado parecer como dados pré-povoado nos campos de entrada. Olhando no seguinte exemplo, podes ver que o espaço reservado do Último Nome o qual cumpre com o critério de contraste de cor parece-se com dado pré-povoado:
 
-![Accessible placeholder](./images/AccessiblePlaceholder.png)
+![Espaço reservado acessível](./images/AccessiblePlaceholder.png)
 
 ```vue-html
 <form
@@ -320,7 +320,7 @@ One of the issues with placeholders is that they don't meet the [color contrast 
 }
 ```
 
-It is best to provide all the information the user needs to fill out forms outside any inputs.
+É melhor fornecer todas as informações que o utilizador precisa para preencher os formulários fora de quaisquer entradas.
 
 ### Instructions {#instructions}
 
