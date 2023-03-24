@@ -414,13 +414,13 @@ Quando estiveres a usar os botões dentro de um formulário, deves definir o tip
 
 <!-- <common-codepen-snippet title="Form Buttons" slug="JjEyrYZ" :height="467" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-### Functional Images {#functional-images}
+### Imagens Funcionais {#functional-images}
 
-You can use this technique to create functional images.
+Tu podes usar esta técnica para criar imagens funcionais.
 
-- Input fields
+- Campos de entrada
 
-  - These images will act as a submit type button on forms
+  - Estas imagens agirão como um botão de tipo submissão em formulários
 
   ```vue-html
   <form role="search">
@@ -435,7 +435,7 @@ You can use this technique to create functional images.
   </form>
   ```
 
-- Icons
+- Ícones
 
 ```vue-html
 <form role="search">
