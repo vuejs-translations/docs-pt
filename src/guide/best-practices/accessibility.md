@@ -353,11 +353,11 @@ Alternativamente, podes atribuir as instruções ao campo de entrada com o [`ari
 
 <!-- <common-codepen-snippet title="Form Instructions" slug="WNREEqv" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-### Hiding Content {#hiding-content}
+### Escondendo Conteúdo {#hiding-content}
 
-Usually it is not recommended to visually hide labels, even if the input has an accessible name. However, if the functionality of the input can be understood with surrounding content, then we can hide the visual label.
+Normalmente não é recomendado esconder visualmente os rótulos, mesmo se a entrada tiver um nome acessível. No entanto, se a funcionalidade da entrada pode ser entendida com o conteúdo circundante, então podemos esconder o rótulo visual.
 
-Let's look at this search field:
+Observemos este campo de pesquisa:
 
 ```vue-html
 <form role="search">
@@ -367,9 +367,9 @@ Let's look at this search field:
 </form>
 ```
 
-We can do this because the search button will help visual users identify the purpose of the input field.
+Nós podemos fazer isto porque o botão de pesquisa ajudará os utilizadores visuais a identificarem o propósito do campo de entrada.
 
-We can use CSS to visually hide elements but keep them available for assistive technology:
+Nós podemos usar a CSS para esconder visualmente os elementos mas mantê-los disponíveis para a tecnologia assistiva:
 
 ```css
 .hidden-visually {
