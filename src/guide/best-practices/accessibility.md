@@ -6,7 +6,7 @@ Pronto para começar mas não sem a certeza de por onde?
 
 Consulte o [guia de planeamento e gerência da acessibilidade da web](https://www.w3.org/WAI/planning-and-managing/) fornecido pelo [Consórcio da World Wide Web (W3C)](https://www.w3.org/)
 
-## Lição Saltar {#skip-link}
+## Ligação Saltar {#skip-link}
 
 Tu deves adicionar uma ligação no topo de cada página que vai diretamente para a área do conteúdo principal assim os utilizadores podem salter o conteúdo que é repetido em várias páginas de Web.
 
