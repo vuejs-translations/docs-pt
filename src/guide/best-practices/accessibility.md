@@ -396,18 +396,17 @@ Adding `aria-hidden="true"` will hide the element from assistive technology but 
 <p aria-hidden="true">This is hidden from screen readers.</p>
 ```
 
-### Buttons {#buttons}
+### Botões {#buttons}
 
-When using buttons inside a form, you must set the type to prevent submitting the form.
-You can also use an input to create buttons:
+Quando estiveres a usar os botões dentro de um formulário, deves definir o tipo para evitar a submissão do formulário. Tu podes também usar uma entrada para criar os botões:
 
 ```vue-html
 <form action="/dataCollectionLocation" method="post" autocomplete="on">
-  <!-- Buttons -->
+  <!-- Botões -->
   <button type="button">Cancel</button>
   <button type="submit">Submit</button>
 
-  <!-- Input buttons -->
+  <!-- Botões de entrada -->
   <input type="button" value="Cancel" />
   <input type="submit" value="Submit" />
 </form>
