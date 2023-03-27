@@ -1,10 +1,10 @@
 # Segurança {#security}
 
-## Reporting Vulnerabilities {#reporting-vulnerabilities}
+## Reportando Vulnerabilidades {#reporting-vulnerabilities}
 
-When a vulnerability is reported, it immediately becomes our top concern, with a full-time contributor dropping everything to work on it. To report a vulnerability, please email [security@vuejs.org](mailto:security@vuejs.org).
+Quando uma vulnerabilidade é reportada, ela torna-se imediatamente a nossa máxima preocupação, com um colaborar em tempo integral largando tudo para trabalhar sobre ela. Para reportar uma vulnerabilidade, envie um correio-eletrónico para [security@vuejs.org](mailto:security@vuejs.org).
 
-While the discovery of new vulnerabilities is rare, we also recommend always using the latest versions of Vue and its official companion libraries to ensure your application remains as secure as possible.
+Embora a descoberta de novas vulnerabilidades seja rara, também recomendamos sempre usar as versões mais recentes da Vue e suas bibliotecas acompanhantes oficiais para assegurar que a tua aplicação continue a mais segura possível.
 
 ## Rule No.1: Never Use Non-trusted Templates {#rule-no-1-never-use-non-trusted-templates}
 
