@@ -1,4 +1,4 @@
-# Security {#security}
+# Segurança {#security}
 
 ## Reporting Vulnerabilities {#reporting-vulnerabilities}
 
