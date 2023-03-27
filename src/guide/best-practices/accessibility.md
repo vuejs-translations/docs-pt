@@ -483,37 +483,37 @@ A WAI-ARIA do W3C fornece orientação sobre como construir conteúdo dinâmico 
 - [Aplicações de Internet Ricas em Acessibilidade (WAI-ARIA, sigla em Inglês) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
 - [Práticas de Autoria da WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
 
-## Resources {#resources}
+## Recursos {#resources}
 
-### Documentation {#documentation}
+### Documentação  {#documentation}
 
 - [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
 - [WCAG 2.1](https://www.w3.org/TR/WCAG21/)
-- [Accessible Rich Internet Applications (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
-- [WAI-ARIA Authoring Practices 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
+- [Aplicações de Internet Ricas em Acessibilidade (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
+- [Práticas de Autoria da WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
 
-### Assistive Technologies {#assistive-technologies}
+### Tecnologias Assistivas {#assistive-technologies}
 
-- Screen Readers
+- Leitores de Ecrã
   - [NVDA](https://www.nvaccess.org/download/)
   - [VoiceOver](https://www.apple.com/accessibility/mac/vision/)
   - [JAWS](https://www.freedomscientific.com/products/software/jaws/?utm_term=jaws%20screen%20reader&utm_source=adwords&utm_campaign=All+Products&utm_medium=ppc&hsa_tgt=kwd-394361346638&hsa_cam=200218713&hsa_ad=296201131673&hsa_kw=jaws%20screen%20reader&hsa_grp=52663682111&hsa_net=adwords&hsa_mt=e&hsa_src=g&hsa_acc=1684996396&hsa_ver=3&gclid=Cj0KCQjwnv71BRCOARIsAIkxW9HXKQ6kKNQD0q8a_1TXSJXnIuUyb65KJeTWmtS6BH96-5he9dsNq6oaAh6UEALw_wcB)
   - [ChromeVox](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en)
-- Zooming Tools
+- Ferramentas de Ampliação de Conteúdo
   - [MAGic](https://www.freedomscientific.com/products/software/magic/)
   - [ZoomText](https://www.zoomtext.com/)
   - [Magnifier](https://support.microsoft.com/en-us/help/11542/windows-use-magnifier-to-make-things-easier-to-see)
 
-### Testing {#testing}
+### Testagem {#testing}
 
-- Automated Tools
+- Ferramentas Automatizadas
   - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
   - [WAVE](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
   - [ARC Toolkit](https://chrome.google.com/webstore/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce?hl=en-US)
-- Color Tools
+- Ferramentas de Cores
   - [WebAim Color Contrast](https://webaim.org/resources/contrastchecker/)
   - [WebAim Link Color Contrast](https://webaim.org/resources/linkcontrastchecker)
-- Other Helpful Tools
+- Outras Ferramentas Úteis
   - [HeadingMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en…)
   - [Color Oracle](https://colororacle.org)
   - [Focus Indicator](https://chrome.google.com/webstore/detail/focus-indicator/heeoeadndnhebmfebjccbhmccmaoedlf?hl=en-US…)
@@ -521,18 +521,18 @@ A WAI-ARIA do W3C fornece orientação sobre como construir conteúdo dinâmico 
   - [Visual Aria](https://chrome.google.com/webstore/detail/visual-aria/lhbmajchkkmakajkjenkchhnhbadmhmk?hl=en-US)
   - [Silktide Website Accessibility Simulator](https://chrome.google.com/webstore/detail/silktide-website-accessib/okcpiimdfkpkjcbihbmhppldhiebhhaf?hl=en-US)
 
-### Users {#users}
+### Utilizadores {#users}
 
-The World Health Organization estimates that 15% of the world's population has some form of disability, 2-4% of them severely so. That is an estimated 1 billion people worldwide; making people with disabilities the largest minority group in the world.
+A Organização Mundial da Saúde estima que 15% da população mundial tem alguma forma de deficiência, 2-4% deles com severidade. Isto é estimado em 1 bilhão de pessoas mundialmente; tornando as pessoas com deficiências o maior grupo minoritário no mundo.
 
-There are a huge range of disabilities, which can be divided roughly into four categories:
+Existem uma grande gama de deficiência, que podem ser divididas aproximadamente em quatro categorias:
 
-- _[Visual](https://webaim.org/articles/visual/)_ - These users can benefit from the use of screen readers, screen magnification, controlling screen contrast, or braille display.
-- _[Auditory](https://webaim.org/articles/auditory/)_ - These users can benefit from captioning, transcripts or sign language video.
-- _[Motor](https://webaim.org/articles/motor/)_ - These users can benefit from a range of [assistive technologies for motor impairments](https://webaim.org/articles/motor/assistive): voice recognition software, eye tracking, single-switch access, head wand, sip and puff switch, oversized trackball mouse, adaptive keyboard or other assistive technologies.
-- _[Cognitive](https://webaim.org/articles/cognitive/)_ - These users can benefit from supplemental media, structural organization of content, clear and simple writing.
+- _[Visual](https://webaim.org/articles/visual/)_ - Estes utilizadores podem beneficiarem-se do uso de leitores de ecrã, ampliação de ecrã, controlo de contraste de ecrã, ou exibição de braille.
+- _[Auditiva](https://webaim.org/articles/auditory/)_ - Estes utilizadores podem beneficiarem-se do legendamento, transcrições ou vídeo de linguagem gestual.
+- _[Motora](https://webaim.org/articles/motor/)_ - Estes utilizadores podem beneficiarem-se de uma gama de [tecnologias assistivas para deficiências motoras](https://webaim.org/articles/motor/assistive): software de reconhecimento de voz, acompanhamento do olho, acesso de interruptor único, vara de mão, teclado adaptável ou outras tecnologias assistivas.
+- _[Cognitiva](https://webaim.org/articles/cognitive/)_ - Estes utilizadores podem beneficiarem-se de media complementar, organização estrutural do conteúdo, escrita clara e simples.
 
-Check out the following links from WebAim to understand from users:
+Consulte as seguintes ligações da WebAim para entenderes as necessidades dos utilizadores:
 
-- [Web Accessibility Perspectives: Explore the Impact and Benefits for Everyone](https://www.w3.org/WAI/perspective-videos/)
-- [Stories of Web Users](https://www.w3.org/WAI/people-use-web/user-stories/)
+- [Perspetivas da Acessibilidade da Web: Explorar o Impacto e Benefícios para Todos](https://www.w3.org/WAI/perspective-videos/)
+- [As Histórias dos Utilizadores da Web](https://www.w3.org/WAI/people-use-web/user-stories/)
