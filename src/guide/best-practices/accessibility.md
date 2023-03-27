@@ -476,12 +476,12 @@ A [WCAG 2.1](https://www.w3.org/TR/WCAG21/) estende o [WCAG 2.0](https://www.w3.
 - [Robusta](https://www.w3.org/TR/WCAG21/#robust)
   - Os utilizadores devem ser capazes de acessar o conteúdo conforme o avanço das tecnologias
 
-#### Web Accessibility Initiative – Accessible Rich Internet Applications (WAI-ARIA) {#web-accessibility-initiative-–-accessible-rich-internet-applications-wai-aria}
+#### Iniciativa de Acessibilidade da Web - Aplicações de Internet Ricas em Acessibilidade (WAI-ARIA) {#web-accessibility-initiative-–-accessible-rich-internet-applications-wai-aria}
 
-W3C's WAI-ARIA provides guidance on how to build dynamic content and advanced user interface controls.
+A WAI-ARIA do W3C fornece orientação sobre como construir conteúdo dinâmico e controlos de interface de utilizador avançados:
 
-- [Accessible Rich Internet Applications (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
-- [WAI-ARIA Authoring Practices 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
+- [Aplicações de Internet Ricas em Acessibilidade (WAI-ARIA, sigla em Inglês) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
+- [Práticas de Autoria da WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
 
 ## Resources {#resources}
 
