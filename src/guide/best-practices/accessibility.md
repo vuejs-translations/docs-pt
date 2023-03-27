@@ -465,16 +465,16 @@ A Iniciativa de Acessibilidade da Web (WAI, sigla em Inglês) do Consórcio da W
 
 A [WCAG 2.1](https://www.w3.org/TR/WCAG21/) estende o [WCAG 2.0](https://www.w3.org/TR/WCAG20/) e permite a implementação de novas tecnologias endereçando as mudanças para a web. O W3C encoraja o uso da versão mais atual de WCAG quando estiveres a desenvolver ou a atualizar as políticas de acessibilidade da Web.
 
-#### WCAG 2.1 Four Main Guiding Principles (abbreviated as POUR): {#wcag-2-1-four-main-guiding-principles-abbreviated-as-pour}
+#### WCAG 2.1 Quatro Princípios Orientadores Principais (abreviado como POUR, em Inglês): {#wcag-2-1-four-main-guiding-principles-abbreviated-as-pour}
 
-- [Perceivable](https://www.w3.org/TR/WCAG21/#perceivable)
-  - Users must be able to perceive the information being presented
-- [Operable](https://www.w3.org/TR/WCAG21/#operable)
-  - Interface forms, controls, and navigation are operable
-- [Understandable](https://www.w3.org/TR/WCAG21/#understandable)
-  - Information and the operation of user interface must be understandable to all users
-- [Robust](https://www.w3.org/TR/WCAG21/#robust)
-  - Users must be able to access the content as technologies advance
+- [Percebível](https://www.w3.org/TR/WCAG21/#perceivable)
+  - Os utilizadores devem ser capazes de perceber a informação sendo apresentada
+- [Operável](https://www.w3.org/TR/WCAG21/#operable)
+  - Formulários de interface, controlos, e navegação são operáveis
+- [Compreensível](https://www.w3.org/TR/WCAG21/#understandable)
+  - A informação e a operação da interface de utilizador devem ser compreensíveis para todos utilizadores.
+- [Robusta](https://www.w3.org/TR/WCAG21/#robust)
+  - Os utilizadores devem ser capazes de acessar o conteúdo conforme o avanço das tecnologias
 
 #### Web Accessibility Initiative – Accessible Rich Internet Applications (WAI-ARIA) {#web-accessibility-initiative-–-accessible-rich-internet-applications-wai-aria}
 
