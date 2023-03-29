@@ -6,17 +6,17 @@ Quando uma vulnerabilidade é reportada, ela torna-se imediatamente a nossa máx
 
 Embora a descoberta de novas vulnerabilidades seja rara, também recomendamos sempre usar as versões mais recentes da Vue e suas bibliotecas acompanhantes oficiais para assegurar que a tua aplicação continue a mais segura possível.
 
-## Rule No.1: Never Use Non-trusted Templates {#rule-no-1-never-use-non-trusted-templates}
+## Regra Nº1: Nunca Usar Modelos de Marcação Duvidosos {#rule-no-1-never-use-non-trusted-templates}
 
-The most fundamental security rule when using Vue is **never use non-trusted content as your component template**. Doing so is equivalent to allowing arbitrary JavaScript execution in your application - and worse, could lead to server breaches if the code is executed during server-side rendering. An example of such usage:
+A regra de segurança mais fundamental quando estiveres a usar a Vue é **nunca usar conteúdo duvidoso como modelo de marcação do teu componente**. Fazer isto é equivalente a permitir a execução de JavaScript arbitrário na tua aplicação - e pior, poderia levar à servir brechas se o código for executado durante a interpretação no lado do servidor. Um exemplo de tal uso seria:
 
 ```js
 Vue.createApp({
-  template: `<div>` + userProvidedString + `</div>` // NEVER DO THIS
+  template: `<div>` + userProvidedString + `</div>` // NUNCA FAZER ISTO
 }).mount('#app')
 ```
 
-Vue templates are compiled into JavaScript, and expressions inside templates will be executed as part of the rendering process. Although the expressions are evaluated against a specific rendering context, due to the complexity of potential global execution environments, it is impractical for a framework like Vue to completely shield you from potential malicious code execution without incurring unrealistic performance overhead. The most straightforward way to avoid this category of problems altogether is to make sure the contents of your Vue templates are always trusted and entirely controlled by you.
+Os modelos de marcação de Vue são compilados para JavaScript, e as expressões dentro dos modelos de marcação serão executadas como parte do processo de interpretação. Embora as expressões sejam avaliadas contra um contexto de interpretação específico, por causa da complexidade dos potenciais ambientes de execução global, é inviável para uma abstração como a Vue proteger-te completamente da potencial execução de código malicioso sem sofrer com as despesas gerais de desempenho irrealistas. A maneira mais direta de evitar esta categoria de problemas no conjunto é certificar-se de que os conteúdos dos teus modelos de marcação da Vue sejam sempre de confiança e inteiramente controlados por ti.
 
 ## What Vue Does to Protect You {#what-vue-does-to-protect-you}
 
