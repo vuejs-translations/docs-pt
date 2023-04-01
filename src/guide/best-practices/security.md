@@ -72,17 +72,17 @@ Em qualquer aplicação de web, permitir conteúdo não desinfetado, fornecido p
 
 Por exemplo, serviços como CodePen e JSFiddle permitem que o conteúdo fornecido pelo utilizador seja executado, mas está em um contexto onde este é esperado e isolado em uma caixa de areia para alguma extensão dentro de elementos de `iframe`. Nestes casos onde uma funcionalidade importante inerentemente requer algum nível de vulnerabilidade, está sobre à tua equipa pesar a importância da funcionalidade contra os cenários de piores caso que a vulnerabilidade possibilita.
 
-### HTML Injection {#html-injection}
+### Injeção de HTML {#html-injection}
 
-As you learned earlier, Vue automatically escapes HTML content, preventing you from accidentally injecting executable HTML into your application. However, **in cases where you know the HTML is safe**, you can explicitly render HTML content:
+Conforme aprendeste anteriormente, a Vue escapa automaticamente o conteúdo de HTML, impedindo-te de acidentalmente injetar HTML executável para dentro da tua aplicação. No entanto, **em casos onde sabes que o HTML é seguro**, podes explicitamente interpretar o conteúdo do HTML:
 
-- Using a template:
+- Usando um modelo de marcação:
 
   ```vue-html
   <div v-html="userProvidedHtml"></div>
   ```
 
-- Using a render function:
+- Usando uma função de interpretação:
 
   ```js
   h('div', {
@@ -90,14 +90,14 @@ As you learned earlier, Vue automatically escapes HTML content, preventing you f
   })
   ```
 
-- Using a render function with JSX:
+- Usando uma função de interpretação com JSX:
 
   ```jsx
   <div innerHTML={this.userProvidedHtml}></div>
   ```
 
 :::warning
-User-provided HTML can never be considered 100% safe unless it's in a sandboxed iframe or in a part of the app where only the user who wrote that HTML can ever be exposed to it. Additionally, allowing users to write their own Vue templates brings similar dangers.
+O HTML fornecido pelo utilizador nunca pode ser considerado 100% seguro a menos que seja um `iframe` isolado em uma caixa de areia ou em uma parte da aplicação onde apenas o utilizador que escreveu aquele HTML pode sempre ser exposto à ele. Adicionalmente, permitir que os utilizadores escrevam seus próprios modelos de marcação de Vue atrai perigos parecidos.
 :::
 
 ### URL Injection {#url-injection}
