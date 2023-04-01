@@ -66,11 +66,11 @@ Então seria escapado para o seguinte HTML:
 
 Assim evitando o fechamento do atributo `title` para injetar HTML novo e arbitrário. Este escapamento é feito usando as APIs nativas do navegador, como `setAttribute`, assim uma vulnerabilidade apenas pode existir se o próprio navegador estiver vulnerável.
 
-## Potential Dangers {#potential-dangers}
+## Possíveis Perigos {#potential-dangers}
 
-In any web application, allowing unsanitized, user-provided content to be executed as HTML, CSS, or JavaScript is potentially dangerous, so it should be avoided wherever possible. There are times when some risk may be acceptable, though.
+Em qualquer aplicação de web, permitir conteúdo não desinfetado, fornecido pelo utilizador ser executado como HTML, CSS, ou JavaScript é potencialmente perigoso, então deve ser evitado onde quer que for possível. Mas existem momentos quando o risco pode ser aceitável.
 
-For example, services like CodePen and JSFiddle allow user-provided content to be executed, but it's in a context where this is expected and sandboxed to some extent inside iframes. In the cases when an important feature inherently requires some level of vulnerability, it's up to your team to weigh the importance of the feature against the worst-case scenarios the vulnerability enables.
+Por exemplo, serviços como CodePen e JSFiddle permitem que o conteúdo fornecido pelo utilizador seja executado, mas está em um contexto onde este é esperado e isolado em uma caixa de areia para alguma extensão dentro de elementos de `iframe`. Nestes casos onde uma funcionalidade importante inerentemente requer algum nível de vulnerabilidade, está sobre à tua equipa pesar a importância da funcionalidade contra os cenários de piores caso que a vulnerabilidade possibilita.
 
 ### HTML Injection {#html-injection}
 
