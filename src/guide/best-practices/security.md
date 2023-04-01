@@ -100,9 +100,9 @@ Conforme aprendeste anteriormente, a Vue escapa automaticamente o conteúdo de H
 O HTML fornecido pelo utilizador nunca pode ser considerado 100% seguro a menos que seja um `iframe` isolado em uma caixa de areia ou em uma parte da aplicação onde apenas o utilizador que escreveu aquele HTML pode sempre ser exposto à ele. Adicionalmente, permitir que os utilizadores escrevam seus próprios modelos de marcação de Vue atrai perigos parecidos.
 :::
 
-### URL Injection {#url-injection}
+### Injeção de URL {#url-injection}
 
-In a URL like this:
+Numa URL como esta:
 
 ```vue-html
 <a :href="userProvidedUrl">
@@ -110,7 +110,7 @@ In a URL like this:
 </a>
 ```
 
-There's a potential security issue if the URL has not been "sanitized" to prevent JavaScript execution using `javascript:`. There are libraries such as [sanitize-url](https://www.npmjs.com/package/@braintree/sanitize-url) to help with this, but note: if you're ever doing URL sanitization on the frontend, you already have a security issue. **User-provided URLs should always be sanitized by your backend before even being saved to a database.** Then the problem is avoided for _every_ client connecting to your API, including native mobile apps. Also note that even with sanitized URLs, Vue cannot help you guarantee that they lead to safe destinations.
+Existe um possível problema de segurança se a URL não tiver sido "desinfetada" para evitar a execução de JavaScript usando `javascript:`. Existem bibliotecas tais como [`sanitize-url`](https://www.npmjs.com/package/@braintree/sanitize-url) para ajudar com isto, mas nota: se estiveres sempre a fazer a desinfeção no frontend, já tens um problema de segurança. **As URLs fornecidas pelo utilizador deveriam sempre ser desinfetadas no teu backend antes mesmo de serem guardadas em uma base de dados.** Portanto o problema é evitado para _todos_ os clientes conectando-se à tua API, incluindo aplicações móveis nativas. Também nota que mesmo com URLs desinfetadas, a Vue não pode ajudar-te a garantir que conduzam para destinos seguros.
 
 ### Style Injection {#style-injection}
 
