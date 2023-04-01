@@ -42,9 +42,9 @@ Então seria escapado para o seguinte HTML:
 
 Assim evitando a injeção de programa. Este escapamento é feito usando as APIs nativas do navegador, como `textContent`, assim uma vulnerabilidade apenas pode existir se o próprio navegador estiver vulnerável.
 
-### Attribute bindings {#attribute-bindings}
+### Vínculos de Atributos {#attribute-bindings}
 
-Similarly, dynamic attribute bindings are also automatically escaped. That means in this template:
+Similarmente, os vínculos de atributos dinâmicos também são escapados automaticamente. Isto significa que neste modelo de marcação:
 
 ```vue-html
 <h1 :title="userProvidedString">
@@ -52,19 +52,19 @@ Similarly, dynamic attribute bindings are also automatically escaped. That means
 </h1>
 ```
 
-if `userProvidedString` contained:
+Se `userProvidedString` continha:
 
 ```js
 '" onclick="alert(\'hi\')'
 ```
 
-then it would be escaped to the following HTML:
+Então seria escapado para o seguinte HTML:
 
 ```vue-html
 &quot; onclick=&quot;alert('hi')
 ```
 
-thus preventing the close of the `title` attribute to inject new, arbitrary HTML. This escaping is done using native browser APIs, like `setAttribute`, so a vulnerability can only exist if the browser itself is vulnerable.
+Assim evitando o fechamento do atributo `title` para injetar HTML novo e arbitrário. Este escapamento é feito usando as APIs nativas do navegador, como `setAttribute`, assim uma vulnerabilidade apenas pode existir se o próprio navegador estiver vulnerável.
 
 ## Potential Dangers {#potential-dangers}
 
