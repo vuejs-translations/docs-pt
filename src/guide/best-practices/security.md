@@ -18,29 +18,29 @@ Vue.createApp({
 
 Os modelos de marcação de Vue são compilados para JavaScript, e as expressões dentro dos modelos de marcação serão executadas como parte do processo de interpretação. Embora as expressões sejam avaliadas contra um contexto de interpretação específico, por causa da complexidade dos potenciais ambientes de execução global, é inviável para uma abstração como a Vue proteger-te completamente da potencial execução de código malicioso sem sofrer com as despesas gerais de desempenho irrealistas. A maneira mais direta de evitar esta categoria de problemas no conjunto é certificar-se de que os conteúdos dos teus modelos de marcação da Vue sejam sempre de confiança e inteiramente controlados por ti.
 
-## What Vue Does to Protect You {#what-vue-does-to-protect-you}
+## O Que a Vue Faz Para Proteger-te {#what-vue-does-to-protect-you}
 
-### HTML content {#html-content}
+### Conteúdo de HTML {#html-content}
 
-Whether using templates or render functions, content is automatically escaped. That means in this template:
+Quer estejas usando os modelos de marcação ou funções de interpretação, o conteúdo é escapado automaticamente. Isto significa que neste modelo de marcação: 
 
 ```vue-html
 <h1>{{ userProvidedString }}</h1>
 ```
 
-if `userProvidedString` contained:
+Se `userProvidedString` continha:
 
 ```js
 '<script>alert("hi")</script>'
 ```
 
-then it would be escaped to the following HTML:
+Então seria escapado para o seguinte HTML:
 
 ```vue-html
 &lt;script&gt;alert(&quot;hi&quot;)&lt;/script&gt;
 ```
 
-thus preventing the script injection. This escaping is done using native browser APIs, like `textContent`, so a vulnerability can only exist if the browser itself is vulnerable.
+Assim evitando a injeção de programa. Este escapamento é feito usando as APIs nativas do navegador, como `textContent`, assim uma vulnerabilidade apenas pode existir se o próprio navegador estiver vulnerável.
 
 ### Attribute bindings {#attribute-bindings}
 
