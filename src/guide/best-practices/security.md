@@ -147,21 +147,21 @@ Para manter os teus utilizadores completamente seguros sequestro de clique, reco
 </a>
 ```
 
-### JavaScript Injection {#javascript-injection}
+### Injeção de JavaScript {#javascript-injection}
 
-We strongly discourage ever rendering a `<script>` element with Vue, since templates and render functions should never have side effects. However, this isn't the only way to include strings that would be evaluated as JavaScript at runtime.
+Nós sempre discordamos fortemente de interpretar um elemento `<script>` com a Vue, já que os modelos de marcação e funções de interpretação nunca deveriam ter efeitos colaterais. No entanto, isto não é a única maneira de incluir sequências de caracteres que seriam avaliadas como JavaScript em tempo de execução.
 
-Every HTML element has attributes with values accepting strings of JavaScript, such as `onclick`, `onfocus`, and `onmouseenter`. Binding user-provided JavaScript to any of these event attributes is a potential security risk, so it should be avoided.
+Todo elemento de HTML tem atributos com valores aceitando sequências de caracteres de JavaScript, tais como `onclick`, `onfocus`, e `onmouseenter`. Vincular o JavaScript fornecido pelo utilizador para quaisquer um destes atributos de eventos é um potencial risco de segurança, então deveria ser evitada.
 
 :::warning
-User-provided JavaScript can never be considered 100% safe unless it's in a sandboxed iframe or in a part of the app where only the user who wrote that JavaScript can ever be exposed to it.
+O JavaScript fornecido pelo utilizador nunca pode ser considerado 100% seguro a menos que esteja em um `iframe` isolado em um caixa de areia ou em uma parte da aplicação onde apenas o utilizador que escreveu aquele JavaScript pode sempre ser exposto à ele.
 :::
 
-Sometimes we receive vulnerability reports on how it's possible to do cross-site scripting (XSS) in Vue templates. In general, we do not consider such cases to be actual vulnerabilities because there's no practical way to protect developers from the two scenarios that would allow XSS:
+Algumas vezes recebemos relatórios de vulnerabilidade sobre como é possível fazer programação cruzada de aplicação (XSS, sigla em Inglês) nos modelos de marcação de Vue. Em geral, não consideramos tais casos como sendo vulnerabilidades reais porque não existe nenhuma maneira prática de proteger os programadores de dois cenários que permitiriam a XSS:
 
-1. The developer is explicitly asking Vue to render user-provided, unsanitized content as Vue templates. This is inherently unsafe, and there's no way for Vue to know the origin.
+1. O programador está explicitamente pedindo para Vue interpretar conteúdo não desinfetado fornecido pelo utilizador como modelos de marcação de Vue. Isto é inerentemente inseguro, e não existe nenhuma maneira da Vue saber a origem.
 
-2. The developer is mounting Vue to an entire HTML page which happens to contain server-rendered and user-provided content. This is fundamentally the same problem as \#1, but sometimes devs may do it without realizing it. This can lead to possible vulnerabilities where the attacker provides HTML which is safe as plain HTML but unsafe as a Vue template. The best practice is to **never mount Vue on nodes that may contain server-rendered and user-provided content**.
+2. O programador está montando a Vue à uma página de HTML inteira que parece conter conteúdo fornecido pelo utilizador gerado pelo servidor. Isto é fundamentalmente o mesmo problema da \#1, mas algumas vezes os programadores podem fazer isto sem darem-se conta disto. Isto pode conduzir a possíveis vulnerabilidades onde o atacante fornece o HTML que é seguro como HTML simples mas inseguro como um modelo de marcação de Vue. A boa prática é **nunca montar a Vue sobre nós que podem conter conteúdo fornecido pelo utilizador e gerado pelo servidor**.
 
 ## Best Practices {#best-practices}
 
