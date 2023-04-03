@@ -96,7 +96,7 @@ Conforme aprendeste anteriormente, a Vue escapa automaticamente o conteúdo de H
   <div innerHTML={this.userProvidedHtml}></div>
   ```
 
-:::warning
+:::warning AVISO
 O HTML fornecido pelo utilizador nunca pode ser considerado 100% seguro a menos que seja um `iframe` isolado em uma caixa de areia ou em uma parte da aplicação onde apenas o utilizador que escreveu aquele HTML pode sempre ser exposto à ele. Adicionalmente, permitir que os utilizadores escrevam seus próprios modelos de marcação de Vue atrai perigos parecidos.
 :::
 
@@ -153,7 +153,7 @@ Nós sempre discordamos fortemente de interpretar um elemento `<script>` com a V
 
 Todo elemento de HTML tem atributos com valores aceitando sequências de caracteres de JavaScript, tais como `onclick`, `onfocus`, e `onmouseenter`. Vincular o JavaScript fornecido pelo utilizador para quaisquer um destes atributos de eventos é um potencial risco de segurança, então deveria ser evitada.
 
-:::warning
+:::warning AVISO
 O JavaScript fornecido pelo utilizador nunca pode ser considerado 100% seguro a menos que esteja em um `iframe` isolado em um caixa de areia ou em uma parte da aplicação onde apenas o utilizador que escreveu aquele JavaScript pode sempre ser exposto à ele.
 :::
 
