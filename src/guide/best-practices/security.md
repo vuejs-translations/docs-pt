@@ -178,6 +178,6 @@ Depois use o que aprenderes para também revisares o código-fonte das tuas depe
 
 As vulnerabilidades de segurança de HTTP, tais como a falsificação de requisição de página cruzada (CSRF ou XSRF, siglas em Inglês) e inclusão de programa de página cruzada (XSSI, sigla em Inglês), são primeiramente dirigidos sobre o backend, então não são uma preocupação da Vue. No entanto, continua a ser uma boa ideia comunicar com a tua equipa de backend para aprenderes a como melhor interagir com as suas APIs, por exemplo, submetendo fichas de CSRF com as submissões de formulário.
 
-## Server-Side Rendering (SSR) {#server-side-rendering-ssr}
+## Interpretação no Lado do Servidor (SSR) {#server-side-rendering-ssr}
 
-There are some additional security concerns when using SSR, so make sure to follow the best practices outlined throughout [our SSR documentation](/guide/scaling-up/ssr.html) to avoid vulnerabilities.
+Existem algumas preocupações de segurança adicionais quando usas a SSR, então certifica-te de seguir as boas práticas sublinhadas ao longo da [nossa documentação da SSR](/guide/scaling-up/ssr) para evitares vulnerabilidades.
