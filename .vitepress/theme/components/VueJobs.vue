@@ -1,8 +1,10 @@
 <script lang="ts">
+import { ref } from 'vue'
+
 // shared data across instances so we load only once
 const base = 'https://app.vuejobs.com/feed/vuejs/docs?format=json'
 
-let items = $ref<Jobs[]>([])
+let items = ref<Jobs[]>([])
 
 type Jobs = {
   organization: Organization
@@ -21,14 +23,16 @@ type Organization = {
 <script setup lang="ts">
 import { onMounted, computed } from 'vue'
 
-let vuejobs = $ref<HTMLElement>()
+let vuejobs = ref<HTMLElement>()
 
 const openings = computed(() =>
-  items.sort(() => 0.5 - Math.random()).slice(0, 2)
+  items.value.sort(() => 0.5 - Math.random()).slice(0, 2)
 )
 
 onMounted(async () => {
-  if (!items.length) items = (await (await fetch(`${base}`)).json()).data
+  if (!items.value.length) {
+    items = (await (await fetch(`${base}`)).json()).data
+  }
 })
 </script>
 
@@ -57,7 +61,7 @@ onMounted(async () => {
           <div class="vj-job-title">{{ job.title }}</div>
           <div class="vj-job-info">
             {{ job.organization.name }} <span>· </span>
-            <span>{{ job.remote ? 'Remote' : job.locations[0] }}</span>
+            <span>{{ job.remote ? 'Remoto' : job.locations[0] }}</span>
           </div>
         </div>
       </a>
