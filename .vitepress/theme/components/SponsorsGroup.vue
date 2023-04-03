@@ -1,35 +1,49 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { SponsorData, data, base, load } from './sponsors'
 
-const { tier, placement = 'aside' } = defineProps<{
-  tier: keyof SponsorData
-  placement?: 'aside' | 'page' | 'landing'
-}>()
+type Placement = 'aside' | 'page' | 'landing'
 
-let container = $ref<HTMLElement>()
-let visible = $ref(false)
+const props = withDefaults(
+  defineProps<{
+    tier: keyof SponsorData
+    placement?: Placement
+  }>(),
+  {
+    placement: 'aside'
+  }
+)
+
+let container = ref<HTMLElement>()
+let visible = ref(false)
 
 onMounted(async () => {
   // only render when entering view
   const observer = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting) {
-        visible = true
+        visible.value = true
         observer.disconnect()
       }
     },
     { rootMargin: '0px 0px 300px 0px' }
   )
-  observer.observe(container!)
+  observer.observe(container.value!)
   onUnmounted(() => observer.disconnect())
 
   // load data
   await load()
 })
 
-function track(sponsorID: string) {
-  fathom.trackGoal(`sponsor-click-${placement}-${sponsorID}`, 0)
+// fathom events
+const eventMap: Record<Placement, string> = {
+  aside: '4QUPDDRU',
+  landing: '58FLAR2Z',
+  page: 'ZXLO3IUT'
+}
+
+function track(interest?: boolean) {
+  fathom.trackGoal(interest ? `Y2BVYNT2` : eventMap[props.placement], 0)
 }
 </script>
 
@@ -46,7 +60,7 @@ function track(sponsorID: string) {
         :href="url"
         target="_blank"
         rel="sponsored noopener"
-        @click="track(name)"
+        @click="track()"
       >
         <picture v-if="img.endsWith('png')">
           <source
@@ -62,7 +76,7 @@ function track(sponsorID: string) {
       v-if="placement !== 'page' && tier !== 'special'"
       href="/sponsor/"
       class="sponsor-item action"
-      @click="track('INTEREST')"
+      @click="track(true)"
       >O teu logótipo</a
     >
   </div>
