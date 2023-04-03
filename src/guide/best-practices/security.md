@@ -163,16 +163,16 @@ Algumas vezes recebemos relatórios de vulnerabilidade sobre como é possível f
 
 2. O programador está montando a Vue à uma página de HTML inteira que parece conter conteúdo fornecido pelo utilizador gerado pelo servidor. Isto é fundamentalmente o mesmo problema da \#1, mas algumas vezes os programadores podem fazer isto sem darem-se conta disto. Isto pode conduzir a possíveis vulnerabilidades onde o atacante fornece o HTML que é seguro como HTML simples mas inseguro como um modelo de marcação de Vue. A boa prática é **nunca montar a Vue sobre nós que podem conter conteúdo fornecido pelo utilizador e gerado pelo servidor**.
 
-## Best Practices {#best-practices}
+## Boas Práticas {#best-practices}
 
-The general rule is that if you allow unsanitized, user-provided content to be executed (as either HTML, JavaScript, or even CSS), you might open yourself up to attacks. This advice actually holds true whether using Vue, another framework, or even no framework.
+A regra geral é que se permitires que conteúdo não desinfetado fornecido pelo utilizador seja executado (como ou HTML, JavaScript, ou mesmo CSS), podes estar a expor-te a ti mesmo à ataques. Este aconselhamento provasse verdadeiro seja se estiveres a usar a Vue, ou uma outra abstração, ou mesmo nenhuma abstração.
 
-Beyond the recommendations made above for [Potential Dangers](#potential-dangers), we also recommend familiarizing yourself with these resources:
+Além das recomendações feitas acima para os [Possíveis Perigos](#potential-dangers), também recomendamos familiarizares-te com estes recursos:
 
 - [HTML5 Security Cheat Sheet](https://html5sec.org/)
 - [OWASP's Cross Site Scripting (XSS) Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
 
-Then use what you learn to also review the source code of your dependencies for potentially dangerous patterns, if any of them include 3rd-party components or otherwise influence what's rendered to the DOM.
+Depois use o que aprenderes para também revisares o código-fonte das tuas dependências por padrões potencialmente perigosos, se quaisquer uma delas incluir componentes de terceiros ou de outro modo influencia o que é apresentado ao DOM.
 
 ## Backend Coordination {#backend-coordination}
 
