@@ -174,9 +174,9 @@ Além das recomendações feitas acima para os [Possíveis Perigos](#potential-d
 
 Depois use o que aprenderes para também revisares o código-fonte das tuas dependências por padrões potencialmente perigosos, se quaisquer uma delas incluir componentes de terceiros ou de outro modo influencia o que é apresentado ao DOM.
 
-## Backend Coordination {#backend-coordination}
+## Coordenação do Backend {#backend-coordination}
 
-HTTP security vulnerabilities, such as cross-site request forgery (CSRF/XSRF) and cross-site script inclusion (XSSI), are primarily addressed on the backend, so they aren't a concern of Vue's. However, it's still a good idea to communicate with your backend team to learn how to best interact with their API, e.g., by submitting CSRF tokens with form submissions.
+As vulnerabilidades de segurança de HTTP, tais como a falsificação de requisição de página cruzada (CSRF ou XSRF, siglas em Inglês) e inclusão de programa de página cruzada (XSSI, sigla em Inglês), são primeiramente dirigidos sobre o backend, então não são uma preocupação da Vue. No entanto, continua a ser uma boa ideia comunicar com a tua equipa de backend para aprenderes a como melhor interagir com as suas APIs, por exemplo, submetendo fichas de CSRF com as submissões de formulário.
 
 ## Server-Side Rendering (SSR) {#server-side-rendering-ssr}
 
