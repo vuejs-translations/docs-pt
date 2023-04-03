@@ -226,7 +226,7 @@ Programadores diferentes tem diferentes estilos de aprendizado. Sinta-te livre p
 
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/tutorial/">
-    <p class="next-steps-link">Experimente a Aula</p>
+    <p class="next-steps-link">Experimente o Passo-a-Passo</p>
     <p class="next-steps-caption">Para aqueles que preferem o aprendizado de coisas com prática.</p>
   </a>
   <a class="vt-box" href="/guide/quick-start.html">
