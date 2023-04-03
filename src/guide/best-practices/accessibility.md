@@ -6,7 +6,7 @@ Pronto para começar mas não sem a certeza de por onde?
 
 Consulte o [guia de planeamento e gerência da acessibilidade da web](https://www.w3.org/WAI/planning-and-managing/) fornecido pelo [Consórcio da World Wide Web (W3C)](https://www.w3.org/)
 
-## Ligação Saltar {#skip-link}
+## Ligação de Salto {#skip-link}
 
 Tu deves adicionar uma ligação no topo de cada página que vai diretamente para a área do conteúdo principal assim os utilizadores podem salter o conteúdo que é repetido em várias páginas de Web.
 
@@ -125,9 +125,9 @@ Os [marcos](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Role
 | aside           | role="complementary" | Sustenta o conteúdo principal, mais é separado e significativo em seu próprio conteúdo.                                 |
 | _Not available_ | role="search"        | Esta seção contém a funcionalidade de pesquisa para a aplicação.                                            |
 | form            | role="form"          | Coleção de elementos associados ao formulário.                                                                         |
-| section         | role="region"        | O conteúdo que é relevante e para o qual que os utilizadores provavelmente quererão navegar. O rótulo deve ser fornecido para este elemento.|
+| section         | role="region"        | O conteúdo que é relevante e para o qual os utilizadores provavelmente quererão navegar. O rótulo deve ser fornecido para este elemento.|
 
-:::tip Dica:
+:::tip DICA:
 É recomendado usar os elementos de HTML de marco com atributos do papel do marco redundante para maximizar a compatibilidade com [navegadores antigos que não suportam os elementos semânticos da HTML5](https://caniuse.com/#feat=html5semantic).
 :::
 
@@ -485,7 +485,7 @@ A WAI-ARIA do W3C fornece orientação sobre como construir conteúdo dinâmico 
 
 ## Recursos {#resources}
 
-### Documentação  {#documentation}
+### Documentação {#documentation}
 
 - [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
 - [WCAG 2.1](https://www.w3.org/TR/WCAG21/)
