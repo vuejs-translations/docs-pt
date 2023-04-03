@@ -1,8 +1,8 @@
-# Priority B Rules: Strongly Recommended
+# Priority B Rules: Strongly Recommended {#priority-b-rules-strongly-recommended}
 
 These rules have been found to improve readability and/or developer experience in most projects. Your code will still run if you violate them, but violations should be rare and well-justified.
 
-## Component files
+## Component files {#component-files}
 
 **Whenever a build system is available to concatenate files, each component should be in its own file.**
 
@@ -40,9 +40,9 @@ components/
 
 </div>
 
-## Single-file component filename casing
+## Single-file component filename casing {#single-file-component-filename-casing}
 
-**Filenames of [Single-File Components](/guide/scaling-up/sfc.html) should either be always PascalCase or always kebab-case.**
+**Filenames of [Single-File Components](/guide/scaling-up/sfc) should either be always PascalCase or always kebab-case.**
 
 PascalCase works best with autocompletion in code editors, as it's consistent with how we reference components in JS(X) and templates, wherever possible. However, mixed case filenames can sometimes create issues on case-insensitive file systems, which is why kebab-case is also perfectly acceptable.
 
@@ -76,7 +76,7 @@ components/
 
 </div>
 
-## Base component names
+## Base component names {#base-component-names}
 
 **Base components (a.k.a. presentational, dumb, or pure components) that apply app-specific styling and conventions should all begin with a specific prefix, such as `Base`, `App`, or `V`.**
 
@@ -156,7 +156,7 @@ components/
 
 </div>
 
-## Single-instance component names
+## Single-instance component names {#single-instance-component-names}
 
 **Components that should only ever have a single active instance should begin with the `The` prefix, to denote that there can be only one.**
 
@@ -184,7 +184,7 @@ components/
 
 </div>
 
-## Tightly coupled component names
+## Tightly coupled component names {#tightly-coupled-component-names}
 
 **Child components that are tightly coupled with their parent should include the parent component name as a prefix.**
 
@@ -255,7 +255,7 @@ components/
 
 </div>
 
-## Order of words in component names
+## Order of words in component names {#order-of-words-in-component-names}
 
 **Component names should start with the highest-level (often most general) words and end with descriptive modifying words.**
 
@@ -335,9 +335,9 @@ components/
 
 </div>
 
-## Self-closing components
+## Self-closing components {#self-closing-components}
 
-**Components with no content should be self-closing in [Single-File Components](/guide/scaling-up/sfc.html), string templates, and [JSX](/guide/extras/render-function.html#jsx-tsx) - but never in DOM templates.**
+**Components with no content should be self-closing in [Single-File Components](/guide/scaling-up/sfc), string templates, and [JSX](/guide/extras/render-function#jsx-tsx) - but never in DOM templates.**
 
 Components that self-close communicate that they not only have no content, but are **meant** to have no content. It's the difference between a blank page in a book and one labeled "This page intentionally left blank." Your code is also cleaner without the unnecessary closing tag.
 
@@ -373,9 +373,9 @@ Unfortunately, HTML doesn't allow custom elements to be self-closing - only [off
 
 </div>
 
-## Component name casing in templates
+## Component name casing in templates {#component-name-casing-in-templates}
 
-**In most projects, component names should always be PascalCase in [Single-File Components](/guide/scaling-up/sfc.html) and string templates - but kebab-case in DOM templates.**
+**In most projects, component names should always be PascalCase in [Single-File Components](/guide/scaling-up/sfc) and string templates - but kebab-case in DOM templates.**
 
 PascalCase has a few advantages over kebab-case:
 
@@ -429,9 +429,9 @@ OR
 
 </div>
 
-## Component name casing in JS/JSX
+## Component name casing in JS/JSX {#component-name-casing-in-js-jsx}
 
-**Component names in JS/[JSX](/guide/extras/render-function.html#jsx-tsx) should always be PascalCase, though they may be kebab-case inside strings for simpler applications that only use global component registration through `app.component`.**
+**Component names in JS/[JSX](/guide/extras/render-function#jsx-tsx) should always be PascalCase, though they may be kebab-case inside strings for simpler applications that only use global component registration through `app.component`.**
 
 ::: details Detailed Explanation
 In JavaScript, PascalCase is the convention for classes and prototype constructors - essentially, anything that can have distinct instances. Vue components also have instances, so it makes sense to also use PascalCase. As an added benefit, using PascalCase within JSX (and templates) allows readers of the code to more easily distinguish between components and HTML elements.
@@ -499,7 +499,7 @@ export default {
 
 </div>
 
-## Full-word component names
+## Full-word component names {#full-word-component-names}
 
 **Component names should prefer full words over abbreviations.**
 
@@ -527,14 +527,14 @@ components/
 
 </div>
 
-## Prop name casing
+## Prop name casing {#prop-name-casing}
 
-**Prop names should always use camelCase during declaration, but kebab-case in templates and [JSX](/guide/extras/render-function.html#jsx-tsx).**
-
-We're simply following the conventions of each language. Within JavaScript, camelCase is more natural. Within HTML, kebab-case is.
+**Prop names should always use camelCase during declaration. When used inside in-DOM templates, props should be kebab-cased. Single-File Components templates and [JSX](/guide/extras/render-function#jsx-tsx) can use either kebab-case or camelCase props. Casing should be consistent - if you choose to use camelCased props, make sure you don't use kebab-cased ones in your application**
 
 <div class="style-example style-example-bad">
 <h3>Bad</h3>
+
+<div class="options-api">
 
 ```js
 props: {
@@ -542,8 +542,21 @@ props: {
 }
 ```
 
+</div>
+
+<div class="composition-api">
+
+```js
+const props = defineProps({
+  'greeting-text': String
+})
+```
+
+</div>
+
 ```vue-html
-<WelcomeMessage greetingText="hi"/>
+// for in-DOM templates
+<welcome-message greetingText="hi"></welcome-message>
 ```
 
 </div>
@@ -551,23 +564,46 @@ props: {
 <div class="style-example style-example-good">
 <h3>Good</h3>
 
+<div class="options-api">
+
 ```js
 props: {
   greetingText: String
 }
 ```
 
-```vue-html
-<WelcomeMessage greeting-text="hi"/>
+</div>
+
+<div class="composition-api">
+
+```js
+const props = defineProps({
+  greetingText: String
+})
 ```
 
 </div>
 
-## Multi-attribute elements
+```vue-html
+// for SFC - please make sure your casing is consistent throughout the project
+// you can use either convention but we don't recommend mixing two different casing styles
+<WelcomeMessage greeting-text="hi"/>
+// or
+<WelcomeMessage greetingText="hi"/>
+```
+
+```vue-html
+// for in-DOM templates
+<welcome-message greeting-text="hi"></welcome-message>
+```
+
+</div>
+
+## Multi-attribute elements {#multi-attribute-elements}
 
 **Elements with multiple attributes should span multiple lines, with one attribute per line.**
 
-In JavaScript, splitting objects with multiple properties over multiple lines is widely considered a good convention, because it's much easier to read. Our templates and [JSX](/guide/extras/render-function.html#jsx-tsx) deserve the same consideration.
+In JavaScript, splitting objects with multiple properties over multiple lines is widely considered a good convention, because it's much easier to read. Our templates and [JSX](/guide/extras/render-function#jsx-tsx) deserve the same consideration.
 
 <div class="style-example style-example-bad">
 <h3>Bad</h3>
@@ -602,7 +638,7 @@ In JavaScript, splitting objects with multiple properties over multiple lines is
 
 </div>
 
-## Simple expressions in templates
+## Simple expressions in templates {#simple-expressions-in-templates}
 
 **Component templates should only include simple expressions, with more complex expressions refactored into computed properties or methods.**
 
@@ -629,6 +665,8 @@ Complex expressions in your templates make them less declarative. We should stri
 {{ normalizedFullName }}
 ```
 
+<div class="options-api">
+
 ```js
 // The complex expression has been moved to a computed property
 computed: {
@@ -642,7 +680,23 @@ computed: {
 
 </div>
 
-## Simple computed properties
+<div class="composition-api">
+
+```js
+// The complex expression has been moved to a computed property
+const normalizedFullName = computed(() =>
+  fullName.value
+    .split(' ')
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(' ')
+)
+```
+
+</div>
+
+</div>
+
+## Simple computed properties {#simple-computed-properties}
 
 **Complex computed properties should be split into as many simpler properties as possible.**
 
@@ -667,6 +721,8 @@ Simpler, well-named computed properties are:
 <div class="style-example style-example-bad">
 <h3>Bad</h3>
 
+<div class="options-api">
+
 ```js
 computed: {
   price() {
@@ -681,8 +737,23 @@ computed: {
 
 </div>
 
+<div class="composition-api">
+
+```js
+const price = computed(() => {
+  const basePrice = manufactureCost.value / (1 - profitMargin.value)
+  return basePrice - basePrice * (discountPercent.value || 0)
+})
+```
+
+</div>
+
+</div>
+
 <div class="style-example style-example-good">
 <h3>Good</h3>
+
+<div class="options-api">
 
 ```js
 computed: {
@@ -702,7 +773,25 @@ computed: {
 
 </div>
 
-## Quoted attribute values
+<div class="composition-api">
+
+```js
+const basePrice = computed(
+  () => manufactureCost.value / (1 - profitMargin.value)
+)
+
+const discount = computed(
+  () => basePrice.value * (discountPercent.value || 0)
+)
+
+const finalPrice = computed(() => basePrice.value - discount.value)
+```
+
+</div>
+
+</div>
+
+## Quoted attribute values {#quoted-attribute-values}
 
 **Non-empty HTML attribute values should always be inside quotes (single or double, whichever is not used in JS).**
 
@@ -734,7 +823,7 @@ While attribute values without any spaces are not required to have quotes in HTM
 
 </div>
 
-## Directive shorthands
+## Directive shorthands {#directive-shorthands}
 
 **Directive shorthands (`:` for `v-bind:`, `@` for `v-on:` and `#` for `v-slot`) should be used always or never.**
 
