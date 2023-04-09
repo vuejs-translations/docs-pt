@@ -6,13 +6,13 @@ outline: deep
 
 Como é que a Vue pega um modelo de marcação e transforma-o em nós de DOM reais? Como é que a Vue atualiza estes nós de DOM de maneira efetiva? Nós tentaremos lançar alguma luz sobre estas questões nesta seção mergulhando para dentro do mecanismo interno de interpretação da Vue.
 
-## Virtual DOM {#virtual-dom}
+## DOM Virtual {#virtual-dom}
 
-You have probably heard about the term "virtual DOM", which Vue's rendering system is based upon.
+Tu provavelmente tens ouvido o termo "DOM virtual" ou "virtual DOM", que é sobre o qual o sistema de interpretação da Vue é baseado.
 
-The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM. The concept was pioneered by [React](https://reactjs.org/), and has been adapted in many other frameworks with different implementations, including Vue.
+O DOM virtual é um conceito de programação onde uma representação ideal, ou “virtual” de uma Interface de Utilizador é mantida em memória e sincronizada com o DOM “real”. O conceito foi explorado pela [React](https://reactjs.org/), e tem sido adaptado em muitas outras abstrações com diferentes implementações, incluindo a Vue.
 
-Virtual DOM is more of a pattern than a specific technology, so there is no one canonical implementation. We can illustrate the idea using a simple example:
+O DOM virtual é mais um padrão do que uma tecnologia específica, assim não existe uma implementação canónica. Nós podemos ilustrar a ideia usando um exemplo simples:
 
 ```js
 const vnode = {
@@ -21,18 +21,18 @@ const vnode = {
     id: 'hello'
   },
   children: [
-    /* more vnodes */
+    /* mais vnodes */
   ]
 }
 ```
 
-Here, `vnode` is a plain JavaScript object (a "virtual node") representing a `<div>` element. It contains all the information that we need to create the actual element. It also contains more children vnodes, which makes it the root of a virtual DOM tree.
+Aqui, o `vnode` é um objeto simples de JavaScript (um "nó virtual") representando um elemento `<div>`. Ele contém todas as informações que precisamos para criar o elemento verdadeiro. Ele também contém `vnodes` filhos, o que o torna a raiz de uma árvore de DOM virtual.
 
-A runtime renderer can walk a virtual DOM tree and construct a real DOM tree from it. This process is called **mount**.
+Um interpretador de tempo de execução pode percorrer uma árvore de DOM virtual e construir um árvore de DOM real a partir dela. Este processo é chamado de **montagem**.
 
-If we have two copies of virtual DOM trees, the renderer can also walk and compare the two trees, figuring out the differences, and apply those changes to the actual DOM. This process is called **patch**, also known as "diffing" or "reconciliation".
+Se tiveres duas copias de árvores de DOM virtual, o interpretador também pode percorrer e comparar as duas árvores descobrindo as diferenças, e aplicar estas mudanças ao DOM real. Este processo é chamado de **remendo**, também conhecido como "diferenciação" ou "reconciliação".
 
-The main benefit of virtual DOM is that it gives the developer the ability to programmatically create, inspect and compose desired UI structures in a declarative way, while leaving the direct DOM manipulation to the renderer.
+O principal benefício do DOM virtual é que dá ao programador a habilidade de criar, inspecionar e compor programaticamente as estruturas de Interface de Utilizador desejadas de uma maneira declarativa, enquanto deixa a manipulação direta do DOM por conta do interpretador.
 
 ## Render Pipeline {#render-pipeline}
 
