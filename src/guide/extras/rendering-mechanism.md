@@ -34,17 +34,17 @@ Se tiveres duas copias de árvores de DOM virtual, o interpretador também pode 
 
 O principal benefício do DOM virtual é que dá ao programador a habilidade de criar, inspecionar e compor programaticamente as estruturas de Interface de Utilizador desejadas de uma maneira declarativa, enquanto deixa a manipulação direta do DOM por conta do interpretador.
 
-## Render Pipeline {#render-pipeline}
+## Conduta de Interpretação {#render-pipeline}
 
-At the high level, this is what happens when a Vue component is mounted:
+Em alto nível, isto é o que acontece quando um componente de Vue é montado:
 
-1. **Compile**: Vue templates are compiled into **render functions**: functions that return virtual DOM trees. This step can be done either ahead-of-time via a build step, or on-the-fly by using the runtime compiler.
+1. **Compilação**: Os modelos de marcação de Vue são compilado em **funções de interpretação**: funções que retornam árvores de DOM virtual. Esta etapa pode ser feita ou antecipadamente através de uma etapa de construção, ou durante o despacho usando o compilador do tempo de execução.
 
-2. **Mount**: The runtime renderer invokes the render functions, walks the returned virtual DOM tree, and creates actual DOM nodes based on it. This step is performed as a [reactive effect](./reactivity-in-depth), so it keeps track of all reactive dependencies that were used.
+2. **Montagem**: O interpretador do momento da execução invoca as funções de interpretação, percorre a árvore de DOM virtual retorna e cria os nós de DOM real baseado nela. Esta etapa é realizada como [efeito reativo](./reactivity-in-depth), assim preserva todos as dependências reativas que foram usadas.
 
-3. **Patch**: When a dependency used during mount changes, the effect re-runs. This time, a new, updated Virtual DOM tree is created. The runtime renderer walks the new tree, compares it with the old one, and applies necessary updates to the actual DOM.
+3. **Remendo**: Quando uma dependência usada durante a montagem mudar, o efeito é executado novamente. Desta vez, uma nova, árvore de DOM virtual atualizada é criada. O interpretador do momento da execução percorre a nova árvore, compara-a com a antiga, e aplica as atualizações necessárias ao DOM real.
 
-![render pipeline](./images/render-pipeline.png)
+![conduta de interpretação](./images/render-pipeline.png)
 
 <!-- https://www.figma.com/file/elViLsnxGJ9lsQVsuhwqxM/Rendering-Mechanism -->
 
