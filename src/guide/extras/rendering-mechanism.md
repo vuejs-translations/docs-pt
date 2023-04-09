@@ -48,17 +48,17 @@ Em alto nível, isto é o que acontece quando um componente de Vue é montado:
 
 <!-- https://www.figma.com/file/elViLsnxGJ9lsQVsuhwqxM/Rendering-Mechanism -->
 
-## Templates vs. Render Functions {#templates-vs-render-functions}
+## Modelos de Marcação vs. Funções de Interpretação {#templates-vs-render-functions}
 
-Vue templates are compiled into virtual DOM render functions. Vue also provides APIs that allow us to skip the template compilation step and directly author render functions. Render functions are more flexible than templates when dealing with highly dynamic logic, because you can work with vnodes using the full power of JavaScript.
+Os modelos de marcação são compilados para as funções de interpretação do DOM virtual. A Vue também fornece APIs que permitem-nos ignorar a etapa de compilação do modelo de marcação e escrever diretamente as funções de interpretação. As funções de interpretação são mais flexíveis do que os modelos de marcação quando lidamos com lógica altamente dinâmica, porque podes trabalhar com `vnodes` usando o poder máximo da JavaScript.
 
-So why does Vue recommend templates by default? There are a number of reasons:
+Então porquê que a Vue recomenda os modelos de marcação por padrão? Existem um número de razões:
 
-1. Templates are closer to actual HTML. This makes it easier to reuse existing HTML snippets, apply accessibility best practices, style with CSS, and for designers to understand and modify.
+1. Os modelos de marcação estão mais próximo do HTML real. Isto torna-o muito mais fácil de reutilizar trechos de HTML existentes, aplicar boas práticas de acessibilidade, estilizar com a CSS, e para os desenhadores entenderem e modificarem.
 
-2. Templates are easier to statically analyze due to their more deterministic syntax. This allows Vue's template compiler to apply many compile-time optimizations to improve the performance of the virtual DOM (which we will discuss below).
+2. Os modelos de marcação são muito mais fáceis de analisar estaticamente devido a sua sintaxe mais determinística. Isto permite o compilador de modelo de marcação da Vue aplicar muitas otimizações no momento da compilação para melhorar o desempenho do DOM virtual (o qual discutiremos abaixo).
 
-In practice, templates are sufficient for most use cases in applications. Render functions are typically only used in reusable components that need to deal with highly dynamic rendering logic. Render function usage is discussed in more detail in [Render Functions & JSX](./render-function).
+Na prática, os modelos de marcação são suficientes para maioria dos casos de uso nas aplicações. As funções de interpretação são normalmente apenas usadas em componentes reutilizáveis que precisam de lidar com lógica de apresentação altamente dinâmica. O uso da função de interpretação é discutido em mais detalhes na seção [Funções de Interpretação & JSX](./render-function).
 
 ## Compiler-Informed Virtual DOM {#compiler-informed-virtual-dom}
 
