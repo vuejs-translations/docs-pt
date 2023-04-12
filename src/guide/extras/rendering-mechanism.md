@@ -60,13 +60,13 @@ Então porquê que a Vue recomenda os modelos de marcação por padrão? Existem
 
 Na prática, os modelos de marcação são suficientes para maioria dos casos de uso nas aplicações. As funções de interpretação são normalmente apenas usadas em componentes reutilizáveis que precisam de lidar com lógica de apresentação altamente dinâmica. O uso da função de interpretação é discutido em mais detalhes na seção [Funções de Interpretação & JSX](./render-function).
 
-## Compiler-Informed Virtual DOM {#compiler-informed-virtual-dom}
+## DOM Virtual Informado Pelo Compilador {#compiler-informed-virtual-dom}
 
-The virtual DOM implementation in React and most other virtual-DOM implementations are purely runtime: the reconciliation algorithm cannot make any assumptions about the incoming virtual DOM tree, so it has to fully traverse the tree and diff the props of every vnode in order to ensure correctness. In addition, even if a part of the tree never changes, new vnodes are always created for them on each re-render, resulting in unnecessary memory pressure. This is one of the most criticized aspect of virtual DOM: the somewhat brute-force reconciliation process sacrifices efficiency in return for declarativeness and correctness.
+A implementação do DOM virtual em React e a maioria das outras implementações do DOM virtual são puramente de tempo de execução: o algoritmo de reconciliação não pode fazer quaisquer suposições sobre a futura árvore do DOM virtual, assim tem de atravessar completamente a árvore e diferenciar as propriedades de cada `vnode` para assegurar correção. Além disto, mesmo se uma parte da árvore nunca mudar, os novos `vnodes` sempre serão criados para eles em cada re-interpretação, resultando em pressão de memória desnecessária. Isto é, um dos aspetos mais criticados do DOM virtual: o um tanto de processo de reconciliação de força bruta sacrifica a eficiência em troca da declaritividade e correção.
 
-But it doesn't have to be that way. In Vue, the framework controls both the compiler and the runtime. This allows us to implement many compile-time optimizations that only a tightly-coupled renderer can take advantage of. The compiler can statically analyze the template and leave hints in the generated code so that the runtime can take shortcuts whenever possible. At the same time, we still preserve the capability for the user to drop down to the render function layer for more direct control in edge cases. We call this hybrid approach **Compiler-Informed Virtual DOM**.
+Mas isto não tem de ser desta maneira. Na Vue, a abstração controla tanto o compilador quanto o tempo de execução. Isto permite-nos implementar várias otimizações em tempo de compilação que apenas um interpretador emparelhado com firmeza pode tirar partido. O compilador pode analisar estaticamente o modelo de marcação e deixar sugestões no código gerado para que o tempo de execução possa pegar atalhos sempre que possível. Ao mesmo tempo, continuamos a preserver a capacidade do utilizador de largar para a camada da função de interpretação para controlo mais direto em casos extremos. Nós chamamos disto abordagem híbrida **DOM Virtual Informado Pelo Compilador**.
 
-Below, we will discuss a few major optimizations done by the Vue template compiler to improve the virtual DOM's runtime performance.
+Abaixo, discutiremos algumas das otimizações principais feitas pelo compilador de modelo de marcação da Vue para melhorar o desempenho de tempo de execução do DOM virtual.
 
 ### Static Hoisting {#static-hoisting}
 
