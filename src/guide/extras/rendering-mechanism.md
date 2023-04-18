@@ -126,8 +126,8 @@ A Vue também codifica o tipo de filhos que um `vnode` tem. Por exemplo, um mode
 ```js{4}
 export function render() {
   return (_openBlock(), _createElementBlock(_Fragment, null, [
-    /* filhos */
-  ], 64 /* FRAGMENTO_ESTÁVEL */))
+    /* children */
+  ], 64 /* STABLE_FRAGMENT */))
 }
 ```
 
