@@ -68,42 +68,42 @@ Mas isto não tem de ser desta maneira. Na Vue, a abstração controla tanto o c
 
 Abaixo, discutiremos algumas das otimizações principais feitas pelo compilador de modelo de marcação da Vue para melhorar o desempenho de tempo de execução do DOM virtual.
 
-### Static Hoisting {#static-hoisting}
+### Içamento Estático {#static-hoisting}
 
-Quite often there will be parts in a template that do not contain any dynamic bindings:
+Muito frequentemente existirão partes num modelo de marcação que não contém quaisquer vínculos dinâmicos:
 
 ```vue-html{2-3}
 <div>
-  <div>foo</div> <!-- hoisted -->
-  <div>bar</div> <!-- hoisted -->
+  <div>foo</div> <!-- içado -->
+  <div>bar</div> <!-- içado -->
   <div>{{ dynamic }}</div>
 </div>
 ```
 
-[Inspect in Template Explorer](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2PmZvbzwvZGl2PiA8IS0tIGhvaXN0ZWQgLS0+XG4gIDxkaXY+YmFyPC9kaXY+IDwhLS0gaG9pc3RlZCAtLT5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj5cbiIsIm9wdGlvbnMiOnsiaG9pc3RTdGF0aWMiOnRydWV9fQ==)
+[Inspecionar no Explorador de Modelo de Marcação](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2PmZvbzwvZGl2PlxuICA8ZGl2PmJhcjwvZGl2PlxuICA8ZGl2Pnt7IGR5bmFtaWMgfX08L2Rpdj5cbjwvZGl2PiIsInNzciI6ZmFsc2UsIm9wdGlvbnMiOnsiaG9pc3RTdGF0aWMiOnRydWV9fQ==)
 
-The `foo` and `bar` divs are static - re-creating vnodes and diffing them on each re-render is unnecessary. The Vue compiler automatically hoists their vnode creation calls out of the render function, and reuses the same vnodes on every render. The renderer is also able to completely skip diffing them when it notices the old vnode and the new vnode are the same one.
+Os divisores `foo` e `bar` são estáticos - a recriação de `vnodes` e a diferenciação deles em cada reinterpretação é desnecessária. O compilador da Vue iça automaticamente as chamadas de criação de seus `vnode` fora da função de interpretação, e reutiliza os mesmos `vnodes` em toda interpretação. O interpretador também é capaz de ignorar complemente a diferenciação deles quando notar que o antigo `vnode` e o novo `vnode` o mesmo.
 
-In addition, when there are enough consecutive static elements, they will be condensed into a single "static vnode" that contains the plain HTML string for all these nodes ([Example](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImZvb1wiPmZvbzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj4iLCJzc3IiOmZhbHNlLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)). These static vnodes are mounted by directly setting `innerHTML`. They also cache their corresponding DOM nodes on initial mount - if the same piece of content is reused elsewhere in the app, new DOM nodes are created using native `cloneNode()`, which is extremely efficient.
+Além disto, quando existirem elementos estáticos consecutivos suficientes, serão condensados em um único "`vnode` estático" que contém a sequência de caracteres de HTML simples para todos estes nós ([Exemplo](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImZvb1wiPmZvbzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj4iLCJzc3IiOmZhbHNlLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)). Estes `vnodes` estáticos são montados definindo `innerHTML` diretamente. Eles também armazenam os seus nós de DOM correspondentes para consulta imediata na montagem inicial - se o pedaço de conteúdo for reutilizado noutro lado na aplicação, novos nós de DOM são criados usando `cloneNode()` nativo, o qual é extremamente eficiente.
 
-### Patch Flags {#patch-flags}
+### Opções de Remendo {#patch-flags}
 
-For a single element with dynamic bindings, we can also infer a lot of information from it at compile time:
+Para um único elemento com vínculos dinâmicos, também podemos inferir muita informação a partir deste em tempo de compilação:
 
 ```vue-html
-<!-- class binding only -->
+<!-- apenas vinculação de classe -->
 <div :class="{ active }"></div>
 
-<!-- id and value bindings only -->
+<!-- apenas vínculos de identificador e valor -->
 <input :id="id" :value="value">
 
-<!-- text children only -->
+<!-- apenas filhos de texto -->
 <div>{{ dynamic }}</div>
 ```
 
-[Inspect in Template Explorer](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2IDpjbGFzcz1cInsgYWN0aXZlIH1cIj48L2Rpdj5cblxuPGlucHV0IDppZD1cImlkXCIgOnZhbHVlPVwidmFsdWVcIj5cblxuPGRpdj57eyBkeW5hbWljIH19PC9kaXY+Iiwib3B0aW9ucyI6e319)
+[Inspecionar no Explorador de Modelo de Marcação](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2IDpjbGFzcz1cInsgYWN0aXZlIH1cIj48L2Rpdj5cblxuPGlucHV0IDppZD1cImlkXCIgOnZhbHVlPVwidmFsdWVcIj5cblxuPGRpdj57eyBkeW5hbWljIH19PC9kaXY+Iiwib3B0aW9ucyI6e319)
 
-When generating the render function code for these elements, Vue encodes the type of update each of them needs directly in the vnode creation call:
+Quando estiveres a gerar o código da função de interpretação para estes elementos, a Vue codifica o tipo de atualização que cada uma delas precisa diretamente na chamada de criação de `vnode`:
 
 ```js{3}
 createElementVNode("div", {
@@ -111,17 +111,17 @@ createElementVNode("div", {
 }, null, 2 /* CLASS */)
 ```
 
-The last argument, `2`, is a [patch flag](https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). An element can have multiple patch flags, which will be merged into a single number. The runtime renderer can then check against the flags using [bitwise operations](https://en.wikipedia.org/wiki/Bitwise_operation) to determine whether it needs to do certain work:
+O último argumento, `2`, é uma [opção de remendo](https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). Um elemento pode ter várias opções de remendo, as quais serão combinadas em um único número. O interpretador de tempo de execução pode então verificar contra as opções usando [operações de bitwise](https://en.wikipedia.org/wiki/Bitwise_operation) para determinar se precisa de fazer certo trabalho:
 
 ```js
 if (vnode.patchFlag & PatchFlags.CLASS /* 2 */) {
-  // update the element's class
+  // atualiza a classe do elemento
 }
 ```
 
-Bitwise checks are extremely fast. With the patch flags, Vue is able to do the least amount of work necessary when updating elements with dynamic bindings.
+As verificações de bitwise são extremamente rápida. Com as opções de remendo, a Vue é capaz de fazer a quantidade mínima de trabalho necessário quando estiveres a atualizar os elementos com vínculos dinâmicos.
 
-Vue also encodes the type of children a vnode has. For example, a template that has multiple root nodes is represented as a fragment. In most cases, we know for sure that the order of these root nodes will never change, so this information can also be provided to the runtime as a patch flag:
+A Vue também codifica o tipo de filhos que um `vnode` tem. Por exemplo, um modelo de marcação que tem vários nós de raiz é representado como um fragmento. Na maioria dos casos, sabemos com certeza que a ordem destes nós de raiz nunca mudarão, assim esta informação também pode ser fornecida para o executor como opção de remendo:
 
 ```js{4}
 export function render() {
@@ -131,11 +131,11 @@ export function render() {
 }
 ```
 
-The runtime can thus completely skip child-order reconciliation for the root fragment.
+O executor pode assim ignorar complemente a reconciliação de ordem do filho para o fragmento de raiz.
 
-### Tree Flattening {#tree-flattening}
+### Aplainamento de Árvore {#tree-flattening}
 
-Taking another look at the generated code from the previous example, you'll notice the root of the returned virtual DOM tree is created using a special `createElementBlock()` call:
+Dando uma outra vista de olhos no código gerado pelo exemplo anterior, notarás que a raiz da árvore de DOM virtual retornada é criada usando uma chamada especial de `createElementBlock()`:
 
 ```js{2}
 export function render() {
@@ -145,48 +145,48 @@ export function render() {
 }
 ```
 
-Conceptually, a "block" is a part of the template that has stable inner structure. In this case, the entire template has a single block because it does not contain any structural directives like `v-if` and `v-for`.
+Conceitualmente, um "bloco" é uma parte do modelo de marcação que tem estrutura interna estável. Neste caso, modelo de marcação inteiro tem um único bloco porque não contém quaisquer diretivas estruturais como `v-if` e `v-for`.
 
-Each block tracks any descendant nodes (not just direct children) that have patch flags. For example:
+Cada bloco rastreia quaisquer nós descendente (não apenas filhos diretos) que têm opções de remendo. Por exemplo:
 
 ```vue-html{3,5}
-<div> <!-- root block -->
-  <div>...</div>         <!-- not tracked -->
-  <div :id="id"></div>   <!-- tracked -->
-  <div>                  <!-- not tracked -->
-    <div>{{ bar }}</div> <!-- tracked -->
+<div> <!-- bloco de raiz -->
+  <div>...</div>         <!-- não rastreado -->
+  <div :id="id"></div>   <!-- rastreado -->
+  <div>                  <!-- não rastreado-->
+    <div>{{ bar }}</div> <!-- rastreado -->
   </div>
 </div>
 ```
 
-The result is a flattened array that contains only the dynamic descendant nodes:
+O resultado é um arranjo aplanado que contém apenas os nós descendentes dinâmicos:
 
 ```
-div (block root)
-- div with :id binding
-- div with {{ bar }} binding
+div (raiz do bloco)
+- div com vínculo de :id
+- div com vínculo de {{ bar }}
 ```
 
-When this component needs to re-render, it only needs to traverse the flattened tree instead of the full tree. This is called **Tree Flattening**, and it greatly reduces the number of nodes that need to be traversed during virtual DOM reconciliation. Any static parts of the template are effectively skipped.
+Quando este componente precisa de re-apresentar, apenas precisa de atravessar a árvore aplanada ao invés da árvore completa. Isto é chamado de **Aplainamento de Árvore**, e reduz grandemente o número de nós que precisa ser atravessado durante a reconciliação do DOM virtual. Quaisquer partes estáticas do modelo de marcação são efetivamente ignoradas.
 
-`v-if` and `v-for` directives will create new block nodes:
+As diretivas `v-if` e `v-for` criarão novos nós de bloco:
 
 ```vue-html
-<div> <!-- root block -->
+<div> <!-- bloco de raiz -->
   <div>
-    <div v-if> <!-- if block -->
+    <div v-if> <!-- bloco if -->
       ...
     <div>
   </div>
 </div>
 ```
 
-A child block is tracked inside the parent block's array of dynamic descendants. This retains a stable structure for the parent block.
+Um bloco filho é rastreado dentro do arranjo de descendentes dinâmicos do bloco pai. Isto conserva uma estrutura estável para o bloco pai.
 
-### Impact on SSR Hydration {#impact-on-ssr-hydration}
+### Impacto na Hidratação de SSR {#impact-on-ssr-hydration}
 
-Both patch flags and tree flattening also greatly improve Vue's [SSR Hydration](/guide/scaling-up/ssr#client-hydration) performance:
+Tanto as opções de remendo quanto o aplainamento de árvore também melhoram grandemente o desempenho da [Hidratação de SSR](/guide/scaling-up/ssr.html#client-hydration) da Vue:
 
-- Single element hydration can take fast paths based on the corresponding vnode's patch flag.
+- A hidratação de um único elemento pode pegar caminhos rápidos baseado na opção de remendo do `vnode` correspondente.
 
-- Only block nodes and their dynamic descendants need to be traversed during hydration, effectively achieving partial hydration at the template level.
+- Apenas nós de bloco e seus descendentes dinâmicos precisam de ser atravessados durante a hidratação, alcançando efetivamente a hidratação parcial no nível do modelo de marcação.
