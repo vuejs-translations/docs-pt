@@ -1,4 +1,4 @@
-# Tipos de Utilitário de TypeScript {#utility-types}
+# Tipos de Utilitário {#utility-types}
 
 :::info
 Esta página lista apenas alguns tipos de utilitários comumente usados ​​que podem precisar de explicação de uso. Para obter uma lista completa dos tipos exportados, consulte o [código fonte](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/index.ts#L131).
@@ -6,7 +6,7 @@ Esta página lista apenas alguns tipos de utilitários comumente usados ​​qu
 
 ## PropType\<T> {#proptype-t}
 
-Usado para anotar uma propriedade com tipos mais avançados ao usar declarações de pro em tempo de execução.
+Usado para anotar uma propriedade com tipos mais avançados ao usar declarações de propriedades em tempo de execução.
 
 - **Exemplo**
 
