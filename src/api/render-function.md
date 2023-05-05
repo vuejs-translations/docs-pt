@@ -232,7 +232,7 @@ Para resolver manualmente um componente registrado por nome.
 
 ## resolveDirective() {#resolvedirective}
 
-For manually resolving a registered directive by name.
+Para resolver manualmente uma diretiva registrada por nome.
 
 - **Type**
 
@@ -242,17 +242,17 @@ For manually resolving a registered directive by name.
 
 - **Detalhes**
 
-  **Note: you do not need this if you can import the component directly.**
+  **Nota: você não precisa disso se pode importar o componente diretamente.**
 
-  `resolveDirective()` must be called inside<span class="composition-api"> either `setup()` or</span> the render function in order to resolve from the correct component context.
+  `resolveDirective()` deve ser chamado dentro <span class="composition-api"> de `setup()` ou</span> da função de renderização para resolver a partir do contexto de componente correto.
 
-  If the directive is not found, a runtime warning will be emitted, and the function returns `undefined`.
+  Se a diretiva não for encontrada, um aviso de tempo de execução será emitido e a função retornará `undefined`.
 
-- **Veja também:** [Guide - Render Functions - Custom Directives](/guide/extras/render-function.html#custom-directives)
+- **Veja também:** [Guia - Funções de renderização - Diretivas customizadas](/guide/extras/render-function.html#custom-directives)
 
 ## withDirectives() {#withdirectives}
 
-For adding custom directives to vnodes.
+Para adicionar diretiva customizada ao vnodes.
 
 - **Type**
 
@@ -273,14 +273,14 @@ For adding custom directives to vnodes.
 
 - **Detalhes**
 
-  Wraps an existing vnode with custom directives. The second argument is an array of custom directives. Each custom directive is also represented as an array in the form of `[Directive, value, argument, modifiers]`. Tailing elements of the array can be omitted if not needed.
+  Envolve um vnode existente com diretivas personalizadas. O segundo argumento é uma matriz de diretivas personalizadas. Cada diretiva personalizada também é representada como uma matriz na forma de `[Directive, value, argument, modifiers]`. Os elementos finais da matriz podem ser omitidos se não forem necessários.
 
 - **Exemplo**
 
   ```js
   import { h, withDirectives } from 'vue'
 
-  // a custom directive
+  // uma diretiva customizada
   const pin = {
     mounted() {
       /* ... */
@@ -296,11 +296,11 @@ For adding custom directives to vnodes.
   ])
   ```
 
-- **Veja também:** [Guide - Render Functions - Custom Directives](/guide/extras/render-function.html#custom-directives)
+- **Veja também:** [Guia - Funções de Renderização - Diretivas Customizadas](/guide/extras/render-function.html#custom-directives)
 
 ## withModifiers() {#withmodifiers}
 
-For adding built-in [`v-on` modifiers](/guide/essentials/event-handling.html#event-modifiers) to an event handler function.
+Para adicionar [modificadores `v-on`](/guide/essentials/event-handling.html#event-modifiers) integrados a uma função de manipulação de eventos.
 
 - **Type**
 
@@ -314,11 +314,11 @@ For adding built-in [`v-on` modifiers](/guide/essentials/event-handling.html#eve
   import { h, withModifiers } from 'vue'
 
   const vnode = h('button', {
-    // equivalent of v-on.stop.prevent
+    // equivalente a v-on.stop.prevent
     onClick: withModifiers(() => {
       // ...
     }, ['stop', 'prevent'])
   })
   ```
 
-- **Veja também:** [Guide - Render Functions - Event Modifiers](/guide/extras/render-function.html#event-modifiers)
+- **Veja também:** [Guia - Funções de Renderização - Modificadores de evento](/guide/extras/render-function.html#event-modifiers)
