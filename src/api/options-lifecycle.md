@@ -1,12 +1,12 @@
-# Options: Lifecycle {#options-lifecycle}
+# Options: Ciclo de Vida {#options-lifecycle}
 
-:::info See also
-For shared usage of lifecycle hooks, see [Guide - Lifecycle Hooks](/guide/essentials/lifecycle.html)
+:::info Veja também
+Para uso compartilhado de ganchos de ciclo de vida, consulte [Guia - Ganchos de Ciclo de Vida](/guide/essentials/lifecycle.html)
 :::
 
 ## beforeCreate {#beforecreate}
+Chamado quando a instância é inicializada.
 
-Called when the instance is initialized.
 
 - **Type**
 
@@ -16,15 +16,15 @@ Called when the instance is initialized.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  Called immediately when the instance is initialized, after props resolution, before processing other options such as `data()` or `computed`.
+  Chamado imediatamente quando a instância é inicializada, após a resolução das props, antes de processar outras opções como `data()` ou `computed`
 
-  Note that the `setup()` hook of Composition API is called before any Options API hooks, even `beforeCreate()`.
+  Observe que o gancho `setup()` da API de composição é chamado antes de qualquer gancho da API de opções, mesmo `beforeCreate()`
 
 ## created {#created}
 
-Called after the instance has finished processing all state-related options.
+Chamado depois que a instância concluiu o processamento de todas as opções relacionadas ao estado.
 
 - **Type**
 
@@ -34,13 +34,13 @@ Called after the instance has finished processing all state-related options.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  When this hooks is called, the following have been set up: reactive data, computed properties, methods, and watchers. However, the mounting phase has not been started, and the `$el` property will not be available yet.
+  Quando esses ganchos são chamados, o seguinte foi configurado: dados reativos, propriedades computadas, métodos e observadores. No entanto, a fase de montagem ainda não foi iniciada e a propriedade `$el` ainda não estará disponível.
 
 ## beforeMount {#beforemount}
 
-Called right before the component is to be mounted.
+Chamado logo antes de o componente ser montado.
 
 - **Type**
 
@@ -50,15 +50,15 @@ Called right before the component is to be mounted.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  When this hook is called, the component has finished setting up its reactive state, but no DOM nodes have been created yet. It is about to execute its DOM render effect for the first time.
+  Quando esse gancho é chamado, o componente terminou de configurar seu estado reativo, mas nenhum nó DOM foi criado ainda. Ele está prestes a executar seu efeito de renderização DOM pela primeira vez.
 
-  **This hook is not called during server-side rendering.**
+  **Este gancho não é chamado durante a renderização do lado do servidor.**
 
 ## mounted {#mounted}
 
-Called after the component has been mounted.
+Chamado depois que o componente foi montado.
 
 - **Type**
 
@@ -68,21 +68,21 @@ Called after the component has been mounted.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  A component is considered mounted after:
+  Um componente é considerado montado após:
 
-  - All of its synchronous child components have been mounted (does not include async components or components inside `<Suspense>` trees).
+  - Todos os seus componentes filhos síncronos foram montados (não inclui componentes assíncronos ou componentes dentro das árvores `<Suspense>`).
 
-  - Its own DOM tree has been created and inserted into the parent container. Note it only guarantees that the component's DOM tree is in-document if the application's root container is also in-document.
+  - Sua própria árvore DOM foi criada e inserida no contêiner pai. Observe que isso só garante que a árvore DOM do componente esteja no documento se o contêiner raiz do aplicativo também estiver no documento.
 
-  This hook is typically used for performing side effects that need access to the component's rendered DOM, or for limiting DOM-related code to the client in a [server-rendered application](/guide/scaling-up/ssr.html).
+  Esse gancho é normalmente usado para executar efeitos colaterais que precisam de acesso ao DOM renderizado do componente ou para limitar o código relacionado ao DOM ao cliente em um [aplicativo renderizado pelo servidor](/guide/scaling-up/ssr.html).
 
-  **This hook is not called during server-side rendering.**
+  **Este gancho não é chamado durante a renderização do lado do servidor.**
 
 ## beforeUpdate {#beforeupdate}
 
-Called right before the component is about to update its DOM tree due to a reactive state change.
+Chamado logo antes do componente estar prestes a atualizar sua árvore DOM devido a uma mudança de estado reativo.
 
 - **Type**
 
@@ -92,15 +92,15 @@ Called right before the component is about to update its DOM tree due to a react
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  This hook can be used to access the DOM state before Vue updates the DOM. It is also safe to modify component state inside this hook.
+  Este gancho pode ser usado para acessar o estado do DOM antes que o Vue atualize o DOM. Também é seguro modificar o estado do componente dentro deste gancho.
 
-  **This hook is not called during server-side rendering.**
+  **Este gancho não é chamado durante a renderização do lado do servidor.**
 
 ## updated {#updated}
 
-Called after the component has updated its DOM tree due to a reactive state change.
+Chamado depois que o componente atualizou sua árvore DOM devido a uma mudança de estado reativo.
 
 - **Type**
 
@@ -110,21 +110,21 @@ Called after the component has updated its DOM tree due to a reactive state chan
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  A parent component's updated hook is called after that of its child components.
+  O gancho atualizado de um componente pai é chamado depois de seus componentes filhos.
 
-  This hook is called after any DOM update of the component, which can be caused by different state changes. If you need to access the updated DOM after a specific state change, use [nextTick()](/api/general.html#nexttick) instead.
+  Esse gancho é chamado após qualquer atualização do DOM do componente, que pode ser causada por diferentes alterações de estado. Se você precisar acessar o DOM atualizado após uma mudança de estado específica, use [nextTick()](/api/general.html#nexttick).
 
-  **This hook is not called during server-side rendering.**
+  **Este gancho não é chamado durante a renderização do lado do servidor.**
 
   :::warning
-  Do not mutate component state in the updated hook - this will likely lead to an infinite update loop!
+  Não modifique o estado do componente no gancho atualizado - isso provavelmente levará a um loop de atualização infinito!
   :::
 
 ## beforeUnmount {#beforeunmount}
 
-Called right before a component instance is to be unmounted.
+Chamado logo antes de uma instância de componente ser desmontada.
 
 - **Type**
 
@@ -134,15 +134,15 @@ Called right before a component instance is to be unmounted.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  When this hook is called, the component instance is still fully functional.
+  Quando esse gancho é chamado, a instância do componente ainda está totalmente funcional.
 
-  **This hook is not called during server-side rendering.**
+  **Este gancho não é chamado durante a renderização do lado do servidor.**
 
 ## unmounted {#unmounted}
 
-Called after the component has been unmounted.
+Chamado depois que o componente foi desmontado.
 
 - **Type**
 
@@ -152,21 +152,21 @@ Called after the component has been unmounted.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  A component is considered unmounted after:
+  Um componente é considerado desmontado após:
 
-  - All of its child components have been unmounted.
+  - Todos os seus componentes filhos foram desmontados.
 
-  - All of its associated reactive effects (render effect and computed / watchers created during `setup()`) have been stopped.
+  - Todos os seus efeitos reativos associados (efeito de renderização e computados / observadores criados durante `setup()`) foram interrompidos.
 
-  Use this hook to clean up manually created side effects such as timers, DOM event listeners or server connections.
+  Use este gancho para limpar efeitos colaterais criados manualmente, como temporizadores, ouvintes de eventos DOM ou conexões de servidor.
 
-  **This hook is not called during server-side rendering.**
+  **Este gancho não é chamado durante a renderização do lado do servidor.**
 
 ## errorCaptured {#errorcaptured}
 
-Called when an error propagating from a descendant component has been captured.
+Chamado quando um erro de propagação de um componente descendente foi capturado.
 
 - **Type**
 
@@ -181,39 +181,40 @@ Called when an error propagating from a descendant component has been captured.
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  Errors can be captured from the following sources:
+  Os erros podem ser capturados das seguintes fontes:
 
-  - Component renders
-  - Event handlers
-  - Lifecycle hooks
-  - `setup()` function
-  - Watchers
-  - Custom directive hooks
-  - Transition hooks
+  - Renderizações de componentes
+  - Manipuladores de eventos
+  - Ganchos de ciclo de vida
+  - função `setup()`
+  - Vigilantes
+  - Ganchos de diretiva personalizados
+  - Ganchos de transição
 
-  The hook receives three arguments: the error, the component instance that triggered the error, and an information string specifying the error source type.
+  O gancho recebe três argumentos: o erro, a instância do componente que acionou o erro e uma cadeia de informações especificando o tipo de origem do erro.
 
-  You can modify component state in `errorCaptured()` to display an error state to the user. However, it is important that the error state should not render the original content that caused the error; otherwise the component will be thrown into an infinite render loop.
+  Você pode modificar o estado do componente em `errorCaptured()` para exibir um estado de erro para o usuário. No entanto, é importante que o estado de erro não renderize o conteúdo original que causou o erro; caso contrário, o componente será lançado em um loop de renderização infinito.
 
-  The hook can return `false` to stop the error from propagating further. See error propagation details below.
+  O gancho pode retornar `false` para impedir que o erro se propague ainda mais. Veja os detalhes de propagação de erro abaixo.
 
-  **Error Propagation Rules**
 
-  - By default, all errors are still sent to the application-level [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) if it is defined, so that these errors can still be reported to an analytics service in a single place.
+  **Regras de Propagação de Erros**
 
-  - If multiple `errorCaptured` hooks exist on a component's inheritance chain or parent chain, all of them will be invoked on the same error, in the order of bottom to top. This is similar to the bubbling mechanism of native DOM events.
+  - Por padrão, todos os erros ainda são enviados para o nível do aplicativo [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) se for definido, para que esses erros ainda possam ser relatados a um serviço de análise em um único local.
 
-  - If the `errorCaptured` hook itself throws an error, both this error and the original captured error are sent to `app.config.errorHandler`.
+  - Se existirem vários ganchos `errorCaptured` na cadeia de herança ou na cadeia pai de um componente, todos eles serão invocados no mesmo erro, na ordem de baixo para cima. Isso é semelhante ao mecanismo de borbulhamento de eventos DOM nativos.
 
-  - An `errorCaptured` hook can return `false` to prevent the error from propagating further. This is essentially saying "this error has been handled and should be ignored." It will prevent any additional `errorCaptured` hooks or `app.config.errorHandler` from being invoked for this error.
+  - Se o próprio gancho `errorCaptured` lançar um erro, tanto este erro quanto o erro capturado original serão enviados para `app.config.errorHandler`.
+
+  - Um gancho `errorCaptured` pode retornar `false` para evitar que o erro se propague ainda mais. Isso significa essencialmente que "esse erro foi tratado e deve ser ignorado". Isso impedirá que quaisquer ganchos `errorCaptured` adicionais ou `app.config.errorHandler` sejam invocados para este erro.
 
 ## renderTracked <sup class="vt-badge dev-only" /> {#rendertracked}
 
-Called when a reactive dependency has been tracked by the component's render effect.
+Chamado quando uma dependência reativa foi rastreada pelo efeito de renderização do componente.
 
-**This hook is development-mode-only and not called during server-side rendering.**
+**Esse gancho é somente no modo de desenvolvimento e não é chamado durante a renderização do lado do servidor.**
 
 - **Type**
 
@@ -230,13 +231,13 @@ Called when a reactive dependency has been tracked by the component's render eff
   }
   ```
 
-- **See also:** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- **Veja também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth.html)
 
 ## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
 
-Called when a reactive dependency triggers the component's render effect to be re-run.
+Chamado quando uma dependência reativa aciona o efeito de renderização do componente para ser executado novamente.
 
-**This hook is development-mode-only and not called during server-side rendering.**
+**Esse gancho é somente no modo de desenvolvimento e não é chamado durante a renderização do lado do servidor.**
 
 - **Type**
 
@@ -256,13 +257,13 @@ Called when a reactive dependency triggers the component's render effect to be r
   }
   ```
 
-- **See also:** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- **Veja também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth.html)
 
 ## activated {#activated}
 
-Called after the component instance is inserted into the DOM as part of a tree cached by [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Chamado depois que a instância do componente é inserida no DOM como parte de uma árvore armazenada em cache por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
 
-**This hook is not called during server-side rendering.**
+**Este gancho não é chamado durante a renderização do lado do servidor.**
 
 - **Type**
 
@@ -272,13 +273,13 @@ Called after the component instance is inserted into the DOM as part of a tree c
   }
   ```
 
-- **See also:** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Veja também:** [Guia - Ciclo de vida da instância em cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
 
 ## deactivated {#deactivated}
 
-Called after the component instance is removed from the DOM as part of a tree cached by [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Chamado depois que a instância do componente é removida do DOM como parte de uma árvore armazenada em cache por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
 
-**This hook is not called during server-side rendering.**
+**Este gancho não é chamado durante a renderização do lado do servidor.**
 
 - **Type**
 
@@ -288,11 +289,11 @@ Called after the component instance is removed from the DOM as part of a tree ca
   }
   ```
 
-- **See also:** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Veja também:** [Guia - Ciclo de vida da instância em cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
 
 ## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
 
-Async function to be resolved before the component instance is to be rendered on the server.
+Função assíncrona a ser resolvida antes que a instância do componente seja renderizada no servidor.
 
 - **Type**
 
@@ -302,13 +303,13 @@ Async function to be resolved before the component instance is to be rendered on
   }
   ```
 
-- **Details**
+- **Detalhes**
 
-  If the hook returns a Promise, the server renderer will wait until the Promise is resolved before rendering the component.
+  Se o gancho retornar uma promessa, o renderizador do servidor aguardará até que a promessa seja resolvida antes de renderizar o componente.
 
-  This hook is only called during server-side rendering can be used to perform server-only data fetching.
+  Esse gancho é chamado apenas durante a renderização do lado do servidor e pode ser usado para executar a busca de dados somente do servidor.
 
-- **Example**
+- **Exemplo**
 
   ```js
   export default {
@@ -318,19 +319,19 @@ Async function to be resolved before the component instance is to be rendered on
       }
     },
     async serverPrefetch() {
-      // component is rendered as part of the initial request
-      // pre-fetch data on server as it is faster than on the client
+      // componente é renderizado como parte da solicitação inicial
+      // pré-buscar dados no servidor, pois é mais rápido do que no cliente
       this.data = await fetchOnServer(/* ... */)
     },
     async mounted() {
       if (!this.data) {
-        // if data is null on mount, it means the component
-        // is dynamically rendered on the client. Perform a
-        // client-side fetch instead.
+        // se os dados forem nulos na montagem, significa que o componente
+        // é renderizado dinamicamente no cliente. Execute um
+        // busca do lado do cliente em vez disso.
         this.data = await fetchOnClient(/* ... */)
       }
     }
   }
   ```
 
-- **See also:** [Server-Side Rendering](/guide/scaling-up/ssr.html)
+- **Veja também:** [Server-Side Rendering](/guide/scaling-up/ssr.html)
