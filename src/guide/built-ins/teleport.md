@@ -1,6 +1,6 @@
 # Teletransporte {#teleport}
 
- <VueSchoolLink href="https://vueschool.io/lessons/vue-3-teleport" title="Aula Gratuita sobre Teleport de Vue.js"/>
+<VueSchoolLink href="https://vueschool.io/lessons/vue-3-teleport" title="Aula Gratuita sobre Teleport de Vue.js"/>
 
 `<Teleport>` é um componente embutido que permite-nos "teletransportar" uma parte de um modelo de marcação do componente para um nó de DOM que existe fora da hierarquia do DOM deste componente.
 
@@ -11,7 +11,7 @@ Algumas vezes podemos correr para os seguintes cenários: uma parte de um modelo
 
 O exemplo mais comum disto é quando construimos um modal de tela cheia. Idealmente, queremos que o botão do modal e o próprio modal vivam dentro do mesmo componente, já que estão ambos relacionados ao estado abertura e fechamento do modal. Mas isto significa que o modal será interpretado junto do botão, profundamente encaixado na hierarquia do DOM da aplicação. Isto pode criar algumas questões complicadas quando posicionamos o modal através de CSS.
 
-Considere a seguinte estrutura de HTML.
+Considere a seguinte estrutura de HTML:
 
 ```vue-html
 <div class="outer">
@@ -200,5 +200,5 @@ O resultado interpretado seria:
 
 **Relacionado ao**
 
-- [Referência de API de `<Teleport>`](/api/built-in-components.html#teleport)
-- [Manipulando Teletransportações na SSR](/guide/scaling-up/ssr.html#teleports)
+- [Referência de API de `<Teleport>`](/api/built-in-components#teleport)
+- [Manipulando Teletransportações na SSR](/guide/scaling-up/ssr#teleports)
