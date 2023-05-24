@@ -1,26 +1,22 @@
 <script setup lang="ts">
-import data from '../partners.json'
 import { Partner } from './type'
-import { normalizeName } from './utils'
+import data from '../partners.json'
 import PartnerCard from './PartnerCard.vue'
+import { normalizeName, track } from './utils'
 import { VTIconChevronLeft } from '@vue/theme'
 
-const { partner } = defineProps<{
+const props = defineProps<{
   partner: string
 }>()
 
 const p = (data as Partner[]).find(
-  (p) => normalizeName(p.name) === partner
+  (p) => normalizeName(p.name) === props.partner
 )!
 
 const { name, description, hiring, contact, website } = p
 
 function genMailLink(email: string) {
   return `mailto:${email}?subject=Looking for a Vue.js Partner`
-}
-
-function track(id: string, linkType: string) {
-  fathom.trackGoal(`partner-click-${id}-${linkType}`, 0)
 }
 </script>
 
@@ -40,12 +36,16 @@ function track(id: string, linkType: string) {
     </div>
 
     <div class="actions">
-      <a :href="website.url" target="_blank">Visitar o Sítio</a>
-      <a class="contact" :href="genMailLink(contact)" target="_blank">Contactar</a>
+      <a :href="website.url" target="_blank" @click="track">Visitar o Sítio</a>
+      <a
+        class="contact"
+        :href="genMailLink(contact)"
+        target="_blank"
+        @click="track">Contactar</a>
     </div>
 
     <div class="hiring" v-if="hiring">
-      <a :href="hiring">{{ name }} está contratando!</a>
+      <a :href="hiring" @click="track">{{ name }} está contratando!</a>
     </div>
   </div>
 </template>

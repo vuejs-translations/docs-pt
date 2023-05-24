@@ -8,8 +8,9 @@
     <a
       class="join"
       href="https://airtable.com/shrCQhat57SApJI2l"
-      target="_blank"
-    >Torna-te um parceiro</a>
+      target="_blank">
+      Torna-te um parceiro
+    </a>
   </div>
 </template>
 
