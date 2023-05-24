@@ -1,7 +1,8 @@
 <script setup>
 import gsap from 'gsap'
+import { ref } from 'vue'
 
-let show = $ref(true)
+let show = ref(true)
 
 function onBeforeEnter(el) {
   gsap.set(el, {

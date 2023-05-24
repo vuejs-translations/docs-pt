@@ -1,5 +1,6 @@
 <script setup>
 import gsap from 'gsap'
+import { ref, computed } from 'vue'
 
 const list = [
   { msg: 'Bruce Lee' },
@@ -9,10 +10,10 @@ const list = [
   { msg: 'Kung Fury' }
 ]
 
-let query = $ref('')
+let query = ref('')
 
-const computedList = $computed(() => {
-  return list.filter((item) => item.msg.toLowerCase().includes(query))
+const computedList = computed(() => {
+  return list.filter((item) => item.msg.toLowerCase().includes(query.value.toLowerCase()))
 })
 
 function onBeforeEnter(el) {
