@@ -21,7 +21,7 @@ const nav: ThemeConfig['nav'] = [
         link: 'https://v2.vuejs.org'
       },
       {
-        text: 'Migrar da Vue 2',
+        text: 'Guia de Migração',
         link: 'https://v3-migration.vuejs.org/'
       }
     ]
@@ -626,8 +626,18 @@ export default defineConfigWithTheme<ThemeConfig>({
         repo: 'https://github.com/vuejs-translations/docs-ja'
       },
       {
+        link: 'https://ua.vuejs.org',
+        text: 'Українська',
+        repo: 'https://github.com/vuejs-translations/docs-uk'
+      },
+      {
+        link: 'https://fr.vuejs.org',
+        text: 'Français',
+        repo: 'https://github.com/vuejs-translations/docs-fr'
+      },
+      {
         link: '/translations/',
-        text: 'Ajude-nos a Traduzir!',
+        text: 'Ajude-Nos a Traduzir!',
         isTranslationsDesc: true
       }
     ],
