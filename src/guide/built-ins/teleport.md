@@ -117,7 +117,9 @@ O alvo do `to` de `<Teleport>` espera uma sequência de caracteres de seletor de
 Tu podes clicar no botão abaixo e inspecionar o marcador `<body>` através da ferramenta de programação do navegador:
 
 <script setup>
-let open = $ref(false)
+import { ref } from 'vue'
+
+let open = ref(false)
 </script>
 
 <div class="demo">
