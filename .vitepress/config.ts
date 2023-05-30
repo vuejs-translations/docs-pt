@@ -4,7 +4,7 @@ import { defineConfigWithTheme } from 'vitepress'
 import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
-// import { jobsPlugin } from './jobsMdPlugin'
+import { textAdPlugin } from './textAdMdPlugin'
 
 const nav: ThemeConfig['nav'] = [
   {
@@ -33,7 +33,7 @@ const nav: ThemeConfig['nav'] = [
   },
   {
     text: 'Zona de Experimentos',
-    link: 'https://sfc.vuejs.org'
+    link: 'https://play.vuejs.org'
   },
   {
     text: 'Ecossistema',
@@ -44,6 +44,7 @@ const nav: ThemeConfig['nav'] = [
         items: [
           { text: 'Parceiros', link: '/partners/' },
           { text: 'Temas', link: '/ecosystem/themes' },
+          { text: 'Certificação', link: 'https://certification.vuejs.org/?ref=vuejs-nav'},
           { text: 'Empregos', link: 'https://vuejobs.com/?ref=vuejs' },
           { text: 'Loja de T-Shirt', link: 'https://vue.threadless.com/' }
         ]
@@ -189,7 +190,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         },
         { text: 'Propriedades', link: '/guide/components/props' },
         { text: 'Eventos', link: '/guide/components/events' },
-        { text: 'v-model do Componente', link: '/guide/components/v-model' },
+        { text: 'Modelo Virtual do Componente', link: '/guide/components/v-model' },
         {
           text: 'Atributos',
           link: '/guide/components/attrs'
@@ -209,7 +210,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Reutilização',
       items: [
         {
-          text: 'Constituíveis',
+          text: 'Funções de Composição',
           link: '/guide/reusability/composables'
         },
         {
@@ -242,9 +243,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Gestão de Estado',
           link: '/guide/scaling-up/state-management'
         },
-        { text: 'Testagem', link: '/guide/scaling-up/testing' },
+        { text: 'Testes', link: '/guide/scaling-up/testing' },
         {
-          text: 'Interpretação no Lado do Servidor (SSR)',
+          text: 'Interpretação no Lado do Servidor',
           link: '/guide/scaling-up/ssr'
         }
       ]
@@ -292,7 +293,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/ways-of-using-vue'
         },
         {
-          text: 'FAQ sobre a API de Composição',
+          text: 'Questões Frequentes sobre a API de Composição',
           link: '/guide/extras/composition-api-faq'
         },
         {
@@ -308,22 +309,17 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/render-function'
         },
         {
-          text: 'Vue e os Componentes de Web',
+          text: 'Vue e os Componentes da Web',
           link: '/guide/extras/web-components'
         },
         {
           text: 'Técnicas de Animação',
           link: '/guide/extras/animation'
         },
-        {
-          text: 'Transformação da Reatividade',
-          link: '/guide/extras/reactivity-transform'
-        }
         // {
         //   text: 'Construindo uma Biblioteca para Vue',
         //   link: '/guide/extras/building-a-library'
         // },
-        // { text: 'Interpretadores Personalizados', link: '/guide/extras/custom-renderer' },
         // {
         //   text: 'Vue para Programadores de React',
         //   link: '/guide/extras/vue-for-react-devs'
@@ -381,7 +377,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Opções: Composição',
           link: '/api/options-composition'
         },
-        { text: 'Opções: Misturar', link: '/api/options-misc' },
+        { text: 'Opções: Outros', link: '/api/options-misc' },
         {
           text: 'Instância do Componente',
           link: '/api/component-instance'
@@ -544,7 +540,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/style-guide/rules-recommended'
         },
         {
-          text: 'D - Utilize com Cautela',
+          text: 'D - Use com Cautela',
           link: '/style-guide/rules-use-with-caution'
         }
       ]
@@ -678,8 +674,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   markdown: {
     config(md) {
-      // md.use(headerPlugin).use(jobsPlugin)
-      md.use(headerPlugin)
+      md.use(headerPlugin).use(textAdPlugin)
     }
   },
 
