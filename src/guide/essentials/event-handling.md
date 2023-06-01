@@ -1,4 +1,4 @@
-# Manipulação de Evento
+# Manipulação de Evento {#event-handling}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/user-events-in-vue-3" title="Aula Gratuita Sobre Eventos em Vue.js"/>
@@ -8,7 +8,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-user-events-in-vue-3" title="Aula Gratuita Sobre Eventos em Vue.js"/>
 </div>
 
-## Ouvindo Eventos
+## Ouvindo Eventos {#listening-to-events}
 
 Nós podemos utilizar a diretiva `v-on`, que normalmente abreviamos para o simbolo `@`, para ouvir os eventos do DOM e executar algum código de JavaScript quando são acionadas. A utilização seria `v-on:click="handler"` ou com o atalho, `@click="handler"`.
 
@@ -18,7 +18,7 @@ O valor de `handler` (manipulador) pode ser um dos seguintes:
 
 2. **Manipuladores de método:** O nome da propriedade ou o caminho que aponta para um método definido no componente.
 
-## Manipuladores Em Linha
+## Manipuladores Em Linha {#inline-handlers}
 
 Os manipuladores em linha normalmente são utilizados em casos simples, por exemplo:
 
@@ -48,16 +48,16 @@ data() {
 
 <div class="composition-api">
 
-[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgY291bnRlciA9IHJlZigwKVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cblx0PGJ1dHRvbiBAY2xpY2s9XCJjb3VudGVyKytcIj5BZGQgMTwvYnV0dG9uPlxuXHQ8cD5UaGUgYnV0dG9uIGFib3ZlIGhhcyBiZWVuIGNsaWNrZWQge3sgY291bnRlciB9fSB0aW1lcy48L3A+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
+[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNo9jssKgzAURH/lko0tgrbbEqX+Q5fZaLxiqHmQ3LgJ+fdqFZcD58xMYp1z1RqRvRgP0itHEJCia4VR2llPkMDjBBkmbzUUG1oII4y0JhBIGw2hh2Znbo+7MLw+WjZ/C4TaLT3hnogPkcgaeMtFyW8j2GmXpWBtN47w5PWBHLhrPzPCKfWDXRHmPsCAaOBfgSOkdH3IGUhpDBWv9/e8vsZZ/gFFhFJN)
 
 </div>
 <div class="options-api">
 
-[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgZGF0YSgpIHtcblx0ICByZXR1cm4ge1xuICAgIFx0Y291bnRlcjogMFxuICBcdH1cblx0fVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cblx0PGJ1dHRvbiBAY2xpY2s9XCJjb3VudGVyKytcIj5BZGQgMTwvYnV0dG9uPlxuXHQ8cD5UaGUgYnV0dG9uIGFib3ZlIGhhcyBiZWVuIGNsaWNrZWQge3sgY291bnRlciB9fSB0aW1lcy48L3A+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
+[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNo9jcEKgzAQRH9lyKlF0PYqqdR/6DGXaLYo1RjiRgrivzepIizLzu7sm1XUzuVLIFEKObe+d1wpS183eYahtw4DY1UWMJr15ZpmxYAnDt7uF0BxOwXL5Evc0kbxlmyxxZLFyY2CaXSDZkqKZROYJ4tnO/Tt56HEgckyJaraGNxlsVt2u6teHeF40s20EDo9oyGy+CPIYF1xULBt4H6kOZeFiwBZnOFi+wH0B1hk)
 
 </div>
 
-## Manipuladores de Método
+## Manipuladores de Método {#method-handlers}
 
 A lógica para muitos manipuladores de evento será mais complexa, e provavelmente não é viável com manipuladores em linha. É por isto que a `v-on` também pode aceitar o nome ou caminho de um metódo do componente que gostarias de chamar.
 
@@ -107,12 +107,12 @@ methods: {
 
 <div class="composition-api">
 
-[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgbmFtZSA9IHJlZignVnVlLmpzJylcblxuZnVuY3Rpb24gZ3JlZXQoZXZlbnQpIHtcbiAgYWxlcnQoYEhlbGxvICR7bmFtZS52YWx1ZX0hYClcbiAgLy8gYGV2ZW50YCBpcyB0aGUgbmF0aXZlIERPTSBldmVudFxuICBpZiAoZXZlbnQpIHtcbiAgICBhbGVydChldmVudC50YXJnZXQudGFnTmFtZSlcbiAgfVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cblx0PGJ1dHRvbiBAY2xpY2s9XCJncmVldFwiPkdyZWV0PC9idXR0b24+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
+[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNpVj0FLxDAQhf/KMwjtXtq7dBcFQS/qzVMOrWFao2kSkkkvpf/dJIuCEBgm771vZnbx4H23JRJ3YogqaM+IxMlfpNWrd4GxI9CMA3NwK5psbaSVVjkbGXZaCediaJv3RN1XbE5FnZNVrJ3FEoi4pY0sn7BLC0yGArfjMxnjcLsXQrdNJtFxM+Ys0PcYa2CEjuBPylNYb4THtxdUobj0jH/YX3D963gKC5WyvGZ+xR7S5jf01yPzeblhWr2ZmErHw0dizivfK6PV91mKursUl6dSh/4qZ+vQ/+XE8QODonDi)
 
 </div>
 <div class="options-api">
 
-[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgbmFtZTogJ1Z1ZS5qcydcbiAgICB9XG4gIH0sXG4gIG1ldGhvZHM6IHtcbiAgICBncmVldChldmVudCkge1xuICAgICAgLy8gYHRoaXNgIGluc2lkZSBtZXRob2RzIHBvaW50cyB0byB0aGUgY3VycmVudCBhY3RpdmUgaW5zdGFuY2VcbiAgICAgIGFsZXJ0KGBIZWxsbyAke3RoaXMubmFtZX0hYClcbiAgICAgIC8vIGBldmVudGAgaXMgdGhlIG5hdGl2ZSBET00gZXZlbnRcbiAgICAgIGlmIChldmVudCkge1xuICAgICAgICBhbGVydChldmVudC50YXJnZXQudGFnTmFtZSlcbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG5cdDxidXR0b24gQGNsaWNrPVwiZ3JlZXRcIj5HcmVldDwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
+[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNplUE1LxDAQ/StjEbYL0t5LXRQEvag3Tz00prNtNE1CMilC6X83SUkRhJDJfLz3Jm8tHo2pFo9FU7SOW2Ho0in8MdoSDHhlXhKsnQIYGLHyvL8BLJK3KmcAis3YwOnDY/XlTnt1i2G7i/eMNOnBNRkwWkQqcUFFByVAXUNPk3A9COXEgBkGRgtFDkgDTQjcWxuAwDiJBeMsMcUxszCJlsr+BaXUcLtGwiqut930579KST1IBd5Aqlgie3p/hdTIk+IK//bMGqleEbMjxjC+BZVDIv0+m9CpcNr6MDgkhLORjDBm1H56Iq3ggUvBv++7IhnUFZfnGNt6b4fRtj5wxfYL9p+Sjw==)
 
 </div>
 
@@ -120,20 +120,20 @@ Um manipulador de método recebe automaticamente o objeto de evento de DOM nativ
 
 <div class="composition-api">
 
-Consulte: [Tipando Manipuladores de Evento](/guide/typescript/composition-api.html#tipando-manipulandores-de-evento) <sup class="vt-badge ts" />
+Consulte: [Atribuindo Tipas aos Manipuladores de Evento](/guide/typescript/composition-api#typing-event-handlers) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
 
-Consulte: [Tipando Manipuladores de Evento](/guide/typescript/options-api.html#tipando-manipulandores-de-evento) <sup class="vt-badge ts" />
+Consulte: [Atribuindo Tipos aos Manipuladores de Evento](Typing Event Handlers](/guide/typescript/options-api#typing-event-handlers) <sup class="vt-badge ts" />
 
 </div>
 
-### Método vs. Deteção Em Linha
+### Método vs. Deteção Em Linha {#method-vs-inline-detection}
 
 O compilador do modelo de marcação deteta os manipuladores de método verificando se o valor de sequência de caracteres de `v-on` é um identificador de JavaScript válido ou caminho de acesso de propriedade. Por exemplo, `foo`, `foo.bar` e `foo['bar']` são tratados como manipuladores de métodos, enquanto `foo()` e `count++` são tratados como manipuladores em linha.
 
-## Chamando Métodos em Manipuladores Em Linha
+## Chamando Métodos em Manipuladores Em Linha {#calling-methods-in-inline-handlers}
 
 No lugar de vincular diretamente para um nome de método, também podemos chamar métodos em um manipulador em linha. Isto permite-nos passar os argumentos personalizados do método ao invés do evento nativo:
 
@@ -165,16 +165,16 @@ methods: {
 
 <div class="composition-api">
 
-[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmZ1bmN0aW9uIHNheShtZXNzYWdlKSB7XG4gIGFsZXJ0KG1lc3NhZ2UpXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuXHQ8YnV0dG9uIEBjbGljaz1cInNheSgnaGknKVwiPlNheSBoaTwvYnV0dG9uPlxuICA8YnV0dG9uIEBjbGljaz1cInNheSgnd2hhdCcpXCI+U2F5IHdoYXQ8L2J1dHRvbj5cbjwvdGVtcGxhdGU+IiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCJcbiAgfVxufSJ9)
+[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNp9jTEOwjAMRa8SeSld6I5CBWdg9ZJGBiJSN2ocpKjq3UmpFDGx+Vn//b/ANYTjOxGcQEc7uyAqkqTQI98TW3ETq2jyYaQYzYNatSArZTzNUn/IK7Ludr2IBYTG4I3QRqKHJFJ6LtY7+zojbIXNk7yfmhahv5msvqS7PfnHGjJVp9w/hu7qKKwfEd1NSg==)
 
 </div>
 <div class="options-api">
 
-[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgbWV0aG9kczoge1xuXHQgIHNheShtZXNzYWdlKSB7XG4gICAgXHRhbGVydChtZXNzYWdlKVxuICBcdH1cblx0fVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cblx0PGJ1dHRvbiBAY2xpY2s9XCJzYXkoJ2hpJylcIj5TYXkgaGk8L2J1dHRvbj5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJzYXkoJ3doYXQnKVwiPlNheSB3aGF0PC9idXR0b24+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
+[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNptjUEKwjAQRa8yZFO7sfsSi57B7WzGdjTBtA3NVC2ldzehEFwIw8D7vM9f1cX742tmVSsd2sl6aXDgjx8ngY7vNDuBFQeAnsWMXagToQAEWg49h0APLncDAIUcT5LzlKJsqRBfPF3ljQjCvXcknEj0bRYZBzi3zrbPE6o0UBhblKiaKy1grK52J/oA//23IcmNBD8dXeVBtX0BF0pXsg==)
 
 </div>
 
-## Acessando Argumento de Evento nos Manipuladores Em Linha
+## Acessando Argumento de Evento nos Manipuladores Em Linha {#accessing-event-argument-in-inline-handlers}
 
 Algumas vezes também precisamos acessar o evento de DOM original em um manipulador em linha. Tu podes passá-lo para um método utilizando variável especial `$event`, ou utilizar uma função em flecha em linha:
 
@@ -219,7 +219,7 @@ methods: {
 
 </div>
 
-## Modificadores de Evento
+## Modificadores de Evento {#event-modifiers}
 
 É muito comum precisar chamar `event.preventDefault()` ou `event.stopPropagation()` dentro de manipuladores de evento. Ainda que possamos fazer isto facilmente dentro de métodos, seria melhor se os métodos pudessem ser puramente a respeito da lógica dos dados em vez de ter que lidar com detalhes de evento de DOM.
 
@@ -250,7 +250,7 @@ Para tratar este problema, a Vua fornece **modificadores de evento** para `v-on`
 <div @click.self="doThat">...</div>
 ```
 
-::: tip
+:::tip DICA
 A ordem importa quando estiveres utilizando modificadores porque o código relevante é gerado na mesma ordem. Portanto a utilização de `@click.prevent.self` impedirá **a ação de cliques padrão sobre o próprio elemento e seus filhos** enquanto `@click.self.prevent` só impedirá a ação de cliques padrão sobre o próprio elemento.
 :::
 
@@ -272,11 +272,11 @@ Os modificadores `.capture`, `.once`, e `.passive` refletem as [opções do mét
 
 O modificador `.passive` é normalmente utilizado com o ouvintes de evento de toque para [melhorar o desempenho nos dispositivos móveis](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#improving_scrolling_performance_with_passive_listeners).
 
-::: tip
+:::tip DICA
 Não utilize `.passive` e `.prevent` juntos, porque `.passive` já indica para o navegador que _não_ tencionas previnir o comportamente padrão do evento, e provavelmente verás um aviso a partir do navegador se o fizeres.
 :::
 
-## Modificadores de Tecla
+## Modificadores de Tecla {#key-modifiers}
 
 Quando estivermos ouvindo por eventos teclado, precisamos com frequência verificar por teclas especificas. A Vue permite a adição de modificadores de tecla para `v-on` ou `@` quando estivermos ouvindo por eventos de tecla:
 
@@ -293,7 +293,7 @@ Tu podes utilizar diretamente quaisquer nomes de tecla válidos expostos atravé
 
 No exemplo acima, o manipulador só será chamado se `$event.key` for igual a `'PageDown'`.
 
-### Pseudónimos de Tecla
+### Pseudónimos de Tecla {#key-aliases}
 
 A Vua fornece pseudónimos para as teclas mais comummente utilizadas:
 
@@ -307,7 +307,7 @@ A Vua fornece pseudónimos para as teclas mais comummente utilizadas:
 - `.left`
 - `.right`
 
-### Teclas Modificadoras do Sistema
+### Teclas Modificadoras do Sistema {#system-modifier-keys}
 
 Tu podes utilizar os seguintes modificadores para acionares ouvintes de eventos de teclado ou rato apenas quando a tecla modificadora correspondente for pressionada:
 
@@ -316,7 +316,7 @@ Tu podes utilizar os seguintes modificadores para acionares ouvintes de eventos 
 - `.shift`
 - `.meta`
 
-::: tip Nota
+:::tip NOTA
 Nos teclados de Macintosh, meta é a tecla de comando (⌘). Nos teclados de Windows, meta é a tecla de Windows (⊞). Nos teclados de Sun Microsystems, meta é marcado como um diamante sólido (◆). Em certos teclados, especialmente teclados de MIT e máquina de Lisp e sucessores, tais como o teclado de Knight, teclado space-cadet, meta é rotulado “META”. Nos teclados simbólicos, meta é rotulado “META” ou “Meta”.
 :::
 
@@ -330,11 +330,11 @@ Por exemplo:
 <div @click.ctrl="doSomething">Do something</div>
 ```
 
-::: tip
+:::tip NOTA
 Nota que as teclas modificadoras são diferentes das teclas normais e quando utilizadas com eventos de `keyup`, elas têm que ser pressionadas quando o evento for emitido. Em outras palavras, `keyup.ctrl` só acionará se libertares uma tecla enquanto estiveres pressionando `ctrl` para baixo. Não acionará se libertares apenas a tecla `ctrl`. 
 :::
 
-### O Modificador `.exact`
+### O Modificador `.exact` {#exact-modifier}
 
 O modificador `.exact` permite o controlo da combinação exata de modificadores de sistema necessária para acionar um evento.
 
@@ -349,7 +349,7 @@ O modificador `.exact` permite o controlo da combinação exata de modificadores
 <button @click.exact="onClick">A</button>
 ```
 
-## Modificadores de Botão de Rato
+## Modificadores de Botão de Rato {#mouse-button-modifiers}
 
 - `.left`
 - `.right`
