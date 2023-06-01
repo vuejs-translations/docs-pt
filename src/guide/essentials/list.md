@@ -1,4 +1,4 @@
-# Interpretação de Lista
+# Interpretação de Lista {#list-rendering}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/list-rendering-in-vue-3" title="Aula Gratuida Sobre Interpretação de Lista em Vue.js"/>
@@ -8,7 +8,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-list-rendering-in-vue" title="Aula Gratuida Sobre Interpretação de Lista em Vue.js"/>
 </div>
 
-## `v-for`
+## `v-for` {#v-for}
 
 Nós podemos utilizar a diretiva `v-for` para interpretar uma lista de itens baseados em um arranjo. A diretiva `v-for` exije uma sintaxe especial na forma de `item in items`, onde `items` é o arranjo de dados de origem e o `item` é um **pseudónimo** para o elemento do arranjo sobre qual é interado:
 
@@ -133,7 +133,7 @@ Tu também podes utilizar `of` como delimitador no lugar de `in`, para que estej
 <div v-for="item of items"></div>
 ```
 
-## `v-for` com um Objeto
+## `v-for` com um Objeto {#v-for-with-an-object}
 
 Tu também podes utilizar a `v-for` para iterar através das propriedades de um objeto. A ordem de iteração será baseada no resultado da chamada de `Object.keys()` sobre o objeto:
 
@@ -199,7 +199,7 @@ E um outro para o índice:
 
 </div>
 
-## `v-for` com um Limite
+## `v-for` com um Limite {#v-for-with-a-range}
 
 A `v-for` também pode aceitar um inteiro. Neste caso repetirá o modelo de marcação que aquelas muitas vezes, baseado em um limite de `1...n`.
 
@@ -209,7 +209,7 @@ A `v-for` também pode aceitar um inteiro. Neste caso repetirá o modelo de marc
 
 Nota que aqui `n` começa com um valor inicial de `1` no lugar de `0`.
 
-## `v-for` sobre `<template>`
+## `v-for` no `<template>` {#v-for-on-template}
 
 Semelhante a `v-if` do modelo de marcação, também podes utilizar o marcador `<template>` para interpretar um bloco com vários elementos. Por exemplo:
 
@@ -222,9 +222,9 @@ Semelhante a `v-if` do modelo de marcação, também podes utilizar o marcador `
 </ul>
 ```
 
-## `v-for` com `v-if`
+## `v-for` com `v-if` {#v-for-with-v-if}
 
-:::warning Nota
+:::warning AVISO
 **Não** é recomendado utilizar `v-if` e `v-for` no mesmo elemento devido a precedência implicita. Consulte o [guia de estilo](/style-guide/rules-essential.html#avoid-v-if-with-v-for) para obter mais detalhes.
 :::
 
@@ -250,7 +250,7 @@ Isto pode ser corrigido movendo `v-for` para um marcodor `<template>` de embrulh
 </template>
 ```
 
-## Mantendo o Estado com `key`
+## Mantendo o Estado com `key` {#maintaining-state-with-key}
 
 Quando a Vue está atualizando um lista de elementos interpretados com a `v-for`, por padrão ela utiliza uma estratégia de "remendar no lugar (in-place patch)". Se a ordem dos itens de dados mudou, no lugar de mover os elementos do DOM para corresponder a ordem dos itens, a Vue remendará cada elemento no lugar e certificar-se de que ela refleta o que deveria ser interpretado naquele índice particular.
 
@@ -273,15 +273,15 @@ Quando estiveres utilizando `<template v-for>`, o `key` deve ser colocado no con
 </template>
 ```
 
-:::tip Nota
-Aqui `key` é um atributo especial sendo vinculado com a `v-bind`. Ela não deveria ser confundida com a variável chave (`key`) de propriedade quando estiveres [utilizando a `v-for` com um objeto](#v-for-com-um-objeto).
+:::tip NOTA
+Aqui `key` é um atributo especial sendo vinculado com a `v-bind`. Ela não deveria ser confundida com a variável chave (`key`) de propriedade quando estiveres [utilizando a `v-for` com um objeto](#v-for-with-an-object).
 :::
 
-[É recomendado](/style-guide/rules-essential.html#utilize-v-for-com-key) fornecer um atributo `key` com a `v-for` sempre que possível, a menos que o conteúdo de DOM iterado seja simples (por exemplo, não contém quaisquer componentes ou elementos de DOM com conteúdo), estás intencionalmente confiando no comportamento padrão para ganhos de desempenho.
+[É recomendado](/style-guide/rules-essential#use-keyed-v-for) fornecer um atributo `key` com a `v-for` sempre que possível, a menos que o conteúdo de DOM iterado seja simples (por exemplo, não contém quaisquer componentes ou elementos de DOM com conteúdo), estás intencionalmente confiando no comportamento padrão para ganhos de desempenho.
 
-O vinculação de `key` aguarda por valores primitivos - por exemplo, sequências de caracteres e números. Não utilize objetos como chaves de `v-for`. Para utilização detalhada do atributo `key`, favor de consultar a [documentação da API de `key`](/api/built-in-special-attributes.html#key).
+O vinculação de `key` aguarda por valores primitivos - por exemplo, sequências de caracteres e números. Não utilize objetos como chaves de `v-for`. Para utilização detalhada do atributo `key`, favor de consultar a [documentação da API de `key`](/api/built-in-special-attributes#key).
 
-## `v-for` com um Componente
+## `v-for` com um Componente {#v-for-with-a-component}
 
 > Esta secção presume conhecimento de [Componentes](/guide/essentials/component-basics). Esteja livre para ignorá-la e voltar mais tarde.
 
@@ -306,18 +306,18 @@ A razão para não injetar automaticamte o `item` para dentro do componente é p
 
 <div class="composition-api">
 
-Consulte [este exemplo de uma lista de afazeres simples](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmltcG9ydCBUb2RvSXRlbSBmcm9tICcuL1RvZG9JdGVtLnZ1ZSdcbiAgXG5jb25zdCBuZXdUb2RvVGV4dCA9IHJlZignJylcbmNvbnN0IHRvZG9zID0gcmVmKFtcbiAge1xuICAgIGlkOiAxLFxuICAgIHRpdGxlOiAnRG8gdGhlIGRpc2hlcydcbiAgfSxcbiAge1xuICAgIGlkOiAyLFxuICAgIHRpdGxlOiAnVGFrZSBvdXQgdGhlIHRyYXNoJ1xuICB9LFxuICB7XG4gICAgaWQ6IDMsXG4gICAgdGl0bGU6ICdNb3cgdGhlIGxhd24nXG4gIH1cbl0pXG5cbmxldCBuZXh0VG9kb0lkID0gNFxuXG5mdW5jdGlvbiBhZGROZXdUb2RvKCkge1xuICB0b2Rvcy52YWx1ZS5wdXNoKHtcbiAgICBpZDogbmV4dFRvZG9JZCsrLFxuICAgIHRpdGxlOiBuZXdUb2RvVGV4dC52YWx1ZVxuICB9KVxuICBuZXdUb2RvVGV4dC52YWx1ZSA9ICcnXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuXHQ8Zm9ybSB2LW9uOnN1Ym1pdC5wcmV2ZW50PVwiYWRkTmV3VG9kb1wiPlxuICAgIDxsYWJlbCBmb3I9XCJuZXctdG9kb1wiPkFkZCBhIHRvZG88L2xhYmVsPlxuICAgIDxpbnB1dFxuICAgICAgdi1tb2RlbD1cIm5ld1RvZG9UZXh0XCJcbiAgICAgIGlkPVwibmV3LXRvZG9cIlxuICAgICAgcGxhY2Vob2xkZXI9XCJFLmcuIEZlZWQgdGhlIGNhdFwiXG4gICAgLz5cbiAgICA8YnV0dG9uPkFkZDwvYnV0dG9uPlxuICA8L2Zvcm0+XG4gIDx1bD5cbiAgICA8dG9kby1pdGVtXG4gICAgICB2LWZvcj1cIih0b2RvLCBpbmRleCkgaW4gdG9kb3NcIlxuICAgICAgOmtleT1cInRvZG8uaWRcIlxuICAgICAgOnRpdGxlPVwidG9kby50aXRsZVwiXG4gICAgICBAcmVtb3ZlPVwidG9kb3Muc3BsaWNlKGluZGV4LCAxKVwiXG4gICAgPjwvdG9kby1pdGVtPlxuICA8L3VsPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59IiwiVG9kb0l0ZW0udnVlIjoiPHNjcmlwdCBzZXR1cD5cbmRlZmluZVByb3BzKFsndGl0bGUnXSlcbmRlZmluZUVtaXRzKFsncmVtb3ZlJ10pXG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8bGk+XG4gICAge3sgdGl0bGUgfX1cbiAgICA8YnV0dG9uIEBjbGljaz1cIiRlbWl0KCdyZW1vdmUnKVwiPlJlbW92ZTwvYnV0dG9uPlxuICA8L2xpPlxuPC90ZW1wbGF0ZT4ifQ==) para veres como interpretar uma lista de componentes utilizando a `v-for`, passando diferentes dados para cada instância.
+Consulte [este exemplo de uma lista de afazeres simples](https://play.vuejs.org/#eNp1U8Fu2zAM/RXCGGAHTWx02ylwgxZYB+ywYRhyq3dwLGYRYkuCJTsZjPz7KMmK3ay9JBQfH/meKA/Rk1Jp32G0jnJdtVwZ0Gg6tSkEb5RsDQzQ4h4usG9lAzGVxldoK5n8ZrAZsTQLCduRygAKUUmhDQg8WWyLZwMPtmESx4sAGkL0mH6xrMH+AHC2hvuljw03Na4h/iLBHBAY1wfUbsTFVcwoH28o2/KIIDuaQ0TTlvrwNu/TDe+7PDlKXZ6EZxTiN4kuRI3W0dk4u4yUf7bZfScqw6WAkrEf3m+y8AOcw7Qv6w5T1elDMhs7Nbq7e61gdmme60SQAvgfIhExiSSJeeb3SBukAy1D1aVBezL5XrYN9Csp1rrbNdykqsUehXkookl0EVGxlZHX5Q5rIBLhNHFlbRD6xBiUzlOeuZJQz4XqjI+BxjSSYe2pQWwRBZizV01DmsRWeJA1Qzv0Of2TwldE5hZRlVd+FkbuOmOksJLybIwtkmfWqg+7qz47asXpSiaN3lxikSVwwfC8oD+/sEnV+oh/qcxmU85mebepgLjDBD622Mg+oDrVquYVJm7IEu4XoXKTZ1dho3gnmdJhedEymn9ab3ysDPdc4M9WKp28xE5JbB+rzz/Trm3eK3LAu8/E7p2PNzYM/i3ChR7W7L7hsSIvR7L2Aal1EhqTp80vF95sw3WcG7r8A0XaeME=) para veres como interpretar uma lista de componentes utilizando a `v-for`, passando diferentes dados para cada instância.
 
 </div>
 <div class="options-api">
 
-Consulte [este exemplo de uma lista de afazeres simples](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBUb2RvSXRlbSBmcm9tICcuL1RvZG9JdGVtLnZ1ZSdcbiAgXG5leHBvcnQgZGVmYXVsdCB7XG4gIGNvbXBvbmVudHM6IHsgVG9kb0l0ZW0gfSxcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgbmV3VG9kb1RleHQ6ICcnLFxuICAgICAgdG9kb3M6IFtcbiAgICAgICAge1xuICAgICAgICAgIGlkOiAxLFxuICAgICAgICAgIHRpdGxlOiAnRG8gdGhlIGRpc2hlcydcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGlkOiAyLFxuICAgICAgICAgIHRpdGxlOiAnVGFrZSBvdXQgdGhlIHRyYXNoJ1xuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWQ6IDMsXG4gICAgICAgICAgdGl0bGU6ICdNb3cgdGhlIGxhd24nXG4gICAgICAgIH1cbiAgICAgIF0sXG4gICAgICBuZXh0VG9kb0lkOiA0XG4gICAgfVxuICB9LFxuICBtZXRob2RzOiB7XG4gICAgYWRkTmV3VG9kbygpIHtcbiAgICAgIHRoaXMudG9kb3MucHVzaCh7XG4gICAgICAgIGlkOiB0aGlzLm5leHRUb2RvSWQrKyxcbiAgICAgICAgdGl0bGU6IHRoaXMubmV3VG9kb1RleHRcbiAgICAgIH0pXG4gICAgICB0aGlzLm5ld1RvZG9UZXh0ID0gJydcbiAgICB9XG4gIH1cbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG5cdDxmb3JtIHYtb246c3VibWl0LnByZXZlbnQ9XCJhZGROZXdUb2RvXCI+XG4gICAgPGxhYmVsIGZvcj1cIm5ldy10b2RvXCI+QWRkIGEgdG9kbzwvbGFiZWw+XG4gICAgPGlucHV0XG4gICAgICB2LW1vZGVsPVwibmV3VG9kb1RleHRcIlxuICAgICAgaWQ9XCJuZXctdG9kb1wiXG4gICAgICBwbGFjZWhvbGRlcj1cIkUuZy4gRmVlZCB0aGUgY2F0XCJcbiAgICAvPlxuICAgIDxidXR0b24+QWRkPC9idXR0b24+XG4gIDwvZm9ybT5cbiAgPHVsPlxuICAgIDx0b2RvLWl0ZW1cbiAgICAgIHYtZm9yPVwiKHRvZG8sIGluZGV4KSBpbiB0b2Rvc1wiXG4gICAgICA6a2V5PVwidG9kby5pZFwiXG4gICAgICA6dGl0bGU9XCJ0b2RvLnRpdGxlXCJcbiAgICAgIEByZW1vdmU9XCJ0b2Rvcy5zcGxpY2UoaW5kZXgsIDEpXCJcbiAgICA+PC90b2RvLWl0ZW0+XG4gIDwvdWw+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0iLCJUb2RvSXRlbS52dWUiOiI8c2NyaXB0PlxuZXhwb3J0IGRlZmF1bHQge1xuXHRwcm9wczogWyd0aXRsZSddLFxuICBlbWl0czogWydyZW1vdmUnXVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGxpPlxuICAgIHt7IHRpdGxlIH19XG4gICAgPGJ1dHRvbiBAY2xpY2s9XCIkZW1pdCgncmVtb3ZlJylcIj5SZW1vdmU8L2J1dHRvbj5cbiAgPC9saT5cbjwvdGVtcGxhdGU+In0=) para veres como interpretar uma lista de componentes utilizando a `v-for`, passando diferentes dados para cada instância.
+Consulte [este exemplo de uma lista de afazeres simples](https://play.vuejs.org/#eNqNVE2PmzAQ/SsjVIlEm4C27Qmx0a7UVuqhPVS5lT04eFKsgG2BSVJF+e8d2xhIu10tihR75s2bNx9wiZ60To49RlmUd2UrtNkUUjRatQa2iquvBhvYt6qBOEmDwQbEhQQoJJ4dlOOe9bWBi7WWiuIlStNlcJlYrivr5MywxdIDAVo0fSvDDUDiyeK3eDYZxLGLsI8hI7H9DHeYQuwjeAb3I9gFCFMjUXxSYCoELroKO6fZP17Mf6jev0i1ZQcE1RtHaFrWVW/l+/Ai3zd1clQ1O8k5Uzg+j1HUZePaSFwfvdGhfNIGTaW47bV3Mc6/+zZOfaaslegS18ZE9121mIm0Ep17ynN3N5M8CB4g44AC4Lq8yTFDwAPNcK63kPTL03HR6EKboWtm0N5MvldtA8e1klnX7xphEt3ikTbpoYimsoqIwJY0r9kOa6Ag8lPeta2PvE+cA3M7k6cOEvBC6n7UfVw3imPtQ8eiouAW/IY0mElsiZWqOdqkn5NfCXxB5G6SJRvj05By1xujpJWUp8PZevLUluqP/ajPploLasmk0Re3sJ4VCMnxvKQ//0JMqrID/iaYtSaCz+xudsHjLpPzscVGHYO3SzpdixIXLskK7pcBucnTUdgg3kkmcxhetIrmH4ebr8m/n4jC6FZp+z7HTlLsVx1p4M7odcXPr6+Lnb8YOne5+C2F6/D6DH2Hx5JqOlCJ7yz7IlBTbZsf7vjXVBzjvLDrH5T0lgo=) para veres como interpretar uma lista de componentes utilizando a `v-for`, passando diferentes dados para cada instância.
 
 </div>
 
-## Deteção de Mudança de Arranjo
+## Deteção de Mudança de Arranjo {#array-change-detection}
 
-### Métodos de Mutação
+### Métodos de Mutação {#mutation-methods}
 
 A Vua é capaz de detetar quando métodos de mutação de um arranjo reativo são chamados e aciona as atualizações necessárias. Estes métodos de mutação são:
 
@@ -329,7 +329,7 @@ A Vua é capaz de detetar quando métodos de mutação de um arranjo reativo sã
 - `sort()`
 - `reverse()`
 
-### Substituindo um Arranjo
+### Substituindo um Arranjo {#replacing-an-array}
 
 Os métodos de mutação, como o nome sugere, alteram o arranjo original sobre o qual eles são chamados. Em comparação, também existem métodos que não realizam mutação, por exemplo, `filter()`, `concat()` e `slice()`, que não alteram o arranjo original mas **sempre retornam um arranjo novo**. Quando estivermos trabalhando como métodos que não realizam mutação, devemos substituir o arranjo antigo com o arranjo novo:
 
@@ -351,7 +351,7 @@ this.items = this.items.filter((item) => item.message.match(/Foo/))
 
 Tu podes achar que isto fará a Vue deixar fora o DOM existente e reinterpretar a lista inteira - felizmente, este não é o caso. A Vua implementa algumas heurísticas inteligentes para maximizar a reutilização do elemento do DOM, assim substituir um arranjo com um outro arranjo contendo objetos que se sobrepõem é uma operação muito eficiente.
 
-## Exibindo Resultados Filtrados ou Organizados
+## Exibindo Resultados Filtrados ou Organizados {#displaying-filtered-sorted-results}
 
 Algumas vezes queremos exibir uma versão filtrada ou organizada de um arranjo sem alterar ou redefinir os dados originais. Neste caso, podes criar uma propriedade computada que retorna o arranjo filtrado ou organizado. 
 
