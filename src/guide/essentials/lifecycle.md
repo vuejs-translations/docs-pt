@@ -1,8 +1,8 @@
-# Gatilhos do Ciclo de Vida
+# Gatilhos do Ciclo de Vida {#lifecycle-hooks}
 
 Cada instância de componente de Vue percorre através de uma série de etapas de inicialização quando é criada - por exemplo, ela precisa configurar a observação de dados, compilar o modelo de marcação, montar a instância no DOM, e atualizar o DOM quando os dados mudam. Ao longo do caminho, ela também executa funções chamadas de gatilhos do ciclo de vida, dando aos utilizadores a oportunidade de adicionar seus próprios código em estágios específicos.
 
-## Registando Gatilhos do Ciclo de Vida
+## Registando Gatilhos do Ciclo de Vida {#registering-lifecycle-hooks}
 
 Por exemplo, o gatilho <span class="composition-api">`onMounted`</span><span class="options-api">`mounted`</span> pode ser utilizado para executar o código depois de terminado a interpretação inicial e criado os nós do DOM:
 
@@ -31,7 +31,7 @@ export default {
 
 </div>
 
-Também existem outros gatilhos que serão chamados em diferentes estágios do ciclo de vida da instância, com os mais comummente utilizados sendo <span class="composition-api">[`onMounted`](/api/composition-api-lifecycle.html#onmounted), [`onUpdated`](/api/composition-api-lifecycle.html#onupdated), e [`onUnmounted`](/api/composition-api-lifecycle.html#onunmounted).</span><span class="options-api">[`mounted`](/api/options-lifecycle.html#mounted), [`updated`](/api/options-lifecycle.html#updated), e [`unmounted`](/api/options-lifecycle.html#unmounted).</span>.
+Também existem outros gatilhos que serão chamados em diferentes estágios do ciclo de vida da instância, com os mais comummente utilizados sendo <span class="composition-api">[`onMounted`](/api/composition-api-lifecycle#onmounted), [`onUpdated`](/api/composition-api-lifecycle#onupdated), e [`onUnmounted`](/api/composition-api-lifecycle#onunmounted).</span><span class="options-api">[`mounted`](/api/options-lifecycle#mounted), [`updated`](/api/options-lifecycle#updated), e [`unmounted`](/api/options-lifecycle#unmounted).</span>.
 
 <div class="options-api">
 
@@ -55,7 +55,7 @@ Repare que isto não significa que a chamada deve ser colocada de maneira léxic
 
 </div>
 
-## Diagrama do Ciclo de Vida
+## Diagrama do Ciclo de Vida {#lifecycle-diagram}
 
 Abaixo está um diagrama para o ciclo de vida da instância. Tu não precisas exatamente entender tudo agora, mas a medida que aprenderes e construires mais, será uma referência útil.
 
@@ -63,4 +63,4 @@ Abaixo está um diagrama para o ciclo de vida da instância. Tu não precisas ex
 
 <!-- https://www.figma.com/file/Xw3UeNMOralY6NV7gSjWdS/Vue-Lifecycle -->
 
-Consulte a <span class="composition-api">[referência de API de Gatilhos do Ciclo de Vida](/api/composition-api-lifecycle.html)</span><span class="options-api">[referência de API de Gatilhos do Ciclo de Vida](/api/options-lifecycle.html)</span> para obter detalhes sobre todos gatilhos do ciclo de vida e seus respetivos casos de uso.
+Consulte a <span class="composition-api">[referência de API de Gatilhos do Ciclo de Vida](/api/composition-api-lifecycle)</span><span class="options-api">[referência de API de Gatilhos do Ciclo de Vida](/api/options-lifecycle)</span> para obter detalhes sobre todos gatilhos do ciclo de vida e seus respetivos casos de uso.
