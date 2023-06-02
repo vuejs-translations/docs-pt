@@ -6,7 +6,7 @@ footer: false
 
 ## Experimente a Vue Online {#try-vue-online}
 
-- Para ter um gosto da Vue rapidamente, podes experimentá-la diretamente na nossa [Zona de Testes](https://sfc.vuejs.org/#eNo9j01qAzEMha+iapMWOjbdDm6gu96gG2/cjJJM8B+2nBaGuXvlpBMwtj4/JL234EfO6toIRzT1UObMexvpN6fCMNHRNc+w2AgwOXbPL/caoBC3EjcCCPU0wu6TvE/wlYqfnnZ3ae2PXHKMfiwQYArZOyYhAHN+2y9LnwLrarTQ7XeOuTFch5Am8u8WRbcoktGPbnzFOXS3Q3BZXWqKkuRmy/4L1eK4GbUoUTtbPDPnOmpdj4ee/1JVKictlSot8hxIUQ3Dd0k/lYoMtrglwfUPkXdoJg==).
+- Para ter um gosto da Vue rapidamente, podes experimentá-la diretamente na nossa [Zona de Testes](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
 
 - Se preferires uma configuração de HTML simples sem etapas de construção, podes utilizar este [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/) como teu ponto de partida.
 
@@ -14,19 +14,19 @@ footer: false
 
 ## Criando uma Aplicação de Vue {#creating-a-vue-application}
 
-:::tip Pré-requisitos
+:::tip Pré-Requisitos
 
 - Familiaridade com a linha de comando
 - Instale a versão 16.0 ou superior da [Node.js](https://nodejs.org/)
 :::
 
-Nesta secção introduziremos como estruturar uma [Aplicação de Página Única](/guide/extras/ways-of-using-vue.html#single-page-application-spa) de Vue na tua máquina local. O projeto criado estará utilizando uma configuração de construção baseada na [Vite](https://vitejs.dev), e permite-nos utilizar os [Componentes de Ficheiro Único](/guide/scaling-up/sfc) de Vue.
+Nesta seção introduziremos como estruturar uma [Aplicação de Página Única](/guide/extras/ways-of-using-vue#single-page-application-spa) de Vue na tua máquina local. O projeto criado estará utilizando uma configuração de construção baseada na [Vite](https://pt.vitejs.dev), e permite-nos utilizar os [Componentes de Ficheiro Único](/guide/scaling-up/sfc) de Vue.
 
 Certifica-te de tens uma versão atualizada da [Node.js](https://nodejs.org) instalada, depois execute o seguinte comando na tua linha de comando (sem o sinal `>`):
 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt;</span> <span style="color:#A6ACCD;">npm init vue@latest</span></span></code></pre></div>
 
-Este comando instalará e executará [create-vue](https://github.com/vuejs/create-vue), a ferramenta oficial de estruturação de projeto de Vue. Tu serás presenteado com uma lista com um número de funcionalidades opcionais tais como TypeScript e suporte a testagem:
+Este comando instalará e executará [create-vue](https://github.com/vuejs/create-vue), a ferramenta oficial de estruturação de projeto de Vue. Tu serás presenteado com uma lista com um número de funcionalidades opcionais tais como TypeScript e suporte a testes:
 
 <div class="language-sh"><pre><code><span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Project name: <span style="color:#888;">… <span style="color:#89DDFF;">&lt;</span><span style="color:#888;">your-project-name</span><span style="color:#89DDFF;">&gt;</span></span></span>
 <span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add TypeScript? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
@@ -48,25 +48,25 @@ Se estiveres inseguro a respeito de uma opção, por agora simplesmente escolha 
 <span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run dev</span></span>
 <span class="line"></span></code></pre></div>
 
-Agora deves ter o teu primeiro projeto em Vue executando! Nota que os componentes de exemplo no projeto gerado estão escritos utilizando a [API de Composição](/guide/introduction.html#api-de-composição) e `<script setup>`, no lugar da [API de Opções](/guide/introduction.html#api-de-opções). Cá estão algumas dicas adicionais:
+Agora deves ter o teu primeiro projeto em Vue executando! Nota que os componentes de exemplo no projeto gerado estão escritos utilizando a [API de Composição](/guide/introduction#composition-api) e `<script setup>`, no lugar da [API de Opções](/guide/introduction#options-api). Cá estão algumas dicas adicionais:
 
-- A configuração de IDE recomendada é [Visual Studio Code](https://code.visualstudio.com/) + [extensão Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Se utilizas outros editores, consulte a [seção de suporte de IDE](/guide/scaling-up/tooling.html#suporte-de-ide).
-- Mais detalhes do ferramental, incluindo integração com abstrações de backend, são discutidas no [Guia de Ferramental](/guide/scaling-up/tooling.html).
-- Para aprender mais a respeito de ferramenta de construção subjacente Vite, consulte a [documentação de Vite](https://vitejs.dev).
-- Se escolheres utilizar a TypeScript, consulte a [Guia de Utilização de TypeScript](typescript/overview.html).
+- A configuração de ambiente de desenvolvimento integrado recomendada é [Visual Studio Code](https://code.visualstudio.com/) + a [extensão Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Se utilizas outros editores, consulte a [seção de suporte de IDE](/guide/scaling-up/tooling#ide-support).
+- Mais detalhes do ferramental, incluindo integração com abstrações de backend, são discutidas no [Guia de Ferramental](/guide/scaling-up/tooling).
+- Para aprender mais a respeito de ferramenta de construção subjacente Vite, consulte a [documentação de Vite](https://pt.vitejs.dev).
+- Se escolheres utilizar a TypeScript, consulte a [Guia de Utilização de TypeScript](typescript/overview).
 
 Quando estiveres pronto para enviar a tua aplicação para produção, execute o seguinte:
 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run build</span></span>
 <span class="line"></span></code></pre></div>
 
-Isto criará a construção pronta para produção da tua aplicação no diretório `.dist/` do projeto. Consulte o [Guia de Desdobramento de Produção](/guide/best-practices/production-deployment.html) para aprender mais a respeito do envio da tua aplicação para produção.
+Isto criará a construção pronta para produção da tua aplicação no diretório `.dist/` do projeto. Consulte o [Guia de Implementação de Produção](/guide/best-practices/production-deployment) para aprender mais a respeito do envio da tua aplicação para produção.
 
-[Próximos passos >](#próximos-passos)
+[Próximos passos >](#next-steps)
 
 ## Utilizando a Vue a partir da CDN {#using-vue-from-cdn}
 
-Tu podes utilizar a Vue diretamente a partir de uma CDN através de um marcador de `script`:
+Tu podes utilizar a Vue diretamente a partir de uma rede de entrega de conteúdo através dum marcador de `script`:
 
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -103,7 +103,7 @@ A ligação acima está carregando a **construção global** de Vue, onde todas 
 
 ### Utilizando a Construção de Módulo de EcmaScript {#using-the-es-module-build}
 
-Ao longo do resto da documentação, estaremos essencialmente utilizando a sintaxe de [módulos de EcmaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Agora a maioria dos navegadores suportam os módulos de EcmaScript de maneira nativa, assim a podemos utilizar a Vue a partir de um CDN através dos módulos de EcmaScript desta maneira:
+Ao longo do resto da documentação, estaremos essencialmente utilizando a sintaxe de [módulos de ECMAScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Agora a maioria dos navegadores suportam os módulos de EcmaScript de maneira nativa, assim a podemos utilizar a Vue a partir de um CDN através dos módulos de EcmaScript desta maneira:
 
 ```html{3,4}
 <div id="app">{{ message }}</div>
@@ -172,8 +172,8 @@ Se estiveres utilizando o Firefox, ele só é suportado a partir da versão 102 
 Se o teu navegador preferido ainda não suporta os mapas de importação, podes adicionar um "polyfill" para ele com [es-module-shims](https://github.com/guybedford/es-module-shims).
 :::
 
-:::warning Notas a respeito do Uso em Produção
-Os exemplos até aqui estão utilizando a construção de desenvolvimento de Vue - se tencionas utilizar a Vue a partir de um CDN em produção, certifica-te de consultar o [Guia de Desdobramento de Produção](/guide/best-practices/production-deployment.html#sem-ferramentas-de-construção).
+:::warning Notas Sobre Uso em Produção
+Os exemplos até aqui estão utilizando a construção de desenvolvimento de Vue - se tencionas utilizar a Vue a partir de um CDN em produção, certifica-te de consultar o [Guia de Implementação de Produção](/guide/best-practices/production-deployment#without-build-tools)).
 :::
 
 ### Dividindo os Módulos {#splitting-up-the-modules}
@@ -208,7 +208,7 @@ Tu podes ter notado que o modelo de marcação do componente importado está em 
 
 ### Utilizando a API de Composição sem uma Etapa de Construção {#using-composition-api-without-a-build-step}
 
-Muitos dos exemplos para API de Composição estarão utilizando a sintaxe `<script setup>`. Se tencionas utilizar a API de Composição sem uma etapa de construção, consulte a utilização da [opção `setup()`](/api/composition-api-setup.html).
+Muitos dos exemplos para API de Composição estarão utilizando a sintaxe `<script setup>`. Se tencionas utilizar a API de Composição sem uma etapa de construção, consulte a utilização da [opção `setup()`](/api/composition-api-setup).
 
 ## Próximos Passos {#next-steps}
 
@@ -220,11 +220,11 @@ Se saltaste a [Introdução](/guide/introduction), recomendamos fortemente a lei
     <p class="next-steps-caption">O guia acompanha-te através de cada aspeto da abstração de maneira detalhada.</p>
   </a>
   <a class="vt-box" href="/tutorial/">
-    <p class="next-steps-link">Experimente o Passo-a-Passo</p>
+    <p class="next-steps-link">Experimentar o Passo-a-Passo</p>
     <p class="next-steps-caption">Para aqueles que preferem o aprendizado de coisas com prática.</p>
   </a>
   <a class="vt-box" href="/examples/">
-    <p class="next-steps-link">Consulte os Exemplos</p>
-    <p class="next-steps-caption">Explore os exemplos de funcionalidades principais e tarefas de UI comuns.</p>
+    <p class="next-steps-link">Consultar os Exemplos</p>
+    <p class="next-steps-caption">Explore os exemplos de funcionalidades principais e tarefas de interfaces de aplicações comuns.</p>
   </a>
 </div>
