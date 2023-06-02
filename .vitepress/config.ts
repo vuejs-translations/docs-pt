@@ -289,7 +289,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Tópicos Adicionais',
       items: [
         {
-          text: 'Maneiras de Usar Vue',
+          text: 'Maneiras de Usar a Vue',
           link: '/guide/extras/ways-of-using-vue'
         },
         {
@@ -305,7 +305,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/rendering-mechanism'
         },
         {
-          text: 'Funções "render" & JSX',
+          text: 'Função de Interpretação & JSX',
           link: '/guide/extras/render-function'
         },
         {
