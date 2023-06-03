@@ -25,7 +25,7 @@ Para começar com a Vite + Vue, simplesmente execute:
 
 Este comando instalará e executará [create-vue](https://github.com/vuejs/create-vue), a ferramenta de estruturação de projeto de Vue oficial.
 
-- Para aprender mais a respeita da Vite, consulte a [documentação da Vite](https://vitejs.dev).
+- Para aprender mais a respeita da Vite, consulte a [documentação da Vite](https://pt.vitejs.dev).
 - Para configurar o comportamento específico de Vue em um projeto de Vite, por exemplo passando as opções para o compilador de Vue, consulte a documentação para [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue#readme).
 
 Ambas zonas de testes online mencionadas acima também suportam o descarregamento dos ficheiros como um projeto de Vite.
@@ -55,7 +55,7 @@ Se estiveres a procura de uma alternativa mais leve para uso sem etapa de constr
 
 - A configuração de IDE recomendada é [VSCode](https://code.visualstudio.com/) + a extensão [Volar](https://github.com/johnsoncodehk/volar). Volar fornece destacamento de sintaxe, suporte de TypeScript, e sensor inteligente para expressões de modelo de marcação e propriedades de componente.
 
-  :::tip Dica
+  :::tip DICA
   Volar substitui [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), a nossa anterior extensão de VSCode oficial para Vue 2. Se tiveres com a Vetur atualmente instalada certifica-te de desativá-la nos projetos de Vue 3.
   :::
 
@@ -139,7 +139,7 @@ Este pacote é parte do mono-repositório núcleo da Vue e é sempre publicado c
 
 O pacote em si mesmo fornece utilitários de mais baixo nível para o processamento de Componentes de Ficheiro Único de Vue e é apenas destinado para criadores de ferramental que precisam suportar Componentes de Ficheiros Único de Vue em ferramentas personalizadas.
 
-:::tip Dica
+:::tip DICA
 Sempre prefira o uso deste pacote através da importação profunda de `vue/compiler-sfc` já que isto garante que a sua versão esteja em sincronia com o executor de Vue.
 :::
 
