@@ -1,6 +1,6 @@
 # Gestão de Estado {#state-management}
 
-## O que é a Gestão de Estado? {#what-is-state-management}
+## O Que é a Gestão de Estado? {#what-is-state-management}
 
 Tecnicamente, toda instância de componente de Vue já faz a "gestão" do seu próprio estado reativo. Considere o componente contador como um exemplo:
 
@@ -67,7 +67,7 @@ No entanto, a simplicidade começa a decompor-se quando temos **vários componen
 1. Várias visões que podem depender do mesmo pedaço de estado.
 2. Ações de visões diferentes que podem precisar mudar o mesmo pedaço de estado.
 
-Para o primeiro caso, uma possível solução é "transportando" o estado partilhado para cima para um componente ancestral comum, e depois passar para baixo como propriedades. No entanto, isto torna-se rapidamente entediante em árvores de componente com hierarquias profundas, levando para um outro problema conhecido como [Perfuração de Propriedade](/guide/components/provide-inject.html#prop-drilling).
+Para o primeiro caso, uma possível solução é "transportando" o estado partilhado para cima para um componente ancestral comum, e depois passar para baixo como propriedades. No entanto, isto torna-se rapidamente entediante em árvores de componente com hierarquias profundas, levando para um outro problema conhecido como [Perfuração de Propriedade](/guide/components/provide-inject#prop-drilling).
 
 Para o segundo caso, frequentemente encontramos-nos recorrendo a soluções tais como chegar ao instâncias pai ou filha direta através de referências, ou tentando alterar e sincronizar várias cópias do estado através de eventos emitidos. Ambos os padrões são frágeis e conduzem rapidamente a um código insustentável.
 
@@ -77,11 +77,11 @@ Uma solução mais simples e mais direita é extrair o estado partilhado para fo
 
 <div class="options-api">
 
-Na API de Opções, o dado reativo é declarado com o uso da opção `data()`. Internamente, o objeto retornado pelo `data()` é tornado reativo através da função [`reactive()`](/api/reactivity-core.html#reactive), que também está disponível como uma API pública.
+Na API de Opções, o dado reativo é declarado com o uso da opção `data()`. Internamente, o objeto retornado pelo `data()` é tornado reativo através da função [`reactive()`](/api/reactivity-core#reactive), que também está disponível como uma API pública.
 
 </div>
 
-Se tiveres um pedaço de estado que deveria ser partilhado por várias instâncias, podes usar [`reactive()`](/api/reactivity-core.html#reactive) criar um objeto reativo, e então importá-lo a partir de vários componentes:
+Se tiveres um pedaço de estado que deveria ser partilhado por várias instâncias, podes usar [`reactive()`](/api/reactivity-core#reactive) criar um objeto reativo, e então importá-lo a partir de vários componentes:
 
 ```js
 // store.js
@@ -187,20 +187,20 @@ export const store = reactive({
 
 <div class="composition-api">
 
-[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCBDb21wb25lbnRBIGZyb20gJy4vQ29tcG9uZW50QS52dWUnXG5pbXBvcnQgQ29tcG9uZW50QiBmcm9tICcuL0NvbXBvbmVudEIudnVlJ1xuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPENvbXBvbmVudEEgLz5cbiAgPENvbXBvbmVudEIgLz5cbjwvdGVtcGxhdGU+IiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCJcbiAgfVxufSIsIkNvbXBvbmVudEEudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHN0b3JlIH0gZnJvbSAnLi9zdG9yZS5qcydcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxkaXY+XG4gICAgPGJ1dHRvbiBAY2xpY2s9XCJzdG9yZS5pbmNyZW1lbnQoKVwiPlxuICAgICAgRnJvbSBBOiB7eyBzdG9yZS5jb3VudCB9fVxuICAgIDwvYnV0dG9uPlxuICA8L2Rpdj5cbjwvdGVtcGxhdGU+IiwiQ29tcG9uZW50Qi52dWUiOiI8c2NyaXB0IHNldHVwPlxuaW1wb3J0IHsgc3RvcmUgfSBmcm9tICcuL3N0b3JlLmpzJ1xuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGRpdj5cbiAgICA8YnV0dG9uIEBjbGljaz1cInN0b3JlLmluY3JlbWVudCgpXCI+XG4gICAgICBGcm9tIEI6IHt7IHN0b3JlLmNvdW50IH19XG4gICAgPC9idXR0b24+XG4gIDwvZGl2PlxuPC90ZW1wbGF0ZT4iLCJzdG9yZS5qcyI6ImltcG9ydCB7IHJlYWN0aXZlIH0gZnJvbSAndnVlJ1xuXG5leHBvcnQgY29uc3Qgc3RvcmUgPSByZWFjdGl2ZSh7XG4gIGNvdW50OiAwLFxuICBpbmNyZW1lbnQoKSB7XG4gICAgdGhpcy5jb3VudCsrXG4gIH1cbn0pIn0=)
+[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNrNkk1uwyAQha8yYpNEiUzXllPVrtRTeJNSqtLGgGBsVbK4ewdwnT9FWWSTFczwmPc+xMhqa4uhl6xklRdOWQQvsbfPrVadNQ7h1dCqpcYaPp3pYFHwQyteXVxKm0tpM0krnm3IgAqUnd3vUFIFUB1Z8bNOkzoVny+wDTuNcZ1gBI/GSQhzqlQX3/5Gng81pA1t33tEo+FF7JX42bYsT1BaONlRguWqZZMU4C261CWMk3EhTK8RQphm8Twse/BscoUsvdqDkTX3kP3nI6aZwcmdQDUcMPJPabX8TQphtCf0RLqd1csxuqQAJTxtYnEUGtIpAH4pn1Ou17FDScOKhT+QNAVM)
 
 </div>
 <div class="options-api">
 
-[Experimente-o na Zona de Testes](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBDb21wb25lbnRBIGZyb20gJy4vQ29tcG9uZW50QS52dWUnXG5pbXBvcnQgQ29tcG9uZW50QiBmcm9tICcuL0NvbXBvbmVudEIudnVlJ1xuICBcbmV4cG9ydCBkZWZhdWx0IHtcbiAgY29tcG9uZW50czoge1xuICAgIENvbXBvbmVudEEsXG4gICAgQ29tcG9uZW50QlxuICB9XG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8Q29tcG9uZW50QSAvPlxuICA8Q29tcG9uZW50QiAvPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59IiwiQ29tcG9uZW50QS52dWUiOiI8c2NyaXB0PlxuaW1wb3J0IHsgc3RvcmUgfSBmcm9tICcuL3N0b3JlLmpzJ1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGRhdGEoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIHN0b3JlXG4gICAgfVxuICB9XG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8ZGl2PlxuICAgIDxidXR0b24gQGNsaWNrPVwic3RvcmUuaW5jcmVtZW50KClcIj5cbiAgICAgIEZyb20gQToge3sgc3RvcmUuY291bnQgfX1cbiAgICA8L2J1dHRvbj5cbiAgPC9kaXY+XG48L3RlbXBsYXRlPiIsIkNvbXBvbmVudEIudnVlIjoiPHNjcmlwdD5cbmltcG9ydCB7IHN0b3JlIH0gZnJvbSAnLi9zdG9yZS5qcydcblxuZXhwb3J0IGRlZmF1bHQge1xuICBkYXRhKCkge1xuICAgIHJldHVybiB7XG4gICAgICBzdG9yZVxuICAgIH1cbiAgfVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGRpdj5cbiAgICA8YnV0dG9uIEBjbGljaz1cInN0b3JlLmluY3JlbWVudCgpXCI+XG4gICAgICBGcm9tIEI6IHt7IHN0b3JlLmNvdW50IH19XG4gICAgPC9idXR0b24+XG4gIDwvZGl2PlxuPC90ZW1wbGF0ZT4iLCJzdG9yZS5qcyI6ImltcG9ydCB7IHJlYWN0aXZlIH0gZnJvbSAndnVlJ1xuXG5leHBvcnQgY29uc3Qgc3RvcmUgPSByZWFjdGl2ZSh7XG4gIGNvdW50OiAwLFxuICBpbmNyZW1lbnQoKSB7XG4gICAgdGhpcy5jb3VudCsrXG4gIH1cbn0pIn0=)
+[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNrdU8FqhDAU/JVHLruyi+lZ3FIt9Cu82JilaTWR5CkF8d8bE5O1u1so9FYQzAyTvJnRTKTo+3QcOMlIbpgWPT5WUnS90gjPyr4ll1jAWasOdim9UMum3a20vJWWqxSgkvzTyRt+rocWYVpYFoQm8wRsJh+viHLBcyXtk9No2ALkXd/WyC0CyDfW6RVTOiancQM5ku+x7nUxgUGlOcwxn8Ppu7HJ7udqaqz3SYikOQ5aBgT+OA9slt9kasToFnb5OiAqCU+sFezjVBHvRUimeWdT7JOKrFKAl8VvYatdI6RMDRJhdlPtWdQf5mdQP+SHdtyX/IftlH9pJyS1vcQ2NK8ZivFSiL8BsQmmpMG1s1NU79frYA1k8OD+/I3pUA6+CeNdHg6hmoTMX9pPSnk=)
 
 </div>
 
-:::tip Dica
+:::tip DICA
 Nota que o manipulador de clique usa `store.increment()` com os parênteses - isto é necessário para chamar o método com o contexto `this` apropriado já que não é um método do componente.
 :::
 
-Embora que estejamos a usar um único objeto reativo como uma memória, também podes partilhar o estado reativo criado com uso de outras [APIs de Reatividade](/api/reactivity-core.html) tal como `ref()` ou `computed()`, ou mesmo retornar o estado global a partir de um [Constituível](/guide/reusability/composables.html):
+Embora que estejamos a usar um único objeto reativo como uma memória, também podes partilhar o estado reativo criado com uso de outras [APIs de Reatividade](/api/reactivity-core) tal como `ref()` ou `computed()`, ou mesmo retornar o estado global a partir de um [Constituível](/guide/reusability/composables):
 
 ```js
 import { ref } from 'vue'
