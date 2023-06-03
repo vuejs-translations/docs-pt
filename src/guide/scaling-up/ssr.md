@@ -257,7 +257,7 @@ Nota que se uma biblioteca de terceiro não for escrita com uso universal em men
 
 ### Poluição do Estado de Requisição Cruzada {#cross-request-state-pollution}
 
-No capítulo de Gestão de Estado, introduzimos um [padrão simples de gestão de estado com uso das APIs de Reatividade](state-management.html#simple-state-management-with-reactivity-api). Num contexto de SSR, este padrão exige alguns ajustes adicionais.
+No capítulo de Gestão de Estado, introduzimos um [padrão simples de gestão de estado com uso das APIs de Reatividade](state-management#simple-state-management-with-reactivity-api). Num contexto de SSR, este padrão exige alguns ajustes adicionais.
 
 O padrão declara o estado partilhado em um escopo de raiz do módulo de JavaScript. Isto torna-os **monotónicos (singletons, em Inglês)** - por exemplo existe apenas uma instância do objeto reativo ao longo do ciclo de vida inteiro da nossa aplicação. Isto funciona como esperado em uma aplicação de Vue do lado do cliente pura, já que os módulos na nossa aplicação inicializados fresca para cada visita de página do Navegador.
 
@@ -265,7 +265,7 @@ No entanto, num contexto de SSR, os módulos da aplicação são normalmente ini
 
 Nós podemos tecnicamente reinicializar todos os módulos de JavaScript em cada requisição, tal como fazemos nos navegadores. No entanto, a inicialização de módulos de JavaScript pode ser dispendiosa, assim isto afetaria de maneira significativa o desempenho do servidor.
 
-A solução recomendada é criar uma nova instância da aplicação inteira - incluindo o roteador e as memórias globais - em cada requisição. Depois, no lugar de importá-lo diretamente nos nossos componentes, fornecemos o estado partilhado com o uso [fornecimento de aplicação de alto nível](/guide/components/provide-inject.html#app-level-provide) e injetá-lo nos componentes que precisam dele:
+A solução recomendada é criar uma nova instância da aplicação inteira - incluindo o roteador e as memórias globais - em cada requisição. Depois, no lugar de importá-lo diretamente nos nossos componentes, fornecemos o estado partilhado com o uso [fornecimento de aplicação de alto nível](/guide/components/provide-inject#app-level-provide) e injetá-lo nos componentes que precisam dele:
 
 ```js
 // app.js (partilhado entre o servidor e cliente)
@@ -351,7 +351,7 @@ console.log(ctx.teleports) // { '#teleported': 'teleported content' }
 
 Tu podes injetar a marcação do teletransporte na localização correta na tua página de HTML final semelhante a como precisamos injetar a marcação da aplicação principal.
 
-:::tip Dica
+:::tip DICA
 Evite ter o `body` como alvo quando estiveres a usar as Teletransportações e a SSR juntos - normalmente, `<body>` conterá outro conteúdo interpretado no lado do cliente o que torna-o impossível para as Teletransportações determinar a localização inicial correta para hidratação.
 
 No lugar disto, prefira um contentor dedicado, por exemplo,  `<div id="teleported"></div>` que contém apenas conteúdo teletransportado.
