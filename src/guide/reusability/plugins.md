@@ -14,7 +14,7 @@ app.use(myPlugin, {
 })
 ```
 
-Uma extensão é definida tanto como um objeto que expõe um método `install()`, ou simplesmente como uma função que atua como a própria função de instalação. A função de instalação recebe a [instância de aplicação](/api/application.html) juntamente com as opções adicionais passadas para `app.use()`, se houverem:
+Uma extensão é definida tanto como um objeto que expõe um método `install()`, ou simplesmente como uma função que atua como a própria função de instalação. A função de instalação recebe a [instância de aplicação](/api/application) juntamente com as opções adicionais passadas para `app.use()`, se houverem:
 
 ```js
 const myPlugin = {
@@ -26,11 +26,11 @@ const myPlugin = {
 
 Não existe escopo definido estritamente para uma extensão, mas os cenários comuns onde as extensões são úteis incluem:
 
-1. Registar um ou mais componentes globais ou diretivas personalizas com [`app.component()`](/api/application.html#app-component) e [`app.directive()`](/api/application.html#app-directive).
+1. Registar um ou mais componentes globais ou diretivas personalizas com [`app.component()`](/api/application#app-component) e [`app.directive()`](/api/application#app-directive).
 
-2. Tornar um recurso [injetável](/guide/components/provide-inject.html) em toda a aplicação chamando [`app.provide()`](/api/application.html#app-provide).
+2. Tornar um recurso [injetável](/guide/components/provide-inject) em toda a aplicação chamando [`app.provide()`](/api/application#app-provide).
 
-3. Adicionar propriedades de instância global ou métodos atribuindo-os à [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+3. Adicionar propriedades de instância global ou métodos atribuindo-os à [`app.config.globalProperties`](/api/application#app-config-globalproperties).
 
 4. Uma biblioteca que precisa realizar alguma combinação do que está acima (por exemplo [vue-router](https://github.com/vuejs/vue-router-next)).
 
@@ -89,9 +89,9 @@ app.use(i18nPlugin, {
 
 Agora, a nossa expressão inicial `$translate('greetings.hello')` será substituído pelo `Bonjour!` em tempo de execução.
 
-Consulte também: [Aumentando Propriedades Globais](/guide/typescript/options-api.html#augmenting-global-properties) <sup class="vt-badge ts" />
+Consulte também: [Aumentando Propriedades Globais](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
-:::tip Dica
+:::tip DICA
 Utilize as propriedades globais cuidadosamente, já que pode rapidamente tornar-se as coisas confusas se muitas propriedades globais injetadas por extensões diferentes forem utilizadas em toda uma aplicação.
 :::
 
