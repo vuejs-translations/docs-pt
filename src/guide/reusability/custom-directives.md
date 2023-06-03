@@ -12,7 +12,7 @@ const vFocus = {
 
 Além do conjunto padrão de diretivas disponibilizadas no núcleo (tais como `v-model` ou `v-show`), a Vue também permite-te registar as tuas próprias diretivas personalizadas.
 
-Nós introduzimos duas formas de reutilizar código na Vue: [Componentes](/guide/essentials/component-basics.html) e [Constituíveis](./composables). Os componentes são os principais blocos do edifício, enquanto os constituíveis são focadas na reutilização da lógica com estado. As diretivas, por outro lado, são principalmente destinadas para a reutilização de lógica que envolve acesso de DOM de baixo nível sobre os elementos simples.
+Nós introduzimos duas formas de reutilizar código na Vue: [Componentes](/guide/essentials/component-basics) e [Funções de Composição](./composables). Os componentes são os principais blocos do edifício, enquanto os constituíveis são focadas na reutilização da lógica com estado. As diretivas, por outro lado, são principalmente destinadas para a reutilização de lógica que envolve acesso de DOM de baixo nível sobre os elementos simples.
 
 Uma diretiva personalizada é definida como um objeto contendo gatilhos de ciclo de vida semelhantes àqueles de um componente. Os gatilhos recebem o elemento em que a diretiva está vinculada. Cá está um exemplo de uma diretiva que foca em uma entrada quando o elemento é inserido no DOM pela Vue:
 
@@ -99,7 +99,7 @@ app.directive('focus', {
 })
 ```
 
-:::tip Dica
+:::tip DICA
 As diretivas personalizadas devem apenas ser utilizadas quando a funcionalidade desejada pode ser apenas alcançado através da manipulação direta do DOM. Prefira a marcação de modelos declarativa utilizando as diretivas embutidas tais como `v-bind` quando possível porque elas são mais eficientes e amigáveis a interpretação no lado do servidor.
 :::
 
@@ -174,7 +174,7 @@ Semelhante as diretivas embutidas, os argumentos de diretiva personalizada podem
 
 Aqui o argumento da diretiva será atualizado de maneira reativa baseada na propriedade `arg` no nosso estado de componente.
 
-:::tip Nota
+:::tip NOTA
 Para além de `el`, deves tratar estes argumentos como de apenas-leitura e nunca modificá-los. Se precisares de partilhar a informação através dos gatilhos, é recomendado fazer isto através do atributo [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) do elemento.
 :::
 
@@ -210,7 +210,7 @@ app.directive('demo', (el, binding) => {
 
 ## Utilização sobre Componentes {#usage-on-components}
 
-Quando utilizadas sobre os componentes, as diretivas personalizadas sempre aplicar-se-ão à um nó de raiz do componente, semelhante aos [Atributos que Caiem](/guide/components/attrs.html).
+Quando utilizadas sobre os componentes, as diretivas personalizadas sempre aplicar-se-ão à um nó de raiz do componente, semelhante aos [Atributos Herdados](/guide/components/attrs).
 
 ```vue-html
 <MyComponent v-demo="test" />
