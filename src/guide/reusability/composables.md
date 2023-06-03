@@ -363,5 +363,5 @@ Se tens experiência com a React, talvez notes que isto parece muito semelhante 
 
 - [Reatividade Em Profundidade](/guide/extras/reactivity-in-depth): para um entendimento de baixo nível de como o sistema de reatividade da Vue funciona.
 - [Gestão de Estado](/guide/scaling-up/state-management): para padrões de gerência de estado partilhado por vários componentes.
-- [Testagem de Funções de Composição](/guide/scaling-up/testing#testing-composables): dicas a respeito da testagem unitária de funções de composição.
+- [Testagem de Funções de Composição](/guide/scaling-up/testing#testing-composables): dicas sobre teste unitário de funções de composição.
 - [VueUse](https://vueuse.org/): Um coleção que sempre cresce de funções de composição de Vue. O código-fonte é também um grande recurso de aprendizado.
