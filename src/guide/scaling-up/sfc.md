@@ -65,7 +65,7 @@ Embora os Componentes de Ficheiro Único precisem de uma etapa de construção, 
 - [CSS isolado no Componente](/api/sfc-css-features)
 - [Sintaxe mais ergonómica quando trabalhamos com a API de Composição](/api/sfc-script-setup)
 - Mais otimizações de tempo de compilação pela analise cruzada do modelo de marcação e o programa (ou script se preferires)
-- [Suporte de IDE](/guide/scaling-up/tooling.html#ide-support) auto-conclusão e verificação de tipo para expressões de modelo de marcação
+- [Suporte de IDE](/guide/scaling-up/tooling#ide-support) auto-conclusão e verificação de tipo para expressões de modelo de marcação
 - Suporte de Substituição de Módulo Instantânea (HMR, sigla em Inglês) fora da caixa
 
 O SFC é uma funcionalidade de definição de Vue como uma abstração, e é a abordagem recomendada para usar a Vue nos seguintes cenários:
@@ -93,7 +93,7 @@ export default {
 
 Os marcadores `<style>` dentro dos SFCs são normalmente injetados como marcadores `<style>` nativos durante o desenvolvimento para suportar as atualizações instantâneas. Para produção eles podem ser extraídos e fundidos em um único ficheiro de CSS.
 
-Tu podes brincar com os SFCs e explorar como eles são compilados na [Zona de Testes de SFC da Vue](https://sfc.vuejs.org/).
+Tu podes brincar com os SFCs e explorar como eles são compilados na [Zona de Testes de SFC da Vue](https://play.vuejs.org/).
 
 Nos projetos de verdade, normalmente integramos o compilador de SFC com uma ferramenta de construção tal como [Vite](https://vitejs.dev/) ou [Vue CLI](http://cli.vuejs.org/) (que é baseada sobre [Webpack](https://webpack.js.org/)), e a Vue fornece ferramentas de estruturação de projetos oficiais para começares com os SFCs o mais rápido possível. Consulte mais detalhes na secção [Ferramental de SFC](/guide/scaling-up/tooling)
 
@@ -105,4 +105,4 @@ Para responder esta questão, é importante para nós concordar que a **separaç
 
 No desenvolvimento de Interface de Utilizador, temos descobrido que ao invés de dividir a base de código em três grandes camadas que se entrelaçam umas com as outras, faz muito mais sentido dividi-los em componentes livremente associados e compo-los. Dentro de um componente, seu modelo de marcação, lógica, e estilos estão inerentemente associados, e a sua colocação torna o componente mais coeso e sustentável.
 
-Nota que mesmo se não gostares da ideia dos Componentes de Ficheiro Único, ainda podes influenciar suas funcionalidades de carregamento instantâneo e pré-compilação separando o teu JavaScript e CSS em ficheiros separados usando as [importações de recurso](/api/sfc-spec.html#src-imports).
+Nota que mesmo se não gostares da ideia dos Componentes de Ficheiro Único, ainda podes influenciar suas funcionalidades de carregamento instantâneo e pré-compilação separando o teu JavaScript e CSS em ficheiros separados usando as [importações de recurso](/api/sfc-spec#src-imports).
