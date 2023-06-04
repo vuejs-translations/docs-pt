@@ -4,7 +4,7 @@
 
 Tu não precisas instalar nada na tua máquina para experimentar os Componentes de Ficheiro Único de Vue - existem zonas de testes online que permitem-te fazer isto direto no navegador:
 
-- [Zona de Teste de SFC da Vue](https://sfc.vuejs.org)
+- [Zona de Teste de SFC da Vue](https://play.vuejs.org)
   - Sempre desdobrado a partir da entrega mais recente
   - Desenhado para inspeção dos resultados da compilação do componente
 - [Vue + Vite na StackBlitz](https://vite.new/vue)
