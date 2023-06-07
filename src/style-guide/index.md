@@ -5,7 +5,7 @@ outline: deep
 # Guia de Estilo {#style-guide}
 
 :::warning AVISO DO ESTADO
-O guia de estilo está atualmente um pouco desatualizado. A maioria dos exemplos estão apenas na API de Opções, e existem quaisquer regras relativamente a `<script setup>` e a API de Composição. Nós estamos a planear melhorá-lo no futuro.
+O guia de estilo está atualmente um pouco desatualizado. A maioria dos exemplos estão apenas na API de Opções, e não existem quaisquer regras relativamente a `<script setup>` e a API de Composição. Nós estamos a planear melhorá-lo no futuro.
 :::
 
 Este é o guia de estilo oficial para o código específico de Vue. Se usas a Vue num projeto, é uma grande referência para evitar erros, ciclismo, e anti-padrões. No entanto, não acreditamos que qualquer guia de estilo seja ideal para todas as equipas ou projetos, então desvios cuidadosos são encorajados baseados na experiência passada, a pilha tecnológica circundante, e valores pessoais.
