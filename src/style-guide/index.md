@@ -2,44 +2,44 @@
 outline: deep
 ---
 
-# Style Guide {#style-guide}
+# Guia de Estilo {#style-guide}
 
-:::warning Status Notice
-The style guide is currently a bit outdated. Most examples are in Options API only, and there are no rules regarding `<script setup>` and Composition API. We are planning to improve it in the future.
+:::warning AVISO DO ESTADO
+O guia de estilo está atualmente um pouco desatualizado. A maioria dos exemplos estão apenas na API de Opções, e existem quaisquer regras relativamente a `<script setup>` e a API de Composição. Nós estamos a planear melhorá-lo no futuro.
 :::
 
-This is the official style guide for Vue-specific code. If you use Vue in a project, it's a great reference to avoid errors, bikeshedding, and anti-patterns. However, we don't believe that any style guide is ideal for all teams or projects, so mindful deviations are encouraged based on past experience, the surrounding tech stack, and personal values.
+Este é o guia de estilo oficial para o código específico de Vue. Se usas a Vue num projeto, é uma grande referência para evitar erros, ciclismo, e anti-padrões. No entanto, não acreditamos que qualquer guia de estilo seja ideal para todas as equipas ou projetos, então desvios cuidadosos são encorajados baseados na experiência passada, a pilha tecnológica circundante, e valores pessoais.
 
-For the most part, we also avoid suggestions about JavaScript or HTML in general. We don't mind whether you use semicolons or trailing commas. We don't mind whether your HTML uses single-quotes or double-quotes for attribute values. Some exceptions will exist however, where we've found that a particular pattern is helpful in the context of Vue.
+Geralmente, também evitamos sugestões sobre JavaScript ou HTML em geral. Nós não importamos-nos se usas pontos e vírgulas ou vírgulas finais. Nós não importamos-nos se o teu HTML usa aspas simples ou aspas duplas para valores de atributo. No entanto, algumas exceções existirão, onde encontramos este padrão em particular é útil no contexto da Vue.
 
-Finally, we've split rules into four categories:
+Finalmente, separamos as regras em quatro categorias:
 
-## Rule Categories {#rule-categories}
+## Categorias de Regra {#rule-categories}
 
-### Priority A: Essential (Error Prevention) {#priority-a-essential-error-prevention}
+### Prioridade A: Essencial (Prevenção de Erro) {#priority-a-essential-error-prevention}
 
-These rules help prevent errors, so learn and abide by them at all costs. Exceptions may exist, but should be very rare and only be made by those with expert knowledge of both JavaScript and Vue.
+Estas regras ajudam prevenir os erros, assim aprenda e acate-os a todo custo. As exceções podem existir, mas devem ser muito raro e apenas ser feitos por aqueles com conhecimento especialista de ambas JavaScript e Vue.
 
-- [See all priority A rules](./rules-essential)
+- [Consulte todas as regras de prioridade A](./rules-essential)
 
-### Priority B: Strongly Recommended {#priority-b-strongly-recommended}
+### Prioridade B: Fortemente Recomendado {#priority-b-strongly-recommended}
 
-These rules have been found to improve readability and/or developer experience in most projects. Your code will still run if you violate them, but violations should be rare and well-justified.
+Estas regras tem sido encontradas para melhorar legibilidade ou experiência de programação na maioria dos projetos. O teu código continuarão a executar se violá-los, mas violações devem ser raras e bem justificados.
 
-- [See all priority B rules](./rules-strongly-recommended)
+- [Consulte todas as regras de prioridade B](./rules-strongly-recommended)
 
-### Priority C: Recommended {#priority-c-recommended}
+### Prioridade C: Recomendado {#priority-c-recommended}
 
-Where multiple, equally good options exist, an arbitrary choice can be made to ensure consistency. In these rules, we describe each acceptable option and suggest a default choice. That means you can feel free to make a different choice in your own codebase, as long as you're consistent and have a good reason. Please do have a good reason though! By adapting to the community standard, you will:
+Onde vários, opções igualmente boas existem, uma escolha arbitrária pode ser feita para garantir consistência. Nestas regras, descrevemos cada opção de aceitação e sugerimos uma escolha padrão. Isto significa que podes sentires-te livre para fazer uma escolha diferente na tua própria base de código, enquanto fores consistente e teres uma boa razão. Mesmo assim por favor tenha uma boa razão! Ao adaptar ao padrão da comunidade, tu:
 
-1. Train your brain to more easily parse most of the community code you encounter
-2. Be able to copy and paste most community code examples without modification
-3. Often find new hires are already accustomed to your preferred coding style, at least in regards to Vue
+1. Treinarás o teu cérebro para analisar facilmente a maior parte do código da comunidade que encontras.
+2. Serás capaz de copiar e colar a maior parte dos exemplos de código da comunidade sem modificação.
+3. Frequentemente encontrarás novos contratos que já estão acostumados ao teu estilo de codificação preferido, pelo menos no que diz respeito a Vue.
 
-- [See all priority C rules](./rules-recommended)
+- [Consulte todas as regras de prioridade C](./rules-recommended)
 
-### Priority D: Use with Caution {#priority-d-use-with-caution}
+### Prioridade D: Use com Cautela {#priority-d-use-with-caution}
 
-Some features of Vue exist to accommodate rare edge cases or smoother migrations from a legacy code base. When overused however, they can make your code more difficult to maintain or even become a source of bugs. These rules shine a light on potentially risky features, describing when and why they should be avoided.
+Algumas funcionalidades da Vue existem para acomodar casos extremos raros ou suavizar as migrações duma base de código legada. Quando usado em excesso, podem tornar o teu código mais difícil de manter ou mesmo tornar-se uma fonte de erros de programação. Estas regras fazem brilhar um luz sobre funcionalidades potencialmente arriscadas, descrevendo quando e o porquê deveriam ser evitadas.
 
-- [See all priority D rules](./rules-use-with-caution)
+- [Consulte todas as regras de prioridade D](./rules-use-with-caution)
