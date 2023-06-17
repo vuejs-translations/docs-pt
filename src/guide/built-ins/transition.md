@@ -465,7 +465,7 @@ Cá está uma demonstração usando a [biblioteca GreenSock](https://greensock.c
 
 ## Transições Reutilizáveis {#reusable-transitions}
 
-As transições podem ser reutilizadas através do sistema de componente da Vua. Para criar uma transição reutilizável, podemos criar um componente que envolve o componente `<Transition>` e passar o conteúdo da ranhura:
+As transições podem ser reutilizadas através do sistema de componente da Vue. Para criar uma transição reutilizável, podemos criar um componente que envolve o componente `<Transition>` e passar o conteúdo da ranhura:
 
 ```vue{5}
 <!-- MyTransition.vue -->
