@@ -1,55 +1,55 @@
-# Priority C Rules: Recommended {#priority-c-rules-recommended}
+# Regras Prioridade C: Recomendado {#priority-c-rules-recommended}
 
-Where multiple, equally good options exist, an arbitrary choice can be made to ensure consistency. In these rules, we describe each acceptable option and suggest a default choice. That means you can feel free to make a different choice in your own codebase, as long as you're consistent and have a good reason. Please do have a good reason though! By adapting to the community standard, you will:
+Onde múltiplas opções igualmente boas existem, uma escolha arbitrária pode ser feita para garantir consistência. Nestas regras, descrevemos cada opção aceitável e sugerimos uma escolha padrão. Isso significa que você pode ficar à vontade para realizar uma escolha diferente em sua própria base de código, desde que você seja consistente e tenha um bom motivo. Mas por favor, tenha um bom motivo! Ao adotar o padrão da comunidade, você irá:
 
-1. Train your brain to more easily parse most of the community code you encounter
-2. Be able to copy and paste most community code examples without modification
-3. Often find new hires are already accustomed to your preferred coding style, at least in regards to Vue
+1. Treinar seu cérebro para analisar mais facilmente a maior parte do código da comunidade que encontrar
+2. Ser capaz de copiar e colar a maior parte dos exemplos de código da comunidade sem modificações
+3. Frequentemente encontrar novos parceiros que já estão acostumados ao seu estilo de código preferido, ao menos no âmbito Vue
 
-## Component/instance options order {#component-instance-options-order}
+## Ordem das opções de componente/instância {#component-instance-options-order}
 
-**Component/instance options should be ordered consistently.**
+**Opções de componente/instância devem ser ordenadas consistentemente.**
 
-This is the default order we recommend for component options. They're split into categories, so you'll know where to add new properties from plugins.
+Esta é a ordem padrão que recomendamos para opções de componente. Elas são divididas em categorias, então você saberá onde adicionar novas propriedades de plugins.
 
-1. **Global Awareness** (requires knowledge beyond the component)
+1. **Conscientização Global** (exige conhecimento além do componente)
 
    - `name`
 
-2. **Template Compiler Options** (changes the way templates are compiled)
+2. **Opções do Compilador de Modelo** (mudam a maneira que modelos são compilados)
 
    - `compilerOptions`
 
-3. **Template Dependencies** (assets used in the template)
+3. **Dependências de Modelo** (recursos usados no modelo)
 
    - `components`
    - `directives`
 
-4. **Composition** (merges properties into the options)
+4. **Composição** (mescla propriedades nas opções)
 
    - `extends`
    - `mixins`
    - `provide`/`inject`
 
-5. **Interface** (the interface to the component)
+5. **Interface** (a interface para o componente)
 
    - `inheritAttrs`
    - `props`
    - `emits`
 
-6. **Composition API** (the entry point for using the Composition API)
+6. **API de Composição** (ponto de entrada para usar a API de Composição)
 
    - `setup`
 
-7. **Local State** (local reactive properties)
+7. **Estado Local** (propriedades locais reativas)
 
    - `data`
    - `computed`
 
-8. **Events** (callbacks triggered by reactive events)
+8. **Eventos** (_callbacks_ acionados por eventos reativos)
 
    - `watch`
-   - Lifecycle Events (in the order they are called)
+   - Eventos do Ciclo de Vida (na ordem em que são chamados)
      - `beforeCreate`
      - `created`
      - `beforeMount`
@@ -64,28 +64,28 @@ This is the default order we recommend for component options. They're split into
      - `renderTracked`
      - `renderTriggered`
 
-9. **Non-Reactive Properties** (instance properties independent of the reactivity system)
+9. **Propriedades não reativas** (propriedades da instância independentes da reatividade do sistema)
 
    - `methods`
 
-10. **Rendering** (the declarative description of the component output)
+10. **Interpretação** (a descrição declarativa da saída do componente)
     - `template`/`render`
 
-## Element attribute order {#element-attribute-order}
+## Ordem dos atributos de elementos {#element-attribute-order}
 
-**The attributes of elements (including components) should be ordered consistently.**
+**Os atributos dos elementos (incluindo componentes) devem ser ordenados consistentemente.**
 
-This is the default order we recommend for component options. They're split into categories, so you'll know where to add custom attributes and directives.
+Esta é a ordenação padrão que recomendamos para opções do componente. Elas estão divididas em categorias, então você saberá onde adicionar atributos e diretivas personalizadas.
 
-1. **Definition** (provides the component options)
+1. **Definição** (fornece as opções do componente)
 
    - `is`
 
-2. **List Rendering** (creates multiple variations of the same element)
+2. **Interpretação de Listas** (cria múltiplas variações do mesmo elemento)
 
    - `v-for`
 
-3. **Conditionals** (whether the element is rendered/shown)
+3. **Condicionais** (se o elemento é interpretado/mostrado)
 
    - `v-if`
    - `v-else-if`
@@ -93,42 +93,42 @@ This is the default order we recommend for component options. They're split into
    - `v-show`
    - `v-cloak`
 
-4. **Render Modifiers** (changes the way the element renders)
+4. **Modificadores de Interpetação** (mudam a forma que o elemento é interpretado)
 
    - `v-pre`
    - `v-once`
 
-5. **Global Awareness** (requires knowledge beyond the component)
+5. **Conscientização Global** (exige conhecimento além do componente)
 
    - `id`
 
-6. **Unique Attributes** (attributes that require unique values)
+6. **Atributos Únicos** (atributos que exigem valores únicos)
 
    - `ref`
    - `key`
 
-7. **Two-Way Binding** (combining binding and events)
+7. **Vinculação Bidirecional** (combina vinculações e eventos)
 
    - `v-model`
 
-8. **Other Attributes** (all unspecified bound & unbound attributes)
+8. **Outros Atributos** (todos os atributos não especificados vinculados ou não vinculados)
 
-9. **Events** (component event listeners)
+9. **Eventos** (ouvintes de evento dos componentes)
 
    - `v-on`
 
-10. **Content** (overrides the content of the element)
+10. **Conteúdo** (substituem o conteúdo do elemento)
     - `v-html`
     - `v-text`
 
-## Empty lines in component/instance options {#empty-lines-in-component-instance-options}
+## Linhas vazias em opções de componente/instância {#empty-lines-in-component-instance-options}
 
-**You may want to add one empty line between multi-line properties, particularly if the options can no longer fit on your screen without scrolling.**
+**Você pode querer adicionar uma linha vazia entre propriedades de várias linhas, especialmente se as opções não couberem mais na sua tela sem rolagem.**
 
-When components begin to feel cramped or difficult to read, adding spaces between multi-line properties can make them easier to skim again. In some editors, such as Vim, formatting options like this can also make them easier to navigate with the keyboard.
+Quando os componentes começam a parecer abarrotados ou difíceis de se ler, adicionar espaços entre propriedades com múltiplas linhas pode torná-lo fácil de se ler novamente. Em alguns editores, como o Vim, opções de formatação como essa podem também tornar mais fácil de se navegar com o teclado.
 
 <div class="style-example style-example-good">
-<h3>Good</h3>
+<h3>Bom</h3>
 
 ```js
 props: {
@@ -158,8 +158,8 @@ computed: {
 ```
 
 ```js
-// No spaces are also fine, as long as the component
-// is still easy to read and navigate.
+// Não ter espaços também é bom, desde que o componente
+// seja fácil de ler e de navegar.
 props: {
   value: {
     type: String,
@@ -184,12 +184,12 @@ computed: {
 
 </div>
 
-## Single-file component top-level element order {#single-file-component-top-level-element-order}
+## Ordem de elementos de nível superior de Componentes de Arquivo Único {#single-file-component-top-level-element-order}
 
-**[Single-File Components](/guide/scaling-up/sfc) should always order `<script>`, `<template>`, and `<style>` tags consistently, with `<style>` last, because at least one of the other two is always necessary.**
+**[Componentes de Arquivo Único](/guide/scaling-up/sfc) devem sempre ordenar os identificadores `<script>`, `<template>`, e `<style>` consistentemente, com o `<style>` por último, porque ao menos uma das outras duas é sempre necessária.**
 
 <div class="style-example style-example-bad">
-<h3>Bad</h3>
+<h3>Ruim</h3>
 
 ```vue-html
 <style>/* ... */</style>
@@ -212,7 +212,7 @@ computed: {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Good</h3>
+<h3>Bom</h3>
 
 ```vue-html
 <!-- ComponentA.vue -->
