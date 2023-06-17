@@ -72,7 +72,7 @@ Eu espero que agora mesmo, estejas a ler esta sentença no teu idioma preferido.
 
 Consulte o [guia de Traduções](/translations/) por mais detalhes sobre como podes involver-te.
 
-### Tornar-se um Líder de Comunidade {#become-a-community-leader}
+### Tornar-se um Líder Comunitário {#become-a-community-leader}
 
 Há muito que podes fazer para ajudar a Vue a crescer na tua comunidade:
 
