@@ -1,45 +1,45 @@
 # Código de Conduta {#code-of-conduct}
 
-## Our Pledge {#our-pledge}
+## Nosso Compromisso {#our-pledge}
 
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, political party, or sexual identity and orientation. Note, however, that religion, political party, or other ideological affiliation provide no exemptions for the behavior we outline as unacceptable in this Code of Conduct.
+No interesse de fomentar um ambiente aberto e acolhedor, nós como colaboradores e responsáveis prometemos tornar a participação no nosso projeto e comunidade uma experiência livre de assédio para todos, independentemente da idade, tamanho do corpo, deficiência, características de sexo, identidade de género, expressão, nível de experiência, educação, estado socio-económico, nacionalidade, aparência pessoal, raça, religião, partido político, ou identidade sexual e orientação. Nota que, no entanto, esta religião, partido político, ou outra afiliação ideológica não fornecem nenhuma isenção para o comportamento que contornamos como inaceitáveis neste Código de Conduta.
 
-## Our Standards {#our-standards}
+## Nossos Padrões {#our-standards}
 
-Examples of behavior that contributes to creating a positive environment include:
+Exemplos de comportamento que contribuem para criação dum ambiente positivo incluem:
 
-- Using welcoming and inclusive language
-- Being respectful of differing viewpoints and experiences
-- Gracefully accepting constructive criticism
-- Focusing on what is best for the community
-- Showing empathy towards other community members
+- Usar linguagem acolhedora e inclusiva
+- Ser respeitoso sobre pontos de vistas e experiências diferentes
+- Aceitar com graça criticas construtivas
+- Focar no que é melhor para a comunidade
+- Mostrar empatia para com outros membros da comunidade
 
-Examples of unacceptable behavior by participants include:
+Exemplos de comportamento inaceitável por participantes incluem:
 
-- The use of sexualized language or imagery and unwelcome sexual attention or advances
-- Trolling, insulting/derogatory comments, and personal or political attacks
-- Public or private harassment
-- Publishing others' private information, such as a physical or electronic address, without explicit permission
-- Other conduct which could reasonably be considered inappropriate in a professional setting
+- O uso de linguagem ou imagens de teor sexual e atenção ou avanços sexuais indesejáveis
+- Provocações, comentários insultuosos ou depreciativos, e ataques pessoais e políticos
+- Perseguição pública ou privada
+- Publicar informação privada de outros, tais como endereço físico ou eletrónico, sem explícita permissão
+- Outra conduta que poderia razoavelmente ser considerado inapropriada num ambiente profissional.
 
-## Our Responsibilities {#our-responsibilities}
+## Nossas Responsabilidades {#our-responsibilities}
 
-Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
+Os responsáveis do projeto são responsáveis por clarificar os padrões de comportamento aceitável e são esperados para tomarem ação corretiva apropriada e correta em resposta à quaisquer exemplos de comportamento inaceitável.
 
-Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.
+Os responsáveis do projeto têm o direito e responsabilidade de remover, editar, ou rejeitar comentários, consolidações, código, edições de wiki, questões, e outras contribuições que não estiverem alinhadas à este Código de Conduta que consideram inapropriados, ameaçadores, ofensivos, ou nocivos.
 
-## Scope {#scope}
+## Âmbito {#scope}
 
-This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representing a project or community include using an official project e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. Representation of a project may be further defined and clarified by project maintainers.
+Este Código de Conduta aplica-se tanto dentro de espaços do projeto quanto em espaços públicos onde um indivíduo estiver a representar o projeto ou sua comunidade. Exemplos de representar um projeto ou comunidade incluem usar um endereço de correio-eletrónico do projeto oficial, publicar através duma conta de rede social oficial, ou agir como um representante nomeado num evento online ou offline. A representação dum projeto pode ser ainda definida e clarificada pelos responsáveis do projeto.
 
-## Enforcement {#enforcement}
+## Coação {#enforcement}
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at community@vuejs.org. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
+Exemplos de comportamentos abusivos, importunação, ou de outro modo inaceitável pode ser relatado contactando a equipa do projeto em community@vuejs.org. Todas as queixas serão revisadas e investigadas e resultarão numa resposta que for considerada necessária e apropriada para as circunstâncias. A equipa do projeto está obrigada a manter a confidencialidade no que diz respeito ao repórter dum incidente.
 
-Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
+Os responsáveis do projeto que não seguirem ou imporem o Código de Conduta de boa fé podem enfrentar consequências temporárias ou permanentes como determinado por outros membros da liderança do projeto.
 
-## Attribution {#attribution}
+## Atribuição {#attribution}
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4, available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
+Este Código de Conduta é adaptado do [Pacto do Colaborador][homepage], versão 1.4, disponível em https://www.contributor-covenant.org/version/1/4/code-of-conduct.html.
 
 [homepage]: https://www.contributor-covenant.org
