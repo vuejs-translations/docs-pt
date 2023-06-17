@@ -26,7 +26,7 @@ footer: false
 
 ## O que a Vue é? {#what-is-vue}
 
-Vua (pronunciado /vjuː/, como **view** ) é uma abstração de JavaScript para construção de interfaces de utilizador. Ela constrói sobre a HTML, CSS e JavaScript padrão, e fornece um modelo de programação declarativa baseada em componente que ajuda-te a programar interfaces de utilizador eficientemente, sejam elas simples ou complexas.
+Vue (pronunciado /vjuː/, como **view** ) é uma abstração de JavaScript para construção de interfaces de utilizador. Ela constrói sobre a HTML, CSS e JavaScript padrão, e fornece um modelo de programação declarativa baseada em componente que ajuda-te a programar interfaces de utilizador eficientemente, sejam elas simples ou complexas.
 
 Cá está um exemplo mínimo:
 
@@ -77,7 +77,7 @@ O resto da documentação presume familiaridade fundamental com a HTML, CSS e Ja
 
 ## A Abstração Progressiva {#the-progressive-framework}
 
-A Vua é uma abstração e ecossistema que cobre a maioria das funcionalidades comuns necessárias no desenvolvimento de frontend. Porém a web é extremamente diversa - as coisas que construimos na web podem variar drasticamente na forma e escala. Com isto em mente, a Vue está desenhada para ser flexível e adotável incrementalmente. Dependendo do teu caso de uso, a Vue pode ser utilizada nas diferentes maneiras:
+A Vue é uma abstração e ecossistema que cobre a maioria das funcionalidades comuns necessárias no desenvolvimento de frontend. Porém a web é extremamente diversa - as coisas que construimos na web podem variar drasticamente na forma e escala. Com isto em mente, a Vue está desenhada para ser flexível e adotável incrementalmente. Dependendo do teu caso de uso, a Vue pode ser utilizada nas diferentes maneiras:
 
 - Otimizando o HTML estático sem uma etapa de construção
 - Embutindo como Componentes de Web em qualquer página
@@ -90,7 +90,7 @@ Se considerares estes conceitos intimidantes, não te preocupes! A aula e o guia
 
 Se fores um programador experiente interessado em como integrar melhor a Vue na tua pilha, ou estiveres curioso a respeito do que estes termos querem dizer, nós os discutimos com mais detalhes em [Maneiras de Utilização da Vue](/guide/extras/ways-of-using-vue).
 
-Apesar da flexibilidade, o conhecimento principal a respeito de como a Vua funciona é partilhado por todos estes casos de uso. Mesmo se agora fores apenas um principiante, o conhecimento adquirido pelo caminho manter-se-á útil a medida que cresceres para lidares com objetivos mais ambiciosos no futuro. Se fores um veterano, podes escolher a maneira ideal de entregar a Vue baseado nos problemas que estás tentando resolver, enquanto conservas a mesma produtividade. Isto é a razão de nós chamarmos a Vue de "A Abstração Progressiva": é uma abstração que pode crescer contigo e adaptar-se as tuas necessidades.
+Apesar da flexibilidade, o conhecimento principal a respeito de como a Vue funciona é partilhado por todos estes casos de uso. Mesmo se agora fores apenas um principiante, o conhecimento adquirido pelo caminho manter-se-á útil a medida que cresceres para lidares com objetivos mais ambiciosos no futuro. Se fores um veterano, podes escolher a maneira ideal de entregar a Vue baseado nos problemas que estás tentando resolver, enquanto conservas a mesma produtividade. Isto é a razão de nós chamarmos a Vue de "A Abstração Progressiva": é uma abstração que pode crescer contigo e adaptar-se as tuas necessidades.
 
 ## Componentes de Ficheiro Único {#single-file-components}
 

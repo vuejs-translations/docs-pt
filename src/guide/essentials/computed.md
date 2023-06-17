@@ -95,7 +95,7 @@ Cá temos declarado uma propriedade computada `publishedBooksMessage`.
 
 Tente mudar o valor do arranjo `books` no `data` da aplicação e verás como `publishedBooksMessage` está mudando por consequência.
 
-Tu podes vincular dados às propriedades computadas no modelo de marcação tal como uma propriedade normal. A Vua está consciente de que `this.publishedBooksMessage` depende de `this.author.books`, assim ela atualizará qualquer vínculos que dependem de `this.publishedBooksMessage` quando `this.author.books` mudar.
+Tu podes vincular dados às propriedades computadas no modelo de marcação tal como uma propriedade normal. A Vue está consciente de que `this.publishedBooksMessage` depende de `this.author.books`, assim ela atualizará qualquer vínculos que dependem de `this.publishedBooksMessage` quando `this.author.books` mudar.
 
 Consulte também: [Tipando Propriedades Computadas](/guide/typescript/options-api.html#typing-computed-properties) <sup class="vt-badge ts" />
 

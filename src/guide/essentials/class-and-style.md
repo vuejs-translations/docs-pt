@@ -327,7 +327,7 @@ Nós podemos vincular o `:style` a um arranjo de vários objetos de estilo. Este
 
 ### Prefixação Automática
 
-Quando utilizares uma propriedade de CSS que exija um [prefixo](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) no `:style`, a Vue adicionará automaticamente o prefixo apropriado. A Vua faz isto verificando no tempo de execução para ver quais propriedades de estilo são suportadas no atual navegador. Se o navegador não suportar uma propriedade em particular então várias variantes prefixadas serão testadas para tentar encontrar uma que é suportada.
+Quando utilizares uma propriedade de CSS que exija um [prefixo](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) no `:style`, a Vue adicionará automaticamente o prefixo apropriado. A Vue faz isto verificando no tempo de execução para ver quais propriedades de estilo são suportadas no atual navegador. Se o navegador não suportar uma propriedade em particular então várias variantes prefixadas serão testadas para tentar encontrar uma que é suportada.
 
 ### Vários Valores
 

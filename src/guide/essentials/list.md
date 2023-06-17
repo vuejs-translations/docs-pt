@@ -319,7 +319,7 @@ Consulte [este exemplo de uma lista de afazeres simples](https://play.vuejs.org/
 
 ### Métodos de Mutação {#mutation-methods}
 
-A Vua é capaz de detetar quando métodos de mutação de um arranjo reativo são chamados e aciona as atualizações necessárias. Estes métodos de mutação são:
+A Vue é capaz de detetar quando métodos de mutação de um arranjo reativo são chamados e aciona as atualizações necessárias. Estes métodos de mutação são:
 
 - `push()`
 - `pop()`
@@ -349,7 +349,7 @@ this.items = this.items.filter((item) => item.message.match(/Foo/))
 
 </div>
 
-Tu podes achar que isto fará a Vue deixar fora o DOM existente e reinterpretar a lista inteira - felizmente, este não é o caso. A Vua implementa algumas heurísticas inteligentes para maximizar a reutilização do elemento do DOM, assim substituir um arranjo com um outro arranjo contendo objetos que se sobrepõem é uma operação muito eficiente.
+Tu podes achar que isto fará a Vue deixar fora o DOM existente e reinterpretar a lista inteira - felizmente, este não é o caso. A Vue implementa algumas heurísticas inteligentes para maximizar a reutilização do elemento do DOM, assim substituir um arranjo com um outro arranjo contendo objetos que se sobrepõem é uma operação muito eficiente.
 
 ## Exibindo Resultados Filtrados ou Organizados {#displaying-filtered-sorted-results}
 

@@ -72,7 +72,7 @@ Repare como não precisamos utilizar `.value` quando estamos acessando a referê
 
 <div class="options-api">
 
-Os estados que quando mudados podem acionar atualizações são considerados **reativos**. Na Vua, o estado reativo é segurado nos componentes. No exemplo de código, o objeto que está sendo passado para `createApp()` é um componente.
+Os estados que quando mudados podem acionar atualizações são considerados **reativos**. Na Vue, o estado reativo é segurado nos componentes. No exemplo de código, o objeto que está sendo passado para `createApp()` é um componente.
 
 Nós podemos declarar estado reativo utilizando a opção de componente `data`, que deve ser uma função que retorna um objeto:
 

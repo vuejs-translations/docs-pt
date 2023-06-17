@@ -2,7 +2,7 @@
 
 A Vue utiliza uma sintaxe de modelo de marcação baseada na HTML que permite-te vincular de maneira declarativa o DOM interpretado aos dados da instância do componente subjacente. Todos modelos de marcação de Vue são HTML sintaticamente validos que podem ser analisados por navegadores e analisadores de HTML compatíveis a especificação.
 
-Nos bastidores, a Vua compila os modelos de marcação para um código de JavaScript altamente otimizado. Combinada com o sistema de reatividade, a Vue é capaz de compreender inteligentemente o número mínimo de componentes à reinterpretar e aplicar a quantidade mínima de manipulações do DOM quando o estado da aplicação mudar.
+Nos bastidores, a Vue compila os modelos de marcação para um código de JavaScript altamente otimizado. Combinada com o sistema de reatividade, a Vue é capaz de compreender inteligentemente o número mínimo de componentes à reinterpretar e aplicar a quantidade mínima de manipulações do DOM quando o estado da aplicação mudar.
 
 Se estiveres familiarizado com os conceitos do DOM Virtual e preferires o poder bruto da JavaScript, também podes [escrever diretamente funções de interpretação](/guide/extras/render-function) no lugar dos modelos de marcação, com suporte opcional ao JSX. No entanto, nota que eles não gozam do mesmo nível de otimizações de tempo de compilação como os modelos de marcação.
 
@@ -113,7 +113,7 @@ Tu podes vinculá-los a um único elemento utilizando `v-bind` sem um argumento:
 
 ## Utilizando Expressões de JavaScript {#using-javascript-expressions}
 
-Até aqui só temos estado vinculando a chaves de propriedade simples nos modelos de marcação. Mas a Vua atualmente suporta o poder completo das expressões de JavaScript dentro de todas vinculações de data:
+Até aqui só temos estado vinculando a chaves de propriedade simples nos modelos de marcação. Mas a Vue atualmente suporta o poder completo das expressões de JavaScript dentro de todas vinculações de data:
 
 ```vue-html
 {{ number + 1 }}

@@ -34,7 +34,7 @@ function onInput(e) {
 
 Experimente digitar na caixa de entrada - deves ver o texto em `<p>` atualizando a medida que digitas.
 
-Para simplificar vínculos de duas vias, a Vua fornece uma diretiva, `v-model`, que é essencialmente um açúcar de sintaxe para o que está acima:
+Para simplificar vínculos de duas vias, a Vue fornece uma diretiva, `v-model`, que é essencialmente um açúcar de sintaxe para o que está acima:
 
 ```vue-html
 <input v-model="text">

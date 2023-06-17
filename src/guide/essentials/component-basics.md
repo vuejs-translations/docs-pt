@@ -6,7 +6,7 @@ Os componentes permitem-te separar a Interface de Utilizador (UI, sigla em Ingl�
 
 <!-- https://www.figma.com/file/qa7WHDQRWuEZNRs7iZRZSI/components -->
 
-É muito semelhante a como encaixamos elementos nativos de HTML, mas a Vue implemente seu próprio modelo de componente que permite-nos resumir o conteúdo e lógica personalizados dentro de cada componente. A Vua também trabalha com Componentes de Web nativos, [leia mais a respeito](/guide/extras/web-components).
+É muito semelhante a como encaixamos elementos nativos de HTML, mas a Vue implemente seu próprio modelo de componente que permite-nos resumir o conteúdo e lógica personalizados dentro de cada componente. A Vue também trabalha com Componentes de Web nativos, [leia mais a respeito](/guide/extras/web-components).
 
 ## Definindo um Componente
 

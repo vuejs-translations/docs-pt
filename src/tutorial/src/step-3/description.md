@@ -1,6 +1,6 @@
 # Vinculação de Atributo
 
-Na Vua, os bigodes são utilizados apenas para interpolação de texto. Para vincular um atributo à um valor dinâmico, utilizamos a diretiva `v-bind`:
+Na Vue, os bigodes são utilizados apenas para interpolação de texto. Para vincular um atributo à um valor dinâmico, utilizamos a diretiva `v-bind`:
 
 ```vue-html
 <div v-bind:id="dynamicId"></div>
