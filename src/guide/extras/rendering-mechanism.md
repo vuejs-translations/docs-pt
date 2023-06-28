@@ -185,7 +185,7 @@ Um bloco filho é rastreado dentro do arranjo de descendentes dinâmicos do bloc
 
 ### Impacto na Hidratação de SSR {#impact-on-ssr-hydration}
 
-Tanto as opções de remendo quanto o aplainamento de árvore também melhoram grandemente o desempenho da [Hidratação de SSR](/guide/scaling-up/ssr.html#client-hydration) da Vue:
+Tanto as opções de remendo quanto o aplainamento de árvore também melhoram grandemente o desempenho da [Hidratação de SSR](/guide/scaling-up/ssr#client-hydration) da Vue:
 
 - A hidratação de um único elemento pode pegar caminhos rápidos baseado na opção de remendo do `vnode` correspondente.
 
