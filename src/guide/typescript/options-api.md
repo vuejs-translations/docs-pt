@@ -2,11 +2,11 @@
 
 > Esta página presume que já leste a visão geral no [Utilizando a Vue com a TypeScript](./overview).
 
-:::tip Dica
-Embora a Vue suporte a utilização da TypeScript com a API de Opções, é recomendado utilizar a Vue com a TypeScript através da API de Composição visto que ela oferece a inferência de tipo mais simples, mais eficiente e mais robusta.
+:::tip DICA
+Embora a Vue suporte o uso da TypeScript com a API de Opções, é recomendado usar a Vue com a TypeScript através da API de Composição visto que oferece a mais simples, mais eficiente e mais robusta inferência de tipo.
 :::
 
-## Atribuindo Tipos as Propriedades do Componente {#typing-component-props}
+## Tipos para as Propriedades do Componente {#typing-component-props}
 
 A inferência de tipo para as propriedades na API de Opções exige o envolvimento do componente com `defineComponent()`. Com isto, a Vue é capaz de inferir os tipos para as propriedades baseada na opção `props`, levando opções adicionais tais como `required: true` e `default` em conta:
 
@@ -94,7 +94,7 @@ export default defineComponent({
 
 Isto impedi a TypeScript de ter que inferir o tipo do `this` dentro destas funções, o que, infelizmente, pode causar a inferência de tipo falhar na realização do seu trabalho. Isto era uma anterior [limitação do desenho](https://github.com/microsoft/TypeScript/issues/38845), e agora foi melhorada na [TypeScript 4.7](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html#improved-function-inference-in-objects-and-methods).
 
-## Atribuindo Tipos as Emissões do Componente {#typing-component-emits}
+## Tipos para as Emissões do Componente {#typing-component-emits}
 
 Nós podemos declarar o tipo da carga esperada para um evento emitido utilizando a sintaxe de objeto da opção `emits`. Além disto, todos os eventos emitidos não declarados lançarão um erro de tipo quando chamados:
 
@@ -120,7 +120,7 @@ export default defineComponent({
 })
 ```
 
-## Atribuindo Tipos as Propriedades Computadas {#typing-computed-properties}
+## Tipos para as Propriedades Computadas {#typing-computed-properties}
 
 Uma propriedade computada infere o seu tipo baseado no seu valor de retorno:
 
@@ -176,7 +176,7 @@ export default defineComponent({
 
 As anotações explícitas também podem ser exigidas em alguns casos extremos onde a TypeScript falha em inferir o tipo de uma propriedade computada por causa de laços de inferência circular.
 
-## Atribuindo Tipos aos Manipuladores de Evento {#typing-event-handlers}
+## Tipos para os Manipuladores de Evento {#typing-event-handlers}
 
 Quando estiveres lidando com eventos de DOM nativos, pode ser útil definir um tipo para o argumento que passamos para o manipulador corretamente. Vamos dar uma vista de olhos neste exemplo:
 
@@ -199,7 +199,7 @@ export default defineComponent({
 </template>
 ```
 
-Sem a anotação de tipo, o argumento `event` terá implicitamente um tipo de `any`. Isto também resultará em um erro de TypeScript se `"strict": true` ou `"noImplicitAny": true` forem utilizadas no `tsconfig.json`. É portanto recomendado anotar explicitamente o argumento dos manipuladores de eventos. Além disto, podes precisar de explicitamente fundir as propriedades no `event`:
+Sem a anotação de tipo, o argumento `event` terá implicitamente um tipo de `any`. Isto também resultará em um erro de TypeScript se `"strict": true` ou `"noImplicitAny": true` forem utilizadas no `tsconfig.json`. É portanto recomendado anotar explicitamente o argumento dos manipuladores de eventos. Além disto, podes precisar de explicitamente usar as asserções de tipo quando estiveres a acessar as propriedades do `event`:
 
 ```ts
 import { defineComponent } from 'vue'
@@ -213,7 +213,7 @@ export default defineComponent({
 })
 ```
 
-## Aumentando Propriedades Globais {#augmenting-global-properties}
+## Aumentando as Propriedades Globais {#augmenting-global-properties}
 
 Algumas extensões são instaladas globalmente e suas propriedades estão disponíveis para todas instâncias de componente através de [`app.config.globalProperties`](/api/application.html#app-config-globalproperties). Por exemplo, podemos instalar `this.$http` para requisição de dados ou `this.$translate` para internacionalização. Para fazer isto funcionar bem com a TypeScript, a Vue expõe uma interface `ComponentCustomProperties` desenhada para ser aumentada através da [aumentação de módulo de TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation):
 
