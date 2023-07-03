@@ -216,11 +216,11 @@ As principais diferenças entre a Vitest e executores baseados no navegador são
 
 O teste de componente muitas vezes envolve a montagem do componente a ser testado em isolamento, acionar eventos de entrada de utilizador de maneira simulada, e afirmar sobre a saída do DOM apresentado. Existem bibliotecas utilitárias dedicadas que tornam estas tarefas mais simples.
 
-- [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) é uma biblioteca de testes de Vue focada em testar componentes sem depender dos detalhes de implementação. Construída com a acessibilidade em mente, sua abordagem também torna a refatoração mais suave. Seu princípio orientador é que quanto mais testes refletirem a maneira que o software é usado, mais confiança eles podem oferecer.
+- [`@vue/test-utils`](https://github.com/vuejs/test-utils) é a biblioteca de testes de componente de baixo nível oficial que foi escrita para oferecer aos utilizadores acesso às APIs específicas da Vue. É também a biblioteca de baixo nível sobre qual a `@testing-library/vue` é construída.
 
-- - [`@vue/test-utils`](https://github.com/vuejs/test-utils) é a biblioteca de testes de componente de baixo nível oficial que foi escrita para oferecer aos utilizadores acesso às APIs específicas da Vue. É também a biblioteca de baixo nível sobre qual a `@testing-library/vue` é construída.
+- [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) é uma biblioteca de testes de Vue focada em testar componentes sem depender dos detalhes de implementação. A sua diretriz é que quanto mais os testes refletirem a maneira que o software é usado, mas confiança podem fornecer.
 
-Nós recomendamos usar a `@testing-library/vue` para teste de componentes nas aplicações, já que o seu foco alinha-se melhor com o teste das prioridades das aplicações. Use `@vue/test-utils` apenas se estiveres a construir componentes avançados que exijam o teste de aspetos internos específicos da Vue.
+Nós recomendamos usar a `@vue/test-utils` para testar os componentes nas aplicações. A `@testing-library/vue` tem problemas com testes de componente assíncrono com Suspense, então deve ser usada com cautela.
 
 ### Outras Opções {#other-options-1}
 
@@ -266,7 +266,7 @@ Quando os testes de ponta-a-ponta estão a executar em condutas de integração 
 
 - [Cypress](https://www.cypress.io/)
 
-  Em geral, acreditamos que a Cypress fornece a solução mais completa de E2E com funcionalidades como uma interface gráfica informativa, excelente depurabilidade, afirmações e implementações forjadas, execução paralela, fotografias e muito mais. Conforme mencionado acima, ela também fornece suporte para [Teste de Componente](https://docs.cypress.io/guides/component-testing/introduction). No entanto, ela apenas suporta navegadores baseados no Chromium e a Firefox.
+  Em geral, acreditamos que a Cypress fornece a solução mais completa de E2E com funcionalidades como uma interface gráfica informativa, excelente capacidade de depuração, afirmações e implementações forjadas, execução paralela, fotografias e muito mais. Conforme mencionado acima, ela também fornece suporte para [Teste de Componente](https://docs.cypress.io/guides/component-testing/introduction). No entanto, ela apenas suporta navegadores baseados no Chromium e a Firefox.
 
 ### Outras Opções {#other-options-2}
 
@@ -309,11 +309,12 @@ Se estiveres a usar a TypeScript, adicione `vitest/globals` ao campo `types` do 
 // tsconfig.json
 
 {
- "compilerOptions": {
+  "compilerOptions": {
     "types": ["vitest/globals"]
   }
 }
 ```
+
 :::
 
 Depois crie um ficheiro terminando em `*.test.js` no teu projeto. Tu podes colocar todos os ficheiros de teste em um diretório de teste na raiz do projeto, ou em diretórios de teste próximos do teus ficheiros de código-fonte. A Vitest procurará automaticamente por eles usando a convenção de nomeação.
@@ -412,6 +413,7 @@ export function withSetup(composable) {
   return [result, app]
 }
 ```
+
 ```js
 import { withSetup } from './test-utils'
 import { useFoo } from './foo'
