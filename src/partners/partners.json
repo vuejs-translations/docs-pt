@@ -130,58 +130,6 @@
     "platinum": true
   },
   {
-    "name": "64 Robots",
-    "logo": "64robots.svg",
-    "intro": "Somos uma equipa especialista em Vue e Nuxt criando e lapidando aplicações modernas lindamente desenhadas. Seja construindo algo novo, refatorando um projeto existente ou movendo para Vue 3 e Nuxt 3, iremos dar-te uma abordagem pessoal e cuidadosa para o desenvolvimento.",
-    "description": [
-      "Nos especializamos em construir APIs em Laravel, SPAs em Vue.js 2 e Vue.js 3, Aplicações de SSR em Nuxt.js 2 e Nuxt.js 3, e Aplicações Móveis em Flutter.",
-      "Nós amamos trabalhar com empresas de todos os tamanhos. Temos guiado novas empresas seus primeiros estágios para um lançamento bem-sucedido e ajudado grandes empresas internacionais a refatorar e reconstruir produtos existentes para escalarem no futuro. Seja qual for as tuas necessidades, iremos ajudar-te a tomar as decisões corretas a respeito da tecnologia e ajudar-te a construir um produto polido que colocar-te-á no caminho para o sucesso.",
-      "Nós colocamos a nós mesmos à parte pelo nosso nível de envolvimento no teu produto. Pense em nós como uma extensão da tua equipa. Seja aumentando uma equipa existente ou intervindo como CTO de facto para tomar as decisões técnicas, estamos lá por ti. Somos seletivos nos produtos que aceitamos, já que nós sinceramente queremos acreditar no nosso trabalho e fazer tudo que podermos para torná-los bem-sucedido. O teu sucesso é o nosso sucesso."
-    ],
-    "region": [
-      "América do Norte",
-      "Europa",
-      "África"
-    ],
-    "proficiencies": [
-      "Vue",
-      "Nuxt",
-      "Laravel",
-      "Flutter",
-      "Node.js"
-    ],
-    "website": {
-      "text": "64robots.com",
-      "url": "https://64robots.com/"
-    },
-    "contact": "rob@64robots.com",
-    "platinum": true
-  },
-  {
-    "name": "DevSquad",
-    "logo": "devsquad.png",
-    "intro": "Tu podes pensar da DevSquad como Focas Marinhas do desenvolvimento de software. Os membros da nossa equipa possuem habilidades diversas e únicas, e esta funcionalidade cruzada permite-nos completar qualquer missão com sucesso.",
-    "description": [
-      "Todos os nossos clientes recebem sua própria Equipa dedicada. Mesmo se precisares de 30 programadores, todos trabalhando sobre o teu projeto são separados em pequenas equipas ágeis de 2-6 pessoas. Uma equipa pequena testada em combate pode mover-se muito rápido e com mais precisão do que equipas grandes, tal como as Focas Marinhas.",
-      "No lugar do código cheio de bug, que podes ter recebido no passado, escrevemos software robusto e o testamos. Mas no lugar de apenas testar manualmente, escrevemos código adicional para testar o código da tua aplicação. Isto garante que os bugs são avistados rapidamente e automaticamente antes dos teus empregados e clientes cheguem alguma vez a tocar no software. E isto preveni problemas maiores mais tarde quando tentares escalar a utilização ou adicionar novas funcionalidades.",
-      "A DevSquad dá-te provas provadas e toda a experiência que precisares para construires o teu software melhor, mais rápido e direito a primeira vez."
-    ],
-    "region": [
-      "América do Norte"
-    ],
-    "proficiencies": [
-      "Vue.js",
-      "Laravel",
-      "Node.js"
-    ],
-    "website": {
-      "text": "devsquad.com",
-      "url": "https://devsquad.com/vuejs-developers/"
-    },
-    "contact": "phil@devsquad.com",
-    "platinum": true
-  },
-  {
     "name": "Tighten",
     "logo": "tighten.svg",
     "flipLogo": true,
@@ -317,29 +265,26 @@
     "hiring": "jump24.co.uk/careers"
   },
   {
-    "name": "Epicmax",
-    "logo": "epicmax.svg",
-    "hero": "epicmax.png",
-    "intro": "Epicmax is a team of Vue.js experts with 6 years of experience in building Vue.js interfaces. We bring Vue.js knowledge in front-end development across industries and geographies, serving businesses of different sizes. We have more than 55 completed projects, 45 clients worldwide and 3 Open Source products in our portfolio.",
+    "name": "HeroDevs",
+    "logo": "herodevs.png",
+    "flipLogo": true,
+    "hero": "herodevs-hero.png",
+    "intro": "End-of-life of open source software versions creates massive challenges for companies. HeroDevs offers two solutions: (1) We provide never-ending support for sunsetted open source software, and (2)  we provide consulting and engineering to help companies migrate to in-support open source software.",
     "description": [
-      "Epicmax is a Vue.js software development company with over 55 successfully completed projects all over the world and 3 widely acclaimed Open Source products.",
-      "Since 2017, we’ve helped international clients in over 15 industries, both startups and larger companies, build everything from e-commerce through social media platforms to real-time analytics products.",
-      "We bring deep Vue.js knowledge necessary to help clients solve the most complex issues for their business: from building Vue.js applications to consulting, code auditing and migration to Vue. We move fast and smoothly integrate into a client’s team for agile and collaborative processes.",
-      "Epicmax is built around Open Source software - it is a part of our culture and everyone on the team is an active contributor. We’ve created and are maintaining Vuestic UI, Vuestic Admin and Epic Spinners libraries which are completely free for everyone and available on GitHub."
+      "When open source software is reaching end-of-life, you’re faced with a difficult decision: do you spend months or years of dev time migrating your code, or do you risk being non-compliant with industry regulations and your company’s SLAs?",
+      "At HeroDevs we pride ourselves in being the experts that help you navigate end-of-life events in your technology stack. Companies offering enterprise support for open source libraries stop at the end of life. That’s where our value prop begins with our Never-Ending Support (NES) products. Our team has not only provided over 450 organizations with supported, secured versions of open source software beyond their end of life, but has also helped dozens of companies migrate their codebase to a modern, supported open source stack.",
+      "With all NES Products we offer: continuous source code scanning for vulnerabilities, 5-minute installation without leaving your network, scanning for possible IP infringement in your code, and checks for platform, browser and 3rd-party library compatibility.",
+      "Need to migrate? HeroDevs can help with that too. Hire our team of experts to help you navigate the challenges that come with migrating your code.",
+      "Want to learn more? Find us at herodevs.com or send us a note at hello@herodevs.com."
     ],
-    "proficiencies": [
-      "Vue",
-      "Nuxt",
-      "TypeScript",
-      "Tailwind",
-      "Vuetify",
-      "Quasar"
-    ],
-    "region": ["Europe"],
+    "proficiencies": ["Vue", "Angular", "Migration", "EOL Support"],
+    "region": ["North America"],
     "website": {
-      "text": "epicmax.co",
-      "url": "https://epicmax.co/"
+      "text": "herodevs.com",
+      "url": "https://www.herodevs.com/support/vue"
     },
-    "contact": "hello@epicmax.co"
+    "platinum": true,
+    "contact": "hello@herodevs.com",
+    "hiring": "https://www.herodevs.com/job-board"
   }
 ]
