@@ -85,7 +85,7 @@ Para utilizar o estado reativo em um modelo de marcação do componente, declare
 import { reactive } from 'vue'
 
 export default {
-  // `setup` é um gatilho especial dedicado à API de composição.
+  // `setup` é um gatilho dedicado especial para API de composição.
   setup() {
     const state = reactive({ count: 0 })
 
@@ -157,7 +157,7 @@ function increment() {
 
 As importações e variáveis de alto nível declaradas no `<script setup>` são automaticamente utilizáveis no modelo de marcação do mesmo componente.
 
-> Para o resto do guia, estaremos principalmente utilizando a sintaxe SFC + `<script setup>` para exemplos de código da API de Composição, visto que é o uso mais comum para os programadores de Vue.
+> Para o resto do guia, usaremos principalmente a sintaxe Componentes de Ficheiro Único + `<script setup>` para exemplos de código da API de Composição, visto que é o uso mais comum para os programadores de Vue.
 
 </div>
 
