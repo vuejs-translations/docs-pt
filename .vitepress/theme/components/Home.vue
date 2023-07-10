@@ -21,11 +21,11 @@ onMounted(async () => {
     </h1>
     <p class="description">
       Uma abstração acessível, otimizada e versátil para construção
-      de interfaces de utilizadores da web.
+      de interfaces de aplicações de Web.
     </p>
     <p class="actions">
-      <vue-mastery-modal />
-      <a class="get-started" href="/guide/introduction.html">
+      <VueMasteryModal />
+      <a class="get-started" href="/guide/introduction">
         Começar
         <svg
           class="icon"
@@ -39,7 +39,7 @@ onMounted(async () => {
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">Instalar</a>
+      <a class="setup" href="/guide/quick-start">Instalar</a>
     </p>
   </section>
 
@@ -52,7 +52,7 @@ onMounted(async () => {
             <source type="image/avif" :srcset="`${base}/images/${img.replace(/\.png$/, '.avif')}`" />
             <img :src="`${base}/images/${img}`" :alt="name" />
           </picture>
-          <img v-else :src="`${base}/images/${img}`" :alt="name" />
+          <img v-else width="168" height="42" :src="`${base}/images/${img}`" :alt="name" />
         </a>
         <span v-if="description">{{ description }}</span>
       </template>
@@ -63,22 +63,19 @@ onMounted(async () => {
     <div class="vt-box">
       <h2>Acessível</h2>
       <p>
-        Construa sobre a HTML, CSS e JavaScript padrão com uma API intuitiva
-        e documentação de alta qualidade.
+        Construa sobre a HTML, CSS e JavaScript padrão com uma API intuitiva e documentação de alta qualidade.
       </p>
     </div>
     <div class="vt-box">
       <h2>Otimizada</h2>
       <p>
-        Verdadeiramente reativa, sistema de interpretação de compilador otimizado
-        que raramente precisa de otimização manual.
+        Verdadeiramente reativa, sistema de interpretação otimizado pelo compilador que raramente exige otimização manual.
       </p>
     </div>
     <div class="vt-box">
       <h2>Versátil</h2>
       <p>
-        Um ecossistema rico de adoção incremental que escala entre uma
-        biblioteca e uma abstração cheia de funcionalidades.
+        Um ecossistema rico, incrementalmente adotável que escala entre uma biblioteca e uma abstração completa.
       </p>
     </div>
   </section>
@@ -294,7 +291,7 @@ html:not(.dark) .accent,
     padding: 20px 36px;
   }
   .actions a {
-    margin: 0.5em 0;
+    margin: 18px 0;
   }
 }
 
