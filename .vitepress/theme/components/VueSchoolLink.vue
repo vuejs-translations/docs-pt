@@ -1,7 +1,7 @@
 <template>
   <div class="vueschool">
     <a :href="`${href}?friend=vuejs`" target="_blank" rel="sponsored noopener" :title="title">
-      <slot>Assista Uma Aula Gratuita Sobre Isto na Vue School</slot>
+      <slot>Podemos assistir uma aula gratuita sobre o assunto na Vue School</slot>
     </a>
   </div>
 </template>
