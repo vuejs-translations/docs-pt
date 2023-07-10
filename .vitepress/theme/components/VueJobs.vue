@@ -23,8 +23,6 @@ type Organization = {
 <script setup lang="ts">
 import { onMounted, computed } from 'vue'
 
-let vuejobs = ref<HTMLElement>()
-
 const openings = computed(() =>
   items.value.sort(() => 0.5 - Math.random()).slice(0, 2)
 )
@@ -37,7 +35,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="vuejobs-wrapper" ref="vuejobs">
+  <div class="vuejobs-wrapper">
     <div class="vj-container">
       <a
         class="vj-item"
@@ -49,7 +47,7 @@ onMounted(async () => {
         <div class="vj-company-logo">
           <img
             :src="job.organization.avatar"
-            :alt="`Logótipo da ${job.organization.name}`" />
+            :alt="`Logótipo para ${job.organization.name}`" />
         </div>
         <div
           style="
@@ -71,7 +69,7 @@ onMounted(async () => {
       <a
         href="https://vuejobs.com/?utm_source=vuejs&utm_medium=referral&utm_campaign=jobs_widget&utm_content=bottom_link"
         target="_blank"
-        title="Contrate Programadores de Vue.js"
+        title="Contrate programadores de Vue.js"
         >vuejobs.com</a
       >
     </div>
