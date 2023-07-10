@@ -8,6 +8,7 @@ import {
   preferSFCKey,
   preferSFC
 } from './preferences'
+import PreferenceTooltip from './PreferenceTooltip.vue'
 
 const route = useRoute()
 const show = computed(() =>
@@ -61,7 +62,7 @@ function useToggleFn(
   <div v-if="show" class="preference-switch">
     <button
       class="toggle"
-      aria-label="interroptor de alternância de preferência"
+      aria-label="interruptor de alternância de preferência"
       aria-controls="preference-switches"
       :aria-expanded="isOpen"
       @click="toggleOpen"
@@ -78,7 +79,7 @@ function useToggleFn(
         >
         <VTSwitch
           class="api-switch"
-          aria-label="alternar para a api de composição"
+          aria-label="alternar para composição"
           :aria-checked="preferComposition"
           @click="toggleCompositionAPI()"
         />
@@ -90,10 +91,11 @@ function useToggleFn(
         <a
           class="switch-link"
           title="Sobre a Preferência de API"
-          href="/guide/introduction.html#api-styles"
+          href="/guide/introduction#api-styles"
           @click="closeSideBar"
           >?</a
         >
+        <PreferenceTooltip />
       </div>
       <div class="switch-container" v-if="showSFC">
         <label class="no-sfc-label" @click="toggleSFC(false)">HTML</label>
@@ -169,6 +171,12 @@ function useToggleFn(
 .switch-container {
   display: flex;
   align-items: center;
+}
+
+@media(max-width: 959px){
+  .switch-container {
+    padding: 0 1em;
+  }
 }
 
 .switch-container:nth-child(2) {
