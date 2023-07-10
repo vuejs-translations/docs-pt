@@ -24,7 +24,7 @@ function dismiss() {
   <div class="banner" v-if="open">
     <a target="_blank"></a>
     <button @click="dismiss">
-      <VTIconPuls class="close" />
+      <VTIconPlus class="close" />
     </button>
   </div>
 </template>
