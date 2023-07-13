@@ -16,6 +16,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Exemplos', link: '/examples/' },
       { text: 'Introdução Rápida', link: '/guide/quick-start' },
       // { text: 'Guia de Estilo', link: '/style-guide/' },
+      { text: 'Glossário', link: '/glossary/' },
       {
         text: 'Documentação da Vue 2',
         link: 'https://v2.vuejs.org'
