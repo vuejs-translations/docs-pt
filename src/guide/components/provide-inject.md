@@ -22,7 +22,7 @@ Nós podemos resolver a perfuração de propriedades com `provide` e `inject`. U
 
 <div class="composition-api">
 
-Para fornecer dados aos descendentes do componente, utilize a função [`provide()`](/api/composition-api-dependency-injection.html#provide):
+Para fornecer dados aos descendentes do componente, utilize a função [`provide()`](/api/composition-api-dependency-injection#provide):
 
 ```vue
 <script setup>
@@ -61,7 +61,7 @@ O fornecimento de valores reativos permite os componentes descendentes utilizar 
 
 <div class="options-api">
 
-Para fornecer dados aos descendentes do componente, utilize a opção [`provide`](/api/options-composition.html#provide):
+Para fornecer dados aos descendentes do componente, utilize a opção [`provide`](/api/options-composition#provide):
 
 ```js
 export default {
@@ -107,13 +107,13 @@ const app = createApp({})
 app.provide(/* chave */ 'message', /* valor */ 'hello!')
 ```
 
-Os fornecimentos de nível da aplicação estão disponíveis para todos os componentes interpretados na aplicação. Isto é especialmente útil quando estamos escrevendo [extensões](/guide/reusability/plugins.html), visto que as extensões normalmente não seriam capazes de fornecer valores utilizando componentes.
+Os fornecimentos de nível da aplicação estão disponíveis para todos os componentes interpretados na aplicação. Isto é especialmente útil quando estamos escrevendo [extensões](/guide/reusability/plugins), visto que as extensões normalmente não seriam capazes de fornecer valores utilizando componentes.
 
 ## Injetar {#inject}
 
 <div class="composition-api">
 
-Para injetar os dados fornecidos por um componente ancestral, utilize a função [`inject()`](/api/composition-api-dependency-injection.html#inject):
+Para injetar os dados fornecidos por um componente ancestral, utilize a função [`inject()`](/api/composition-api-dependency-injection#inject):
 
 ```vue
 <script setup>
@@ -144,7 +144,7 @@ export default {
 
 <div class="options-api">
 
-Para injetar os dados fornecidos por um componente ancestral, utilize a opção [`inject`](/api/options-composition.html#inject):
+Para injetar os dados fornecidos por um componente ancestral, utilize a opção [`inject`](/api/options-composition#inject):
 
 ```js
 export default {
@@ -274,7 +274,7 @@ const { location, updateLocation } = inject('location')
 </template>
 ```
 
-Finalmente, podes envolver o valor fornecido com a [`readonly()`](/api/reactivity-core.html#readonly) se quiseres garantir que os dados passados através de `provide` não possam ser alterados pelo componente injetado.
+Finalmente, podes envolver o valor fornecido com a [`readonly()`](/api/reactivity-core#readonly) se quiseres garantir que os dados passados através de `provide` não possam ser alterados pelo componente injetado.
 
 ```vue
 <script setup>
@@ -289,7 +289,7 @@ provide('read-only-count', readonly(count))
 
 <div class="options-api">
 
-Para tornar as injeções ligadas de maneira reativa ao fornecedor, precisamos fornecer um propriedade computada utilizando a função [computed()](/api/reactivity-core.html#computed):
+Para tornar as injeções ligadas de maneira reativa ao fornecedor, precisamos fornecer um propriedade computada utilizando a função [computed()](/api/reactivity-core#computed):
 
 ```js{10}
 import { computed } from 'vue'
@@ -311,7 +311,7 @@ export default {
 
 [Exemplo completo sobre fornecer + injetar com Reatividade](https://play.vuejs.org/#eNqFUUFugzAQ/MrKF1IpxfeIVKp66Kk/8MWFDXYFtmUbpArx967BhURRU9/WOzO7MzuxV+fKcUB2YlWovXYRAsbBvQije2d9hAk8Xo7gvB11gzDDxdseCuIUG+ZN6a7JjZIvVRIlgDCcw+d3pmvTglz1okJ499I0C3qB1dJQT9YRooVaSdNiACWdQ5OICj2WwtTWhAg9hiBbhHNSOxQKu84WT8LkNQ9FBhTHXyg1K75aJHNUROxdJyNSBVBp44YI43NvG+zOgmWWYGt7dcipqPhGZEe2ef07wN3lltD+lWN6tNkV/37+rdKjK2rzhRTt7f3u41xhe37/xJZGAL2PLECXa9NKdD/a6QTTtGnP88LgiXJtYv4BaLHhvg==)
 
-A função `computed()` é normalmente utilizada nos componentes da API de Composição, mas podem também ser utilizadas para complementar certos casos de uso na API de Opções. Tu podes aprender mais a respeito disto lendo os [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals.html) e as [Propriedades Computadas](/guide/essentials/computed.html) com a Preferência de API definida para API de Composição.
+A função `computed()` é normalmente utilizada nos componentes da API de Composição, mas podem também ser utilizadas para complementar certos casos de uso na API de Opções. Tu podes aprender mais a respeito disto lendo os [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals) e as [Propriedades Computadas](/guide/essentials/computed) com a Preferência de API definida para API de Composição.
 
 :::warning Configuração Temporária Obrigatória
 A utilização acima requer a definição `app.config.unwrapInjectedRef = true` para fazer as injeções desembrulharem automaticamente as referências computadas. Isto tornar-se-á o comportamento padrão na Vue 3.3 e esta configuração é introduzida temporariamente para evitar rutura. Não mais será necessária depois da versão 3.3.
@@ -350,7 +350,7 @@ import { myInjectionKey } from './keys.js'
 const injected = inject(myInjectionKey)
 ```
 
-Consulte também: [Tipando `provide` / `inject`](/guide/typescript/composition-api.html#tipando-provide-inject) <sup class="vt-badge ts" />
+Consulte também: [Tipando `provide` / `inject`](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />
 
 </div>
 
