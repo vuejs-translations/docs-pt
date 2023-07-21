@@ -22,7 +22,7 @@ console.log(props.foo)
 </script>
 ```
 
-Nos componentes quem não utilizam `<script setup>`, as propriedades são declaradas utilizando a opção [`props`](/api/options-state.html#props):
+Nos componentes quem não utilizam `<script setup>`, as propriedades são declaradas utilizando a opção [`props`](/api/options-state#props):
 
 ```js
 export default {
@@ -40,7 +40,7 @@ Repara que o primeiro argumento passado para `defineProps()` é o mesmo valor fo
 
 <div class="options-api">
 
-As propriedades são declaradas utilizando a opção [`props`](/api/options-state.html#props):
+As propriedades são declaradas utilizando a opção [`props`](/api/options-state#props):
 
 ```js
 export default {
@@ -96,7 +96,7 @@ Isto não apenas documenta o teu componente, mas também avisará outros program
 
 <div class="options-api">
 
-Consulte também: [Atribuindo Tipos as Propriedades de Componente](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
+Consulte também: [Atribuindo Tipos as Propriedades de Componente](/guide/typescript/options-api#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
@@ -113,7 +113,7 @@ defineProps<{
 </script>
 ```
 
-Mais detalhes: [Atribuindo Tipos as Propriedades de Componente](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
+Mais detalhes: [Atribuindo Tipos as Propriedades de Componente](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
@@ -147,13 +147,13 @@ export default {
 ```vue-html
 <span>{{ greetingMessage }}</span>
 ```
-Tecnicamente, também podemos utilizar a "camelCase" quando estamos passando propriedades para um componente filho (exceto nos [modelos de marcação de DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats)). No entanto, a convenção é a utilização de "kebab-case" em todos os casos para alinhar com os atributos de HTML:
+Tecnicamente, também podemos utilizar a "camelCase" quando estamos passando propriedades para um componente filho (exceto nos [modelos de marcação de DOM](/guide/essentials/component-basics#dom-template-parsing-caveats)). No entanto, a convenção é a utilização de "kebab-case" em todos os casos para alinhar com os atributos de HTML:
 
 ```vue-html
 <MyComponent greeting-message="hello" />
 ```
 
-Nós utilizamos ["PascalCase" para marcadores de componente](/guide/components/registration.html#component-name-casing) quando possível porque ele melhora a legibilidade do modelo de marcação diferenciando componentes de Vue dos elementos nativos. No entanto, não existe tantos benefícios práticos para utilização de "camelCase" quando estivermos passando propriedades, então escolhemos seguir cada uma das convenções da linguagem.
+Nós utilizamos ["PascalCase" para marcadores de componente](/guide/components/registration#component-name-casing) quando possível porque ele melhora a legibilidade do modelo de marcação diferenciando componentes de Vue dos elementos nativos. No entanto, não existe tantos benefícios práticos para utilização de "camelCase" quando estivermos passando propriedades, então escolhemos seguir cada uma das convenções da linguagem.
 
 ### Propriedades Estáticas versus Propriedades Dinâmicas {#static-vs-dynamic-props}
 
@@ -366,7 +366,7 @@ Existem normalmente dois casos onde é tentador alterar uma propriedade:
 
 Quando objetos e arranjos são passados como propriedades, embora o componente filho não possa alterar a vinculação da propriedade, ele **será** capaz de alterar o objeto ou propriedades encaixadas do arranjo. Isto é porque na JavaScript os objetos e arranjos são passados por referência, e é exorbitantemente dispendioso para a Vue impedir tais mutações.
 
-A principal desvantagem de tais mutações é que ela permite ao componente filho afetar o estado do componente pai de uma maneira que não é óbvia para o componente pai, potencialmente tornando mais difícil raciocinar a respeito do fluxo de dados no futuro. Como uma boa prática, deves evitar tais mutações a menos que o componente pai e componente filho estejam fortemente atrelados de propósito. Na maioria dos casos, o componente filho deve [emitir um evento](/guide/components/events.html) para deixar o componente pai realizar a mutação.
+A principal desvantagem de tais mutações é que ela permite ao componente filho afetar o estado do componente pai de uma maneira que não é óbvia para o componente pai, potencialmente tornando mais difícil raciocinar a respeito do fluxo de dados no futuro. Como uma boa prática, deves evitar tais mutações a menos que o componente pai e componente filho estejam fortemente atrelados de propósito. Na maioria dos casos, o componente filho deve [emitir um evento](/guide/components/events) para deixar o componente pai realizar a mutação.
 
 ## Validação de Propriedade {#prop-validation}
 
@@ -499,7 +499,7 @@ Quando a validação da propriedade falhar, a Vue produzirá um aviso de consola
 
 <div class="composition-api">
 
-Se estiveres utilizando [declarações de propriedades baseadas em tipo](/api/sfc-script-setup.html#typescript-only-features), a Vue se esforçará em compilar as anotações de tipo para declarações de propriedade de tempo de execução equivalentes. Por exemplo, `defineProps<{ msg: string }>` serão compiladas para `{ msg: { type: String, required: true } }`.
+Se estiveres utilizando [declarações de propriedades baseadas em tipo](/api/sfc-script-setup#typescript-only-features), a Vue se esforçará em compilar as anotações de tipo para declarações de propriedade de tempo de execução equivalentes. Por exemplo, `defineProps<{ msg: string }>` serão compiladas para `{ msg: { type: String, required: true } }`.
 
 </div>
 <div class="options-api">
