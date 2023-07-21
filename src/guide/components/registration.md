@@ -8,7 +8,7 @@ Um componente de Vue precisa ser "registado" para que a Vue saiba onde localizar
 
 ## Registo Global {#global-registration}
 
-Nós podemos tornar os componentes disponíveis globalmente na [aplicação de Vue](/guide/essentials/application.html) atual usando o método `app.component()`:
+Nós podemos tornar os componentes disponíveis globalmente na [aplicação de Vue](/guide/essentials/application) atual usando o método `app.component()`:
 
 ```js
 import { createApp } from 'vue'
@@ -136,6 +136,6 @@ Ao longo deste guia, estamos utilizando nomes em `PascalCase` quando estamos reg
 
 2. `<PascalCase />` torna-o mais óbvio de que isto é um componente de Vue ao invés de um elemento de HTML nativo nos modelos de marcação. Ele também diferencia os componentes de Vue dos elementos personalizados (Componentes de Web).
 
-Isto é o estilo recomendado quando estiveres trabalhando com Componente de Ficheiro Único ou modelos de marcação de sequência de caracteres. No entanto, conforme discutido nas [Advertências de Analise de Modelo de Marcação de DOM](/guide/essentials/component-basics.html#advertências-de-analise-de-modelo-de-marcação-de-dom), os marcadores em PascalCase não são utilizáveis nos modelos de marcação de DOM.
+Isto é o estilo recomendado quando estiveres trabalhando com Componente de Ficheiro Único ou modelos de marcação de sequência de caracteres. No entanto, conforme discutido nas [Advertências de Analise de Modelo de Marcação de DOM](/guide/essentials/component-basics#advertências-de-analise-de-modelo-de-marcação-de-dom), os marcadores em PascalCase não são utilizáveis nos modelos de marcação de DOM.
 
 Felizmente, a Vue suporta a resolução de marcadores em "kebab-case" para os componentes registados utilizando PascalCase. Isto significa que um componente registado como `MyComponent` pode ser referenciado no modelo de marcação através de ambos `<MyComponent>` e `<my-component>`. Isto permite-nos utilizar o mesmo código de registo de componente de JavaScript independentemente da origem do modelo de marcação.
