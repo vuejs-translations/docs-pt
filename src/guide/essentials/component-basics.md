@@ -1,4 +1,4 @@
-# Fundamentos de Componentes
+# Fundamentos de Componentes {#components-basics}
 
 Os componentes permitem-te separar a Interface de Utilizador (UI, sigla em Inglês) em pedaços independentes e reutilizáveis, e pensar a respeito de cada pedaço separadamente. É comum para uma aplicação ser organizada em uma árvore de componentes encaixados:
 
@@ -8,7 +8,7 @@ Os componentes permitem-te separar a Interface de Utilizador (UI, sigla em Ingl�
 
 É muito semelhante a como encaixamos elementos nativos de HTML, mas a Vue implemente seu próprio modelo de componente que permite-nos resumir o conteúdo e lógica personalizados dentro de cada componente. A Vue também trabalha com Componentes de Web nativos, [leia mais a respeito](/guide/extras/web-components).
 
-## Definindo um Componente
+## Definindo um Componente {#defining-a-component}
 
 Quando estamos utilizando um etapa de construção, normalmente definimos cada componente de Vue em um ficheiro dedicado utilizando a extensão `.vue` - conhecido como [Componente de Ficheiro Único](/guide/scaling-up/sfc) (SFC, sigla e abreviação em Inglês):
 
@@ -90,7 +90,7 @@ O modelo de marcação está em linha como um sequência de caracteres de JavaSc
 
 O exemplo acima define um único componente e o exporta como exportação padrão de um ficheiro `.js`, porém podes utilizar exportações nomeadas para exportar vários componentes do mesmo ficheiro.
 
-## Utilizando um Componente
+## Utilizando um Componente {#using-a-component}
 
 :::tip
 Nós estaremos utilizando a sintaxe de SFC para o resto deste guia - os conceitos em torno dos componentes são os mesmos independentemente de estares utilizando uma etapa de construção ou não. A secção de [Exemplos](/examples/) apresenta a utilização de componente em ambos cenários.
@@ -175,11 +175,11 @@ Se estiveres escrevendo os teus modelos de marcação diretamente em um DOM (por
 
 Consulte [Advertências de Analise de Modelo de Marcação de DOM](#dom-template-parsing-caveats) para mais detalhes.
 
-## Passando Propriedades
+## Passando Propriedades {#passing-props}
 
 Se estivermos construindo um blogue, provavelmente precisaremos de um componente representando uma publicação de blogue. Nós queremos todas as publicações de blogue partilhando o mesmo esquema visual, mas com conteúdo diferente. Tal componente não será útil a menos que possas passar dados para ele, tais como o título e o conteúdo específico da publicação que queremos mostrar. É onde as propriedades entram.
 
-As propriedades (`props`) são atributos personalizados que podes registar sobre um componente. Para passar um título ao componente de publicação de blogue, deves declará-lo em uma lista de propriedades que este componente aceita, utilizando a <span class="options-api">opção [`props`](/api/options-state#props)</span><span class="composition-api">macro [`defineProps`](/api/sfc-script-setup#defineprops-defineemits)</span>:
+As propriedades são atributos personalizados que podes registar sobre um componente. Para passar um título ao componente de publicação de blogue, deves declará-lo em uma lista de propriedades que este componente aceita, utilizando a <span class="options-api">opção [`props`](/api/options-state#props)</span><span class="composition-api">macro [`defineProps`](/api/sfc-script-setup#defineprops-defineemits)</span>:
 
 <div class="options-api">
 
@@ -219,7 +219,7 @@ const props = defineProps(['title'])
 console.log(props.title)
 ```
 
-Consulte também: [Atribuindo Tipos as Propriedades do Componente](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
+Consulte também: [Tipos para as Propriedades do Componente](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
 
 Se não estiveres utilizando `<script setup>`, as propriedades devem ser declaradas utilizando a opção `props`, e o objeto de propriedades será passado para o `setup()` como primeiro argumento:
 
@@ -299,9 +299,9 @@ Então desejarás interpretar um componente para cada publicação, utilizando `
 
 Repara como `v-bind` é utilizado para passar valores de propriedade dinâmica. Isto é especialmente útil quando não sabes o exato conteúdo que estarás a interpretar antes da hora marcada.
 
-É tudo que precisas saber a respeito das propriedades por agora, mas assim que terminada a leitura desta página e estiveres confortável com o seu conteúdo, recomendamos retornar a leitura do guia completo em [Propriedades](/guide/components/props.html).
+É tudo que precisas saber a respeito das propriedades por agora, mas assim que terminada a leitura desta página e estiveres confortável com o seu conteúdo, recomendamos retornar a leitura do guia completo em [Propriedades](/guide/components/props).
 
-## Ouvindo Eventos
+## Ouvindo Eventos {#listening-to-events}
 
 A medida que programamos o nosso componente `<BlogPost>`, algumas funcionalidades podem precisar comunicar para cima para o componente pai. Por exemplo, podemos decidir incluir uma funcionalidade de acessibilidade para aumentar o texto das publicações de blogue, enquanto deixamos o resto da página em seu tamanho padrão.
 
@@ -366,7 +366,7 @@ O botão ainda não faz nada - queremos clicar no botão para comunicar para o c
  />
 ```
 
-Então o componente filho pode emitir um evento sobre si mesmo chamando o [método **`$emit`**](/api/component-instance.html#emit) embutido, passando o nome do evento:
+Então o componente filho pode emitir um evento sobre si mesmo chamando o [método **`$emit`**](/api/component-instance#emit) embutido, passando o nome do evento:
 
 ```vue{5}
 <!-- BlogPost.vue, omitindo <script> -->
@@ -391,7 +391,7 @@ Graças ao ouvinte `@enlarge-text="postFontSize += 0.1"`, o componente pai receb
 
 </div>
 
-Nós podemos opcionalmente declarar eventos emitidos utilizando a <span class="options-api">opção [`emits`](/api/options-state.html#emits)</span><span class="composition-api">macro [`defineEmits`](/api/sfc-script-setup.html#defineprops-defineemits)</span>:
+Nós podemos opcionalmente declarar eventos emitidos utilizando a <span class="options-api">opção [`emits`](/api/options-state#emits)</span><span class="composition-api">macro [`defineEmits`](/api/sfc-script-setup#defineprops-defineemits)</span>:
 
 <div class="options-api">
 
@@ -418,7 +418,7 @@ defineEmits(['enlarge-text'])
 
 </div>
 
-Isto documenta todos os eventos que um componente emite e [valida-os](/guide/components/events.html#validação-de-eventos) opcionalmente. Ela também permite a Vue evitar aplicá-los implicitamente como ouvintes nativos para o elemento de raiz do componente filho.
+Isto documenta todos os eventos que um componente emite e [valida-os](/guide/components/events#events-validation) opcionalmente. Ela também permite a Vue evitar aplicá-los implicitamente como ouvintes nativos para o elemento de raiz do componente filho.
 
 <div class="composition-api">
 
@@ -432,7 +432,7 @@ emit('enlarge-text')
 </script>
 ```
 
-Consulte também: [Tipando Emissões de Componente](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Consulte também: [Tipos para as Emissões de Componente](/guide/typescript/composition-api#typing-component-emits) <sup class="vt-badge ts" />
 
 Se não estiveres utilizando `<script setup>`, podes declarar os eventos emitidos utilizando a opção `emits`. Tu podes acessar a função `emit` como uma propriedade do contexto de configuração (passada para `setup()` como segundo argumento):
 
@@ -449,7 +449,7 @@ export default {
 
 É tudo que precisas saber a respeito de eventos de componentes personalizados por agora, mas assim que terminares a leitura desta página e estiveres confortável com o seu conteúdo, recomendamos retornar à leitura do guia completo sobre [Eventos Personalizados](/guide/components/events).
 
-## Distribuição de Conteúdo com Ranhuras
+## Distribuição de Conteúdo com Ranhuras {#content-distribution-with-slots}
 
 Tal como com elementos de HTML, é muitas vezes útil ser capaz de passar conteúdo para um componente, desta maneira:
 
@@ -497,7 +497,7 @@ Como verás acima, utilizamos o `<slot>` como um espaço reservado onde queremos
 
 É tudo o que precisas saber a respeito das ranhuras por agora, mas uma vez terminada a leitura desta página e estiveres confortável com o seu conteúdo, recomendamos voltar mais tarde para ler o guia completo sobre [Ranhuras](/guide/components/slots).
 
-## Componentes Dinâmicos
+## Componentes Dinâmicos {#dynamic-components}
 
 Algumas vezes é útil alternar entre componentes dinamicamente, como em uma interface separada:
 
@@ -540,7 +540,7 @@ Tu também podes utilizar o atributo `is` para criar elementos de HTML regulares
 
 Quando estiveres alternando entre vários componentes com `<component :is="...">`, um componente será desmontado quando ele for alternado para fora. Nós podemos forçar os componentes inativos a manterem-se "vivos" com o [componente `<KeepAlive>`](/guide/built-ins/keep-alive) embutido.
 
-## Advertências de Analise de Modelo de Marcação de DOM
+## Advertências de Analise de Modelo de Marcação de DOM {#dom-template-parsing-caveats}
 
 Se estiveres escrevendo os teus modelos de marcação de Vue diretamente no DOM, a Vue precisará recuperar a sequência de caracteres de modelo de marcação a partir do DOM. Isto leva para algumas advertências devido ao comportamento de analise de HTML nativo do navegador.
 
@@ -552,7 +552,7 @@ Deve ser notado que as limitações discutidas abaixo só se aplicam se estivere
 - `<script type="text/x-template">`
 :::
 
-### Insensibilidade de Caixa
+### Insensibilidade de Caixa {#case-insensitivity}
 
 Os marcadores de HTML e nomes de atributos são insensíveis a caixa, então os navegadores interpretarão quaisquer caracteres maiúsculos como minúsculos. Isto significa que quando estiveres utilizando modelos de marcação no DOM, nomes de componente em "PascalCase" e nomes de propriedades em "camelCase" ou todos os nomes de eventos de `v-on` precisam utilizar os seus equivalentes em "kebab-case" (delimitado por hífen):
 
@@ -572,7 +572,7 @@ const BlogPost = {
 <blog-post post-title="hello!" @update-post="onUpdatePost"></blog-post>
 ```
 
-### Marcadores de Auto-Fechamento
+### Marcadores de Auto-Fechamento {#self-closing-tags}
 
 Nós temos estado a utilizar marcadores de auto-fechamento para os componentes nos exemplos de código anterior:
 
@@ -603,7 +603,7 @@ será analisado como:
 </my-component> <!-- mas o navegador irá fechar ele aqui. -->
 ```
 
-### Restrições de Colocação de Elemento
+### Restrições de Colocação de Elemento {#element-placement-restrictions}
 
 Alguns elementos de HTML, tais como `<ul>`, `<ol>`, `<table>` e `<select>` têm restrições sobre quais elementos podem aparecer dentro deles, e alguns elementos tais como `<li>`, `<tr>`, e `<option>` só podem aparecer dentro certos elementos.
 
@@ -615,7 +615,7 @@ Isto levará a problemas quando estiveres utilizando componentes com elementos q
 </table>
 ```
 
-O componente personalizado `<blog-post-row>` será levantado como conteúdo inválido, causando erros no resultado interpretado final. Nós podemos utilizar o [atributo `is`](/api/built-in-special-attributes.html#is) especial como uma solução:
+O componente personalizado `<blog-post-row>` será levantado como conteúdo inválido, causando erros no resultado interpretado final. Nós podemos utilizar o [atributo `is`](/api/built-in-special-attributes#is) especial como uma solução:
 
 ```vue-html
 <table>
@@ -627,6 +627,6 @@ O componente personalizado `<blog-post-row>` será levantado como conteúdo inv�
 Quando utilizado sobre elementos de HTML nativo, o valor de `is` deve ser prefixado com `vue:` para ser interpretada como um componente de Vue. Isto é necessário para evitar confusão com os [elementos embutidos personalizados](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example) nativo.
 :::
 
-É tudo o que precisas saber a respeito das advertências de analise de modelo de marcação de DOM por agora - e de fato, o fim dos _Essenciais_ da Vue. Parabéns! Há ainda mais para aprender, mas primeiro, recomendamos dar uma pausa para brincar com a Vue sozinho - construa alguma coisa divertida, ou consulte alguns dos [Exemplos](/examples/) se ainda não o fizeste.
+É tudo o que precisas saber a respeito das advertências de analise de modelo de marcação de DOM por agora - e de fato, o fim dos _Fundamentos_ da Vue. Parabéns! Há ainda mais para aprender, mas primeiro, recomendamos dar uma pausa para brincar com a Vue sozinho - construa alguma coisa divertida, ou consulte alguns dos [Exemplos](/examples/) se ainda não o fizeste.
 
 Uma vez que estiveres confortável com o conhecimento já assimilaste, siga no guia para aprenderes mais a respeito de componentes em profundidade.
