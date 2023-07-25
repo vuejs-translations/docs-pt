@@ -8,7 +8,7 @@ outline: deep
 Esta páginas e muitos outros capítulos adiante neste guia contém diferente conteúdo para a API de Opções e API de Composição. A tua preferência atual é a <span class="options-api">API de Opções</span><span class="composition-api">API de Composição</span>. Tu podes alternar entre os estilos de API utilizando o interruptor "Preferência de API" no canto superior esquerdo da barra lateral.
 :::
 
-## Declarando Estado Reativo {#declaring-reactive-state}
+## Declarando Estado Reativo \* {#declaring-reactive-state}
 
 <div class="options-api">
 
@@ -67,98 +67,157 @@ Quando acessares `this.someObject` depois de atribuí-lo, o valor é uma delega�
 
 <div class="composition-api">
 
-Nós podemos criar um objeto ou arranjo reativo com a função [`reactive()`](/api/reactivity-core#reactive):
+## Declarando Estado Reativo \*\* {#declaring-reactive-state-1}
+
+### `ref()` \*\* {#ref}
+
+Na API de Composição, a maneira recomendada de declarar estado reativo é usando a função [`ref()`](/api/reactivity-core#ref):
 
 ```js
-import { reactive } from 'vue'
+import { ref } from 'vue'
 
-const state = reactive({ count: 0 })
+const count = ref(0)
 ```
 
-Os objetos reativos são [Delegações de JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) e comportam-se como objetos normais. A diferença é que a Vue é capaz de rastrear mutações e acessos de propriedade de um objeto reativo. Se estiveres curioso a respeitos dos detalhes, nós explicamos como o sistema de reatividade da Vue funciona em [Reatividade em Profundidade](/guide/extras/reactivity-in-depth) - mas recomendamos a leitura dele depois de teres terminado o guia principal.
+`ref()` recebe o argumento e retorna-o embrulhado dentro dum objeto de referência com uma propriedade `.value`:
 
-Consulte também: [Atribuindo Tipos a função `reactive`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
+```js
+const count = ref(0)
 
-Para utilizar o estado reativo em um modelo de marcação do componente, declare-os e retorne-os a partir de uma função `setup()` do componente:
+console.log(count) // { value: 0 }
+console.log(count.value) // 0
+
+count.value++
+console.log(count.value) // 1
+```
+
+> Consulte também: [Tipos para as Referências](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
+
+Para acessar as referências no modelo de marcação dum componente, declaramos e as retornamos a partir da função `setup()` dum componente:
 
 ```js{5,9-11}
-import { reactive } from 'vue'
+import { ref } from 'vue'
 
 export default {
-  // `setup` é um gatilho dedicado especial para API de composição.
+  // `setup()` é um gatilho especial dedicado para a API de Composição.
   setup() {
-    const state = reactive({ count: 0 })
+    const count = ref(0)
 
-    // expor o estado para o modelo de marcação
+    // expor a referência ao modelo de marcação
     return {
-      state
+      count
     }
   }
 }
-```
+``` 
 
 ```vue-html
-<div>{{ state.count }}</div>
+<div>{{ count }}</div>
 ```
 
-De maneira parecida, podemos declarar funções que alteram o estado reativo no mesmo escopo, e expo-los como métodos junto do estado:
+Repara que **não** precisávamos anexar `.value` quando usamos a referência no modelo de marcação. Por conveniência, as referências são automaticamente desembrulhada quando usadas dentro dos modelos de marcação (com algumas [advertências](#caveat-when-unwrapping-in-templates)).
 
-```js{7-9,14}
-import { reactive } from 'vue'
+Tu também podes modificar a referência diretamente nos manipuladores de evento:
+
+```vue-html
+<button @click="count++">
+  {{ count }}
+</button>
+```
+
+Para lógica mais complexa, podemos declarar funções que modificam as referências no mesmo escopo e expo-las como métodos ao lado do estado:
+
+```js{7-10,15}
+import { ref } from 'vue'
 
 export default {
   setup() {
-    const state = reactive({ count: 0 })
+    const count = ref(0)
 
     function increment() {
-      state.count++
+      // `.value` é necessário na JavaScript
+      count.value++
     }
 
-    // não esqueça de expor a função também.
+    // também não esqueças de expor a função.
     return {
-      state,
+      count,
       increment
     }
   }
 }
 ```
 
-Os métodos expostos são normalmente utilizados como ouvintes de evento:
+Os métodos expostos podem então ser usados como manipuladores de evento:
 
 ```vue-html
 <button @click="increment">
-  {{ state.count }}
+  {{ count }}
 </button>
 ```
 
+Nesta ligação está o exemplo ao vivo na [Codepen](https://codepen.io/vuejs-examples/pen/WNYbaqo), sem usar quaisquer ferramentas de construção.
+
 ### `<script setup>` \*\* {#script-setup}
 
-Expor o estado e métodos manualmente através da `setup()` pode ser verboso. Felizmente, só é necessário quando não estás utilizando uma etapa de construção. Quando estiveres utilizando Componentes de Ficheiro Único (SFCs, sigla em Inglês), podemos simplificar grandemente a utilização com `<script setup>`:
+Expor manualmente o estado e os métodos através de `setup()` pode ser verboso. Felizmente, pode ser evitado quando usamos [Componentes de Ficheiro Único](/guide/scaling-up/sfc). Nós podemos simplificar o uso com o `<script setup>`:
 
-```vue
+```vue{1}
 <script setup>
-import { reactive } from 'vue'
+import { ref } from 'vue'
 
-const state = reactive({ count: 0 })
+const count = ref(0)
 
 function increment() {
-  state.count++
+  count.value++
 }
 </script>
 
 <template>
   <button @click="increment">
-    {{ state.count }}
+    {{ count }}
   </button>
 </template>
 ```
 
-[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNpNjkEKgzAURK8yZFNF0K5FS3uPbGyIEKo/If64Cbl7fxWky2HePCarVwjtnqzq1bCZ6AJjs5zCQ5Nbg4+MjGgnw263KJijX3ET/qZJk/G0Cc8TW4wXVmUYn4h73FHqHzcnksYTHJloV0tc1ciacG7bA28aTUXT0J035IAEtmtYBJEEDO/ELJanWZz5jFpdOq0OAMj5X4kiQtl151CYobuMqnwBBoFaVA==)
+[Experimentar na Zona de Testes](https://play.vuejs.org/#eNo9jUEKgzAQRa8yZKMiaNcllvYe2dgwQqiZhDhxE3L3jrW4/DPvv1/UK8Zhz6juSm82uciwIef4MOR8DImhQMIFKiwpeGgEbQwZsoE2BhsyMUwH0d66475ksuwCgSOb0CNx20ExBCc77POase8NVUN6PBdlSwKjj+vMKAlAvzOzWJ52dfYzGXXpjPoBAKX856uopDGeFfnq8XKp+gWq4FAi)
 
-As importações e variáveis de alto nível declaradas no `<script setup>` são automaticamente utilizáveis no modelo de marcação do mesmo componente.
+As importações, variáveis, e funções de alto nível declaradas no `<script setup>` são automaticamente usáveis no modelo de marcação do mesmo componente. Pense do modelo de marcação como uma função de JavaScript declarada no mesmo escopo - naturalmente tem acesso à tudo for declarado ao lado dele.
 
-> Para o resto do guia, usaremos principalmente a sintaxe Componentes de Ficheiro Único + `<script setup>` para exemplos de código da API de Composição, visto que é o uso mais comum para os programadores de Vue.
+:::tip DICA
+Para o resto do guia, estaremos primariamente a usar a sintaxe de Componente de Ficheiro Único + `<script setup>` para os exemplos de código da API de Composição, uma vez que é uso mais comum para os programadores de Vue.
 
+Se não estiveres a usar Componente de Ficheiro Único, ainda podes usar a API de Composição com a opção [`setup()`](/api/composition-api-setup).
+::::
+
+### Porquê Referências? \*\* {#why-refs}
+
+Tu podes estar a perguntar a si mesmo porquê precisamos de referências com `.value` no lugar de variáveis simples. Para explicar isto, precisaremos de discutir brevemente como o sistema de reatividade da Vue funciona.
+
+Quando usas uma referência no modelo de marcação, e mudas o valor da referência mais tarde, a Vue deteta automaticamente a mudança e atualiza o DOM por consequência. Isto é tornado possível com um rastreio de dependência baseado no sistema de reatividade. Quando um componente é desenhado pela primeira vez, a Vue **rastreia** todas as referências que foram usadas durante o desenho. Depois, quando uma referência for mudada, **acionará** o redesenho para os componentes que estão a rastreia-lo.
+
+Na JavaScript padrão, não existe nenhuma maneira de detetar o acesso ou mutação de variáveis simples. Mas podemos intercetar operações de recuperação e definição duma propriedade.
+
+A propriedade `.value` dá a Vue oportunidade de detetar quando uma referência foi acessada ou mudada. Nos bastidores, a Vue realiza o rastreio no seu recuperador, e realiza acionamento no seu definidor. Concetualmente, podes pensar duma referência como um objeto que se parece com isto:
+
+```js
+// pseudo-código, e não implementação verdadeira
+const myRef = {
+  _value: 0,
+  get value() {
+    track()
+    return this._value
+  },
+  set value(newValue) {
+    this._value = newValue
+    trigger()
+  }
+}
+```
+
+Uma outra característica fantástica das referências é que ao contrário das variáveis simples, podes passar referências para funções enquanto reténs o acesso ao último valor e a conexão da reatividade. Isto é particularmente útil quando refazemos lógica complexa em código reutilizável.
+
+O sistema de reatividade é discutido em mais detalhes na seção [Reatividade em Profundidade](/guide/extras/reactivity-in-depth)
 </div>
 
 <div class="options-api">
@@ -212,9 +271,69 @@ No exemplo acima, o método `increment` será chamado quando o `<button>` clicad
 
 </div>
 
+### Reatividade Profunda {#deep-reactivity}
+
+Na Vue, o estado é profundamente reativo por padrão. Isto significa que podes esperar que as mudanças serem detetadas mesmo quando alteras objetos ou arranjos encaixados:
+
+<div class="options-api">
+
+```js
+export default {
+  data() {
+    return {
+      obj: {
+        nested: { count: 0 },
+        arr: ['foo', 'bar']
+      }
+    }
+  },
+  methods: {
+    mutateDeeply() {
+      // estes funcionarão como esperado.
+      this.obj.nested.count++
+      this.obj.arr.push('baz')
+    }
+  }
+}
+```
+
+</div>
+
+<div class="composition-api">
+
+As referências podem segurar qualquer tipo de valor, incluindo objetos profundamente encaixados, vetores, ou estruturas de dados embutidas da JavaScript tal como a `Map`.
+
+Uma referência tornará o seu valor profundamente reativo, Isto significa que podes esperar as mudanças serem detetadas mesmo quando mudares os objetos ou vetores encaixados:
+
+```js
+import { ref } from 'vue'
+
+const obj = ref({
+  nested: { count: 0 },
+  arr: ['foo', 'bar']
+})
+
+function mutateDeeply() {
+  // estes funcionarão como esperado.
+  obj.value.nested.count++
+  obj.value.arr.push('baz')
+}
+```
+
+Os valores não primitivos são transformados em delegações reativas através da [`reactive()`](#reactive), que é discutida abaixo.
+
+Também é possível abandonar a reatividade profunda com as [referências superficiais](/api/reactivity-advanced#shallowref). Para as referências superficiais, apenas o acesso de `.value` é rastreado para reatividade. As referências superficiais pode ser usadas para otimização do desempenho evitando o custo de observação dos grandes objetos, ou em casos onde o estado interno é gerido por uma biblioteca externa.
+
+Leitura avançada:
+
+- [Custos de Reatividade Reduzido pelas Estruturas Imutáveis](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
+- [Integração com Sistemas de Estado Externos](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
+
+</div>
+
 ### Tempo de Atualização do DOM {#dom-update-timing}
 
-Quando alteras o estado reativo, o DOM é atualizado automaticamente. No entanto, deve ser notado que as atualizações do DOM não são aplicadas de maneira sincróna. Ao invés disto, a Vue ampara-os até o "próximo momento" no ciclo de atualização para garantir que cada componente precise atualizar apenas uma vez não importa quantas mudanças de estado tens feito.
+Quando alteras o estado reativo, o DOM é atualizado automaticamente. No entanto, deve ser notado que as atualizações do DOM não são aplicadas de maneira síncrona. Ao invés disto, a Vue ampara-os até o "próximo momento" no ciclo de atualização para garantir que cada componente precise atualizar apenas uma vez não importa quantas mudanças de estado tens feito.
 
 Para esperar pela atualização do DOM terminar depois de uma mudança de estado, podes utilizar a API global [`nextTick()`](/api/general#nexttick):
 
@@ -251,56 +370,31 @@ export default {
 
 </div>
 
-### Reatividade Profunda {#deep-reactivity}
-
-Na Vue, o estado é profundamente reativo por padrão. Isto significa que podes esperar que as mudanças sejam detetadas mesmo quando alteras objetos ou arranjos encaixados:
-
-<div class="options-api">
-
-```js
-export default {
-  data() {
-    return {
-      obj: {
-        nested: { count: 0 },
-        arr: ['foo', 'bar']
-      }
-    }
-  },
-  methods: {
-    mutateDeeply() {
-      // estes funcionarão como esperado.
-      this.obj.nested.count++
-      this.obj.arr.push('baz')
-    }
-  }
-}
-```
-
-</div>
-
 <div class="composition-api">
+
+## `reactive()` \*\* {#reactive}
+
+Existe uma outra maneira de declarar o estado reativo, com a API `reactive()`. Ao contrário duma referência que envolve o valor interno num objeto especial, a `reactive()` torna um objeto por si só reativo:
 
 ```js
 import { reactive } from 'vue'
 
-const obj = reactive({
-  nested: { count: 0 },
-  arr: ['foo', 'bar']
-})
-
-function mutateDeeply() {
-  // estes funcionarão como esperado.
-  obj.nested.count++
-  obj.arr.push('baz')
-}
+const state = reactive({ count: 0 })
 ```
 
-</div>
+> Consulte também: [Tipos para a Função `reactive`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
-É também possível criar explicitamente [objetos reativos superficiais](/api/reactivity-advanced#shallowreactive) onde a reatividade é apenas rastreada ao nível da raiz, no entanto só são normalmente necessárias em casos de uso avançados.
+Uso no modelo de marcação:
 
-<div class="composition-api">
+```vue-html
+<button @click="state.count++">
+  {{ state.count }}
+</button>
+```
+
+Os objetos reativos são [Delegações de JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) e comportam-se como objetos normais. A diferença é que a Vue é capaz de intercetar o acesso e mutação de todas as propriedades dum objeto reativo para rastreio e acionamento da reatividade.
+
+`reactive()` converte o objeto profundamente: os objetos encaixados também são envolvidos com `reactive()` quando acessados. Também é chamada por `ref()` internamente quando o valor da referência for um objeto. Semelhante às referências superficiais, existe também a API [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) para abandonar a reatividade profunda.
 
 ### Delegação Reativa vs. Original \*\* {#reactive-proxy-vs-original-1}
 
@@ -310,7 +404,7 @@ function mutateDeeply() {
 const raw = {}
 const proxy = reactive(raw)
 
-// delegação NÃO é igual ao original.
+// a delegação NÃO é igual ao original.
 console.log(proxy === raw) // false
 ```
 
@@ -326,7 +420,7 @@ console.log(reactive(raw) === proxy) // true
 console.log(reactive(proxy) === proxy) // true
 ```
 
-Este regra também aplica-se aos objetos encaixados. Devido a reatividade profunda, os objetos encaixados dentro de um objeto reativo também são delegações:
+Este regra também aplica-se aos objetos encaixados. Devido a reatividade profunda, os objetos encaixados dentro dum objeto reativo também são delegações:
 
 ```js
 const proxy = reactive({})
@@ -341,153 +435,41 @@ console.log(proxy.nested === raw) // false
 
 A API de `reactive()` tem duas limitações
 
-1. Ela apenas funciona para os tipos de objetos (objetos, arranjos, e [tipos de coleção](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#keyed_collections) tais como `Map` e `Set`). Ela não pode segurar [tipos primitivos](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) tais como `string`, `number`, ou `boolean`.
+1. **Tipos de valor limitados**: apenas funciona para os tipos de objetos (objetos, arranjos, e [tipos de coleção](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#keyed_collections) tais como `Map` e `Set`). Ela não pode segurar [tipos primitivos](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) tais como `string`, `number`, ou `boolean`.
 
-2. Visto que o rastreamento da reatividade da Vue funciona funciona sobre o acesso de propriedade, devemos sempre manter a mesma referência para objeto reativo. Isto significa que não podemos "substituir" facilmente um objeto reativo porque a conexão da reatividade para a primeira referência é perdida:
+2. **Não substituir um objeto inteiro**: uma vez que o rastreio da reatividade da Vue funciona sobre o acesso de propriedade, devemos sempre manter a mesma referência para objeto reativo. Isto significa que não podemos "substituir" facilmente um objeto reativo porque a conexão da reatividade para a primeira referência é perdida:
 
    ```js
    let state = reactive({ count: 0 })
 
-   // a referência acima ({ count: 0 }) já não está sendo rastreada (conexão da reatividade está perdida!)
+   // a referência acima ({ count: 0 }) não está mais a ser rastreada
+   // (conexão da reatividade está perdida!)
    state = reactive({ count: 1 })
    ```
 
-   Isto também significa que quando atribuímos ou desestruturamos uma propriedade do objeto reativo em variáveis locais, ou quando passamos esta propriedade para uma função, perderemos a conexão da reatividade:
+3. **Não é amigável à desestruturação**: quando desestruturamos uma propriedade dum objeto reativo em variáveis locais, ou quando passamos esta propriedade à uma função, perderemos a conexão da reatividade:
 
    ```js
    const state = reactive({ count: 0 })
 
-   // `n` é uma variável local que está desconectada
-   // do `state.count`.
-   let n = state.count
-   // não afeta o estado original
-   n++
-
-   // `count` também está desconectado do `state.count`.
-   let { count } = state
+   // `count` está desconectado da `state.count` quando desestruturada.
+   let { count } = state.count
    // não afeta o estado original
    count++
 
    // a função recebe um número simples e
-   // não será capaz de rastrear as mudanças
+   // não será capaz de rastrear as mudanças para `state.count`
+   // temos de passar o objeto inteiro para reter a reatividade
    callSomeFunction(state.count)
    ```
 
-## Variáveis Reativas com `ref()` \*\* {#reactive-variables-with-ref}
+Devido à estas limitações, recomendamos usar `ref()` como API primária para declaração de estado reativo.
 
-Para tratar as limitações da `reactive()`, a Vue também fornece uma função [`ref()`](/api/reactivity-core#ref) que permite-nos criar **"referências reativas"** que podem segurar qualquer tipo de valor:
+## Detalhes Adicionais do Desembrulhamento da Referência \*\* {#additional-ref-unwrapping-details}
 
-```js
-import { ref } from 'vue'
+### Como Propriedade de Objeto Reativo \*\* {#ref-unwrapping-as-reactive-object-property}
 
-const count = ref(0)
-```
-
-A `ref()` recebe o argumento e retorna-o envolvido dentro de um objeto de referência com uma propriedade `.value`:
-
-```js
-const count = ref(0)
-
-console.log(count) // { value: 0 }
-console.log(count.value) // 0
-
-count.value++
-console.log(count.value) // 1
-```
-
-Consulte também: [Atribuindo Tipos às Referências](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
-
-Semelhante as propriedades em um objeto reativo, a propriedade `.value` de uma referência é reativa. Além disto, quando estiveres segurando tipos de objeto, a referência converte automaticamente seu `.value` com a `reactive()`:
-
-Uma referência contendo um valor de objeto pode substituir de maneira reativa o objeto inteiro:
-
-```js
-const objectRef = ref({ count: 0 })
-
-// isto funciona reativamente
-objectRef.value = { count: 1 }
-```
-
-As referências também podem ser passadas para funções ou desestruturadas a partir de objetos simples sem perderem a reatividade:
-
-```js
-const obj = {
-  foo: ref(1),
-  bar: ref(2)
-}
-
-// a função recebe uma referência
-// ela precisa acessar o valor através de `.value`
-// porém ela reterá a conexão da reatividade
-callSomeFunction(obj.foo)
-
-// continua reativo
-const { foo, bar } = obj
-```
-
-Em outras palavras, a `ref()` permite-nos criar uma "referência" para qualquer valor e passá-lo por aí sem perda da reatividade. Esta capacidade é muito importante visto que é frequentemente utilizada quando estamos extraindo a lógica para as [Funções de Composição](/guide/reusability/composables).
-
-### Desembrulhamento da Referência nos Modelos de Marcação \*\* {#ref-unwrapping-in-templates}
-
-Quando as referências são acessadas como propriedades de alto nível no modelo de marcação, elas são automaticamente "desembrulhadas" assim não é preciso utilizar `.value`. Cá está o anterior exemplo `counter`, utilizando a `ref()`:
-
-```vue{13}
-<script setup>
-import { ref } from 'vue'
-
-const count = ref(0)
-
-function increment() {
-  count.value++
-}
-</script>
-
-<template>
-  <button @click="increment">
-    {{ count }} <!-- `.value` não é necessário  -->
-  </button>
-</template>
-```
-
-[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNo9jUEKgzAQRa8yZKMiaNclSnuP2dgwQqiZhDhxE3L3Riwu//DmvazeIQxHIvVUejfRBoGdJIUZ2brgo0CGSCsUWKN30FS0QUY2nncB4xMLTCfRPrrzviY2Yj2DZRPJEUvbQUaGix2OZUvU98gFWY9XsbbqEHJhW4TqAtCfJFItL7NZ851Q3TpUc87/cCl6vMD6pMfboMoPvd1Nzg==)
-
-Nota que o desembrulhamento só aplica-se se a referência for uma propriedade de alto nível sobre o contexto de interpretação do modelo de marcação. Como um exemplo, `foo` é uma propriedade de alto nível, mas `object.foo` não é.
-
-Então dado o seguinte objeto:
-
-```js
-const object = { foo: ref(1) }
-```
-
-A seguinte expressão **NÃO** funcionará como esperado:
-
-```vue-html
-{{ object.foo + 1 }}
-```
-
-O resultado interpretado será `[object Object]` porque `object.foo` é um objeto de referência. Nós podemos corrigir aquilo tornando `foo` uma propriedade de alto nível:
-
-```js
-const { foo } = object
-```
-
-```vue-html
-{{ foo + 1 }}
-```
-
-Agora o resultado da interpretação será `2`.
-
-Uma coisa para anotar é que uma referência também será desembrulhada se for o resultado do valor avaliado de uma interpolação de texto (por exemplo, um marcador <code v-pre>{{ }}</code>), assim o seguinte interpretará `1`:
-
-```vue-html
-{{ object.foo }}
-```
-
-Isto é apenas uma funcionalidade de conveniência da interpolação de texto e é equivalente ao <code v-pre>{{ object.foo.value }}</code>.
-
-### Desembrulhamento da Referência nos Objetos Reativos \*\* {#ref-unwrapping-in-reactive-objects}
-
-Quando uma `ref` for acessada ou alterada como uma propriedade de um objeto reativo, também é desembrulhada automaticamente assim comporta-se como uma propriedade normal:
+Uma referência é automaticamente desembrulhada quando acessada ou modificada como uma propriedade dum objeto reativo. Em outras palavras, comporta-se como uma propriedade normal:
 
 ```js
 const count = ref(0)
@@ -501,32 +483,75 @@ state.count = 1
 console.log(count.value) // 1
 ```
 
-Se uma nova referência for atribuída à uma propriedade ligada à uma referência existente, substituirá a antiga referência:
+Se uma nova referência for atribuída à uma propriedade ligada à uma referência existente, substituirá a referência antiga:
 
 ```js
 const otherCount = ref(2)
 
 state.count = otherCount
 console.log(state.count) // 2
-// a referência original agora está desconectada do `state.count`
-console.log(count.value) // 1
+// a referência original agora está desconectada da `state.count`
+console.log(count.value)
 ```
 
-O desembrulhamento da referência apenas acontece quando encaixado dentro de um objeto de reatividade profunda. Não aplica-se quando for acessado como uma propriedade de um [objeto de reatividade superficial](/api/reactivity-advanced#shallowreactive).
+O desembrulhamento da referência apenas acontece quando encaixada dentro dum objeto reativo profundo. Não aplica-se quando é acessada como uma propriedade dum [objeto de reatividade superficial](/api/reactivity-advanced#shallowreactive).
 
-#### Desembrulhamento da Referência nos Arranjos e Coleções {#ref-unwrapping-in-arrays-and-collections}
+### Advertências nos Vetores e Coleções \*\* {#caveat-in-arrays-and-collections}
 
-Ao contrário dos objetos reativos, não existe desembrulhamento realizado quando a referência for acessada como um elemento de um arranjo reativo ou um tipo de coleção nativa como `Map`:
+Ao contrário dos objetos reativos, **não existe** desembrulhamento realizado quando a referência é acessada como um elemento dum vetor ou um tipo de coleção nativa como `Map`:
 
 ```js
 const books = reactive([ref('Vue 3 Guide')])
-// precisa da `.value`
+// neste caso precisas de `.value`
 console.log(books[0].value)
 
 const map = reactive(new Map([['count', ref(0)]]))
-// precisa da `.value`
+// neste caso precisas de `.value`
 console.log(map.get('count').value)
 ```
+
+### Advertências Quando Desembrulhamos nos Modelos de Marcação \*\* {#caveat-when-unwrapping-in-templates}
+
+O desembrulhamento de referência nos modelos de marcação apenas aplica-se se a referência for uma propriedade de alto nível no contexto de interpretação do modelo de marcação.
+
+No exemplo abaixo, `count` e `object` são propriedades de alto nível, mas `object.id` não:
+
+```js
+const count = ref(0)
+const object = { id: ref(0) }
+```
+
+Portanto, esta expressão funciona como esperado:
+
+```vue-html
+{{ count + 1 }}
+```
+
+...enquanto isto **NÃO**:
+
+```vue-html
+{{ object.id + 1 }}
+```
+
+O resultado desenhado será `[object Object]1` uma vez que `object.id` não é desembrulhado quando avaliamos a expressão e continua um objeto de referência. Para corrigir isto, podemos desestruturar `id` à uma propriedade de alto nível:
+
+```js
+const { id } = object
+```
+
+```vue-html
+{{ id + 1 }}
+```
+
+Agora o resultado da interpretação será `2`.
+
+Um outra coisa à notar é que uma referência é desembrulhada se for o valor avaliado final duma interpolação de texto (por exemplo, um marcador <code v-pre>{{ }}</code>, então o seguinte exemplo desenhará `1`):
+
+```vue-html
+{{ object.id }}
+```
+
+Isto é apenas um funcionalidade de conveniência da interpolação de texto e é equivalente ao <code v-pre>{{ object.id.value }}</code>.
 
 </div>
 
