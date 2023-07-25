@@ -1,8 +1,8 @@
-# Vinculações de Classe e Estilo
+# Vinculações de Classe e Estilo {#class-and-style-bindings}
 
 Uma necessidade comum para vinculação de dados é a manipulação de uma lista de classe do elemento e estilos em linha. Já que `class` e `style` são ambos atributos, podemos utilizar a `v-bind` para atribuí-los um valor de sequência de caracteres dinamicamente, muito parecido com outros atributos. No entanto, a tentativa de gerar estes valores utilizando concatenação de sequência de caracteres pode ser irritante e estar propenso a erro. Por esta razão, a Vue fornece otimizações especiais quando a `v-bind` é utilizada com a `class` e `style`. Além das sequências de caracteres, as expressões também podem avaliar para objetos ou arranjos.
 
-## Vinculando Classes de HTML
+## Vinculando Classes de HTML {#binding-html-classes}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/dynamic-css-classes-with-vue-3" title="Aula Gratuita Sobre Classes de CSS Dinâmicas na Vue.js"/>
@@ -12,7 +12,7 @@ Uma necessidade comum para vinculação de dados é a manipulação de uma lista
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-dynamic-css-classes-with-vue" title="Aula Gratuita Sobre Classes de CSS Dinâmicas na Vue.js"/>
 </div>
 
-### Vinculando aos Objetos
+### Vinculando aos Objetos {#binding-to-objects}
 
 Nós podemos passar um objeto para `:class` (abreviação para `v-bind:class`) para alternar classes dinamicamente:
 
@@ -136,9 +136,9 @@ computed: {
 <div :class="classObject"></div>
 ```
 
-### Vinculando aos Arranjos
+### Vinculando aos Arranjos {#binding-to-arrays}
 
-Nós podemos vincular `:class` a um arranjo para aplicar uma lista de classes:
+Nós podemos vincular `:class` à um arranjo para aplicar uma lista de classes:
 
 <div class="composition-api">
 
@@ -186,9 +186,9 @@ No entanto, isto pode ser um pouco verboso se tiveres várias classes condiciona
 <div :class="[{ active: isActive }, errorClass]"></div>
 ```
 
-### Com Componentes
+### Com Componentes {#with-components}
 
-> Esta secção presume conhecimento de [Componentes](/guide/essentials/component-basics). Esteja a vontade para ignorá-la e voltar mais tarde.
+> Esta seção presume conhecimento de [Componentes](/guide/essentials/component-basics). Esteja a vontade para ignorá-la e voltar mais tarde.
 
 Quando utilizares o atributo `class` sobre um componente com um único elemento de raiz, aquelas classes serão adicionadas ao elemento de raiz do componente, e combinados com qualquer classe já existente nele.
 
@@ -243,11 +243,11 @@ Interpretará
 <span>This is a child component</span>
 ```
 
-Tu podes aprender mais a respeito da herança de atributo de componente na secção [Atributos](/guide/components/attrs.html)
+Tu podes aprender mais a respeito da herança de atributo de componente na secção [Atributos](/guide/components/attrs)
 
-## Vinculando Estilos Em Linha
+## Vinculando Estilos Em Linha {#binding-inline-styles}
 
-### Vinculando aos Objetos
+### Vinculando aos Objetos {#binding-to-objects-1}
 
 O `:style` suporta a vinculação à valores de objeto de JavaScript - ele corresponde a uma [propriedade `style` do elemento HTML](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style):
 
@@ -317,7 +317,7 @@ data() {
 
 Novamente, a vinculação de objeto de estilo é com frequência utilizado em conjunto com as propriedades computadas que retornam objetos.
 
-### Vinculando aos Arranjos
+### Vinculando aos Arranjos {#binding-to-arrays-1}
 
 Nós podemos vincular o `:style` a um arranjo de vários objetos de estilo. Estes objetos serão combinados e aplicados ao mesmo elemento:
 
@@ -325,11 +325,11 @@ Nós podemos vincular o `:style` a um arranjo de vários objetos de estilo. Este
 <div :style="[baseStyles, overridingStyles]"></div>
 ```
 
-### Prefixação Automática
+### Prefixação Automática {#auto-prefixing}
 
 Quando utilizares uma propriedade de CSS que exija um [prefixo](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) no `:style`, a Vue adicionará automaticamente o prefixo apropriado. A Vue faz isto verificando no tempo de execução para ver quais propriedades de estilo são suportadas no atual navegador. Se o navegador não suportar uma propriedade em particular então várias variantes prefixadas serão testadas para tentar encontrar uma que é suportada.
 
-### Vários Valores
+### Vários Valores {#multiple-values}
 
 Tu podes fornecer um arranjo de vários valores (prefixados) para uma propriedade de estilo, por exemplo:
 
