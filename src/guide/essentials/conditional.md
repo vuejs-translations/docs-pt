@@ -1,4 +1,4 @@
-# Interpretação Condicional
+# Interpretação Condicional {#conditional-rendering}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/conditional-rendering-in-vue-3" title="Aula gratuita a respeito da Intepretação Condicional de Vue"/>
@@ -13,7 +13,7 @@ import { ref } from 'vue'
 const awesome = ref(true)
 </script>
 
-## `v-if`
+## `v-if` {#v-if}
 
 A diretiva `v-if` é utilizada para interpretar um bloco condicionalmente. O bloco só será interpretado se a expressão da diretiva retornar um valor verdadeiro.
 
@@ -21,7 +21,7 @@ A diretiva `v-if` é utilizada para interpretar um bloco condicionalmente. O blo
 <h1 v-if="awesome">Vue is awesome!</h1>
 ```
 
-## `v-else`
+## `v-else` {#v-else}
 
 Tu podes utilizar a diretiva `v-else` para indicar um bloco "`else`" para a `v-if`:
 
@@ -49,11 +49,11 @@ Tu podes utilizar a diretiva `v-else` para indicar um bloco "`else`" para a `v-i
 
 </div>
 
-Um elemento `v-else` deve imediatamente seguir um elemento `v-if` ou `v-else-if` - de outra maneira ele não será reconhedico.
+Um elemento `v-else` deve imediatamente seguir um elemento `v-if` ou `v-else-if` - de outra maneira não será reconhecido.
 
-## `v-else-if`
+## `v-else-if` {#v-else-if}
 
-A `v-else-if`, conforme o nome sugere, serve como um bloco "`else if`" para `v-if`. Ela também pode ser encadeiada várias vezes:
+A `v-else-if`, conforme o nome sugere, serve como um bloco "`else if`" para `v-if`. Ela também pode ser encadeada várias vezes:
 
 ```vue-html
 <div v-if="type === 'A'">
@@ -72,9 +72,9 @@ A `v-else-if`, conforme o nome sugere, serve como um bloco "`else if`" para `v-i
 
 Similar ao `v-else`, um elemento `v-else-if` deve imediatamente seguir um elemento `v-if` ou um `v-else-if`. 
 
-## `v-if` no `<template>`
+## `v-if` no `<template>` {#v-if-on-template}
 
-Uma vez que a `v-if` é uma diretiva, ela tem que ser atribuida à um único elemento. Porém e se quisessemos alternar mais de um elemento? Neste caso podemos utilizar a `v-if` sobre um elemento `<template>`, que serve como um envolvedor invisível. O resultado interpretado final não incluirá o elemento `<template>`.
+Uma vez que a `v-if` é uma diretiva, ela tem que ser atribuída à um único elemento. Porém e se quiséssemos alternar mais de um elemento? Neste caso podemos utilizar a `v-if` sobre um elemento `<template>`, que serve como um envolvedor invisível. O resultado interpretado final não incluirá o elemento `<template>`.
 
 ```vue-html
 <template v-if="ok">
@@ -86,7 +86,7 @@ Uma vez que a `v-if` é uma diretiva, ela tem que ser atribuida à um único ele
 
 A `v-else` e a `v-else-if` também podem ser utilizadas sobre o elemento `<template>`.
 
-## `v-show`
+## `v-show` {#v-show}
 
 Uma outra opção para exibir condicionalmente um elemento é a diretiva `v-show`. A forma de utilização é em grande parte a mesma:
 
@@ -98,20 +98,20 @@ A diferença é que um elemento com `v-show` sempre será interpretado e permane
 
 A `v-show` não suporta o elemento `<template>`, nem funciona com a `v-else`.
 
-## `v-if` vs `v-show`
+## `v-if` vs `v-show` {#v-if-vs-v-show}
 
-A `v-if` é a interpretação condicional "real" porque ela garante que os ouvintes de evento e componentes filhos dentro de um bloco condicional sejam aproprieamente destroidos e recriados durante as alternâncias.
+A `v-if` é a interpretação condicional "real" porque ela garante que os ouvintes de evento e componentes filhos dentro de um bloco condicional sejam apropriadamente destruídos e recriados durante as alternâncias.
 
 A `v-if` também é **preguiçosa**: se a condição for falsa na interpretação inicial, ela não fará nada - o bloco condicional não será interpretado até a condição tornar-se verdadeira pela primeira vez.
 
-Em comparação, a `v-show` é muito mais simples - o elemento é intepretado sempre apesar da condição inicial, com alternância baseada em CSS.
+Em comparação, a `v-show` é muito mais simples - o elemento é interpretado sempre apesar da condição inicial, com alternância baseada em CSS.
 
-Duma maneira geral, a `v-if` tem custos de alternância altos enquanto a `v-show` tem custos de intepretação inicial altos. Então prefira a `v-show` se precisares de alternar alguma coisa com frequência, e prefira a `v-if` se é pouco provável a condição mudar em tempo de execução.
+Duma maneira geral, a `v-if` tem custos de alternância altos enquanto a `v-show` tem custos de interpretação inicial altos. Então prefira a `v-show` se precisares de alternar alguma coisa com frequência, e prefira a `v-if` se é pouco provável a condição mudar em tempo de execução.
 
-## `v-if` com `v-for`
+## `v-if` com `v-for` {#v-if-with-v-for}
 
 :::warning AVISO
-**Não** é recomendado utiliziar a `v-if` e `v-for` no mesmo elemento por causa da precedência implicita. Consulte o [guia de estilo](/style-guide/rules-essential.html#evite-v-if-com-v-for) para obter mais detalhes.
+**Não** é recomendado utilizar a `v-if` e `v-for` no mesmo elemento por causa da precedência implícita. Consulte o [guia de estilo](/style-guide/rules-essential#avoid-v-if-with-v-for) para obter mais detalhes.
 :::
 
-Quando a `v-if` e `v-for` forem ambas utilizadas no mesmo elemento, a `v-if` será avaliada primeiro. Consulte a [guia de interpretação de lista](list#v-for-com-v-if) para obter mais detalhes.
+Quando a `v-if` e `v-for` forem ambas utilizadas no mesmo elemento, a `v-if` será avaliada primeiro. Consulte a [guia de interpretação de lista](list#v-for-with-v-if) para obter mais detalhes.
