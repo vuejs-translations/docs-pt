@@ -10,7 +10,7 @@
 
 ## Ouvindo Eventos {#listening-to-events}
 
-Nós podemos utilizar a diretiva `v-on`, que normalmente abreviamos para o simbolo `@`, para ouvir os eventos do DOM e executar algum código de JavaScript quando são acionadas. A utilização seria `v-on:click="handler"` ou com o atalho, `@click="handler"`.
+Nós podemos utilizar a diretiva `v-on`, que normalmente abreviamos para o símbolo `@`, para ouvir os eventos do DOM e executar algum código de JavaScript quando são acionadas. A utilização seria `v-on:click="handler"` ou com o atalho, `@click="handler"`.
 
 O valor de `handler` (manipulador) pode ser um dos seguintes:
 
@@ -59,7 +59,7 @@ data() {
 
 ## Manipuladores de Método {#method-handlers}
 
-A lógica para muitos manipuladores de evento será mais complexa, e provavelmente não é viável com manipuladores em linha. É por isto que a `v-on` também pode aceitar o nome ou caminho de um metódo do componente que gostarias de chamar.
+A lógica para muitos manipuladores de evento será mais complexa, e provavelmente não é viável com manipuladores em linha. É por isto que a `v-on` também pode aceitar o nome ou caminho de um método do componente que gostarias de chamar.
 
 Por exemplo:
 
@@ -120,12 +120,12 @@ Um manipulador de método recebe automaticamente o objeto de evento de DOM nativ
 
 <div class="composition-api">
 
-Consulte: [Atribuindo Tipas aos Manipuladores de Evento](/guide/typescript/composition-api#typing-event-handlers) <sup class="vt-badge ts" />
+Consulte: [Tipos para os Manipuladores de Evento](/guide/typescript/composition-api#typing-event-handlers) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
 
-Consulte: [Atribuindo Tipos aos Manipuladores de Evento](Typing Event Handlers](/guide/typescript/options-api#typing-event-handlers) <sup class="vt-badge ts" />
+Consulte: [Tipos para os Manipuladores de Evento](/guide/typescript/options-api#typing-event-handlers) <sup class="vt-badge ts" />
 
 </div>
 
@@ -239,7 +239,7 @@ Para tratar este problema, a Vue fornece **modificadores de evento** para `v-on`
 <!-- o evento de submeter já não recarregará a página -->
 <form @submit.prevent="onSubmit"></form>
 
-<!-- modificadores podem ser encadeiados -->
+<!-- modificadores podem ser encadeados -->
 <a @click.stop.prevent="doThat"></a>
 
 <!-- apenas o modificador -->
@@ -264,7 +264,7 @@ Os modificadores `.capture`, `.once`, e `.passive` refletem as [opções do mét
 <!-- o evento de clique será acionado no máximo uma vez -->
 <a @click.once="doThis"></a>
 
-<!-- o comportamente padrão do evento de rolagem (rolando) acontecerá -->
+<!-- o comportamento padrão do evento de deslocamento (deslocando) acontecerá -->
 <!-- imediatamente, no lugar de esperar o `onScroll` terminar  -->
 <!-- neste caso ele contém `event.preventDefault()`                -->
 <div @scroll.passive="onScroll">...</div>
@@ -273,7 +273,7 @@ Os modificadores `.capture`, `.once`, e `.passive` refletem as [opções do mét
 O modificador `.passive` é normalmente utilizado com o ouvintes de evento de toque para [melhorar o desempenho nos dispositivos móveis](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#improving_scrolling_performance_with_passive_listeners).
 
 :::tip DICA
-Não utilize `.passive` e `.prevent` juntos, porque `.passive` já indica para o navegador que _não_ tencionas previnir o comportamente padrão do evento, e provavelmente verás um aviso a partir do navegador se o fizeres.
+Não utilize `.passive` e `.prevent` juntos, porque `.passive` já indica para o navegador que _não_ tencionas prevenir o comportamento padrão do evento, e provavelmente verás um aviso a partir do navegador se o fizeres.
 :::
 
 ## Modificadores de Tecla {#key-modifiers}
@@ -355,4 +355,4 @@ O modificador `.exact` permite o controlo da combinação exata de modificadores
 - `.right`
 - `.middle`
 
-Estes modificadores limitam o manipulador para os eventos acionadados por um botão de rato especifico.
+Estes modificadores limitam o manipulador para os eventos acionados por um botão de rato especifico.
