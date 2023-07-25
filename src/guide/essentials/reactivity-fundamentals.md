@@ -8,9 +8,9 @@ outline: deep
 Esta páginas e muitos outros capítulos adiante neste guia contém diferente conteúdo para a API de Opções e API de Composição. A tua preferência atual é a <span class="options-api">API de Opções</span><span class="composition-api">API de Composição</span>. Tu podes alternar entre os estilos de API utilizando o interruptor "Preferência de API" no canto superior esquerdo da barra lateral.
 :::
 
-## Declarando Estado Reativo \* {#declaring-reactive-state}
-
 <div class="options-api">
+
+## Declarando Estado Reativo \* {#declaring-reactive-state}
 
 Com a API de Opções, utilizamos a opção `data` para declarar estado reativo de um componente. O valor da opção deve ser uma função que retorna um objeto. A Vue chamará a função quando estiver criando uma nova instância do componente, e envolve o objeto retornado no seu sistema de reatividade. Quaisquer propriedades de alto nível deste objeto são delegados sobre a instância do componente (`this` dentro dos métodos e gatilhos do ciclo de vida):
 
