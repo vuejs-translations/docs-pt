@@ -574,7 +574,7 @@ Um objeto para definir estratégias de fusão para opções de componente person
 
 - **Detalhes**
 
-  Algumas extensões ou bibliotecas adicionam suporte para opções de componente personalizas (injetando misturas globais). Essas opções podem exigir uma lógica de fusão especial quando a mesma opção precisa ser "mesclada" de múltiplas fontes (por exemplo, misturas ou herança de componente).
+  Algumas extensões ou bibliotecas adicionam suporte para opções de componente personalizas (injetando misturas globais). Essas opções podem exigir uma lógica de fusão especial quando a mesma opção precisa ser "combinada" de múltiplas fontes (por exemplo, misturas ou herança de componente).
 
   Uma função de estratégia de fusão pode ser registada por uma opção personalizada ao atribuí-la ao objeto `app.config.optionMergeStrategies` usando o nome da opção como chave.
 
