@@ -375,7 +375,7 @@ function MyComponent(slots) {
 }
 ```
 
-De fato, isto está muito próximo de como as ranhuras isoladas são compiladas, e de como utilizarias as ranhuras isoladas no manual de [funções de interpretação](/guide/extras/render-function.html).
+De fato, isto está muito próximo de como as ranhuras isoladas são compiladas, e de como usaríamos as ranhuras isoladas no manual de [funções de interpretação](/guide/extras/render-function).
 
 Repare que as `v-slot="slotProps"` correspondem a assinatura da função de ranhura. Tal como com os argumentos de função, podemos utilizar a desestruturação na `v-slot`:
 
@@ -487,7 +487,7 @@ O caso de uso de `<FancyList>` que discutimos acima resume ambas a lógica reuti
 
 Se empurrarmos este conceito um pouco adiante, podemos surgir com componentes que apenas resumem a lógica e não interpretam nada por si mesmos - a saída visual é completamente delegada ao componente consumidor com as ranhuras isoladas. Nós chamamos este tipo de componente um **Componentes Sem Interpretação**.
 
-Um exemplo de componente sem interpretação poderia ser um que resume a lógica do rastreamento da posição atual do rato:
+Um exemplo de componente sem interpretação poderia ser um que resume a lógica do rastreio da posição atual do rato:
 
 ```vue-html
 <MouseTracker v-slot="{ x, y }">
@@ -506,6 +506,6 @@ Um exemplo de componente sem interpretação poderia ser um que resume a lógica
 
 </div>
 
-Embora um padrão interessante, a maioria do que pode ser alcançada com os Componentes Sem Interpretação pode ser alcançada de uma maneira mais eficiente com a API de Composição, sem ficar sujeito a despesas gerais do encaixamento de componente adicionais. Depois, veremos como podemos implementar a mesma funcionalidade de rastreamento do rato com um [Constituível](/guide/reusability/composables).
+Embora um padrão interessante, a maioria do que pode ser alcançada com os Componentes Sem Interpretação pode ser alcançada de uma maneira mais eficiente com a API de Composição, sem ficar sujeito a despesas gerais do encaixamento de componente adicionais. Depois, veremos como podemos implementar a mesma funcionalidade de rastreio do rato com uma [Função de Composição](/guide/reusability/composables).
 
 Com isto dito, ranhuras isoladas ainda são úteis nos casos onde precisamos de ambos resumir a lógica **e** compor a saída visual, tal como no exemplo de `<FancyList>`.
