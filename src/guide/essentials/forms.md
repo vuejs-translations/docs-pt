@@ -44,7 +44,7 @@ Além disto, a `v-model` pode ser utilizada nas entradas de tipos diferentes, `<
 - `<select>` utiliza `value` como uma propriedade e `change` como um evento.
 
 :::tip NOTA
-A `v-model` ignorará o valor inicial dos atributos `value`, `checked`, ou `selected` encontrados em quaisquer elementos de formulário. Ela sempre tratará o atual estado de JavaScript vinculado como a fonte de verdade. Tu podes declarar o valor inicial no lado da JavaScript, utilizando <span class="options-api">a opção `data`</span><span class="composition-api">as APIs de reatividade</span>.
+A `v-model` ignorará o valor inicial dos atributos `value`, `checked`, ou `selected` encontrados em quaisquer elementos de formulário. Ela sempre tratará o atual estado de JavaScript vinculado como a fonte de verdade. Tu podes declarar o valor inicial no lado da JavaScript, utilizando <span class="options-api">a opção [`data`](/api/options-state#data)</span><span class="composition-api">as [APIs de reatividade](/api/reactivity-core#reactivity-api-core)</span>.
 :::
 
 ## Uso Básico {#basic-usage}

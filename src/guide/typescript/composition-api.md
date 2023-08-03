@@ -1,12 +1,12 @@
 # TypeScript com a API de Composição {#typescript-with-composition-api}
 
-> Esta página presume que já leste a visão geral no [Utilizando a Vue com a TypeScript](./overview).
+> Esta página presume que já leste a visão geral no [Usando a Vue com a TypeScript](./overview).
 
-## Atribuindo Tipos as Propriedades do Componente {#typing-component-props}
+## Tipos para as Propriedades do Componente {#typing-component-props}
 
-### Utilizando `<script setup>` {#using-script-setup}
+### Usando `<script setup>` {#using-script-setup}
 
-Quando estiveres utilizando `<script setup>`, a macro `defineProps()` suporta a inferência de tipos de propriedades baseado no seu argumento:
+Quando estivermos a usar o `<script setup>`, a macro `defineProps()` suporta a inferência de tipos de propriedades baseado no seu argumento:
 
 ```vue
 <script setup lang="ts">
@@ -35,9 +35,9 @@ const props = defineProps<{
 
 Isto é chamado "declaração baseada em tipo". O compilador tentará fazer o seu melhor para inferir as opções de tempo de execução equivalente baseado no argumento de tipo. Neste caso, o nosso segundo exemplo compila para as exatas mesmas opções de tempo de execução que as do primeiro exemplo.
 
-Tu podes utilizar ou a declaração baseada em tipo OU a declaração de tempo de execução, mas não podes utilizar ambas ao mesmo tempo.
+Nós podemos usar ou a declaração baseada em tipo OU a declaração de tempo de execução, mas não podemos usar ambas ao mesmo tempo.
 
-Nós podemos também mover as tipos das propriedades para uma interface separada:
+Nós podemos também mover os tipos das propriedades para uma interface separada:
 
 ```vue
 <script setup lang="ts">
@@ -52,36 +52,13 @@ const props = defineProps<Props>()
 
 #### Limitações de Sintaxe {#syntax-limitations}
 
-Para gerar o código de tempo de execução correto, o argumento genérico para `defineProps()` deve ser um dos seguintes:
+Na versão 3.2 e abaixo, o parâmetro de tipo genérico para `defineProps()` estavam limitados à um literal de tipo ou uma referência à uma inferência local.
 
-- Um tipo literal de objeto:
-
-  ```ts
-  defineProps<{ /*... */ }>()
-  ```
-
-- Um referência para um interface ou tipo literal de objeto **no mesmo ficheiro**:
-
-  ```ts
-  interface Props {/* ... */}
-
-  defineProps<Props>()
-  ```
-
-A interface ou tipo literal de objeto pode conter referências para os tipos importados de outros ficheiros, no entanto, o próprio argumento genérico passado para `defineProps` **não pode** ser um tipo importado:
-
-```ts
-import { Props } from './other-file'
-
-// NÃO suportado
-defineProps<Props>()
-```
-
-Isto é porque os componentes de Vue são compilados separadamente e o compilador atualmente não rastreia os ficheiros importados para analisar o tipo da fonte. Esta limitação poderia ser removida em um futuro lançamento.
+Esta limitação tinha sido resolvida na 3.3, A versão mais recente da Vue suporta a referência dum conjunto importado e limitado de tipos complexos na posição do parâmetro de tipo. No entanto, uma vez que o tipo para conversão de tempo de execução ainda é baseado na Árvore de Sintaxe Abstrata, alguns tipos complexos que exigem a analise do tipo verdadeiro, por exemplo, tipos condicionais, não são suportados. Nós podemos usar os tipos condicionais para o tipo duma única propriedade, mas não para objeto de propriedades inteira.
 
 ### Valores Padrão das Propriedades {#props-default-values}
 
-Quando estamo a usar a declaração baseada no tipo, perdemos a habilidade de declarar valores padrão para as propriedades. Isto pode ser resolvido pela macro `withDefaults` do compilador:
+Quando estamos a usar a declaração baseada no tipo, perdemos a habilidade de declarar valores padrão para as propriedades. Isto pode ser resolvido pela macro `withDefaults` do compilador:
 
 ```ts
 export interface Props {
@@ -95,28 +72,11 @@ const props = withDefaults(defineProps<Props>(), {
 })
 ```
 
-Isto será compilado para as opções `default` das propriedades de tempo de execução equivalentes. Além disto, o auxiliar `withDefaults` fornece verificação de tipo para os valores padrão, e garante que os tipo de `props` retornado tenha opções opcionais removidas para as propriedades que tiverem valores padrão declarados.
-
-Alternativamente, podes usar a atualmente experimental [Transformação da Reatividade](/guide/extras/reactivity-transform.html):
-
-```vue
-<script setup lang="ts">
-interface Props {
-  name: string
-  count?: number
-}
-
-// desestruturação reativa para defineProps()
-// valor padrão é compilado para a opção de tempo de execução equivalente
-const { name, count = 100 } = defineProps<Props>()
-</script>
-```
-
-Este comportamento atualmente requer [opção de inclusão explícita](/guide/extras/reactivity-transform.html#explicit-opt-in).
+Isto será compilado para as opções `default` das propriedades de tempo de execução equivalentes. Além disto, a auxiliar `withDefaults` fornece verificação de tipo para os valores padrão, e garante que os tipo de `props` retornado tenha opções opcionais removidas para as propriedades que tiverem valores padrão declarados.
 
 ### Sem `<script setup>` {#without-script-setup}
 
-Se não estiveres utilizando `<script setup>`, é necessário utilizar `defineComponent()` para ativar a inferência de tipo das propriedades. O tipo do objeto de propriedades passadas para `setup()` é inferida a partir da opção `props`.
+Se não estivermos a usar `<script setup>`, é necessário usar `defineComponent()` para ativar a inferência de tipo das propriedades. O tipo do objeto das propriedades passadas para `setup()` é inferida a partir da opção `props`.
 
 ```ts
 import { defineComponent } from 'vue'
@@ -131,9 +91,52 @@ export default defineComponent({
 })
 ```
 
-## Atribuindo Tipos as Emissões do Componente
+### Tipos de Propriedades Complexas {#complex-prop-types}
 
-No `<script setup>`, o tipo da função `emit` pode também ser atribuindo utilizando ou a declaração de tempo de execução OU a declaração de tipo:
+Com a declaração baseada no tipo, uma propriedade pode usar um tipo complexo tal como qualquer outro tipo:
+
+```vue
+<script setup lang="ts">
+interface Book {
+  title: string
+  author: string
+  year: number
+}
+
+const props = defineProps<{
+  book: Book
+}>()
+</script>
+```
+
+Para a declaração de tempo de execução, podemos usar o tipo utilitário `PropType`:
+
+```ts
+import type { PropType } from 'vue'
+
+const props = defineProps({
+  book: Object as PropType<Book>
+})
+```
+
+Isto funciona exatamente da mesma maneira se estivéssemos a especificar a opção `props` diretamente:
+
+```ts
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+
+export default defineComponent({
+  props: {
+    book: Object as PropType<Book>
+  }
+})
+```
+
+A opção `props` é mais comummente usada com a API de Opções, então encontrarás exemplos mais detalhados no guia para [TypeScript com a API de Opções](/guide/typescript/options-api#typing-component-props). As técnicas mostradas nestes exemplos também aplicam-se as declarações de tempo de execução usando `defineProps()`.
+
+## Tipos para as Emissões do Componente {#typing-component-emits}
+
+No `<script setup>`, o tipo da função `emit` também pode ser atribuído usando ou a declaração de tempo de execução OU a declaração de tipo:
 
 ```vue
 <script setup lang="ts">
@@ -148,9 +151,9 @@ const emit = defineEmits<{
 </script>
 ```
 
-O argumento de tipo deve ser um literal de tipo com [Assinaturas de Chamada](https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures). O literal de tipo será utilizado como tipo da função `emit` retornada. Conforme podemos ver, a declaração de tipo dá-nos o controlo mais refinado sobre as restrições do tipo dos eventos emitidos.
+O argumento de tipo deve ser um literal de tipo com [Assinaturas de Chamada](https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures). O literal de tipo será usado como tipo da função `emit` retornada. Conforme podemos ver, a declaração de tipo dá-nos o controlo mais refinado sobre as restrições do tipo dos eventos emitidos.
 
-Quando não se está utilizando `<script setup>`, a `defineComponent()` é capaz de inferir os eventos permitidos para a função `emit` exposta sobre o contexto da configuração (ou `setup` se preferires):
+Quando não se está utilizando `<script setup>`, a `defineComponent()` é capaz de inferir os eventos permitidos para a função `emit` exposta sobre o contexto da configuração:
 
 ```ts
 import { defineComponent } from 'vue'
@@ -163,7 +166,7 @@ export default defineComponent({
 })
 ```
 
-## Atribuindo Tipo ao `ref()` {#typing-ref}
+## Tipos para a `ref()` {#typing-ref}
 
 As referências inferem o tipo a partir do valor inicial:
 
@@ -177,7 +180,7 @@ const year = ref(2020)
 year.value = '2020'
 ```
 
-Algumas vezes podemos precisar especificar os tipos complexos para um valor interno da referência. Nós podemos fazer isto utilizando o tipo `Ref`:
+Algumas vezes podemos precisar de especificar os tipos complexos para um valor interno da referência. Nós podemos fazer isto usando o tipo `Ref`:
 
 ```ts
 import { ref } from 'vue'
@@ -188,7 +191,7 @@ const year: Ref<string | number> = ref('2020')
 year.value = 2020 // ok!
 ```
 
-Ou, passando um argumento genérico quando estiveres chamando a `ref()` para sobrepor a inferência padrão:
+Ou, passando um argumento genérico quando estivermos chamando a `ref()` para sobrepor a inferência padrão:
 
 ```ts
 // tipo resultante: Ref<string | number>
@@ -197,14 +200,14 @@ const year = ref<string | number>('2020')
 year.value = 2020 // ok!
 ```
 
-Se especificares um argumento de tipo genérico mas omitir o valor inicial, o tipo resultante será um tipo de união que inclui `undefined`:
+Se especificarmos um argumento de tipo genérico mas omitirmos o valor inicial, o tipo resultante será um tipo de união que inclui `undefined`:
 
 ```ts
 // tipo inferido: Ref<number | undefined>
 const n = ref<number>()
 ```
 
-## Atribuindo Tipo ao `reactive()` {#typing-reactive}
+## Tipos para a `reactive()` {#typing-reactive}
 
 A `reactive()` também infere implicitamente o tipo a partir do seu argumento:
 
@@ -215,7 +218,7 @@ import { reactive } from 'vue'
 const book = reactive({ title: 'Vue 3 Guide' })
 ```
 
-Para explicitamente tipar uma propriedade de `reactive`, podes utilizar as inferências:
+Para atribuir tipos explicitamente para uma propriedade de `reactive`, podemos usar as inferências:
 
 ```ts
 import { reactive } from 'vue'
@@ -228,13 +231,13 @@ interface Book {
 const book: Book = reactive({ title: 'Vue 3 Guide' })
 ```
 
-:::tip Dica
-Não é recomendado utilizar o argumento genérico da `reactive()` porque o tipo retornado, o qual manipula o desembrulhar da referência encaixada, é diferente do tipo do argumento genérico.
+:::tip DICA
+Não é recomendado usar o argumento genérico da `reactive()` porque o tipo retornado, o qual manipula o desembrulhar da referência encaixada, é diferente do tipo do argumento genérico.
 :::
 
-## Atribuindo Tipo ao `computed()` {#typing-computed}
+## Tipos para a `computed()` {#typing-computed}
 
-A `computed()` infere o seu tipo baseado no valor de retorno do recuperador (ou getter se preferires):
+A `computed()` infere o seu tipo baseado no valor de retorno do recuperador:
 
 ```ts
 import { ref, computed } from 'vue'
@@ -248,7 +251,7 @@ const double = computed(() => count.value * 2)
 const result = double.value.split('')
 ```
 
-Tu podes também especificar um tipo explícito através de um argumento genérico:
+Nós podemos também especificar um tipo explícito através de um argumento genérico:
 
 ```ts
 const double = computed<number>(() => {
@@ -256,9 +259,9 @@ const double = computed<number>(() => {
 })
 ```
 
-## Atribuindo Tipos aos Manipuladores de Evento {#typing-event-handlers}
+## Tipos para os Manipuladores de Evento {#typing-event-handlers}
 
-Quando estiveres lidando com eventos de DOM nativo, pode ser útil definir tipo para o argumento que passamos para o manipulador corretamente. Vamos dar um vista de olhos neste exemplo:
+Quando estivermos a lidar com eventos de DOM nativo, pode ser útil definir o tipo para o argumento que passamos para o manipulador corretamente. Daremos uma vista de olhos neste exemplo:
 
 ```vue
 <script setup lang="ts">
@@ -273,7 +276,7 @@ function handleChange(event) {
 </template>
 ```
 
-Sem a anotação de tipo, o argumento `event` terá implicitamente um tipo de `any`. Isto também resultará em um erro de TypeScript se `"strict": true` ou `"noImplicitAny": true` forem utilizados no `tsconfig.json`. É portanto recomendado anotar explicitamente o argumento dos manipuladores de evento. Além disto, podes precisar lançar as propriedades sobre o `event`:
+Sem a anotação de tipo, o argumento `event` terá implicitamente um tipo de `any`. Isto também resultará num erro de TypeScript se `"strict": true` ou `"noImplicitAny": true` forem utilizados no `tsconfig.json`. É portanto recomendado anotar explicitamente o argumento dos manipuladores de evento. Além disto, podemos precisar de usar as asserções de tipo quando acessamos as propriedades de  `event`:
 
 ```ts
 function handleChange(event: Event) {
@@ -281,9 +284,9 @@ function handleChange(event: Event) {
 }
 ```
 
-## Atribuindo Tipo ao `provide()` / `inject()` {#typing-provide-inject}
+## Tipos para `provide()` / `inject()` {#typing-provide-inject}
 
-O fornecer e injetar são normalmente realizados em componentes separados. Para corretamente definir os tipos dos valores injetados, a Vue fornece uma interface `InjectionKey`, que é um tipo genérico que estende o `Symbol`. Ela pode ser utilizada para sincronizar o tipo do valor injetado entre o fornecedor e o consumidor:
+O fornecimento e a injeção são normalmente realizadas em componentes separados. Para corretamente definir os tipos dos valores injetados, a Vue fornece uma interface `InjectionKey`, que é um tipo genérico que estende o `Symbol`. Este pode ser usado para sincronizar o tipo do valor injetado entre o fornecedor e o consumidor:
 
 ```ts
 import { provide, inject } from 'vue'
@@ -291,20 +294,21 @@ import type { InjectionKey } from 'vue'
 
 const key = Symbol() as InjectionKey<string>
 
-provide(key, 'foo') // fornecer valor que não uma sequência de caracteres resultará em erro
+// fornecer valor que não é uma sequência de caracteres resultará em erro
+provide(key, 'foo')
 
 const foo = inject(key) // tipo de foo: string | undefined
 ```
 
-É recomendado colocar a chave de injeção em um ficheiro separado para ela possa ser importada em vários componentes.
+É recomendado colocar a chave de injeção num ficheiro separado para que possa ser importada em vários componentes.
 
-Quando estiveres utilizando as chaves de injeção de sequência de caracteres, o tipo do valor injetado serão `unknown`, e precisarão ser explicitamente declarados através de um argumento de tipo genérico:
+Quando estivermos usando as chaves de injeção de sequência de caracteres, o tipo do valor injetado será `unknown`, e precisará ser explicitamente declarados através dum argumento de tipo genérico:
 
 ```ts
 const foo = inject<string>('foo') // type: string | undefined
 ```
 
-Repara que o valor injetado pode ainda ser `undefined`, porque não existe garantia de que um fornecedor fornecerá este valor no tempo de execução.
+Repara que o valor injetado ainda pode ser `undefined`, porque não existe garantia de que um fornecedor fornecerá este valor no tempo de execução.
 
 Os tipos `undefined` podem ser removidos fornecendo um valor padrão:
 
@@ -312,13 +316,13 @@ Os tipos `undefined` podem ser removidos fornecendo um valor padrão:
 const foo = inject<string>('foo', 'bar') // type: string
 ```
 
-Se estiveres certo de que o valor é sempre fornecido, podes também forçar o lançamento do valor:
+Se estivermos certos de que o valor é sempre fornecido, podemos também forçar o lançamento do valor:
 
 ```ts
 const foo = inject('foo') as string
 ```
 
-## Atribuindo Tipos as Referências do Modelo de Marcação {#typing-template-refs}
+## Tipos para as Referências do Modelo de Marcação {#typing-template-refs}
 
 As referências de modelo de marcação devem ser criadas com um argumento de tipo genérico explícito e um valor inicial de `null`:
 
@@ -338,11 +342,11 @@ onMounted(() => {
 </template>
 ```
 
-Nota que para a segurança de tipo restrito, é necessário utilizar o encadeamento opcional ou sentinelas de tipo quando estiveres acessando `el.value`. Isto é porque o valor da referência inicial é `null` até o componente ser montado, e também pode ser definido para `null` se o elemento referenciado for desmontado pelo `v-if`.
+Nota que para a segurança de tipo restrito, é necessário usar o encadeamento opcional ou guardas de tipo quando estivermos acessando `el.value`. Isto é porque o valor da referência inicial é `null` até o componente ser montado, e também pode ser definido para `null` se o elemento referenciado for desmontado pelo `v-if`.
 
-## Atribuindo Tipos as Referências do Modelo de Marcação de Componente {#typing-component-template-refs}
+## Tipos para Referências do Modelo de Marcação do Componente {#typing-component-template-refs}
 
-Algumas vezes podes precisar anotar uma referência de modelo de marcação para um componente filho para chamar o seu método público. Por exemplo, temos um componente filho `MyModal` com um método que abre o modal:
+Algumas vezes podemos precisar anotar uma referência de modelo de marcação para um componente filho para chamar o seu método público. Por exemplo, temos um componente filho `MyModal` com um método que abre o modal:
 
 ```vue
 <!-- MyModal.vue -->
@@ -358,7 +362,7 @@ defineExpose({
 </script>
 ```
 
-Para receber o tipo da instância de `MyModal`, precisamos primeiro recuperar o seu tipo através de `typeof`, depois utilizar o utilitário `InstanceType` embutido da TypeScript para extrair o tipo da sua instância:
+Para receber o tipo da instância de `MyModal`, precisamos primeiro recuperar o seu tipo através de `typeof`, depois usar o utilitário `InstanceType` embutido da TypeScript para extrair o tipo da sua instância:
 
 ```vue{5}
 <!-- App.vue -->
@@ -373,4 +377,13 @@ const openModal = () => {
 </script>
 ```
 
-Nota que se quiseres utilizar esta técnica nos ficheiros de TypeScript dos Componentes de Ficheiro Único de Vue, precisamos ativar o [Modo de Aquisição (Takeover Mode)](./overview.html#volar-takeover-mode) da Volar.
+Nota que se quiseres utilizar esta técnica nos ficheiros de TypeScript dos Componentes de Ficheiro Único de Vue, precisamos ativar o [Modo de Aquisição](./overview.html#volar-takeover-mode) da Volar.
+
+Nos casos onde o tipo exato do componente não estiver disponível ou não for importante, `ComponentPublicInstance` pode ser usado. Isto apenas incluirá as propriedades que são partilhadas por todos os componentes, tais como `$el`:
+
+```ts
+import { ref } from 'vue'
+import type { ComponentPublicInstance } from 'vue'
+
+const child = ref<ComponentPublicInstance | null>(null)
+```

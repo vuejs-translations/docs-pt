@@ -23,7 +23,7 @@ A Vue fornece as bibliotecas principais e [suporte ferramental exaustivo](/guide
 - Suporte de IDE
 - Ferramentas de programação do navegador
 - Integrações de TypeScript
-- Utilitários de Testagem
+- Utilitários de Testes
 
 As SPAs normalmente exigem backend para expor os destinos da API - mas também podes parear a Vue com soluções como [Inertia.js](https://inertiajs.com) para teres os benefícios da SPA enquanto manténs um modelo de desenvolvimento centrado no servidor.
 

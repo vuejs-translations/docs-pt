@@ -1,6 +1,6 @@
-# Criando uma Aplicação de Vue
+# Criando uma Aplicação de Vue {#creating-a-vue-application}
 
-## A instância de aplicação
+## A instância de aplicação {#the-application-instance}
 
 Toda aplicação de Vue inicia com a criação de uma nova **instância de aplicação** com a função [`createApp`](/api/application#createapp):
 
@@ -12,7 +12,7 @@ const app = createApp({
 })
 ```
 
-## O Componente de Raiz
+## O Componente de Raiz {#the-root-component}
 
 O objeto que estamos passando para `createApp` é na realidade um componente. Toda aplicação exige um "componente de raiz" que contém outros componentes como seus filhos.
 
@@ -41,7 +41,7 @@ App (componente de raiz)
 
 Nós discutiremos como definir e compor vários componentes juntos nas secções mais adiante do guia. Antes disto, concentraremos-nos no que acontece dentro de um único componente.
 
-## Montando a Aplicação
+## Montando a Aplicação {#mounting-the-app}
 
 Uma instância de aplicação não interpretará nada até seu método `.mount()` ser chamado. Ela espera que um argumento "container (contentor)", que pode ser tanto um elemento do DOM ou uma sequência de caracteres de seletor:
 
@@ -57,9 +57,9 @@ O conteúdo do componente de raiz da aplicação será interpretado dentro do el
 
 O método `.mount()` deve ser chamado sempre depois de todas as configurações e registos de recurso da aplicação forem terminados. Nota também que seu valor de retorno, ao contrário dos métodos de registo de recurso, é a instância do componente de raiz ao invés da instância da aplicação.
 
-### Modelo de Marcação do Componente de Raiz no DOM
+### Modelo de Marcação do Componente de Raiz no DOM {#in-dom-root-component-template}
 
-Quando estivermos utilizando a Vue sem uma etapa de construção, podemos escrever o nosso modelo de marcação do componente de raiz imediatamente dentro do contentor de montar `mount`:
+O modelo de marcação para o componente de raiz é normalmente parte do próprio componente, mas também é possível fornecer o modelo de marcação separadamente escrevendo-o diretamente dentro do contentor de montagem:
 
 ```html
 <div id="app">
@@ -83,13 +83,15 @@ app.mount('#app')
 
 A Vue utilizará automaticamente o `innerHTML` do contentor como modelo de marcação se o componente de raiz já não tiver uma opção `template`.
 
-## Configurações da Aplicação
+Os modelos de marcação no DOM são frequentemente usados nas aplicações que estão a [usar a Vue sem uma etapa de construção](/guide/quick-start#using-vue-from-cdn). Eles também podem ser usados em conjunto com abstrações do lado do servidor, onde a modelo de marcação de raiz pode ser gerado dinamicamente pelo servidor.
+
+## Configurações da Aplicação {#app-configurations}
 
 A instância de aplicação expõe um objeto `.config` que permite-nos configurar algumas opções de nível de aplicação, por exemplo definindo um manipulador de erro de nível de aplicação que captura os erros de todos os componentes descendentes: 
 
 ```js
 app.config.errorHandler = (err) => {
-  /* manipule o erro */
+  /* manipular o erro */
 }
 ```
 
@@ -103,7 +105,7 @@ Isto torna o `TodoDeleteButton` disponível para uso em qualquer lugar na nossa 
 
 Certifica-te de aplicar todas as configurações de aplicação antes da montagem da aplicação!
 
-## Várias instâncias de aplicação
+## Várias instâncias de aplicação {#multiple-application-instances}
 
 Tu não estás restrito a uma única instância de aplicação na mesma página. A API de `createApp` permite que várias aplicações de Vue coexistam na mesma página, cada uma com seu próprio escopo para configuração e recursos globais:
 

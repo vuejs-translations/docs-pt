@@ -65,9 +65,9 @@ O modificador `.once` também é suportado nos ouvintes de evento do componente:
 <MyComponent @some-event.once="callback" />
 ```
 
-Tal como os componentes e propriedades, os nomes de eventos fornecem uma transformação de caixa automática. Repara que nós emitimos um evento em "camelCase", mas podemos ouvir ele utilizando um ouvinte em "kebab-case" no componente pai. De acordo com a [caixa dos caracteres das propriedades](/guide/components/props.html#prop-name-casing), recomendamos a utilização de ouvintes de evento em "kebab-case" nos modelos de marcação.
+Tal como os componentes e propriedades, os nomes de eventos fornecem uma transformação de caixa automática. Repara que nós emitimos um evento em "camelCase", mas podemos ouvir ele utilizando um ouvinte em "kebab-case" no componente pai. De acordo com a [caixa dos caracteres das propriedades](/guide/components/props#prop-name-casing), recomendamos a utilização de ouvintes de evento em "kebab-case" nos modelos de marcação.
 
-:::tip Dica
+:::tip DICA
 Ao contrário os eventos de DOM nativos, os eventos emitidos do componente **não** transbordam. Tu só podes ouvir os eventos emitidos por um componente filho direto.
 :::
 
@@ -122,7 +122,7 @@ Todos os argumentos adicionais passados para o `$emit()` depois do nome do event
 
 ## Declarando Eventos Emitidos {#declaring-emitted-events}
 
-Um componente pode declarar explicitamente os eventos que ele emitirá usando a <span class="composition-api">macro [`defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)</span><span class="options-api">opção [`emits`](/api/options-state.html#emits)</span>:
+Um componente pode declarar explicitamente os eventos que ele emitirá usando a <span class="composition-api">macro [`defineEmits()`](/api/sfc-script-setup#defineprops-defineemits)</span><span class="options-api">opção [`emits`](/api/options-state#emits)</span>:
 
 <div class="composition-api">
 
@@ -146,7 +146,7 @@ function buttonClick() {
 
 A macro `defineEmits()` **não pode** ser utilizada dentro de uma função, ela deve ser colocada diretamente dentro da `<script setup>`, conforme está no exemplo acima.
 
-Se estiveres utilizando um função `setup` explícita ao invés de `<script setup>`, os eventos devem ser declarados utilizando a opção [`emits`](/api/options-state.html#emits), e a função `emit` é exposta no contexto de `setup()`:
+Se estiveres utilizando um função `setup` explícita ao invés de `<script setup>`, os eventos devem ser declarados utilizando a opção [`emits`](/api/options-state#emits), e a função `emit` é exposta no contexto de `setup()`:
 
 ```js
 export default {
@@ -205,7 +205,7 @@ const emit = defineEmits<{
 </script>
 ```
 
-Mais detalhes: [Atribuindo Tipos as Emissões de Componente](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Mais detalhes: [Atribuindo Tipos as Emissões de Componente](/guide/typescript/composition-api#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
@@ -221,13 +221,13 @@ export default {
 }
 ```
 
-Consulte também: [Atribuindo Tipos as Emissões de Componente](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Consulte também: [Atribuindo Tipos as Emissões de Componente](/guide/typescript/options-api#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 
-Ainda que opção, é recomendado definir todos eventos emitidos em ordem para documentar melhor como um componente deveria funcionar. Também permite a Vue excluir ouvintes conhecidos dos [atributos que caiem](/guide/components/attrs.html#v-on-listener-inheritance).
+Ainda que opção, é recomendado definir todos eventos emitidos em ordem para documentar melhor como um componente deveria funcionar. Também permite a Vue excluir ouvintes conhecidos dos [atributos que caiem](/guide/components/attrs#v-on-listener-inheritance).
 
-:::tip Dica
+:::tip DICA
 Se um evento nativo (por exemplo, `click`) for definido na opção `emits`, o ouvinte agora apenas ouvirá os eventos `click` emitidos pelo componente e não mais responderá aos outros eventos `click` nativos.
 :::
 

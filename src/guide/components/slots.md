@@ -86,7 +86,7 @@ O conteúdo de ranhura não é apenas limitado ao texto. Ele pode ser qualquer c
 
 Ao utilizar as ranhuras, o nosso `<FancyButton>` é mais flexível e reutilizável. Nós podemos agora utilizá-lo em diferentes lugares com conteúdo interno diferente, mas todos com a mesma estilização fantástica.
 
-O mecanismo de ranhura dos componentes de Vue são insperados pelo [elemento `<slot>` de Componente de Web nativo](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot), mas com capacidades adicionais que veremos mais tarde.
+O mecanismo de ranhura dos componentes de Vue são inspirados pelo [elemento `<slot>` de Componente de Web nativo](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot), mas com capacidades adicionais que veremos mais tarde.
 
 ## Escopo de Interpretação {#render-scope}
 
@@ -99,7 +99,7 @@ O conteúdo de ranhura tem acesso ao escopo de dados do componente pai, porque �
 
 Aqui ambos interpolações de <span v-pre>`{{ message }}`</span> interpretarão o mesmo conteúdo.
 
-O conteúdo de ranhura **não** tem acesso aos dados do componente filho. As expressões nos modelos de marcação de Vue podem apenas acessar o escopo em que são definidas, consistente com a possibilidade lexica da JavaScript. Em outras palavras:
+O conteúdo de ranhura **não** tem acesso aos dados do componente filho. As expressões nos modelos de marcação de Vue podem apenas acessar o escopo em que são definidas, consistente com a possibilidade léxica da JavaScript. Em outras palavras:
 
 > As expressões no modelo de marcação do componente pai apenas têm acesso ao escopo do componente pai; as expressões no modelo de marcação do componente filho apenas têm acesso ao escopo do componente filho.
 
@@ -165,10 +165,10 @@ Existem momentos quando é útil ter várias saídas de ranhura em um único com
 ```vue-html
 <div class="container">
   <header>
-    <!-- Nós queremos o conteúdo de cabelho aqui -->
+    <!-- Nós queremos o conteúdo de cabelo aqui -->
   </header>
   <main>
-    <!-- Nós queremos o conteúdo princiapal aqui -->
+    <!-- Nós queremos o conteúdo principal aqui -->
   </main>
   <footer>
     <!-- Nós queremos o conteúdo de rodapé aqui -->
@@ -196,7 +196,7 @@ Uma saída de `<slot>` sem `name` implicitamente tem o nome de "default".
 
 Em um componente pai utilizando `<BaseLayout>`, precisamos de uma maneira de passar vários fragmentos de conteúdo de ranhura, cada mirando uma saída de ranhura diferente. Isto é onde **ranhuras nomeadas** entram.
 
-Para passar uma ranhura nomeada, precisamos utilizar um elemento `<template>` com a diretiva `v-slot`, e depoins passar o nome da ranhura como um argumento para `v-slot`:
+Para passar uma ranhura nomeada, precisamos utilizar um elemento `<template>` com a diretiva `v-slot`, e depois passar o nome da ranhura como um argumento para `v-slot`:
 
 ```vue-html
 <BaseLayout>
@@ -206,7 +206,7 @@ Para passar uma ranhura nomeada, precisamos utilizar um elemento `<template>` co
 </BaseLayout>
 ```
 
-A `v-slot` tem um abrevição dedicada `#`, assim  `<template v-slot:header>` pode ser abreviada para apenas `<template #header>`. Pense disto como "interpretar este fragmento de modelo de marcação na ranhura 'header' do componente filho".
+A `v-slot` tem um abreviação dedicada `#`, assim  `<template v-slot:header>` pode ser abreviada para apenas `<template #header>`. Pense disto como "interpretar este fragmento de modelo de marcação na ranhura 'header' do componente filho".
 
 ![diagrama de ranhuras nomeada](./images/named-slots.png)
 
@@ -299,7 +299,7 @@ function BaseLayout(slots) {
 
 ## Nomes de Ranhura Dinâmicos {#dynamic-slot-names}
 
-Os [argumentos de diretiva dinâmicos](/guide/essentials/template-syntax.md#argumentos-dinâmicos) também funcionam sobre a `v-slot`, permitindo a definição de nomes de ranhura dinâmicos:
+Os [argumentos de diretiva dinâmicos](/guide/essentials/template-syntax#argumentos-dinâmicos) também funcionam sobre a `v-slot`, permitindo a definição de nomes de ranhura dinâmicos:
 
 ```vue-html
 <base-layout>
@@ -314,7 +314,7 @@ Os [argumentos de diretiva dinâmicos](/guide/essentials/template-syntax.md#argu
 </base-layout>
 ```
 
-Toma nota que a expressão está sujeita às [restrições de sintaxe](/guide/essentials/template-syntax.html#diretivas) dos argumentos de diretiva dinâmicos.
+Toma nota que a expressão está sujeita às [restrições de sintaxe](/guide/essentials/template-syntax#diretivas) dos argumentos de diretiva dinâmicos.
 
 ## Ranhuras Isoladas {#scoped-slots}
 
@@ -375,7 +375,7 @@ function MyComponent(slots) {
 }
 ```
 
-De fato, isto está muito próximo de como as ranhuras isoladas são compiladas, e de como utilizarias as ranhuras isoladas no manual de [funções de interpretação](/guide/extras/render-function.html).
+De fato, isto está muito próximo de como as ranhuras isoladas são compiladas, e de como usaríamos as ranhuras isoladas no manual de [funções de interpretação](/guide/extras/render-function).
 
 Repare que as `v-slot="slotProps"` correspondem a assinatura da função de ranhura. Tal como com os argumentos de função, podemos utilizar a desestruturação na `v-slot`:
 
@@ -487,7 +487,7 @@ O caso de uso de `<FancyList>` que discutimos acima resume ambas a lógica reuti
 
 Se empurrarmos este conceito um pouco adiante, podemos surgir com componentes que apenas resumem a lógica e não interpretam nada por si mesmos - a saída visual é completamente delegada ao componente consumidor com as ranhuras isoladas. Nós chamamos este tipo de componente um **Componentes Sem Interpretação**.
 
-Um exemplo de componente sem interpretação poderia ser um que resume a lógica do rastreamento da posição atual do rato:
+Um exemplo de componente sem interpretação poderia ser um que resume a lógica do rastreio da posição atual do rato:
 
 ```vue-html
 <MouseTracker v-slot="{ x, y }">
@@ -506,6 +506,6 @@ Um exemplo de componente sem interpretação poderia ser um que resume a lógica
 
 </div>
 
-Embora um padrão interessante, a maioria do que pode ser alcançada com os Componentes Sem Interpretação pode ser alcançada de uma maneira mais eficiente com a API de Composição, sem ficar sujeito a despesas gerais do encaixamento de componente adicionais. Depois, veremos como podemos implementar a mesma funcionalidade de rastreiamento do rato com um [Constituível](/guide/reusability/composables.html).
+Embora um padrão interessante, a maioria do que pode ser alcançada com os Componentes Sem Interpretação pode ser alcançada de uma maneira mais eficiente com a API de Composição, sem ficar sujeito a despesas gerais do encaixamento de componente adicionais. Depois, veremos como podemos implementar a mesma funcionalidade de rastreio do rato com uma [Função de Composição](/guide/reusability/composables).
 
 Com isto dito, ranhuras isoladas ainda são úteis nos casos onde precisamos de ambos resumir a lógica **e** compor a saída visual, tal como no exemplo de `<FancyList>`.

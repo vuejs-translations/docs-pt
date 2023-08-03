@@ -8,7 +8,7 @@ outline: deep
 
 ## Herança de Atributo {#attribute-inheritance}
 
-Um "atributo que cai" é um atributo ou ouvinte de evento `v-on` que é passado para um componente, mas não é explicitamente declarado nas [propriedades](./props) ou [emissões](./events.html#declarando-eventos-emitidos) do componente que está recebendo. Exemplos comuns disto incluem atributos de `class`, `style` e `id`.
+Um "atributo que cai" é um atributo ou ouvinte de evento `v-on` que é passado para um componente, mas não é explicitamente declarado nas [propriedades](./props) ou [emissões](./events#declarando-eventos-emitidos) do componente que está recebendo. Exemplos comuns disto incluem atributos de `class`, `style` e `id`.
 
 Quando um componente interpreta um único elemento de raiz, os atributos que caiem serão automaticamente adicionados aos atributos do elemento de raiz. Por exemplo, dado um componente `<MyButton>` com o seguinte modelo de marcação:
 
@@ -126,7 +126,7 @@ Nós queremos que todos atributos que caiem como `class` e ouvintes de `v-on` se
 </div>
 ```
 
-Lembra-te de que a [`v-bind` sem um argumento](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) vincula todas as propriedades de um objeto como atributos do elemento alvo.
+Lembra-te de que a [`v-bind` sem um argumento](/guide/essentials/template-syntax#dynamically-binding-multiple-attributes) vincula todas as propriedades de um objeto como atributos do elemento alvo.
 
 ## Herança de Atributo sobre Vários Nós de Raiz {#attribute-inheritance-on-multiple-root-nodes}
 

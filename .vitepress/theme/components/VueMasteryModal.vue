@@ -23,12 +23,12 @@ watch(
       viewBox="0 0 100 125"
       fill="#FFFFFF"
     >
-      <title id="simpleicons-play-icon" lang="en">Play icon</title>
+      <title id="simpleicons-play-icon" lang="pt">Ícone reproduzir</title>
       <path
         d="M50,3.8C24.5,3.8,3.8,24.5,3.8,50S24.5,96.2,50,96.2S96.2,75.5,96.2,50S75.5,3.8,50,3.8z M71.2,53.3l-30.8,18  c-0.6,0.4-1.3,0.5-1.9,0.5c-0.6,0-1.3-0.1-1.9-0.5c-1.2-0.6-1.9-1.9-1.9-3.3V32c0-1.4,0.8-2.7,1.9-3.3c1.2-0.6,2.7-0.6,3.8,0  l30.8,18c1.2,0.6,1.9,1.9,1.9,3.3S72.3,52.7,71.2,53.3z"
       />
     </svg>
-    Porquê Vue
+    Porquê Vue?
   </a>
   <Teleport v-if="showWhyVue" to="body">
     <div @click="showWhyVue = false" class="vuemastery-modal-mask">
@@ -57,19 +57,19 @@ watch(
 
           <div class="vuemastery-modal-footer">
             <p class="vuemastery-modal-footer-text">
-              Vídeo pela
+              Material produzido pela
               <a
                 href="https://www.vuemastery.com"
                 target="_blank"
                 rel="sponsored noopener"
                 title="Cursos de Vue.js na Vue Mastery"
-              >Vue Mastery.</a> Assista a Vue Mastery de graça
+              >Vue Mastery.</a> Faça gratuitamente o
               <a
                 href="https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3"
                 target="_blank"
                 rel="sponsored noopener"
                 title="Cursos de Vue.js na Vue Mastery"
-              >Curso de Introdução a Vue.</a>
+              >Curso de Introdução a Vue.js.</a>
             </p>
           </div>
         </div>
@@ -173,9 +173,11 @@ watch(
   font-weight: 600;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 576px) {
   #vuemastery-action {
-    margin-right: 0;
+    display: block;
+    margin: 0 auto;
+    width: 150px
   }
 }
 </style>

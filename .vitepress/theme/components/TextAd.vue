@@ -12,7 +12,7 @@ function track() {
       target="_blank"
       rel="noopener nofollow"
       @click="track">
-      Construa e implemente o teu próprio robô de ChatGPT com JavaScript em 5 minutos.
+      Experimente → Construa e implemente o teu próprio robô de ChatGPT com JavaScript em 5 minutos.
     </a>
   </div>
 </template>

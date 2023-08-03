@@ -314,7 +314,7 @@ Para adicionar [modificadores `v-on`](/guide/essentials/event-handling.html#even
   import { h, withModifiers } from 'vue'
 
   const vnode = h('button', {
-    // equivalente a v-on.stop.prevent
+    // equivalente a v-on:click.stop.prevent
     onClick: withModifiers(() => {
       // ...
     }, ['stop', 'prevent'])

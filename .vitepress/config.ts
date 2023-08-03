@@ -4,7 +4,7 @@ import { defineConfigWithTheme } from 'vitepress'
 import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
-import { textAdPlugin } from './textAdMdPlugin'
+//import { textAdPlugin } from './textAdMdPlugin'
 
 const nav: ThemeConfig['nav'] = [
   {
@@ -16,6 +16,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Exemplos', link: '/examples/' },
       { text: 'Introdução Rápida', link: '/guide/quick-start' },
       // { text: 'Guia de Estilo', link: '/style-guide/' },
+      { text: 'Glossário', link: '/glossary/' },
       {
         text: 'Documentação da Vue 2',
         link: 'https://v2.vuejs.org'
@@ -52,13 +53,13 @@ const nav: ThemeConfig['nav'] = [
       {
         text: 'Bibliotecas Oficiais',
         items: [
-          { text: 'Vue Router', link: 'https://router.vuejs.org/' },
-          { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
+          { text: 'Vue Router', link: 'https://vue-router-docs-pt.netlify.app/' },
+          { text: 'Pinia', link: 'https://pinia-docs-pt.netlify.app/' },
           { text: 'Guia do Ferramental', link: '/guide/scaling-up/tooling.html' }
         ]
       },
       {
-        text: 'Cursos em Vídeo',
+        text: 'Cursos',
         items: [
           {
             text: 'Vue Mastery',
@@ -137,7 +138,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Os Fundamentos',
+      text: 'Fundamentos',
       items: [
         {
           text: 'Criando uma Aplicação',
@@ -176,7 +177,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Observadores', link: '/guide/essentials/watchers' },
         { text: 'Referências do Modelo de Marcação', link: '/guide/essentials/template-refs' },
         {
-          text: 'Fundamentos de Componentes',
+          text: 'Fundamentos de Componente',
           link: '/guide/essentials/component-basics'
         }
       ]
@@ -190,14 +191,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
         },
         { text: 'Propriedades', link: '/guide/components/props' },
         { text: 'Eventos', link: '/guide/components/events' },
-        { text: 'Modelo Virtual do Componente', link: '/guide/components/v-model' },
+        { text: 'Modelo Virtual', link: '/guide/components/v-model' },
         {
           text: 'Atributos',
           link: '/guide/components/attrs'
         },
         { text: 'Ranhuras', link: '/guide/components/slots' },
         {
-          text: 'Fornecimento / Injeção',
+          text: 'Fornecimento e Injeção',
           link: '/guide/components/provide-inject'
         },
         {
@@ -293,7 +294,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/ways-of-using-vue'
         },
         {
-          text: 'Questões Frequentes sobre a API de Composição',
+          text: 'Questões Frequentes sobre Composição',
           link: '/guide/extras/composition-api-faq'
         },
         {
@@ -412,17 +413,17 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Função de Interpretação', link: '/api/render-function' },
         { text: 'Interpretação no Lado do Servidor', link: '/api/ssr' },
-        { text: 'Tipos de Utilitário de TypeScript', link: '/api/utility-types' },
+        { text: 'Tipos Utilitários de TypeScript', link: '/api/utility-types' },
         { text: 'Interpretador Personalizado', link: '/api/custom-renderer' }
       ]
     }
   ],
   '/examples/': [
     {
-      text: 'Fundamental',
+      text: 'Básico',
       items: [
         {
-          text: 'Hello World',
+          text: 'Olá Mundo',
           link: '/examples/#hello-world'
         },
         {
@@ -560,7 +561,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   description: 'Vue.js - A Abstração Progressiva de JavaScript',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
-  scrollOffset: 'header',
+  //scrollOffset: 'header',
 
   head: [
     ['meta', { name: 'theme-color', content: '#3c8772' }],
@@ -595,6 +596,13 @@ export default defineConfigWithTheme<ThemeConfig>({
         'data-site': 'XNOLWPLB',
         'data-spa': 'auto',
         defer: ''
+      }
+    ],
+    [
+      'script',
+      {
+        src: 'https://vueschool.io/banner.js?affiliate=vuejs&type=top',
+        async: 'true'
       }
     ]
   ],
@@ -659,7 +667,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     editLink: {
-      repo: 'nazarepiedady/vue3-docs-pt',
+      repo: 'vuejs-translations/docs-pt',
       text: 'Editar esta página na GitHub'
     },
 
@@ -668,13 +676,14 @@ export default defineConfigWithTheme<ThemeConfig>({
         text: 'Licença MIT',
         link: 'https://opensource.org/licenses/MIT'
       },
-      copyright: `Copyright © 2014-${new Date().getFullYear()} Evan You`
+      copyright: `Direitos de autor © 2014-${new Date().getFullYear()} Evan You`
     }
   },
 
   markdown: {
     config(md) {
-      md.use(headerPlugin).use(textAdPlugin)
+      md.use(headerPlugin)
+        //.use(textAdPlugin)
     }
   },
 

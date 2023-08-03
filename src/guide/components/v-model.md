@@ -1,4 +1,4 @@
-# v-model do Componente {#component-v-model}
+# O Modelo Virtual do Componente {#component-v-model}
 
 A `v-model` pode ser usada sobre um componente para implementar uma vínculo de duas vias.
 
@@ -90,7 +90,7 @@ Agora a `v-model` deve funcionar perfeitamente com este componente:
 
 </div>
 
-Um outra maneira de implementar a `v-model` dentro deste componente é usar uma propriedade `computed` graváveis com ambos um recuperador e um definidor. O método `get` deve returnar a propriedade `modelValue` e o método `set` deve emitir o evento correspondente:
+Um outra maneira de implementar a `v-model` dentro deste componente é usar uma propriedade `computed` graváveis com ambos um recuperador e um definidor. O método `get` deve retornar a propriedade `modelValue` e o método `set` deve emitir o evento correspondente:
 
 <div class="options-api">
 
@@ -154,7 +154,7 @@ Por padrão, a `v-model` em um componente usa `modelValue` como a propriedade e 
 <MyComponent v-model:title="bookTitle" />
 ```
 
-Neste caso, o componente filho deve esperar uma propriedade `title` e emitr um evento `update:title` para atualizar o valor do componente pai:
+Neste caso, o componente filho deve esperar uma propriedade `title` e emitir um evento `update:title` para atualizar o valor do componente pai:
 
 <div class="composition-api">
 
@@ -203,7 +203,7 @@ export default {
 
 ### Várias Vinculações de `v-model` {#multiple-v-model-bindings}
 
-Ao incluenciar a habilidade de escolher uma propriedade e evento em particular como alvo conforme aprendemos antes com os [argumentos de `v-model`](#v-model-arguments), podemos agora criar várias vinculações de `v-model` sobre uma única instância de componente.
+Ao influenciar a habilidade de escolher uma propriedade e evento em particular como alvo conforme aprendemos antes com os [argumentos de `v-model`](#v-model-arguments), podemos agora criar várias vinculações de `v-model` sobre uma única instância de componente.
 
 Cada `v-model` se sincronizará à uma propriedade diferente, sem a necessidade para opções adicionais em um componente:
 
@@ -276,7 +276,7 @@ export default {
 
 ### Manipulando Modificadores de `v-model` {#handling-v-model-modifiers}
 
-Quando estavámos a aprender a respeito das vinculações de entrada do formulário, vimos que a `v-model` tem [modificadores embutidos](/guide/essentials/forms.html#modifiers) - `.trim`, `.number`, e `.lazy`. Em alguns casos, também podes querer que a `v-model` no teu compontente de entrada personalizado suportar modificadores personalizados.
+Quando estávamos a aprender a respeito das vinculações de entrada do formulário, vimos que a `v-model` tem [modificadores embutidos](/guide/essentials/forms#modifiers) - `.trim`, `.number`, e `.lazy`. Em alguns casos, também podes querer que a `v-model` no teu componente de entrada personalizado suportar modificadores personalizados.
 
 Vamos criar um exemplo de modificador personalizado, `capitalize`, que escreve com maiúsculas a primeira letra da sequência de caracteres fornecidos pelo vinculo da `v-model`:
 
@@ -405,7 +405,7 @@ export default {
 
 </div>
 
-Para os vinculos de `v-model` com ambos argumento e modificadores, o nome da propriedade gerada será `arg + "Modifiers"`. Por exemplo:
+Para os vínculos de `v-model` com ambos argumento e modificadores, o nome da propriedade gerada será `arg + "Modifiers"`. Por exemplo:
 
 ```vue-html
 <MyComponent v-model:title.capitalize="myText">
