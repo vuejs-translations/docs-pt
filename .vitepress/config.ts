@@ -640,6 +640,11 @@ export default defineConfigWithTheme<ThemeConfig>({
         repo: 'https://github.com/vuejs-translations/docs-fr'
       },
       {
+        link: 'https://ko.vuejs.org',
+        text: '한국어',
+        repo: 'https://github.com/vuejs-translations/docs-ko'
+      },
+      {
         link: '/translations/',
         text: 'Ajude-Nos a Traduzir!',
         isTranslationsDesc: true
