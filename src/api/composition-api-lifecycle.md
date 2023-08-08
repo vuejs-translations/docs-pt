@@ -1,12 +1,12 @@
 # API de Composição: Gatilhos do Ciclo de Vida {#composition-api-lifecycle-hooks}
 
 :::info Nota de Uso
-Todas as APIs listadas nesta página devem ser chamadas de forma síncrona durante a fase de `setup()` do componente. Veja [Guia - Gatilhos do Ciclo de Vida](/guide/essentials/lifecycle.html) para mais detalhes.
+Todas as APIs listadas nesta página devem ser chamadas de maneira síncrona durante a fase `setup()` do componente. Consulte o [Guia - Gatilhos do Ciclo de Vida](/guide/essentials/lifecycle) por mais detalhes.
 :::
 
-## onMounted() {#onmounted}
+## `onMounted()` {#onmounted}
 
-Registra uma ligação a ser chamada depois que o componente for montado.
+Regista uma função de resposta a ser chamada depois do componente ter sido montado.
 
 - **Tipo**
 
@@ -18,17 +18,17 @@ Registra uma ligação a ser chamada depois que o componente for montado.
 
   Um componente é considerado montado depois que:
 
-  - Todos os seus componentes filho síncronos foram montados (isso não inclui componentes assíncronos ou componentes dentro de árvores `<Suspense>`).
+  - Todos os seus componentes filho síncronos terem sido montados (isto não inclui componentes assíncronos ou componentes dentro de árvores de `<Suspense>`).
 
-  - Sua própria árvore DOM foi criada e inserida no recipiente pai. Note que isso apenas garante que o a árvore DOM do componente está no documento se o recipiente raiz da aplicação também está no documento.
+  - Sua própria árvore de DOM ter sido criada e inserida no contentor pai. Nota que isto apenas garante que a árvore de DOM do componente está no documento se o contentor raiz da aplicação também estiver no documento.
 
-  Este gatilho é tipicamente usado para realizar efeitos colaterais que precisam de acesso ao DOM interpretado, ou para limitar o código relacionado ao DOM para o cliente em uma [aplicação interpretada no servidor](/guide/scaling-up/ssr.html).
+  Este gatilho é tipicamente usado para realizar efeitos colaterais que precisam de acesso ao DOM interpretado do componente, ou para limitar o código relacionado ao DOM para o cliente numa [aplicação interpretada no servidor](/guide/scaling-up/ssr).
 
   **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
 - **Exemplo**
 
-  Acessar um elemento através de referências do modelo:
+  Acessar um elemento através de referências do modelo de marcação:
 
   ```vue
   <script setup>
@@ -46,9 +46,9 @@ Registra uma ligação a ser chamada depois que o componente for montado.
   </template>
   ```
 
-## onUpdated() {#onupdated}
+## `onUpdated()` {#onupdated}
 
-Registra uma ligação a ser chamada depois que o componente houver atualizado sua árvore DOM devido a uma mudança de estado reativa.
+Regista uma função de resposta a ser chamada depois do componente tiver atualizado a sua árvore de DOM devido a uma mudança de estado reativa.
 
 - **Tipo**
 
@@ -58,14 +58,14 @@ Registra uma ligação a ser chamada depois que o componente houver atualizado s
 
 - **Detalhes**
 
-  O gatilho do componente pai é chamado apenas depois do gatilho de todos os componentes filho.
+  O gatilho de atualização dum componente pai é chamado apenas depois do gatilho dos seus componentes.
 
-  Este gatilho é chamado depois de qualquer atualização DOM do componente, que pode ser causada por qualquer mudança diferente no estado. Se você precisa acessar o DOM atualizado depois de uma mudança específica de estado, use [nextTick()](/api/general.html#nexttick).
+  Este gatilho é chamado depois de qualquer atualização de DOM do componente, que pode ser causada por mudanças de estado diferente. Se precisarmos acessar o DOM atualizado depois duma mudança de estado específica, devemos usar [`nextTick()`](/api/general#nexttick).
 
   **Este gatilho não é chamado durante a interpretação do lado do servidor.**
 
-  :::warning
-  Não faça mutações no estado do componente durante este gatilho - isto provavelmente irá levar a um laço infinito de atualização!
+  :::warning AVISO
+  Não faça mutações no estado do componente durante este gatilho - isto provavelmente conduzirá à um laço de atualização infinita!
   :::
 
 - **Exemplo**
@@ -79,7 +79,7 @@ Registra uma ligação a ser chamada depois que o componente houver atualizado s
   const count = ref(0)
 
   onUpdated(() => {
-    // o conteúdo de texto deve ser o mesmo que o atual `count.value`
+    // o conteúdo de texto deve ser o mesmo que o `count.value` atual
     console.log(document.getElementById('count').textContent)
   })
   </script>
@@ -89,9 +89,9 @@ Registra uma ligação a ser chamada depois que o componente houver atualizado s
   </template>
   ```
 
-## onUnmounted() {#onunmounted}
+## `onUnmounted()` {#onunmounted}
 
-Registra uma ligação específica a ser chamada depois que o componente foi desmontado.
+Regista uma função de resposta a ser chamada depois do componente tiver sido desmontado.
 
 - **Tipo**
 
@@ -101,13 +101,13 @@ Registra uma ligação específica a ser chamada depois que o componente foi des
 
 - **Detalhes**
 
-  Um componente é considerado desmontado quando:
+  Um componente é considerado desmontado depois que:
 
   - Todos os seus componentes filho foram desmontados.
 
-  - Todos os seus efeitos reativos associados (efeitos de interpretação e computadas/observadores criados durante `setup()`) foram interrompidos.
+  - Todos os seus efeitos reativos associados (efeitos de interpretação e valores computados ou observadores criados durante `setup()`) foram interrompidos.
 
-  Use este gatilho para limpar manualmente efeitos colaterais como _timers_, ouvintes de evento DOM, ou conexões com servidores.
+  Use este gatilho para limpar manualmente efeitos colaterais como temporizadores, ouvintes de evento de DOM, ou conexões de servidor.
 
   **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
@@ -128,9 +128,9 @@ Registra uma ligação específica a ser chamada depois que o componente foi des
   </script>
   ```
 
-## onBeforeMount() {#onbeforemount}
+## `onBeforeMount()` {#onbeforemount}
 
-Registra um gatilho a ser chamado logo antes de o componente ser montado.
+Regista um gatilho a ser chamado imediatamente antes do componente ser montado.
 
 - **Tipo**
 
@@ -140,13 +140,13 @@ Registra um gatilho a ser chamado logo antes de o componente ser montado.
 
 - **Detalhes**
 
-  Quando este gatilho é chamado, o componente terminou de configurar seu estado reativo, mas nenhum nódulo DOM foi criado ainda. Ele está prestes a executar o seu efeito de interpretação de DOM pela primeira vez.
+  Quando este gatilho é chamado, o componente terminou de configurar seu estado reativo, mas nenhum nós de DOM foi criado ainda. Está prestes a executar o seu efeito de interpretação de DOM pela primeira vez.
 
-  **Este gatilho não é chamado durante a intepretação no lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-## onBeforeUpdate() {#onbeforeupdate}
+## `onBeforeUpdate()` {#onbeforeupdate}
 
-Registra um gatilho a ser chamado logo antes de o componente estar prestes a atualizar sua árvore DOM devido a uma mudança no estado reativo.
+Regista um gatilho a ser chamado imediatamente antes do componente estar prestes a atualizar sua árvore de DOM devido a uma mudança de estado reativo.
 
 - **Tipo**
 
@@ -156,13 +156,13 @@ Registra um gatilho a ser chamado logo antes de o componente estar prestes a atu
 
 - **Detalhes**
 
-  Este gatilho pode ser usado para acessar o estado do DOM logo antes de o Vue atualizar o DOM. Também é seguro modificar o estado do componente dentro deste gatilho.
+  Este gatilho pode ser usado para acessar o estado do DOM imediatamente antes da Vue atualizar o DOM. Também é seguro modificar o estado do componente dentro deste gatilho.
 
-  **Este gatilho não é chamado durante a intepretação no lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-## onBeforeUnmount() {#onbeforeunmount}
+## `onBeforeUnmount()` {#onbeforeunmount}
 
-Registra um gatilho a ser chamado logo antes da instância do componente ser desmontada.
+Regista um gatilho a ser chamado imediatamente antes da instância do componente ser desmontada.
 
 - **Tipo**
 
@@ -174,11 +174,11 @@ Registra um gatilho a ser chamado logo antes da instância do componente ser des
 
   Quando este gatilho é chamado, a instância do componente ainda está completamente funcional.
 
-  **Este gatilho não é chamado durante a intepretação no lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-## onErrorCaptured() {#onerrorcaptured}
+## `onErrorCaptured()` {#onerrorcaptured}
 
-Registra um gatilho a ser chamado quando um erro propagado por um componente descendente é capturado.
+Regista um gatilho a ser chamado quando um erro que se propaga a partir dum componente descendente tiver sido capturado.
 
 - **Tipo**
 
@@ -194,35 +194,35 @@ Registra um gatilho a ser chamado quando um erro propagado por um componente des
 
 - **Detalhes**
 
-  Erros podem ser capturados das seguintes fontes:
+  Erros podem ser capturados a partir das seguintes fontes:
 
   - Interpretações de componente
   - Manipuladores de evento
-  - Gatilhos de ciclo de vida
+  - Gatilhos do ciclo de vida
   - Função `setup()`
   - Observadores
-  - Gatilhos de diretiva personalizados
+  - Gatilhos de diretiva personalizada
   - Gatilhos de transição
 
-  O gatilho recebe três argumentos: o erro, a instância do componente que disparou o erro, e uma string com a informação que especifica o tipo de erro da fonte.
+  O gatilho recebe três argumentos: o erro, a instância do componente que disparou o erro, e uma sequência de caracteres de informação especificando o tipo de erro da fonte.
 
-  Você pode modificar o estado do componente em `errorCaptured()` para mostrar um estado de erro para o usuário. Entretanto, é importante que o estado de erro não apresente o conteúdo que causou o erro; caso contrário o componente será lançado em um laço infinito de interpretação.
+  Nós podemos modificar o estado do componente em `errorCaptured()` para mostrar um estado de erro ao utilizador. No entanto, é importante que o estado de erro não desenhe o conteúdo original que causou o erro; de outro modo o componente será lançado num laço de interpretação infinita.
 
-  O gatilho pode retornar `false` para interromper a propagação do erro. Veja abaixo os detalhes de propagação de erro.
+  O gatilho pode retornar `false` para impedir que o erro continue a propagar-se. Consulte os detalhes de propagação de erro abaixo.
 
   **Regras de Propagação de Erro**
 
-  - Por padrão, todos os erros ainda serão enviados para o nível de aplicação [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) se este for definido, para que esses erros possam ser relatados para um serviço de análises em um único local.
+  - Por padrão, todos os erros ainda serão enviados para o nível de aplicação [`app.config.errorHandler`](/api/application#app-config-errorhandler) se for definido, para que estes erros possam ser relatados à um serviço de análises num único lugar.
 
-  - Se múltiplos gatilhos `errorCaptured` existirem em uma cadeia de herança de componentes ou em uma cadeia de genitores, todos eles serão invocados com o mesmo erro, na ordem de baixo para cima. Isto é similar ao mecanismo de `bubbling` de eventos DOM nativos.
+  - Se vários gatilhos de `errorCaptured` existirem numa cadeia de herança de componentes ou em uma cadeia de pais, todos serão invocados com o mesmo erro, na ordem de baixo para cima. Isto é semelhante ao mecanismo borbulhante de eventos de DOM nativos.
 
-  - Se o próprio gatilho `errorCaptured` lança um erro, tanto este erro quanto o erro original capturado serão enviados para o `app.config.errorHandler`.
+  - Se o próprio gatilho `errorCaptured` lançar um erro, tanto este erro quanto o erro original capturado serão enviados à `app.config.errorHandler`.
 
-  - Um gatilho `errorCaptured` pode retornar `false` para prevenir que o erro se propague além. Isto é basicamente dizer "este erro já foi manipulado e deve ser ignorado". Ele irá prevenir quaisquer gatilhos `errorCaptured` adicionais ou `app.config.errorHandler` de serem invocados por este erro.
+  - Um gatilho `errorCaptured` pode retornar `false` para evitar que o erro continue a propagar-se. Isto significa essencialmente que "este erro já foi manipulado e deve ser ignorado". Ele evitará quaisquer gatilhos `errorCaptured` adicionais ou `app.config.errorHandler` de serem invocados por este erro.
 
-## onRenderTracked() <sup class="vt-badge dev-only" /> {#onrendertracked}
+## `onRenderTracked()` <sup class="vt-badge dev-only" /> {#onrendertracked}
 
-Registra um gatilho de depuração a ser chamado quando uma dependência reativa for rastreada pelo efeito de interpretação do componente.
+Regista um gatilho de depuração a ser chamado quando uma dependência reativa tiver sido rastreada pelo efeito da interpretação do componente.
 
 **Este gatilho é apenas para o modo de desenvolvimento e não é chamado durante a interpretação no lado do servidor.**
 
@@ -241,11 +241,11 @@ Registra um gatilho de depuração a ser chamado quando uma dependência reativa
   }
   ```
 
-- **Veja também:** [Reatividade Aprofundada](/guide/extras/reactivity-in-depth.html)
+- **Consulte também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth)
 
-## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
+## `onRenderTriggered()` <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
-Registra um gatilho de depuração a ser chamado quando uma dependência reativa dispara a reexecução do efeito de interpretação do componente.
+Regista um gatilho de depuração a ser chamado quando uma dependência reativa aciona o efeito de interpretação do componente a ser executado novamente.
 
 **Este gatilho é apenas para o modo de desenvolvimento e não é chamado durante a interpretação no lado do servidor.**
 
@@ -267,13 +267,13 @@ Registra um gatilho de depuração a ser chamado quando uma dependência reativa
   }
   ```
 
-- **Veja também:** [Reatividade Aprofundada](/guide/extras/reactivity-in-depth.html)
+- **Consulte também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth)
 
-## onActivated() {#onactivated}
+## `onActivated()` {#onactivated}
 
-Registra uma ligação a ser chamada depois da instância do componente ser inserida no DOM como parte da árvore armazenada em cache pelo [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Regista uma função de resposta a ser chamada depois da instância do componente for inserida no DOM como parte duma árvore armazenada para consulta imediata pelo [`<KeepAlive>`](/api/built-in-components#keepalive).
 
-**Este gatilho não é chamado durante a intepretação no lado do servidor.**
+**Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
 - **Tipo**
 
@@ -281,13 +281,13 @@ Registra uma ligação a ser chamada depois da instância do componente ser inse
   function onActivated(callback: () => void): void
   ```
 
-- **Veja também:** [Guia - Ciclo de Vida da Instância em Cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Consulte também:** [Guia - Ciclo de Vida da Instância Armazenada para Consulta Imediata](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
-## onDeactivated() {#ondeactivated}
+## `onDeactivated()` {#ondeactivated}
 
-Registra uma ligação a ser chamada depois de a instância do componente ser removida do DOM como parte da árvore armazenada em cache pelo [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Regista uma função de resposta a ser chamada depois da instância do componente ser removida do DOM como parte duma árvore armazenada para consulta imediata pelo [`<KeepAlive>`](/api/built-in-components#keepalive).
 
-**Este gatilho não é chamado durante a intepretação no lado do servidor.**
+**Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
 - **Tipo**
 
@@ -295,11 +295,11 @@ Registra uma ligação a ser chamada depois de a instância do componente ser re
   function onDeactivated(callback: () => void): void
   ```
 
-- **Veja também:** [Guia - Ciclo de Vida da Instância em Cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Consulte também:** [Guia - Ciclo de Vida da Instância Armazenada para Consulta Imediata](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
-## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
+## `onServerPrefetch()` <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
 
-Registra uma função assíncrona a ser resolvida antes da instância do componente ser interpretada no servidor.
+Regista uma função assíncrona a ser resolvida antes da instância do componente ser interpretada no servidor.
 
 - **Tipo**
 
@@ -309,9 +309,9 @@ Registra uma função assíncrona a ser resolvida antes da instância do compone
 
 - **Detalhes**
 
-  Se a ligação retornar uma Promise, o interpretador do servidor irá esperar até que a Promise seja resolvida antes de interpretar o componente.
+  Se a função de resposta retornar uma promessa, o interpretador do servidor aguardará até a promessa ser resolvida antes de desenhar o componente.
 
-  Este gatilho é chamado apenas durante a interpretação no lado do servidor e pode ser usado para realizar buscas de dados no servidor.
+  Este gatilho é chamado apenas durante a interpretação no lado do servidor, pode ser usada para realizar requisição de dados apenas no servidor.
 
 - **Exemplo**
 
@@ -323,19 +323,19 @@ Registra uma função assíncrona a ser resolvida antes da instância do compone
 
   onServerPrefetch(async () => {
     // componente é interpretado como parte da requisição inicial
-    // pré-busca dados no servidor pois é mais rápido do que no cliente
+    // pré-requisita dados no servidor pois é mais rápido do que no cliente
     data.value = await fetchOnServer(/* ... */)
   })
 
   onMounted(async () => {
     if (!data.value) {
-      // se data for null ao montar, signifca que o componente
+      // se data for null ao montar, significa que o componente
       // é interpretado dinamicamente no cliente.
-      // Então realize a busca no lado do cliente.
+      // Realizar uma requisição no lado do cliente.
       data.value = await fetchOnClient(/* ... */)
     }
   })
   </script>
   ```
 
-- **Veja também:** [Interpretação no lado do servidor](/guide/scaling-up/ssr.html)
+- **Consulte também:** [Interpretação no Lado do Servidor](/guide/scaling-up/ssr)
