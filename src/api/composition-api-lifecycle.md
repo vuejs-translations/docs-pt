@@ -220,7 +220,7 @@ Regista um gatilho a ser chamado quando um erro que se propaga a partir dum comp
 
   - Um gatilho `errorCaptured` pode retornar `false` para evitar que o erro continue a propagar-se. Isto significa essencialmente que "este erro já foi manipulado e deve ser ignorado". Ele evitará quaisquer gatilhos `errorCaptured` adicionais ou `app.config.errorHandler` de serem invocados por este erro.
 
-## `onRenderTracked()` <sup class="vt-badge dev-only" /> {#onrendertracked}
+## `onRenderTracked()` <sup class="vt-badge dev-only" data-text="desenvolvimento" /> {#onrendertracked}
 
 Regista um gatilho de depuração a ser chamado quando uma dependência reativa tiver sido rastreada pelo efeito da interpretação do componente.
 
@@ -243,7 +243,7 @@ Regista um gatilho de depuração a ser chamado quando uma dependência reativa 
 
 - **Consulte também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth)
 
-## `onRenderTriggered()` <sup class="vt-badge dev-only" /> {#onrendertriggered}
+## `onRenderTriggered()` <sup class="vt-badge dev-only" data-text="desenvolvimento" /> {#onrendertriggered}
 
 Regista um gatilho de depuração a ser chamado quando uma dependência reativa aciona o efeito de interpretação do componente a ser executado novamente.
 
@@ -297,7 +297,7 @@ Regista uma função de resposta a ser chamada depois da instância do component
 
 - **Consulte também:** [Guia - Ciclo de Vida da Instância Armazenada para Consulta Imediata](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
-## `onServerPrefetch()` <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
+## `onServerPrefetch()` <sup class="vt-badge" data-text="apenas no lado do servidor" /> {#onserverprefetch}
 
 Regista uma função assíncrona a ser resolvida antes da instância do componente ser interpretada no servidor.
 
