@@ -18,8 +18,8 @@ dependencies:
     specifier: ^3.9.0
     version: 3.9.0
   vitepress:
-    specifier: 1.0.0-beta.7
-    version: 1.0.0-beta.7(@types/node@16.9.1)(terser@5.14.2)
+    specifier: ^1.0.0-beta.6
+    version: 1.0.0-beta.7(@types/node@18.16.1)(terser@5.14.2)
   vue:
     specifier: ^3.3.4
     version: 3.3.4
@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^12.2.3
     version: 12.2.3
   '@types/node':
-    specifier: ^16.9.1
-    version: 16.9.1
+    specifier: ^18.16.1
+    version: 18.16.1
   terser:
     specifier: ^5.14.2
     version: 5.14.2
@@ -491,8 +491,8 @@ packages:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
     dev: true
 
-  /@types/node@16.9.1:
-    resolution: {integrity: sha512-QpLcX9ZSsq3YYUUnD3nFDY8H7wctAhQj/TFKL8Ya8v5fMm3CFXxo8zStsLAl780ltoYoo1WvKUVGBQK+1ifr7g==}
+  /@types/node@18.16.1:
+    resolution: {integrity: sha512-DZxSZWXxFfOlx7k7Rv4LAyiMroaxa3Ly/7OOzZO8cBNho0YzAi4qlbrx8W27JGqG57IgR/6J7r+nOJWw6kcvZA==}
 
   /@types/web-bluetooth@0.0.16:
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
@@ -509,7 +509,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.8(@types/node@16.9.1)(terser@5.14.2)
+      vite: 4.4.8(@types/node@18.16.1)(terser@5.14.2)
       vue: 3.3.4
     dev: false
 
@@ -618,7 +618,7 @@ packages:
       '@vueuse/core': 9.13.0(vue@3.3.4)
       body-scroll-lock: 3.1.5
       normalize.css: 8.0.1
-      vitepress: 1.0.0-beta.7(@types/node@16.9.1)(terser@5.14.2)
+      vitepress: 1.0.0-beta.7(@types/node@18.16.1)(terser@5.14.2)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -928,7 +928,7 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /vite@4.4.8(@types/node@16.9.1)(terser@5.14.2):
+  /vite@4.4.8(@types/node@18.16.1)(terser@5.14.2):
     resolution: {integrity: sha512-LONawOUUjxQridNWGQlNizfKH89qPigK36XhMI7COMGztz8KNY0JHim7/xDd71CZwGT4HtSRgI7Hy+RlhG0Gvg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -956,7 +956,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 16.9.1
+      '@types/node': 18.16.1
       esbuild: 0.18.17
       postcss: 8.4.27
       rollup: 3.27.0
@@ -965,7 +965,7 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /vitepress@1.0.0-beta.7(@types/node@16.9.1)(terser@5.14.2):
+  /vitepress@1.0.0-beta.7(@types/node@18.16.1)(terser@5.14.2):
     resolution: {integrity: sha512-P9Rw+FXatKIU4fVdtKxqwHl6fby8E/8zE3FIfep6meNgN4BxbWqoKJ6yfuuQQR9IrpQqwnyaBh4LSabyll6tWg==}
     hasBin: true
     dependencies:
@@ -980,7 +980,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.1.0
       shiki: 0.14.3
-      vite: 4.4.8(@types/node@16.9.1)(terser@5.14.2)
+      vite: 4.4.8(@types/node@18.16.1)(terser@5.14.2)
       vue: 3.3.4
     transitivePeerDependencies:
       - '@algolia/client-search'
