@@ -1,8 +1,8 @@
 # Opções: Estado {#options-state}
 
-## data {#data}
+## `data` {#data}
 
-Funcão que retorna o estado inicial reativo para a instância do componente.
+Uma função que retorna o estado reativo inicial para a instância do componente.
 
 - **Tipo**
 
@@ -17,13 +17,13 @@ Funcão que retorna o estado inicial reativo para a instância do componente.
 
 - **Detalhes**
 
-  É esperado que a função retorne um objeto JavaScript puro, que será tornado reativo pelo Vue. Depois de a instância ser criada, o objeto de dados reativo pode ser acessado com `this.$data`. A instância do componente também representa todas as propriedades encontradas no objeto de dados, então `this.a` será equivalente a `this.$data.a`.
+  Espera-se que a função retorne um objeto de JavaScript simples, que será tornado reativo pela Vue. Depois da instância ser criada, o objeto de dados reativo pode ser acessado com `this.$data`. A instância do componente também delega todas as propriedades encontradas no objeto de dados, então `this.a` será equivalente à `this.$data.a`.
 
-  Todas as propriedades de dados de nível superior devem ser incluídas no objeto de dados retornado. Adicionar novas propriedades ao `this.$data` é possível, mas **não** é recomendado. Se o valor desejado de uma propriedade ainda não estiver disponível, então um valor vazio como `undefined` ou `null` deve ser incluído como substituto para garantir que o Vue saiba que a propriedade existe.
+  Todas as propriedades de dados de alto nível devem ser incluídas no objeto de dados retornado. A adição de novas propriedades à `this.$data` é possível, mas *não* é recomendada. Se o valor desejado duma propriedade ainda não estiver disponível, então um valor vazio tal como `undefined` ou `null` deveria ser incluído como preservador de lugar para garantir que a Vue saiba que a propriedade existe. 
 
-  Propriedades que começam com `_` ou `$` **não** serão representadas pela instância do componente porque elas podem conflitar com as propriedades e os métodos de API internos do Vue. Você deverá acessá-las como `this.$data._property`.
+  As propriedades que começam com `_` ou `$` **não** serão delegadas na instância do componente porque podem entrar em conflito com as propriedades internas e métodos da API da Vue. Nós teremos de acessá-las como `this.$data._property`. 
 
-  **Não** é recomendado retornar objetos com seu próprio comportamento dinâmico como propriedades de objetos da API do navegador e de _prototypes_. O objeto retornado deve idealmente ser um objeto puro que representa apenas o estado do componente.
+  **Não** é recomendado retornar objetos com os seus próprios comportamentos de estado, como objetos da API do navegador e propriedades do protótipo. O objeto retornado deveria ser idealmente um objeto simples que apenas representa o estado do componente.
 
 - **Exemplo**
 
@@ -39,17 +39,17 @@ Funcão que retorna o estado inicial reativo para a instância do componente.
   }
   ```
 
-  Note que se você usar uma _arrow function_ com a propriedade `data`, o `this` não será a instância do componente, mas você ainda pode acessar a instância com o primeiro argumento da função: 
+  Nota que se usarmos uma função de seta com a propriedade `data`, o `this` não será a instância do componente, mas ainda podemos acessar a instância como o primeiro argumento da função:
 
   ```js
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **Veja também :** [Reatividade Aprofundada](/guide/extras/reactivity-in-depth.html)
+- **Consulte também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth.html)
 
-## props {#props}
+## `props` {#props}
 
-Declara as propriedades de um componente.
+Declara as propriedades dum componente.
 
 - **Tipo**
 
@@ -74,26 +74,26 @@ Declara as propriedades de um componente.
   type PropType<T> = { new (): T } | { new (): T }[]
   ```
 
-  > Tipos estão simplificados por legibilidade.
+  > Os tipos estão simplificados por questões de legibilidade.
 
 - **Detalhes**
 
-  No Vue, todas as propriedades de componentes precisam ser declaradas explicitamente. Propriedades de componente podem ser declaradas de duas formas:
+  Na Vue, todas as propriedades do componente precisam ser explicitamente declaradas. As propriedades podem ser declaradas de duas formas:
 
-  - De forma simples usando um array de strings
-  - De forma completa usando um objeto em que cada chave de propriedade é o nome da propriedade, e o valor é o tipo da propriedade (uma função construtora) ou opções avançadas.
+  - De forma simples usando um vetor de sequências de caracteres
+  - De forma completa usando um objeto onde cada chave de propriedade é o nome da propriedade, e o valor é o tipo da propriedade (uma função construtura) ou opções avançadas.
 
-  Com a sintaxe baseada em objetos, cada propriedade pode definir as seguintes opções:
+  Com a sintaxe baseada em objetos, cada propriedade pode ainda definir as seguintes opções:
 
-  - **`type`**: Pode ser um dos seguintes construtores nativos: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, qualquer função de construtor personalizada ou um array destes. No modo de desenvolvimento, Vue irá conferir se o valor de uma propriedade é compatível com o tipo declarado, e lançará um aviso se não for compatível. Veja [Validação de Propriedade](/guide/components/props.html#prop-validation) para mais detalhes.
+  - **`type`**: Pode ser um dos seguintes construtores nativos: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, qualquer função construtora personalizada ou um vetor destes. No modo de desenvolvimento, a Vue verificará se o valor duma propriedade corresponde o tipo declarado, e lançará um aviso se não corresponder. Consulte a [Validação de Propriedade](/guide/components/props.html#prop-validation) por mais detalhes.
 
-    Também note que uma propriedade com o tipo `Boolean` afeta o seu comportamento de conversão de valores tanto em desenvolvimento como em produção. Veja [Conversão de Boolean](/guide/components/props.html#boolean-casting) para mais detalhes.
+    Além disto nota que uma propriedade com o tipo `Boolean` afeta o seu comportamento de moldagem de valores em ambos desenvolvimento e produção. Consulte a [Moldagem Booleana](/guide/components/props.html#boolean-casting) por mais detalhes.
 
-  - **`default`**: Especifica o valor padrão de uma propriedade quando ela não é passada pelo pai, ou quando tem um valor `undefined`. Valores de objeto ou array padrão devem ser retornados usando uma função _factory_. A função _factory_ também recebe o objeto de propriedades cru como argumento.
+  - **`default`**: Especifica o valor padrão duma propriedade quando não é passada pelo pai ou quando tem o valor `undefined`. Os valores padrão de objeto ou vetor devem ser retornados usando uma função de fábrica. A função de fábrica também recebe o objeto de propriedades puro como argumento.
 
-  - **`required`**: Define se a propriedade é necessária. Em um ambiente de não-produção, um aviso no console será lançado caso este valor seja verdadeiro e a propriedade não seja passada.
+  - **`required`**: Define se a propriedade é obrigatória. Num ambiente que não é de produção, um aviso na consola será lançado se este valor for verdadeiro e a propriedade não for passada.
 
-  - **`validator`**: Função validadora personalizada que usa o valor da propriedade como único argumento. No modo de desenvolvimento, um aviso de console será lançado se essa função retorna um valor _falsy_ (i.e. se a validação falhar).
+  - **`validator`**: Função de validação personalizada que recebe o valor da propriedade como o único argumento. No modo de desenvolvimento, um aviso da consola será lançado se esta função retornar um valor falso (por exemplo, se a validação falhar).
 
 - **Exemplo**
 
@@ -110,9 +110,9 @@ Declara as propriedades de um componente.
   ```js
   export default {
     props: {
-      // conferência de tipo
+      // verificação de tipo
       height: Number,
-      // conferência de tipo mais outras validações
+      // verificação de tipo mais outras validações
       age: {
         type: Number,
         default: 0,
@@ -125,13 +125,13 @@ Declara as propriedades de um componente.
   }
   ```
 
-- **Veja também:**
+- **Consulte também:**
   - [Guia - Propriedades](/guide/components/props.html)
-  - [Guia - Tipando Propriedades de Componentes](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
+  - [Guia - Tipos para as Propriedades dos Componentes](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" data-text="typescript" />
 
-## computed {#computed}
+## `computed` {#computed}
 
-Declara propriedades computadas que serão expostas na instância do componente.
+Declara propriedades computadas a serem expostas na instância do componente.
 
 - **Tipo**
 
@@ -160,11 +160,11 @@ Declara propriedades computadas que serão expostas na instância do componente.
 
 - **Detalhes**
 
-  A opção aceita um objeto onde a chave é o nome da propriedade computada, e o valor é tanto um _getter_ computado, ou um objeto com métodos `get` e `set` (para propriedades computadas graváveis).
+  A opção aceita um objeto onde a chave é o nome da propriedade computada, e o valor é ou um recuperador computado, ou um objeto com métodos `get` e `set` (para as propriedades computadas graváveis).
 
-  Todos os _getters_ e _setters_ possuem seu contexto `this` automaticamente vinculado à instância do componente.
+  Todos os recuperadores e definidores têm o seu próprio contexto de `this` automaticamente vinculado à instância do componente.
 
-  Note que se você usar uma _arrow function_ com uma propriedade computada, `this` não irá apontar para a instância do componente, mas você ainda pode acessar a instância como o primeiro argumento da função:
+  Nota que se estivermos a usar uma função de seta com uma propriedade computada, `this` não apontará para a instância do componente, mas ainda podemos acessar a instância como o primeiro argumento da função:
 
   ```js
   export default {
@@ -207,13 +207,13 @@ Declara propriedades computadas que serão expostas na instância do componente.
   }
   ```
 
-- **Veja também:**
+- **Consulte também**
   - [Guia - Propriedades Computadas](/guide/essentials/computed.html)
-  - [Guia - Tipando Propriedades Computadas](/guide/typescript/options-api.html#typing-computed-properties) <sup class="vt-badge ts" />
+  - [Guia - Tipos para as Propriedades Computadas](/guide/typescript/options-api.html#typing-computed-properties) <sup class="vt-badge ts" data-text="typescript" />
 
-## methods {#methods}
+## `methods` {#methods}
 
-Declara métodos que serão mesclados à instância do componente.
+Declara métodos a serem misturados à instância do componente.
 
 - **Tipo**
 
@@ -227,9 +227,9 @@ Declara métodos que serão mesclados à instância do componente.
 
 - **Detalhes**
 
-  Métodos declarados podem ser acessados diretamente na instância do componente, ou usados em expressões no modelo. Todos os métodos possuem seu contexto `this` automaticamente vinculado à instância do componente, mesmo quando transmitidos.
+  Os métodos declarados podem ser acessados diretamente na instância do componente, ou usados nas expressões do modelo de marcação. Todos os métodos têm o seu contexto de `this` automaticamente vinculado à instância do componente, mesmo quando passados.
 
-  Evite usar _arrow functions_ ao declarar métodos, pois eles não terão acesso à instância do componente através do `this`.
+  Devemos evitar funções de seta quando declaramos métodos, porque não terão acesso à instância do componente através de `this`.
 
 - **Exemplo**
 
@@ -250,11 +250,11 @@ Declara métodos que serão mesclados à instância do componente.
   }
   ```
 
-- **Veja também:** [Manipulação de Evento](/guide/essentials/event-handling.html)
+- **Consulte também** a [Manipulação de Evento](/guide/essentials/event-handling.html)
 
-## watch {#watch}
+## `watch` {#watch}
 
-Declara um retorno de observação que será invocado quando o dado mudar.
+Declara as funções de resposta de observação a serem invocadas sobre a mudança de dados.
 
 - **Tipo**
 
@@ -275,30 +275,30 @@ Declara um retorno de observação que será invocado quando o dado mudar.
 
   type ObjectWatchOptionItem = {
     handler: WatchCallback | string
-    immediate?: boolean // padrão: false
-    deep?: boolean // padrão: false
-    flush?: 'pre' | 'post' | 'sync' // padrão: 'pre'
+    immediate?: boolean // predefinido como: false
+    deep?: boolean // predefinido como: false
+    flush?: 'pre' | 'post' | 'sync' // predefinido como: 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
   }
   ```
 
-  > Tipos estão simplificados por legibilidade.
+  > Os tipos estão simplificados por questões de legibilidade.
 
 - **Detalhes**
 
-  A opção `watch` espera um objeto onde as chaves são propriedades reativas da instância do componente que serão observadas (e.g. propriedades declaradas através de `data` ou `computed`) - e seus valores são os retornos correspondentes. O retorno recebe o novo valor e o antigo valor da fonte observada.
+  A opção `watch` espera um objeto onde as chaves estão as propriedades reativas da instância do componente a serem observadas (por exemplo, as propriedades declaradas através da `data` ou `computed`) — e os seus valores são as funções de resposta correspondentes. A função de resposta recebe o novo valor e o valor antigo da fonte observada.
 
-  Além de propriedades no nível de raiz, a chave também pode ser um caminho simples delimitado por pontos, e.g. `a.b.c`. Note que este uso **não** suporta expressões complexas - apenas caminhos delimitados por ponto são suportados. Se você precisar observar fontes de dados complexas, use a API imperativa [`$watch()`](/api/component-instance.html#watch).
+  Além das propriedades do nível da raiz, a chave também pode ser um caminho simples delimitado por pontos, por exemplo, `a.b.c`. Nota que este uso **não** suporta expressões complexas - apenas caminhos delimitados por ponto são suportados. Se precisarmos de observar fontes de dados complexas, devemos usar a API [`$watch()`](/api/component-instance.html#watch) imperativa.
 
-  O valor também pode ser a string do nome de um método (declaro através de `methods`), ou um objeto que contenha opções adicionais. Ao usar a sintaxe de objeto, o retorno deve ser declaro sob o campo `handler`. Propriedades adicionais incluem:
+  O valor também pode ser a sequência de caracteres dum nome de método (declarado através dos `methods`), ou um objeto que contém opções adicionais. Quando usamos a sintaxe de objeto, a função de resposta deve ser declarada sob o campo `handler`. As propriedades adicionais incluem:
 
-  - **`immediate`**: dispara o retorno imediatamente na criação do observador. O antigo valor será `undefined` na primeira chamada.  
-  - **`deep`**: força o percorrimento profundo da fonte se é um objeto ou array, para que o retorno execute mutações profundas. Veja [Observadores Profundos](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`**: ajusta o tempo de fluxo de resposta. Veja [Tempo de Fluxo de Resposta](/guide/essentials/watchers.html#callback-flush-timing) e [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`**: depura as dependências do observador. Veja [Depuração do Observador](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`immediate`**: aciona a função de resposta imediatamente sobre a criação do observador. O valor antigo será `undefined` na primeira chamada.  
+  - **`deep`**: força a travessia profunda da fonte se for um objeto ou um vetor, para que a função de resposta dispare sobre as mutações profundas. Consulte os [Observadores Profundos](/guide/essentials/watchers.html#deep-watchers).
+  - **`flush`**: ajusta o tempo de descarga da função de resposta. Consulte o [Tempo de Descarga da Função de Resposta](/guide/essentials/watchers.html#callback-flush-timing) e a [`watchEffect()`](/api/reactivity-core.html#watcheffect).
+  - **`onTrack / onTrigger`**: depura as dependências do observador. Consulte a [Depuração do Observador](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
-  Evite usar _arrow functions_ ao declarar retornos de observação pois eles não terão acesso à instância do componente através do `this`.
+  Devemos evitar usar funções de seta quando declaramos funções de resposta de observação porque não terão acesso à instância do componente através de `this`.
 
 - **Exemplo**
 
@@ -316,31 +316,35 @@ Declara um retorno de observação que será invocado quando o dado mudar.
       }
     },
     watch: {
-      // observando uma propriedade de nível superior
+      // observando uma propriedade de alto nível
       a(val, oldVal) {
         console.log(`nova: ${val}, antiga: ${oldVal}`)
       },
-      // string nome de um método
+      // sequência de caracteres do nome do método
       b: 'someMethod',
-      // o retorno será chamado quando qualquer propriedade do objeto observado mude indiferente da sua profundidade aninhada
+      // a função de resposta será chamada sempre que alguma
+      // das propriedades do objeto observado mudar independente da
+      // sua profundidade encaixada.
       c: {
         handler(val, oldVal) {
           console.log('c mudou')
         },
         deep: true
       },
-      // observa uma única propriedade aninhada:
+      // observando uma única propriedade encaixada:
       'c.d': function (val, oldVal) {
-        // faça algo
+        // fazer alguma coisa
       },
-      // o retorno será chamado imediatamente depois do início da observação
+      // a função de resposta será chamada imediatamente
+      // após o início da observação
       e: {
         handler(val, oldVal) {
           console.log('e mudou')
         },
         immediate: true
       },
-      // você pode passar um array de retornos, eles serão chamados um por um
+      // podemos passar um vetor de funções de respostas,
+      // serão chamados um atrás do outro
       f: [
         'handle1',
         function handle2(val, oldVal) {
@@ -368,11 +372,11 @@ Declara um retorno de observação que será invocado quando o dado mudar.
   }
   ```
 
-- **Veja também:** [Observadores](/guide/essentials/watchers.html)
+- **Consulte também** [Observadores](/guide/essentials/watchers.html)
 
-## emits {#emits}
+## `emits` {#emits}
 
-Declara eventos personalizados emitidos pelo componente.
+Declara os eventos personalizados emitidos pelo componente.
 
 - **Tipo**
 
@@ -390,18 +394,18 @@ Declara eventos personalizados emitidos pelo componente.
 
 - **Detalhes**
 
-  Eventos emitidos podem ser declarados de duas formas:
+  Os eventos emitidos podem ser declarados de duas formas:
 
-  - De forma simples usando um array de strings
-  - De forma completa usando um objeto onde cada chave de propriedade é o nome do evento, e o valor ou é `null` ou é uma função validadora.
+  - De forma simples usando um vetor de sequências de caracteres
+  - De forma completa usando um objeto onde cada chave de propriedade é o nome do evento, e o valor ou é `null` ou é uma função de validação.
 
-  A função de validação receberá argumentos adicionais passados pela chamada `$emit` do componente. Por exemplo, se `this.$emit('foo', 1)` é chamado, o validador correspondente de `foo` receberá o argumento `1`. A função validadora deve retornar um booleano para indicar se os argumentos do evento são válidos.
+  A função de validação receberá argumentos adicionais passados para a chamada de `$emit` do componente. Por exemplo, se `this.$emit('foo', 1)` for chamado, a função de validação correspondente para `foo` receberá o argumento `1`. A função de validação deve retornar um booleano para indicar se os argumentos do evento são válidos.
 
-  Note que a opção `emits` afeta os _event listeners_ que são considerados como _event listeners_ do componente, em vez de _event listeners_ nativos do DOM. Os _listeners_ para eventos declarados serão removidos do objeto `$attrs` do componente, então eles não serão passados através do elemento raiz do componente. Veja [Atributos Fallthrough](/guide/components/attrs.html) para mais detalhes.
+  Nota que a opção `emits` afeta os ouvintes de eventos que são considerados ouvintes de eventos do componente, em vez de ouvintes de eventos nativos do DOM. Os ouvintes para eventos declarados serão removidos do objeto `$attrs` do componente, assim não serão passados ao elemento raiz do componente. Consulte os [Atributos](/guide/components/attrs.html) por mais detalhes.
 
 - **Exemplo**
 
-  Sintaxe array:
+  Sintaxe de vetor:
 
   ```js
   export default {
@@ -412,7 +416,7 @@ Declara eventos personalizados emitidos pelo componente.
   }
   ```
 
-  Sintaxe objeto:
+  Sintaxe de objeto:
 
   ```js
   export default {
@@ -425,7 +429,7 @@ Declara eventos personalizados emitidos pelo componente.
         if (payload.email && payload.password) {
           return true
         } else {
-          console.warn(`Argumento submetido pelo evento inválido!`)
+          console.warn(`Invalid submit event payload!`)
           return false
         }
       }
@@ -433,13 +437,13 @@ Declara eventos personalizados emitidos pelo componente.
   }
   ```
 
-- **Veja também:**
-  - [Guia - Atributos Fallthrough](/guide/components/attrs.html)
-  - [Guia - Tipando Emissões do Componente](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
+- **Consulte também**
+  - [Guia - Atributos](/guide/components/attrs.html)
+  - [Guia - Tipos para as Emissões do Componente](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" data-text="typescript" />
 
-## expose {#expose}
+## `expose` {#expose}
 
-Declara propriedades públicas expostas quando a instância do componente é acessada através do pai por _template refs_.
+Declara as propriedades públicas expostas quando a instância do componente for acessada por um pai através das referências do modelo de marcação.
 
 - **Tipo**
 
@@ -451,11 +455,11 @@ Declara propriedades públicas expostas quando a instância do componente é ace
 
 - **Detalhes**
 
-  Por padrão, a instância do componente expõe todas as propriedades da instância para o pai ao ser acessado através de `$parent`, `$root`, ou _template refs_. Isto pode ser indesejável, visto que um componente provavelmente possui um estado interno ou métodos que devem permanecer privados ou evitar acoplação rígida.
+  Por padrão, uma instância de componente expõe todas as propriedades da instância ao pai quando acessada através de `$parent`, `$root`, ou referências do modelo de marcação. Isto pode ser indesejável, visto que um componente provavelmente possui estado interno ou métodos que devem permanecer privados para evitar associação rigorosa.
 
-  A opcão `expose` espera uma lista de strings de nomes de propriedade. Quando `expose` é usado, apenas as propriedades explicitamente listadas serão expostas à instância pública do componente.
+  A opção `expose` espera uma lista de sequências de caracteres de nomes de propriedade. Quando `expose` for usada, apenas as propriedades explicitamente listadas serão expostas sobre a instância pública do componente.
 
-  `expose` afeat apenas propriedades definidas pelo usuário - ele não filtra propriedades da instância do componente embutidas.
+  `expose` apenas afeta as propriedades definidas pelo utilizador - não filtra as propriedades da instância do componente embutido.
 
 - **Exemplo**
 
