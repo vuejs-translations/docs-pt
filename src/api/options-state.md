@@ -45,7 +45,7 @@ Uma função que retorna o estado reativo inicial para a instância do component
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **Consulte também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth.html)
+- **Consulte também** a [Reatividade em Profundidade](/guide/extras/reactivity-in-depth)
 
 ## `props` {#props}
 
@@ -85,9 +85,9 @@ Declara as propriedades dum componente.
 
   Com a sintaxe baseada em objetos, cada propriedade pode ainda definir as seguintes opções:
 
-  - **`type`**: Pode ser um dos seguintes construtores nativos: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, qualquer função construtora personalizada ou um vetor destes. No modo de desenvolvimento, a Vue verificará se o valor duma propriedade corresponde o tipo declarado, e lançará um aviso se não corresponder. Consulte a [Validação de Propriedade](/guide/components/props.html#prop-validation) por mais detalhes.
+  - **`type`**: Pode ser um dos seguintes construtores nativos: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, qualquer função construtora personalizada ou um vetor destes. No modo de desenvolvimento, a Vue verificará se o valor duma propriedade corresponde o tipo declarado, e lançará um aviso se não corresponder. Consulte a [Validação de Propriedade](/guide/components/props#prop-validation) por mais detalhes.
 
-    Além disto nota que uma propriedade com o tipo `Boolean` afeta o seu comportamento de moldagem de valores em ambos desenvolvimento e produção. Consulte a [Moldagem Booleana](/guide/components/props.html#boolean-casting) por mais detalhes.
+    Além disto nota que uma propriedade com o tipo `Boolean` afeta o seu comportamento de moldagem de valores em ambos desenvolvimento e produção. Consulte a [Moldagem Booleana](/guide/components/props#boolean-casting) por mais detalhes.
 
   - **`default`**: Especifica o valor padrão duma propriedade quando não é passada pelo pai ou quando tem o valor `undefined`. Os valores padrão de objeto ou vetor devem ser retornados usando uma função de fábrica. A função de fábrica também recebe o objeto de propriedades puro como argumento.
 
@@ -126,8 +126,8 @@ Declara as propriedades dum componente.
   ```
 
 - **Consulte também:**
-  - [Guia - Propriedades](/guide/components/props.html)
-  - [Guia - Tipos para as Propriedades dos Componentes](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" data-text="typescript" />
+  - [Guia - Propriedades](/guide/components/props)
+  - [Guia - Tipos para as Propriedades dos Componentes](/guide/typescript/options-api#typing-component-props) <sup class="vt-badge ts" data-text="typescript" />
 
 ## `computed` {#computed}
 
@@ -208,8 +208,8 @@ Declara propriedades computadas a serem expostas na instância do componente.
   ```
 
 - **Consulte também**
-  - [Guia - Propriedades Computadas](/guide/essentials/computed.html)
-  - [Guia - Tipos para as Propriedades Computadas](/guide/typescript/options-api.html#typing-computed-properties) <sup class="vt-badge ts" data-text="typescript" />
+  - [Guia - Propriedades Computadas](/guide/essentials/computed)
+  - [Guia - Tipos para as Propriedades Computadas](/guide/typescript/options-api#typing-computed-properties) <sup class="vt-badge ts" data-text="typescript" />
 
 ## `methods` {#methods}
 
@@ -250,7 +250,7 @@ Declara métodos a serem misturados à instância do componente.
   }
   ```
 
-- **Consulte também** a [Manipulação de Evento](/guide/essentials/event-handling.html)
+- **Consulte também** a [Manipulação de Evento](/guide/essentials/event-handling)
 
 ## `watch` {#watch}
 
@@ -289,14 +289,14 @@ Declara as funções de resposta de observação a serem invocadas sobre a mudan
 
   A opção `watch` espera um objeto onde as chaves estão as propriedades reativas da instância do componente a serem observadas (por exemplo, as propriedades declaradas através da `data` ou `computed`) — e os seus valores são as funções de resposta correspondentes. A função de resposta recebe o novo valor e o valor antigo da fonte observada.
 
-  Além das propriedades do nível da raiz, a chave também pode ser um caminho simples delimitado por pontos, por exemplo, `a.b.c`. Nota que este uso **não** suporta expressões complexas - apenas caminhos delimitados por ponto são suportados. Se precisarmos de observar fontes de dados complexas, devemos usar a API [`$watch()`](/api/component-instance.html#watch) imperativa.
+  Além das propriedades do nível da raiz, a chave também pode ser um caminho simples delimitado por pontos, por exemplo, `a.b.c`. Nota que este uso **não** suporta expressões complexas - apenas caminhos delimitados por ponto são suportados. Se precisarmos de observar fontes de dados complexas, devemos usar a API [`$watch()`](/api/component-instance#watch) imperativa.
 
   O valor também pode ser a sequência de caracteres dum nome de método (declarado através dos `methods`), ou um objeto que contém opções adicionais. Quando usamos a sintaxe de objeto, a função de resposta deve ser declarada sob o campo `handler`. As propriedades adicionais incluem:
 
   - **`immediate`**: aciona a função de resposta imediatamente sobre a criação do observador. O valor antigo será `undefined` na primeira chamada.  
-  - **`deep`**: força a travessia profunda da fonte se for um objeto ou um vetor, para que a função de resposta dispare sobre as mutações profundas. Consulte os [Observadores Profundos](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`**: ajusta o tempo de descarga da função de resposta. Consulte o [Tempo de Descarga da Função de Resposta](/guide/essentials/watchers.html#callback-flush-timing) e a [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`**: depura as dependências do observador. Consulte a [Depuração do Observador](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`deep`**: força a travessia profunda da fonte se for um objeto ou um vetor, para que a função de resposta dispare sobre as mutações profundas. Consulte os [Observadores Profundos](/guide/essentials/watchers#deep-watchers).
+  - **`flush`**: ajusta o tempo de descarga da função de resposta. Consulte o [Tempo de Descarga da Função de Resposta](/guide/essentials/watchers#callback-flush-timing) e a [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: depura as dependências do observador. Consulte a [Depuração do Observador](/guide/extras/reactivity-in-depth#watcher-debugging).
 
   Devemos evitar usar funções de seta quando declaramos funções de resposta de observação porque não terão acesso à instância do componente através de `this`.
 
@@ -372,7 +372,7 @@ Declara as funções de resposta de observação a serem invocadas sobre a mudan
   }
   ```
 
-- **Consulte também** [Observadores](/guide/essentials/watchers.html)
+- **Consulte também** [Observadores](/guide/essentials/watchers)
 
 ## `emits` {#emits}
 
@@ -401,7 +401,7 @@ Declara os eventos personalizados emitidos pelo componente.
 
   A função de validação receberá argumentos adicionais passados para a chamada de `$emit` do componente. Por exemplo, se `this.$emit('foo', 1)` for chamado, a função de validação correspondente para `foo` receberá o argumento `1`. A função de validação deve retornar um booleano para indicar se os argumentos do evento são válidos.
 
-  Nota que a opção `emits` afeta os ouvintes de eventos que são considerados ouvintes de eventos do componente, em vez de ouvintes de eventos nativos do DOM. Os ouvintes para eventos declarados serão removidos do objeto `$attrs` do componente, assim não serão passados ao elemento raiz do componente. Consulte os [Atributos](/guide/components/attrs.html) por mais detalhes.
+  Nota que a opção `emits` afeta os ouvintes de eventos que são considerados ouvintes de eventos do componente, em vez de ouvintes de eventos nativos do DOM. Os ouvintes para eventos declarados serão removidos do objeto `$attrs` do componente, assim não serão passados ao elemento raiz do componente. Consulte os [Atributos](/guide/components/attrs) por mais detalhes.
 
 - **Exemplo**
 
@@ -438,8 +438,8 @@ Declara os eventos personalizados emitidos pelo componente.
   ```
 
 - **Consulte também**
-  - [Guia - Atributos](/guide/components/attrs.html)
-  - [Guia - Tipos para as Emissões do Componente](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" data-text="typescript" />
+  - [Guia - Atributos](/guide/components/attrs)
+  - [Guia - Tipos para as Emissões do Componente](/guide/typescript/options-api#typing-component-emits) <sup class="vt-badge ts" data-text="typescript" />
 
 ## `expose` {#expose}
 
