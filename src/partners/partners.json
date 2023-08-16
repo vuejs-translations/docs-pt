@@ -236,7 +236,7 @@
       "UX Design",
       "AWS"
     ],
-    "region": ["Europe", "North America"],
+    "region": ["Europa", "América do Norte"],
     "website": {
       "text": "dreamonkey.com",
       "url": "https://dreamonkey.com/en/vue-partner"
@@ -249,14 +249,14 @@
     "logo": "jump24.svg",
     "flipLogo": true,
     "hero": "jump24-hero.jpg",
-    "intro": "Hand crafted software, delivered. We work alongside start-ups, enterprises and tech teams creating bespoke web software solutions that will help them grow. Honing our skills since 2013, our strength is our people. We design and build custom applications to the highest standard, so you can reap the benefits.",
+    "intro": "Software feito a mão, entregado. Nós trabalhamos ao lado das empresas em formação, empresas constituídas e equipas de tecnologia criando soluções de software de Web feitos à medida que as ajudarão a crescer. Polindo as nossas habilidades desde 2013, a nossa força está na nossa equipa. Nós desenhamos e construímos aplicações personalizadas ao mais alto padrão, assim podes colher os ganhos.",
     "description": [
-      "Jump24 is a full-circle development studio that brings ideas to life. From our base in the UK, we’ve worked closely over the years with clients in Europe and the United States, including Jamie Oliver, Admiral, InPost and Buffer. With a team of 16 developers, you’ll be in safe hands with us.",
-      "Long-lasting relationships are our speciality. Whether you’re a startup, enterprise or agency, your story is important to us. We focus on the minute details to help create something that reflects you and your business.",
-      "We’re a talkative bunch, so to find out even more about us, head to our Twitter and LinkedIn."
+      "Jump24 é um estúdio de desenvolvimento de ciclo completo que trás ideas à vida. A partir da nossa base no Reino Unido, trabalhamos bem de perto por anos com clientes na Europa e nos Estados Unidos, incluindo Jamie Oliver, Admiral, InPost e Buffer. Com uma equipa de 16 programadores, estarás em boas mãos connosco.",
+      "Relacionamentos duradouros são a nossa especialidade. Sejas uma empresa em formação, empresa constituída ou agência, a tua história é importante para nós. Nós concentramos nos mais ínfimos pormenores para ajudar a criar algo que te reflita e ao teu negócio.",
+      "Somos um grupo de faladores, então para saberes mais sobre nós, siga para o nosso Twitter e LinkedIn."
     ],
     "proficiencies": ["Vue", "Laravel", "Tailwind", "Inertia", "React"],
-    "region": ["Europe"],
+    "region": ["Europa"],
     "website": {
       "text": "jump24.co.uk",
       "url": "https://jump24.co.uk/vue-specialist/"
@@ -278,7 +278,7 @@
       "Want to learn more? Find us at herodevs.com or send us a note at hello@herodevs.com."
     ],
     "proficiencies": ["Vue", "Angular", "Migration", "EOL Support"],
-    "region": ["North America"],
+    "region": ["América do Norte"],
     "website": {
       "text": "herodevs.com",
       "url": "https://www.herodevs.com/support/vue"
