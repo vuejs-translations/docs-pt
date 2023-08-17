@@ -162,7 +162,7 @@ As funções chamadas dentro de expressões de vinculação ser chamada toda vez
 
 ### Acesso Global Restrito {#restricted-globals-access}
 
-As expressões de modelo de marcação são isolados e só têm acessos a uma [lista restrita de globais](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). A lista expõe os globais embutidos comummente utilizados tais como `Math` e `Date`.
+As expressões de modelo de marcação são isolados e só têm acessos a uma [lista restrita de globais](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsAllowList.ts#L3). A lista expõe os globais embutidos comummente utilizados tais como `Math` e `Date`.
 
 Os globais que não são explicitamente incluídos na lista, por exemplo propriedades atribuídas pelo utilizador no `window`, não serão acessíveis nas expressões de modelo de marcação. Tu podes, no entanto, explicitamente definir globais adicionais para todas as expressões de Vue adicionando-os ao [`app.config.globalProperties`](/api/application#app-config-globalproperties).
 
