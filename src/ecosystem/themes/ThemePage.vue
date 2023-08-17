@@ -10,13 +10,13 @@ import ThemeContact from './ThemeContact.vue'
       <template #title>Temas</template>
       <template
         #lead
-      >Consulte os temas, Kits de UI, e extensões. Tu podes ver como uma aplicação do mundo real é construída com a Vue através dos nossos parceiros.</template>
+      >Consulte os temas, Equipamentos de UI, e extensões. Nós podemos ver como uma aplicação do mundo real é construída com a Vue através dos nossos parceiros.</template>
     </ThemeHero>
 
     <ThemeList />
 
     <ThemeContact>
-      Deseja mencionar os teus temas aqui?
+      Queres mencionar os teus temas?
       <a class="link" href="mailto:evan@vuejs.org?subject=Theme+affiliation">Contacte-nos!</a>
     </ThemeContact>
   </div>
