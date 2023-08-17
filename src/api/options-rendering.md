@@ -23,7 +23,7 @@ Um modelo de marcação de sequência de caracteres para o componente.
   Se o componente de raiz da nossa aplicação não tiver uma opção `template` ou `render` especificada, a Vue tentará usar o `innerHTML` do elemento montado como modelo de marcação.
 
   :::warning Aviso de Segurança
-  Só deveríamos usar modelos de marcação de fontes que possamos confiar. Não devemos usar conteúdo fornecido pelo utilizador como nosso modelo de marcação. Consulte o [Guia de Segurança](/guide/best-practices/security.html#rule-no-1-never-use-non-trusted-templates) por mais detalhes.
+  Só deveríamos usar modelos de marcação de fontes que possamos confiar. Não devemos usar conteúdo fornecido pelo utilizador como nosso modelo de marcação. Consulte o [Guia de Segurança](/guide/best-practices/security#rule-no-1-never-use-non-trusted-templates) por mais detalhes.
   :::
 
 ## `render` {#render}
@@ -58,8 +58,8 @@ Uma função que retorna programaticamente a árvore de DOM virtual do component
   Os modelos de marcação pré-compilados, por exemplo aqueles nos Componentes de Ficheiro Único, são compilados para a opção `render` em tempo de construção. Se ambos `render` e `template` estiverem presentes num componente, `render` receberá prioridade mais alta.
 
 - **Consulte também**
-  - [Mecanismo de Interpretação](/guide/extras/rendering-mechanism.html)
-  - [Funções de Interpretação](/guide/extras/render-function.html)
+  - [Mecanismo de Interpretação](/guide/extras/rendering-mechanism)
+  - [Funções de Interpretação](/guide/extras/render-function)
 
 ## `compilerOptions` {#compileroptions}
 
