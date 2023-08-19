@@ -1,10 +1,10 @@
 # Opções: Composição {#options-composition}
 
-## provide {#provide}
+## `provide` {#provide}
 
-Fornece valores que podem ser injetados por componentes descendentes.
+Fornece valores que podem ser injetados pelos componentes descendentes.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -12,11 +12,11 @@ Fornece valores que podem ser injetados por componentes descendentes.
   }
   ```
 
-- **Detalhes:**
+- **Detalhes**
 
-  `provide` e [`inject`](#inject) são usados ​​juntos para permitir que um componente ancestral sirva como um injetor de dependência para todos os seus descendentes, independentemente de quão profunda seja a hierarquia do componente, desde que estejam no mesmo pai corrente.
+  `provide` e [`inject`](#inject) são usadas ao mesmo tempo para permitir um componente ancestral servir como um injetor de dependência para todos os seus descendentes, independentemente de quão profunda é a hierarquia do componente, enquanto estiverem na mesma cadeia primaria.
 
-  A opção `provide` deve ser um objeto ou uma função que retorna um objeto. Este objeto contém as propriedades que estão disponíveis para injeção em seus descendentes. Você pode usar símbolos como chaves neste objeto.
+  A opção `provide` deve ser ou um objeto ou uma função que retorna um objeto. Este objeto contém as propriedades que estão disponíveis para a injeção para os seus descendentes. Nós podemos usar símbolos como chaves neste objeto.
 
 - **Exemplo**
 
@@ -32,6 +32,7 @@ Fornece valores que podem ser injetados por componentes descendentes.
     }
   }
   ```
+
   Usando uma função para fornecer o estado por componente:
 
   ```js
@@ -49,15 +50,15 @@ Fornece valores que podem ser injetados por componentes descendentes.
   }
   ```
 
-  Observe no exemplo acima, a `msg` fornecida NÃO será reativa. Veja [Trabalhando com Reatividade](/guide/components/provide-inject.html#working-with-reactivity) para mais detalhes.
+  Nota que no exemplo acima, a `msg` fornecida NÃO será reativa. Consulte [Trabalhando com a Reatividade](/guide/components/provide-inject#working-with-reactivity) por mais detalhes.
 
-- **Veja também:** [Provide / Inject](/guide/components/provide-inject.html)
+- **Consulte também** [Fornecer ou Injetar](/guide/components/provide-inject)
 
-## inject {#inject}
+## `inject` {#inject}
 
-Declare as propriedades a serem injetadas no componente atual, localizando-as nos provedores ancestrais.
+Declara as propriedades a injetar no componente atual localizando-as a partir dos fornecedores ancestrais.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -78,16 +79,16 @@ Declare as propriedades a serem injetadas no componente atual, localizando-as no
 
   A opção `inject` deve ser:
 
-  - Um array de strings, ou
-  - Um objeto em que as chaves são o nome da ligação local e o valor é:
-    - A chave (string ou Symbol) para procurar nas injeções disponíveis, ou
+  - Um vetor de sequências de caracteres, ou
+  - Um objeto onde as chaves são o nome de vínculo local e o valor é ou:
+    - A chave (sequência de caracteres ou símbolo) à procurar nas injeções disponíveis, ou
     - Um objeto onde:
-      - A propriedade `from` é a chave (string ou Symbol) para procurar nas injeções disponíveis e
-      - A propriedade `default` é usada como valor de fallback. Semelhante aos valores padrão das propiedades, uma factory function é necessária para   tipos de objeto para evitar o compartilhamento de valor entre várias instâncias de componentes
+      - A propriedade `from` é a chave (sequência de caracteres ou símbolo) à procurar nas injeções disponíveis, e
+      - A propriedade `default` é usada como valor de retrocesso. Semelhante aos valores padrão das propriedades, uma função de fábrica é necessária para os tipos de objeto para impedir a partilha de valor entre várias instância do componente.
 
-  Uma propriedade injetada será `undefined` se não houver propriedade correspondente ou o valor padrão não for fornecido.
+  Uma propriedade injetada será `undefined` se nenhuma propriedade correspondente e nem um valor padrão foi fornecido.
 
-  Observe que as ligações injetadas NÃO são reativas. Isso é intencional. No entanto, se o valor injetado for um objeto reativo, as propriedades desse objeto permanecem reativas. Veja [Trabalhando com Reatividade](/guide/components/provide-inject.html#working-with-reactivity) para mais detalhes.
+  Nota que os vínculos injetados NÃO são reativos. Isto é intencional. No entanto, se o valor injetado for um objeto reativo, as propriedades deste objeto permanecem reativas. Consulte [Trabalhando com a Reatividade](/guide/components/provide-inject#working-with-reactivity) por mais detalhes.
 
 - **Exemplo**
 
@@ -140,7 +141,7 @@ Declare as propriedades a serem injetadas no componente atual, localizando-as no
   }
   ```
 
-  Se precisar ser injetado de uma propriedade com um nome diferente, use `from` para denotar a propriedade de origem:
+  Se precisar ser injetado a partir duma propriedade com um nome diferente, use `from` para denotar a propriedade da fonte:
 
   ```js
   const Child = {
@@ -153,7 +154,7 @@ Declare as propriedades a serem injetadas no componente atual, localizando-as no
   }
   ```
 
-  Semelhante aos padrões de propriedade, você precisa usar uma factory function para valores não primitivos:
+  Semelhante aos padrões de propriedade, precisamos usar uma função de fábrica para os valores não primitivos:
 
   ```js
   const Child = {
@@ -166,13 +167,13 @@ Declare as propriedades a serem injetadas no componente atual, localizando-as no
   }
   ```
 
-- **Veja também:** [Provide / Inject](/guide/components/provide-inject.html)
+- **Consulte também** [Fornecer ou Injetar](/guide/components/provide-inject)
 
-## mixins {#mixins}
+## `mixins` {#mixins}
 
-Uma matriz de objetos opcionais a serem misturados no componente atual.
+Uma vetor de objetos opcionais a serem misturados no componente atual.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -180,17 +181,17 @@ Uma matriz de objetos opcionais a serem misturados no componente atual.
   }
   ```
 
-- **Detalhes:**
+- **Detalhes**
 
-  A opção `mixins` aceita um array de objetos mixin. Esses objetos mixin podem conter opções de instância como objetos de instância normais, e eles serão mesclados com as opções eventuais usando a lógica de mesclagem de certas opções. Por exemplo, se seu mixin contiver um gancho `created` e o próprio componente também tiver um, ambas as funções serão chamadas.
+  A opção `mixins` aceita um vetor de objetos de mistura. Estes objetos de mistura podem conter opções de instância como objetos de instância normais, e serão combinadas contra as opções eventuais usando a lógica de combinação de opção certa. Por exemplo, se a nossa mistura contiver um gatilho `updated` e o próprio componente também tiver um, ambas funções serão chamadas.
 
-  Os ganchos do Mixin são chamados na ordem em que são fornecidos e chamados antes dos próprios ganchos do componente.
+  Os gatilhos da mistura são chamados na ordem que são fornecidos, e chamados bem antes dos gatilhos do próprio componente.
 
-  :::warning Não é mais recomendado
-  No Vue 2, os mixins eram o principal mecanismo para criar blocos reutilizáveis ​​de componentes lógicos. Enquanto os mixins continuam a ser suportados no Vue 3, [API de Composição](/guide/reusability/composables.html) é a abordagem preferencial para reutilização de código entre componentes.
+  :::warning NÃO É MAIS RECOMENDADO
+  Na Vue 2, as misturas eram o mecanismo primário para criação de pedaços reutilizáveis da lógica do componente. Embora as misturas continuam a ser suportadas na Vue 3, as [Funções de Composição usando a API de Composição](/guide/reusability/composables) agora são a abordagem preferida para reutilização de código entre os componentes.
   :::
 
-- **Exemplo:**
+- **Exemplo**
 
   ```js
   const mixin = {
@@ -210,9 +211,9 @@ Uma matriz de objetos opcionais a serem misturados no componente atual.
   // => 2
   ```
 
-## extends {#extends}
+## `extends` {#extends}
 
-Uma "class base" de componente para ser estendida.
+Um componente de "classe de base" a partir do qual estender.
 
 - **Type:**
 
@@ -222,17 +223,17 @@ Uma "class base" de componente para ser estendida.
   }
   ```
 
-- **Detalhes:**
+- **Detalhes**
 
-  Permite que um componente estenda outro, herdando suas opções de componentes.
+  Permite que um componente estenda outro, herdando suas opções de componente.
 
-  De uma perspectiva de implementação, `extends` é quase idêntico a `mixins`. O componente especificado por `extends` será tratado como se fosse o primeiro mixin.
+  A partir duma perspetiva de implementação, `extends` é quase idêntico à `mixins`. O componente especificado pela `extends` será tratado como se fosse a primeira mistura.
 
-  No entanto, `extends` e `mixins` expressam intenções diferentes. A opção `mixins` é usada principalmente para compor pedaços de funcionalidade, enquanto `extends` se preocupa principalmente com herança.
+  No entanto, `extends` e `mixins` expressam diferentes intenções. A opção `mixins` é primariamente usada para compor pedaços de funcionalidade, ao passo que `extends` está primariamente preocupada com a herança.
 
-  Tal como acontece com `mixins`, todas as opções serão mescladas usando a estratégia de mesclagem relevante.
+  Tal como acontece com a `mixins`, quaisquer opções (exceto para `setup()`) serão combinadas usando a estratégia de combinação relevante.
 
-- **Exemplo:**
+- **Exemplo**
 
   ```js
   const CompA = { ... }
@@ -242,3 +243,25 @@ Uma "class base" de componente para ser estendida.
     ...
   }
   ```
+
+  :::warning NÃO RECOMENDADA PARA API DE COMPOSIÇÃO
+  `extends` está desenhada para a API de Opções e não lida com a combinação do gatilho `setup()`.
+
+  Na API de Composição, o modelo mental preferido para reutilização da lógica é "composição" acima da "herança". Se tivermos lógica dum componente que precisa ser reutilizada num outro, consideramos extrair a lógica relevante para uma [Função de Composição](/guide/reusability/composables#composables).
+
+  Se ainda tencionamos "estender" um componente usando a API de Composição, podemos chamar a `setup()` do componente de base na `setup()` do componente que se estende:
+
+  ```js
+  import Base from './Base.js'
+
+  export default {
+    extends: Base,
+    setup(props, ctx) {
+      return {
+        ...Base.setup(props, ctx),
+        // vínculos locais
+      }
+    }
+  }
+  ```
+  :::
