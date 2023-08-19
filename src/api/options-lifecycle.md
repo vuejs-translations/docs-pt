@@ -1,14 +1,14 @@
-# Options: Ciclo de Vida {#options-lifecycle}
+# Opções: Ciclo de Vida {#options-lifecycle}
 
-:::info Veja também
-Para uso compartilhado de ganchos de ciclo de vida, consulte [Guia - Ganchos de Ciclo de Vida](/guide/essentials/lifecycle.html)
+:::info Consulte também
+Para uso partilhado dos gatilhos do ciclo de vida, consulte o [Guia - Gatilhos do Ciclo de Vida](/guide/essentials/lifecycle).
 :::
 
-## beforeCreate {#beforecreate}
-Chamado quando a instância é inicializada.
+## `beforeCreate` {#beforecreate}
 
+Chamada quando a instância for inicializada.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -18,15 +18,15 @@ Chamado quando a instância é inicializada.
 
 - **Detalhes**
 
-  Chamado imediatamente quando a instância é inicializada, após a resolução das props, antes de processar outras opções como `data()` ou `computed`
+  Chamada imediatamente quando a instância for inicializada, depois da resolução das propriedades, antes de processar outras opções tais como `data()` ou `computed`.
 
-  Observe que o gancho `setup()` da API de composição é chamado antes de qualquer gancho da API de opções, mesmo `beforeCreate()`
+  Nota que o gatilho `setup()` da API de Composição é chamado antes de quaisquer gatilhos da API de Opções, até mesmo antes de `beforeCreate()`.
 
-## created {#created}
+## `created` {#created}
 
-Chamado depois que a instância concluiu o processamento de todas as opções relacionadas ao estado.
+Chamada depois da instância ter terminado de processar todas as opções relacionadas ao estado.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -36,13 +36,13 @@ Chamado depois que a instância concluiu o processamento de todas as opções re
 
 - **Detalhes**
 
-  Quando esses ganchos são chamados, o seguinte foi configurado: dados reativos, propriedades computadas, métodos e observadores. No entanto, a fase de montagem ainda não foi iniciada e a propriedade `$el` ainda não estará disponível.
+  Quando este gatilho é chamado, os seguintes foram configurados: dados reativos, propriedades computadas, métodos, e observadores. No entanto, a fase de montagem ainda não foi começada, e a propriedade `$el` ainda não estará disponível.
 
-## beforeMount {#beforemount}
+## `beforeMount` {#beforemount}
 
-Chamado logo antes de o componente ser montado.
+Chamada bem antes do componente ser montado.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -52,15 +52,15 @@ Chamado logo antes de o componente ser montado.
 
 - **Detalhes**
 
-  Quando esse gancho é chamado, o componente terminou de configurar seu estado reativo, mas nenhum nó DOM foi criado ainda. Ele está prestes a executar seu efeito de renderização DOM pela primeira vez.
+  Quando este gatilho é chamado, o componente terminou de configurar o seu estado reativo, mas ainda nenhum dos nós de DOM foi criado. Está prestes a executar o seu efeito de interpretação de DOM pela primeira vez.
 
-  **Este gancho não é chamado durante a renderização do lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-## mounted {#mounted}
+## `mounted` {#mounted}
 
-Chamado depois que o componente foi montado.
+Chamado depois do componente ter sido montado.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -70,21 +70,21 @@ Chamado depois que o componente foi montado.
 
 - **Detalhes**
 
-  Um componente é considerado montado após:
+  Um componente é considerado montado depois:
 
-  - Todos os seus componentes filhos síncronos foram montados (não inclui componentes assíncronos ou componentes dentro das árvores `<Suspense>`).
+  - De todos os seus componentes filhos síncronos terem sido montados (isto não inclui componentes assíncronos ou componentes dentro das árvores do `<Suspense>`).
 
-  - Sua própria árvore DOM foi criada e inserida no contêiner pai. Observe que isso só garante que a árvore DOM do componente esteja no documento se o contêiner raiz do aplicativo também estiver no documento.
+  - Da sua própria árvore do DOM ter sido criada e inserida no contentor pai. Nota que isto apenas garante que a árvore do DOM do componente está no documento se o contentor da raiz da aplicação também estiver no documento.
 
-  Esse gancho é normalmente usado para executar efeitos colaterais que precisam de acesso ao DOM renderizado do componente ou para limitar o código relacionado ao DOM ao cliente em um [aplicativo renderizado pelo servidor](/guide/scaling-up/ssr.html).
+  Este gatilho é normalmente usado para executar os efeitos colaterais que precisam do acesso ao DOM interpretado do componente, ou para limitar o código relacionado ao DOM para o cliente numa [aplicação interpretada no servidor](/guide/scaling-up/ssr).
 
-  **Este gancho não é chamado durante a renderização do lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-## beforeUpdate {#beforeupdate}
+## `beforeUpdate` {#beforeupdate}
 
-Chamado logo antes do componente estar prestes a atualizar sua árvore DOM devido a uma mudança de estado reativo.
+Chamada bem antes do componente estiver prestes a atualizar a sua árvore do DOM devido à uma mudança de estado reativo.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -94,15 +94,15 @@ Chamado logo antes do componente estar prestes a atualizar sua árvore DOM devid
 
 - **Detalhes**
 
-  Este gancho pode ser usado para acessar o estado do DOM antes que o Vue atualize o DOM. Também é seguro modificar o estado do componente dentro deste gancho.
+  Este gatilho pode ser usado para acessar o estado do DOM antes da Vue atualizar o DOM. Também é seguro modificar o estado do componente dentro deste gatilho.
 
-  **Este gancho não é chamado durante a renderização do lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-## updated {#updated}
+## `updated` {#updated}
 
-Chamado depois que o componente atualizou sua árvore DOM devido a uma mudança de estado reativo.
+Chamada depois do componente ter atualizado a sua árvore do DOM devido à uma mudança de estado reativo.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -112,21 +112,21 @@ Chamado depois que o componente atualizou sua árvore DOM devido a uma mudança 
 
 - **Detalhes**
 
-  O gancho atualizado de um componente pai é chamado depois de seus componentes filhos.
+  Uma gatilho `updated` dum componente pai é chamado depois do `updated` dos seus componentes filhos.
 
-  Esse gancho é chamado após qualquer atualização do DOM do componente, que pode ser causada por diferentes alterações de estado. Se você precisar acessar o DOM atualizado após uma mudança de estado específica, use [nextTick()](/api/general.html#nexttick).
+  Este gatilho é chamado depois de qualquer atualização do DOM do componente, que pode ser causada por diferentes mudanças de estado. Se precisarmos acessar o DOM atualizado depois duma mudança de estado específica, devemos usar [`nextTick()`](/api/general#nexttick).
 
-  **Este gancho não é chamado durante a renderização do lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-  :::warning
-  Não modifique o estado do componente no gancho atualizado - isso provavelmente levará a um loop de atualização infinito!
+  :::warning AVISO
+  Não altere o estado do componente no gatilho `updated` - isto provavelmente conduzirá à um laço de atualização infinita!
   :::
 
-## beforeUnmount {#beforeunmount}
+## `beforeUnmount` {#beforeunmount}
 
-Chamado logo antes de uma instância de componente ser desmontada.
+Chamada bem antes duma instância de componente estiver a ser desmontada.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -136,15 +136,15 @@ Chamado logo antes de uma instância de componente ser desmontada.
 
 - **Detalhes**
 
-  Quando esse gancho é chamado, a instância do componente ainda está totalmente funcional.
+  Quando este gatilho é chamado, a instância do componente permanece completamente funcional.
 
-  **Este gancho não é chamado durante a renderização do lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-## unmounted {#unmounted}
+## `unmounted` {#unmounted}
 
-Chamado depois que o componente foi desmontado.
+Chamada depois do componente ter sido desmontado.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -154,21 +154,21 @@ Chamado depois que o componente foi desmontado.
 
 - **Detalhes**
 
-  Um componente é considerado desmontado após:
+  Um componente é considerado desmontado depois:
 
-  - Todos os seus componentes filhos foram desmontados.
+  - De todos os seus componentes filhos terem sido desmontados.
 
-  - Todos os seus efeitos reativos associados (efeito de renderização e computados / observadores criados durante `setup()`) foram interrompidos.
+  - De todos os seus efeitos reativos associados (efeito de interpretação e computado ou observadores criados durante a `setup()`) terem sido interrompidos.
 
-  Use este gancho para limpar efeitos colaterais criados manualmente, como temporizadores, ouvintes de eventos DOM ou conexões de servidor.
+  Use este gatilho para limpar os efeitos colaterais criados manualmente tais como temporizadores, ouvintes de eventos de DOM oou conexões de servidor.
 
-  **Este gancho não é chamado durante a renderização do lado do servidor.**
+  **Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-## errorCaptured {#errorcaptured}
+## `errorCaptured` {#errorcaptured}
 
-Chamado quando um erro de propagação de um componente descendente foi capturado.
+Chamada quando um erro propagando-se a partir dum componente descendente tiver sido capturado.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -183,40 +183,39 @@ Chamado quando um erro de propagação de um componente descendente foi capturad
 
 - **Detalhes**
 
-  Os erros podem ser capturados das seguintes fontes:
+  Os erros podem ser capturados a partir das seguintes fontes:
 
-  - Renderizações de componentes
-  - Manipuladores de eventos
-  - Ganchos de ciclo de vida
+  - Interpretadores de componente
+  - Manipuladores de evento
+  - Gatilhos do ciclo de vida
   - função `setup()`
-  - Vigilantes
-  - Ganchos de diretiva personalizados
-  - Ganchos de transição
+  - Observadores
+  - Gatilhos de diretiva personalizada
+  - Gatilhos de transição
 
-  O gancho recebe três argumentos: o erro, a instância do componente que acionou o erro e uma cadeia de informações especificando o tipo de origem do erro.
+  O gatilho recebe três argumentos: o erro, a instância do componente que acionou o erro, e uma sequência de caracteres de informação especificando o tipo da fonte do erro.
 
-  Você pode modificar o estado do componente em `errorCaptured()` para exibir um estado de erro para o usuário. No entanto, é importante que o estado de erro não renderize o conteúdo original que causou o erro; caso contrário, o componente será lançado em um loop de renderização infinito.
+  Nós podemos modificar o estado do componente na `errorCaptured()` para exibir um estado de erro ao utilizador. No entanto, é importante que o estado de erro não interprete o conteúdo original que causou o erro; de outro modo o componente será lançado para um laço de interpretação infinita.
 
-  O gancho pode retornar `false` para impedir que o erro se propague ainda mais. Veja os detalhes de propagação de erro abaixo.
-
+  O gatilho pode retornar `false` para impedir o erro de propagar-se mais. Consulte os detalhes sobre a propagação de erro abaixo.
 
   **Regras de Propagação de Erros**
 
-  - Por padrão, todos os erros ainda são enviados para o nível do aplicativo [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) se for definido, para que esses erros ainda possam ser relatados a um serviço de análise em um único local.
+  - Por padrão, todos os erros ainda serão enviados para o nível de aplicação [`app.config.errorHandler`](/api/application#app-config-errorhandler) se for definido, para que estes erros possam ser relatados à um serviço de análises num único lugar.
 
-  - Se existirem vários ganchos `errorCaptured` na cadeia de herança ou na cadeia pai de um componente, todos eles serão invocados no mesmo erro, na ordem de baixo para cima. Isso é semelhante ao mecanismo de borbulhamento de eventos DOM nativos.
+  - Se vários gatilhos de `errorCaptured` existirem numa cadeia de herança de componentes ou em uma cadeia de pais, todos serão invocados com o mesmo erro, na ordem de baixo para cima. Isto é semelhante ao mecanismo borbulhante de eventos de DOM nativos.
 
-  - Se o próprio gancho `errorCaptured` lançar um erro, tanto este erro quanto o erro capturado original serão enviados para `app.config.errorHandler`.
+  - Se o próprio gatilho `errorCaptured` lançar um erro, tanto este erro quanto o erro original capturado serão enviados à `app.config.errorHandler`.
 
-  - Um gancho `errorCaptured` pode retornar `false` para evitar que o erro se propague ainda mais. Isso significa essencialmente que "esse erro foi tratado e deve ser ignorado". Isso impedirá que quaisquer ganchos `errorCaptured` adicionais ou `app.config.errorHandler` sejam invocados para este erro.
+  - Um gatilho `errorCaptured` pode retornar `false` para evitar que o erro continue a propagar-se. Isto significa essencialmente que "este erro já foi manipulado e deve ser ignorado". Ele evitará quaisquer gatilhos `errorCaptured` adicionais ou `app.config.errorHandler` de serem invocados por este erro.
 
-## renderTracked <sup class="vt-badge dev-only" /> {#rendertracked}
+## `renderTracked` <sup class="vt-badge dev-only" data-text="desenvolvimento" /> {#rendertracked}
 
-Chamado quando uma dependência reativa foi rastreada pelo efeito de renderização do componente.
+Chamada quando uma dependência reativa tiver sido rastreada pelo efeito de interpretação do componente.
 
-**Esse gancho é somente no modo de desenvolvimento e não é chamado durante a renderização do lado do servidor.**
+**Este gatilho é apenas para o modo de desenvolvimento e não é chamado durante a interpretação no lado do servidor.**
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -231,15 +230,15 @@ Chamado quando uma dependência reativa foi rastreada pelo efeito de renderizaç
   }
   ```
 
-- **Veja também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth.html)
+- **Consulte também** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth)
 
-## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
+## `renderTriggered` <sup class="vt-badge dev-only" data-text="desenvolvimento" /> {#rendertriggered}
 
-Chamado quando uma dependência reativa aciona o efeito de renderização do componente para ser executado novamente.
+Chamada quando uma dependência reativa acionar o efeito de interpretação do componente a ser executado novamente.
 
-**Esse gancho é somente no modo de desenvolvimento e não é chamado durante a renderização do lado do servidor.**
+**Este gatilho é apenas para o modo de desenvolvimento e não é chamado durante a interpretação no lado do servidor.**
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -257,15 +256,15 @@ Chamado quando uma dependência reativa aciona o efeito de renderização do com
   }
   ```
 
-- **Veja também:** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth.html)
+- **Consulte também** [Reatividade em Profundidade](/guide/extras/reactivity-in-depth)
 
-## activated {#activated}
+## `activated` {#activated}
 
-Chamado depois que a instância do componente é inserida no DOM como parte de uma árvore armazenada em cache por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Chamada depois da instância do componente for inserida no DOM como parte duma árvore armazenada para consulta imediata pelo [`<KeepAlive>`](/api/built-in-components#keepalive).
 
-**Este gancho não é chamado durante a renderização do lado do servidor.**
+**Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -273,15 +272,15 @@ Chamado depois que a instância do componente é inserida no DOM como parte de u
   }
   ```
 
-- **Veja também:** [Guia - Ciclo de vida da instância em cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Consulte também** [Guia - Ciclo de Vida da Instância Armazenada para Consulta Imediata](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
-## deactivated {#deactivated}
+## `deactivated` {#deactivated}
 
-Chamado depois que a instância do componente é removida do DOM como parte de uma árvore armazenada em cache por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Chamada depois da instância do componente ser removida do DOM como parte duma árvore armazenada para consulta imediata pelo [`<KeepAlive>`](/api/built-in-components#keepalive).
 
-**Este gancho não é chamado durante a renderização do lado do servidor.**
+**Este gatilho não é chamado durante a interpretação no lado do servidor.**
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -289,13 +288,13 @@ Chamado depois que a instância do componente é removida do DOM como parte de u
   }
   ```
 
-- **Veja também:** [Guia - Ciclo de vida da instância em cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Consulte também** [Guia - Ciclo de Vida da Instância Armazenada para Consulta Imediata](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
-## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
+## `serverPrefetch` <sup class="vt-badge" data-text="servidor" /> {#serverprefetch}
 
-Função assíncrona a ser resolvida antes que a instância do componente seja renderizada no servidor.
+Função assíncrona a ser resolvida antes da instância do componente estiver à ser interpretada no servidor.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -305,9 +304,9 @@ Função assíncrona a ser resolvida antes que a instância do componente seja r
 
 - **Detalhes**
 
-  Se o gancho retornar uma promessa, o renderizador do servidor aguardará até que a promessa seja resolvida antes de renderizar o componente.
+  Se um gatilho retornar uma promessa, o interpretador do servidor aguardará até a promessa ser resolvida antes de interpretar o componente.
 
-  Esse gancho é chamado apenas durante a renderização do lado do servidor e pode ser usado para executar a busca de dados somente do servidor.
+  Este gatilho é chamado apenas durante a interpretação no lado do servidor e pode ser usado para realizar requisição de dados apenas no servidor.
 
 - **Exemplo**
 
@@ -319,19 +318,19 @@ Função assíncrona a ser resolvida antes que a instância do componente seja r
       }
     },
     async serverPrefetch() {
-      // componente é renderizado como parte da solicitação inicial
-      // pré-buscar dados no servidor, pois é mais rápido do que no cliente
+      // componente é interpretado como parte da requisição inicial
+      // pré-requisita dados no servidor pois é mais rápido do que no cliente
       this.data = await fetchOnServer(/* ... */)
     },
     async mounted() {
       if (!this.data) {
-        // se os dados forem nulos na montagem, significa que o componente
-        // é renderizado dinamicamente no cliente. Execute um
-        // busca do lado do cliente em vez disso.
+        // se data for null ao montar, significa que o componente
+        // é interpretado dinamicamente no cliente.
+        // Realizar uma requisição no lado do cliente.
         this.data = await fetchOnClient(/* ... */)
       }
     }
   }
   ```
 
-- **Veja também:** [Server-Side Rendering](/guide/scaling-up/ssr.html)
+- **Consulte também** [Interpretação no Lado do Servidor](/guide/scaling-up/ssr)
