@@ -65,7 +65,7 @@ Regista uma função de resposta a ser chamada depois do componente tiver atuali
   **Este gatilho não é chamado durante a interpretação do lado do servidor.**
 
   :::warning AVISO
-  Não faça mutações no estado do componente durante este gatilho - isto provavelmente conduzirá à um laço de atualização infinita!
+  Não altere o estado do componente no gatilho `updated` - isto provavelmente conduzirá à um laço de atualização infinita!
   :::
 
 - **Exemplo**
@@ -297,9 +297,9 @@ Regista uma função de resposta a ser chamada depois da instância do component
 
 - **Consulte também:** [Guia - Ciclo de Vida da Instância Armazenada para Consulta Imediata](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
-## `onServerPrefetch()` <sup class="vt-badge" data-text="apenas no lado do servidor" /> {#onserverprefetch}
+## `onServerPrefetch()` <sup class="vt-badge" data-text="servidor" /> {#onserverprefetch}
 
-Regista uma função assíncrona a ser resolvida antes da instância do componente ser interpretada no servidor.
+Regista uma função assíncrona a ser resolvida antes da instância do componente estiver à ser interpretada no servidor.
 
 - **Tipo**
 
