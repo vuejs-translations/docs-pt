@@ -1,10 +1,11 @@
-# Options: Misc {#options-misc}
+# Opções: Outros {#options-misc}
 
-## name {#name}
+## `name` {#name}
 
 Explicitamente declara um nome de exibição para o componente.
+Declara explicitamente um nome de exibição para o componente.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -14,39 +15,39 @@ Explicitamente declara um nome de exibição para o componente.
 
 - **Detalhes**
 
-  O nome de um componente é usado para o seguinte:
+  O nome dum componente é usado para o seguinte:
 
-  - Auto-referência recursiva no próprio modelo do componente
-  - Exibição na árvore de inspeção de componentes do Vue DevTools
-  - Exibição em rastreamentos de componentes de aviso
+  - Auto-referência recursiva no modelo de marcação do próprio componente
+  - Exibição na árvore de inspeção de componentes das ferramentas de programação da Vue
+  - Exibição em traços de componentes de aviso
 
-  Quando você usa componentes de arquivo único, o componente já infere seu próprio nome a partir do nome do arquivo. Por exemplo, um arquivo chamado `MyComponent.vue` terá o nome de exibição inferido "MyComponent".
+  Quando usamos os componentes de ficheiro único, o componente já infere o seu próprio nome a partir do nome do ficheiro. Por exemplo, um ficheiro chamado `MyComponent.vue` terá o nome de exibição inferido "MyComponent".
 
-  Outro caso é quando um componente é registrado globalmente com [`app.component`](/api/application.html#app-component), o ID global é definido automaticamente como seu nome.
+  Um outro caso é que quando um componente é registado globalmente com [`app.component`](/api/application#app-component), o identificador global é definido automaticamente como seu nome.
 
-  A opção `name` permite que você substitua o nome inferido ou forneça explicitamente um nome quando nenhum nome puder ser inferido (por exemplo, quando não estiver usando ferramentas de construção ou um componente embutido não SFC).
+  A opção `name` permite-nos sobrepor o nome inferido, ou explicitamente fornecer um nome quando nenhum nome puder ser inferido (por exemplo, quando não estamos usando ferramentas de construção, ou um componente que não é de ficheiro único embutido).
 
-  Há um caso em que `name` é explicitamente necessário: ao comparar com componentes que podem ser armazenados em cache em [`<KeepAlive>`](/guide/built-ins/keep-alive.html) por meio de suas props `include / exclude`.
+  Existe um caso onde `name` é explicitamente necessário: quando correspondemos contra componentes passíveis de armazenamento de consulta imediata no [`<KeepAlive>`](/guide/built-ins/keep-alive) através das suas propriedades `include / exclude`.
 
-  :::tip
-  Desde a versão 3.2.34, um componente de arquivo único usando `<script setup>` inferirá automaticamente sua opção `name` com base no nome do arquivo, removendo a necessidade de declarar manualmente o nome mesmo quando usado com `<KeepAlive>`.
+  :::tip DICA
+  Desde a versão 3.2.34, um componente de ficheiro único usando `<script setup>` inferirá automaticamente a sua opção `name` baseado no nome do ficheiro, removendo a necessidade de manualmente declarar o nome mesmo quando usado com `<KeepAlive>`.
   :::
 
-## inheritAttrs {#inheritattrs}
+## `inheritAttrs` {#inheritattrs}
 
-Controla se o comportamento fallthrough de atributo padrão do componente deve ser ativado.
+Controla se o comportamento padrão de passagem de atributo do componente deveria ser ativado.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
-    inheritAttrs?: boolean // default: true
+    inheritAttrs?: boolean // predefinido como: true
   }
   ```
 
 - **Detalhes**
 
-  Por padrão, as vinculações de atributo de escopo pai que não são reconhecidas como props serão "fallthrough". Isso significa que, quando temos um componente de raiz única, essas vinculações serão aplicadas ao elemento raiz do componente filho como atributos HTML normais. Ao criar um componente que envolve um elemento de destino ou outro componente, nem sempre esse é o comportamento desejado. Definindo `inheritAttrs` como `false`, esse comportamento padrão pode ser desabilitado. Os atributos estão disponíveis através da propriedade de instância `$attrs` e podem ser vinculados explicitamente a um elemento não-raiz usando `v-bind`.
+  Por padrão, os vínculos de atributos do âmbito de aplicação pai que não são reconhecidos como propriedades "cairão". Isto significa que quando tivermos um componente de única raiz, estes vínculos serão aplicados ao elemento raiz do componente filho como atributos de HTML normais. Quando escrevemos um componente que envolve um elemento alvo ou um outro componente, isto pode não ser sempre o comportamento desejado. Pela definição de `inheritAttrs` para `false`, este comportamento padrão pode ser desligado. Os atributos estão disponíveis através da propriedade de instância `$attrs` e podem ser explicitamente vinculadas à um elemento que é de raiz usando `v-bind`.
 
 - **Exemplo**
 
@@ -77,17 +78,38 @@ Controla se o comportamento fallthrough de atributo padrão do componente deve s
   <div class="composition-api">
 
   Ao declarar esta opção em um componente que usa `<script setup>`, um bloco separado `<script>` é necessário:
+  Quando declaramos esta opção num componente que usa `<script setup>`, podemos usar a macro [`defineOptions`](/api/sfc-script-setup#defineoptions):
 
   ```vue
-  <script>
-  export default {
-    inheritAttrs: false
-  }
-  </script>
-
   <script setup>
   defineProps(['label', 'value'])
   defineEmits(['input'])
+  defineOptions({ 
+    inheritAttrs: false 
+  })
+  </script>
+
+  <template>
+    <label>
+      {{ label }}
+      <input
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+      />
+    </label>
+  </template>
+  ```
+
+  Desde a versão 3.3 podemos também usar `defineOptions` diretamente no `<script setup>`:
+
+  ```vue
+  <script setup>
+  defineProps(['label', 'value'])
+  defineEmits(['input'])
+  defineOptions({
+    inheritAttrs: false
+  })
   </script>
 
   <template>
@@ -104,13 +126,13 @@ Controla se o comportamento fallthrough de atributo padrão do componente deve s
 
   </div>
 
-- **Veja também:** [Atributos que Caem](/guide/components/attrs.html)
+- **Consulte também** [Atributos de Passagem](/guide/components/attrs)
 
-## components {#components}
+## `components` {#components}
 
-Um objeto que registra os componentes a serem disponibilizados para a instância do componente.
+Um objeto que regista os componentes a serem disponibilizados à instância do componente.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -126,21 +148,21 @@ Um objeto que registra os componentes a serem disponibilizados para a instância
 
   export default {
     components: {
-      // forma abreviada
+      // abreviatura
       Foo,
-      // registra com um nome diferente
+      // registar sob um nome diferente
       RenamedBar: Bar
     }
   }
   ```
 
-- **Veja também:** [Registo de Componente](/guide/components/registration.html)
+- **Consulte também** [Registo de Componente](/guide/components/registration)
 
-## directives {#directives}
+## `directives` {#directives}
 
-Um objeto que registra as diretivas a serem disponibilizadas para a instância do componente.
+Um objeto que regista as diretivas a serem disponibilizadas à instância do componente.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentOptions {
@@ -153,7 +175,7 @@ Um objeto que registra as diretivas a serem disponibilizadas para a instância d
   ```js
   export default {
     directives: {
-      // habilita v-focus no template
+      // ativa `v-focus` no modelo de marcação
       focus: {
         mounted(el) {
           el.focus()
@@ -167,6 +189,6 @@ Um objeto que registra as diretivas a serem disponibilizadas para a instância d
   <input v-focus>
   ```
 
-  Um hash de diretivas a serem disponibilizadas para a instância do componente.
+  Um dicionário de diretivas a serem disponibilizadas à instância do componente.
 
-- **Veja também:** [Diretivas Personalizadas](/guide/reusability/custom-directives.html)
+- **Consulte também** [Diretivas Personalizadas](/guide/reusability/custom-directives)
