@@ -1,16 +1,16 @@
 # Instância do Componente {#component-instance}
 
 :::info
-Esta página documenta as propriedades internas e os métodos expostos na instância pública do componente, ou seja, `this`.
+Esta página documenta as propriedades e os métodos embutidos expostos na instância pública do componente, por exemplo, `this`.
 
-Todas as propriedades listadas nesta página são somente leitura (exceto propriedades aninhadas em `$data`).
+Todas as propriedades listadas nesta página são de apenas leitura (exceto propriedades encaixadas na `$data`).
 :::
 
-## $data {#data}
+## `$data` {#data}
 
-O objeto retornado da opção [`data`](./options-state.html#data), tornado reativo pelo componente. A instância do componente representa o acesso às propriedades em seu objeto de dados.
+O objeto retornado a partir da opção [`data`](./options-state#data), tornado reativo pelo componente. A instância do componente delega o acesso às propriedades sobre o seu objeto de dados.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -18,11 +18,11 @@ O objeto retornado da opção [`data`](./options-state.html#data), tornado reati
   }
   ```
 
-## $props {#props}
+## `$props` {#props}
 
-Um objeto que representa as props resolvidas atuais do componente.
+Um objeto que representa as propriedades atuais e resolvidas do componente.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -32,13 +32,13 @@ Um objeto que representa as props resolvidas atuais do componente.
 
 - **Detalhes**
 
-  Apenas props declarados através da opção [`props`](./options-state.html#props) serão incluídos. A instância do componente fornece acesso às propriedades em seu objeto props.
+  Apenas as propriedades declarados através da opção [`props`](./options-state#props) serão incluídas. A instância do componente delega o acesso às propriedades sobre o seu objeto de propriedades.
 
-## $el {#el}
+## `$el` {#el}
 
-O nó DOM raiz que a instância do componente está gerenciando.
+O nó de DOM de raiz que a instância do componente está gerir.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -50,19 +50,19 @@ O nó DOM raiz que a instância do componente está gerenciando.
 
   `$el` será `undefined` até o component ser [montado](./options-lifecycle#mounted).
 
-  - Para componentes com um único elemento raiz, `$el` apontará para esse elemento.
+  - Para componentes com um único elemento de raiz, `$el` apontará para este elemento.
   - Para componentes com raiz de texto, `$el` apontará para o nó de texto.
-  - Para componentes com vários nós raiz, `$el` será o espaço reservado para o nó DOM que o Vue usa para rastrear a posição do componente no DOM (um nó de texto ou um nó de comentário no modo de hidratação SSR).
+  - Para componentes com vários nós de raiz, `$el` será o nó de DOM de espaço reservado que a Vue usa para continuar a rastrear a posição do componente no DOM (um nó de texto ou um nó de comentário no modo de hidratação da interpretação no lado do servidor).
 
-  :::tip
-  Para consistência, é recomendado usar [refs de modelo](/guide/essentials/template-refs.html) para acesso direto aos elementos em vez de depender de `$el`.
+  :::tip DICA
+  Por questões consistência, é recomendado usar [referências de modelo de marcação](/guide/essentials/template-refs) para o acesso direto aos elementos em vez de depender de `$el`.
   :::
 
-## $options {#options}
+## `$options` {#options}
 
 As opções de componente resolvidas usadas para instanciar a instância do componente atual.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -72,13 +72,13 @@ As opções de componente resolvidas usadas para instanciar a instância do comp
 
 - **Detalhes**
 
-  O objeto `$options` expõe as opções resolvidas para o componente atual e é o resultado da mesclagem dessas possíveis fontes:
+  O objeto `$options` expõe as opções resolvidas para o componente atual e é o resultado da combinação destas possíveis fontes:
 
-  - Global mixins
-  - Componente `extends` base
-  - Componente mixins
+  - Misturas globais
+  - Base de `extends` do componente
+  - Misturas do componente
 
-  Normalmente é usado para oferecer suporte a opções de componentes personalizados:
+  É normalmente usado para suportar opções de componente personalizadas:
 
   ```js
   const app = createApp({
@@ -89,13 +89,13 @@ As opções de componente resolvidas usadas para instanciar a instância do comp
   })
   ```
 
-- **Veja também:** [`app.config.optionMergeStrategies`](/api/application.html#app-config-optionmergestrategies)
+- **Consulte também:** [`app.config.optionMergeStrategies`](/api/application#app-config-optionmergestrategies)
 
-## $parent {#parent}
+## `$parent` {#parent}
 
-A instância pai, se a instância atual tiver uma. Será `null` para a própria instância raiz.
+A instância pai, se a instância atual tiver uma. Será `null` para a própria instância de raiz.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -103,11 +103,11 @@ A instância pai, se a instância atual tiver uma. Será `null` para a própria 
   }
   ```
 
-## $root {#root}
+## `$root` {#root}
 
-A instância do componente raiz da árvore de componentes atual. Se a instância atual não tiver pais, esse valor será ele mesmo.
+A instância do componente de raiz da árvore do componente atual. Se a instância atual não tiver pais, este valor será ele próprio.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -115,11 +115,11 @@ A instância do componente raiz da árvore de componentes atual. Se a instância
   }
   ```
 
-## $slots {#slots}
+## `$slots` {#slots}
 
-Um objeto que representa os [slots](/guide/components/slots.html) transmitidos pelo componente pai.
+Um objeto que representa as [ranhuras](/guide/components/slots) passadas pelo componente pai.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -131,19 +131,19 @@ Um objeto que representa os [slots](/guide/components/slots.html) transmitidos p
 
 - **Detalhes**
 
-  Normalmente usado ao criar manualmente [funções de renderização](/guide/extras/render-function.html), mas também pode ser usado para detectar se um slot está presente.
+  Normalmente usada quando escrevemos manualmente [funções de interpretação](/guide/extras/render-function), mas também pode ser usada para detetar se uma ranhura está presente.
 
-  Cada slot é exposto em `this.$slots` como uma função que retorna um array de vnodes sob a chave correspondente ao nome desse slot. O slot padrão é exposto como `this.$slots.default`.
+  Cada ranhura é exposta sobre `this.$slots` como uma função que retorna um vetor de nós virtuais sob a chave correspondendo ao nome daquela ranhura. A ranhura padrão é exposta como `this.$slots.default`.
 
-  Se um slot for um [slot com escopo](/guide/components/slots.html#scoped-slots), os argumentos passados ​​para as funções do slot estarão disponíveis para o slot como seus suportes de slot.
+  Se uma ranhura for uma [ranhura isolada](/guide/components/slots#scoped-slots), os argumentos passados às funções da ranhura estão disponíveis à ranhura como suas propriedades de ranhura.
 
-- **Veja também:** [Funções de renderização - Slots de renderização](/guide/extras/render-function.html#rendering-slots)
+- **Consulte também:** [Funções de Interpretação - Interpretação de Ranhuras](/guide/extras/render-function#rendering-slots)
 
-## $refs {#refs}
+## `$refs` {#refs}
 
-Um objeto de elementos DOM e instâncias de componentes, registrados via [template refs](/guide/essentials/template-refs.html).
+Um objeto de elementos de DOM e as instâncias de componente, registadas através das [referências do modelo de marcação](/guide/essentials/template-refs).
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -151,16 +151,16 @@ Um objeto de elementos DOM e instâncias de componentes, registrados via [templa
   }
   ```
 
-- **Veja também:**
+- **Consulte também:**
 
-  - [Template refs](/guide/essentials/template-refs.html)
-  - [Atributos especiais - ref](./built-in-special-attributes.md#ref)
+  - [Referências do Modelo de Marcação](/guide/essentials/template-refs)
+  - [Atributos Especiais - `ref`](./built-in-special-attributes#ref)
 
-## $attrs {#attrs}
+## `$attrs` {#attrs}
 
-Um objeto que contém os atributos fallthrough do componente.
+Um objeto que contém os atributos de passagem do componente.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -170,19 +170,19 @@ Um objeto que contém os atributos fallthrough do componente.
 
 - **Detalhes**
 
-  [Atributos Fallthrough](/guide/components/attrs.html) são atributos e manipuladores de eventos passados ​​pelo componente pai, mas não declarados como prop ou evento emitido pelo filho.
+  [Atributos de Passagem](/guide/components/attrs) são atributos e manipuladores de eventos passados ​​pelo componente pai, mas não declarados como uma propriedade ou um evento emitido pelo filho.
 
-  Por padrão, tudo em `$attrs` será herdado automaticamente no elemento raiz do componente se houver apenas um único elemento raiz. Este comportamento é desativado se o componente tiver vários nós raiz e pode ser explicitamente desativado com a opção [`inheritAttrs`](./options-misc.html#inheritattrs).
+  Por padrão, tudo na `$attrs` será herdado automaticamente no elemento de raiz do componente se houver apenas um único elemento de raiz. Este comportamento é desativado se o componente tiver vários nós de raiz e pode ser explicitamente desativado com a opção [`inheritAttrs`](./options-misc#inheritattrs).
 
-- **Veja também:**
+- **Consulte também:**
 
-  - [Atributos Fallthrough](/guide/components/attrs.html)
+  - [Atributos de Passagem](/guide/components/attrs)
 
-## $watch() {#watch}
+## `$watch()` {#watch}
 
 API imperativa para criar observadores.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -200,9 +200,9 @@ API imperativa para criar observadores.
   ) => void
 
   interface WatchOptions {
-    immediate?: boolean // default: false
-    deep?: boolean // default: false
-    flush?: 'pre' | 'post' | 'sync' // default: 'pre'
+    immediate?: boolean // predefinida como: false
+    deep?: boolean // predefinida como: false
+    flush?: 'pre' | 'post' | 'sync' // predefinida como: 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
   }
@@ -212,43 +212,43 @@ API imperativa para criar observadores.
 
 - **Detalhes**
 
-  O primeiro argumento é a fonte do observador. Pode ser uma string de nome de propriedade de componente, uma string de caminho delimitada por ponto simples ou uma função getter.
+  O primeiro argumento é a fonte do observador. Pode ser uma sequência de caracteres do nome da propriedade do componente, uma simples sequência de caracteres do caminho delimitada por ponto, ou uma função recuperadora.
 
-  O segundo argumento é a função de callback. O callback recebe o novo valor e o valor antigo da fonte observada.
+  O segundo argumento é a função de resposta. A função de resposta recebe o novo valor e o valor antigo da fonte observada.
 
-  - **`immediate`**: acionar o callback imediatamente na criação do observador. O valor antigo será `undefined` na primeira chamada
-  - **`deep`**: força a travessia profunda da fonte se for um objeto, de modo que o callback seja acionado em mutações profundas. Veja [Deep Watchers](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`**: ajuste o tempo de liberação do callback. Consulte [Tempo de recarga de Callback](/guide/essentials/watchers.html#callback-flush-timing) e [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`**: debug das dependências do observador. Veja [Debugging do Observador](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`immediate`**: aciona a função de resposta imediatamente na criação do observador. O valor antigo será `undefined` na primeira chamada.
+  - **`deep`**: força a travessia profunda da fonte se for um objeto, para que a função de resposta dispare sobre as mutações profundas. Consulte [Observadores Profundos](/guide/essentials/watchers#deep-watchers).
+  - **`flush`**: ajusta o tempo de descarga da função de resposta. Consulte [Tempo de Descarga da Função de Resposta](/guide/essentials/watchers#callback-flush-timing) e [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: depura as dependências do observador. Consulte [Depuração do Observador](/guide/extras/reactivity-in-depth#watcher-debugging).
 
 - **Exemplo**
 
-  Observe um nome de propriedade:
+  Observar um nome de propriedade:
 
   ```js
   this.$watch('a', (newVal, oldVal) => {})
   ```
 
-  Observe um caminho delimitado por pontos:
+  Observar um caminho delimitado por ponto:
 
   ```js
   this.$watch('a.b', (newVal, oldVal) => {})
   ```
 
-  Usando getter para expressões mais complexas:
+  Usar função recuperadora para expressões mais complexas:
 
   ```js
   this.$watch(
-    // toda vez que a expressão `this.a + this.b` retorna
+    // sempre que a expressão `this.a + this.b` retornar
     // um resultado diferente, o manipulador será chamado.
     // É como se estivéssemos observando uma propriedade computada
-    // sem definir a própria propriedade calculada.
+    // sem definir a própria propriedade computada.
     () => this.a + this.b,
     (newVal, oldVal) => {}
   )
   ```
 
-  Parando o observador:
+  Parar o observador:
 
   ```js
   const unwatch = this.$watch('a', cb)
@@ -257,15 +257,15 @@ API imperativa para criar observadores.
   unwatch()
   ```
 
-- **Veja também:**
-  - [Opções - `watch`](/api/options-state.html#watch)
-  - [Guia - Observadores](/guide/essentials/watchers.html)
+- **Consulte também:**
+  - [Opções - `watch`](/api/options-state#watch)
+  - [Guia - Observadores](/guide/essentials/watchers)
 
-## $emit() {#emit}
+## `$emit()` {#emit}
 
-Acione um evento personalizado na instância atual. Quaisquer argumentos adicionais serão passados ​​para o callback do ouvinte.
+Aciona um evento personalizado na instância atual. Quaisquer argumentos adicionais serão passados à função de resposta do ouvinte.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -286,16 +286,16 @@ Acione um evento personalizado na instância atual. Quaisquer argumentos adicion
   }
   ```
 
-- **Veja também:**
+- **Consulte também:**
 
-  - [Componente - Eventos](/guide/components/events.html)
-  - [`emits` opção](./options-state.html#emits)
+  - [Componente - Eventos](/guide/components/events)
+  - [Opção `emits`](./options-state#emits)
 
-## $forceUpdate() {#forceupdate}
+## `$forceUpdate()` {#forceupdate}
 
-Force a instância do componente a renderizar novamente.
+Força a instância do componente à desenhar novamente
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -305,13 +305,13 @@ Force a instância do componente a renderizar novamente.
 
 - **Detalhes**
 
-  Isso deve ser raramente necessário, dado o sistema de reatividade totalmente automático do Vue. Os únicos casos em que você pode precisar dele são quando você criou explicitamente um estado de componente não reativo usando APIs de reatividade avançada.
+  Isto deve ser raramente necessário dado o sistema de reatividade totalmente automático da Vue. Os únicos casos em que podemos precisar dela é quando críamos explicitamente um estado de componente que não é reativo usando APIs de reatividade avançadas.
 
-## $nextTick() {#nexttick}
+## `$nextTick()` {#nexttick}
 
-Versão vinculada à instância do global [`nextTick()`](./general.html#nexttick).
+Versão vinculada à instância da [`nextTick()`](./general#nexttick) global.
 
-- **Type**
+- **Tipo**
 
   ```ts
   interface ComponentPublicInstance {
@@ -321,6 +321,6 @@ Versão vinculada à instância do global [`nextTick()`](./general.html#nexttick
 
 - **Detalhes**
 
-  A única diferença da versão global de `nextTick()` é que o retorno de chamada passado para `this.$nextTick()` terá seu contexto `this` vinculado à instância do componente atual.
+  A única diferença da versão global de `nextTick()` é que a função de resposta passada à `this.$nextTick()` terá o seu contexto `this` vinculado à instância do componente atual.
 
-- **Veja também:** [`nextTick()`](./general.html#nexttick)
+- **Consulte também:** [`nextTick()`](./general#nexttick)
