@@ -269,13 +269,13 @@
     "logo": "herodevs.png",
     "flipLogo": true,
     "hero": "herodevs-hero.png",
-    "intro": "End-of-life of open source software versions creates massive challenges for companies. HeroDevs offers two solutions: (1) We provide never-ending support for sunsetted open source software, and (2)  we provide consulting and engineering to help companies migrate to in-support open source software.",
+    "intro": "O fim de vida do software de código-aberto cria enormes desafios para as empresas. A HeroDevs oferece duas soluções: (1) Nós fornecemos interminável para software de código-aberto aberto encerrado, e (2) Nós fornecemos consultoria e engenharia para ajudar as empresas a migrarem para software de código-aberto de apoio.",
     "description": [
-      "When open source software is reaching end-of-life, you’re faced with a difficult decision: do you spend months or years of dev time migrating your code, or do you risk being non-compliant with industry regulations and your company’s SLAs?",
-      "At HeroDevs we pride ourselves in being the experts that help you navigate end-of-life events in your technology stack. Companies offering enterprise support for open source libraries stop at the end of life. That’s where our value prop begins with our Never-Ending Support (NES) products. Our team has not only provided over 450 organizations with supported, secured versions of open source software beyond their end of life, but has also helped dozens of companies migrate their codebase to a modern, supported open source stack.",
-      "With all NES Products we offer: continuous source code scanning for vulnerabilities, 5-minute installation without leaving your network, scanning for possible IP infringement in your code, and checks for platform, browser and 3rd-party library compatibility.",
-      "Need to migrate? HeroDevs can help with that too. Hire our team of experts to help you navigate the challenges that come with migrating your code.",
-      "Want to learn more? Find us at herodevs.com or send us a note at hello@herodevs.com."
+      "Quando o software de código-aberto estiver a alcançar o fim da vida útil, és confrontado com uma decisão difícil: investes meses ou anos de tempo de desenvolvimento migrando o teu código, ou arriscas a não estar em conformidade com os regulamentos da industria e os acordos de nível de serviço da tua empresa?",
+      "Na HeroDevs nos orgulhamos em sermos os especialistas que ajudam-te a navegar eventos de fim de vida útil na tua pilha de tecnologia. As empresas que oferecem suporte empresarial para bibliotecas de código-aberto param no final da vida útil. É onde a nossa proposta de valor começa com os nossos produtos de Suporte Interminável. Nossa equipa tem não somente fornecido mais de 450 organizações com versões suportadas e seguras de software de código-aberto além do seu fim de vida útil, mas também tem ajudado dezenas de empresas a migrarem sua base de código para uma pilha de código-aberto suportada e moderna.",
+      "Com os nossos Produtos de Suporte Interminável oferecemos: analise contínua do código-fonte para detetar vulnerabilidades, instalação de 5 minutos sem sair da tua rede, analise de possíveis infrações de propriedade intelectual no teu código-fonte, verificações para a plataforma, navegador e compatibilidade de biblioteca de terceiro.",
+      "Precisas de migrar? HeroDevs também pode ajudar com isto. Contrate a nossa equipa de especialistas para ajudarem-te a navegar os desafios que surgem com a migração do teu código.",
+      "Queres saber mais? Encontre-nos em herodevs.com ou envie-nos uma nota em hello@herodevs.com."
     ],
     "proficiencies": ["Vue", "Angular", "Migration", "EOL Support"],
     "region": ["América do Norte"],
