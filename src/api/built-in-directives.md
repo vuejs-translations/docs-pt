@@ -309,7 +309,8 @@ Vincula dinamicamente um ou mais atributos, ou uma propriedade de componente à 
   <!-- vincular um objeto de atributos -->
   <div v-bind="{ id: someProp, 'other-attr': otherProp }"></div>
 
-  <!-- vincular propriedades. "prop" deve ser declarada no componente filho. -->
+  <!-- vincular propriedades. -->
+  <!-- "prop" deve ser declarada no componente filho. -->
   <MyComponent :prop="someThing" />
 
   <!-- passar as propriedades do pai em comum com um componente filho -->
