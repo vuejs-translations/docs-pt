@@ -1,16 +1,16 @@
 # Atributos Especiais Embutidos {#built-in-special-attributes}
 
-## key {#key}
+## `key` {#key}
 
-O atributo especial `key` é usado principalmente como uma dica para o algoritmo de DOM virtual do Vue identificar vnodes ao comparar a nova lista de nós com a velha lista.
+O atributo especial `key` é primariamente usado como uma sugestão para o algoritmo do DOM virtual da Vue identificar os nós virtuais quando diferenciar a nova lista de nós contra a antiga lista.
 
 - **Espera:** `number | string | symbol`
 
 - **Detalhes**
 
-  Sem as chaves, Vue usa um algoritmo que minimiza a movimentação de elementos e tenta corrigir/reusar elementos do mesmo tipo no local, tanto quanto possível. Com chaves, ele reordenará elementos com base na alteração da ordem das chaves, e os elementos com chaves que não estão mais presentes sempre serão removidos/destruídos.
+  Sem chaves, a Vue usa um algoritmo que minimiza o movimento de elemento e tenta remendar ou reusar elementos do mesmo tipo no lugar o máximo possível. Com chaves, reorganizará os elementos baseado na mudança de ordem das chaves, e os elementos com chaves que não estão mais presentes sempre serão removidos ou destruídos.
 
-  Filhos do mesmo pai comum devem ter **chaves únicas**. Chaves duplicadas causarão erros de apresentação.
+  Os filhos do mesmo pai comum devem ter **chaves únicas**. As chaves duplicadas causarão erros de interpretação.
 
   O caso de uso mais comum é combinado com `v-for`:
 
@@ -20,9 +20,9 @@ O atributo especial `key` é usado principalmente como uma dica para o algoritmo
   </ul>
   ```
 
-  Também pode ser usado para forçar a substituição de um elemento/componente em vez de reutilizá-lo. Isso pode ser útil quando você deseja:
+  Também pode ser usado para forçar a substituição dum elemento ou componente ao invés de reusá-lo. Isto pode ser útil quando queremos:
 
-  - Acionar corretamente gatilhos de ciclo de vida de um componente
+  - Acionar corretamente os gatilhos do ciclo de vida dum componente
   - Acionar transições
 
   Por exemplo:
@@ -33,28 +33,28 @@ O atributo especial `key` é usado principalmente como uma dica para o algoritmo
   </transition>
   ```
 
-  Quando `text` mudar, o `<span>` sempre será substituído ao invés de alterado, então uma transição será acionada.
+  Quando `text` mudar, o `<span>` sempre será substituído ao invés de ser remendado, depois uma transição será acionada.
 
-- **Veja também:** [Guia - Interpretação de Lista - Mantendo o Estado com `key`](/guide/essentials/list.html#maintaining-state-with-key)
+- **Consulte também** [Guia - Interpretação de Lista - Mantendo o Estado com `key`](/guide/essentials/list#maintaining-state-with-key)
 
-## ref {#ref}
+## `ref` {#ref}
 
-Denota uma [referência do modelo de marcação](/guide/essentials/template-refs.html).
+Denota uma [referência do modelo de marcação](/guide/essentials/template-refs).
 
 - **Espera:** `string | Function`
 
 - **Detalhes**
 
-  `ref` é usado para registrar uma referência a um elemento ou a um componente filho.
+  `ref` é usado para registar uma referência à um elemento ou à um componente filho.
 
-  Na API de Opções, a referência será registrada sob o objeto `this.$refs` do componente:
+  Na API de Opções, a referência será registada sob o objeto `this.$refs` do componente:
 
   ```vue-html
   <!-- armazenado como this.$refs.p -->
   <p ref="p">hello</p>
   ```
 
-  Na API de Composição, a referência será armazenada em uma ref com o nome compatível:
+  Na API de Composição, a referência será armazenada em uma `ref` com o nome correspondente:
 
   ```vue
   <script setup>
@@ -68,34 +68,34 @@ Denota uma [referência do modelo de marcação](/guide/essentials/template-refs
   </template>
   ```
 
-  Se usado em um elemento DOM simples, a referência será aquele elemento; se usado em um componente filho, a referência será a instância do componente filho.
+  Se usado sobre um elemento de DOM simples, a referência será este elemento; se usada sobre um componente filho, a referência será a instância do componente filho.
 
-  Alternativamente `ref` pode aceitar um valor de função que fornece controle total de onde armazenar a referência:
+  Alternativamente, a `ref` pode aceitar um valor de função que fornece controlo total sobre onde armazenar a referência:
 
   ```vue-html
   <ChildComponent :ref="(el) => child = el" />
   ```
 
-  Uma nota importante sobre o tempo de registro de ref: como refs são criadas pelo resultado de uma função _render_, você deve aguardar até que o componente seja montado antes de acessá-las.
+  Uma nota importante sobre o tempo de registo da referência: uma vez que as próprias referências são criadas como resultado da função de interpretação, devemos esperar até o componente ser montado antes de acessá-las.
 
-  `this.$refs` não é reativo, portanto você não deve tentar usar em modelos para vincular dados.
+  `this.$refs` também não é reativa, portanto não devemos tentar usá-la nos modelos de marcação para vínculo de dados.
 
-- **Veja também:**
-  - [Guia - Referências do Modelo de Marcação](/guide/essentials/template-refs.html)
-  - [Guia - Atribuindo Tipos as Referências do Modelo de Marcação](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
-  - [Guia - Tipos as Referências do Modelo de Marcação de Componente](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
+- **Consulte também**
+  - [Guia - Referências do Modelo de Marcação](/guide/essentials/template-refs)
+  - [Guia - Tipos para Referências do Modelo de Marcação](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" data-text="typescript" />
+  - [Guia - Tipos para Referências do Modelo de Marcação do Componente](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" data-text="typescript" />
 
-## is {#is}
+## `is` {#is}
 
-Usado para vincular [componentes dinâmicos](/guide/essentials/component-basics.html#dynamic-components).
+Usado para vincular os [componentes dinâmicos](/guide/essentials/component-basics#dynamic-components).
 
 - **Espera:** `string | Component`
 
-- **Uso em elementos nativos** <sup class="vt-badge">3.1+</sup>
+- **Uso sobre os elementos nativos** <sup class="vt-badge">3.1+</sup>
 
-  Quando o atributo `is` é usado em um elemento HTML nativo, ele será interpretado como um [Elemento embutido personalizado](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), que é um recurso nativo da plataforma web.
+  Quando o atributo `is` for usado sobre um elemento de HTML nativo, será interpretado como um [elemento embutido personalizado](https://html.spec.whatwg.org/multipage/custom-elements#custom-elements-customized-builtin-example), que é uma funcionalidade da plataforma da Web nativa.
 
-  Há, no entanto, um caso de uso em que você pode precisar do Vue para substituir um elemento nativo por um componente Vue, conforme explicado em [Advertências de Analise de Modelo de Marcação de DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats). Você pode prefixar o valor do atributo `is` com o atributo `vue:` para que o Vue apresente o elemento como um componente Vue:
+  Existe, no entanto, um caso de uso onde podemos precisar que a Vue substitua um elemento nativo por um elemento da Vue, como explicado nas [Advertências de Analise do Modelo de Marcação de DOM](/guide/essentials/component-basics#dom-template-parsing-caveats). Nós podemos prefixar o valor do atributo `is` com `vue:` assim a Vue interpretará o elemento como um componente de Vue:
 
   ```vue-html
   <table>
@@ -103,7 +103,7 @@ Usado para vincular [componentes dinâmicos](/guide/essentials/component-basics.
   </table>
   ```
 
-- **Veja também:**
+- **Consulte também**
 
-  - [Elementos Especiais Embutidos - `<component>`](/api/built-in-special-elements.html#component)
-  - [Componentes Dinâmicos](/guide/essentials/component-basics.html#dynamic-components)
+  - [Elementos Especiais Embutidos - `<component>`](/api/built-in-special-elements#component)
+  - [Componentes Dinâmicos](/guide/essentials/component-basics#dynamic-components)
