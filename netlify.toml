@@ -3,4 +3,4 @@
 
 [build]
   publish = ".vitepress/dist"
-  command = "corepack prepare --activate pnpm@latest; pnpm run build"
+  command = "pnpm run build"
