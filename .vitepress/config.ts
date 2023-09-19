@@ -12,7 +12,7 @@ const nav: ThemeConfig['nav'] = [
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
     items: [
       { text: 'Guia', link: '/guide/introduction' },
-      { text: 'Passo-a-Passo', link: '/tutorial/' },
+      { text: 'Iniciação', link: '/tutorial/' },
       { text: 'Exemplos', link: '/examples/' },
       { text: 'Introdução Rápida', link: '/guide/quick-start' },
       // { text: 'Guia de Estilo', link: '/style-guide/' },
@@ -33,7 +33,7 @@ const nav: ThemeConfig['nav'] = [
     link: '/api/'
   },
   {
-    text: 'Zona de Experimentos',
+    text: 'Zona de Testes',
     link: 'https://play.vuejs.org'
   },
   {
@@ -681,7 +681,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         text: 'Licença MIT',
         link: 'https://opensource.org/licenses/MIT'
       },
-      copyright: `Direitos de autor © 2014-${new Date().getFullYear()} Evan You`
+      copyright: `Direitos de Autor © 2014-${new Date().getFullYear()} Evan You`
     }
   },
 
