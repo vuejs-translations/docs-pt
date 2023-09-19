@@ -245,26 +245,6 @@
     "hiring": "https://dreamonkey.com/en/work-with-us"
   },
   {
-    "name": "Jump24",
-    "logo": "jump24.svg",
-    "flipLogo": true,
-    "hero": "jump24-hero.jpg",
-    "intro": "Software feito a mão, entregado. Nós trabalhamos ao lado das empresas em formação, empresas constituídas e equipas de tecnologia criando soluções de software de Web feitos à medida que as ajudarão a crescer. Polindo as nossas habilidades desde 2013, a nossa força está na nossa equipa. Nós desenhamos e construímos aplicações personalizadas ao mais alto padrão, assim podes colher os ganhos.",
-    "description": [
-      "Jump24 é um estúdio de desenvolvimento de ciclo completo que trás ideas à vida. A partir da nossa base no Reino Unido, trabalhamos bem de perto por anos com clientes na Europa e nos Estados Unidos, incluindo Jamie Oliver, Admiral, InPost e Buffer. Com uma equipa de 16 programadores, estarás em boas mãos connosco.",
-      "Relacionamentos duradouros são a nossa especialidade. Sejas uma empresa em formação, empresa constituída ou agência, a tua história é importante para nós. Nós concentramos nos mais ínfimos pormenores para ajudar a criar algo que te reflita e ao teu negócio.",
-      "Somos um grupo de faladores, então para saberes mais sobre nós, siga para o nosso Twitter e LinkedIn."
-    ],
-    "proficiencies": ["Vue", "Laravel", "Tailwind", "Inertia", "React"],
-    "region": ["Europa"],
-    "website": {
-      "text": "jump24.co.uk",
-      "url": "https://jump24.co.uk/vue-specialist/"
-    },
-    "contact": "hello@jump24.co.uk",
-    "hiring": "jump24.co.uk/careers"
-  },
-  {
     "name": "HeroDevs",
     "logo": "herodevs.png",
     "flipLogo": true,
