@@ -53,7 +53,7 @@ A equipa da Vue também mantém um gerador de aplicação estática chamado [Vit
 
 Embora a Vue esteja primariamente desejada para a construção de aplicações de web, de maneira nenhuma esta limitada apenas ao navegador. Tu podes:
 
-- Construir aplicações de secretária com a [Electron](https://www.electronjs.org/) ou [Tauri](https://tauri.studio/en/)
+- Construir aplicações desktop com [Electron](https://www.electronjs.org/) ou [Tauri](https://tauri.studio/en/)
 - Construir aplicações móveis com a [Ionic Vue](https://ionicframework.com/docs/vue/overview)
-- Construir aplicações de secretária e móveis a partir da mesma base de código com a [Quasar](https://quasar.dev/)
+- Construir aplicações desktop e móveis a partir da mesma base de código com [Quasar](https://quasar.dev/)
 - Use a [API do Interpretador Personalizada](/api/custom-renderer) da Vue para construir interpretadores personalizados apontando para [WebGL](https://troisjs.github.io/) ou mesmo [o terminal](https://github.com/ycmjason/vuminal)!
