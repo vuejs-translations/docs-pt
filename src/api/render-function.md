@@ -1,10 +1,10 @@
-# APIs de Função de Renderização {#render-function-apis}
+# APIs da Função de Interpretação {#render-function-apis}
 
-## h() {#h}
+## `h()` {#h}
 
-Cria nós de virtual DOM (vnodes).
+Cria nós do DOM virtual (vnodes).
 
-- **Type**
+- **Tipo**
 
   ```ts
   // assinatura completa
@@ -14,7 +14,7 @@ Cria nós de virtual DOM (vnodes).
     children?: Children | Slot | Slots
   ): VNode
 
-  // omitindo propiedades
+  // omitindo propriedades
   function h(type: string | Component, children?: Children | Slot): VNode
 
   type Children = string | number | boolean | VNode | null | Children[]
@@ -24,15 +24,15 @@ Cria nós de virtual DOM (vnodes).
   type Slots = { [name: string]: Slot }
   ```
 
-  > Os tipos são simplificados para facilitar a leitura.
+  > Os tipos foram simplificados para fins de legibilidade.
 
 - **Detalhes**
 
-  O primeiro argumento pode ser uma string (para elementos nativos) ou uma definição de componente Vue. O segundo argumento são os propriedades a serem passadas ​​e o terceiro argumento são os filhos.
+  O primeiro argumento pode ser ou uma sequência de caracteres (para os elementos nativos) ou uma definição de componente da Vue. O segundo argumento são as propriedades à serem passadas, e o terceiro são os filhos.
 
-  Ao criar um vnode de componente, os filhos devem ser passados ​​como funções de slot. Uma única função de slot pode ser passada se o componente esperar apenas o slot padrão. Caso contrário, os slots devem ser passados ​​como um objeto de funções de slot.
+  Quando criamos um nó virtual de componente, os filhos devem ser passados como funções de ranhura. Uma única função de ranhura pode ser passada se o componente esperar apenas a ranhura padrão. De outro modo, as ranhuras devem ser passadas como um objeto de funções de ranhura.
 
-  Por conveniência, o argumento de propriedades pode ser omitido quando o filho não for um objeto slots.
+  Por conveniência, o argumento de propriedades pode ser omitido quando os filhos não forem um objeto de ranhuras.
 
 - **Exemplo**
 
@@ -46,24 +46,25 @@ Cria nós de virtual DOM (vnodes).
   h('div', { id: 'foo' })
 
   // ambos atributos e propriedades podem ser usados ​​em propriedades
-  // Vue escolhe automaticamente o caminho certo para atribuí-los
+  // a Vue escolhe automaticamente a maneira correta de atribuí-los
   h('div', { class: 'bar', innerHTML: 'hello' })
 
-  // class e style tem o mesmo object / array
-  // suporte de valor como em templates
+  // `class` e `style` têm o mesmo objeto ou vetor
+  // suporte de valor tal como nos modelos de marcação
   h('div', { class: [foo, { bar }], style: { color: 'red' } })
 
-  // event listeners devem ser passados como onXxx
+  // os ouvintes de evento devem ser passados como `onXxx`
   h('div', { onClick: () => {} })
 
-  // filhos podem ser uma string
+  // os filhos podem ser uma sequência de caracteres
   h('div', { id: 'foo' }, 'hello')
 
-  // propriedades podem ser omitidos quando não há propriedades
+  // as propriedades podem ser omitidas quando não existirem propriedades
   h('div', 'hello')
   h('div', [h('span', 'hello')])
 
-  // o array de filhos pode conter vnodes e strings misturados
+  // o vetor de filhos pode conter nós virtuais e
+  // sequências de caracteres misturados
   h('div', ['hello', h('span', 'hello')])
   ```
 
@@ -74,18 +75,18 @@ Cria nós de virtual DOM (vnodes).
 
   // passando propriedades
   h(Foo, {
-    // equivalente a some-prop="hello"
+    // equivalente de `some-prop="hello"`
     someProp: 'hello',
-    // equivalente a @update="() => {}"
+    // equivalente de `@update="() => {}"`
     onUpdate: () => {}
   })
 
-  // passando default slot único
+  // passando a única ranhura padrão
   h(Foo, () => 'default slot')
 
-  // passando slots nomeados
-  // observe que o `null` é necessário para evitar
-  // que o objeto slots seja tratado como propriedades
+  // passando ranhuras nomeadas
+  // repara que o `null` é obrigatório para evitar
+  // que o objeto de ranhuras seja tratado como propriedades
   h(MyComponent, null, {
     default: () => 'default slot',
     foo: () => h('div', 'foo'),
@@ -93,13 +94,13 @@ Cria nós de virtual DOM (vnodes).
   })
   ```
 
-- **Veja também:** [Guia - Funções de Renderização - Criando VNodes](/guide/extras/render-function.html#creating-vnodes)
+- **Consulte também** [Guia - Funções de Interpretação - Criando Nós Virtuais](/guide/extras/render-function#creating-vnodes)
 
-## mergeProps() {#mergeprops}
+## `mergeProps()` {#mergeprops}
 
-Mesclar vários objetos de propriedades com tratamento especial para determinadas propriedades.
+Combina vários objetos de propriedades com tratamento especial para certas propriedades.
 
-- **Type**
+- **Tipo**
 
   ```ts
   function mergeProps(...args: object[]): object
@@ -111,9 +112,9 @@ Mesclar vários objetos de propriedades com tratamento especial para determinada
 
   - `class`
   - `style`
-  - `onXxx` event listeners - vários listeners com o mesmo nome serão mesclados em um array.
+  - Ouvintes de evento `onXxx` - vários ouvintes com o mesmo nome serão combinados num vetor.
 
-  Se você não precisa do comportamento de mesclagem e deseja substituições simples, a dispersão de objetos nativos pode ser usada.
+  Se não precisarmos do comportamento de combinação e quisermos substituições simples, q propagação de objeto nativo pode ser usada.
 
 - **Exemplo**
 
@@ -139,11 +140,11 @@ Mesclar vários objetos de propriedades com tratamento especial para determinada
    */
   ```
 
-## cloneVNode() {#clonevnode}
+## `cloneVNode()` {#clonevnode}
 
-Clona um vnode.
+Clona um nó virtual.
 
-- **Type**
+- **Tipo**
 
   ```ts
   function cloneVNode(vnode: VNode, extraProps?: object): VNode
@@ -151,11 +152,11 @@ Clona um vnode.
 
 - **Detalhes**
 
-  Retorna um vnode clonado, opcionalmente com propriedades extras para mesclar com o original.
+  Retorna um nó virtual clonado, opcionalmente com propriedades adicionais para combinar com o original.
 
-  Os Vnodes devem ser considerados imutáveis ​​depois de criados e você não deve modificar as propriedades de um vnode existente. Em vez disso, clone-o com propriedades diferentes/extras.
+  Uma vez criados os nós virtuais devem ser considerados imutáveis e não devemos mudar as propriedades dum nó virtual existente. Ao invés disto, o clonamos com propriedades diferentes ou adicionais.
 
-  Os Vnodes têm propriedades internas especiais, portanto, cloná-los não é tão simples quanto um object spread. `cloneVNode()` lida com a maior parte da lógica interna.
+  Os nós virtuais têm propriedades internas especiais, então cloná-los não tão simples quando uma propagação de objeto. `cloneVNode()` manipula a maioria da lógica interna.
 
 - **Exemplo**
 
@@ -166,21 +167,21 @@ Clona um vnode.
   const cloned = cloneVNode(original, { id: 'foo' })
   ```
 
-## isVNode() {#isvnode}
+## `isVNode()` {#isvnode}
 
-Verifica se um valor é um vnode.
+Verifica se um valor é um nó virtual.
 
-- **Type**
+- **Tipo**
 
   ```ts
   function isVNode(value: unknown): boolean
   ```
 
-## resolveComponent() {#resolvecomponent}
+## `resolveComponent()` {#resolvecomponent}
 
-Para resolver manualmente um componente registrado por nome.
+Para resolver manualmente um componente registado por nome.
 
-- **Type**
+- **Tipo**
 
   ```ts
   function resolveComponent(name: string): Component | string
@@ -188,11 +189,11 @@ Para resolver manualmente um componente registrado por nome.
 
 - **Detalhes**
 
-  **Nota: você não precisa disso se puder importar o componente diretamente.**
+  **Nota: não precisamos disto se pudermos importar o componente diretamente.**
 
-  `resolveComponent()` deve ser chamado dentro <span class="composition-api"> de cada `setup()` ou</span> da função render para resolver a partir do contexto de componente correto.
+  `resolveComponent()` deve ser chamada dentro <span class="composition-api">da `setup()` ou</span> da função de interpretação no sentido de resolver a partir do contexto do componente correto.
 
-  Se o componente não for encontrado, um aviso de tempo de execução será emitido e a string do nome será retornada.
+  Se o componente não for encontrado, um aviso de execução será emitido, e a sequência de caracteres do nome é retornada.
 
 - **Exemplo**
 
@@ -228,13 +229,13 @@ Para resolver manualmente um componente registrado por nome.
 
   </div>
 
-- **Veja também:** [Guia - Funções de Renderização - Componentes](/guide/extras/render-function.html#components)
+- **Consulte também** [Guia - Funções de Interpretação - Componentes](/guide/extras/render-function#components)
 
-## resolveDirective() {#resolvedirective}
+## `resolveDirective()` {#resolvedirective}
 
-Para resolver manualmente uma diretiva registrada por nome.
+Para resolver manualmente uma diretiva registada por nome.
 
-- **Type**
+- **Tipo**
 
   ```ts
   function resolveDirective(name: string): Directive | undefined
@@ -242,19 +243,19 @@ Para resolver manualmente uma diretiva registrada por nome.
 
 - **Detalhes**
 
-  **Nota: você não precisa disso se pode importar o componente diretamente.**
+  **Nota: não precisamos disto se pudermos importar a diretiva diretamente.**
 
-  `resolveDirective()` deve ser chamado dentro <span class="composition-api"> de `setup()` ou</span> da função de renderização para resolver a partir do contexto de componente correto.
+  `resolveDirective()` dever chamada dentro <span class="composition-api">da `setup()` ou</span> da função de interpretação no sentido de resolver a partir do contexto do componente correto.
 
-  Se a diretiva não for encontrada, um aviso de tempo de execução será emitido e a função retornará `undefined`.
+  Se a diretiva não for encontrada, um aviso de execução será emitido, e a função retorna `undefined`.
 
-- **Veja também:** [Guia - Funções de renderização - Diretivas customizadas](/guide/extras/render-function.html#custom-directives)
+- **Consulte também** [Guia - Funções de Interpretação - Diretivas Personalizadas](/guide/extras/render-function#custom-directives)
 
-## withDirectives() {#withdirectives}
+## `withDirectives()` {#withdirectives}
 
-Para adicionar diretiva customizada ao vnodes.
+Para adicionar diretivas personalizadas aos nós virtuais.
 
-- **Type**
+- **Tipo**
 
   ```ts
   function withDirectives(
@@ -273,14 +274,14 @@ Para adicionar diretiva customizada ao vnodes.
 
 - **Detalhes**
 
-  Envolve um vnode existente com diretivas personalizadas. O segundo argumento é uma matriz de diretivas personalizadas. Cada diretiva personalizada também é representada como uma matriz na forma de `[Directive, value, argument, modifiers]`. Os elementos finais da matriz podem ser omitidos se não forem necessários.
+  Envolve um nó virtual existente com as diretivas personalizadas. O segundo argumento é um vetor de diretivas personalizadas. Cada diretiva personalizada é também representada como um vetor na forma de `[Directive, value, argument, modifiers]`. Os últimos elementos do vetor podem ser omitidos se não forem necessários.
 
 - **Exemplo**
 
   ```js
   import { h, withDirectives } from 'vue'
 
-  // uma diretiva customizada
+  // uma diretiva personalizada
   const pin = {
     mounted() {
       /* ... */
@@ -296,13 +297,13 @@ Para adicionar diretiva customizada ao vnodes.
   ])
   ```
 
-- **Veja também:** [Guia - Funções de Renderização - Diretivas Customizadas](/guide/extras/render-function.html#custom-directives)
+- **Consulte também** [Guia - Funções de Interpretação - Diretivas Personalizadas](/guide/extras/render-function#custom-directives)
 
-## withModifiers() {#withmodifiers}
+## `withModifiers()` {#withmodifiers}
 
-Para adicionar [modificadores `v-on`](/guide/essentials/event-handling.html#event-modifiers) integrados a uma função de manipulação de eventos.
+Para adicionar [modificadores de `v-on`](/guide/essentials/event-handling#event-modifiers) embutidos à uma função manipuladora de eventos.
 
-- **Type**
+- **Tipo**
 
   ```ts
   function withModifiers(fn: Function, modifiers: string[]): Function
@@ -314,11 +315,11 @@ Para adicionar [modificadores `v-on`](/guide/essentials/event-handling.html#even
   import { h, withModifiers } from 'vue'
 
   const vnode = h('button', {
-    // equivalente a v-on:click.stop.prevent
+    // equivalente de `v-on:click.stop.prevent`
     onClick: withModifiers(() => {
       // ...
     }, ['stop', 'prevent'])
   })
   ```
 
-- **Veja também:** [Guia - Funções de Renderização - Modificadores de evento](/guide/extras/render-function.html#event-modifiers)
+- **Consulte também** [Guia - Funções de Interpretação - Modificadores de Evento](/guide/extras/render-function#event-modifiers)
