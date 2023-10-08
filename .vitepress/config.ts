@@ -246,7 +246,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         },
         { text: 'Testes', link: '/guide/scaling-up/testing' },
         {
-          text: 'Interpretação no Lado do Servidor',
+          text: 'Interpretação do Lado do Servidor',
           link: '/guide/scaling-up/ssr'
         }
       ]
@@ -275,7 +275,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'TypeScript',
       items: [
-        { text: 'Visão de Conjunto', link: '/guide/typescript/overview' },
+        { text: 'Visão Geral', link: '/guide/typescript/overview' },
         {
           text: 'TypeScript com a API de Composição',
           link: '/guide/typescript/composition-api'
@@ -412,8 +412,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'APIs Avançadas',
       items: [
         { text: 'Função de Interpretação', link: '/api/render-function' },
-        { text: 'Interpretação no Lado do Servidor', link: '/api/ssr' },
-        { text: 'Tipos Utilitários de TypeScript', link: '/api/utility-types' },
+        { text: 'Interpretação do Lado do Servidor', link: '/api/ssr' },
+        { text: 'Tipos de Utilitários de TypeScript', link: '/api/utility-types' },
         { text: 'Interpretador Personalizado', link: '/api/custom-renderer' }
       ]
     }
@@ -435,11 +435,11 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#attribute-bindings'
         },
         {
-          text: 'Condicionais e Laços',
+          text: 'Condicionais e Laços de Repetição',
           link: '/examples/#conditionals-and-loops'
         },
         {
-          text: 'Vinculações de Formulário',
+          text: 'Vínculos de Formulário',
           link: '/examples/#form-bindings'
         },
         {
@@ -460,7 +460,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#fetching-data'
         },
         {
-          text: 'Grade com Ordenar e Filtrar',
+          text: 'Grade com Ordenação e Filtração',
           link: '/examples/#grid'
         },
         {
@@ -525,7 +525,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Guia de Estilo',
       items: [
         {
-          text: 'Visão de Conjunto',
+          text: 'Visão Geral',
           link: '/style-guide/'
         },
         {
