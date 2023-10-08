@@ -22,7 +22,8 @@ Cria um interpretador personalizado. Ao fornecer criação de nó específico de
       key: string,
       prevValue: any,
       nextValue: any,
-      // o resto não é usado pela maioria dos interpretadores personalizados
+      // o resto não é usado pela maioria dos
+      // interpretadores personalizados
       isSVG?: boolean,
       prevChildren?: VNode<HostNode, HostElement>[],
       parentComponent?: ComponentInternalInstance | null,
