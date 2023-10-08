@@ -1,8 +1,8 @@
 # API de Interpretação Personalizada {#custom-renderer-api}
 
-## createRenderer() {#createrenderer}
+## `createRenderer()` {#createrenderer}
 
-Cria um intepretador personalizado. Ao fornecer APIs de manipulação e criação de nódulos específicos de plataforma, você pode potencializar o núcleo em tempo de execução do Vue par atingir ambientes sem DOM.
+Cria um interpretador personalizado. Ao fornecer criação de nó específico de plataforma e APIs de manipulação, podemos influenciar o tempo de execução do núcleo da Vue para atingir ambientes que não tem DOM.
 
 - **Tipo**
 
@@ -22,7 +22,7 @@ Cria um intepretador personalizado. Ao fornecer APIs de manipulação e criaçã
       key: string,
       prevValue: any,
       nextValue: any,
-      // o restante é inutilizado para a maioria dos interpretadores personalizados
+      // o resto não é usado pela maioria dos interpretadores personalizados
       isSVG?: boolean,
       prevChildren?: VNode<HostNode, HostElement>[],
       parentComponent?: ComponentInternalInstance | null,
@@ -48,7 +48,7 @@ Cria um intepretador personalizado. Ao fornecer APIs de manipulação e criaçã
     parentNode(node: HostNode): HostElement | null
     nextSibling(node: HostNode): HostNode | null
 
-    // opcional, específico ao DOM
+    // opcional, específico de DOM
     querySelector?(selector: string): HostElement | null
     setScopeId?(el: HostElement, id: string): void
     cloneNode?(node: HostNode): HostNode
@@ -75,11 +75,11 @@ Cria um intepretador personalizado. Ao fornecer APIs de manipulação e criaçã
   })
 
   // `render` é a API de baixo nível
-  // `createApp` retorna a instância da aplicação
+  // `createApp` retorna uma instância da aplicação
   export { render, createApp }
 
-  // exporta novamente as APIs de núcleo do Vue
+  // re-exportar as APIs do núcleo da Vue
   export * from '@vue/runtime-core'
   ```
 
-  O próprio `@vue/runtime-dom` do Vue é [implementado usando a mesma API](https://github.com/vuejs/core/blob/main/packages/runtime-dom/src/index.ts). Para uma implementação mais simples, confira [`@vue/runtime-test`](https://github.com/vuejs/core/blob/main/packages/runtime-test/src/index.ts) que é um pacote privado para teste unitário próprio do Vue.
+  O `@vue/runtime-dom` da própria Vue é [implementado usando a mesma API](https://github.com/vuejs/core/blob/main/packages/runtime-dom/src/index.ts). Para uma implementação mais simples, consulte o [`@vue/runtime-test`](https://github.com/vuejs/core/blob/main/packages/runtime-test/src/index.ts) que é um pacote privado para testes unitários da própria Vue.
