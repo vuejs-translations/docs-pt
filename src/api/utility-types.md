@@ -1,12 +1,12 @@
-# Tipos de Utilitário {#utility-types}
+# Tipos de Utilitários de TypeScript {#utility-types}
 
-:::info
-Esta página lista apenas alguns tipos de utilitários comumente usados ​​que podem precisar de explicação de uso. Para obter uma lista completa dos tipos exportados, consulte o [código fonte](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/index.ts#L131).
+:::info INFORMAÇÃO
+Esta página lista apenas alguns tipos de utilitários comummente usados que podem precisar de explicação para o seu uso. Para uma lista completa de tipos exportados, consulte o [código-fonte](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/index.ts#L131).
 :::
 
-## PropType\<T> {#proptype-t}
+## `PropType<T>` {#proptype-t}
 
-Usado para anotar uma propriedade com tipos mais avançados ao usar declarações de propriedades em tempo de execução.
+Usado para anotar uma propriedade com tipos mais avançados quando usamos as declarações de propriedades de execução.
 
 - **Exemplo**
 
@@ -22,7 +22,7 @@ Usado para anotar uma propriedade com tipos mais avançados ao usar declaraçõe
   export default {
     props: {
       book: {
-        // provide more specific type to `Object`
+        // fornecer tipo mais específico ao `Object`
         type: Object as PropType<Book>,
         required: true
       }
@@ -30,11 +30,83 @@ Usado para anotar uma propriedade com tipos mais avançados ao usar declaraçõe
   }
   ```
 
-- **Veja também:** [Guia - Atribuindo Tipos as Propriedades do Componente](/guide/typescript/options-api.html#typing-component-props)
+- **Consulte também:** [Guia - Tipos para as Propriedades do Componente](/guide/typescript/options-api#typing-component-props)
 
-## ComponentCustomProperties {#componentcustomproperties}
+## `MaybeRef<T>` {#mayberef}
 
-Usado para aumentar o tipo de instância do componente para oferecer suporte a propriedades globais personalizadas.
+Pseudónimo para `T | Ref<T>`. Útil para anotar argumentos de [Funções de Composição](/guide/reusability/composables).
+
+- Apenas suportado na 3.3+.
+
+## `MaybeRefOrGetter<T>` {#maybereforgetter}
+
+Pseudónimo para `T | Ref<T> | (() => T)`. Útil para anotar argumentos de [Funções de Composição](/guide/reusability/composables).
+
+- Apenas suportado na 3.3+.
+
+## `ExtractPropTypes<T>` {#extractproptypes}
+
+Extrai tipos de propriedades a partir dum objeto de opções de propriedades de tempo de execução. Os tipos extraídos são rosto interno - isto é, as propriedades resolvidas recebidas pelo componente. Isto significa que propriedades booleanas e propriedades com os valores padrão são sempre definidas, mesmo se não forem obrigatórias.
+
+Para extrair propriedades de rosto público, isto é, propriedades que o pai é permitido passar, usamos [`ExtractPublicPropTypes`](#extractpublicproptypes).
+
+- **Exemplo**
+
+  ```ts
+  const propsOptions = {
+    foo: String,
+    bar: Boolean,
+    baz: {
+      type: Number,
+      required: true
+    },
+    qux: {
+      type: Number,
+      default: 1
+    }
+  } as const
+
+  type Props = ExtractPropTypes<typeof propsOptions>
+  // {
+  //   foo?: string,
+  //   bar: boolean,
+  //   baz: number,
+  //   qux: number
+  // }
+  ```
+
+## `ExtractPublicPropTypes<T>` {#extractpublicproptypes}
+
+Extrai tipos de propriedade a partir dum objeto de opções de propriedades de tempo de execução. Os tipos extraídos são rosto público - isto é, as propriedades que o pai é permitido passar.
+
+- **Exemplo**
+
+  ```ts
+  const propsOptions = {
+    foo: String,
+    bar: Boolean,
+    baz: {
+      type: Number,
+      required: true
+    },
+    qux: {
+      type: Number,
+      default: 1
+    }
+  } as const
+
+  type Props = ExtractPublicPropTypes<typeof propsOptions>
+  // {
+  //   foo?: string,
+  //   bar?: boolean,
+  //   baz: number,
+  //   qux?: number
+  // }
+  ```
+
+## `ComponentCustomProperties` {#componentcustomproperties}
+
+Usado para aumentar o tipo da instância do componente para suportar as propriedades globais personalizadas.
 
 - **Exemplo**
 
@@ -49,15 +121,15 @@ Usado para aumentar o tipo de instância do componente para oferecer suporte a p
   }
   ```
 
-  :::tip
-  Aumentações devem ser colocadas em um arquivo de módulo `.ts` ou `.d.ts`. Veja [Aumentando Propriedades Globais](/guide/typescript/options-api.html#augmenting-global-properties) para mais detalhes.
-  :::
+:::tip DICA
+Os aumentos devem ser colocados num ficheiro `.ts` ou `.d.ts` de módulo. Consulte [Colocação do Aumento de Tipo](/guide/typescript/options-api#augmenting-global-properties) por mais detalhes.
+:::
 
-- **Veja também:** [Guia - Aumentando Propriedades Globais](/guide/typescript/options-api.html#augmenting-global-properties)
+- **Consulte também:** [Guia - Aumentando Propriedades Globais](/guide/typescript/options-api#augmenting-global-properties)
 
-## ComponentCustomOptions {#componentcustomoptions}
+## `ComponentCustomOptions` {#componentcustomoptions}
 
-Usado para aumentar os tipos de opções do componente para suportar opções customizadas.
+Usado para aumentar os tipos das opções do componente para suportar opções personalizadas.
 
 - **Exemplo**
 
@@ -71,15 +143,15 @@ Usado para aumentar os tipos de opções do componente para suportar opções cu
   }
   ```
 
-  :::tip
-  Aumentações devem ser colocadas em um arquivo de módulo `.ts` ou `.d.ts`. Veja [Aumentando Propriedades Globais](/guide/typescript/options-api.html#augmenting-global-properties) para mais detalhes.
-  :::
+:::tip DICA
+Os aumentos devem ser colocados num ficheiro `.ts` ou `.d.ts` de módulo. Consulte [Colocação do Aumento de Tipo](/guide/typescript/options-api#augmenting-global-properties) por mais detalhes.
+:::
 
-- **Veja também:** [Guia - Aumentando Propriedades Globais](/guide/typescript/options-api.html#augmenting-global-properties)
+- **Consulte também:** [Guia - Aumentando Propriedades Globais](/guide/typescript/options-api#augmenting-global-properties)
 
-## ComponentCustomProps {#componentcustomprops}
+## `ComponentCustomProps` {#componentcustomprops}
 
-Usado para aumentar propriedades TSX permitidas para usar propriedades não declaradas em elementos TSX.
+Usado para aumentar as propriedades de TSX permitidas no sentido de usar propriedades não declaradas sobre os elementos de TSX.
 
 - **Exemplo**
 
@@ -94,21 +166,21 @@ Usado para aumentar propriedades TSX permitidas para usar propriedades não decl
   ```
 
   ```tsx
-  // now works even if hello is not a declared prop
+  // agora funciona mesmo se `hello` não for uma propriedade declara
   <MyComponent hello="world" />
   ```
 
-  :::tip
-  Aumentações devem ser colocadas em um arquivo de módulo `.ts` ou `.d.ts`. Veja [Aumentando Propriedades Globais](/guide/typescript/options-api.html#augmenting-global-properties) para mais detalhes.
-  :::
+:::tip DICA
+Os aumentos devem ser colocados num ficheiro `.ts` ou `.d.ts` de módulo. Consulte [Colocação do Aumento de Tipo](/guide/typescript/options-api#augmenting-global-properties) por mais detalhes.
+:::
 
-## CSSProperties {#cssproperties}
+## `CSSProperties` {#cssproperties}
 
-Usado para aumentar os valores permitidos em associações de propriedade de estilo.
+Usado para aumentar os valores permitidos nos vínculos da propriedade de estilo.
 
 - **Exemplo**
 
-  Permitir qualquer propriedade customizada de CSS
+  Permitir qualquer propriedade de CSS personalizada
 
   ```ts
   declare module 'vue' {
@@ -122,15 +194,15 @@ Usado para aumentar os valores permitidos em associações de propriedade de est
   <div style={ { '--bg-color': 'blue' } }>
   ```
   ```html
-  <div :style="{ '--bg-color': 'blue' }">
+  <div :style="{ '--bg-color': 'blue' }"></div>
   ```
 
- :::tip
-  Aumentações devem ser colocadas em um arquivo de módulo `.ts` ou `.d.ts`. Veja [Aumentando Propriedades Globais](/guide/typescript/options-api.html#augmenting-global-properties) para mais detalhes.
-  :::
+:::tip DICA
+Os aumentos devem ser colocados num ficheiro `.ts` ou `.d.ts` de módulo. Consulte [Colocação do Aumento de Tipo](/guide/typescript/options-api#augmenting-global-properties) por mais detalhes.
+:::
   
-  :::info Veja também
-As tags SFC `<style>` suportam a vinculação de valores CSS ao estado do componente dinâmico usando a função CSS `v-bind`. Isso permite propriedades personalizadas sem aumento de tipo.
+:::info CONSULTE TAMBÉM
+Os marcadores `<style>` de componente de ficheiro único suportam ligação de valores de CSS ao estado do componente dinâmico usando a função de CSS `v-bind`. Isto permite propriedades personalizadas sem aumento de tipo.
 
-- [v-bind() em CSS](/api/sfc-css-features.html#v-bind-in-css)
-  :::
+- [`v-bind()` na CSS](/api/sfc-css-features#v-bind-in-css)
+:::
