@@ -97,7 +97,7 @@
     ],
     "website": {
       "text": "www.monterail.com",
-      "url": "https://www.monterail.com/?utm_source=vuejs.org&utm_medium=referral&utm_campaign=partners"
+      "url": "https://www.monterail.com/services/vue/?utm_source=vuejs.org"
     },
     "contact": "hello@monterail.com",
     "hiring": "https://www.monterail.com/careers?utm_source=vuejs.org&utm_medium=referral&utm_campaign=partner-hiring-link",
@@ -165,7 +165,7 @@
     "intro": "Nós somos uma agência mais de 100 vezes galardoada, parceira da Laravel e Vue, de desenho de software, de desenvolvimento, e de publicidade de crescimento de Tbilisi. Em 8 anos, temos levado mais de 300 produtos do zero à protagonista usando a Vue, Laravel, React e React Native para clientes abrangendo de novas empresas e instituições governamentais à agências e empresas internacionais.",
     "description": [
       "A Redberry nasceu em 2014 como um empreendimento arriscado de quatro amigos para levar a transformação digital aos negócios de tijolo-e-argamassa da Georgia. Hoje, somos mais de 150 e representamos a maior agência georgiana. Nós somos multifacetados em muitas campos - tecnologia, serviços, e pessoas. Nós acompanhamos os nossos clientes ao longo da jornada do produto inteira - desde o desenho do produto ao desenvolvimento ao seu crescimento. Nós ostentamos uma equipa galardoada internacional com mais 100 desenhistas de UX/UI, programadores de software,redatores publicitários, criadores de conteúdo e piratas de crescimento lendários. Então chama-nos de o teu canivete suíço parceiro digital se quiseres;nós somos.",
-      "Embora sejamos uma agência de alto nível, uma das coisas mais bonitas sobre nós é a nossa localização, ambas literalmente e metaforicamente. Nós estamos baseados na Geórgia (a nação, e não o estado), onde a contratação externa em Tecnologia de Informação é quase livre de impostos. Como resultado, as novas empresas, agências, e empresas parceiras baseadas nos Estados Unidos da América e União Europeia apreciam uma pista mais longa e margens de projeto mais significativo. Felizmente, temos um capacidade considerável e fácil acesso ao rapidamente crescente talento tecnológico local, assim somos o parceiro escalável e confiável dos nossos clientes.",
+      "Embora sejamos uma agência de alto nível, uma das coisas mais bonitas sobre nós é a nossa localização, ambas literalmente e de maneira metafórica. Nós estamos baseados na Geórgia (a nação, e não o estado), onde a contratação externa em Tecnologia de Informação é quase livre de impostos. Como resultado, as novas empresas, agências, e empresas parceiras baseadas nos Estados Unidos da América e União Europeia apreciam uma pista mais longa e margens de projeto mais significativo. Felizmente, temos um capacidade considerável e fácil acesso ao rapidamente crescente talento tecnológico local, assim somos o parceiro escalável e confiável dos nossos clientes.",
       "Além de ser uma casa de software parceira oficial da Laravel e agora da Vue, somos uma agência de crescimento criativo parceira da Facebook e da Google, fazendo de nós um parceiro de serviço completo ideal para mais de 80 empresas de todos os tamanhos para desenvolver os seus negócios progressivamente. Isto também tem nos rendido os títulos de Melhor Agência do Ano duas vezes em 3 anos, 2019 e 2021. O negócio dos nossos clientes é o nosso negócio, assim permanecemos orientados a resultados em todos os momentos, dentro e fora das horas de trabalho, nos dias de semana e finais de semana,para garantir que entreguemos as soluções que conduzam os teus resultados de negócio. Esta forma de pensar tem dado forma a nossa lista de clientes com lideres de industria e segundos classificados nas finanças, seguros, bens imobiliários, automóveis, educação, serviços de saúde, etc.",
       "No que concerne a metodologia, a gestão do nosso estúdio de nova empresa tem imprimido o ágil em nosso ADN. Nós temos construído uma dúzia de MVPs e continuamos desenvolvendo-os ao longo do tempo de acordo com as necessidades de negócio em constante mudança, polindo a nossa habilidade de otimizar para o momento-de-venda inicial baixo e alta velocidade de desenvolvimento em qualquer projeto que pegamos regularmente utilizando condutas de CI/CD, tornando as nossas vidas e códigos muito mais manejável.",
       "Se gostarias de colaborar na extensão da tua equipa de produto, podes entrar em contacto connosco através do nosso sítio na web."
@@ -192,7 +192,7 @@
     "intro": "WebReinvent é uma empresa de desenvolvimento de software que fornece uma gama de produtos de software do princípio ao fim, aplicações que trabalham em tempo real, aplicações SaaS de vários inquilinos, API de latência baixa e serviços de desenvolvimento de aplicações para dispositivos móveis. Nós temos entregado MVP à software de nível empresarial globalmente desde novas empresas à MNC. Envie-nos um correio eletrónico, e deixe-nos construir a teu produto de software.",
     "description": [
       "WebReinvent é uma empresa de desenvolvimento de software orientada a processo que fornece uma gama de produtos de software do princípio ao fim, aplicações que trabalham em tempo real, aplicações SaaS de vários inquilinos, API de latência baixa e serviços de desenvolvimento de aplicações para dispositivos móveis. A nossa equipa é bem versada em Vue.js e seu ecossistema. Nós temos entregado MVP à software de nível empresarial globalmente desde novas empresas à MNC. Não somente projetos de cliente, temos desenvolvido vários produtos de código-aberto os quais são baseados na Vue.js. Nós estamos orgulhosos em mencionar que somos uma dos poucos parceiros oficiais da Laravel e também da NuxtJS.",
-      "A nossa equipa ama seguir os padrões da industria, alguns dos quais são de gestão de repositório de git, revisão de código, desdobramento de lançamento através CI/CD (DevOps), testagem de software automatizada, manutenção detalhada da documentação técnica, acompanhamento do desempenho da aplicação, etc.",
+      "A nossa equipa ama seguir os padrões da industria, alguns dos quais são de gestão de repositório de git, revisão de código, desdobramento de lançamento através CI/CD (DevOps), testas de software automatizado, manutenção detalhada da documentação técnica, acompanhamento do desempenho da aplicação, etc.",
       "Envie-nos um correio eletrónico, e deixe-nos construir a teu produto de software."
     ],
     "region": [
@@ -257,7 +257,7 @@
       "Precisas de migrar? HeroDevs também pode ajudar com isto. Contrate a nossa equipa de especialistas para ajudarem-te a navegar os desafios que surgem com a migração do teu código.",
       "Queres saber mais? Encontre-nos em herodevs.com ou envie-nos uma nota em hello@herodevs.com."
     ],
-    "proficiencies": ["Vue", "Angular", "Migration", "EOL Support"],
+    "proficiencies": ["Vue", "Angular", "Migração", "Suporte de Fim de Vida"],
     "region": ["América do Norte"],
     "website": {
       "text": "herodevs.com",
