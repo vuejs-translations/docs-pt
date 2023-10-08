@@ -34,7 +34,7 @@ Com uma configuração baseada na Vite, o servidor de desenvolvimento e o empaco
 
   - [Extensão de Vue de TypeScript](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) é também necessário receber suporte de tipo para importações de `*.vue` em ficheiros de TypeScript.
 
-- O [WebStorm](https://www.jetbrains.com/webstorm/) também fornece suporte fora da caixa para ambos TypeScript e Vue. Outras IDEs da JetBrains suportam-os também, ou fora da caixa ou através de [uma extensão gratuita](https://plugins.jetbrains.com/plugin/9442-vue-js).
+- O [WebStorm](https://www.jetbrains.com/webstorm/) também fornece suporte fora da caixa para ambos TypeScript e Vue. Os outros ambientes de desenvolvimento integrado da JetBrains também os suportam, ou fora da caixa ou através [duma extensão gratuita](https://plugins.jetbrains.com/plugin/9442-vue-js). Desde a versão 2023.2, o WebStorm e a Extensão de Vue vêm com suporte embutido para o Servidor de Linguagem da Vue. Nós podemos definir o serviço da Vue para usar a integração Volar sobre todas as versões da TypeScript, sob `Settings > Languages & Frameworks > TypeScript > Vue`. Por padrão, a Volar será usada para as versões de TypeScript 5.0 e superior.
 
 ### Configurando o `tsconfig.json` {#configuring-tsconfig-json}
 
