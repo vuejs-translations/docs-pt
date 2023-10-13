@@ -12,11 +12,11 @@ const nav: ThemeConfig['nav'] = [
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
     items: [
       { text: 'Guia', link: '/guide/introduction' },
-      { text: 'Iniciação', link: '/tutorial/' },
-      { text: 'Exemplos', link: '/examples/' },
+      { text: 'Seminário Interativo', link: '/tutorial/' },
+      { text: 'Exemplos Práticos', link: '/examples/' },
       { text: 'Introdução Rápida', link: '/guide/quick-start' },
       // { text: 'Guia de Estilo', link: '/style-guide/' },
-      { text: 'Glossário', link: '/glossary/' },
+      { text: 'Glossário de Termos', link: '/glossary/' },
       {
         text: 'Documentação da Vue 2',
         link: 'https://v2.vuejs.org'
@@ -55,7 +55,7 @@ const nav: ThemeConfig['nav'] = [
         items: [
           { text: 'Vue Router', link: 'https://vue-router-docs-pt.netlify.app/' },
           { text: 'Pinia', link: 'https://pinia-docs-pt.netlify.app/' },
-          { text: 'Guia do Ferramental', link: '/guide/scaling-up/tooling.html' }
+          { text: 'Guia do Ferramental', link: '/guide/scaling-up/tooling' }
         ]
       },
       {
@@ -75,14 +75,14 @@ const nav: ThemeConfig['nav'] = [
         text: 'Ajuda',
         items: [
           {
-            text: 'Conversas na Discord',
+            text: 'Conversas da Discord',
             link: 'https://discord.com/invite/HBherRA'
           },
           {
-            text: 'Discussões na GitHub',
+            text: 'Discussões da GitHub',
             link: 'https://github.com/vuejs/core/discussions'
           },
-          { text: 'Comunidade na DEV', link: 'https://dev.to/t/vue' }
+          { text: 'Comunidade da DEV', link: 'https://dev.to/t/vue' }
         ]
       },
       {
@@ -277,11 +277,11 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Visão Geral', link: '/guide/typescript/overview' },
         {
-          text: 'TypeScript com a API de Composição',
+          text: 'TypeScript e a API de Composição',
           link: '/guide/typescript/composition-api'
         },
         {
-          text: 'TypeScript com a API de Opções',
+          text: 'TypeScript e a API de Opções',
           link: '/guide/typescript/options-api'
         }
       ]
