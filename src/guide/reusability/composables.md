@@ -6,20 +6,20 @@ const { x, y } = useMouse()
 </script>
 
 :::tip DICA
-Esta secção presume conhecimento básico da API de Composição. Se tens estado a aprender a Vue com a API de Opções apenas, podes ajustar a Preferência de API para API de Composição (utilizando interruptor em cima da barra lateral) e re-ler os capítulos [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals) e [Gatilhos do Cíclo de Vida](/guide/essentials/lifecycle).
+Esta seção presume conhecimento básico da API de Composição. Se estivermos a aprender a Vue com a API de Opções apenas, podemos definir a Preferência de API para API de Composição (usando o interruptor em cima do menu lateral) e re-ler os capítulos [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals) e [Gatilhos do Ciclo de Vida](/guide/essentials/lifecycle).
 :::
 
-## O que é uma "Função de Composição"? {#what-is-a-composable}
+## O Que é uma "Função de Composição"? {#what-is-a-composable}
 
 No contexto das aplicações de Vue, uma "função de composição" é uma função que influencia a API de Composição da Vue a resumir e reutilizar **lógica com estado**.
 
-Quando estamos a construir aplicações de frontend, frequentemente precisamos reutilizar a lógica para tarefas comuns. Por exemplo, podemos precisar formatar datas em muitos lugares, assim extraímos uma função reutilizável para isto. Esta função formatadora resume a **lógica sem estado**: ela recebe alguma entrada e imediatamente retorna a saída esperada. Existem muitas bibliotecas por aí a fora para reutilização de lógica sem estado - por exemplo [lodash](https://lodash.com/) e [date-fns](https://date-fns.org/), as quais já podes ter ouvido falar.
+Quando estamos a construir aplicações de frontend, frequentemente precisamos reutilizar a lógica para tarefas comuns. Por exemplo, podemos precisar formatar datas em muitos lugares, assim extraímos uma função reutilizável para isto. Esta função formatadora resume a **lógica sem estado**: ela recebe alguma entrada e imediatamente retorna a saída esperada. Existem muitas bibliotecas por aí a fora para reutilização de lógica sem estado - por exemplo [`lodash`](https://lodash.com/) e [`date-fns`](https://date-fns.org/), as quais já podes ter ouvido falar.
 
-Em contrapartida, a lógica com estado envolve a gestão de estado que muda ao longo do tempo. Um exemplo simples seria o rastreamento da posição atual do rato em uma página. Nos cenários do mundo real, poderia ser também lógica mais complexa tal como gestos de toque ou estado da conexão com uma base de dados.
+Em contrapartida, a lógica com estado envolve a gestão de estado que muda ao longo do tempo. Um exemplo simples seria o rastreio da posição atual do rato em uma página. Nos cenários do mundo real, poderia ser também lógica mais complexa tal como gestos de toque ou estado da conexão com uma base de dados.
 
 ## Exemplo de Rastreador de Rato {#mouse-tracker-example}
 
-Se fossemos implementar a funcionalidade de rastreamento de rato utilizando a API de Composição diretamente de dentro de um componente, ela se pareceria com isto:
+Se fossemos implementar a funcionalidade de rastreio de rato utilizando a API de Composição diretamente de dentro de um componente, ela se pareceria com isto:
 
 ```vue
 <script setup>
@@ -86,7 +86,7 @@ const { x, y } = useMouse()
   Mouse position is at: {{ x }}, {{ y }}
 </div>
 
-[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNqNkj1rwzAQhv/KocUOGKVzSAIdurVjoQUvJj4XlfgkJNmxMfrvPcmJkkKHLrbu69H7SlrEszFyHFDsxN6drDIeHPrBHGtSvdHWwwKDwzfNHwjQWd1DIbd9jOW3K2qq6aTJxb6pgpl7Dnmg3NS0365YBnLgsTfnxiNHACvUaKe80gTKQeN3sDAIQqjignEhIvKYqMRta1acFVrsKtDEQPLYxuU7cV8Msmg2mdTilIa6gU5p27tYWKKq1c3ENphaPrGFW25+yMXsHWFaFlfiiOSvFIBJjs15QJ5JeWmaL/xYS/Mfpc9YYrPxl52ULOpwhIuiVl9k07Yvsf9VOY+EtizSWfR6xKK6itgkvQ/+fyNs6v4XJXIsPwVL+WprCiL8AEUxw5s=)
+[Experimentar na Zona de Testes](https://play.vuejs.org/#eNqNkj1rwzAQhv/KocUOGKVzSAIdurVjoQUvJj4XlfgkJNmxMfrvPcmJkkKHLrbu69H7SlrEszFyHFDsxN6drDIeHPrBHGtSvdHWwwKDwzfNHwjQWd1DIbd9jOW3K2qq6aTJxb6pgpl7Dnmg3NS0365YBnLgsTfnxiNHACvUaKe80gTKQeN3sDAIQqjignEhIvKYqMRta1acFVrsKtDEQPLYxuU7cV8Msmg2mdTilIa6gU5p27tYWKKq1c3ENphaPrGFW25+yMXsHWFaFlfiiOSvFIBJjs15QJ5JeWmaL/xYS/Mfpc9YYrPxl52ULOpwhIuiVl9k07Yvsf9VOY+EtizSWfR6xKK6itgkvQ/+fyNs6v4XJXIsPwVL+WprCiL8AEUxw5s=)
 
 Conforme podemos ver, a lógica fundamental permanece idêntica - tudo o que tivemos que fazer foi movê-la para uma função externa e retornar o estado que deveria ser exposto. Tal como dentro de um componente, podes utilizar uma grama completa de [funções de API de Composição](/api/#composition-api) nas funções de composição. A mesma funcionalidade de `useMouse()` pode agora ser utilizada em qualquer componente.
 
@@ -186,45 +186,61 @@ const { data, error } = useFetch('...')
 </script>
 ```
 
-A `useFetch()` recebe uma sequência de caracteres de URL estática como entrada - assim ele realiza a requisição apenas uma vez e depois está feito. E se quiséssemos requisitar novamente sempre que a URL mudar? Nós podemos alcançar isto ao também aceitar as referências como um argumento:
+### Aceitando Estado Reativo {#accepting-reactive-state}
+
+A `useFetch()` recebe uma sequência de caracteres de URL estática como entrada - depois realiza a requisição apenas uma vez e depois está feito. E se quiséssemos requisitar novamente sempre que a URL mudar? No sentido de alcançar isto, precisamos de passar o estado reativo numa função de composição, e deixar a função de composição criar os observadores que realizam ações usando o estado passado.
+
+Por exemplo, `useFetch()` deve ser capaz de aceitar uma referência:
 
 ```js
+const url = ref('/initial-url')
+
+const { data, error } = useFetch(url)
+
+// isto deve acionar novamente uma requisição
+url.value = '/new-url'
+```
+
+Ou, aceitar uma função recuperadora:
+
+```js
+// requisitar novamente quando `props.id` mudar
+const { data, error } = useFetch(() => `/posts/${props.id}`)
+```
+
+Nós podemos refazer a nossa implementação existente com as APIs [`watchEffect()`](/api/reactivity-core.html#watcheffect) e [`toValue()`](/api/reactivity-utilities.html#tovalue)
+
+```js{8,13}
 // fetch.js
-import { ref, isRef, unref, watchEffect } from 'vue'
+import { ref, watchEffect, toValue } from 'vue'
 
 export function useFetch(url) {
   const data = ref(null)
   const error = ref(null)
 
-  function doFetch() {
-    // reinicia o estado antes da requisição...
-    data.value = null
-    error.value = null
-    // "unref()" desembrulha as potenciais referências
-    fetch(unref(url))
-      .then((res) => res.json())
-      .then((json) => (data.value = json))
-      .catch((err) => (error.value = err))
+  const fetchData = (dt) => {
+    fetch(toValue(url))
+    .then((res) => res.json())
+    .then((json) => (data.value = json))
+    .catch((err) => (error.value = error))
   }
 
-  if (isRef(url)) {
-    // configura para que requisite novamente
-    // de maneira reativa se a URL de entrada
-    // for uma referência
-    watchEffect(doFetch)
-  } else {
-    // de outro modo, apenas requisite uma vez
-    // e evite as despesas gerais de um observador
-    doFetch()
-  }
+  watchEffect(() => {
+    // reiniciar o estado antes de requisitar
+    fetchData(url)
+  })
 
   return { data, error }
 }
 ```
 
-Esta versão de `useFetch()` agora aceita tanto sequências de caracteres de URL estática e referências de sequências de caracteres de URL. Quando deteta que a URL é uma referência dinâmica utilizando [`isRef()`](/api/reactivity-utilities#isref), configura um efeito reativo utilizando [`watchEffect()`](/api/reactivity-core#watcheffect). O efeito executará imediatamente e também rastreará a referência de URL como uma dependência. Sempre que a referência de URL mudar, os dados serão reiniciados e requisitados novamente.
+`toValue()` é uma API adicionada na 3.3. Está desenhada para normalizar referências e recuperadores para valores. Se o argumento for uma referência, retorna o valor da referência; se o argumento for uma função, chamará a função e retornará o seu valor de retorno. De outro modo, retorna o argumento como está. Funciona de maneira semelhante ao [`unref()`](/api/reactivity-utilities#unref), mas com tratamento especial para funções.
 
-Cá está [a versão atualizada de `useFetch()`](https://play.vuejs.org/#eNptVMFu2zAM/RXOFztYZncodgmSYAPWnTZsKLadfFFsulHrSIZEJwuC/PtIyXaTtkALxxT5yPf45FPypevyfY/JIln6yumOwCP13bo0etdZR3ACh80cKrvresIaztA4u4OUi9KLpN7jN6RqO53nxRjKHz1nlqayxhNslMc/roUVpFuizi+K4tFb07Wqwq1ta3Q5HTtd2RpzblqQra0vGCCW65oreaIs/ZjOxmAf8MYRs2wGq/XU6D3X5HvV9sj5Y8UJakVqDuicdXMGJHfk0VcTj4wxOX9ZRFVYD34h3PGchPwG8N2qGjobZlpIYLnpiayB/YfGulWZaNAGPpUJfK5aXT1JRIbXZbI+nUDD+bwsYklAL2lZ6z1X64ZTw2CcKcAM3a1/2s6/gzsJAzKL3hA6rBfAWCE536H36gEDriwwFA4zTSMEpox7L8+L/pxacPv4K86Brcc4jGjFNV/5AS3TlrbLzqHwkLPYkt/fxFiLUto85Hk+ni+LScpknlwYhX147buD4oO7psGK5kD2r+zxhQdLg/9CSdObijSzvVoinGSeuPYwbPSP6VtZ8HgSJHx5JP8XA2TKH00F0V4BFaAouISvDHhiNrBB3j1CI90D5ZglfaMHuYXAx3Dc2+v4JbRt9wi0xWDymCpTbJ01tvftEbwFTakHcqp64guqPKgJoMYOTc1+OcLmeMUlEBzZM3ZUdjVqPPj/eRq5IAPngKwc6UZXWrXcpFVH4GmVqXkt0boiHwGog9IEpHdo+6GphBmgN6L1DA66beUC9s4EnhwdeOomMlMSkwsytLac5g7aR11ibkDZSLUABRk+aD8QoMiS1WSCcaKwISEZ2MqXIaBfLSpmchUb05pRsTNUIiNkOFjr9SZxyJTHOXx1YGR49eGRDP4rzRt6lmay86Re7DcgGTzAL74GrEOWDUaRL9kjb/fSoWzO3wPAlXNB9M1+KNrmcXF8uoab/PaCljQLwCN5oS93+jpFWmYyT/g8Zel9NEJ4S2fPpYMsc7i9uQlREeecnP8DWEwr0Q==), com um atraso artificial e erro posto aleatório para propósitos de demonstração.
+Repara que a `toValue(url)` é chamada **dentro** da função de resposta da `watchEffect`. Isto garante que quaisquer dependências reativas acessadas durante a normalização da `toValue()` sejam rastreadas pelo observador.
+
+Esta versão da `useFetch()` agora aceita sequências de caracteres de URL estáticas, referências, e recuperadores, tornando-a mais flexível. O efeito de observação executará imediatamente, e rastreará quaisquer dependências acessadas durante a `toValue(url)`. Se nenhum dependência for rastreada (por exemplo, a URL já é uma sequência de caracteres), o efeito apenas executa uma vez; de outro modo, executará novamente sempre que uma dependência rastreada mudar.
+
+Eis [a versão atualizada de `useFetch()`](https://play.vuejs.org/#eNptVMFu2zAM/RXOFztYZncodgmSYAPWnTZsKLadfFFsulHrSIZEJwuC/PtIyXaTtkALxxT5yPf45FPypevyfY/JIln6yumOwCP13bo0etdZR3ACh80cKrvresIaztA4u4OUi9KLpN7jN6RqO53nxRjKHz1nlqayxhNslMc/roUVpFuizi+K4tFb07Wqwq1ta3Q5HTtd2RpzblqQra0vGCCW65oreaIs/ZjOxmAf8MYRs2wGq/XU6D3X5HvV9sj5Y8UJakVqDuicdXMGJHfk0VcTj4wxOX9ZRFVYD34h3PGchPwG8N2qGjobZlpIYLnpiayB/YfGulWZaNAGPpUJfK5aXT1JRIbXZbI+nUDD+bwsYklAL2lZ6z1X64ZTw2CcKcAM3a1/2s6/gzsJAzKL3hA6rBfAWCE536H36gEDriwwFA4zTSMEpox7L8+L/pxacPv4K86Brcc4jGjFNV/5AS3TlrbLzqHwkLPYkt/fxFiLUto85Hk+ni+LScpknlwYhX147buD4oO7psGK5kD2r+zxhQdLg/9CSdObijSzvVoinGSeuPYwbPSP6VtZ8HgSJHx5JP8XA2TKH00F0V4BFaAouISvDHhiNrBB3j1CI90D5ZglfaMHuYXAx3Dc2+v4JbRt9wi0xWDymCpTbJ01tvftEbwFTakHcqp64guqPKgJoMYOTc1+OcLmeMUlEBzZM3ZUdjVqPPj/eRq5IAPngKwc6UZXWrXcpFVH4GmVqXkt0boiHwGog9IEpHdo+6GphBmgN6L1DA66beUC9s4EnhwdeOomMlMSkwsytLac5g7aR11ibkDZSLUABRk+aD8QoMiS1WSCcaKwISEZ2MqXIaBfLSpmchUb05pRsTNUIiNkOFjr9SZxyJTHOXx1YGR49eGRDP4rzRt6lmay86Re7DcgGTzAL74GrEOWDUaRL9kjb/fSoWzO3wPAlXNB9M1+KNrmcXF8uoab/PaCljQLwCN5oS93+jpFWmYyT/g8Zel9NEJ4S2fPpYMsc7i9uQlREeecnP8DWEwr0Q==), com um atraso artificial e erro posto aleatório para propósitos de demonstração.
 
 ## Convenções e Boas Práticas {#conventions-and-best-practices}
 
@@ -349,7 +365,7 @@ Pelas razões acima, não mais recomendamos a utilização de mixins na Vue 3. A
 
 ### vs. Componentes Sem Interpretação {#vs-renderless-components}
 
-No capítulo de ranhuras de componente, discutimos o padrão de [Componente Sem Interpretação](/guide/components/slots#renderless-components) baseado nas ranhuras isoladas. Nós até implementamos a mesma demonstração de rastreamento de rato usando os componentes sem interpretação.
+No capítulo de ranhuras de componente, discutimos o padrão de [Componente Sem Interpretação](/guide/components/slots#renderless-components) baseado nas ranhuras isoladas. Nós até implementamos a mesma demonstração de rastreio de rato usando os componentes sem interpretação.
 
 A principal vantagem das funções de composição sobre os componentes sem interpretação é que as funções de composição não incorrem em despesas gerais da instância de componente adicional. Quando utilizadas por uma aplicação inteira, a quantidade de instâncias de componente adicionais criadas pelo padrão de componente sem interpretação pode tornar-se em despesas gerais de desempenho visível.
 
