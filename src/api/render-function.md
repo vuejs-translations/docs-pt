@@ -200,7 +200,7 @@ Para resolver manualmente um componente registado por nome.
   <div class="composition-api">
 
   ```js
-  const { h, resolveComponent } = Vue
+  import { h, resolveComponent } from 'vue'
 
   export default {
     setup() {
@@ -217,7 +217,7 @@ Para resolver manualmente um componente registado por nome.
   <div class="options-api">
 
   ```js
-  const { h, resolveComponent } = Vue
+  import { h, resolveComponent } from 'vue'
 
   export default {
     render() {
