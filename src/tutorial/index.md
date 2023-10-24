@@ -1,6 +1,6 @@
 ---
 page: true
-title: Passo-a-Passo
+title: Seminário Interativo
 sidebar: false
 aside: false
 footer: false
