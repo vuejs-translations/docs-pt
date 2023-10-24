@@ -1,6 +1,6 @@
-# Vinculação de Formulário
+# Vínculos de Formulário {#form-bindings}
 
-Utilizando juntas a `v-bind` e `v-on`, podemos criar vínculos de duas vias nos elementos de entrada de formulário:
+Usando a `v-bind` e `v-on` ao mesmo tempo, podemos criar vínculos bidirecionais sobre os elementos de entrada de formulário:
 
 ```vue-html
 <input :value="text" @input="onInput">
@@ -11,8 +11,8 @@ Utilizando juntas a `v-bind` e `v-on`, podemos criar vínculos de duas vias nos 
 ```js
 methods: {
   onInput(e) {
-    // um manipulador de `v-on` recebe o evento nativo de DOM
-    // como argumento.
+    // um manipulador de `v-on` recebe o
+    // evento nativo do DOM como argumento.
     this.text = e.target.value
   }
 }
@@ -24,24 +24,24 @@ methods: {
 
 ```js
 function onInput(e) {
-  // um manipulador de `v-on` recebe o evento nativo de DOM
-  // como argumento.
+  // um manipulador de `v-on` recebe o
+  // evento nativo do DOM como argumento.
   text.value = e.target.value
 }
 ```
 
 </div>
 
-Experimente digitar na caixa de entrada - deves ver o texto em `<p>` atualizando a medida que digitas.
+Tente digitar na caixa de entrada - deve ser possível ver o texto no `<p>` atualizando-se ao digitar.
 
-Para simplificar vínculos de duas vias, a Vue fornece uma diretiva, `v-model`, que é essencialmente um açúcar de sintaxe para o que está acima:
+Para simplificar os vínculos bidirecionais, a Vue fornece uma diretiva, `v-model`, a qual é essencialmente um açúcar de sintaxe para o que vimos acima:
 
 ```vue-html
 <input v-model="text">
 ```
 
-A `v-model` sincroniza automaticamente o valor do `<input>` com o estado vinculado, assim já não precisamos utilizar um manipulador de evento para isto.
+A `v-model` sincroniza automaticamente o valor do `<input>` com o estado vinculado, assim já não precisamos usar um manipulador de evento para isto.
 
-A `v-model` não funciona apenas em entradas de texto (`<input type="text">`), mas também em outros tipos de entrada tais como caixas de confirmação (`<input type="checkbox">`), botões de rádio (`<input type="radio">`), e menu de opções de seleção (`<select>`). Nós cobrimos mais detalhes no <a target="_blank" href="/guide/essentials/forms.html">Guia - Vinculações de Formulário</a>.
+A `v-model` não funciona apenas sobre as entradas de texto (`<input type="text">`), mas também sobre outros tipos de entrada tais como, caixas de confirmação (`<input type="checkbox">`), botões de rádio (`<input type="radio">`), e listas pendentes de seleção (`<select>`). Nós cobriremos mais detalhes no <a target="_blank" href="/guide/essentials/forms">Guia - Vínculos de Formulário</a>.
 
-Agora, experimente refatorar o código para utilizar `v-model`.
+Agora, tente refazer o código usando a `v-model`.
