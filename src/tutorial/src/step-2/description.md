@@ -1,16 +1,16 @@
-# Interpretação Declarativa
+# Interpretação Declarativa {#declarative-rendering}
 
 <div class="sfc">
 
-O que vês no editor é um Componente de Ficheiro Único de Vue (SFC, sigla em Inglês). Um Componente de Ficheiro Único é um bloco de código autossuficiente reutilizável que encapsula em um conjunto a HTML, CSS e JavaScript que fazem parte do componente dentro de um ficheiro `.vue`.
+O que vemos no editor é um componente de ficheiro único de Vue. Um componente de ficheiro único é um bloco auto-suficiente de código reutilizável que encapsula o HTML, CSS e JavaScript que se relacionam, escritos dentro dum ficheiro `.vue`.
 
 </div>
 
-A funcionalidade principal da Vue é **interpretação declarativa**: utilizando uma sintaxe de modelo de marcação de hipertexto (`template`) que estende a HTML, podemos descrever como a HTML deve se parecer com base no estado da JavaScript. Quando o estado muda, a HTML atualiza-se automaticamente.
+A funcionalidade principal da Vue é a **interpretação declarativa**: usando uma sintaxe de modelo de marcação que estende o HTML, podemos descrever como o HTML deve parecer-se baseado no estado de JavaScript. Quando o estado mudar, o HTML atualiza-se automaticamente.
 
 <div class="composition-api">
 
-Os estados que quando mudados podem acionar atualizações são considerados **reativos**. Nós podemos declarar estado reativo utilizando a API `reactive()` da Vue. Objetos criados a partir de `reactive()` são [Delegações (Proxies, termo em Inglês)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) de JavaScript que funcionam tal como objetos normais:
+Os estados que podem acionar atualizações quando mudados são considerados **reativos**. Nós podemos declarar o estado reativo usando a API `reactive()` da Vue. Os objetos criados a partir da `reactive()` são [Delegações](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) que funcionam como os objetos normais:
 
 ```js
 import { reactive } from 'vue'
@@ -23,7 +23,7 @@ console.log(counter.count) // 0
 counter.count++
 ```
 
-A `reactive()` só funciona em objetos (incluindo arranjos (arrays, termo em Inglês) e tipos embutidos como `Map` e `Set`). A `ref()`, por outro lado, pode receber qualquer tipo de valor e criar um objeto que expõe o valor interno com uma propriedade `.value`:
+A `reactive()` apenas funciona sobre os objetos (incluindo vetores e tipos embutidos como `Map` e `Set`). A `ref()`, por outro lado, pode receber qualquer tipo de valor e criar um objeto que expõe o valor interno sob uma propriedade `.value`:
 
 ```js
 import { ref } from 'vue'
@@ -34,17 +34,17 @@ console.log(message.value) // "Hello World!"
 message.value = 'Changed'
 ```
 
-Os detalhes a respeito de `reactive()` e `ref()` são discutidos na <a target="_blank" href="/guide/essentials/reactivity-fundamentals.html">Guia - Fundamentos de Reatividade</a>.
+Os detalhes sobre a `reactive()` e `ref()` são discutidos no <a target="_blank" href="/guide/essentials/reactivity-fundamentals">Guia - Fundamentos de Reatividade</a>.
 
 <div class="sfc">
 
-O estado reativo declarado no bloco `<script setup>` do componente pode ser diretamente utilizado no modelo de marcação de hipertexto (*template*, termo em Inglês).
+O estado reativo declarado no bloco `<script setup>` do componente pode ser usado diretamente no modelo de marcação. Isto é como podemos interpretar texto dinâmico baseado no valor do objeto `counter` e a referência `message`, usando a sintaxe de bigodes (ou chavetas):
 
 </div>
 
 <div class="html">
 
-O objeto que está sendo passado para `createApp()` é um componente de Vue. Um estado do componente deve ser declarado dentro de sua função `setup()`, e retornado com uso de um objeto:
+O objeto sendo passado à `createApp()` é um componente de Vue. O estado dum componente deve ser declarado dentro da sua função `setup()`, e retornado usando um objeto:
 
 ```js{2,5}
 setup() {
@@ -57,7 +57,7 @@ setup() {
 }
 ```
 
-As propriedades no objeto retornado estarão disponíveis no modelo de marcação de hipertexto (*template*, em Inglês). Isto é como podemos interpretar texto dinâmico com base no valor de `message`, utilizando a sintaxe de bigodes:
+As propriedades no objeto retornado estarão disponíveis no modelo de marcação. Isto é como podemos interpretar texto dinâmico baseado no valor de `message`, usando a sintaxe de bigodes (ou chavetas):
 
 </div>
 
@@ -66,15 +66,15 @@ As propriedades no objeto retornado estarão disponíveis no modelo de marcaçã
 <p>count is: {{ counter.count }}</p>
 ```
 
-Repare como não precisamos utilizar `.value` quando estamos acessando a referência de `message` nos modelos de marcação de hipertexto: ela é desembrulhada automaticamente para utilização mais sucinta.
+Repara como não precisávamos de usar `.value` quando acessamos a referência `message` nos modelos de marcação: é automaticamente desembrulhada para uso mais sucinto.
 
 </div>
 
 <div class="options-api">
 
-Os estados que quando mudados podem acionar atualizações são considerados **reativos**. Na Vue, o estado reativo é segurado nos componentes. No exemplo de código, o objeto que está sendo passado para `createApp()` é um componente.
+Os estados que podem acionar atualizações quando mudados são considerados **reativos**. Na Vue, o estado reativo é seguro nos componentes. <span class="html">No exemplo acima, o objeto sendo passado à `createApp()` é um componente.</span>
 
-Nós podemos declarar estado reativo utilizando a opção de componente `data`, que deve ser uma função que retorna um objeto:
+Nós podemos declarar o estado reativo usando a opção `data` do componente, que deve ser uma função que retorna um objeto:
 
 <div class="sfc">
 
@@ -103,7 +103,7 @@ createApp({
 
 </div>
 
-A propriedade `message` estará disponível no modelo de marcação de hipertexto. Isto é como podemos interpretar texto dinâmico com base no valor de `message`, utilizando a sintaxe de bigodes:
+A propriedade `message` estará disponível no modelo de marcação. Isto é como podemos interpretar texto dinâmico baseado no valor de `message`, usando a sintaxe de bigodes (ou chavetas):
 
 ```vue-html
 <h1>{{ message }}</h1>
@@ -111,7 +111,7 @@ A propriedade `message` estará disponível no modelo de marcação de hipertext
 
 </div>
 
-O conteúdo dentro dos bigodes não é limitado identificadores ou caminhos apenas - podemos utilizar qualquer expressão válida de JavaScript:
+O conteúdo dentro dos bigodes não está limitado apenas à identificadores ou caminhos - podemos usar qualquer expressão de JavaScript válida:
 
 ```vue-html
 <h1>{{ message.split('').reverse().join('') }}</h1>
@@ -119,12 +119,12 @@ O conteúdo dentro dos bigodes não é limitado identificadores ou caminhos apen
 
 <div class="composition-api">
 
-Agora, experimente criar tu mesmo algum estado reativo, e utilize-o para interpretar o conteúdo de texto dinâmico para o `<h1>` no modelo de marcação de hipertexto. 
+Agora, tente criar algum estado reativo por conta própria, e use-o para interpretar o conteúdo de texto dinâmico para o `<h1>` no modelo de marcação.
 
 </div>
 
 <div class="options-api">
 
-Agora, experimente criar tu mesmo uma propriedade `data`, e utilize-a como conteúdo de texto para o `<h1>` no modelo de marcação de hipertexto.
+Agora, tente criar uma propriedade de dados por conta própria, e use-a como conteúdo de texto para o `<h1>` no modelo de marcação.
 
 </div>
