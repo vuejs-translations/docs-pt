@@ -119,15 +119,14 @@ updateExample()
       </VTFlyout>
       <div class="vt-doc" v-html="currentDescription"></div>
       <div class="hint" v-if="data[currentStep]?._hint">
-        <button @click="toggleResult">{{ showingHint ? 'Reiniciar' : 'Mostra-me!' }}</button>
+        <button @click="toggleResult">{{ showingHint ? 'Reiniciar Exercício' : 'Mostrar Solução!' }}</button>
       </div>
       <footer>
         <a v-if="prevStep" :href="`#${prevStep}`">
-          <VTIconChevronLeft class="vt-link-icon" style="margin: 0" />Anterior
+          <VTIconChevronLeft class="vt-link-icon" style="margin: 0" /> Anterior
         </a>
         <a class="next-step" v-if="nextStep" :href="`#${nextStep}`">
-          Próximo
-          <VTIconChevronRight class="vt-link-icon" />
+          Próximo <VTIconChevronRight class="vt-link-icon" />
         </a>
       </footer>
     </article>
@@ -147,7 +146,9 @@ updateExample()
   display: flex;
   max-width: 1440px;
   margin: 0 auto;
-  --height: calc(100vh - var(--vt-nav-height) - var(--vt-banner-height, 0px));
+  --height: calc(
+    100vh - var(--vt-nav-height) - var(--vt-banner-height, 0px)
+  );
 }
 
 .preference-switch {
@@ -261,7 +262,9 @@ button {
   }
   .vue-repl {
     width: 100%;
-    height: calc(70vh - var(--vt-nav-height) - var(--vt-banner-height, 0px));
+    height: calc(
+      70vh - var(--vt-nav-height) - var(--vt-banner-height, 0px)
+    );
   }
   :deep(.wide) {
     display: none;
