@@ -1,26 +1,26 @@
-# Começar
+# Começar {#getting-started}
 
-Bem-vindo ao passo-a-passo da Vue!
+Saudações, estamos no seminário interativo da Vue!
 
-O objetivo deste passo-a-passo é dar-te uma experiência rápida de como é trabalhar com a Vue, direto no navegador. Não tem como objetivo ser compreensiva, e não precisas entender tudo antes de continuar. No entanto, depois de a completares, certifica-te de que também lês a <a target="_blank" href="/guide/introduction.html">Guia</a> que cobre cada tópico com mais detalhes.
+O objetivo deste seminário interativo é dar-te rapidamente uma experiência de como é trabalhar com a Vue, direto no navegador. O seminário não tem como objetivo ser compreensivo, e não precisamos de entender tudo antes prosseguir. No entanto, depois de a completarmos, devemos certificar-nos de também ler o <a target="_blank" href="/guide/introduction">Guia</a> que cobre cada tópico com mais detalhes.
 
-## Pré-requisitos
+## Pré-requisitos {#prerequisites}
 
-O passo-a-passo presume familiaridade elementar com HTML, CSS e JavaScript. Se fores totalmente novo no desenvolvimento front-end, pode não ser a melhor ideia saltar direto para uma abstração como teu primeiro passo - domine os fundamentos depois regresse! Experiência anterior com outras abstrações ajuda, mas não é obrigatória.
+O seminário interativo presume familiaridade elementar com HTML, CSS e JavaScript. Se formos totalmente novos no desenvolvimento do front-end, pode não ser a melhor ideia saltar diretamente para uma abstração como nosso primeiro passo - devemos dominar os fundamentos e depois voltar! Experiência anterior com outras abstrações ajuda, mas não é obrigatória.
 
-## Como Utilizar Este Passo-a-Passo
+## Como Usar Este Seminário {#how-to-use-this-tutorial}
 
-Tu podes editar o código <span class="wide">a direita</span><span class="narrow">abaixo</span> e ver a atualização do resultado instantaneamente. Cada passo introduzirá uma funcionalidade principal da Vue, e serás esperado a completar o código para a demonstração funcionar. Se ficares preso, terás o botão "Mostra-me!" que revela o código em funcionamento para ti. Tente não depender muito dele - aprenderás mais depressa ao descobrires as coisas por ti mesmo.
+Nós podemos editar o código <span class="wide">a direita</span><span class="narrow">abaixo</span> e ver a atualização do resultado instantaneamente. Cada passo introduzirá uma funcionalidade principal da Vue, e seremos esperados para completar o código para termos a demonstração à funcionar. Se ficarmos preso, teremos um botão "Mostrar Solução" que revela o código em funcionamento para nós. Tente não depender muito disto - aprenderemos mais rápido compreendendo as coisas por nós mesmos.
 
-Se fores um programador experiente vindo da Vue 2 ou outras abstrações, existem algumas configurações que podes modificar para tirares o melhor proveito desta aula. Se fores um principiante, é recomendado avançar com as configurações padrão.
+Se formos programadores experientes vindos da Vue 2 ou outras abstrações, existem algumas configurações que podemos modificar para fazermos o melhor uso deste seminário. Se formos iniciantes, é recomendado avançar com os padrões.
 
 <details>
-<summary>Detalhes de Configuração do Passo-a-Passo</summary>
+<summary>Detalhes da Configuração do Seminário</summary>
 
-- A Vue oferece dois estilos de API: API de Opções e API de Composição. Este passo-a-passo está desenhado para funcionar com ambas - podes escolher o teu estilo preferido utilizando os interruptores **Preferência de API** no topo. <a target="_blank" href="/guide/introduction.html#api-styles">Aprenda mais a respeito dos estilos de API</a>.
+- A Vue oferece dois estilos de API: API de Opções e API de Composição. Este seminário interativo está desenhado para funcionar com ambas - podemos escolher o nosso estilo preferido usando os interruptores de **Preferência de API** acima. <a target="_blank" href="/guide/introduction#api-styles">Saiba mais sobre os estilos de API</a>.
 
-- Tu também podes trocar entre modo de Componente de Ficheiro Único (SFC, sigla em Inglês) ou mode de HTML. O primeiro mostrará os exemplos de código no formato <a target="_blank" href="/guide/introduction.html#single-file-components">Componente de Ficheiro Único</a> (SFC, sigla em Inglês), que é o que a maioria dos programadores utilizam quando eles utilizam a Vue com uma etapa de construção. O modo de HTML mostra a utilização sem uma etapa de construção.
+- Nós também podemos trocar entre modo de Componente de Ficheiro Único ou modo de HTML. O primeiro mostrará os exemplos de código no formato de <a target="_blank" href="/guide/introduction#single-file-components">Componente de Ficheiro Único</a> (SFC), o qual é o que a maioria dos programadores usa quando usam a Vue com uma etapa de construção. O modo de HTML mostra a uso sem uma etapa de construção.
 
 </details>
 
-Preparado? Clique "Próximo" para começar.
+Preparado? Clique em "Próximo" para começar.
