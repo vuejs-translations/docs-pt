@@ -1,12 +1,12 @@
-# Ouvintes de Eventos
+# Ouvintes de Evento {#event-listeners}
 
-Nós podemos ouvir os eventos de DOM utilizando a diretiva `v-on`:
+Nós podemos ouvir os eventos do DOM usando a diretiva `v-on`:
 
 ```vue-html
 <button v-on:click="increment">{{ count }}</button>
 ```
 
-Devido ao seu uso frequente, `v-on` também tem uma sintaxe abreviada:
+Por causo do seu uso frequente, a `v-on` também tem uma sintaxe abreviada:
 
 ```vue-html
 <button @click="increment">{{ count }}</button>
@@ -14,7 +14,7 @@ Devido ao seu uso frequente, `v-on` também tem uma sintaxe abreviada:
 
 <div class="options-api">
 
-Agora, `increment` refere-se a uma função declarada utilizando a opção `methods`:
+Agora, `increment` refere-se a uma função declarada usando a opção `methods`:
 
 <div class="sfc">
 
@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     increment() {
-      // atualize o estado do componente
+      // atualizar o estado do componente
       this.count++
     }
   }
@@ -46,7 +46,7 @@ createApp({
   },
   methods: {
     increment() {
-      // atualize o estado do componente
+      // atualizar o estado do componente
       this.count++
     }
   }
@@ -55,7 +55,7 @@ createApp({
 
 </div>
 
-Dentro de um método, podemos acessar uma instância de componente utilizando `this`. A instância de componente expõe as propriedades de dados declaradas pelo `data`. Nós podemos atualizar o estado do componente pela modificação destas propriedades.
+Dentro dum método, podemos acessar a instância do componente usando `this`. A instância do componente expõe as propriedades de dados declaradas por `data`. Nós podemos atualizar o estado do componente modificando estas propriedades.
 
 </div>
 
@@ -63,7 +63,7 @@ Dentro de um método, podemos acessar uma instância de componente utilizando `t
 
 <div class="sfc">
 
-Aqui, `increment` está referindo-se a uma função declarada na `<script setup>`:
+Aqui, `increment` refere-se a uma função declarada no `<script setup>`:
 
 ```vue{6-9}
 <script setup>
@@ -72,8 +72,7 @@ import { ref } from 'vue'
 const count = ref(0)
 
 function increment() {
-  // update component state
-  // atualize o estado do componente
+  // atualizar o estado do componente
   count.value++
 }
 </script>
@@ -83,14 +82,14 @@ function increment() {
 
 <div class="html">
 
-Aqui, `increment` está referindo-se a um método no objeto retornado de `setup()`:
+Aqui, `increment` refere-se a um método no objeto retornado a partir da `setup()`:
 
 ```js{$}
 setup() {
   const count = ref(0)
 
   function increment(e) {
-    // atualize o estado do componente
+    // atualizar o estado do componente
     count.value++
   }
 
@@ -103,10 +102,10 @@ setup() {
 
 </div>
 
-Dentro da função, podemos atualizar o estado do componente pela modificação de suas referências.
+Dentro da função, podemos atualizar o estado do componente modificando as referências.
 
 </div>
 
-Os ouvintes de eventos também podem utilizar expressões em linha, e podem simplificar tarefas comuns com modificadores. Estes detalhes são cobertos na <a target="_blank" href="/guide/essentials/event-handling.html">Guia - Manipulação de Evento</a>.
+Os ouvintes de evento também podem usar expressões em linha, e podem simplificar tarefas comuns com os modificadores. Estes detalhes são cobertos no <a target="_blank" href="/guide/essentials/event-handling">Guia - Manipulação de Evento</a>.
 
-Agora, experimente implementar tu mesmo <span class="options-api">o método</span><span class="composition-api">a função</span> `increment` e vinculá-lo ao botão utilizando `v-on`.
+Agora, tente implementar <span class="options-api">o método</span><span class="composition-api">a função</span> `increment` e vinculá-la ao botão usando a `v-on`.
