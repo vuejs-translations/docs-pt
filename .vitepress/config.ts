@@ -23,7 +23,7 @@ const nav: ThemeConfig['nav'] = [
       },
       {
         text: 'Guia de Migração',
-        link: 'https://v3-migration.vuejs.org/'
+        link: 'https://v3-migration.vuejs.org/pt/'
       }
     ]
   },
