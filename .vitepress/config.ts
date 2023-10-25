@@ -13,7 +13,7 @@ const nav: ThemeConfig['nav'] = [
     items: [
       { text: 'Guia', link: '/guide/introduction' },
       { text: 'Seminário Interativo', link: '/tutorial/' },
-      { text: 'Exemplos Práticos', link: '/examples/' },
+      { text: 'Exemplos Interativos', link: '/examples/' },
       { text: 'Introdução Rápida', link: '/guide/quick-start' },
       // { text: 'Guia de Estilo', link: '/style-guide/' },
       { text: 'Glossário de Termos', link: '/glossary/' },
