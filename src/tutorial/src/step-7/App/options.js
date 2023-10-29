@@ -1,4 +1,4 @@
-// give each todo a unique id
+// dar um `id` único à cada `todo`
 let id = 0
 
 export default {
