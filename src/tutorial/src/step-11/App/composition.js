@@ -1,3 +1,3 @@
 export default {
-  // regista o componente
+  // registar o componente
 }
