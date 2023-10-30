@@ -1,8 +1,8 @@
-# Componentes
+# Componentes {#components}
 
-Até aqui, apenas temos estado trabalhando com um componente único. Aplicações de Vue reais normalmente são criadas com componentes encaixados.
+Até aqui, apenas temos estado a trabalhar com um único componente. As aplicações reais de Vue normalmente são criadas com componentes encaixados.
 
-Um componente pai pode interpretar um outro componente no seu modelo de marcação como um componente filho. Para utilizar um componente filho, precisamos importá-lo primeiro:
+Um componente pai pode interpretar um outro componente no seu modelo de marcação como um componente filho. Para usar um componente filho, primeiro precisamos importá-lo:
 
 <div class="composition-api">
 <div class="sfc">
@@ -27,14 +27,14 @@ export default {
 }
 ```
 
-Também precisamos registar o componente utilizando a opção `components`. Cá estamos utilizando a abreviação da propriedade do objeto para registar o componente `ChildComp` sob a chave `ChildComp`.
+Nós também precisamos registar o componente usando a opção `components`. Eis que estamos usando a abreviatura de propriedade de objeto para registar o componente `ChildComp` sob a chave `ChildComp`.
 
 </div>
 </div>
 
 <div class="sfc">
 
-Depois, podemos utilizar o componente no modelo de marcação como:
+Depois, podemos usar o componente no modelo de marcação como:
 
 ```vue-html
 <ChildComp />
@@ -54,9 +54,9 @@ createApp({
 })
 ```
 
-Também precisamos registar o componente utilizando a opção `components`. Cá estamos utilizando a abreviação da propriedade do objeto para registar o componente `ChildComp` sob a chave `ChildComp`.
+Nós também precisamos registar o componente usando a opção `components`. Eis que estamos usando a abreviatura de propriedade de objeto para registar o componente `ChildComp` sob a chave `ChildComp`.
 
-Uma vez que estamos escrevendo o modelo de marcação no DOM, ele será sujeito as regras de analise do navegador, que é insensível a caixa para nomes de marcador. Portanto, precisamos utilizar o nome no padrão *kebab-case* para referenciar o componente filho:
+Já que estamos a escrever o modelo de marcação no DOM, este estará sujeito as regras de analise sintática do navegador, o qual é insensível a caixa para os nomes de marcador. Portanto, precisamos usar o nome no padrão de *caixa-espetada* para referenciar o componente filho:
 
 
 ```vue-html
@@ -66,4 +66,4 @@ Uma vez que estamos escrevendo o modelo de marcação no DOM, ele será sujeito 
 </div>
 
 
-Agora experimente-o tu mesmo - importe o componente filho e interprete-o no modelo de marcação.
+Agora experimente tu mesmo - importe o componente filho e interprete-o no modelo de marcação.
