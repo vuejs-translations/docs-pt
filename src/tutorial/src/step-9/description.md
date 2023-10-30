@@ -1,21 +1,21 @@
-# Ciclo de Vida e Referências do Modelo de Marcação
+# Ciclo de Vida e Referências da Marcação {#lifecycle-and-template-refs}
 
-Até aqui, a Vue tem lidando com todos as atualizações da DOM por nós, graças a reatividade e interpretação declarativa. No entanto, inevitavelmente haverá casos onde precisaremos trabalhar manualmente com a DOM.
+Até aqui, a Vue tem lidando com todas as atualizações do DOM por nós, graças a reatividade e interpretação declarativa. No entanto, inevitavelmente haverá casos onde precisaremos trabalhar manualmente com o DOM.
 
-Nós podemos requisitar uma **referência do modelo de marcação** - por exemplo, uma referência a um elemento no modelo de marcação - utilizando o <a target="_blank" href="/api/built-in-special-attributes.html#ref">atributo especial `ref`</a>:
+Nós podemos requisitar uma **referência do modelo de marcação** - isto é, uma referência à um elemento no modelo de marcação - usando o <a target="_blank" href="/api/built-in-special-attributes#ref">atributo especial `ref`</a>:
 
 ```vue-html
-<p ref="p">hello</p>
+<p ref="pElementRef">hello</p>
 ```
 
 <div class="composition-api">
 
-Para acessar a referência, precisamos declarar <span class="html"> e expor</span> uma referência com o nome respondente:
+Para acessar a referência, precisamos declarar<span class="html"> e expor</span> uma referência com o nome respondente:
 
 <div class="sfc">
 
 ```js
-const p = ref(null)
+const pElementRef = ref(null)
 ```
 
 </div>
@@ -23,19 +23,19 @@ const p = ref(null)
 
 ```js
 setup() {
-  const p = ref(null)
+  const pElementRef = ref(null)
 
   return {
-    p
+    pElementRef
   }
 }
 ```
 
 </div>
 
-Repara que a referência é inicializada com o valor `null`. Isto é porque o elemento ainda não existe no momento que <span class="sfc">`<script setup>`</span><span class="html">`setup()`</span> é executada. O referência do modelo de marcação só é acessível depois do componente ser **montado**.
+Repara que a referência é inicializada com o valor `null`. Isto é porque o elemento ainda não existe no momento que <span class="sfc">`<script setup>`</span><span class="html">`setup()`</span> é executada. A referência do modelo de marcação apenas é acessível depois do componente ser **montado**.
 
-Para executar o código depois de montar, podemos utilizar a função `onMounted()`:
+Para executar o código depois de montar, podemos usar a função `onMounted()`:
 
 <div class="sfc">
 
@@ -43,7 +43,7 @@ Para executar o código depois de montar, podemos utilizar a função `onMounted
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  // O componente já está montado.
+  // O componente agora está montado.
 })
 ```
 
@@ -56,7 +56,7 @@ import { onMounted } from 'vue'
 createApp({
   setup() {
     onMounted(() => {
-      // O componente já está montado.
+      // O componente agora está montado.
     })
   }
 })
@@ -67,16 +67,16 @@ createApp({
 
 <div class="options-api">
 
-O elemento será exposto no `this.$refs` como `this.$refs.p`. No entanto, só podes acessá-lo depois do componente estar **montado**.
+O elemento será exposto na `this.$refs` como `this.$refs.pElementRef`. No entanto, apenas podemos acessá-lo depois do componente ser **montado**.
 
-Para executar o código depois montar, podemos utilizar a opção `mounted`:
+Para executar o código depois de montar, podemos usar a opção `mounted`:
 
 <div class="sfc">
 
 ```js
 export default {
   mounted() {
-    // O componente já está montado.
+    // O componente agora está montado.
   }
 }
 ```
@@ -87,7 +87,7 @@ export default {
 ```js
 createApp({
   mounted() {
-    // O componente já está montado.
+    // O componente agora está montado.
   }
 })
 ```
@@ -95,6 +95,6 @@ createApp({
 </div>
 </div>
 
-Este é chamado de um **gatilho do ciclo de vida** - ele permite-nos registar uma resposta a ser chamada em certos momentos do ciclo de vida do componente. Existe outros gatilhos tais como <span class="options-api">`created` e `updated`</span><span class="composition-api">`onUpdated` e `onUnmounted`</span>. Consulte o <a target="_blank" href="/guide/essentials/lifecycle.html#lifecycle-diagram">Diagrama do Ciclo de Vida</a> por mais detalhes.
+Este é chamado de um **gatilho do ciclo de vida** - este permite-nos registar uma função de resposta a ser chamada em certos momentos do ciclo de vida do componente. Existe outros gatilhos tais como <span class="options-api">`created` e `updated`</span><span class="composition-api">`onUpdated` e `onUnmounted`</span>. Consulte o <a target="_blank" href="/guide/essentials/lifecycle#lifecycle-diagram">Diagrama do Ciclo de Vida</a> por mais detalhes.
 
-Agora, experimente adicionar um gatilho <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>, acessar o `<p>` através de <span class="options-api">`this.$refs.p`</span><span class="composition-api">`p.value`</span>, e executar algumas operações diretas de DOM sobre ela (por exemplo, mudando sua `textContent`).
+Agora, tente adicionar um gatilho <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>, acessar o `<p>` através da <span class="options-api">`this.$refs.pElementRef`</span><span class="composition-api">`pElementRef.value`</span>, e realizar algumas operações de DOM diretas sobre o mesmo (por exemplo, mudando sua `textContent`).
