@@ -1,6 +1,6 @@
-# Propriedade Computada
+# Propriedade Computada {#computed-property}
 
-Continuaremos construindo sobre a lista de afazeres `todo list` do último passo. Cá, já adicionamos uma funcionalidade de alternar para cada afazer `todo`. Isto é feito adicionando uma propriedade `done` para cada objeto de afazer `todo`, e utilizando `v-model` para vinculá-lo ao caixa de confirmação `checkbox`:
+Continuaremos construindo em cima da lista de afazeres do passo anterior. Neste, já adicionamos uma funcionalidade de alternância à cada afazer (ou `todo`). Isto é feito adicionando uma propriedade `done` à cada objeto `todo`, e usando `v-model` para vinculá-lo à uma caixa de confirmação (ou `checkbox`):
 
 ```vue-html{2}
 <li v-for="todo in todos">
@@ -9,11 +9,11 @@ Continuaremos construindo sobre a lista de afazeres `todo list` do último passo
 </li>
 ```
 
-O próxima melhoria que podemos adicionar é de ser capaz de esconder os afazeres `todos` completados. Nós já temos um botão que alterna o estado `hideCompleted`. Mas como interpretamos listas de itens diferentes com base neste estado?
+A próxima melhoria que podemos adicionar é a de ser capaz de esconder os afazeres (ou `todos`) realizados (ou completados). Já temos um botão que alterna o estado de `hideCompleted`. Mas como interpretamos os diferentes items da lista baseado neste estado?
 
 <div class="options-api">
 
-Introduzindo a <a target="_blank" href="/guide/essentials/computed.html">propriedade computada</a>. Nós podemos declarar uma propriedade que é computada de maneira reativa a partir de outras propriedades utilizando a opção `computed`:
+Introduzindo a <a target="_blank" href="/guide/essentials/computed">propriedade computada</a>. Nós podemos declarar uma propriedade que é computada de maneira reativa a partir de outras propriedades usando a opção `computed`:
 
 <div class="sfc">
 
@@ -22,7 +22,7 @@ export default {
   // ...
   computed: {
     filteredTodos() {
-      // retorna os afazeres `todos` filtrados com base no `this.hideCompleted`
+      // retornar os `todos` filtrados baseado na `this.hideCompleted`
     }
   }
 }
@@ -36,7 +36,7 @@ createApp({
   // ...
   computed: {
     filteredTodos() {
-      // retorna os afazeres `todos` filtrados com base no `this.hideCompleted`
+      // retornar os `todos` filtrados baseado na `this.hideCompleted`
     }
   }
 })
@@ -47,7 +47,7 @@ createApp({
 </div>
 <div class="composition-api">
 
-Introduzindo a função <a target="_blank" href="/guide/essentials/computed.html">`computed()`</a>. Nós podemos criar uma referência computada que computa seu `.value` baseado em outras fontes de dados reativos:
+Introduzindo a função <a target="_blank" href="/guide/essentials/computed.html">`computed()`</a>. Nós podemos criar uma referência computada que calcula o seu `.value` baseado em outras fontes de dados reativos:
 
 <div class="sfc">
 
@@ -60,8 +60,8 @@ const todos = ref([
 ])
 
 const filteredTodos = computed(() => {
-  // retorna afazeres `todos` filtrados com base nos
-  // `todos.value` & `hideCompleted.value`
+  // retornar os `todos` filtrados baseado no
+  // `todos.value` e `hideCompleted.value`
 })
 ```
 
@@ -79,8 +79,8 @@ createApp({
     ])
 
     const filteredTodos = computed(() => {
-      // retorna os afazeres `todos` filtrados com base nos
-      // `todos.value` & `hideCompleted.value`
+      // retornar os `todos` filtrados baseado no
+      // `todos.value` e `hideCompleted.value`
     })
 
     return {
@@ -99,6 +99,6 @@ createApp({
 + <li v-for="todo in filteredTodos">
 ```
 
-Uma propriedade computada rastreia outro estado reativo utilizado em sua computação como dependências. Ela cacheia o resultado e atualiza-o automaticamente quando suas dependências mudarem.
+Uma propriedade computada rastreia outro estado reativo usado no seu cálculo como dependência. Ela armazena para consulta imediata o resultado e atualiza-o automaticamente quando suas dependências mudarem.
 
-Agora, experimente adicionar a propriedade computada `filteredTodos` e implementar sua lógica de computação! Se implementada corretamente, confirmar um afazer `todo` no momento que estiveres escondendo itens completados deveria também escondê-lo instantaneamente.
+Agora, tente adicionar a propriedade computada `filteredTodos` e implementar sua lógica de computação! Se for implementada corretamente, colocar um visto no afazer (ou `todo`) quando escondemos os itens concluídos (ou completados) também deve escondê-lo instantaneamente.
