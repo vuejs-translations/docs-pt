@@ -1,6 +1,6 @@
-# Propriedades
+# Propriedades {#props}
 
-Um componente filho pode aceitar uma entrada a partir do pai através das **propriedades**. Primeiro, ele precisa declarar as propriedades que ele aceita:
+Um componente filho pode aceitar uma entrada a partir do pai através das **propriedades**. Primeiro, este precisa declarar as propriedades que aceita:
 
 <div class="composition-api">
 <div class="sfc">
@@ -14,7 +14,7 @@ const props = defineProps({
 </script>
 ```
 
-Nota que `defineProps()` é uma macro de tempo de compilação e não precisa ser importada. Uma vez declarada, a propriedade `msg` pode ser utilizada no modelo de marcação do componente filho. Ela também pode ser acessada na JavaScript através do objeto retornado de `defineProps()`.
+Notar que a `defineProps()` é uma macro de tempo de compilação e não precisa ser importada. Uma vez declara, a propriedade `msg` pode ser usada no modelo de marcação do componente filho. Esta também pode ser acessada na JavaScript através do objeto retornado da `defineProps()`.
 
 </div>
 
@@ -27,12 +27,12 @@ export default {
     msg: String
   },
   setup(props) {
-    // acessa props.msg
+    // acessar `props.msg`
   }
 }
 ```
 
-Uma vez declarada, a propriedade `msg` é exposta no `this` e pode ser utilizada no modelo de marcação do componente filho. As propriedades recebidas são passadas para `setup()` como primeiro argumento.
+Uma vez declarada, a propriedade `msg` é exposta sobre a `this` e pode ser usada no modelo de marcação do componente filho. As propriedades recebidas são passadas à `setup()` como primeiro argumento.
 
 </div>
 
@@ -49,11 +49,11 @@ export default {
 }
 ```
 
-Uma vez declarada, a propriedade `msg` é exposta no `this` e pode ser utilizada no modelo de marcação do componente.
+Uma vez declarada, a propriedade `msg` é exposta sobre a `this` e pode ser usada no modelo de marcação do componente.
 
 </div>
 
-O componente pai pode passar a propriedade para o componente filho tal como atributos. Para passar um valor dinâmico, também podemos utilizar a sintaxe de `v-bind`:
+O pai pode passar a propriedade ao filho tal como os atributos. Para passar um valor dinâmico, também podemos usar a sintaxe da `v-bind`:
 
 <div class="sfc">
 
