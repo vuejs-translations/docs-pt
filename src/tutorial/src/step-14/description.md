@@ -1,6 +1,6 @@
-# Ranhuras
+# Ranhuras {#slots}
 
-Além da passagem de dados através de propriedades, o componente pai também pode passar fragmentos de modelo de marcação para o componente filho através de **ranhuras (slots)**:
+Além de passar dados através das propriedades, o componente pai também pode passar fragmentos de modelo de marcação ao componente filho através das **ranhuras**:
 
 <div class="sfc">
 
@@ -21,12 +21,12 @@ Além da passagem de dados através de propriedades, o componente pai também po
 
 </div>
 
-No componente filho, ele pode interpretar o conteúdo da ranhura do componente pai utilizando o elemento `<slot>` como escape (*outlet*):
+No componente filho, este pode interpretar o conteúdo da ranhura a partir do componente pai usando o elemento `<slot>` como escoadouro (ou escape):
 
 <div class="sfc">
 
 ```vue-html
-<!-- in child template -->
+<!-- no modelo de marcação do filho -->
 <slot/>
 ```
 
@@ -34,16 +34,16 @@ No componente filho, ele pode interpretar o conteúdo da ranhura do componente p
 <div class="html">
 
 ```vue-html
-<!-- in child template -->
+<!-- no modelo de marcação do filho -->
 <slot></slot>
 ```
 
 </div>
 
-O conteúdo dentro do escape `<slot>` será tratado como conteúdo de "resposta": ele será exibido se o componente pai não passar nenhum conteúdo de ranhura:
+O conteúdo dentro do escoadouro `<slot>` tratado como conteúdo de "retrocesso (ou retorno)": este será exibido se o pai não passou nenhum conteúdo de ranhura:
 
 ```vue-html
 <slot>Fallback content</slot>
 ```
 
-Atualmente não estamos passando nenhum conteúdo de ranhura para `<ChildComp>`, assim deves ver o conteúdo de resposta. Vamos fornecer algum conteúdo de ranhura para o componente filho enquanto fazemos uso do estado `msg` do componente pai.
+Atualmente não estamos passando nenhum conteúdo de ranhura ao `<ChildComp>`, então devemos ver o conteúdo de retrocesso (ou retorno). Vamos fornecer algum conteúdo de ranhura ao filho enquanto fazemos uso do estado da `msg` do pai.
