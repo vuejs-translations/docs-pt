@@ -1,13 +1,13 @@
-# Emissões
+# Emissões {#emits}
 
-Além do recebimento de propriedades, um componente filho também pode emitir eventos para o componente pai:
+Além de receber propriedades, um componente filho também pode emitir eventos ao componente pai:
 
 <div class="composition-api">
 <div class="sfc">
 
 ```vue
 <script setup>
-// declara eventos emitidos
+// declarar eventos emitidos
 const emit = defineEmits(['response'])
 
 // emitir com argumento
@@ -21,7 +21,7 @@ emit('response', 'hello from child')
 
 ```js
 export default {
-  // declara eventos emitidos
+  // declarar eventos emitidos
   emits: ['response'],
   setup(props, { emit }) {
     // emitir com argumento
@@ -38,7 +38,7 @@ export default {
 
 ```js
 export default {
-  // declara eventos emitidos
+  // declarar eventos emitidos
   emits: ['response'],
   created() {
     // emitir com argumento
@@ -49,9 +49,9 @@ export default {
 
 </div>
 
-O primeiro argumento para <span class="options-api">`this.$emit()`</span><span class="composition-api">`emit()`</span> é um nome de evento. Quaisquer argumentos além do primeiro são passados para o ouvinte de evento. 
+O primeiro argumento para <span class="options-api">`this.$emit()`</span><span class="composition-api">`emit()`</span> é o nome do evento. Quaisquer argumentos adicionais são passados ao ouvinte de evento.
 
-O componente pai pode ouvir os eventos emitidos pelo componente filho utilizando o `v-on` - aqui o manipulador recebe o argumento adicional a partir da chamada da emissão do componente filho e atribui-o para o estado local:
+O pai pode ouvir os eventos emitidos pelo filho usando a `v-on` - eis que o manipulador recebe a argumento adicional a partir da chamada de emissão do filho e o atribui ao estado local:
 
 <div class="sfc">
 
