@@ -1,13 +1,13 @@
-# Parabéns!
+# Nós Conseguimos! {#you-did-it}
 
-Tu terminaste a aula!
+Nós concluímos o seminário!
 
-Neste momento, deves ter uma boa ideia de como é trabalhar com a Vue. No entanto, nós cobrimos muitas coisas muito rápido e comentamos sobre os detalhes, então continue aprendendo! Como próximo passo, podes:
+Neste momento, deveríamos ter uma boa ideia de como é trabalhar com a Vue. No entanto, cobrimos muitas coisas demasiado rápido e omitimos os detalhes, não sem dúvidas que devemos continuar a aprender! Como próximo passo, podemos:
 
-- Configurar um projeto real na tua máquina seguindo o [Inicio Rápido](/guide/quick-start.html)
+- Configurar um projeto real de Vue na nossa máquina seguindo a [Introdução Rápida](/guide/quick-start)
 
-- Ir através da [Guia Principal](/guide/essentials/application.html), que cobre todos os tópicos que aprendemos até aqui em maiores detalhes, e muito mais.
+- Passar pelo [Guia Principal](/guide/essentials/application), o qual cobre todos os tópicos que aprendemos até aqui em maiores detalhes, e muito mais.
 
-- Consulte alguns [Exemplos](/examples/) mais práticos.
+- Consultar mais alguns [Exemplos](/examples/) práticos e interativos.
 
-Estamos ansiosos para ver o que construiras a seguir!
+Estamos ansiosos para ver o que irás construir a seguir!
