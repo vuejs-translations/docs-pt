@@ -4,11 +4,11 @@ footer: false
 
 # Introdução {#introduction}
 
-:::info Nós estamos a ler a documentação da Vue 3!
+:::info Lemos a Documentação da Vue 3!
 
 - O suporte da Vue 2 terminará no dia 31 de Dezembro de 2023. Saiba mais sobre o [Suporte de Longo Prazo Estendido da Vue 2](https://v2.vuejs.org/lts/).
 - A documentação da Vue 2 foi movida para [v2.vuejs.org](https://v2.vuejs.org/).
-- Atualização a partir da Vue 2? Consulte o [Guia de Migração](https://v3-migration.vuejs.org/).
+- Migrando da Vue 2? Consulte o [Guia de Migração](https://v3-migration.vuejs.org/pt).
 :::
 
 <style src="@theme/styles/vue-mastery.css"></style>
@@ -24,7 +24,7 @@ footer: false
   </a>
 </div>
 
-## O que a Vue é? {#what-is-vue}
+## O Que é Vue? {#what-is-vue}
 
 Vue (pronunciado /vjuː/, como **view** ) é uma abstração de JavaScript para construção de interfaces de aplicações de utilizador. Ela constrói sobre a HTML, CSS e JavaScript padrão, e fornece um modelo de programação declarativa baseado em componente que ajuda-nos a desenvolver eficientemente interfaces de utilizador, sejam elas simples ou complexas.
 
@@ -272,7 +272,7 @@ Diferentes programadores têm diferentes estilos de aprendizado. Sintamos à von
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/tutorial/">
     <p class="next-steps-link">Experimentar o Seminário Interativo</p>
-    <p class="next-steps-caption">Para aqueles que preferem o aprender as coisas na prática.</p>
+    <p class="next-steps-caption">Para aqueles que preferem aprender as coisas na prática.</p>
   </a>
   <a class="vt-box" href="/guide/quick-start.html">
     <p class="next-steps-link">Ler o Guia</p>
