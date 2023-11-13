@@ -334,7 +334,7 @@ Se saltaste a [Introdução](/guide/introduction), recomendamos fortemente a lei
     <p class="next-steps-caption">O guia acompanha-nos por todos os aspetos da abstração em completo detalhe.</p>
   </a>
   <a class="vt-box" href="/tutorial/">
-    <p class="next-steps-link">Experimentar o Seminário Interativo</p>
+    <p class="next-steps-link">Experimentar o Tutorial</p>
     <p class="next-steps-caption">Para aqueles que preferem aprender as coisas na prática.</p>
   </a>
   <a class="vt-box" href="/examples/">
