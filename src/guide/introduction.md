@@ -105,7 +105,7 @@ A Vue é uma abstração e ecossistema que cobre a maioria das funcionalidades c
 - Produção de Aplicação Estática, ou SSG
 - Mirando aplicações de nativas de área de trabalho, móvel, WebGL, e até mesmo o terminal
 
-Se considerarmos estes conceitos intimidantes, não precisamos de preocupar-nos! O seminário interativo e o guia apenas exigem conhecimento básico de HTML, CSS e JavaScript, e devemos ser capazes de acompanhar sem sermos um especialista em quaisquer um destes.
+Se considerarmos estes conceitos intimidantes, não precisamos de preocupar-nos! O tutorial e o guia apenas exigem conhecimento básico de HTML, CSS e JavaScript, e devemos ser capazes de acompanhar sem sermos um especialista em quaisquer um destes.
 
 Se formos programadores experientes interessados em como integrar melhor a Vue na nossa pilha, ou formos curiosos sobre o que estes termos significam, os discutimos com mais detalhes na seção [Maneiras de Usar a Vue](/guide/extras/ways-of-using-vue).
 
@@ -271,7 +271,7 @@ Diferentes programadores têm diferentes estilos de aprendizado. Sintamos à von
 
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/tutorial/">
-    <p class="next-steps-link">Experimentar o Seminário Interativo</p>
+    <p class="next-steps-link">Experimentar o Tutorial</p>
     <p class="next-steps-caption">Para aqueles que preferem aprender as coisas na prática.</p>
   </a>
   <a class="vt-box" href="/guide/quick-start.html">
