@@ -1,6 +1,6 @@
 ---
 page: true
-title: Seminário Interativo
+title: Tutorial
 sidebar: false
 aside: false
 footer: false
