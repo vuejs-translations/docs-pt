@@ -1,6 +1,6 @@
 # Nós Conseguimos! {#you-did-it}
 
-Nós concluímos o seminário!
+Nós concluímos o tutorial!
 
 Neste momento, deveríamos ter uma boa ideia de como é trabalhar com a Vue. No entanto, cobrimos muitas coisas demasiado rápido e omitimos os detalhes, não sem dúvidas que devemos continuar a aprender! Como próximo passo, podemos:
 
