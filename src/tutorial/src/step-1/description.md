@@ -12,7 +12,7 @@ O tutorial pressupõe familiaridade elementar com HTML, CSS e JavaScript. Se for
 
 Nós podemos editar o código <span class="wide">a direita</span><span class="narrow">abaixo</span> e ver a atualização do resultado instantaneamente. Cada passo introduzirá uma funcionalidade principal da Vue, e seremos esperados para completar o código para termos a demonstração à funcionar. Se ficarmos preso, teremos um botão "Mostrar Solução" que revela o código em funcionamento para nós. Tente não depender muito disto - aprenderemos mais rápido compreendendo as coisas por nós mesmos.
 
-Se formos programadores experientes vindos da Vue 2 ou outras abstrações, existem algumas configurações que podemos modificar para fazermos o melhor uso deste seminário. Se formos iniciantes, é recomendado avançar com os padrões.
+Se formos programadores experientes vindos da Vue 2 ou outras abstrações, existem algumas configurações que podemos modificar para fazermos o melhor uso deste tutorial. Se formos iniciantes, é recomendado avançar com os padrões.
 
 <details>
 <summary>Detalhes da Configuração do Tutorial</summary>
