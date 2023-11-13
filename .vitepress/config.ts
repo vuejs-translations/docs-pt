@@ -12,17 +12,17 @@ const nav: ThemeConfig['nav'] = [
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
     items: [
       { text: 'Guia', link: '/guide/introduction' },
-      { text: 'Seminário Interativo', link: '/tutorial/' },
-      { text: 'Exemplos Interativos', link: '/examples/' },
+      { text: 'Tutorial', link: '/tutorial/' },
+      { text: 'Exemplos', link: '/examples/' },
       { text: 'Introdução Rápida', link: '/guide/quick-start' },
       // { text: 'Guia de Estilo', link: '/style-guide/' },
-      { text: 'Glossário de Termos', link: '/glossary/' },
+      { text: 'Glossário', link: '/glossary/' },
       {
         text: 'Documentação da Vue 2',
         link: 'https://v2.vuejs.org'
       },
       {
-        text: 'Guia de Migração',
+        text: 'Guia de Migração da Vue 2',
         link: 'https://v3-migration.vuejs.org/pt/'
       }
     ]
@@ -47,7 +47,7 @@ const nav: ThemeConfig['nav'] = [
           { text: 'Temas', link: '/ecosystem/themes' },
           { text: 'Certificação', link: 'https://certification.vuejs.org/?ref=vuejs-nav'},
           { text: 'Empregos', link: 'https://vuejobs.com/?ref=vuejs' },
-          { text: 'Loja de T-Shirt', link: 'https://vue.threadless.com/' }
+          { text: 'Loja de Roupas', link: 'https://vue.threadless.com/' }
         ]
       },
       {
@@ -145,7 +145,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/application'
         },
         {
-          text: 'Sintaxe do Modelo de Marcação',
+          text: 'Sintaxe do Modelo',
           link: '/guide/essentials/template-syntax'
         },
         {
@@ -157,7 +157,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/computed'
         },
         {
-          text: 'Vinculação de Estilo e Classe',
+          text: 'Vínculo de Classe e Estilo',
           link: '/guide/essentials/class-and-style'
         },
         {
@@ -169,13 +169,13 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Manipulação de Evento',
           link: '/guide/essentials/event-handling'
         },
-        { text: 'Vinculação de Entrada de Formulário', link: '/guide/essentials/forms' },
+        { text: 'Vínculo de Entrada de Formulário', link: '/guide/essentials/forms' },
         {
           text: 'Gatilhos do Ciclo de Vida',
           link: '/guide/essentials/lifecycle'
         },
         { text: 'Observadores', link: '/guide/essentials/watchers' },
-        { text: 'Referências do Modelo de Marcação', link: '/guide/essentials/template-refs' },
+        { text: 'Referências do Modelo', link: '/guide/essentials/template-refs' },
         {
           text: 'Fundamentos de Componente',
           link: '/guide/essentials/component-basics'
@@ -561,7 +561,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   description: 'Vue.js - A Abstração Progressiva de JavaScript',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
-  //scrollOffset: 'header',
 
   head: [
     ['meta', { name: 'theme-color', content: '#3c8772' }],
