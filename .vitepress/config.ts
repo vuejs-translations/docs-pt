@@ -145,7 +145,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/application'
         },
         {
-          text: 'Sintaxe do Modelo',
+          text: 'Sintaxe do Modelo de Marcação',
           link: '/guide/essentials/template-syntax'
         },
         {
