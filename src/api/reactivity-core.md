@@ -35,13 +35,13 @@ Recebe um valor interno e retorna um objeto de referência reativa e mutável, q
   const count = ref(0)
   console.log(count.value) // 0
 
-  count.value++
+  count.value = 1
   console.log(count.value) // 1
   ```
 
 - **Consulte também:**
   - [Guia - Variáveis Reativas com `ref()`](/guide/essentials/reactivity-fundamentals#reactive-variables-with-ref)
-  - [Guia - Tipos para `ref()`](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
+  - [Guia - Tipificando a `ref()`](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
 
 ## `computed()` {#computed}
 
