@@ -10,7 +10,7 @@ A Vue está escrita ele própria em TypeScript e fornece suporte de TypeScript d
 
 ## Configuração de Projeto {#project-setup}
 
-A [`create-vue`](https://github.com/vuejs/create-vue), a ferramenta de estruturante de projeto oficial, oferece as opções para estruturar um projeto de Vue preparado com TypeScript e alimentado com a [Vite](https://vitejs.dev/).
+A [`create-vue`](https://github.com/vuejs/create-vue), a ferramenta de estruturante de projeto oficial, oferece as opções para estruturar um projeto de Vue preparado com TypeScript e alimentado com a [Vite](https://pt.vitejs.dev/).
 
 ### Visão Geral {#overview}
 
@@ -18,7 +18,7 @@ Com uma configuração baseada na Vite, o servidor de desenvolvimento e o empaco
 
 - Durante o desenvolvimento, recomendamos a confiança sobre uma boa [configuração de IDE](#suporte-de-ide) para obter reações imediatas sobre os erros de tipo.
 
-- Se estiveres utilizando Componentes de Ficheiro Único, utilize o utilitário [`vue-tsc`](https://github.com/johnsoncodehk/volar/tree/master/packages/vue-tsc) para verificação de tipo na linha de comando e para geração de declaração de tipo. O `vue-tsc` é um embrulhador em torno de `tsc`, a interface de linha de comando do próprio TypeScript. Ele funciona em grande parte da mesma maneira que a `tsc` exceto que suporta Componentes de Ficheiro Único de Vue além de ficheiros de TypeScript. Tu podes executar `vue-tsc` no modo observador em paralelo ao servidor de desenvolvimento da Vite.
+- Se estiveres utilizando Componentes de Ficheiro Único, utilize o utilitário [`vue-tsc`](https://github.com/vuejs/language-tools/tree/master/packages/tsc) para verificação de tipo na linha de comando e para geração de declaração de tipo. O `vue-tsc` é um embrulhador em torno de `tsc`, a interface de linha de comando do próprio TypeScript. Ele funciona em grande parte da mesma maneira que a `tsc` exceto que suporta Componentes de Ficheiro Único de Vue além de ficheiros de TypeScript. Tu podes executar `vue-tsc` no modo observador em paralelo ao servidor de desenvolvimento da Vite.
 
 - A Interface de Linha de Comando da Vue também fornece suporte a TypeScript, mas não é mais recomendado. Consulte as [notas abaixo](#nota-sobre-a-linha-de-comando-de-vue-e-o-ts-loader)
 
@@ -48,7 +48,6 @@ Quando estiveres configurando o `tsconfig.json` manualmente, algumas opções no
 
 - Se tiveres configurado os pseudónimos resolvedores na tua ferramenta de construção, por exemplo o pseudónimo `@/*` configurado por padrão em um projeto `create-vue`, também precisas configurá-lo pelo TypeScript através [`compilerOptions.paths`](https://www.typescriptlang.org/tsconfig#paths).
 
-See also:
 Consulte também:
 
 - [Documentação das opções do compilador de TypeScript oficial](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
