@@ -1,6 +1,6 @@
 # Começar {#getting-started}
 
-Saudações, estamos no tutorial da Vue!
+Bem-vindo(a) ao tutorial da Vue!
 
 O objetivo deste tutorial é dar-nos rapidamente uma experiência de como é trabalhar com a Vue, direto no navegador. O tutorial não tem como objetivo ser compreensivo, e não precisamos de entender tudo antes prosseguir. No entanto, depois de o completarmos, devemos certificar-nos que também leremos o <a target="_blank" href="/guide/introduction">Guia</a> que cobre cada tópico com mais detalhes.
 
