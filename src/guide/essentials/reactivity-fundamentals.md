@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# Fundamentos de Reatividade {#reactivity-fundamentals}
+# Fundamentos da Reatividade {#reactivity-fundamentals}
 
-:::tip Preferência de API
+:::tip PREFERÊNCIA DE API
 Esta páginas e muitos outros capítulos adiante neste guia contém diferente conteúdo para a API de Opções e API de Composição. A tua preferência atual é a <span class="options-api">API de Opções</span><span class="composition-api">API de Composição</span>. Tu podes alternar entre os estilos de API utilizando o interruptor "Preferência de API" no canto superior esquerdo da barra lateral.
 :::
 
