@@ -18,6 +18,8 @@ aside: false
 
 <!-- ## Work in Progress Languages {#work-in-progress-languages} -->
 
+[فارسی / Persian](https://fa.vuejs.org/) [[código-fonte](https://github.com/vuejs-translations/docs-fa)]
+
 ## Começando uma nova Tradução {#starting-a-new-translation}
 
 A documentação da Vue foi recentemente submetida a uma grande revisão, então as traduções noutros idiomas continuam em falta ou com trabalho em curso.
