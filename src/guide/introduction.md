@@ -90,8 +90,8 @@ O exemplo acima demonstra as duas funcionalidades principais da Vue:
 
 Se houverem questões, não é coisa de preocupar-se porque cobriremos todos os pequenos detalhes no resto da documentação. Por agora, vamos ler, assim podemos ter uma compreensão de alto nível do que a Vue oferece.
 
-:::tip Pré-Requisitos
-O resto da documentação presume familiaridade básica com a HTML, CSS e JavaScript. Se formos totalmente novos ao desenvolvimento do frontend, pode não ser a melhor ideia saltar direto para uma abstração como primeiro passo - dominamos os fundamentos e depois avançamos para uma abstração! Nós podemos confirmar o nosso nível de conhecimento com [esta re-introdução à JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Experiência prévia com outras abstração ajuda, mas não é obrigatória.
+:::tip PRÉ-REQUISITOS
+O resto da documentação presume familiaridade básica com a HTML, CSS e JavaScript. Se formos totalmente novos ao desenvolvimento do frontend, pode não ser a melhor ideia saltar direto para uma abstração como primeiro passo - dominamos os fundamentos e depois avançamos para uma abstração! Nós podemos confirmar o nosso nível de conhecimento com estas visões gerais para [ JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript), [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) e [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps) se necessário. Experiência prévia com outras abstração ajuda, mas não é obrigatória.
 :::
 
 ## A Abstração Progressiva {#the-progressive-framework}
