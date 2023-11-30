@@ -1,9 +1,21 @@
 <script setup lang="ts">
 import { Repl, ReplStore } from '@vue/repl'
-import '@vue/repl/style.css'
+import CodeMirror from '@vue/repl/codemirror-editor'
 import { data } from './examples.data'
-import { inject, watchEffect, version, Ref } from 'vue'
-import { resolveSFCExample, resolveNoBuildExample, onHashChange } from './utils'
+import {
+  inject,
+  watchEffect,
+  version,
+  Ref,
+  onMounted,
+  ref,
+  onUnmounted
+} from 'vue'
+import {
+  resolveSFCExample,
+  resolveNoBuildExample,
+  onHashChange
+} from './utils'
 
 const store = new ReplStore({
   defaultVueRuntimeURL: `https://unpkg.com/vue@${version}/dist/vue.esm-browser.js`
@@ -12,7 +24,12 @@ const store = new ReplStore({
 const preferComposition = inject('prefer-composition') as Ref<boolean>
 const preferSFC = inject('prefer-sfc') as Ref<boolean>
 
-watchEffect(updateExample)
+watchEffect(updateExample, {
+  onTrigger(e) {
+    console.log(e)
+    debugger
+  }
+})
 onHashChange(updateExample)
 
 /**
@@ -34,10 +51,27 @@ function updateExample() {
     preferSFC.value ? 'App.vue' : 'index.html'
   )
 }
+
+const heightProvider = ref<HTMLDivElement>()
+onMounted(() => {
+  const set = () => {
+    heightProvider.value!.style.setProperty(
+      '--vh',
+      window.innerHeight + 'px'
+    )
+  }
+  set()
+  window.addEventListener('resize', set)
+
+  onUnmounted(() => {
+    window.removeEventListener('resize', set)
+  })
+})
 </script>
 
 <template>
   <Repl
+    :editor="CodeMirror"
     :store="store"
     :showImportMap="!preferSFC"
     :showCompileOutput="false"

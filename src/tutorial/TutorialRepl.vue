@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import { Repl, ReplStore } from '@vue/repl'
-import { inject, watch, version, Ref, ref, computed, nextTick } from 'vue'
+import CodeMirror from '@vue/repl/codemirror-editor'
+import {
+  inject,
+  watch,
+  version,
+  Ref,
+  ref,
+  computed,
+  nextTick
+} from 'vue'
 import { data } from './tutorial.data'
 import {
   resolveSFCExample,
   resolveNoBuildExample,
   onHashChange
 } from '../examples/utils'
-import '@vue/repl/style.css'
 import PreferenceSwitch from '@theme/components/PreferenceSwitch.vue'
 import {
   VTFlyout,
@@ -132,6 +140,7 @@ updateExample()
     </article>
     <Repl
       layout="vertical"
+      :editor="CodeMirror"
       :store="store"
       :showCompileOutput="false"
       :clearConsole="false"
