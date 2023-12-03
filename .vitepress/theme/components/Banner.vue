@@ -99,14 +99,14 @@ function dismiss() {
       </svg>
       <div class="banner__middle">
         <div class="title gradient_text">
-          Haven't migrated to Vue 3 yet?
+          Ainda não migraste para Vue 3?
         </div>
         <div class="separator"></div>
         <div class="subtitle white_text">
-          Explore Never-Ending Support for Vue 2 by HeroDevs
+          Explorar o Suporte Interminável para Vue 2 com a HeroDevs
         </div>
         <div class="cta_button_container">
-          <button class="cta_button">Learn more</button>
+          <button class="cta_button">Saiba mais</button>
         </div>
       </div>
       <svg
