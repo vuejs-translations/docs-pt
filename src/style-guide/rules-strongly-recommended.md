@@ -337,7 +337,7 @@ components/
 
 ## Componentes com autofechamento {#self-closing-components}
 
-**Componentes sem conteúdo devem se autofechar em [Componentes de Arquivo Único](../guide/single-file-component.html), modelos string, e [JSX](../guide/render-function.html#jsx) - mas nunca em modelos DOM.**
+**Componentes sem conteúdo devem se autofechar em [Componentes de Arquivo Único](/guide/scaling-up/sfc), modelos string, e [JSX](/guide/render-function#jsx) - mas nunca em modelos DOM.**
 
 Componentes que se fecham automaticamente informam não apenas que não possuem conteúdo, mas são **feitos** para não terem conteúdo. É a diferença entre uma página em branco em um livro e uma rotulada "Esta página foi intencionalmente deixada em branco". Seu código também é mais limpo sem a etiqueta de fechamento desnecessária.
 
@@ -375,7 +375,7 @@ Infelizmente, HTML não permite que elementos customizados tenham fechamento pr�
 
 ## Notação de nomes de componente em modelos {#component-name-casing-in-templates}
 
-**Na maioria dos projetos, os nomes de componente devem ser sempre PascalCase em [Componentes de Arquivo Único](../guide/single-file-component.html) e modelos em string - e kebab-case em templates DOM.**
+**Na maioria dos projetos, os nomes de componente devem ser sempre PascalCase em [Componentes de Arquivo Único](/guide/scaling-up/sfc) e modelos em string - e kebab-case em templates DOM.**
 
 PascalCase possui algumas vantagens sobre kebab-case:
 
@@ -431,7 +431,7 @@ OU
 
 ## Notação de nomes de componentes em JS/JSX {#component-name-casing-in-js-jsx}
 
-**Nomes de componentes em JS/[JSX](../guide/render-function.html#jsx) devem ser sempre PascalCase, apesar de que podem ser kebab-case dentro de strings para aplicações mais simples, que usam apenas registros globais de componentes  através de `app.component`.**
+**Nomes de componentes em JS/[JSX](/guide/render-function#jsx) devem ser sempre PascalCase, apesar de que podem ser kebab-case dentro de strings para aplicações mais simples, que usam apenas registros globais de componentes  através de `app.component`.**
 
 ::: details Explicação Detalhada
 No JavaScript, PascalCase é a convenção para classes e construtores - essencialmente, qualquer coisa que possa ter instâncias diferentes. Componentes Vue também possuem instâncias, então faz sentido também usar PascalCase. Como um benefício extra, usar PascalCase com JSX (e modelos) permite que os leitores do código consigam distinguir mais facilmente entre componentes e elementos HTML. 
@@ -439,7 +439,7 @@ No JavaScript, PascalCase é a convenção para classes e construtores - essenci
 Entretanto, para aplicações que usam **apenas** definições globais de componente via `app.component`, recomendamos que kebab-case seja usado. Os motivos são:
 
 - É raro que componentes globais sejam referenciados no JavaScript, então seguir a convenção para o JavaScript faz menos sentido.
-- Essas aplicações sempre incluem muito modelos dentro do DOM, onde [kebab-case **deve** ser usado](#component-name-casing-in-templates-strongly-recommended).
+- Essas aplicações sempre incluem muito modelos dentro do DOM, onde [kebab-case **deve** ser usado](#component-name-casing-in-templates).
   :::
 
 <div class="style-example style-example-bad">
@@ -603,7 +603,7 @@ const props = defineProps({
 
 **Elementos com múltiplos atributos devem sempre ocupar múltiplas linhas, com um atributo por linha.**
 
-No JavaScript, dividir objetos com múltiplas propriedades por múltiplas linhas é considerada uma boa convenção, pois é muito mais fácil de se ler. Nossos modelos e [JSX](../guide/render-function.html#jsx) merecem a mesma consideração.
+No JavaScript, dividir objetos com múltiplas propriedades por múltiplas linhas é considerada uma boa convenção, pois é muito mais fácil de se ler. Nossos modelos e [JSX](/guide/render-function#jsx) merecem a mesma consideração.
 
 <div class="style-example style-example-bad">
 <h3>Ruim</h3>
