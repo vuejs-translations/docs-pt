@@ -4,7 +4,7 @@ footer: false
 
 # Introdução {#introduction}
 
-:::info Lemos a Documentação da Vue 3!
+:::info Estamos Lendo a Documentação da Vue 3!
 
 - O suporte da Vue 2 terminará no dia 31 de Dezembro de 2023. Saiba mais sobre o [Suporte de Longo Prazo Estendido da Vue 2](https://v2.vuejs.org/lts/).
 - A documentação da Vue 2 foi movida para [v2.vuejs.org](https://v2.vuejs.org/).
@@ -17,14 +17,14 @@ footer: false
     <div class="banner-wrapper">
       <img class="banner" alt="Faixa da Vue Mastery" width="96px" height="56px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vuemastery-graphical-link-96x56.png" />
     </div>
-    <p class="description">Estude a Vue com a <span>VueMastery.com</span></p>
+    <p class="description">Aprenda Vue com a <span>VueMastery.com</span></p>
     <div class="logo-wrapper">
         <img alt="Logótipo da Vue Mastery" width="25px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vue-mastery-logo.png" />
     </div>
   </a>
 </div>
 
-## O Que é Vue? {#what-is-vue}
+## Que é Vue? {#what-is-vue}
 
 Vue (pronunciado /vjuː/, como **view** ) é uma abstração de JavaScript para construção de interfaces de aplicações de utilizador. Ela constrói sobre a HTML, CSS e JavaScript padrão, e fornece um modelo de programação declarativa baseado em componente que ajuda-nos a desenvolver eficientemente interfaces de utilizador, sejam elas simples ou complexas.
 
