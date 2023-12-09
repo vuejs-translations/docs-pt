@@ -102,7 +102,7 @@ A Vue é uma abstração e ecossistema que cobre a maioria das funcionalidades c
 - Embutindo como Componentes da Web em qualquer página
 - Aplicação de Página Única, ou SPA
 - Interpretação do Lado do Servidor, ou SSR
-- Produção de Aplicação Estática, ou SSG
+- Geração de Aplicação Estática, ou SSG
 - Mirando aplicações de nativas de área de trabalho, móvel, WebGL, e até mesmo o terminal
 
 Se considerarmos estes conceitos intimidantes, não precisamos de preocupar-nos! O tutorial e o guia apenas exigem conhecimento básico de HTML, CSS e JavaScript, e devemos ser capazes de acompanhar sem sermos um especialista em quaisquer um destes.
