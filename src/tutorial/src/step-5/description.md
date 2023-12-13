@@ -34,7 +34,7 @@ function onInput(e) {
 
 Tente digitar na caixa de entrada - deve ser possível ver o texto no `<p>` atualizando-se ao digitar.
 
-Para simplificar os vínculos bidirecionais, a Vue fornece uma diretiva, `v-model`, a qual é essencialmente um açúcar de sintaxe para o que vimos acima:
+Para simplificar os vínculos bidirecionais, a Vue fornece uma diretiva, `v-model`, a qual é essencialmente uma açúcar sintática para o que vimos acima:
 
 ```vue-html
 <input v-model="text">
