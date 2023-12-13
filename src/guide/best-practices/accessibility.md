@@ -123,7 +123,7 @@ Os [marcos](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Role
 | main            | role="main"          | O conteúdo principal ou central do documento.                                                                    |
 | footer          | role="contentinfo"   | Informação sobre o documento pai: notas de rodapé ou direitos de autor ou ligações para o relatório de privacidade.                         |
 | aside           | role="complementary" | Sustenta o conteúdo principal, mais é separado e significativo em seu próprio conteúdo.                                 |
-| _Not available_ | role="search"        | Esta seção contém a funcionalidade de pesquisa para a aplicação.                                            |
+| search | role="search"        | Esta seção contém a funcionalidade de pesquisa para a aplicação.                                            |
 | form            | role="form"          | Coleção de elementos associados ao formulário.                                                                         |
 | section         | role="region"        | O conteúdo que é relevante e para o qual os utilizadores provavelmente quererão navegar. O rótulo deve ser fornecido para este elemento.|
 
