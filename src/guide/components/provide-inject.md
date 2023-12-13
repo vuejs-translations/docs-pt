@@ -313,10 +313,6 @@ export default {
 
 A função `computed()` é normalmente utilizada nos componentes da API de Composição, mas podem também ser utilizadas para complementar certos casos de uso na API de Opções. Tu podes aprender mais a respeito disto lendo os [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals) e as [Propriedades Computadas](/guide/essentials/computed) com a Preferência de API definida para API de Composição.
 
-:::warning Configuração Temporária Obrigatória
-A utilização acima requer a definição `app.config.unwrapInjectedRef = true` para fazer as injeções desembrulharem automaticamente as referências computadas. Isto tornar-se-á o comportamento padrão na Vue 3.3 e esta configuração é introduzida temporariamente para evitar rutura. Não mais será necessária depois da versão 3.3.
-:::
-
 </div>
 
 ## Trabalhando com Chaves de `Symbol` {#working-with-symbol-keys}
