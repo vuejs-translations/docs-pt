@@ -36,9 +36,9 @@ Referências adicionais:
 - [Guia de implementação em produção da Vite](https://vitejs.dev/guide/static-deploy.html)
 - [Guia de implementação em produção da Vue CLI](https://cli.vuejs.org/guide/deployment.html)
 
-## Rastreamento de Erros em Tempo de Execução {#tracking-runtime-errors}
+## Rastreando os Erros em Execução {#tracking-runtime-errors}
 
-O [manipulador de erro de nível da aplicação](/api/application.html#app-config-errorhandler) pode ser usado para comunicar os erros aos serviços de rastreamento:
+O [manipulador de erro de nível da aplicação](/api/application.html#app-config-errorhandler) pode ser usado para comunicar os erros aos serviços de rastreio:
 
 ```js
 import { createApp } from 'vue'
@@ -46,7 +46,7 @@ import { createApp } from 'vue'
 const app = createApp(...)
 
 app.config.errorHandler = (err, instance, info) => {
-  // comunicar erro aos serviços de rastreamento
+  // comunicar erro aos serviços de rastreio
 }
 ```
 
