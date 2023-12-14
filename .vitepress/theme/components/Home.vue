@@ -268,7 +268,7 @@ html:not(.dark) .accent,
 
 @media (max-width: 576px) {
   #hero {
-    padding: 64px 32px;
+    padding: 56px 32px;
   }
   .description {
     font-size: 16px;
