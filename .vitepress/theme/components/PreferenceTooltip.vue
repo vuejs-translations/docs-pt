@@ -74,7 +74,7 @@ onMounted(() => {
     !page.value.relativePath.startsWith('tutorial/') &&
     source !== false
   ) {
-    show.value= true
+    show.value = true
     // dismiss if user switches with the tooltip open
     const stop = watch(preferComposition, () => {
       show.value = false
@@ -179,7 +179,6 @@ p {
   .arrow-top {
     left: 16px;
   }
-
   .prefer-composition .arrow-top {
     left: 136px;
   }
@@ -222,6 +221,6 @@ button {
 .fly-in-enter-from,
 .fly-in-leave-to {
   opacity: 0;
-  transition: translateY(16px);
+  transform: translateY(16px);
 }
 </style>
