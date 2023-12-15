@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue'
 
 const VIDEO_SOURCE = 'https://player.vimeo.com/video/647441538?autoplay=1'
-let showWhyVue = ref(false)
+const showWhyVue = ref(false)
 
 watch(
   () => showWhyVue,
@@ -57,13 +57,13 @@ watch(
 
           <div class="vuemastery-modal-footer">
             <p class="vuemastery-modal-footer-text">
-              Material produzido pela
+              Material produzido por
               <a
                 href="https://www.vuemastery.com"
                 target="_blank"
                 rel="sponsored noopener"
                 title="Cursos de Vue.js na Vue Mastery"
-              >Vue Mastery.</a> Faça gratuitamente o
+              >Vue Mastery.</a> Assista gratuitamente o
               <a
                 href="https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3"
                 target="_blank"
@@ -176,8 +176,8 @@ watch(
 @media (max-width: 576px) {
   #vuemastery-action {
     display: block;
-    margin: 0 auto;
-    width: 150px
+    margin: 0px auto;
+    width: 150px;
   }
 }
 </style>
