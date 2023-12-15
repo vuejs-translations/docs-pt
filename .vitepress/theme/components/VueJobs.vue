@@ -4,7 +4,7 @@ import { ref } from 'vue'
 // shared data across instances so we load only once
 const base = 'https://app.vuejobs.com/feed/vuejs/docs?format=json'
 
-let items = ref<Jobs[]>([])
+const items = ref<Jobs[]>([])
 
 type Jobs = {
   organization: Organization
@@ -12,12 +12,12 @@ type Jobs = {
   link: string
   locations: string[]
   remote: false | 'ALLOWED' | 'ONLY'
-};
+}
 
 type Organization = {
   name: string
   avatar: string
-};
+}
 </script>
 
 <script setup lang="ts">
@@ -29,7 +29,7 @@ const openings = computed(() =>
 
 onMounted(async () => {
   if (!items.value.length) {
-    items = (await (await fetch(`${base}`)).json()).data
+    items.value = (await (await fetch(`${base}`)).json()).data
   }
 })
 </script>
@@ -47,7 +47,7 @@ onMounted(async () => {
         <div class="vj-company-logo">
           <img
             :src="job.organization.avatar"
-            :alt="`Logótipo para ${job.organization.name}`" />
+            :alt="`Logótipo da ${job.organization.name}`" />
         </div>
         <div
           style="
@@ -65,7 +65,7 @@ onMounted(async () => {
       </a>
     </div>
     <div class="vj-link">
-      Trabalhos pela
+      Trabalhos por
       <a
         href="https://vuejobs.com/?utm_source=vuejs&utm_medium=referral&utm_campaign=jobs_widget&utm_content=bottom_link"
         target="_blank"
