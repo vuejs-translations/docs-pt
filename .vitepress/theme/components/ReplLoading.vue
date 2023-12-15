@@ -6,7 +6,7 @@
       <div></div>
       <div></div>
     </div>
-    <div>Carregar a Repl...</div>
+    <div>Carregando a Repl...</div>
   </div>
 </template>
 
