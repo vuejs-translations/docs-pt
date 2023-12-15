@@ -14,8 +14,8 @@ const props = withDefaults(
   }
 )
 
-let container = ref<HTMLElement>()
-let visible = ref(false)
+const container = ref<HTMLElement>()
+const visible = ref(false)
 
 onMounted(async () => {
   // only render when entering view
