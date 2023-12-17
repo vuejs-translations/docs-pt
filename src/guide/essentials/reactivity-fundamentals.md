@@ -80,7 +80,7 @@ import { ref } from 'vue'
 const count = ref(0)
 ```
 
-`ref()` recebe o argumento e retorna-o embrulhado dentro dum objeto de referência com uma propriedade `.value`:
+A `ref()` recebe o argumento e retorna-o embrulhado dentro dum objeto de referência com uma propriedade `.value`:
 
 ```js
 const count = ref(0)
@@ -92,15 +92,16 @@ count.value++
 console.log(count.value) // 1
 ```
 
-> Consulte também: [Tipos para as Referências](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
+> Consulte também: [Tipificando as Referências](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
 
-Para acessar as referências no modelo de marcação dum componente, declaramos e as retornamos a partir da função `setup()` dum componente:
+Para acessarmos as referências no modelo de marcação dum componente, as declaramos e as retornamos a partir da função `setup()` dum componente:
 
 ```js{5,9-11}
 import { ref } from 'vue'
 
 export default {
-  // `setup()` é um gatilho especial dedicado para a API de Composição.
+  // `setup()` é uma função gatilho especial
+  // dedicada a API de Composição.
   setup() {
     const count = ref(0)
 
@@ -116,9 +117,9 @@ export default {
 <div>{{ count }}</div>
 ```
 
-Repara que **não** precisávamos anexar `.value` quando usamos a referência no modelo de marcação. Por conveniência, as referências são automaticamente desembrulhada quando usadas dentro dos modelos de marcação (com algumas [advertências](#caveat-when-unwrapping-in-templates)).
+Repara que **não** precisamos anexar `.value` quando usamos a referência no modelo de marcação. Por conveniência, as referências são desembrulhadas automaticamente quando usadas dentro dos modelos de marcação (com algumas [advertências](#caveat-when-unwrapping-in-templates)).
 
-Tu também podes modificar a referência diretamente nos manipuladores de evento:
+Nós também podemos modificar a referência diretamente nos manipuladores de evento:
 
 ```vue-html
 <button @click="count++">
@@ -126,7 +127,7 @@ Tu também podes modificar a referência diretamente nos manipuladores de evento
 </button>
 ```
 
-Para lógica mais complexa, podemos declarar funções que modificam as referências no mesmo escopo e expo-las como métodos ao lado do estado:
+Para lógica mais complexa, podemos declarar função que alteram as referências no mesmo âmbito de aplicação e as expor como métodos ao lado do estado:
 
 ```js{7-10,15}
 import { ref } from 'vue'
@@ -140,7 +141,7 @@ export default {
       count.value++
     }
 
-    // também não esqueças de expor a função.
+    // não esqueçamos também de expor a função.
     return {
       count,
       increment
@@ -157,7 +158,7 @@ Os métodos expostos podem então ser usados como manipuladores de evento:
 </button>
 ```
 
-Nesta ligação está o exemplo ao vivo na [Codepen](https://codepen.io/vuejs-examples/pen/WNYbaqo), sem usar quaisquer ferramentas de construção.
+Eis o exemplo ao vivo na [Codepen](https://codepen.io/vuejs-examples/pen/WNYbaqo), sem usar quaisquer ferramentas de construção.
 
 ### `<script setup>` \*\* {#script-setup}
 
