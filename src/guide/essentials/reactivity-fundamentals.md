@@ -38,13 +38,13 @@ export default {
 
 Estas propriedades da instância apenas são adicionadas depois da instância ser criada, então precisamos garantir que estas estão todas presentes no objeto retornado pela função `data`. Onde necessário, usamos `null`, `undefined` ou outros valores marcadores de posição para as propriedades onde o valor desejado ainda não estiver disponível.
 
-É possível adicionar uma nova propriedade diretamente à `this` sem a incluir na `data`. No entanto, as propriedades adicionadas desta maneira não serão capazes de acionar as atualizações reativas.
+É possível adicionar uma nova propriedade diretamente ao `this` sem a incluir na `data`. No entanto, as propriedades adicionadas desta maneira não serão capazes de acionar as atualizações reativas.
 
 A Vue usa um prefixo `$` quando expõe suas próprias APIs embutidas através da instância do componente. Esta também reserva o prefixo `_` para as propriedades internas. Nós devemos evitar usar nomes para as propriedades `data` de alto nível que começam com qualquer um destes caracteres.
 
-### Delegação Reativa vs Delegação Original \* {#reactive-proxy-vs-original}
+### Delegação Reativa vs Original \* {#reactive-proxy-vs-original}
 
-Na Vue 3, os dados são feitos reativos influenciando as [Delegações de JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Utilizadores chegando da Vue 2 devem estar cientes do seguinte caso extremo:
+Na Vue 3, os dados são tornados reativos influenciando as [Delegações da JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Os utilizadores vindo da Vue 2 devem estar cientes do seguinte caso extremo:
 
 ```js
 export default {
@@ -62,7 +62,7 @@ export default {
 }
 ```
 
-Quando acessares `this.someObject` depois de atribuí-lo, o valor é uma delegação reativa do `newObject` original. **Ao contrário da Vue 2, o `newObject` original é deixado intacto e não será tornado reativo: certifica-te de sempre acessar o estado reativo como uma propriedade de `this`**.
+Quando acessamos `this.someObject` depois de atribuí-lo, o valor é uma delegação reativa do `newObject` original. **Diferente da Vue 2, o `newObject` original é deixado intacto e não será tornado reativo: devemos certificar-nos de acessar sempre o estado reativo como uma propriedade do `this`**.
 
 </div>
 
