@@ -45,6 +45,7 @@ const nav: ThemeConfig['nav'] = [
         items: [
           { text: 'Parceiros', link: '/partners/' },
           { text: 'Temas', link: '/ecosystem/themes' },
+          { text: 'Componentes de Interface', link: 'https://ui-libs.vercel.app/' },
           { text: 'Certificação', link: 'https://certification.vuejs.org/?ref=vuejs-nav'},
           { text: 'Empregos', link: 'https://vuejobs.com/?ref=vuejs' },
           { text: 'Loja de Roupas', link: 'https://vue.threadless.com/' }
