@@ -5,14 +5,14 @@ outline: deep
 # Fundamentos da Reatividade {#reactivity-fundamentals}
 
 :::tip PREFERÊNCIA DE API
-Esta páginas e muitos outros capítulos adiante neste guia contém diferente conteúdo para a API de Opções e API de Composição. A tua preferência atual é a <span class="options-api">API de Opções</span><span class="composition-api">API de Composição</span>. Tu podes alternar entre os estilos de API utilizando o interruptor "Preferência de API" no canto superior esquerdo da barra lateral.
+Esta página e muitos outros capítulos adiante neste guia contém conteúdo diferente para API de Opções e a API de Composição. Nossa preferência atual é a <span class="options-api">API de Opções</span><span class="composition-api">API de Composição</span>. Nós podemos alternar entre os estilos de API usando os interruptores de "Preferência de API" acima da barra lateral esquerda.
 :::
 
 <div class="options-api">
 
 ## Declarando Estado Reativo \* {#declaring-reactive-state}
 
-Com a API de Opções, utilizamos a opção `data` para declarar estado reativo de um componente. O valor da opção deve ser uma função que retorna um objeto. A Vue chamará a função quando estiver criando uma nova instância do componente, e envolve o objeto retornado no seu sistema de reatividade. Quaisquer propriedades de alto nível deste objeto são delegados sobre a instância do componente (`this` dentro dos métodos e gatilhos do ciclo de vida):
+Com a API de Opções, usamos a opção `data` para declarar o estado reativo dum componente. O valor da opção deve ser uma função que retorna um objeto. A Vue chamará a função quando criarmos uma nova instância de componente, e embrulha o objeto retornado no seu sistema de reatividade. Quaisquer propriedades de alto nível deste objeto são delegadas sobre a instância do componente (`this` nos métodos e funções gatilhos do ciclo de vida):
 
 ```js{2-6}
 export default {
@@ -22,7 +22,8 @@ export default {
     }
   },
 
-  // `mounted` é um gatilho de ciclo de vida que explicaremos adiante
+  // `mounted` é uma função gatilho do
+  // ciclo de vida que explicaremos depois
   mounted() {
     // `this` refere-se a instância do componente.
     console.log(this.count) // => 1
@@ -33,13 +34,13 @@ export default {
 }
 ```
 
-[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNpFUNFqhDAQ/JXBpzsoHu2j3B2U/oYPpnGtoetGkrW2iP/eRFsPApthd2Zndilex7H8mqioimu0wY16r4W+Rx8ULXVmYsVSC9AaNafz/gcC6RTkHwHWT6IVnne85rI+1ZLr5YJmyG1qG7gIA3Yd2R/LhN77T8y9sz1mwuyYkXazcQI2SiHz/7iP3VlQexeb5KKjEKEe2lPyMIxeSBROohqxVO4E6yV6ppL9xykTy83tOQvd7tnzoZtDwhrBO2GYNFloYWLyxrzPPOi44WWLWUt618txvASUhhRCKSHgbZt2scKy7HfCujGOqWL9BVfOgyI=)
+[Experimentar na Zona de Testes](https://play.vuejs.org/#eNpFUNFqhDAQ/JXBpzsoHu2j3B2U/oYPpnGtoetGkrW2iP/eRFsPApthd2Zndilex7H8mqioimu0wY16r4W+Rx8ULXVmYsVSC9AaNafz/gcC6RTkHwHWT6IVnne85rI+1ZLr5YJmyG1qG7gIA3Yd2R/LhN77T8y9sz1mwuyYkXazcQI2SiHz/7iP3VlQexeb5KKjEKEe2lPyMIxeSBROohqxVO4E6yV6ppL9xykTy83tOQvd7tnzoZtDwhrBO2GYNFloYWLyxrzPPOi44WWLWUt618txvASUhhRCKSHgbZt2scKy7HfCujGOqWL9BVfOgyI=)
 
-Estas propriedades de instância só são adicionadas quando a instância for criada primeiro, então precisar garantir que elas estão todas presentes no objeto retornado pela função `data`. Onde necessário, utilize `null`, `undefined` ou algum outro valor segurador de lugar para as propriedades onde o valor desejado ainda não está disponível.
+Estas propriedades da instância apenas são adicionadas depois da instância ser criada, então precisamos garantir que estas estão todas presentes no objeto retornado pela função `data`. Onde necessário, usamos `null`, `undefined` ou outros valores marcadores de posição para as propriedades onde o valor desejado ainda não estiver disponível.
 
-É possível adicionar uma nova propriedade diretamente ao `this` sem incluí-la no `data`. No entanto, propriedades adicionadas desta maneira não serão capazes de acionar atualizações reativas.
+É possível adicionar uma nova propriedade diretamente à `this` sem a incluir na `data`. No entanto, as propriedades adicionadas desta maneira não serão capazes de acionar as atualizações reativas.
 
-A Vue utiliza um prefixo `$` quando está expondo suas próprias APIs embutidas através da instância do componente. Ela também reserva o prefixo `_` para propriedades internas. Tu deves evitar a utilização de nomes para propriedades de `data` de alto nível que comecem com quaisquer destes caracteres.
+A Vue usa um prefixo `$` quando expõe suas próprias APIs embutidas através da instância do componente. Esta também reserva o prefixo `_` para as propriedades internas. Nós devemos evitar usar nomes para as propriedades `data` de alto nível que começam com qualquer um destes caracteres.
 
 ### Delegação Reativa vs Delegação Original \* {#reactive-proxy-vs-original}
 
