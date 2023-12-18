@@ -325,7 +325,7 @@ function mutateDeeply() {
 
 Os valores não primitivos são transformados em delegações reativas através da [`reactive()`](#reactive), que é discutida abaixo.
 
-Também é possível abandonar a reatividade profunda com as [referências superficiais](/api/reactivity-advanced#shallowref). Para as referências superficiais, apenas o acesso de `.value` é rastreado para reatividade. As referências superficiais pode ser usadas para otimização do desempenho evitando o custo de observação dos grandes objetos, ou em casos onde o estado interno é gerido por uma biblioteca externa.
+Também é possível abandonar a reatividade profunda com as [referências superficiais](/api/reactivity-advanced#shallowref). Para as referências superficiais, apenas o acesso de `.value` é rastreado para reatividade. As referências superficiais podem ser usadas para otimização do desempenho evitando o custo de observação dos grandes objetos, ou em casos onde o estado interno é gerido por uma biblioteca externa.
 
 Leitura avançada:
 
