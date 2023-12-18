@@ -162,7 +162,7 @@ Eis o exemplo ao vivo na [Codepen](https://codepen.io/vuejs-examples/pen/WNYbaqo
 
 ### `<script setup>` \*\* {#script-setup}
 
-Expor manualmente o estado e os métodos através de `setup()` pode ser verboso. Felizmente, pode ser evitado quando usamos [Componentes de Ficheiro Único](/guide/scaling-up/sfc). Nós podemos simplificar o uso com o `<script setup>`:
+Pode ser verboso expor manualmente o estado e os métodos através da `setup()`. Felizmente, isto pode ser evitado quando usamos [Componentes de Ficheiro Único](/guide/scaling-up/sfc). Nós podemos simplificar o uso com o `<script setup>`:
 
 ```vue{1}
 <script setup>
@@ -184,12 +184,12 @@ function increment() {
 
 [Experimentar na Zona de Testes](https://play.vuejs.org/#eNo9jUEKgzAQRa8yZKMiaNcllvYe2dgwQqiZhDhxE3L3jrW4/DPvv1/UK8Zhz6juSm82uciwIef4MOR8DImhQMIFKiwpeGgEbQwZsoE2BhsyMUwH0d66475ksuwCgSOb0CNx20ExBCc77POase8NVUN6PBdlSwKjj+vMKAlAvzOzWJ52dfYzGXXpjPoBAKX856uopDGeFfnq8XKp+gWq4FAi)
 
-As importações, variáveis, e funções de alto nível declaradas no `<script setup>` são automaticamente usáveis no modelo de marcação do mesmo componente. Pense do modelo de marcação como uma função de JavaScript declarada no mesmo escopo - naturalmente tem acesso à tudo for declarado ao lado dele.
+As importações, variáveis, e funções de alto nível declaradas no `<script setup>` são automaticamente usáveis no modelo de marcação do mesmo componente. Pense no modelo de marcação como uma função de JavaScript declarada no mesmo âmbito de aplicação - esta naturalmente tem acesso a tudo que foi declarado ao seu lado.
 
-:::tip DICA
-Para o resto do guia, estaremos primariamente a usar a sintaxe de Componente de Ficheiro Único + `<script setup>` para os exemplos de código da API de Composição, uma vez que é uso mais comum para os programadores de Vue.
+:::tip NOTA
+Para o resto do guia, usaremos primariamente a sintaxe de Componente de Ficheiro Único + `<script setup>` para os exemplos de código da API de Composição, uma vez que é o uso mais comum para os programadores de Vue.
 
-Se não estiveres a usar Componente de Ficheiro Único, ainda podes usar a API de Composição com a opção [`setup()`](/api/composition-api-setup).
+Se não estivermos usando o Componente de Ficheiro Único, ainda podemos usar a API de Composição com a opção [`setup()`](/api/composition-api-setup).
 ::::
 
 ### Porquê Referências? \*\* {#why-refs}
