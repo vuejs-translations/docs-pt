@@ -276,7 +276,7 @@ No exemplo acima, o método `increment` será chamado quando o `<button>` for cl
 
 ### Reatividade Profunda {#deep-reactivity}
 
-Na Vue, o estado é profundamente reativo por padrão. Isto significa que podes esperar que as mudanças serem detetadas mesmo quando alteras objetos ou arranjos encaixados:
+Na Vue, o estado é profundamente reativo por padrão. Isto significa que podemos esperar as mudanças serem detetadas mesmo quando alteramos os objetos e vetores encaixados:
 
 <div class="options-api">
 
@@ -292,7 +292,7 @@ export default {
   },
   methods: {
     mutateDeeply() {
-      // estes funcionarão como esperado.
+      // estas funcionarão como o esperado.
       this.obj.nested.count++
       this.obj.arr.push('baz')
     }
@@ -304,9 +304,9 @@ export default {
 
 <div class="composition-api">
 
-As referências podem segurar qualquer tipo de valor, incluindo objetos profundamente encaixados, vetores, ou estruturas de dados embutidas da JavaScript tal como a `Map`.
+As referências podem segurar qualquer tipo de valor, incluindo objetos profundamente encaixados, vetores, ou estruturas de dados embutidas da JavaScript como a `Map`.
 
-Uma referência tornará o seu valor profundamente reativo, Isto significa que podes esperar as mudanças serem detetadas mesmo quando mudares os objetos ou vetores encaixados:
+Uma referência tornará o seu valor profundamente reativo. Isto significa que podemos esperar as mudanças serem detetadas mesmo quando mudarmos os objetos ou vetores encaixados:
 
 ```js
 import { ref } from 'vue'
@@ -317,7 +317,7 @@ const obj = ref({
 })
 
 function mutateDeeply() {
-  // estes funcionarão como esperado.
+  // estas funcionarão como esperado.
   obj.value.nested.count++
   obj.value.arr.push('baz')
 }
