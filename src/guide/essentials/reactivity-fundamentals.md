@@ -228,7 +228,7 @@ O sistema de reatividade é discutido em mais detalhes na seção [Reatividade e
 
 <VueSchoolLink href="https://vueschool.io/lessons/methods-in-vue-3" title="Aula Gratuita Sobre Métodos de Vue.js"/>
 
-Para adicionar métodos à uma instância de componente utilizamos a opção `methods`. Isto deve ser um objeto contendo os métodos desejados:
+Para adicionarmos métodos à instância dum componente usamos a opção `methods`. Esta deve ser um objeto contendo os métodos desejados:
 
 ```js{7-11}
 export default {
@@ -243,33 +243,34 @@ export default {
     }
   },
   mounted() {
-    // métodos podem ser chamados nos gatilhos de clico de vida, ou em outros métodos!
+    // os métodos podem ser chamados nas
+    // funções gatilhos do ciclo de vida, ou noutros métodos!
     this.increment()
   }
 }
 ```
 
-A Vue vincula automaticamente o valor `this` para `methods` para que sempre referir-se a instância de componente. Isto garante que um método preserva o valor `this` correto se for utilizado como um ouvinte de evento ou resposta. Tu deves evitar a utilização de funções em flecha quando estiveres definindo os `methods`, visto que impedi a Vue de vincular o valor `this` apropriado:
+A Vue vincula automaticamente o valor de `this` dos `methods` para que refira-se sempre à instância do componente. Isto garante que um método retém o valor de `this` correto se for usado como um ouvinte de evento ou função de resposta. Nós devemos evitar usar funções de flecha quando definimos `methods`, uma vez que estas impedem a Vue de vincular o valor de `this` apropriado:
 
 ```js
 export default {
   methods: {
     increment: () => {
-      // MAU: nenhum acesso de `this` aqui!
+      // MAU: nenhum acesso ao `this` nesta declaração!
     }
   }
 }
 ```
 
-Tal como todas as outras propriedades da instância de componente, o `methods` são acessíveis a partir de dentro do modelo de marcação do componente. Dentro de um modelo de marcação são comummente utilizadas como ouvintes de evento:
+Tal como todas as outras propriedades da instância do componente, as propriedades de `methods` são acessíveis a partir de dentro do modelo de marcação do componente. Dentro dum modelo de marcação são comummente usadas como ouvintes de evento:
 
 ```vue-html
 <button @click="increment">{{ count }}</button>
 ```
 
-[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNplj9EKwyAMRX8l+LSx0e65uLL9hy+dZlTWqtg4BuK/z1baDgZicsPJgUR2d656B2QN45P02lErDH6c9QQKn10YCKIwAKqj7nAsPYBHCt6sCUDaYKiBS8lpLuk8/yNSb9XUrKg20uOIhnYXAPV6qhbF6fRvmOeodn6hfzwLKkx+vN5OyIFwdENHmBMAfwQia+AmBy1fV8E2gWBtjOUASInXBcxLvN4MLH0BCe1i4Q==)
+[Experimentar na Zona de Testes](https://play.vuejs.org/#eNplj9EKwyAMRX8l+LSx0e65uLL9hy+dZlTWqtg4BuK/z1baDgZicsPJgUR2d656B2QN45P02lErDH6c9QQKn10YCKIwAKqj7nAsPYBHCt6sCUDaYKiBS8lpLuk8/yNSb9XUrKg20uOIhnYXAPV6qhbF6fRvmOeodn6hfzwLKkx+vN5OyIFwdENHmBMAfwQia+AmBy1fV8E2gWBtjOUASInXBcxLvN4MLH0BCe1i4Q==)
 
-No exemplo acima, o método `increment` será chamado quando o `<button>` clicado.
+No exemplo acima, o método `increment` será chamado quando o `<button>` for clicado.
 
 </div>
 
