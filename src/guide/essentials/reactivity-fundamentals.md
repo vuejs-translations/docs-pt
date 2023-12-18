@@ -192,15 +192,15 @@ Para o resto do guia, usaremos primariamente a sintaxe de Componente de Ficheiro
 Se não estivermos usando o Componente de Ficheiro Único, ainda podemos usar a API de Composição com a opção [`setup()`](/api/composition-api-setup).
 ::::
 
-### Porquê Referências? \*\* {#why-refs}
+### Por que Referências? \*\* {#why-refs}
 
-Tu podes estar a perguntar a si mesmo porquê precisamos de referências com `.value` no lugar de variáveis simples. Para explicar isto, precisaremos de discutir brevemente como o sistema de reatividade da Vue funciona.
+Nós podemos estar a perguntar-nos por que razão precisamos de referências com `.value` ao invés de variáveis simples. Para explicarmos isto, precisaremos discutir brevemente como o sistema de reatividade da Vue funciona.
 
-Quando usas uma referência no modelo de marcação, e mudas o valor da referência mais tarde, a Vue deteta automaticamente a mudança e atualiza o DOM por consequência. Isto é tornado possível com um rastreio de dependência baseado no sistema de reatividade. Quando um componente é desenhado pela primeira vez, a Vue **rastreia** todas as referências que foram usadas durante o desenho. Depois, quando uma referência for mudada, **acionará** o redesenho para os componentes que estão a rastreia-lo.
+Quando usamos uma referência num modelo de marcação, e mudamos o valor da referência em seguida, a Vue deteta automaticamente a mudança e atualiza o DOM por consequência. Isto é tornado possível com um rastreio de dependência baseado no sistema de reatividade. Quando um componente é desenhado pela primeira vez, a Vue **rastreia** toda referência que foi usada durante a interpretação. Mais tarde, quando uma referência for alterada, esta **acionará** uma reinterpretação dos componentes que a estiverem rastreando.
 
-Na JavaScript padrão, não existe nenhuma maneira de detetar o acesso ou mutação de variáveis simples. Mas podemos intercetar operações de recuperação e definição duma propriedade.
+Na JavaScript padrão, não existe nenhuma maneira de detetar o acesso ou mutação das variáveis simples. No entanto, podemos intercetar as opções de recuperação e definição duma propriedade.
 
-A propriedade `.value` dá a Vue oportunidade de detetar quando uma referência foi acessada ou mudada. Nos bastidores, a Vue realiza o rastreio no seu recuperador, e realiza acionamento no seu definidor. Concetualmente, podes pensar duma referência como um objeto que se parece com isto:
+A propriedade `.value` dá à Vue a oportunidade de detetar quando uma referência foi acessada ou alterada. Nos bastidores, a Vue realiza o rastreio no seu recuperador, e realiza acionamento no seu definidor. Concetualmente, podemos pensar numa referência como um objeto que parece-se com isto:
 
 ```js
 // pseudo-código, e não implementação verdadeira
@@ -217,9 +217,9 @@ const myRef = {
 }
 ```
 
-Uma outra característica fantástica das referências é que ao contrário das variáveis simples, podes passar referências para funções enquanto reténs o acesso ao último valor e a conexão da reatividade. Isto é particularmente útil quando refazemos lógica complexa em código reutilizável.
+Uma outra característica fantástica das referências é a que diferente das variáveis simples, podemos passar as referências às funções enquanto retemos o acesso ao valor mais recente e a conexão da reatividade. Isto é especialmente útil quando refazemos uma lógica complexa em código reutilizável.
 
-O sistema de reatividade é discutido em mais detalhes na seção [Reatividade em Profundidade](/guide/extras/reactivity-in-depth)
+O sistema de reatividade é discutido em mais detalhes na seção [Reatividade em Profundidade](/guide/extras/reactivity-in-depth).
 </div>
 
 <div class="options-api">
