@@ -336,19 +336,19 @@ Leitura avançada:
 
 ### Tempo de Atualização do DOM {#dom-update-timing}
 
-Quando alteras o estado reativo, o DOM é atualizado automaticamente. No entanto, deve ser notado que as atualizações do DOM não são aplicadas de maneira síncrona. Ao invés disto, a Vue ampara-os até o "próximo momento" no ciclo de atualização para garantir que cada componente precise atualizar apenas uma vez não importa quantas mudanças de estado tens feito.
+Quando alteramos o estado reativo, o DOM é atualizado automaticamente. No entanto, deve ser notado que as atualizações do DOM não são aplicadas de maneira síncrona. Ao invés disto, a Vue amortece-as até o "próximo tiquetaque" no ciclo de atualização para garantir que cada componente atualize-se apenas uma vez não importa quantas mudanças de estado fizemos.
 
-Para esperar pela atualização do DOM terminar depois de uma mudança de estado, podes utilizar a API global [`nextTick()`](/api/general#nexttick):
+Para aguardar-mos a atualização do DOM terminar depois duma mudança de estado, podemos usar a API global [`nextTick()`](/api/general#nexttick):
 
 <div class="composition-api">
 
 ```js
 import { nextTick } from 'vue'
 
-function increment() {
+async function increment() {
   state.count++
-  nextTick(() => {
-    // acessa o DOM atualizado
+  await nextTick(() => {
+    // Agora o DOM está atualizado
   })
 }
 ```
@@ -361,10 +361,10 @@ import { nextTick } from 'vue'
 
 export default {
   methods: {
-    increment() {
+    async increment() {
       this.count++
-      nextTick(() => {
-        // acessa o DOM atualizado
+      await nextTick(() => {
+        // Agora o DOM está atualizado
       })
     }
   }
