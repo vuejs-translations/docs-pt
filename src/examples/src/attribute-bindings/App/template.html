@@ -1,18 +1,17 @@
 <p>
   <span :title="message">
-    Paire o ponteiro do teu rato sobre mim por alguns segundos para veres o título saltar dinamicamente!
+    Paire o ponteiro do rato sobre mim por alguns segundos para ver o título saltar dinamicamente!
   </span>
 </p>
 
 <!--
-as vinculações de classe têm suporte especial para objetos e arranjos
-para além do suporte para sequência de caracteres simples.
+os vínculos de classe têm suporte especial para objetos e vetores para além do suporte às sequências de caracteres simples.
 -->
 <p :class="{ red: isRed }" @click="toggleRed">
   Isto deveria ser vermelho... porém clica-me para alterná-lo.
 </p>
 
-<!-- as vinculações de estilo também suportam objetos e arranjos -->
+<!-- os vínculos de estilo também suportam objeto e vetores -->
 <p :style="{ color }" @click="toggleColor">
   Isto deve ser verde, e deve alternar entre verde e azul sobre clique.
 </p>
