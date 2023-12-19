@@ -1,1 +1,1 @@
-Aqui estamos vinculando atributos ou propriedades do elemento ao estado de maneira reativa. A sintaxe de :title é abreviação para v-bind:title.
+Neste exemplo estamos vinculando os atributos ou propriedades do elemento de maneira reativa. A sintaxe `:title` é abreviação para `v-bind:title`.
