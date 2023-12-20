@@ -517,7 +517,7 @@ console.log(map.get('count').value)
 
 ### Advertências Quando Desembrulhamos nos Modelos de Marcação \*\* {#caveat-when-unwrapping-in-templates}
 
-O desembrulhamento de referência nos modelos de marcação apenas aplica-se se a referência for uma propriedade de alto nível no contexto de interpretação do modelo de marcação.
+O desembrulho de referência nos modelos de marcação apenas aplica-se se a referência for uma propriedade de alto nível no contexto de interpretação do modelo de marcação.
 
 No exemplo abaixo, `count` e `object` são propriedades de alto nível, mas `object.id` não:
 
@@ -532,7 +532,7 @@ Portanto, esta expressão funciona como esperado:
 {{ count + 1 }}
 ```
 
-...enquanto isto **NÃO**:
+...enquanto esta **NÃO**:
 
 ```vue-html
 {{ object.id + 1 }}
@@ -564,15 +564,14 @@ Isto é apenas um funcionalidade de conveniência da interpolação de texto e �
 
 ### Métodos com Estado \* {#stateful-methods}
 
-
-Em alguns casos, podemos precisar criar dinamicamente uma função de método, por exemplo criando um manipulador de evento "debounced":
+Em alguns casos, podemos precisar criar dinamicamente uma função de método, por exemplo, criando um manipulador de evento de chamada reduzida:
 
 ```js
 import { debounce } from 'lodash-es'
 
 export default {
   methods: {
-    // Debouncing with Lodash
+    // Reduzir chamadas com a Lodash
     click: debounce(function () {
      // ... responde ao clique ...
     }, 500)
@@ -580,14 +579,15 @@ export default {
 }
 ```
 
-No entanto, esta abordagem é problemática porque os componentes que são reutilizados porque uma função "debounced" **tem estado**: ela mantém algum estado interno sobre o tempo decorrido. Se várias instância de componente partilharem a mesma função "debounced", interferirão umas as outras.
+No entanto, esta abordagem é problemática porque os componentes que são reutilizados porque uma função de chamada reduzida **tem estado**: esta mantém algum estado interno sobre o tempo decorrido. Se várias instância do componente partilharem a mesma função de chamada reduzida, interferirão umas com as outras.
 
-Para manter cada função "debounced" da instância do componente independente das outras, podemos criar uma versão "debounced" no gatilho de ciclo de vida `created`:
+Para manter a função de chamada reduzida de cada instância do componente independente das outras, podemos criar uma versão de chamada reduzida na função gatilho do ciclo de vida `created`:
 
 ```js
 export default {
   created() {
-    // agora cada instância tem sua própria cópia do manipulador "debounced"
+    // agora cada instância tem sua própria cópia do
+    // manipulador de chamada reduzida
     this.debouncedClick = _.debounce(this.click, 500)
   },
   unmounted() {
@@ -597,7 +597,7 @@ export default {
   },
   methods: {
     click() {
-     // ... responde ao clique ...
+     // ... responder ao clique ...
     }
   }
 }
