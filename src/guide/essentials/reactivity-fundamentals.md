@@ -377,7 +377,7 @@ export default {
 
 ## `reactive()` \*\* {#reactive}
 
-Existe uma outra maneira de declarar o estado reativo, com a API `reactive()`. Ao contrário duma referência que envolve o valor interno num objeto especial, a `reactive()` torna um objeto por si só reativo:
+Existe uma outra maneira de declarar o estado reativo, com a API `reactive()`. Ao contrário duma referência que embrulha o valor interno num objeto especial, a `reactive()` torna um objeto reativo:
 
 ```js
 import { reactive } from 'vue'
@@ -385,7 +385,7 @@ import { reactive } from 'vue'
 const state = reactive({ count: 0 })
 ```
 
-> Consulte também: [Tipos para a Função `reactive`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
+> Consulte também: [Tipificando a Função  `reactive`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
 Uso no modelo de marcação:
 
@@ -397,7 +397,7 @@ Uso no modelo de marcação:
 
 Os objetos reativos são [Delegações de JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) e comportam-se como objetos normais. A diferença é que a Vue é capaz de intercetar o acesso e mutação de todas as propriedades dum objeto reativo para rastreio e acionamento da reatividade.
 
-`reactive()` converte o objeto profundamente: os objetos encaixados também são envolvidos com `reactive()` quando acessados. Também é chamada por `ref()` internamente quando o valor da referência for um objeto. Semelhante às referências superficiais, existe também a API [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) para abandonar a reatividade profunda.
+`reactive()` converte o objeto profundamente: os objetos encaixados também são embrulhados com a `reactive()` quando acessados. Esta também é chamada pela `ref()` internamente quando o valor da referência for um objeto. Semelhante às referências superficiais, existe também a API [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) para abandonar a reatividade profunda.
 
 ### Delegação Reativa vs. Original \*\* {#reactive-proxy-vs-original-1}
 
