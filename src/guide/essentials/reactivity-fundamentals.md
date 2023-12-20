@@ -499,19 +499,19 @@ console.log(state.count) // 2
 console.log(count.value)
 ```
 
-O desembrulho de referência apenas acontece quando encaixada dentro dum objeto reativo profundo. Não se aplica quando é acessada como uma propriedade dum [objeto reatividade superficial](/api/reactivity-advanced#shallowreactive).
+O desembrulho de referência apenas acontece quando encaixada dentro dum objeto reativo profundo. Não se aplica quando é acessada como uma propriedade dum [objeto reativo superficial](/api/reactivity-advanced#shallowreactive).
 
 ### Advertências nos Vetores e Coleções \*\* {#caveat-in-arrays-and-collections}
 
-Ao contrário dos objetos reativos, **não existe** desembrulhamento realizado quando a referência é acessada como um elemento dum vetor ou um tipo de coleção nativa como `Map`:
+Ao contrário dos objetos reativos, **não é efetuado** nenhum desembrulho quando a referência é acessada como um elemento dum vetor reativo ou um tipo de coleção nativa como `Map`:
 
 ```js
 const books = reactive([ref('Vue 3 Guide')])
-// neste caso precisas de `.value`
+// neste caso precisamos de `.value`
 console.log(books[0].value)
 
 const map = reactive(new Map([['count', ref(0)]]))
-// neste caso precisas de `.value`
+// neste caso precisamos de `.value`
 console.log(map.get('count').value)
 ```
 
