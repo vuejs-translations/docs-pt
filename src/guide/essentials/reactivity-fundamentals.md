@@ -438,37 +438,37 @@ console.log(proxy.nested === raw) // false
 
 ### Limitações da `reactive()` \*\* {#limitations-of-reactive}
 
-A API de `reactive()` tem duas limitações
+A API de `reactive()` tem algumas limitações:
 
-1. **Tipos de valor limitados**: apenas funciona para os tipos de objetos (objetos, arranjos, e [tipos de coleção](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#keyed_collections) tais como `Map` e `Set`). Ela não pode segurar [tipos primitivos](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) tais como `string`, `number`, ou `boolean`.
+1. **Tipos de valores limitados**: apenas funciona para os tipos de objetos (objetos, vetores, e [tipos de coleção](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#keyed_collections) tais como `Map` e `Set`). Esta não pode segurar [tipos primitivos](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) tais como `string`, `number`, ou `boolean`.
 
-2. **Não substituir um objeto inteiro**: uma vez que o rastreio da reatividade da Vue funciona sobre o acesso de propriedade, devemos sempre manter a mesma referência para objeto reativo. Isto significa que não podemos "substituir" facilmente um objeto reativo porque a conexão da reatividade para a primeira referência é perdida:
+2. **Não é possível substituir um objeto inteiro**: uma vez que o rastreio da reatividade da Vue funciona sobre o acesso de propriedade, sempre devemos manter a mesma referência ao objeto reativo. Isto significa que não podemos "substituir" facilmente um objeto reativo porque a conexão da reatividade à primeira referência é perdida:
 
    ```js
    let state = reactive({ count: 0 })
 
-   // a referência acima ({ count: 0 }) não está mais a ser rastreada
+   // a referência acima ({ count: 0 }) já não está sendo rastreada
    // (conexão da reatividade está perdida!)
    state = reactive({ count: 1 })
    ```
 
-3. **Não é amigável à desestruturação**: quando desestruturamos uma propriedade dum objeto reativo em variáveis locais, ou quando passamos esta propriedade à uma função, perderemos a conexão da reatividade:
+3. **Não é amigável à desestruturação**: quando desestruturamos a propriedade de tipo primitivo dum objeto reativo em variáveis locais, ou quando passamos esta propriedade à uma função, perderemos a conexão da reatividade:
 
    ```js
    const state = reactive({ count: 0 })
 
-   // `count` está desconectado da `state.count` quando desestruturada.
+   // `count` é desconectada de `state.count` quando desestruturada.
    let { count } = state.count
    // não afeta o estado original
    count++
 
    // a função recebe um número simples e
    // não será capaz de rastrear as mudanças para `state.count`
-   // temos de passar o objeto inteiro para reter a reatividade
+   // temos de passar o objeto inteiro para manter a reatividade
    callSomeFunction(state.count)
    ```
 
-Devido à estas limitações, recomendamos usar `ref()` como API primária para declaração de estado reativo.
+Por causa destas limitações, recomendados usar `ref()` como API primária  para declarar o estado reativo.
 
 ## Detalhes Adicionais do Desembrulhamento da Referência \*\* {#additional-ref-unwrapping-details}
 
