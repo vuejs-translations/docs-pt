@@ -470,11 +470,11 @@ A API de `reactive()` tem algumas limitações:
 
 Por causa destas limitações, recomendados usar `ref()` como API primária  para declarar o estado reativo.
 
-## Detalhes Adicionais do Desembrulhamento da Referência \*\* {#additional-ref-unwrapping-details}
+## Detalhes Adicionais do Desembrulho de Referência \*\* {#additional-ref-unwrapping-details}
 
 ### Como Propriedade de Objeto Reativo \*\* {#ref-unwrapping-as-reactive-object-property}
 
-Uma referência é automaticamente desembrulhada quando acessada ou modificada como uma propriedade dum objeto reativo. Em outras palavras, comporta-se como uma propriedade normal:
+Uma referência é automaticamente desembrulhada quando acessada ou alterada como uma propriedade dum objeto reativo. Em outras palavras, comporta-se como uma propriedade normal:
 
 ```js
 const count = ref(0)
@@ -488,7 +488,7 @@ state.count = 1
 console.log(count.value) // 1
 ```
 
-Se uma nova referência for atribuída à uma propriedade ligada à uma referência existente, substituirá a referência antiga:
+Se uma nova referência for atribuída à uma propriedade ligada à uma referência existente, esta substituirá a referência antiga:
 
 ```js
 const otherCount = ref(2)
@@ -499,7 +499,7 @@ console.log(state.count) // 2
 console.log(count.value)
 ```
 
-O desembrulhamento da referência apenas acontece quando encaixada dentro dum objeto reativo profundo. Não aplica-se quando é acessada como uma propriedade dum [objeto de reatividade superficial](/api/reactivity-advanced#shallowreactive).
+O desembrulho de referência apenas acontece quando encaixada dentro dum objeto reativo profundo. Não se aplica quando é acessada como uma propriedade dum [objeto reatividade superficial](/api/reactivity-advanced#shallowreactive).
 
 ### Advertências nos Vetores e Coleções \*\* {#caveat-in-arrays-and-collections}
 
