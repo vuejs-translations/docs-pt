@@ -401,7 +401,7 @@ Os objetos reativos são [Delegações de JavaScript](https://developer.mozilla.
 
 ### Delegação Reativa vs. Original \*\* {#reactive-proxy-vs-original-1}
 
-É importante notar que o valor retornado da `reactive()` é uma [Delegação](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) do objeto original, a qual não é igual ao objeto original:
+É importante notar que o valor retornado a partir da `reactive()` é uma [Delegação](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) do objeto original, a qual não é igual ao objeto original:
 
 ```js
 const raw = {}
@@ -411,19 +411,21 @@ const proxy = reactive(raw)
 console.log(proxy === raw) // false
 ```
 
-Apenas a delegação é reativa - a mutação do objeto original não acionará atualizações. Portanto, a boa prática quando estiveres trabalhando com o sistema de reatividade da Vue é **utilizar exclusivamente as versões delegadas do teu estado**.
+Apenas a delegação é reativa - alterar o objeto original não acionará atualizações. Portanto, a boa prática quando trabalhamos com o sistema de reatividade da Vue é **usar exclusivamente as versões delegadas do nosso estado**.
 
-Para garantir o acesso consistente à delegação, a chamada de `reactive()` sobre o mesmo objeto sempre retorna a mesma delegação, e a chamada `reactive()` sobre uma delegação existente também retorna aquela mesma delegação:
+Para garantir o acesso consistente à delegação, chamar `reactive()` sobre o mesmo objeto sempre retorna a mesma delegação, e chamar `reactive()` sobre uma delegação existente também retorna a mesma delegação:
 
 ```js
-// a chamada de reactive() sobre o mesmo objeto retorna a mesma delegação
+// chamar `reactive()` sobre o mesmo objeto
+// retorna a mesma delegação
 console.log(reactive(raw) === proxy) // true
 
-// a chamada de reactive() sobre uma delegação retorna a si mesma
+// chamar `reactive()` sobre uma delegação
+// retorna a si mesma
 console.log(reactive(proxy) === proxy) // true
 ```
 
-Este regra também aplica-se aos objetos encaixados. Devido a reatividade profunda, os objetos encaixados dentro dum objeto reativo também são delegações:
+Este regra também aplica-se aos objetos encaixados. Por causa da reatividade profunda, os objetos encaixados dentro dum objeto reativo também são delegações:
 
 ```js
 const proxy = reactive({})
