@@ -2,6 +2,10 @@
 footer: false
 ---
 
+<script setup>
+import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
+</script>
+
 # Introdução Rápida {#quick-start}
 
 ## Experimentar a Vue Online {#try-vue-online}
@@ -23,11 +27,40 @@ footer: false
 
 Nesta seção introduziremos como estruturar uma [Aplicação de Página Única](/guide/extras/ways-of-using-vue#single-page-application-spa) de Vue na nossa máquina local. O projeto criado usará uma configuração de construção baseada na [Vite](https://pt.vitejs.dev), e nos permitirá usar os [Componentes de Ficheiro Único](/guide/scaling-up/sfc) da Vue.
 
-Temos que certificar-nos de que temos uma versão atualizada da [Node.js](https://nodejs.org) instalada e o nosso diretório de trabalho atual é aquele onde tencionamos criar um projeto. Executamos o seguinte comando na nossa linha de comando (sem o sinal `>`):
+Temos que certificar-nos de que temos uma versão atualizada da [Node.js](https://nodejs.org) instalada e o nosso diretório de trabalho atual é aquele onde tencionamos criar um projeto. Executamos o seguinte comando na nossa linha de comando (sem o sinal `$`):
 
-<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt;</span> <span style="color:#A6ACCD;">npm create vue@latest</span></span></code></pre></div>
+<VTCodeGroup>
+  <VTCodeGroupTab label="npm">
 
-Este comando instalará e executará a [create-vue](https://github.com/vuejs/create-vue), a ferramenta de estruturação de projeto de Vue oficial. Nós seremos presenteados com prontos para várias funcionalidades opcionais tais como o suporte da TypeScript e testes:
+  ```sh
+  $ npm create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="pnpm">
+
+  ```sh
+  $ pnpm create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="yarn">
+
+  ```sh
+  $ yarn create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="bun">
+
+  ```sh
+  $ bun create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+</VTCodeGroup>
+
+Este comando instalará e executará a [`create-vue`](https://github.com/vuejs/create-vue), a ferramenta de estruturação de projeto de Vue oficial. Nós seremos presenteados com prontos para várias funcionalidades opcionais tais como o suporte da TypeScript e testes:
 
 <div class="language-sh"><pre><code><span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Project name: <span style="color:#888;">… <span style="color:#89DDFF;">&lt;</span><span style="color:#888;">your-project-name</span><span style="color:#89DDFF;">&gt;</span></span></span>
 <span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add TypeScript? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
@@ -42,24 +75,86 @@ Este comando instalará e executará a [create-vue](https://github.com/vuejs/cre
 <span style="color:#A6ACCD;">Scaffolding project in ./<span style="color:#89DDFF;">&lt;</span><span style="color:#888;">your-project-name</span><span style="color:#89DDFF;">&gt;</span>...</span>
 <span style="color:#A6ACCD;">Done.</span></code></pre></div>
 
-Se estivermos inseguros sobre uma opção, por agora simplesmente escolhemos `No` pressionando `Enter`. Logo que o projeto for criado, seguimos as instruções para instalarmos as dependências e iniciar o servidor de desenvolvimento:
+Se estivermos inseguros sobre uma opção, por agora podemos simplesmente escolher `No` pressionando `Enter`. Logo que o projeto for criado, seguimos as instruções para instalarmos as dependências e iniciar o servidor de desenvolvimento:
 
-<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">cd</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">&lt;</span><span style="color:#888;">your-project-name</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm install</span></span>
-<span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run dev</span></span>
-<span class="line"></span></code></pre></div>
+<VTCodeGroup>
+  <VTCodeGroupTab label="npm">
+
+  ```sh
+  $ cd <your-project-name>
+  $ npm install
+  $ npm run dev
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="pnpm">
+
+  ```sh
+  $ cd <your-project-name>
+  $ pnpm install
+  $ pnpm run dev
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="yarn">
+
+  ```sh
+  $ cd <your-project-name>
+  $ yarn
+  $ yarn dev
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="bun">
+
+  ```sh
+  $ cd <your-project-name>
+  $ bun install
+  $ bun run dev
+  ```
+
+  </VTCodeGroupTab>
+</VTCodeGroup>
 
 Nós devemos ter agora o nosso primeiro projeto de Vue em execução! Nota que os componentes de exemplo no projeto gerado estão escritos usando a [API de Composição](/guide/introduction#composition-api) e o `<script setup>`, ao invés da [API de Opções](/guide/introduction#options-api). Eis algumas dicas adicionais:
 
-- A configuração de ambiente de desenvolvimento integrado recomendada é o editor de texto [Visual Studio Code](https://code.visualstudio.com/) mais a [extensão Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Se usarmos outros editores, temos que consultar a [seção de suporte de ambiente de desenvolvimento integrado](/guide/scaling-up/tooling#ide-support).
+- A configuração de ambiente de desenvolvimento integrado recomendada é o editor de texto [Visual Studio Code](https://code.visualstudio.com/) mais a [extensão Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Se usarmos outros editores, temos que consultar a [seção do suporte de ambiente de desenvolvimento integrado](/guide/scaling-up/tooling#ide-support).
 - Mais detalhes sobre o ferramental, incluindo a integração com abstrações de backend, são discutidos no [Guia de Ferramental](/guide/scaling-up/tooling).
 - Para sabermos mais sobre a ferramenta de construção subjacente Vite, temos que consultar a [documentação da Vite](https://pt.vitejs.dev).
 - Se escolhermos usar a TypeScript, temos que consultar o [Guia de Uso de TypeScript](typescript/overview).
 
-Quando estivermos prontos para disponibilizar a nossa aplicação em produção, executamos o seguinte:
+Quando estivermos prontos para disponibilizar a nossa aplicação em produção, executaremos o seguinte:
 
-<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run build</span></span>
-<span class="line"></span></code></pre></div>
+<VTCodeGroup>
+  <VTCodeGroupTab label="npm">
+
+  ```sh
+  $ npm run build
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="pnpm">
+  
+  ```sh
+  $ pnpm run build
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="yarn">
+  
+  ```sh
+  $ yarn build
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="bun">
+  
+  ```sh
+  $ bun run build
+  ```
+
+  </VTCodeGroupTab>
+</VTCodeGroup>
 
 Isto criará uma construção preparada para produção da nossa aplicação dentro do diretório `./dist` do projeto. Consulte o [Guia de Implementação de Produção](/guide/best-practices/production-deployment) por mais informação sobre a disponibilização da nossa aplicação em produção.
 
@@ -326,19 +421,19 @@ Nós podemos ter reparado que o modelo de marcação do componente importado est
 
 ## Próximos Passos {#next-steps}
 
-Se saltaste a [Introdução](/guide/introduction), recomendamos fortemente a leitura dela antes de avançarmos para o resto da documentação.
+Se saltaste a [Introdução](/guide/introduction), recomendamos fortemente a leitura da mesma antes de avançarmos para o resto da documentação.
 
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/guide/essentials/application">
     <p class="next-steps-link">Continuar o Guia</p>
-    <p class="next-steps-caption">O guia acompanha-nos por todos os aspetos da abstração em completo detalhe.</p>
+    <p class="next-steps-caption">O guia apresenta todos os aspetos da abstração em detalhes.</p>
   </a>
   <a class="vt-box" href="/tutorial/">
     <p class="next-steps-link">Experimentar o Tutorial</p>
     <p class="next-steps-caption">Para aqueles que preferem aprender as coisas na prática.</p>
   </a>
   <a class="vt-box" href="/examples/">
-    <p class="next-steps-link">Consultar os Exemplos Interativos</p>
+    <p class="next-steps-link">Consultar os Exemplos</p>
     <p class="next-steps-caption">Explore os exemplos de funcionalidades principais e tarefas de interfaces de aplicações comuns.</p>
   </a>
 </div>
