@@ -6,8 +6,8 @@
       ref="vuemastery-banner-flash"
     ></div>
     <a
-      id="vm-free-weekend"
-      href="https://www.vuemastery.com/free-weekend"
+      id="vm-banner"
+      href="https://www.vuemastery.com/holiday"
       target="_blank"
     >
       <img
@@ -20,16 +20,17 @@
         src="https://firebasestorage.googleapis.com/v0/b/vue-mastery.appspot.com/o/flamelink%2Fmedia%2Fvue-mastery-logo-small.png?alt=media&token=941fcc3a-2b6f-40e9-b4c8-56b3890da108"
         alt="vuemastery"
       />
-      <div class="vm-free-weekend-wrapper">
-        <div class="vm-free-weekend-content">
-          <h1 class="vm-free-weekend-title">
-            FIM DE SEMANA GRATUITO <span>NOV 10-12</span>
+      <div class="vm-banner-wrapper">
+        <div class="vm-banner-content">
+          <h1 class="vm-banner-title">
+            Estudar Vue com o Evan You
+            <!-- <span>Dec 18-29</span> -->
           </h1>
-          <p class="vm-free-weekend-sub">
-            Assistir todos os cursos da Vue Mastery grátis
+          <p class="vm-banner-sub">
+            Receber 60% de desconto anuário dos cursos de Vue
           </p>
         </div>
-        <button id="vm-banner-cta">Acessar</button>
+        <button id="vm-banner-cta">Desbloquear o desconto</button>
       </div>
       <button id="vm-banner-close" @click.prevent="closeBanner">
         <VTIconPlus class="close" />
@@ -44,7 +45,7 @@ import { VTIconPlus } from '@vue/theme'
 
 const isVisible = ref<Boolean>(true)
 const showFlash = ref<Boolean>(false)
-const nameStorage = 'VUEMASTERY-BANNER--FREE-WEEKEND-MARCH-2023'
+const nameStorage = 'VUEMASTERY-BANNER-DECEMBER-2023'
 
 const closeBanner = () => {
   // Hide the banner
@@ -119,7 +120,7 @@ onMounted(() => {
   background-image: url(/vuemastery/unlock-vuemastery.svg);
 }
 
-#vm-free-weekend {
+#vm-banner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -141,16 +142,16 @@ onMounted(() => {
   display: none;
 }
 
-.vm-free-weekend-wrapper {
+.vm-banner-wrapper {
   display: flex;
   align-items: center;
 }
 
-.vm-free-weekend-content {
+.vm-banner-content {
   display: flex;
 }
 
-.vm-free-weekend-title {
+.vm-banner-title {
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -162,7 +163,7 @@ onMounted(() => {
   -webkit-text-fill-color: transparent;
 }
 
-.vm-free-weekend-sub {
+.vm-banner-sub {
   margin: 0 2em;
   padding: 0;
   font-size: 16px;
@@ -211,11 +212,11 @@ onMounted(() => {
     display: none;
   }
 
-  .vm-free-weekend-content {
+  .vm-banner-content {
     flex-direction: column;
   }
 
-  .vm-free-weekend-sub {
+  .vm-banner-sub {
     margin: 0 1em;
   }
 }
@@ -241,10 +242,10 @@ onMounted(() => {
     left: 10px;
     width: 40px;
   }
-  .vm-free-weekend-title {
+  .vm-banner-title {
     font-size: 14px;
   }
-  .vm-free-weekend-sub {
+  .vm-banner-sub {
     font-size: 12px;
     margin: 0;
   }
@@ -279,11 +280,6 @@ onMounted(() => {
 </style>
 
 <style>
-html.vuemastery-menu-fixed {
-  scroll-padding-top: 134px;
-  overflow: auto;
-}
-
 html.vuemastery-menu-fixed {
   --vt-banner-height: 70px;
 }
