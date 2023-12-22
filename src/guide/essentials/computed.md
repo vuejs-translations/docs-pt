@@ -10,7 +10,7 @@
 
 ## Exemplo Básico {#basic-example}
 
-As expressões no modelo de marcação são muito convenientes, porém elas são destinadas à operações simples. Colocar muita lógica nos teus modelos de marcação pode torná-los inchados e difíceis de manter. Por exemplo, se tivermos um objeto com um arranjo (`array`) encaixado:
+As expressões no modelo de marcação são muito convenientes, porém estas estão destinadas às operações simples. Colocar muita lógica nos nossos modelos de marcação pode torná-los inchados e difíceis de manter. Por exemplo, se tivermos um objeto com um vetor encaixado:
 
 <div class="options-api">
 
