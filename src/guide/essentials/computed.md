@@ -1,11 +1,11 @@
 # Propriedades Computadas {#computed-properties}
 
 <div class="options-api">
-  <VueSchoolLink href="https://vueschool.io/lessons/computed-properties-in-vue-3" title="Aula gratuita sobre as Propriedades Computadas de Vue.js"/>
+  <VueSchoolLink href="https://vueschool.io/lessons/computed-properties-in-vue-3" title="Aula Gratuita de Propriedades Computadas de Vue.js"/>
 </div>
 
 <div class="composition-api">
-  <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-computed-properties-in-vue-with-the-composition-api" title="Aula gratuita sobre as Propriedades Computadas de Vue.js"/>
+  <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-computed-properties-in-vue-with-the-composition-api" title="Aula Gratuita de Propriedades Computadas de Vue.js"/>
 </div>
 
 ## Exemplo Básico {#basic-example}
