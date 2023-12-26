@@ -72,6 +72,7 @@
   {
     "name": "Monterail",
     "logo": "monterail.png",
+    "hero": "monterail-hero.png",
     "intro": "A Monterail é uma empresa de desenvolvimento de software de serviço completo da Polónia. Desde 2010, temos estado a construir software inovador para novas empresas, SMBs, e empresas de várias industrias globalmente. Os nossos especialistas em Vue, utilizando tecnologias testadas em combate e abstrações, têm entregado mais de 30 projetos baseados em Vue.",
     "description": [
       "Em uma consultoria de serviço completo como a Monterail, recebes toda competência sob um teto. Desde o conceito, ao desenho, e lançamento do produto. Dependendo do estágio do ciclo de vida do produto, guiamos os clientes através da construção das aplicações desde o zero ou escalamos-os rapidamente.",
