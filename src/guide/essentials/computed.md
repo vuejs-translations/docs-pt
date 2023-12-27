@@ -47,16 +47,16 @@ const author = reactive({
 
 </div>
 
-E quisermos exibir mensagens diferentes caso o `author` tiver alguns livros ou não:
+E queremos exibir mensagens diferentes se o `author` já tiver alguns livros ou não:
 
 ```vue-html
 <p>Has published books:</p>
 <span>{{ author.books.length > 0 ? 'Yes' : 'No' }}</span>
 ```
 
-Neste ponto, o modelo de marcação está ficando um pouco desarrumado. Nós precisamos olhar nele por um segundo antes de perceber que ela realiza um cálculo dependendo de `author.books`. Mais importante, nós provavelmente não queremos nos repetir se precisarmos incluir este cálculo no modelo de marcação mais de uma vez.
+Neste ponto, o modelo de marcação está ficando um pouco desarrumado. Nós temos que olhar neste por um segundo antes de percebermos que este realiza um cálculo dependendo da `author.books`. Acima de tudo, provavelmente não queremos ser repetitivos ao incluir este cálculo no modelo de marcação mais de uma vez.
 
-É por isto que para lógica complexa que inclui dados reativos, é recomendado utilizar uma **propriedade computada**. Cá está o mesmo exemplo, refeito.
+É por isto que para lógica complexa que inclui dados reativos, é recomendado usar uma **propriedade computada**. Eis o mesmo exemplo, refeito:
 
 <div class="options-api">
 
@@ -77,7 +77,7 @@ export default {
   computed: {
     // um recuperador computado
     publishedBooksMessage() {
-      // `this` aponta para instância do componente
+      // `this` aponta à instância do componente
       return this.author.books.length > 0 ? 'Yes' : 'No'
     }
   }
@@ -89,15 +89,15 @@ export default {
 <span>{{ publishedBooksMessage }}</span>
 ```
 
-[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNqFkN1KxDAQhV/l0JsqaFfUq1IquwiKsF6JINaLbDNui20S8rO4lL676c82eCFCIDOZMzkzXxetlUoOjqI0ykypa2XzQtC3ktqC0ydzjUVXCIAzy87OpxjQZJ0WpwxgzlZSp+EBEKylFPGTrATuJcUXobST8sukeA8vQPzqCNe4xJofmCiJ48HV/FfbLLrxog0zdfmn4tYrXirC9mgs6WMcBB+nsJ+C8erHH0rZKmeJL0sot2tqUxHfDONuyRi2p4BggWCr2iQTgGTcLGlI7G2FHFe4Q/xGJoYn8SznQSbTQviTrRboPrHUqoZZ8hmQqfyRmTDFTC1bqalsFBN5183o/3NG33uvoWUwXYyi/gdTEpwK)
+[Experimentar na Zona de Testes](https://play.vuejs.org/#eNqFkN1KxDAQhV/l0JsqaFfUq1IquwiKsF6JINaLbDNui20S8rO4lL676c82eCFCIDOZMzkzXxetlUoOjqI0ykypa2XzQtC3ktqC0ydzjUVXCIAzy87OpxjQZJ0WpwxgzlZSp+EBEKylFPGTrATuJcUXobST8sukeA8vQPzqCNe4xJofmCiJ48HV/FfbLLrxog0zdfmn4tYrXirC9mgs6WMcBB+nsJ+C8erHH0rZKmeJL0sot2tqUxHfDONuyRi2p4BggWCr2iQTgGTcLGlI7G2FHFe4Q/xGJoYn8SznQSbTQviTrRboPrHUqoZZ8hmQqfyRmTDFTC1bqalsFBN5183o/3NG33uvoWUwXYyi/gdTEpwK)
 
-Cá temos declarado uma propriedade computada `publishedBooksMessage`.
+Eis que declaramos uma propriedade computada `publishedBooksMessage`.
 
-Tente mudar o valor do arranjo `books` no `data` da aplicação e verás como `publishedBooksMessage` está mudando por consequência.
+Nós podemos experimentar mudar o valor do vetor `books` na `data` da aplicação e veremos como `publishedBookMessage` está mudando por consequência.
 
-Tu podes vincular dados às propriedades computadas no modelo de marcação tal como uma propriedade normal. A Vue está consciente de que `this.publishedBooksMessage` depende de `this.author.books`, assim ela atualizará qualquer vínculos que dependem de `this.publishedBooksMessage` quando `this.author.books` mudar.
+Nós podemos vincular os dados às propriedades computadas nos modelos de marcação tal como uma propriedade normal. A Vue está consciente de que `this.publishedBooksMessage` depende da `this.author.books`, então esta atualizará quaisquer vínculos que dependem da `this.publishedBooksMessage` quando `this.author.books` mudar.
 
-Consulte também: [Tipos para as Propriedades Computadas](/guide/typescript/options-api#typing-computed-properties) <sup class="vt-badge ts" />
+Consultar também: [Tipificando as Propriedades Computadas](/guide/typescript/options-api#typing-computed-properties) <sup class="vt-badge ts" />
 
 </div>
 
@@ -128,13 +128,13 @@ const publishedBooksMessage = computed(() => {
 </template>
 ```
 
-[Experimente-o na Zona de Testes](https://play.vuejs.org/#eNp1kE9Lw0AQxb/KI5dtoTainkoaaREUoZ5EEONhm0ybYLO77J9CCfnuzta0vdjbzr6Zeb95XbIwZroPlMySzJW2MR6OfDB5oZrWaOvRwZIsfbOnCUrdmuCpQo+N1S0ET4pCFarUynnI4GttMT9PjLpCAUq2NIN41bXCkyYxiZ9rrX/cDF/xDYiPQLjDDRbVXqqSHZ5DUw2tg3zP8lK6pvxHe2DtvSasDs6TPTAT8F2ofhzh0hTygm5pc+I1Yb1rXE3VMsKsyDm5JcY/9Y5GY8xzHI+wnIpVw4nTI/10R2rra+S4xSPEJzkBvvNNs310ztK/RDlLLjy1Zic9cQVkJn+R7gIwxJGlMXiWnZEq77orhH3Pq2NH9DjvTfpfSBSbmA==)
+[Experimentar na Zona de Testes](https://play.vuejs.org/#eNp1kE9Lw0AQxb/KI5dtoTainkoaaREUoZ5EEONhm0ybYLO77J9CCfnuzta0vdjbzr6Zeb95XbIwZroPlMySzJW2MR6OfDB5oZrWaOvRwZIsfbOnCUrdmuCpQo+N1S0ET4pCFarUynnI4GttMT9PjLpCAUq2NIN41bXCkyYxiZ9rrX/cDF/xDYiPQLjDDRbVXqqSHZ5DUw2tg3zP8lK6pvxHe2DtvSasDs6TPTAT8F2ofhzh0hTygm5pc+I1Yb1rXE3VMsKsyDm5JcY/9Y5GY8xzHI+wnIpVw4nTI/10R2rra+S4xSPEJzkBvvNNs310ztK/RDlLLjy1Zic9cQVkJn+R7gIwxJGlMXiWnZEq77orhH3Pq2NH9DjvTfpfSBSbmA==)
 
-Cá temos declarados uma propriedade computada `publishedBooksMessage`. A função `computed()` espera que seja passada uma função recuperadora, e o valor retornado é uma **referência computada**. Semelhante as referências normais, podes acessar o resultado computado como `publishedBooksMessage.value`. As referências computadas também são desembrulhadas automaticamente nos modelos de marcação assim podes referenciá-las sem `.value` nas expressões do modelo de marcação.
+Eis que declaramos uma propriedade computada `publishedBooksMessage`. A função `computed()` espera uma função recuperada ser passada, e o valor retornado ser uma **referência computada**. Semelhante às referências normais, podemos acessar o resultado computado como `publishedBooksMessage.value`. As referências computadas também são embrulhadas automaticamente nos modelos de marcação, assim podemos referenciá-las sem `.value` nas expressões do modelo de marcação.
 
-Uma propriedade computada rastreia automaticamente suas dependências reativas. A Vue está consciente de que a computação de `publishedBooksMessage` depende de `author.books`, assim ela atualizará quaisquer vínculos que dependem de `publishedBooksMessage` quando `author.books` mudar.
+Uma propriedade computada rastreia automaticamente suas dependências reativas. A Vue está consciente de que a computação de `publishedBooksMessage` depende da `author.books`, então esta atualizará quaisquer vínculos que dependem da `publishedBooksMessage` quando `author.books` mudar.
 
-Consulte também: [Tipos para os Computados](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
+Consultar também: [Tipificando os Computados](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
 
 </div>
 
