@@ -200,7 +200,7 @@ Por que precisamos do armazenamento de consulta imediata? Imaginemos que temos u
 
 ## Propriedades Computadas Graváveis {#writable-computed}
 
-As propriedades computadas são por definição apenas recuperadores. Se tentares atribuir um novo valor à uma propriedade computada, receberás um aviso em tempo de execução. Em casos raros onde precisas de um propriedade computada "gravável", podes criar uma fornecendo ambos um recuperador e um definidor:
+As propriedades computadas são por padrão apenas recuperadoras. Se tentarmos atribuir um novo valor a uma propriedade computada, receberemos um aviso de execução. Nos casos raros onde precisamos duma propriedade computada "gravável", podemos criar uma fornecendo ambos um recuperador e um definidor:
 
 <div class="options-api">
 
@@ -220,7 +220,7 @@ export default {
       },
       // definidor
       set(newValue) {
-        // Nota: nós estamos utilizando a sintaxe de atribuição de desestruturação.
+        // Nota: estamos usando a sintaxe de atribuição desestruturada.
         [this.firstName, this.lastName] = newValue.split(' ')
       }
     }
@@ -228,7 +228,7 @@ export default {
 }
 ```
 
-Agora quando executares `this.fullName = 'John Doe'`, o definidor será invocado e `this.firstName` e `this.lastName` serão atualizados por consequência.
+Agora quando executarmos `this.fullName = 'John Doe'`, o definidor será invocado e `this.firstName` e `this.lastName` serão atualizadas por consequência.
 
 </div>
 
@@ -248,14 +248,14 @@ const fullName = computed({
   },
   // definidor
   set(newValue) {
-    // Nota: nós estamos utilizando a sintaxe de atribuição de desestruturação.
+    // Nota: estamos usando a sintaxe de atribuição desestruturada.
     [firstName.value, lastName.value] = newValue.split(' ')
   }
 })
 </script>
 ```
 
-Agora quando executares `fullName.value = 'John Doe'`, o definidor será invocado e `firstName` e `lastName` serão atualizados por consequência.
+Agora quando executarmos `fullName.value = 'John Doe'`, o definidor será invocado e `firstName` e `lastName` serão atualizadas por consequência.
 
 </div>
 
