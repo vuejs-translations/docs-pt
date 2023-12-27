@@ -138,9 +138,9 @@ Consultar também: [Tipificando os Computados](/guide/typescript/composition-api
 
 </div>
 
-## Armazenamento de consulta imediata de computado vs Métodos {#computed-caching-vs-methods}
+## Armazenamento de Consulta Imediata de Computado vs Métodos {#computed-caching-vs-methods}
 
-Tu podes ter reparado que podemos alcançar o mesmo resultado invocando um método na expressão:
+Nós podemos ter reparado que podemos alcançar o mesmo resultado invocando um método na expressão:
 
 ```vue-html
 <p>{{ calculateBooksMessage() }}</p>
@@ -170,7 +170,7 @@ function calculateBooksMessage() {
 
 </div>
 
-No lugar de uma propriedade computada, podemos definir a mesma função como um método. Para o resultado final, as duas abordagens são de fato exatamente a mesma. No entanto, a diferença é que as **propriedades computadas são armazenadas para consulta imediata com base nas suas dependências reativas**. Uma propriedade computada só será reavaliada quando alguma de suas dependências reativas tiver mudado. Isto significa que enquanto `author.books` não tiver mudado, vários acessos ao `publishedBooksMessage` retornarão imediatamente o resultado computado anteriormente sem ter que executar a função recuperadora novamente.
+No lugar duma propriedade computada, podemos definir a mesma função como um método. Para resultado final, as duas abordagens são de fato exatamente a mesma. No entanto, a diferença é que as **propriedades computadas são armazenadas para consulta imediata baseada nas suas dependências reativas**. Uma propriedade computada apenas reavaliará quando algumas das suas dependências reativas tiverem mudado. Isto significa que enquanto `author.books` não tiver mudado, vários acessos ao `publishedBooksMessage` retornarão imediatamente o resultado computado anteriormente sem precisar executar a função recuperadora novamente.
 
 Isto também significa que a seguinte propriedade computada nunca atualizará, porque `Date.now()` não é uma dependência reativa:
 
@@ -196,7 +196,7 @@ const now = computed(() => Date.now())
 
 Em comparação, uma invocação de método **sempre** executará a função sempre que um reinterpretação acontecer.
 
-Porquê que precisamos de armazenamento de consulta imediata? Imagine que temos uma propriedade computada cara `list`, que precisa iterar através de um enorme arranjo (`array`) e fazendo muitos cálculos. Então podemos ter outras propriedades computadas que como consequência dependem de `list`. Sem o armazenamento de consulta imediata, estaríamos executando o recuperador de `list` mais vezes do que o necessário! Nos casos onde não quiseres o armazenamento de consulta imediata, utilize uma chamada de método.
+Por que precisamos do armazenamento de consulta imediata? Imaginemos que temos uma propriedade computada dispendiosa `list`, que exige percorrer um vetor enorme e fazer muitos cálculos. Depois podemos ter outras propriedades computadas que por sua vez dependem da `list`. Sem o armazenamento de consulta imediata, estaríamos executando o recuperador da `list` mais vezes do que necessário! Nos casos onde não queremos o armazenamento de consulta imediata, usamos uma chamada de método.
 
 ## Propriedades Computadas Graváveis {#writable-computed}
 
