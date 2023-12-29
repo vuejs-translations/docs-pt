@@ -265,6 +265,6 @@ Agora quando executarmos `fullName.value = 'John Doe'`, o definidor será invoca
 
 É importante lembrar que as funções recuperadoras computadas apenas deveriam realizar computação pura e ser livres de efeitos colaterais. Por exemplo, **não fazer requisições assíncronas ou alterar o DOM dentro dum recuperador computado!** Pensemos duma propriedade computada como declarativamente descrevendo como derivar um valor baseado em outros valores - sua única responsabilidade deveria ser computar e retornar este valor. Mais tarde no guia discutiremos como realizamos efeitos colaterais em reação às mudanças de estado com os [observadores](./watchers).
 
-### Evite a mutação de valor computado {#avoid-mutating-computed-value}
+### Evitar alterar o valor computado {#avoid-mutating-computed-value}
 
-O valor retornado a partir de uma propriedade computada é um estado derivado. Considere-o como uma fotografia temporária - toda vez que o estado de origem mudar, uma nova fotografia é criada. Não faz sentido mudar uma fotografia, então um valor de retorno computado deve ser tratado como apenas-leitura e nunca ser mudada - ao invés disto, atualize o estado de origem do qual ele depende para acionar novos cálculos.
+O valor retornado duma propriedade computada é o estado derivado. Consideremos esta como uma fotografia temporária - toda vez que o estado de origem mudar, uma nova fotografia é criada. Não faz sentido alterar uma fotografia, então um valor de retorno computado deveria ser tratado como destinada apenas a leitura e nunca deveria ser alterada - ao invés disto, atualizamos o estado de origem do qual este depende para acionar novos cálculos.
