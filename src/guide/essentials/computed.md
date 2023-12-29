@@ -261,9 +261,9 @@ Agora quando executarmos `fullName.value = 'John Doe'`, o definidor será invoca
 
 ## Boas Práticas {#best-practices}
 
-### Os recuperadores deve estar livres de efeitos colaterais {#getters-should-be-side-effect-free}
+### Os recuperadores não deveriam ter efeitos colaterais {#getters-should-be-side-effect-free}
 
-É importante lembrar que as funções de recuperação computadas só devem realizar cálculo puro e estar livres de efeitos colaterais. Por exemplo, **não faça requisições assíncronas ou mutações de DOM dentro de um recuperador computado!** Considere uma propriedade computada como descrevendo de maneira declarativa como derivar um valor com base em outros valores - seu única responsabilidade deve ser computar e retornar aquele valor. Adiante no guia discutiremos como podemos realizar efeitos colaterais em reação as mudanças de estado com [observadores](./watchers).
+É importante lembrar que as funções recuperadoras computadas apenas deveriam realizar computação pura e ser livres de efeitos colaterais. Por exemplo, **não fazer requisições assíncronas ou alterar o DOM dentro dum recuperador computado!** Pensemos duma propriedade computada como declarativamente descrevendo como derivar um valor baseado em outros valores - sua única responsabilidade deveria ser computar e retornar este valor. Mais tarde no guia discutiremos como realizamos efeitos colaterais em reação às mudanças de estado com os [observadores](./watchers).
 
 ### Evite a mutação de valor computado {#avoid-mutating-computed-value}
 
