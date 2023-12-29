@@ -57,10 +57,10 @@ Reparemos que isto não significa que a chamada deve ser colocada de maneira lé
 
 ## Diagrama do Ciclo de Vida {#lifecycle-diagram}
 
-Abaixo está um diagrama para o ciclo de vida da instância. Tu não precisas exatamente entender tudo agora, mas a medida que aprenderes e construires mais, será uma referência útil.
+Eis um diagrama do ciclo de vida da instância. Nós não precisamos entender completamente o que está acontecendo neste momento, mas conforme aprendermos e construirmos mais, será uma referência útil:
 
 ![Diagrama do Ciclo de Vida do Componente](./images/lifecycle.png)
 
 <!-- https://www.figma.com/file/Xw3UeNMOralY6NV7gSjWdS/Vue-Lifecycle -->
 
-Consulte a <span class="composition-api">[referência de API de Gatilhos do Ciclo de Vida](/api/composition-api-lifecycle)</span><span class="options-api">[referência de API de Gatilhos do Ciclo de Vida](/api/options-lifecycle)</span> para obter detalhes sobre todos gatilhos do ciclo de vida e seus respetivos casos de uso.
+Consultar a <span class="composition-api">[referência da API das Funções Gatilhos do Ciclo de Vida](/api/composition-api-lifecycle)</span><span class="options-api">[referência da API das Funções Gatilhos do Ciclo de Vida](/api/options-lifecycle)</span> por detalhes sobre todas as funções gatilhos do ciclo de vida e seus respetivos casos de uso.
