@@ -2,9 +2,9 @@
 
 Cada instância do componente de Vue percorre uma séria de etapas de inicialização quando for criado - por exemplo, este precisa definir a observação de dados, compilar o modelo de marcação, montar a instância ao DOM, e atualizar o DOM quando os dados mudarem. Pelo caminho, este também executa funções chamadas de funções gatilhos do ciclo de vida, dando aos utilizadores a oportunidade de adicionar o seu próprio código em estágios específicos.
 
-## Registando Gatilhos do Ciclo de Vida {#registering-lifecycle-hooks}
+## Registando Funções Gatilho do Ciclo de Vida {#registering-lifecycle-hooks}
 
-Por exemplo, o gatilho <span class="composition-api">`onMounted`</span><span class="options-api">`mounted`</span> pode ser utilizado para executar o código depois de terminado a interpretação inicial e criado os nós do DOM:
+Por exemplo, a função gatilho <span class="composition-api">`onMounted`</span><span class="options-api">`mounted`</span> pode ser usada para executar o código depois do componente ter terminado a interpretação inicial e criado os nós do DOM:
 
 <div class="composition-api">
 
@@ -31,17 +31,17 @@ export default {
 
 </div>
 
-Também existem outros gatilhos que serão chamados em diferentes estágios do ciclo de vida da instância, com os mais comummente utilizados sendo <span class="composition-api">[`onMounted`](/api/composition-api-lifecycle#onmounted), [`onUpdated`](/api/composition-api-lifecycle#onupdated), e [`onUnmounted`](/api/composition-api-lifecycle#onunmounted).</span><span class="options-api">[`mounted`](/api/options-lifecycle#mounted), [`updated`](/api/options-lifecycle#updated), e [`unmounted`](/api/options-lifecycle#unmounted).</span>.
+Também existem outras funções gatilhos que serão chamadas em diferentes estágios do ciclo de vida da instância, com as mais comummente usadas sendo <span class="composition-api">[`onMounted`](/api/composition-api-lifecycle#onmounted), [`onUpdated`](/api/composition-api-lifecycle#onupdated), e [`onUnmounted`](/api/composition-api-lifecycle#onunmounted).</span><span class="options-api">[`mounted`](/api/options-lifecycle#mounted), [`updated`](/api/options-lifecycle#updated), e [`unmounted`](/api/options-lifecycle#unmounted).</span>
 
 <div class="options-api">
 
-Todos os gatilhos do ciclo de vida são chamados com o seus contextos de `this` apontando para atual instância ativa que estiver invocando-a. Nota que isto significa que deves evitar a utilização de funções em flecha quando estiveres declarando gatilhos do ciclo de vida, visto que não serás capaz de acessar a instância do componente através de `this` se o fizeres.
+Todas as funções gatilhos do ciclo de vida são chamadas com o seu contexto de `this` apontando a instância ativa atualmente que estiver invocando-a. Nota que isto significa que devemos evitar usar funções flecha quando declaramos funções gatilhos do ciclo de vida, uma vez que não seremos capazes de acessar a instância do componente através da `this` se o fizermos.
 
 </div>
 
 <div class="composition-api">
 
-Quando estiveres chamando `onMounted`, a Vue associa automaticamente a função de resposta registada com a atual instância do componente ativo. Isto exige que estes gatilhos sejam registados **de forma síncrona** durante a definição de componente. Por exemplo, não faça isto:
+Quando chamamos `onMounted`, a Vue associa automaticamente a função de resposta registada com a instância do componente ativo atualmente. Isto exige que estas funções gatilhos estejam registadas **de maneira síncrona** durante a definição do componente. Por exemplo, não devemos fazer isto:
 
 ```js
 setTimeout(() => {
@@ -51,7 +51,7 @@ setTimeout(() => {
 }, 100)
 ```
 
-Repare que isto não significa que a chamada deve ser colocada de maneira léxica dentro de `setup()` ou `<script setup>`. A `onMounted()` pode ser chamada em uma função externa enquanto a pilha de chamada for síncrona e surgir de dentro de `setup()`.
+Reparemos que isto não significa que a chamada deve ser colocada de maneira léxica dentro da `setup()` ou `<script setup>`. A `onMounted()` pode ser chamada numa função externa enquanto a pilha de chamada for síncrona e surgir de dentro da `setup()`.
 
 </div>
 
