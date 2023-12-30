@@ -53,7 +53,7 @@ Um elemento `v-else` deve seguir imediatamente um elemento `v-if` ou `v-else-if`
 
 ## `v-else-if` {#v-else-if}
 
-A `v-else-if`, conforme o nome sugere, serve como um bloco "`else if`" para `v-if`. Ela também pode ser encadeada várias vezes:
+A diretiva `v-else-if`, como o nome sugere, serve como um "bloco `else if`" à `v-if`. Esta também pode ser encadeada várias vezes:
 
 ```vue-html
 <div v-if="type === 'A'">
@@ -70,7 +70,7 @@ A `v-else-if`, conforme o nome sugere, serve como um bloco "`else if`" para `v-i
 </div>
 ```
 
-Semelhante à `v-else`, um elemento `v-else-if` deve seguir imediatamente um elemento `v-if` ou um `v-else-if`.
+Similar ao `v-else`, um elemento `v-else-if` deve imediatamente seguir um elemento `v-if` ou um `v-else-if`. 
 
 ## `v-if` no `<template>` {#v-if-on-template}
 
