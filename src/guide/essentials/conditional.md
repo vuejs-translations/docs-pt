@@ -74,7 +74,7 @@ Similar ao `v-else`, um elemento `v-else-if` deve imediatamente seguir um elemen
 
 ## `v-if` no `<template>` {#v-if-on-template}
 
-Uma vez que a `v-if` é uma diretiva, ela tem que ser atribuída à um único elemento. Porém e se quiséssemos alternar mais de um elemento? Neste caso podemos utilizar a `v-if` sobre um elemento `<template>`, que serve como um envolvedor invisível. O resultado interpretado final não incluirá o elemento `<template>`.
+Uma vez que a `v-if` é uma diretiva, esta precisa ser atribuída a um único elemento. Porém, e se quiséssemos alternar mais que um elemento? Neste caso podemos usar a `v-if` sobre um elemento `<template>`, que serve como um embrulhador invisível. O resultado final interpretado não incluirá o elemento `<template>`:
 
 ```vue-html
 <template v-if="ok">
@@ -84,7 +84,7 @@ Uma vez que a `v-if` é uma diretiva, ela tem que ser atribuída à um único el
 </template>
 ```
 
-A `v-else` e a `v-else-if` também podem ser utilizadas sobre o elemento `<template>`.
+A `v-else` e a `v-else-if` também podem ser usadas sobre o `<template>`.
 
 ## `v-show` {#v-show}
 
