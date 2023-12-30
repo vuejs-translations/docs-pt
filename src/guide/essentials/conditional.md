@@ -15,7 +15,7 @@ const awesome = ref(true)
 
 ## `v-if` {#v-if}
 
-A diretiva `v-if` é utilizada para interpretar um bloco condicionalmente. O bloco só será interpretado se a expressão da diretiva retornar um valor verdadeiro.
+A diretiva `v-if` é usada para interpretar um bloco condicionalmente. O bloco apenas será interpretado se a expressão da diretiva retornar um valor verdadeiro:
 
 ```vue-html
 <h1 v-if="awesome">Vue is awesome!</h1>
