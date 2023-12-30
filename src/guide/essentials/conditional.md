@@ -70,7 +70,7 @@ A `v-else-if`, conforme o nome sugere, serve como um bloco "`else if`" para `v-i
 </div>
 ```
 
-Similar ao `v-else`, um elemento `v-else-if` deve imediatamente seguir um elemento `v-if` ou um `v-else-if`. 
+Semelhante à `v-else`, um elemento `v-else-if` deve seguir imediatamente um elemento `v-if` ou um `v-else-if`.
 
 ## `v-if` no `<template>` {#v-if-on-template}
 
