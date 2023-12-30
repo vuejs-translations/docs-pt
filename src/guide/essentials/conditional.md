@@ -1,11 +1,11 @@
 # Interpretação Condicional {#conditional-rendering}
 
 <div class="options-api">
-  <VueSchoolLink href="https://vueschool.io/lessons/conditional-rendering-in-vue-3" title="Aula gratuita a respeito da Intepretação Condicional de Vue"/>
+  <VueSchoolLink href="https://vueschool.io/lessons/conditional-rendering-in-vue-3" title="Aula Gratuita de Interpretação Condicional da Vue.js"/>
 </div>
 
 <div class="composition-api">
-  <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-conditionals-in-vue" title="Aula gratuita a respeito da Intepretação Condicional de Vue"/>
+  <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-conditionals-in-vue" title="Aula Gratuita de Interpretação Condicional da Vue.js"/>
 </div>
 
 <script setup>
