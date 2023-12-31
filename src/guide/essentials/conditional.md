@@ -88,13 +88,13 @@ A `v-else` e a `v-else-if` também podem ser usadas sobre o `<template>`.
 
 ## `v-show` {#v-show}
 
-Uma outra opção para exibir condicionalmente um elemento é a diretiva `v-show`. A forma de utilização é em grande parte a mesma:
+Uma outra opção para exibir condicionalmente um elemento é a diretiva `v-show`. O uso é maioritariamente o mesmo:
 
 ```vue-html
 <h1 v-show="ok">Hello!</h1>
 ```
 
-A diferença é que um elemento com `v-show` sempre será interpretado e permanecerá no DOM; A `v-show` só alterna a propriedade `display` de CSS do elemento.
+A diferença é que um elemento com a `v-show` sempre será interpretado e permanecerá no DOM; A `v-show` apenas alterna a propriedade de CSS `display` do elemento.
 
 A `v-show` não suporta o elemento `<template>`, nem funciona com a `v-else`.
 
