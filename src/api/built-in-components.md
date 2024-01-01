@@ -126,7 +126,7 @@ Fornece efeitos de transição animados para um **único** elemento ou component
   </Transition>
   ```
 
-- **Consulte também:** [Guia de `<Transition>`](/guide/built-ins/transition)
+- **Consultar também:** [Guia - Transição](/guide/built-ins/transition)
 
 ## `<TransitionGroup>` {#transitiongroup}
 
@@ -172,7 +172,7 @@ Fornece efeitos de transição para **múltiplos** elementos ou componentes numa
   </TransitionGroup>
   ```
 
-- **Consulte também:** [Guia - `TransitionGroup`](/guide/built-ins/transition-group)
+- **Consultar também:** [Guia - `TransitionGroup`](/guide/built-ins/transition-group)
 
 ## `<KeepAlive>` {#keepalive}
 
@@ -266,7 +266,7 @@ Armazena para consulta imediata os componentes alternados dinamicamente envolvid
   </KeepAlive>
   ```
 
-- **Consulte também:** [Guia - `KeepAlive`](/guide/built-ins/keep-alive)
+- **Consultar também:** [Guia - `KeepAlive`](/guide/built-ins/keep-alive)
 
 ## `<Teleport>` {#teleport}
 
@@ -308,7 +308,7 @@ Desenha o conteúdo da sua ranhura numa outra parte do DOM.
   </teleport>
   ```
 
-- **Consulte também:** [Guia - `Teleport`](/guide/built-ins/teleport.html)
+- **Consultar também:** [Guia - `Teleport`](/guide/built-ins/teleport.html)
 
 ## `<Suspense>` <sup class="vt-badge experimental" /> {#suspense}
 
@@ -334,4 +334,4 @@ Usado para orquestrar dependências assíncronas encaixadas numa árvore de comp
 
   Se encontrar dependências assíncronas ([Componentes Assíncronos](/guide/components/async) e componentes com [`async setup()`](/guide/built-ins/suspense#async-setup)) enquanto desenha a ranhura padrão, aguardará até todos serem resolvidos antes de exibir a ranhura padrão.
 
-- **Consulte também:** [Guia - `Suspense`](/guide/built-ins/suspense)
+- **Consultar também:** [Guia - `Suspense`](/guide/built-ins/suspense)
