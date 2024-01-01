@@ -415,7 +415,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Função de Interpretação', link: '/api/render-function' },
         { text: 'Interpretação do Lado do Servidor', link: '/api/ssr' },
         { text: 'Tipos de Utilitários de TypeScript', link: '/api/utility-types' },
-        { text: 'Interpretador Personalizado', link: '/api/custom-renderer' }
+        { text: 'Interpretador Personalizado', link: '/api/custom-renderer' },
+        { text: 'Opções de Compilação', link: '/api/compile-time-flags' },
       ]
     }
   ],
