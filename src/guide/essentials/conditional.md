@@ -100,13 +100,13 @@ A `v-show` não suporta o elemento `<template>`, nem funciona com a `v-else`.
 
 ## `v-if` vs `v-show` {#v-if-vs-v-show}
 
-A `v-if` é a interpretação condicional "real" porque ela garante que os ouvintes de evento e componentes filhos dentro de um bloco condicional sejam apropriadamente destruídos e recriados durante as alternâncias.
+A `v-if` é a interpretação condicional "verdadeira" porque esta garante que os ouvintes de evento e componentes filhos dentro do bloco condicional sejam destruídos corretamente e recriados durante as alternâncias.
 
-A `v-if` também é **preguiçosa**: se a condição for falsa na interpretação inicial, ela não fará nada - o bloco condicional não será interpretado até a condição tornar-se verdadeira pela primeira vez.
+A `v-if` também é **preguiçosa**: se a condição for falsa na interpretação inicial, esta não fará nada - o bloco condicional não será interpretado até a condição tornar-se verdadeira pela primeira vez.
 
-Em comparação, a `v-show` é muito mais simples - o elemento é interpretado sempre apesar da condição inicial, com alternância baseada em CSS.
+Em comparação, a `v-show` é muito mais simples - o elemento é sempre interpretado independentemente da condição inicial, com alternância baseada em CSS.
 
-Duma maneira geral, a `v-if` tem custos de alternância altos enquanto a `v-show` tem custos de interpretação inicial altos. Então prefira a `v-show` se precisares de alternar alguma coisa com frequência, e prefira a `v-if` se é pouco provável a condição mudar em tempo de execução.
+Dum modo geral, a `v-if` tem custos de alternância mais elevados enquanto a `v-show` tem custos de interpretação inicial mais elevados. Então devemos preferir a `v-show` se precisarmos de alternar algo com muita frequência, e devemos preferir `v-if` se for pouco provável que a condição se altere em execução.
 
 ## `v-if` com `v-for` {#v-if-with-v-for}
 
