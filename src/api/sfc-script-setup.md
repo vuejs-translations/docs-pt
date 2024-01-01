@@ -209,7 +209,7 @@ const emit = defineEmits<{
 
   Esta limitação tinha sido resolvida na 3.3. A versão mais recente da Vue suporta referência importada e um conjunto limitado de tipos complexos na posição do parâmetro de tipo. No entanto, uma vez que o tipo para a conversão de tempo de execução ainda é baseado na árvore de sintaxe abstrata, alguns tipos complexos que exigem de fato a analise de tipo, por exemplo tipos condicionais, não são suportados. Nós podemos usar os tipos condicionais para o tipo duma única propriedade, mas não para o objeto de propriedades inteiro.
 
-### Valores de Propriedades Padrão Quando Usamos Declaração de Tipos {#default-props-values-when-using-type-declaration}
+### Valores de Propriedades Padrão Quando Usamos Declaração de Tipo {#default-props-values-when-using-type-declaration}
 
 Uma desvantagem da declaração de `defineProps` de tipo exclusivo é que não tem uma maneira de fornecer valores padrão para as propriedades. Para resolver este problema, uma macro do compilador `withDefaults` também é fornecida:
 
@@ -226,6 +226,81 @@ const props = withDefaults(defineProps<Props>(), {
 ```
 
 Isto será compilado às opções `default` de propriedades de tempo de execução equivalentes. Além disto, a auxiliar `withDefaults` fornece verificações de tipo para os valores padrão, e garante que o tipo de `props` retornado tenha as opções opcionais removidas para as propriedades que têm os valores padrão declarados.
+
+## `defineModel()` <sup class="vt-badge" data-text="3.4+" /> {#definemodel}
+
+Esta macro pode ser usada para declarar uma propriedade de vínculo bi-direcional que pode ser consumida através da `v-model` a partir do componente pai. O uso do exemplo também é discutido no guia [Componente `v-model`](/guide/components/v-model).
+
+Nos bastidores, esta macro declara uma propriedade modelo e um evento de atualização do valor correspondente. Se o primeiro argumento for uma sequência de caracteres literal, esta será usada como nome da propriedade; De outro modo o nome da propriedade predefinirá ao `"modelValue"`. Em ambos casos, também podes passar um objeto adicional que pode incluir as opções da propriedade e as opções de transformação do valor da referência.
+
+```js
+// declara a propriedade "modelValue",
+// consumida pelo pai através da `v-model`
+const model = defineModel()
+// OU: declara a propriedade "modelValue" com as opções
+const model = defineModel({ type: String })
+
+// emite "update:modelValue" quando alterada
+model.value = 'hello'
+
+// declara a propriedade "count",
+// consumida pelo pai através da `v-model:count`
+const count = defineModel('count')
+// OU: declara a propriedade "count" com opções
+const count = defineModel('count', { type: Number, default: 0 })
+
+function inc() {
+  // emite "update:count" quando alterada
+  count.value++
+}
+```
+
+### Modificadores e Transformadores {#modifiers-and-transformers}
+
+Para acessar os modificadores usados com a diretiva `v-model`, podemos desestruturar o valor de retorno da `defineModel()` como este:
+
+```js
+const [modelValue, modelModifiers] = defineModel()
+
+// corresponde a `v-model.trim`
+if (modelModifiers.trim) {
+  // ...
+}
+```
+
+Quando um modificador estiver presente, provavelmente precisaremos transformar o valor quando o lemos ou sincronizamos de volta ao pai. Nós podemos alcançar isto usando as opções `get` e `set` do transformador:
+
+```js
+const [modelValue, modelModifiers] = defineModel({
+  // `get()` omitido porque não é necessário neste exemplo
+  set(value) {
+    // se o modificador `.trim` for usado,
+    // retorna o valor aparado
+    if (modelModifiers.trim) {
+      return value.trim()
+    }
+    // de outro modo, retorna o valor como está
+    return value
+  }
+})
+```
+
+### Uso com a TypeScript <sup class="vt-badge ts" /> {#usage-with-typescript}
+
+Tal como a `defineProps` e a `defineEmits`, a `defineModel` também pode receber argumentos de tipo para especificar os tipos do valor do modelo e dos modificadores:
+
+```ts
+const modelValue = defineModel<string>()
+//    ^? Ref<string | undefined>
+
+// predefinir modelo com opções,
+// `required` remove possíveis valores indefinidos
+const modelValue = defineModel<string>({ required: true })
+//    ^? Ref<string>
+
+const [modelValue, modifiers] = defineModel<string, 'trim' | 'uppercase'>()
+//                 ^? Record<'trim' | 'uppercase', true | undefined>
+```
 
 ## `defineExpose()` {#defineexpose}
 
@@ -249,7 +324,7 @@ defineExpose({
 
 Quando um pai recebe uma instância deste componente através das referências do componente, a instância recuperada será da forma `{ a: number, b: number }` (as referências são automaticamente desembrulhadas tal como nas instâncias normais).
 
-## `defineOptions()` {#defineoptions}
+## `defineOptions()` <sup class="vt-badge" data-text="3.3+" /> {#defineoptions}
 
 Esta macro pode ser usada para declarar opções de componente diretamente de dentro do `<script setup>` sem ter de usar um bloco `<script>` separado:
 
@@ -332,7 +407,7 @@ O suporte para combinação de `<script setup>` e `<script>` no mesmo componente
 
 Se encontramos-nos em um dos cenários que não é suportado devemos considerar mudar para uma função [`setup()`](/api/composition-api-setup) explícita, ao invés de usar `<script setup>`.
 
-## `await` de Alto Nível {#top-level-await}
+## Espera de Alto Nível {#top-level-await}
 
 A `await` de alto nível pode ser usada dentro do `<script setup>`. O código resultante será compilado tal como `async setup()`:
 
@@ -379,4 +454,5 @@ defineProps<{
 
 ## Restrições {#restrictions}
 
-Por causa da diferença nas semânticas da execução do módulo, o código dentro do `<script setup>` depende do contexto dum componente de ficheiro único. Quando movido para ficheiros `.js` ou `.ts` externos, pode conduzir à confusão para ambos programadores e ferramentas. Portanto, **`<script setup>`** não pode ser usada com o atributo `src`.
+- Por causa da diferença na semântica da execução do módulo, o código dentro do `<script setup>` depende do contexto dum componente de ficheiro único. Quando movido aos ficheiros `.js` ou `.ts` externos, este pode confundir ambos programadores e ferramentas. Portanto, **`<script setup>`** não pode ser usado com o atributo `src`.
+- `<script setup>` não suporta Modelo de Marcação de Componente de Raiz Embutido no DOM. ([Discussão Relacionada](https://github.com/vuejs/core/issues/8391)).
