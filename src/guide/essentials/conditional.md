@@ -111,7 +111,7 @@ Dum modo geral, a `v-if` tem custos de alternância mais elevados enquanto a `v-
 ## `v-if` com `v-for` {#v-if-with-v-for}
 
 :::warning AVISO
-**Não** é recomendado utilizar a `v-if` e `v-for` no mesmo elemento por causa da precedência implícita. Consulte o [guia de estilo](/style-guide/rules-essential#avoid-v-if-with-v-for) para obter mais detalhes.
+**Não** é recomendado usar a `v-if` e `v-for` sobre o mesmo elemento devido à precedência implícita. Consultar o [guia de estilo](/style-guide/rules-essential#avoid-v-if-with-v-for) por detalhes.
 :::
 
-Quando a `v-if` e `v-for` forem ambas utilizadas no mesmo elemento, a `v-if` será avaliada primeiro. Consulte a [guia de interpretação de lista](list#v-for-with-v-if) para obter mais detalhes.
+Quando a `v-if` e a `v-for` forem ambas usadas sobre o mesmo elemento, a `v-if` será avaliada primeiro. Consultar o [guia de interpretação de lista](list#v-for-with-v-if) por detalhes.
