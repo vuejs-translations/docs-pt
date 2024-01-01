@@ -101,32 +101,9 @@ Controla se o comportamento padrão de passagem de atributo do componente deveri
   </template>
   ```
 
-  Desde a versão 3.3 podemos também usar `defineOptions` diretamente no `<script setup>`:
-
-  ```vue
-  <script setup>
-  defineProps(['label', 'value'])
-  defineEmits(['input'])
-  defineOptions({
-    inheritAttrs: false
-  })
-  </script>
-
-  <template>
-    <label>
-      {{ label }}
-      <input
-        v-bind="$attrs"
-        v-bind:value="value"
-        v-on:input="$emit('input', $event.target.value)"
-      />
-    </label>
-  </template>
-  ```
-
   </div>
 
-- **Consulte também** [Atributos de Passagem](/guide/components/attrs)
+- **Consultar também** [Atributos de Passagem](/guide/components/attrs)
 
 ## `components` {#components}
 
@@ -156,7 +133,7 @@ Um objeto que regista os componentes a serem disponibilizados à instância do c
   }
   ```
 
-- **Consulte também** [Registo de Componente](/guide/components/registration)
+- **Consultar também** [Registo de Componente](/guide/components/registration)
 
 ## `directives` {#directives}
 
@@ -191,4 +168,4 @@ Um objeto que regista as diretivas a serem disponibilizadas à instância do com
 
   Um dicionário de diretivas a serem disponibilizadas à instância do componente.
 
-- **Consulte também** [Diretivas Personalizadas](/guide/reusability/custom-directives)
+- **Consultar também** [Diretivas Personalizadas](/guide/reusability/custom-directives)
