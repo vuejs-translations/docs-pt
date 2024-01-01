@@ -374,6 +374,10 @@ Atribui um manipulador global para erros não capturados que se propagam a parti
   - Gatilhos personalizados de diretiva
   - Gatilhos de transição
 
+  :::tip DICA
+  Em produção, o terceiro argumento (`info`) será um código encurtado ao invés da sequência de caracteres da informação completa. Nós podemos encontrar o código ao mapeamento da sequência de caracteres na [Referência do Código de Erro de Produção](/error-reference/#runtime-errors).
+  :::
+
 - **Exemplo**
 
   ```js

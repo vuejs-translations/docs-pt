@@ -206,6 +206,10 @@ Regista um gatilho a ser chamado quando um erro que se propaga a partir dum comp
 
   O gatilho recebe três argumentos: o erro, a instância do componente que disparou o erro, e uma sequência de caracteres de informação especificando o tipo de erro da fonte.
 
+  :::tip DICA
+  Em produção, o terceiro argumento (`info`) será um código encurtado ao invés da sequência de caracteres da informação completa. Nós podemos encontrar o código ao mapeamento da sequência de caracteres na [Referência do Código de Erro de Produção](/error-reference/#runtime-errors).
+  :::
+
   Nós podemos modificar o estado do componente em `errorCaptured()` para mostrar um estado de erro ao utilizador. No entanto, é importante que o estado de erro não desenhe o conteúdo original que causou o erro; de outro modo o componente será lançado num laço de interpretação infinita.
 
   O gatilho pode retornar `false` para impedir que o erro continue a propagar-se. Consulte os detalhes de propagação de erro abaixo.
