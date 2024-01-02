@@ -285,7 +285,7 @@ const [modelValue, modelModifiers] = defineModel({
 })
 ```
 
-### Uso com a TypeScript <sup class="vt-badge ts" /> {#usage-with-typescript}
+### Uso com a TypeScript <sup class="vt-badge ts" data="typescript" /> {#usage-with-typescript}
 
 Tal como a `defineProps` e a `defineEmits`, a `defineModel` também pode receber argumentos de tipo para especificar os tipos do valor do modelo e dos modificadores:
 
@@ -455,4 +455,4 @@ defineProps<{
 ## Restrições {#restrictions}
 
 - Por causa da diferença na semântica da execução do módulo, o código dentro do `<script setup>` depende do contexto dum componente de ficheiro único. Quando movido aos ficheiros `.js` ou `.ts` externos, este pode confundir ambos programadores e ferramentas. Portanto, **`<script setup>`** não pode ser usado com o atributo `src`.
-- `<script setup>` não suporta Modelo de Marcação de Componente de Raiz Embutido no DOM. ([Discussão Relacionada](https://github.com/vuejs/core/issues/8391)).
+- `<script setup>` não suporta o Modelo de Marcação de Componente de Raiz Embutido no DOM. ([Discussão Relacionada](https://github.com/vuejs/core/issues/8391)).
