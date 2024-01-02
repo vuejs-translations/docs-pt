@@ -18,7 +18,7 @@ Atualiza o conteúdo de texto do elemento.
   <span>{{msg}}</span>
   ```
 
-- **Consulte também** [Sintaxe do Modelo de Marcação - Interpolação de Texto](/guide/essentials/template-syntax#text-interpolation)
+- **Consultar também** [Sintaxe do Modelo de Marcação - Interpolação de Texto](/guide/essentials/template-syntax#text-interpolation)
 
 ## `v-html` {#v-html}
 
@@ -30,8 +30,8 @@ Atualiza a [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Elemen
 
   Os conteúdos da `v-html` são inseridos como HTML simples - a sintaxe de modelo de marcação da Vue não será processada. Se estivermos a tentar compor modelos de marcação usando  `v-html`, vamos tentar repensar a solução usando componentes.
 
-  :::warning Nota de Segurança
-  Interpretar dinamicamente HTML arbitrário na nossa aplicação pode ser muito perigoso porque pode facilmente conduzir à [ataques de XSS](https://en.wikipedia.org/wiki/Cross-site_scripting). Só deveríamos usar `v-html` sobre conteúdo confiável e **nunca** sobre conteúdo fornecido pelo utilizador.
+  :::warning NOTA DE SEGURANÇA
+  Interpretar dinamicamente HTML arbitrário na nossa aplicação pode ser muito perigoso porque pode facilmente conduzir a [ataques de XSS](https://en.wikipedia.org/wiki/Cross-site_scripting). Só deveríamos usar `v-html` sobre conteúdo confiável e **nunca** sobre conteúdo fornecido pelo utilizador.
   :::
 
   Nos [Componentes de Ficheiro Único](/guide/scaling-up/sfc), os estilos `scoped` não serão aplicados ao conteúdo dentro de `v-html`, porque este HTML não é processado pelo compilador de modelos de marcação da Vue. Se quisermos mirar o conteúdo de `v-html` com CSS isolada, podemos usar os [módulos de CSS](./sfc-css-features#css-modules) ou elemento `<style>` adicional e global com uma estratégia de isolamento manual, como a BEM.
@@ -42,7 +42,7 @@ Atualiza a [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Elemen
   <div v-html="html"></div>
   ```
 
-- **Consulte também** [Sintaxe do Modelo de Marcação - HTML Puro](/guide/essentials/template-syntax#raw-html)
+- **Consultar também** [Sintaxe do Modelo de Marcação - HTML Puro](/guide/essentials/template-syntax#raw-html)
 
 ## `v-show` {#v-show}
 
@@ -54,7 +54,7 @@ Alterna a visibilidade do elemento baseado na veracidade do valor da expressão.
 
   `v-show` funciona definindo a propriedade de CSS `display` através de estilos em linha, e tentará respeitar o valor inicial da `display` quando o elemento estiver visível. Também aciona transições quando sua condição muda.
 
-- **Consulte também** [Interpretação Condicional - `v-show`](/guide/essentials/conditional#v-show)
+- **Consultar também** [Interpretação Condicional - `v-show`](/guide/essentials/conditional#v-show)
 
 ## `v-if` {#v-if}
 
@@ -72,7 +72,7 @@ Interpreta condicionalmente um elemento ou um fragmento de modelo de marcação 
 
   Quando usada em conjunto, a `v-if` tem uma prioridade superior à `v-for`. Não recomendados usar estas duas diretivas ao mesmo tempo sobre um elemento — consulte o [guia de interpretação de lista](/guide/essentials/list#v-for-with-v-if) por mais detalhes.
 
-- **Consulte também** [Interpretação Condicional - `v-if`](/guide/essentials/conditional#v-if)
+- **Consultar também** [Interpretação Condicional - `v-if`](/guide/essentials/conditional#v-if)
 
 ## `v-else` {#v-else}
 
@@ -97,7 +97,7 @@ Denota um "bloco `else`" para a `v-if` ou para uma cadeia `v-if` / `v-else-if`.
   </div>
   ```
 
-- **Consulte também** [Interpretação Condicional - `v-else`](/guide/essentials/conditional#v-else)
+- **Consultar também** [Interpretação Condicional - `v-else`](/guide/essentials/conditional#v-else)
 
 ## `v-else-if` {#v-else-if}
 
@@ -128,7 +128,7 @@ Denota o "bloco `else if`" para a `v-if`. Pode ser encadeada.
   </div>
   ```
 
-- **Consulte também** [Interpretação Condicional - `v-else-if`](/guide/essentials/conditional#v-else-if)
+- **Consultar também** [Interpretação Condicional - `v-else-if`](/guide/essentials/conditional#v-else-if)
 
 ## `v-for` {#v-for}
 
@@ -164,7 +164,7 @@ Interpreta o elemento ou bloco de modelo de marcação várias vezes baseada na 
 
   `v-for` também pode trabalhar com valores que implementam o [Protocolo Iterável](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol), incluindo os `Map` e `Set` nativos.
 
-- **Consulte também**
+- **Consultar também**
   - [Interpretação de Lista](/guide/essentials/list)
 
 ## `v-on` {#v-on}
@@ -249,7 +249,7 @@ Anexa um ouvinte de evento ao elemento.
   <MyComponent @my-event="handleThis(123, $event)" />
   ```
 
-- **Consulte também**
+- **Consultar também**
   - [Manipulação de Eventos](/guide/essentials/event-handling)
   - [Componentes - Eventos Personalizados](/guide/essentials/component-basics#listening-to-events)
 
@@ -257,7 +257,9 @@ Anexa um ouvinte de evento ao elemento.
 
 Vincula dinamicamente um ou mais atributos, ou uma propriedade de componente à uma expressão.
 
-- **Atalho:** `:` ou `.` (quando usamos o modificador `.prop`)
+- **Atalho:**
+  - `:` ou `.` (quando usamos o modificador `.prop`)
+  - Omitir o valor (quando o atributo e o valor vinculado tiverem o mesmo nome) <sup class="vt-badge">3.4+</sup>
 
 - **Espera:** `any (com argumento) | Object (sem argumento)`
 
@@ -265,9 +267,9 @@ Vincula dinamicamente um ou mais atributos, ou uma propriedade de componente à 
 
 - **Modificadores**
 
-  - `.camel` - transforma o nome de atributo em caixa de espetada em caixa de camelo.
-  - `.prop` - força um vínculo à ser definido como uma propriedade do DOM. <sup class="vt-badge">3.2+</sup>
-  - `.attr` - força um vínculo à ser definido como um atributo de DOM. <sup class="vt-badge">3.2+</sup>
+  - `.camel` - transforma o nome de atributo em caixa espetada em caixa de camelo.
+  - `.prop` - força um vínculo a ser definido como uma propriedade do DOM. <sup class="vt-badge">3.2+</sup>
+  - `.attr` - força um vínculo a ser definido como um atributo de DOM. <sup class="vt-badge">3.2+</sup>
 
 - **Uso**
 
@@ -290,6 +292,9 @@ Vincula dinamicamente um ou mais atributos, ou uma propriedade de componente à 
 
   <!-- atalho -->
   <img :src="imageSrc" />
+
+  <!-- atalho de mesmo nome (3.4+), expande a `:src="src"` -->
+  <img :src />
 
   <!-- atalho de nome de atributo dinâmico -->
   <button :[key]="value"></button>
@@ -337,7 +342,7 @@ Vincula dinamicamente um ou mais atributos, ou uma propriedade de componente à 
 
   `.camel` não é necessário se estivermos a usar modelos de marcação de sequência de caracteres, pré-compilar o modelo de marcação com uma etapa de construção.
 
-- **Consulte também**
+- **Consultar também**
   - [Vínculos de Classe e Estilo](/guide/essentials/class-and-style)
   - [Componentes - Detalhes da Passagem de Propriedade](/guide/components/props#prop-passing-details)
 
@@ -360,7 +365,7 @@ Cria um vínculo bidirecional num elemento de entrada de formulário ou um compo
   - [`.number`](/guide/essentials/forms#number) - converte uma sequência de caracteres de entrada válida em números.
   - [`.trim`](/guide/essentials/forms#trim) - apara a entrada
 
-- **Consulte também**
+- **Consultar também**
 
   - [Vínculos de Entrada de Formulário](/guide/essentials/forms)
   - [Eventos de Componente - Uso com `v-model`](/guide/components/v-model)
@@ -413,7 +418,7 @@ Denota ranhuras nomeadas ou ranhuras isoladas que esperam receber propriedades.
   </Mouse>
   ```
 
-- **Consulte também**
+- **Consultar também**
   - [Componentes - Ranhuras](/guide/components/slots)
 
 ## `v-pre` {#v-pre}
@@ -460,7 +465,7 @@ Desenha o elemento e o componente apenas uma vez, e ignora as futuras atualizaç
 
   Desde a 3.2, também podemos memorizar parte do modelo de marcação com condições de invalidação usando a [`v-memo`](#v-memo).
 
-- **Consulte também**
+- **Consultar também**
   - [Sintaxe de Vínculo de Dados - Interpolações](/guide/essentials/template-syntax#text-interpolation)
   - [`v-memo`](#v-memo)
 
@@ -501,7 +506,7 @@ Desenha o elemento e o componente apenas uma vez, e ignora as futuras atualizaç
 
   `v-memo` também pode ser usada nos componentes para manualmente impedir atualizações indesejadas em certos casos extremos onde a verificação da atualização do componente filho não foi otimizado. Mas novamente, é responsabilidade do programador especificar os vetores de dependência correta para evitar ignorar atualizações necessárias.
 
-- **Consulte também**
+- **Consultar também**
   - [`v-once`](#v-once)
 
 ## `v-cloak` {#v-cloak}
