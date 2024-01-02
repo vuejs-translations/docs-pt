@@ -6,9 +6,8 @@ footer: false
 
 :::info Estamos Lendo a Documentação da Vue 3!
 
-- O suporte da Vue 2 terminará no dia 31 de Dezembro de 2023. Saiba mais sobre o [Suporte de Longo Prazo Estendido da Vue 2](https://v2.vuejs.org/lts/).
-- A documentação da Vue 2 foi movida para [v2.vuejs.org](https://v2.vuejs.org/).
-- Migrando da Vue 2? Consulte o [Guia de Migração](https://v3-migration.vuejs.org/pt).
+- O suporte da Vue 2 terminou no dia **31 de Dezembro de 2023**. Saiba mais sobre a [EOL da Vue 2](https://v2.vuejs.org/eol/).
+- Atualizando a partir da Vue 2? Consultar o [Guia de Migração](https://v3-migration.vuejs.org/pt).
 :::
 
 <style src="@theme/styles/vue-mastery.css"></style>
