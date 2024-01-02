@@ -39,9 +39,9 @@ Recebe um valor interno e retorna um objeto de referência reativa e mutável, q
   console.log(count.value) // 1
   ```
 
-- **Consulte também:**
+- **Consultar também:**
   - [Guia - Variáveis Reativas com `ref()`](/guide/essentials/reactivity-fundamentals#reactive-variables-with-ref)
-  - [Guia - Tipificando a `ref()`](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
+  - [Guia - Tipificando a `ref()`](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" data-text="typescript" />
 
 ## `computed()` {#computed}
 
@@ -52,15 +52,15 @@ Recebe uma função recuperadora e retorna um objeto de [referência](#ref) de s
   ```ts
   // somente leitura
   function computed<T>(
-    getter: () => T,
-    // consulte a ligação "Depurando Propriedades Computadas" abaixo
+    getter: (oldValue: T | undefined) => T,
+    // consulte a ligação "Depuração de Propriedades Computadas" abaixo
     debuggerOptions?: DebuggerOptions
   ): Readonly<Ref<Readonly<T>>>
 
   // gravável
   function computed<T>(
     options: {
-      get: () => T
+      get: (oldValue: T | undefined) => T
       set: (value: T) => void
     },
     debuggerOptions?: DebuggerOptions
@@ -108,10 +108,11 @@ Recebe uma função recuperadora e retorna um objeto de [referência](#ref) de s
   })
   ```
 
-- **Consulte também:**
+- **Consultar também:**
   - [Guia - Propriedades Computadas](/guide/essentials/computed)
-  - [Guia - Depurando Propriedades Computadas](/guide/extras/reactivity-in-depth#computed-debugging)
-  - [Guia - Tipos para `computed()`](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
+  - [Guia - Depuração de Propriedades Computadas](/guide/extras/reactivity-in-depth#computed-debugging)
+  - [Guia - Tipificando a `computed()`](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" data-text="typescript" />
+  - [Guia - Desempenho - Estabilidade Computada](/guide/best-practices/performance#computed-stability) <sup class="vt-badge" data-text="3.4+" />
 
 ## `reactive()` {#reactive}
 
@@ -184,9 +185,9 @@ Retorna uma delegação reativa do objeto.
   console.log(obj.count === count.value) // true
   ```
 
-- **Consulte também:**
+- **Consultar também:**
   - [Guia - Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals)
-  - [Guia - Tipos para `reactive()`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
+  - [Guia - Tipificando a `reactive()`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
 ## `readonly()` {#readonly}
 
