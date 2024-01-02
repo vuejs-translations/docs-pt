@@ -1,9 +1,9 @@
 # Reactivity Transform {#reactivity-transform}
 
-:::danger Deprecated Experimental Feature
-Reactivity Transform was an experimental feature, and has been deprecated. Please read about [the reasoning here](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
+:::danger Removed Experimental Feature
+Reactivity Transform was an experimental feature, and has been removed in the latest 3.4 release. Please read about [the reasoning here](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
-It will eventually be removed from Vue core in a future minor release. If you still intend to use it, it is now available via the [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) plugin.
+If you still intend to use it, it is now available via the [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) plugin.
 :::
 
 :::tip Composition-API-specific
@@ -111,7 +111,7 @@ There are two pain points with the current `defineProps()` usage in `<script set
 
 1. Similar to `.value`, you need to always access props as `props.x` in order to retain reactivity. This means you cannot destructure `defineProps` because the resulting destructured variables are not reactive and will not update.
 
-2. When using the [type-only props declaration](/api/sfc-script-setup#typescript-only-features), there is no easy way to declare default values for the props. We introduced the `withDefaults()` API for this exact purpose, but it's still clunky to use.
+2. When using the [type-only props declaration](/api/sfc-script-setup#type-only-props-emit-declarations), there is no easy way to declare default values for the props. We introduced the `withDefaults()` API for this exact purpose, but it's still clunky to use.
 
 We can address these issues by applying a compile-time transform when `defineProps` is used with destructuring, similar to what we saw earlier with `$()`:
 
@@ -283,8 +283,8 @@ When explicitly importing the macros from `vue/macros`, the type will work witho
 
 ## Explicit Opt-in {#explicit-opt-in}
 
-:::warning
-The following only applies up to Vue version 3.3 and below. Core support will be removed in 3.4 and above. If you intend to continue using the transform, please migrate to [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) instead.
+:::danger No longer supported in core
+The following only applies up to Vue version 3.3 and below. Support has been removed in Vue core 3.4 and above, and `@vitejs/plugin-vue` 5.0 and above. If you intend to continue using the transform, please migrate to [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) instead.
 :::
 
 ### Vite {#vite}
