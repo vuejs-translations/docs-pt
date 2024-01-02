@@ -128,7 +128,7 @@ Retorna uma delegação reativa do objeto.
 
   A conversão reativa é "profunda": ela afeta todas as propriedades encaixadas. Um objeto reativo também desembrulha quaisquer propriedades que são [referências](#ref) embora preserve a reatividade.
 
-  Deve-se notar que não existe desembrulhamento de referência realizado quando a referência é acessada como um elemento dum vetor reativo ou tipo de coleção nativo como `Map`.
+  Deve-se notar que não existe desembrulho de referência realizado quando a referência é acessada como um elemento dum vetor reativo ou tipo de coleção nativo como `Map`.
 
   Para evitar esta conversão profunda e somente reter reatividade no nível da raiz, use [`shallowReactive()`](./reactivity-advanced#shallowreactive).
 
@@ -203,7 +203,7 @@ Recebe um objeto (reativo ou simples) ou uma [referência](#ref) e retorna uma d
 
 - **Detalhes**
 
-  Uma delegação de somente leitura é profunda: qualquer propriedade encaixada acessada serão de somente leitura também. Ela possui o mesmo mecanismo de desembrulhamento de referências que a `reactive()`, exceto que valores desembrulhados também serão de somente leitura.
+  Uma delegação de somente leitura é profunda: qualquer propriedade encaixada acessada serão de somente leitura também. Ela possui o mesmo mecanismo de desembrulho de referências que a `reactive()`, exceto que valores desembrulhados também serão de somente leitura.
 
   Para evitar a conversão profunda, use [shallowReadonly()](./reactivity-advanced#shallowreadonly).
 
@@ -361,6 +361,7 @@ fontes mudam.
     flush?: 'pre' | 'post' | 'sync' // pré-definido como: 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
+    once?: boolean // pré-definido como: false (3.4+)
   }
   ```
 
@@ -387,6 +388,7 @@ fontes mudam.
   - **`deep`**: força travessia profunda da fonte se for um objeto, para que a função de resposta dispare sobre as mutações profundas. Consulte [Observadores Profundos](/guide/essentials/watchers#deep-watchers).
   - **`flush`**: ajusta o tempo de descarga da função de resposta. Consulte [Tempo de Descarga da Função de Resposta](/guide/essentials/watchers#callback-flush-timing) e [`watchEffect()`](/api/reactivity-core#watcheffect).
   - **`onTrack / onTrigger`**: depura as dependências do observador. Consulte [Depuração de Observadores](/guide/extras/reactivity-in-depth#watcher-debugging).
+  - **`once`**: executa a função de resposta apenas uma vez. O observador é parado automaticamente depois da primeira execução da função de resposta. <sup class="vt-badge" data-text="3.4+" />
 
   Comparado ao [`watchEffect()`](#watcheffect), `watch()` permite-nos:
 
