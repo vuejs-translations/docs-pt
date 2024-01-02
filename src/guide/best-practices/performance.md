@@ -124,6 +124,52 @@ Agora, para a maior parte dos componentes a propriedade `active` continuarão a 
 
 `v-memo` é uma diretiva embutida que pode ser usada para ignorar condicionalmente a atualização de sub-árvores grandes ou listas de `v-for`. Consulte a [referência da sua API](/api/built-in-directives#v-memo) para mais detalhes.
 
+### Estabilidade Computada <sup class="vt-badge" data-text="3.4+" /> {#computed-stability}
+
+Começando na 3.4, uma propriedade computada apenas acionará os efeitos quando seu valor computado tiver mudado a partir do valor anterior. Por exemplo, a seguinte `isEven` computada apenas aciona os efeitos se o valor retornado tiver mudado de `true` ao `false`, ou vice-versa:
+
+```js
+const count = ref(0)
+const isEven = computed(() => count.value % 2 === 0)
+
+watchEffect(() => console.log(isEven.value)) // true
+
+// não acionará novos registos porque
+// o valor computado continua `true`
+count.value = 2
+count.value = 4
+```
+
+Isto reduz acionamentos de efeito desnecessários, mas infelizmente não funciona se o computado cria um novo objeto sobre cada cálculo:
+
+```js
+const computedObj = computed(() => {
+  return {
+    isEven: count.value % 2 === 0
+  }
+})
+```
+
+Uma vez que um novo objeto é criado toda vez, o novo valor é sempre tecnicamente diferente do valor antigo. Mesmo se a propriedade `isEven` permanecer a mesma, a Vue não será capaz de saber a menos que esta realize uma comparação profunda do valor antigo e do novo valor. Tal comparação poderia ser dispendiosa e provavelmente inútil.
+
+Ao invés disto, podemos otimizar isto comparando manualmente o novo valor com o valor antigo, e condicionalmente retornar o valor antigo se sabermos que nada mudou:
+
+```js
+const computedObj = computed((oldValue) => {
+  const newValue = {
+    isEven: count.value % 2 === 0
+  }
+  if (oldValue && oldValue.isEven === newValue.isEven) {
+    return oldValue
+  }
+  return newValue
+})
+```
+
+[Exemplo da Zona de Testes](https://play.vuejs.org/#eNqVVMtu2zAQ/JUFgSZK4UpuczMkow/40AJ9IC3aQ9mDIlG2EokUyKVt1PC/d0lKtoEminMQQC1nZ4c7S+7Yu66L11awGUtNoesOwQi03ZzLuu2URtiBFtUECtV2FkU5gU2OxWpRVaJA2EOlVQuXxHDJJZeFkgYJayVC5hKj6dUxLnzSjZXmV40rZfFrh3Vb/82xVrLH//5DCQNNKPkweNiNVFP+zBsrIJvDjksgGrRahjVAbRZrIWdBVLz2yBfwBrIsg6mD7LncPyryfIVnywupUmz68HOEEqqCI+XFBQzrOKR79MDdx66GCn1jhpQDZx8f0oZ+nBgdRVcH/aMuBt1xZ80qGvGvh/X6nlXwnGpPl6qsLLxTtitzFFTNl0oSN/79AKOCHHQuS5pw4XorbXsr9ImHZN7nHFdx1SilI78MeOJ7Ca+nbvgd+GgomQOv6CNjSQqXaRJuHd03+kHRdg3JoT+A3a7XsfcmpbcWkQS/LZq6uM84C8o5m4fFuOg0CemeOXXX2w2E6ylsgj2gTgeYio/f1l5UEqj+Z3yC7lGuNDlpApswNNTrql7Gd0ZJeqW8TZw5t+tGaMdDXnA2G4acs7xp1OaTj6G2YjLEi5Uo7h+I35mti3H2TQsj9Jp6etjDXC8Fhu3F9y9iS+vDZqtK2xB6ZPNGGNVYpzHA3ltZkuwTnFf70b+1tVz+MIstCmmGQzmh/p56PGf00H4YOfpR7nV8PTxubP8P2GAP9Q==)
+
+Nota que sempre devemos realizar a computação completa antes de comparar e retornar o valor antigo, para que as mesmas dependências possam ser colecionadas sobre toda execução.
+
 ## Otimizações Gerais {#general-optimizations}
 
 > As seguintes dicas afetam tanto carregamento da página e a desempenho da atualização.
