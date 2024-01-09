@@ -28,7 +28,7 @@ Cada tipo de teste desempenha um papel na estratégia de testes da nossa aplica�
 
 ## Visão Geral {#overview}
 
-Nós discutiremos brevemente o que cada um destes é, como eles podem ser implementados em aplicações de Vue, e forneceremos algumas recomendações gerais.
+Nós discutiremos brevemente sobre cada tipo de teste, como estes podem ser implementados às nossas aplicações de Vue, e forneceremos algumas recomendações gerais.
 
 ## Testes Unitários {#unit-testing}
 
