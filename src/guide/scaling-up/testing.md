@@ -32,11 +32,11 @@ Nós discutiremos brevemente sobre cada tipo de teste, como estes podem ser impl
 
 ## Testes Unitários {#unit-testing}
 
-Os testes unitários são escritos para verificar se aquelas pequenas e isoladas unidades de código são estão a funcionar como esperado. Um teste unitário normalmente cobre uma única função, classe, constituível, ou módulo. Os testes unitários focam-se na correção da lógica e apenas diz respeito a elas mesmas com uma pequena porção da funcionalidade global da aplicação. Eles podem imitar grandes partes do ambiente da tua aplicação (por exemplo, estado inicial, classes complexas, módulos de terceiros, e requisições da rede).
+Os testes unitários são escritos para verificar se as pequenas e isoladas unidades de código estão funcionando como esperado. Um teste unitário normalmente cobre uma única função, classe, função de composição, ou módulo. Os testes unitários focam-se na exatidão lógica e os mesmos apenas preocupam-se com uma pequena porção da funcionalidade geral da aplicação. Estes podem simular grandes partes do ambiente da nossa aplicação (por exemplo, estado inicial, classes complexas, módulos de terceiros, e requisições de rede).
 
-Em geral, os testes unitários capturarão os problemas com a lógica de negócio da função e correção da lógica.
+No geral, os testes unitários capturarão os problemas com a lógica de negócio da função e com a exatidão lógica.
 
-Tome como exemplo esta função `increment`:
+Consideremos como exemplo esta função `increment`:
 
 ```js
 // helpers.js
@@ -48,9 +48,9 @@ export function increment (current, max = 10) {
 }
 ```
 
-Uma vez que está muito autossuficiente, será fácil invocar a função `increment` e afirmar que ela retorna o que é suposto retornar, assim escreveremos um Teste Unitário.
+Uma vez que é muito autónoma, será fácil invocar a função `increment` e asserir que esta retorna o que é suposto retornar, então escreveremos um Teste Unitário.
 
-Se quaisquer destas afirmações falhar, é claro que o problema está contido dentro da `increment` função.
+Se quaisquer uma destas asserções falhar, está claro que o problema está contido dentro da função `increment`:
 
 ```js{4-16}
 // helpers.spec.js
@@ -71,11 +71,11 @@ describe('increment', () => {
 })
 ```
 
-Conforme mencionado anteriormente, o teste unitário é normalmente aplicado à lógica de negócio autossuficiente, componentes, classes, módulos ou funções que não envolvem a apresentação da interface do utilizador (UI, sigla em Inglês), requisições de rede, ou outras preocupações ambientais.
+Conforme mencionado anteriormente, o teste unitário é normalmente aplicado à lógica de negócio, componentes, classes, módulos ou funções autónomas que não envolvem a interpretação da interface gráfica da aplicação, requisições de rede, ou outras preocupações ambientais.
 
-Eles são tipicamente módulos planos de JavaScript / TypeScript não relacionados a Vue. Em geral, escrever testes unitários para a lógica de negócio em aplicações de Vue não difere significativamente de aplicações usando outras abstrações.
+Estes são normalmente módulos simples de JavaScript ou TypeScript que não estão relacionados com a Vue. No geral, escrever testes unitários para lógica de negócio em aplicações de Vue não difere significativamente das aplicações usando outras abstrações.
 
-Existem duas exemplos onde FAZES teste unitário de funcionalidades especificas da Vue:
+Existem duas casos onde REALIZAMOS teste unitários de funcionalidades específicas da Vue:
 
 1. Funções de Composição
 2. Componentes
