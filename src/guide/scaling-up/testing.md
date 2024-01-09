@@ -18,13 +18,13 @@ Começamos testando no princípio! Nós recomendamos começar escrevendo testes 
 
 ## Tipos de Testes {#testing-types}
 
-Quando estiveres a desenhar a estratégia de testes da tua aplicação de Vue, deves influenciar os seguintes tipos de testes:
+Quando desenharmos a estratégia de testes da nossa aplicação de Vue, devemos influenciar os seguintes tipos de testes:
 
-- **Unitário**: Verifica se as entradas para uma dada função, classe, ou constituível estão a produzir o resultado esperado ou efeitos colaterais.
-- **Componente**: Verifica se o teu componente monta, apresenta, pode ser interagido com, e comporta-se como esperado. Estes testes importam mais código do que os testes unitários, são mais complexos, e exigem mais tempo para serem executados.
-- **Ponta-a-Ponta**: Verifica se as funcionalidades que abrangem várias páginas e realizam requisições de rede reais contra a tua aplicação de Vue construída para produção. Estes testes muitas vezes envolvem levantar uma base de dado ou outro backend.
+- **Unitário**: Verifica se as entradas à uma dada função, classe, função de composição estão produzindo a saída esperada ou efeitos colaterais.
+- **Componente**: Verifica se o nosso componente monta, interpreta, pode ser interagido com, e comporta-se como esperado. Estes testes importam mais código do que os testes unitários, são mais complexos, e exigem mais tempo para executarem.
+- **Ponta-a-Ponta**: Verifica se as funcionalidades que abrangem várias páginas e faz requisições de rede reais contra a nossa aplicação de Vue construída para produção. Estes testes frequentemente envolvem levantar um base de dados ou outro backend.
 
-Cada tipo de testes desempenha um papel na estratégia de testes da tua aplicação e cada um proteger-te-á contra diferentes tipos de problemas. 
+Cada tipo de teste desempenha um papel na estratégia de testes da nossa aplicação, e cada um nos protegerá contra diferentes tipos de problemas.
 
 ## Visão Geral {#overview}
 
