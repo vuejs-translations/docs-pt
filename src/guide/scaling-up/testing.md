@@ -12,9 +12,9 @@ Neste guia, cobriremos a terminologia básica e forneceremos as nossas recomenda
 
 Existe uma seção específica da Vue cobrindo as funções de composição. Consultar [Testando as Funções de Composição](#testing-composables) por mais detalhes.
 
-## Quando Testar {#when-to-test}
+## Quando Testar? {#when-to-test}
 
-Comece a testar desde o inicio! Nós recomendamos-te começar a escrever testes o mais cedo que puderes. Quanto mais tempo esperares para adicionar testes à tua aplicação, mas dependências a tua aplicação terá, e mais difícil será começar.
+Começamos testando no princípio! Nós recomendamos começar escrevendo testes o mais cedo possível. Quanto mais esperamos para adicionar os testes à nossa aplicação, mais dependências a nossa aplicação terá, e mais difícil será começar.
 
 ## Tipos de Testes {#testing-types}
 
