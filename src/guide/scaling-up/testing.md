@@ -104,9 +104,7 @@ Um componente pode ser testado de duas maneiras:
 
 ### Outras Opções {#other-options}
 
-- [Peeky](https://peeky.dev/) é um outro executor de teste unitário rápido com integração de Vite de primeira classe. Ele é também criado por um membro da equipa principal da Vue e oferece uma interface de teste baseada em GUI.
-
-- [Jest](https://jestjs.io/) é uma abstração de teste unitário popular, e pode ser posta a funcionar com a Vite através do pacote [vite-test](https://github.com/sodatea/vite-jest). No entanto, apenas recomendados a Jest se tiveres um conjunto de teste de Jest existente que precisa ser migrado para um projeto baseado na Vite, já que a Vitest oferece uma integração mais fluida e melhor desempenho.
+- [Jest](https://jestjs.io/) é uma abstração de teste unitário popular. No entanto, apenas recomendamos a Jest se houver um conjunto de teste de Jest que precisa ser migrado a um projeto baseado na Vite, uma que a Vitest oferece uma integração mais transparente e um desempenho melhor.
 
 ## Teste de Componente {#component-testing}
 
