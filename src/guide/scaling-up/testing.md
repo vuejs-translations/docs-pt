@@ -84,17 +84,17 @@ Existem duas casos onde REALIZAMOS teste unitários de funcionalidades específi
 
 Uma categoria de funções específicas às aplicações de Vue são as [Funções de Composição](/guide/reusability/composables), que podem exigir manipulação especial durante os testes. Consultar a seção [Testando as Funções de Composição](#testing-composables) abaixo por mais detalhes.
 
-### Teste Unitário de Componentes {#unit-testing-components}
+### Teste Unitário dos Componentes {#unit-testing-components}
 
 Um componente pode ser testado de duas maneiras:
 
-1. Caixa Branca ou Whitebox: Teste Unitário
+1. Caixa Branca: Teste Unitário
 
-   Os testes que são "testes de Caixa Branca" estão conscientes dos detalhes de implementação e dependências de um componente. Eles estão concentrados no **isolamento** do componente sob teste. Estes testes usualmente envolverão a imitação de algumas, se não de todos os filhos do teu componente, bem como a composição do estado da extensão e dependências (por exemplo, Vuex).
+   Os testes que são "testes de Caixa Branca" estão conscientes dos detalhes da implementação e dependências dum componente. Estes estão focados em **isolar** o componente sob teste. Estes testes normalmente envolverão simular algumas, se não todos os filhos do nosso componente, bem como configurar o estado da extensão ou dependências (por exemplo, a Pinia).
 
-2. Caixa Preta ou Blackbox: Teste de Componente
+2. Caixa Preta: Teste de Componente
 
-   Os testes que são "testes de Caixa Preta" são não têm consciência dos detalhes de implementação de um componente. Estes testes imitam tão pouco quanto possível para testar a integração do teu componente e o sistema inteiro. Eles usualmente apresentam todos os componentes filhos e são considerados mais de uma "integração de teste". Consulte as [recomendações de Teste de Componente](#component-testing) abaixo.
+   Os testes que são "testes de Caixa Preta" não estão conscientes dos detalhes da implementação dum componente. Estes testes simulam apenas o possível para testar a integração do nosso componente e do nosso sistema inteiro. Estes normalmente interpretam todos os componentes filhos e são considerados mais dum "teste de integração". Consultar as [recomendações de Teste de Componente](#component-testing) abaixo.
 
 ### Recomendação {#recommendation}
 
