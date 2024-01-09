@@ -4,13 +4,13 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 # Testes {#testing}
 
-## Porquê Testar? {#why-test}
+## Por que Testar? {#why-test}
 
-Os testes automatizados ajudam-te e a tua construir aplicações de Vue complexas rapidamente e com confiança pela prevenção de regressões e encorajam-te a quebrar a tua aplicação em funções, módulos, classes, e componentes testáveis. Tal como em qualquer aplicação, a tua nova aplicação de Vue pode quebrar-se de muitas maneiras e é importante que possas capturar estes problemas e corrigi-los antes do lançamento.
+Os testes automatizados ajudam-nos e a nossa equipa a construirmos aplicações complexas de Vue rapidamente e confiantemente evitando regressões e encorajando-nos a separar a nossa aplicação em funções, módulos, classes, e componentes testáveis. Tal como acontece com qualquer aplicação, a nossa nova aplicação de Vue pode quebrar de várias maneiras, e é importante que possamos capturar estes problemas e os corrigir antes do lançamento. 
 
-Neste guia, cobriremos a terminologia fundamental e forneceremos as nossas recomendações a respeito de quais ferramentas escolher para a tua aplicação de Vue 3.
+Neste guia, cobriremos a terminologia básica e forneceremos as nossas recomendações sobre quais ferramentas escolher para a nossa aplicação de Vue 3.
 
-Existe uma seção específica da Vue que cobre as funções de composição. Consulte abaixo a [Testando as Funções de Composição](#testing-composables) para mais detalhes.
+Existe uma seção específica da Vue cobrindo as funções de composição. Consultar [Testando as Funções de Composição](#testing-composables) por mais detalhes.
 
 ## Quando Testar {#when-to-test}
 
