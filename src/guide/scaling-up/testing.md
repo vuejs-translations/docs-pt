@@ -1,5 +1,5 @@
 <script setup>
-import TestingApiSwitcher from './TestingApiSwitcher.vue'
+import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 </script>
 
 # Testes {#testing}
@@ -127,72 +127,71 @@ Os testes de componente deve concentrar-se sobre interfaces públicas do compone
 
   Nós não sabemos nada a respeito da implementação do `Stepper`, apenas que a "entrada" é a propriedade `max` e a "saída" é o estado do DOM como o utilizador o verá.
 
-<TestingApiSwitcher>
+<VTCodeGroup>
+  <VTCodeGroupTab label="Vue Test Utils">
+  
+  ```js
+  const valueSelector =  '[data-testid=stepper-value]'
+  const buttonSelector = '[data-testid=increment]'
 
-<div class="testing-library-api">
+  const wrapper = mount(Stepper, {
+    props: {
+      max: 1
+    }
+  })
 
-```js
-const { getByText } = render(Stepper, {
-  props: {
-    max: 1
-  }
-})
+  expect(wrapper.find(valueSelector).text()).toContain('0')
+  
+  await wrapper.find(buttonSelector).trigger('click')
 
-getByText('0') // Afirma implicitamente que "0" está dentro do componente
+  expect(wrapper.find(valueSelector).text()).toContain('1')
+  ```
 
-const button = getByText('increment')
+  </VTCodeGroupTab>
 
-// Despacha um evento de clique para o nosso botão de incrementar.
-await fireEvent.click(button)
+  <VTCodeGroupTab label="Cypress">
 
-getByText('1')
+  ```js
+  const valueSelector = '[data-testid=stepper-value]'
+  const buttonSelector = '[data-testid=increment]'
 
-await fireEvent.click(button)
-```
+  mount(Stepper, {
+    props: {
+      max: 1
+    }
+  })
 
-</div>
+  cy.get(valueSeletor).should('be.visible').and('contain.text', '0')
+    .get(buttonSelector).click()
+    .get(valueSelector).should('contain.text', '1')
+  ```
 
-<div class="vtu-api">
+  </VTCodeGroupTab>
 
-```js
-const valueSelector = '[data-testid=stepper-value]'
-const buttonSelector = '[data-testid=increment]'
+  <VTCodeGroupTab label="Testing Library">
+  
+  ```js
+  const { getByText } = render(Stepper, {
+    props: {
+      max: 1
+    }
+  })
 
-const wrapper = mount(Stepper, {
-  props: {
-    max: 1
-  }
-})
+  // Asserir implicitamente que "0" está dentro do componente
+  getByText('0')
 
-expect(wrapper.find(valueSelector).text()).toContain('0')
+  const button = getByRole('button', { name: /increment/i })
 
-await wrapper.find(buttonSelector).trigger('click')
+  // Despachar um evento de clique ao nosso botão de incremento.
+  await fireEvent.click(button)
 
-expect(wrapper.find(valueSelector).text()).toContain('1')
-```
+  getByText('1')
 
-</div>
+  await fireEvent.click(button)
+  ```
 
-<div class="cypress-api">
-
-```js
-const valueSelector = '[data-testid=stepper-value]'
-const buttonSelector = '[data-testid=increment]'
-
-mount(Stepper, {
-  props: {
-    max: 1
-  }
-})
-
-cy.get(valueSelector).should('be.visible').and('contain.text', '0')
-  .get(buttonSelector).click()
-  .get(valueSelector).should('contain.text', '1')
-```
-
-</div>
-
-</TestingApiSwitcher>
+  </VTCodeGroupTab>
+</VTCodeGroup>
 
 - **NÃO FAZER**
 
