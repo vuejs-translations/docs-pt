@@ -100,7 +100,7 @@ Um componente pode ser testado de duas maneiras:
 
 - [Vitest](https://vitest.dev/)
 
-  Já que a configuração oficial criada pela `create-vue` é baseada na [Vite](https://pt.vitejs.dev/), recomendamos o uso de uma abstração de teste unitário que pode influenciar a mesma conduta de configuração e transformação diretamente a partir da Vite. A [Vitest](https://vitest.dev/) é uma abstração de teste unitário desenhada especificamente para este propósito, criada e mantida pelos membros da equipa da Vue / Vite. Ela integra com projetos baseados em Vite com mínimo de esforço, e é estrondosamente rápida.
+  Uma vez que a configuração oficial criada pela `create-vue` está baseada na [Vite](https://pt.vitejs.dev/), recomendamos usar uma abstração de teste unitário que pode influenciar diretamente a mesma conduta de configuração e transformação a partir da Vite. A [Vitest](https://vitest.dev/) é uma abstração de teste unitário desenhada especificamente para este propósito, criada e mantida pelos membros da equipa da Vue e Vite. Esta integra-se com os projetos baseados na Vite com o mínimo esforço, e é extremamente rápida.
 
 ### Outras Opções {#other-options}
 
