@@ -82,7 +82,7 @@ Existem duas casos onde REALIZAMOS teste unitários de funcionalidades específi
 
 ### Funções de Composição {#composables}
 
-Uma categoria de funções especificas às aplicações de Vue são as [Funções de Composição](/guide/reusability/composables), que podem exigir manipulação especial durante os testes. Consulte a [Testando as Funções de Composição](#testing-composables) abaixo para mais detalhes.
+Uma categoria de funções específicas às aplicações de Vue são as [Funções de Composição](/guide/reusability/composables), que podem exigir manipulação especial durante os testes. Consultar a seção [Testando as Funções de Composição](#testing-composables) abaixo por mais detalhes.
 
 ### Teste Unitário de Componentes {#unit-testing-components}
 
