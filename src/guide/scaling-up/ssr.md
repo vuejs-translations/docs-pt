@@ -16,11 +16,11 @@ Uma aplicação Vue.js interpretada no servidor também pode ser considerada "is
 
 Comparado a uma Aplicação de Página Única (SPA, sigla em inglês) do lado do cliente, a vantagem de SSR primeiramente encontra-se em:
 
-- **Carregamento mais rápido**: isto é mais proeminente em dispositivos lentos ou em conexões lentas. A marcação gerada pelo servidor não precisa de esperar até que todo o JavaScript seja carregado e executado para ser mostrada, assim o usuário verá uma página completamente gerada mais cedo. Além disto, a requisição de dados é feita no lado do servidor para a visita inicial, que provavelmente tem uma conexão mais rápida à base de dados do que o cliente. Isto geralmente resulta em melhores métricas [Core Web Vitals](https://web.dev/vitals/), melhor experiência de usuário, e pode ser crítico para aplicações onde o tempo de carregamento está diretamente associado com a taxa de conversão.
+- **Carregamento mais rápido**: isto é mais proeminente em dispositivos lentos ou em conexões lentas. A marcação gerada pelo servidor não precisa esperar até que todo o JavaScript seja carregado e executado para ser mostrada, assim o usuário verá uma página completamente gerada mais cedo. Além disto, a requisição de dados é feita no lado do servidor para a visita inicial, que provavelmente tem uma conexão mais rápida à base de dados do que o cliente. Isto geralmente resulta em melhores métricas [Core Web Vitals](https://web.dev/vitals/), melhor experiência de usuário, e pode ser crítico para aplicações onde o tempo de carregamento está diretamente associado com a taxa de conversão.
 
 - **Modelo mental unificado**: pode-se usar a mesma linguagem e o mesmo modelo mental declarativo e orientado ao componente para o desenvolvimento de toda a aplicação, ao invés de ficar para lá e para cá entre um sistema de criação de modelos de marcação backend e uma abstração frontend.
 
-- **SEO Melhor**: os rastreaedores dos motores de busca enxergarão a página completamente interpretada diretamente.
+- **SEO Melhor**: os rastreaedores dos motores de busca enxergarão a página completamente interpretada de maneira direta.
 
   :::tip DICA
   Neste momento, Google e Bing podem indexar aplicações de JavaScript síncronas muito bem. Onde a palavra-chave aqui é síncrono. Se a aplicação começar com um carregador, depois requisitar conteúdo através de AJAX, o rastreador não a esperará. Isto significa que se houver conteúdo requisitado de maneira assíncrona nas páginas onde SEO é importante, SSR pode ser necessário.
@@ -34,15 +34,15 @@ Também existem algumas contrapartidas a considerar ao usar SSR:
 
 - Mais carga do lado do servidor. A interpretação de uma aplicação completa em Node.js será mais intensa para a CPU do que apenas servir arquivos estáticos, então caso se espere tráfego elevado, prepare-se para uma carga correspondente no servidor e empregue prudentemente estratégias de cache.
 
-Antes de usar SSR em uma aplicação, a primeira pergunta que se deve fazer é se realmente se necessita dela. Isto depende na maior parte das vezes de quão o carregamento de conteúdo é importante é para a aplicação. Por exemplo, se em uma construção de um painel de controle interno onde algumas centenas de milissegundos adicionais no carregamento inicial não importam tanto, SSR seria exagero. Entretanto, em casos onde o carregamento é absolutamente crítico, SSR pode ajudar a alcançar o melhor desempenho de carregamento inicial possível.
+Antes de usar SSR em uma aplicação, a primeira pergunta que se deve fazer é se realmente se necessita dela. Isto depende na maior parte das vezes de quão o carregamento de conteúdo é importante para a aplicação. Por exemplo, se em uma construção de um painel de controle interno onde algumas centenas de milissegundos adicionais no carregamento inicial não importam tanto, SSR seria exagero. Entretanto, em casos onde o carregamento é absolutamente crítico, SSR pode ajudar a alcançar o melhor desempenho de carregamento inicial possível.
 
 ### SSR x SSG {#ssr-vs-ssg}
 
 **Geração de Site Estático (SSG, sigla em Inglês)**, também referenciado como pré-interpretação, é uma outra técnica popular para construir sites rápidos. Se os dados necessários para o servidor interpretar uma página são os mesmo para todos os usuários, então ao invés de interpretar a página cada vez que uma requisição chegar, podemos interpretá-la apenas uma vez, com antecedência, durante o processo de construção. Páginas pré-interpretadas são geradas e servidas como arquivos HTML estáticos.
 
-SSG conserva as mesmas características de desempenho de aplicações SSR: fornece excelente desempenho de carregamento de conteúdo. Ao mesmo tempo, é mais barata e mais fácil de implantar do que aplicações de SSR pois a saída são HTML e recursos estáticos. A palavra-chave aqui é **estático**: SSG só pode ser aplicado as páginas que consomem dados estáticos, por exemplo, dados que são conhecidos no momento da construção e não mudam entre implantações. Toda vez que os dados mudarem, uma nova implantação é necessária.
+SSG conserva as mesmas características de desempenho de aplicações SSR: fornece excelente desempenho de carregamento de conteúdo. Ao mesmo tempo, é mais barata e mais fácil de implantar do que aplicações de SSR pois a saída são HTML e recursos estáticos. A palavra-chave aqui é **estático**: SSG só pode ser aplicado em páginas que consomem dados estáticos, por exemplo, dados que são conhecidos no momento da construção e não mudam entre implantações. Toda vez que os dados mudarem, uma nova implantação é necessária.
 
-Ao buscar SSR para melhorar SEO de algumas páginas de publicidade (por exemplo, `/`, `/about`, `/contact`, etc.), então provavelmente é melhor SSG no lugar de SSR. SSG também é ótima para sites baseados em conteúdo tais como páginas de documentação ou blogs. Na verdade, esta exata página atual é gerada estaticamente com o uso de [VitePress](https://vitepress.vuejs.org/), um gerador de site estático movido por Vue.js.
+Se a busca por SSR se dá para melhorar o SEO de algumas páginas de publicidade (por exemplo, `/`, `/about`, `/contact`, etc.), então provavelmente é melhor SSG no lugar de SSR. SSG também é ótima para sites baseados em conteúdo tais como páginas de documentação ou blogs. Na verdade, esta exata página atual é gerada estaticamente com o uso de [VitePress](https://vitepress.vuejs.org/), um gerador de site estático movido por Vue.js.
 
 ## Tutorial Básico {#basic-tutorial}
 
@@ -146,13 +146,13 @@ const app = createSSRApp({
 
 // a montagem de uma aplicação de SSR no cliente presume
 // que o HTML foi pré-interpretado e realizará
-// a hidratação ao invés de montar novos nós DOM.
+// a hidratação em vez de montar novos nós DOM.
 app.mount('#app')
 ```
 
 ### Estrutura do Código {#code-structure}
 
-Percebe-se como precisamos reutilizar a mesma implementação da aplicação como é feita no servidor. Aqui é onde precisamos começar a pensar sobre como estruturar o código em uma aplicação SSR - como compartilhamos o mesmo código de aplicação entre o servidor e o cliente?
+Perceba como precisamos reutilizar a mesma implementação da aplicação como é feita no servidor. Aqui é onde precisamos começar a pensar sobre como estruturar o código em uma aplicação SSR - como compartilhamos o mesmo código de aplicação entre o servidor e o cliente?
 
 Aqui demonstraremos a configuração mais básica. Primeiro, dividiremos a lógica de criação da aplicação em um arquivo dedicado, `app.js`:
 
