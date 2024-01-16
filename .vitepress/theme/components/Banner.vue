@@ -183,7 +183,7 @@ html:not(.banner-dismissed) {
   position: fixed;
   z-index: var(--vp-z-index-banner);
   box-sizing: border-box;
-  padding: 12px;
+  padding: 14px 12px 0;
   top: 0;
   left: 0;
   right: 0;
@@ -235,10 +235,7 @@ html:not(.banner-dismissed) {
 }
 
 .banner__middle .subtitle {
-  grid-row: subtitle;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
 }
 
 .gradient_text {
@@ -279,7 +276,7 @@ html:not(.banner-dismissed) {
 .cta_button {
   width: 106px;
   min-width: 88px;
-  height: 40px;
+  height: 36px;
   border-radius: 100px;
   color: var(--vt-c-dark, #0d0d0d);
   text-align: center;
@@ -304,8 +301,8 @@ html:not(.banner-dismissed) {
 
 button#dismiss_button {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -4px;
+  top: -4px;
   padding: 5px;
 }
 
@@ -331,11 +328,28 @@ button#dismiss_button {
     --banner_container_gap: 0;
   }
 }
+@media (min-width: 360px) {
+  .banner__middle .subtitle {
+    display: flex;
+    grid-row: subtitle;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button#dismiss_button {
+    top: 0;
+    right: 0;
+  }
+}
 @media (min-width: 480px) {
   .banner {
     --gradient_text_size: 15px;
     --white_text_size: 12px;
     --banner_container_gap: 0;
+  }
+
+  .cta_button {
+    height: 40px;
   }
 }
 @media (min-width: 600px) {
