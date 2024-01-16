@@ -25,7 +25,7 @@ Para começar com Vite + Vue, simplesmente execute:
 
 Este comando instalará e executará [create-vue](https://github.com/vuejs/create-vue), a ferramenta de estruturação de projeto oficial do Vue.
 
-- Para aprender mais sobre Vite, consulte a [documentação do Vite](https://pt.vitejs.dev).
+- Para aprender mais sobre Vite, consulte a [documentação Vite](https://pt.vitejs.dev).
 - Para configurar o comportamento específico do Vue em um projeto Vite, por exemplo passar opções para o compilador Vue, consulte a documentação de [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue#readme).
 
 Ambas as zonas de teste online mencionadas acima também suportam o descarregamento dos arquivos como um projeto Vite.
@@ -157,7 +157,7 @@ O carregador oficial que fornece o suporte a Componente de Arquivo Único Vue no
 
 ## Outras Zonas de Teste {#other-online-playgrounds}
 
-- [Zona de Teste VueUse](https://play.vueuse.org)
+- [Zona de Testes VueUse](https://play.vueuse.org)
 - [Vue + Vite na Repl.it](https://replit.com/@templates/VueJS-with-Vite)
 - [Vue na CodeSandbox](https://codesandbox.io/s/vue-3)
 - [Vue na Codepen](https://codepen.io/pen/editor/vue)
