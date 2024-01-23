@@ -21,7 +21,7 @@ onMounted(async () => {
     </h1>
     <p class="description">
       Uma abstração acessível, otimizada e versátil para construção
-      de interfaces de aplicações de Web.
+      de interfaces de aplicações da Web.
     </p>
     <p class="actions">
       <VueMasteryModal />
@@ -155,7 +155,7 @@ html:not(.dark) .accent,
 }
 
 .actions .get-started:hover .icon {
-  transform: translateX(2px);
+  transform: translateX(4px);
 }
 
 .actions .get-started,

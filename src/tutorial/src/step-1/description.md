@@ -21,6 +21,33 @@ Se formos programadores experientes vindos da Vue 2 ou outras abstrações, exis
 
 - Nós também podemos trocar entre modo de Componente de Ficheiro Único ou modo de HTML. O primeiro mostrará os exemplos de código no formato de <a target="_blank" href="/guide/introduction#single-file-components">Componente de Ficheiro Único</a> (SFC), o qual é o que a maioria dos programadores usa quando usam a Vue com uma etapa de construção. O modo de HTML mostra a uso sem uma etapa de construção.
 
+<div class="html">
+
+:::tip DICA
+Se estivermos prestes a usar o modo de HTML sem uma etapa de construção em nossas próprias aplicações, temos que certificar-nos de ou mudar as importações à:
+
+```js
+import { ... } from 'vue/dist/vue.esm-bundler.js'
+```
+
+dentro dos nossos programas ou configurar a nossa ferramenta de construção para resolver a `vue` em conformidade. Configuração de exemplo para [Vite](https://pt.vitejs.dev):
+
+```js
+// vite.config.js
+export default {
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.esm-bundler.js'
+    }
+  }
+}
+```
+
+Consultar a respetiva [seção no guia do Ferramental](/guide/scaling-up/tooling#note-on-in-browser-template-compilation) por mais informação.
+:::
+
+</div>
+
 </details>
 
-Preparado? Clique em "Próximo" para começar.
+Pronto? Clique no "Próximo" para começar.

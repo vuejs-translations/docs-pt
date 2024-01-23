@@ -108,22 +108,22 @@ Um componente pode ser testado de duas maneiras:
 
 ## Teste de Componente {#component-testing}
 
-Em aplicações de Vue, os componentes são os blocos de construção principais da interface do utilizador. Os componentes são portanto a unidade natural de isolamento quando isto aproxima-se da validação do comportamento da tua aplicação. A partir de uma perspetiva de granularidade, a teste de componente situa-se em algum lugar acima do teste unitário e pode ser considerado uma forma de teste de integração. Grande parte da tua aplicação em Vue deve ser coberta por um teste de componente e recomendamos que cada componente de Vue tenha o seu próprio ficheiro de especificação `spec`.
+Nas aplicações de Vue, os componentes são os principais blocos de construção da interface visual da aplicação. Os componentes são portanto, a unidade natural de isolamento quando se trata de validar o comportamento da nossa aplicação. A partir duma perspetiva de granularidade, o teste de componente situa-se em algum lugar acima do teste unitário e pode ser considerado uma forma de teste de integração. Grande parte da nossa aplicação de Vue deve ser coberta por um teste de componente e recomendamos que cada componente da Vue tenha o seu próprio ficheiro de especificação.
 
-Os testes de componente devem capturar problemas relativos as propriedades do teu componente, eventos, ranhuras que ele fornece, estilos, classes, gatilhos do ciclo de vida, e muito mais.
+Os testes de componente devem capturar problemas relativos às propriedades do nosso componente, eventos, ranhuras que este fornece, estilos classes, funções gatilhos do ciclo de vida, e muito mais.
 
-Os testes de componente não devem imitar os componentes filhos, mas testar as interações entre o teu componente e os seus componentes filhos ao interagir com os componentes como o utilizador faria. Por exemplo, um teste de componente deve clicar sobre um elemento como um utilizador faria ao invés de interagir programaticamente com o componente.
+Os testes de componente não devem simular os componentes filhos, mas testar as interações entre o nosso componente e os seus componentes filhos interagindo com os componentes como um utilizador faria. Por exemplo, um teste de componente deve clicar sobre um elemento como um utilizador faria ao invés de interagir programaticamente com o componente.
 
-Os testes de componente deve concentrar-se sobre interfaces públicas do componente em vez dos detalhes de implementação interna. Para a maior parte dos componentes, a interface pública está limitada a: eventos emitidos, propriedades, e ranhuras. Quando estiveres a testar, lembra-te de **testar o que um componente faz, e não como ele o faz**.
+Os testes de componente devem focar-se nas interfaces públicas do componente em vez dos detalhes de implementação interna. Para a maioria dos componentes, a interface pública está limitada aos: eventos emitidos, propriedades, e ranhuras. Quando testarmos, temos que lembrar-nos de **testar o que um componente faz, e não como este o faz**.
 
 **FAZER**
 
-- Para lógica **Visual**: afirmar saída correta do interpretador baseada nas propriedades e ranhuras introduzidas.
-- Para lógica **Comportamental**: afirmar atualizações ou eventos emitidos corretos do interpretador em resposta aos eventos de entrada do utilizador.
+- Para lógica **Visual**: asserir a saída correta de interpretação baseada nas propriedades e ranhuras introduzidas.
+- Para lógica **Comportamental**: asserir atualizações ou eventos emitidos corretos da interpretação em resposta aos eventos de entrada do utilizador.
 
-  No exemplo abaixo, demonstraremos um componente `Stepper` que tem um elemento de DOM rotulado "increment" e pode ser clicado. Nós passamos uma propriedade chamada `max` que impedi o `Stepper` de ser incrementado além de `2`, assim se clicarmos o botão 3 vezes, a interface do utilizador deve continuar a dizer `2`.
+  No exemplo abaixo, demonstraremos um componente `Stepper` que tem um elemento de DOM rotulado "increment" e pode ser clicado. Nós passamos uma propriedade chamada `max` que impedi o `Stepper` de ser incrementado além de `2`, assim se clicarmos sobre o botão 3 vezes, a interface do utilizador deve continuar a dizer `2`.
 
-  Nós não sabemos nada a respeito da implementação do `Stepper`, apenas que a "entrada" é a propriedade `max` e a "saída" é o estado do DOM como o utilizador o verá.
+  Nós não sabemos nada sobre a implementação do `Stepper`, apenas que a "entrada" é a propriedade `max` e a "saída" é o estado do DOM como o utilizador o verá.
 
 <VTCodeGroup>
   <VTCodeGroupTab label="Vue Test Utils">
@@ -193,21 +193,21 @@ Os testes de componente deve concentrar-se sobre interfaces públicas do compone
 
 - **NÃO FAZER**
 
-  Não afirmar o estado privado de uma instância de componente ou testar métodos privados de um componente. Testar detalhes de implementação torna os testes frágeis, já que eles estão sujeitos a quebrarem ou exigirem atualizações quando a implementação mudar.
+  Não asserir o estado privado da instância dum componente ou testar métodos privados dum componente. Testar detalhes de implementação torna os testes frágeis, uma vez que estes estão sujeitos a quebrarem ou exigem atualizações quando a implementação mudar.
 
-  O derradeiro trabalho do componente é apresentar a saída correta do DOM, assim os testes que se concentram na saída do DOM fornecem o mesmo nível de garantia de correção (se não mais) enquanto é mais robusto e resiliente para mudar.
+  O trabalho definitivo do componente é interpretar a saída correta do DOM, então os testes que focam-se na saída do DOM fornecem o mesmo nível de garantia de exatidão (se não mais) enquanto é mais robusto e resiliente à mudança.
 
-  Não depender exclusivamente de testes instantâneos. Afirmação de sequências de caracteres de HTML não descrevem correção. Escreve os testes com intencionalidade.
+  Não depender exclusivamente dos testes instantâneos. Asserir as sequências de caracteres de HTML não descreve exatidão. Escrever os testes intencionalidade.
 
-  Se um método precisa ser testado meticulosamente, considere extraí-lo para uma função utilitária isolada e escrever um teste unitário dedicado para ele. Se poder ser extraído suavemente, pode ser testado como uma parte de um componente, integração, ou teste ponta-a-ponta que o cubra.
+  Se um método precisar ser testado meticulosamente, considere extraí-lo para uma função utilitária autónoma e escrever um teste unitário dedicado para esta. Se não poder ser extraída claramente, pode ser testada como uma parte dum teste de componente, integração, ou de ponta-a-ponta que a cobre.
 
 ### Recomendação {#recommendation-1}
 
-- [Vitest](https://vitest.dev/) para componentes ou funções de composição que apresentam de maneira desgovernada (por exemplo, a função [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) na VueUse). Os componentes e o DOM podem ser testados com o uso da [@testing-library/vue](https://testing-library.com/docs/vue-testing-library/intro).
+- [Vitest](https://vitest.dev/) para componentes ou funções de composição que interpretam de maneira desgovernada (por exemplo, a função [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) na VueUse). Os componentes e o DOM podem ser testados usando a [`@vue/test-utils`](https://github.com/vuejs/test-utils).
 
-- [Teste de Componente da Cypress](https://on.cypress.io/component) para os componentes cujos comportamento esperado depende da apresentação apropriada dos estilos ou o acionar de eventos de DOM nativos. Pode ser usado com a Testing Library através da [@testing-library/cypress](https://testing-library.com/docs/cypress-testing-library/intro).
+- [Teste de Componente da Cypress](https://on.cypress.io/component) para os componentes cujo comportamento esperado depende da interpretação correta dos estilos ou acionam eventos de DOM nativos. Esta pode ser usada com a Testing Library através da [`@testing-library/cypress`](https://testing-library.com/docs/cypress-testing-library/intro).
 
-As principais diferenças entre a Vitest e executores baseados no navegador são velocidade e contexto de execução. Resumidamente, executores baseados em navegador, como Cypress, podem capturar problemas que executores baseados em node, como Vitest, não podem (por exemplo, problemas de estilo, eventos verdadeiros de DOM nativo, cookies, armazenamento local (localStorage), e falhas da rede), mas os executores baseado em navegador são **ordens de magnitude mais lentos do que a Vitest** porque eles abrem um navegador, compilam as tuas folhas de estilos, e muito mais. A Cypress é um executor baseado em navegador que suporta a teste de componente. Leia a [página de comparação da Vitest](https://vitest.dev/guide/comparisons.html#cypress) para informações mais recentes comparando a Vitest e Cypress.
+As principais diferenças entre a Vitest e as executores baseadas no navegador são a velocidade e contexto da execução. Em resumo, as executores baseadas no navegador, como a Cypress, podem capturar problemas que executores baseadas na Node, como a Vitest, não podem (por exemplo, problemas de estilo, eventos reais do DOM nativo, cookies, armazenamento local, e falhas da rede), mas os executores baseadas no navegador são _ordens de magnitude mais lentas do que a Vitest_ porque estas abrem um navegador, compilam as nossas folhas de estilo, e mais. A Cypress é um executor baseado no navegador que suporta o teste de componente. Consultar a [página de comparação da Vitest](https://vitest.dev/guide/comparisons.html#cypress) por informação mais recente comparando a Vitest e a Cypress.
 
 ### Bibliotecas de Montagem {#mounting-libraries}
 
