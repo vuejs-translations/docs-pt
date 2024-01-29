@@ -57,19 +57,19 @@ watch(
 
           <div class="vuemastery-modal-footer">
             <p class="vuemastery-modal-footer-text">
-              Material produzido por
+              Material produzido pela
               <a
                 href="https://www.vuemastery.com"
                 target="_blank"
                 rel="sponsored noopener"
                 title="Cursos de Vue.js na Vue Mastery"
-              >Vue Mastery.</a> Assista gratuitamente o
+              >Vue Mastery.</a> Assistir gratuitamente o
               <a
                 href="https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3"
                 target="_blank"
                 rel="sponsored noopener"
                 title="Cursos de Vue.js na Vue Mastery"
-              >Curso de Introdução a Vue.js.</a>
+              >Curso Introdutório de Vue.js.</a>
             </p>
           </div>
         </div>
@@ -177,7 +177,7 @@ watch(
   #vuemastery-action {
     display: block;
     margin: 0px auto;
-    width: 150px;
+    width: 180px;
   }
 }
 </style>
