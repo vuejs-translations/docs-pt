@@ -6,7 +6,7 @@ const { x, y } = useMouse()
 </script>
 
 :::tip DICA
-Esta seção presume conhecimento básico da API de Composição. Se estivermos a aprender a Vue com a API de Opções apenas, podemos definir a Preferência de API para API de Composição (usando o interruptor em cima do menu lateral) e re-ler os capítulos [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals) e [Gatilhos do Ciclo de Vida](/guide/essentials/lifecycle).
+Esta seção presume conhecimento básico da API de Composição. Se estivermos a aprender a Vue com a API de Opções apenas, podemos definir a Preferência de API para API de Composição (usando o interruptor em cima do menu lateral) e reler os capítulos [Fundamentos de Reatividade](/guide/essentials/reactivity-fundamentals) e [Gatilhos do Ciclo de Vida](/guide/essentials/lifecycle).
 :::
 
 ## O Que é uma "Função de Composição"? {#what-is-a-composable}
