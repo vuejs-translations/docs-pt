@@ -6,35 +6,35 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 ## Por que Testar? {#why-test}
 
-Os testes automatizados ajudam-nos e a nossa equipa a construirmos aplicações complexas de Vue rapidamente e confiantemente evitando regressões e encorajando-nos a separar a nossa aplicação em funções, módulos, classes, e componentes testáveis. Tal como acontece com qualquer aplicação, a nossa nova aplicação de Vue pode quebrar de várias maneiras, e é importante que possamos capturar estes problemas e os corrigir antes do lançamento. 
+Os testes automatizados ajudam a construir aplicações Vue complexas de forma rápida e confiante evitando regressões e encorajando a separar a nossa aplicação em funções, módulos, classes e componentes testáveis. Tal como em qualquer aplicação, a nova aplicação Vue pode quebrar de várias maneiras, e é importante que se possa capturar estes problemas e corrigi-los antes do lançamento. 
 
-Neste guia, cobriremos a terminologia básica e forneceremos as nossas recomendações sobre quais ferramentas escolher para a nossa aplicação de Vue 3.
+Neste guia, cobriremos a terminologia básica e forneceremos nossas recomendações sobre quais ferramentas escolher para a nossa aplicação Vue 3.
 
-Existe uma seção específica da Vue cobrindo as funções de composição. Consultar [Testando as Funções de Composição](#testing-composables) por mais detalhes.
+Existe uma seção específica de Vue cobrindo as funções de composição. Veja [Testando as Funções de Composição](#testing-composables) para mais detalhes.
 
-## Quando Testar? {#when-to-test}
+## Quando Testar {#when-to-test}
 
-Começamos testando no princípio! Nós recomendamos começar escrevendo testes o mais cedo possível. Quanto mais esperamos para adicionar os testes à nossa aplicação, mais dependências a nossa aplicação terá, e mais difícil será começar.
+Começamos testando com antecedência! Recomendamos começar escrevendo testes o quanto antes possível. Quanto mais esperamos para adicionar testes à nossa aplicação, mais dependências nossa aplicação terá, e mais difícil será começar.
 
 ## Tipos de Testes {#testing-types}
 
-Quando desenharmos a estratégia de testes da nossa aplicação de Vue, devemos influenciar os seguintes tipos de testes:
+Quando projetamos a estratégia de testes da nossa aplicação Vue, devemos aproveitar os seguintes tipos de testes:
 
-- **Unitário**: Verifica se as entradas à uma dada função, classe, função de composição estão produzindo a saída esperada ou efeitos colaterais.
-- **Componente**: Verifica se o nosso componente monta, interpreta, pode ser interagido com, e comporta-se como esperado. Estes testes importam mais código do que os testes unitários, são mais complexos, e exigem mais tempo para executarem.
-- **Ponta-a-Ponta**: Verifica se as funcionalidades que abrangem várias páginas e faz requisições de rede reais contra a nossa aplicação de Vue construída para produção. Estes testes frequentemente envolvem levantar um base de dados ou outro backend.
+- **Unitário**: Verifica se as entradas de uma função, classe ou função de composição estão produzindo a saída esperada ou efeitos colaterais.
+- **Componente**: Verifica se o nosso componente monta, interpreta, pode receber interações, e comporta-se como esperado. Esses testes importam mais código do que os testes unitários, são mais complexos, e exigem mais tempo para executarem.
+- **Ponta-a-Ponta**: Verifica funcionalidades que abrangem várias páginas e faz requisições de rede reais contra a nossa aplicação Vue construída para produção. Esses testes frequentemente envolvem levantar um base de dados ou outro _backend_.
 
 Cada tipo de teste desempenha um papel na estratégia de testes da nossa aplicação, e cada um nos protegerá contra diferentes tipos de problemas.
 
 ## Visão Geral {#overview}
 
-Nós discutiremos brevemente sobre cada tipo de teste, como estes podem ser implementados às nossas aplicações de Vue, e forneceremos algumas recomendações gerais.
+Discutiremos brevemente sobre cada tipo de teste, como podem ser implementados às nossas aplicações Vue, e forneceremos algumas recomendações gerais.
 
-## Teste Unitário {#unit-testing}
+## Testes Unitário {#unit-testing}
 
-Os testes unitários são escritos para verificar se as pequenas e isoladas unidades de código estão funcionando como esperado. Um teste unitário normalmente cobre uma única função, classe, função de composição, ou módulo. Os testes unitários focam-se na exatidão lógica e os mesmos apenas preocupam-se com uma pequena porção da funcionalidade geral da aplicação. Estes podem simular grandes partes do ambiente da nossa aplicação (por exemplo, estado inicial, classes complexas, módulos de terceiros, e requisições de rede).
+Os testes unitários são escritos para verificar se as pequenas e isoladas unidades de código estão funcionando como esperado. Um teste unitário normalmente cobre uma única função, classe, função de composição ou módulo. Testes unitários focam na exatidão lógica e só se preocupam com uma pequena porção da funcionalidade geral da aplicação. Eles podem simular grandes partes do ambiente da nossa aplicação (por exemplo, estado inicial, classes complexas, módulos de terceiros e requisições de rede).
 
-No geral, os testes unitários capturarão os problemas com a lógica de negócio da função e com a exatidão lógica.
+Em geral, os testes unitários capturarão problemas com a lógica de negócio da função e com sua exatidão lógica.
 
 Consideremos como exemplo esta função `increment`:
 
@@ -48,82 +48,82 @@ export function increment (current, max = 10) {
 }
 ```
 
-Uma vez que é muito autónoma, será fácil invocar a função `increment` e asserir que esta retorna o que é suposto retornar, então escreveremos um Teste Unitário.
+Como ela é muito autossuficiente, será fácil invocar a função de incrementar e afirmar que ela retorna o que deve retornar, então escreveremos um Teste Unitário.
 
-Se quaisquer uma destas asserções falhar, está claro que o problema está contido dentro da função `increment`:
+Se qualquer uma destas asserções falhar, é claro que o problema está contido dentro da função `increment`:
 
 ```js{4-16}
 // helpers.spec.js
 import { increment } from './helpers'
 
 describe('increment', () => {
-  test('increments the current number by 1', () => {
+  test('incrementa o número autal por 1', () => {
     expect(increment(0, 10)).toBe(1)
   })
 
-  test('does not increment the current number over the max', () => {
+  test('não incrementa o número atual além do máximo', () => {
     expect(increment(10, 10)).toBe(10)
   })
 
-  test('has a default max of 10', () => {
+  test('tem um valor máximo padrão de 10', () => {
     expect(increment(10)).toBe(10)
   })
 })
 ```
 
-Conforme mencionado anteriormente, o teste unitário é normalmente aplicado à lógica de negócio, componentes, classes, módulos ou funções autónomas que não envolvem a interpretação da interface gráfica da aplicação, requisições de rede, ou outras preocupações ambientais.
+Como mencionado anteriormente, testes unitários são normalmente aplicados sobre lógicas de negócio, componentes, classes, módulos ou funções autossuficientes que não envolvem a interpretação da interface gráfica da aplicação, requisições de rede, ou outras questões de ambiente.
 
-Estes são normalmente módulos simples de JavaScript ou TypeScript que não estão relacionados com a Vue. No geral, escrever testes unitários para lógica de negócio em aplicações de Vue não difere significativamente das aplicações usando outras abstrações.
+Estes são normalmente módulos simples de JavaScript / TypeScript que não estão relacionados com Vue. Em geral, escrever testes unitários para a lógica de negócio em aplicações Vue não difere significativamente de aplicações usando outras abstrações.
 
-Existem duas casos onde REALIZAMOS teste unitários de funcionalidades específicas da Vue:
+Existem dois casos onde FAZEMOS teste unitários de funcionalidades específicas Vue:
 
 1. Funções de Composição
 2. Componentes
 
 ### Funções de Composição {#composables}
 
-Uma categoria de funções específicas às aplicações de Vue são as [Funções de Composição](/guide/reusability/composables), que podem exigir manipulação especial durante os testes. Consultar a seção [Testando as Funções de Composição](#testing-composables) abaixo por mais detalhes.
+Uma categoria de funções específicas das aplicações Vue são as [Funções de Composição](/guide/reusability/composables), que podem exigir manipulação especial durante os testes. Veja a seção [Testando as Funções de Composição](#testing-composables) para mais detalhes.
 
-### Teste Unitário dos Componentes {#unit-testing-components}
+### Testes Unitário de Componentes {#unit-testing-components}
 
 Um componente pode ser testado de duas maneiras:
 
-1. Caixa Branca: Teste Unitário
+1. Caixa-branca: Testes Unitários
 
-   Os testes que são "testes de Caixa Branca" estão conscientes dos detalhes da implementação e dependências dum componente. Estes estão focados em **isolar** o componente sob teste. Estes testes normalmente envolverão simular algumas, se não todos os filhos do nosso componente, bem como configurar o estado da extensão ou dependências (por exemplo, a Pinia).
+   Os testes que são "testes de caixa-branca" são conscientes dos detalhes da implementação e das dependências de um componente. Eles estão focados em **isolar** o componente sob teste. Esses testes normalmente envolverão simular algun ou todos os filhos do nosso componente, bem como configurar o estado de extensões e dependências (por exemplo, Pinia).
 
-2. Caixa Preta: Teste de Componente
+2. Caixa-preta: Testes de Componente
 
-   Os testes que são "testes de Caixa Preta" não estão conscientes dos detalhes da implementação dum componente. Estes testes simulam apenas o possível para testar a integração do nosso componente e do nosso sistema inteiro. Estes normalmente interpretam todos os componentes filhos e são considerados mais dum "teste de integração". Consultar as [recomendações de Teste de Componente](#component-testing) abaixo.
+   Os testes que são "testes de caixa-preta" não são conscientes dos detalhes da implementação de um componente. Estes testes simulam o mínimo possível para testar a integração entre nosso componente e todo o sistema. Eles normalmente interpretam todos os componentes filhos e são considerados mais como um "teste de integração". Veja as [recomendações de Teste de Componente](#component-testing) abaixo.
 
 ### Recomendação {#recommendation}
 
 - [Vitest](https://vitest.dev/)
 
-  Uma vez que a configuração oficial criada pela `create-vue` está baseada na [Vite](https://pt.vitejs.dev/), recomendamos usar uma abstração de teste unitário que pode influenciar diretamente a mesma conduta de configuração e transformação a partir da Vite. A [Vitest](https://vitest.dev/) é uma abstração de teste unitário desenhada especificamente para este propósito, criada e mantida pelos membros da equipa da Vue e Vite. Esta integra-se com os projetos baseados na Vite com o mínimo esforço, e é extremamente rápida.
+  Desde que a configuração oficial criada por `create-vue` está baseada em [Vite](https://pt.vitejs.dev/), recomendamos usar uma abstração de testes unitários que pode aproveitar a mesma canalização de configuração e transformação diretamente a partir de Vite. [Vitest](https://vitest.dev/) é uma abstração de testes unitários projetada especificamente para este propósito, criada e mantida pelos membros do time Vue / Vite. Ela se integra com projetos baseados em Vite com o mínimo esforço, e é extremamente rápida.
 
 ### Outras Opções {#other-options}
 
-- [Jest](https://jestjs.io/) é uma abstração de teste unitário popular. No entanto, apenas recomendamos a Jest se houver um conjunto de teste de Jest que precisa ser migrado a um projeto baseado na Vite, uma que a Vitest oferece uma integração mais transparente e um desempenho melhor.
+- [Jest](https://jestjs.io/) é uma abstração popular de testes unitários. No entanto, apenas recomendamos Jest se houver um conjunto de testes Jest que precisa ser migrado para um projeto baseado em Vite, uma vez que Vitest oferece uma integração mais uniforme e um melhor desempenho.
 
-## Teste de Componente {#component-testing}
+## Testes de Componente {#component-testing}
 
-Em aplicações de Vue, os componentes são os blocos de construção principais da interface do utilizador. Os componentes são portanto a unidade natural de isolamento quando isto aproxima-se da validação do comportamento da tua aplicação. A partir de uma perspetiva de granularidade, a teste de componente situa-se em algum lugar acima do teste unitário e pode ser considerado uma forma de teste de integração. Grande parte da tua aplicação em Vue deve ser coberta por um teste de componente e recomendamos que cada componente de Vue tenha o seu próprio ficheiro de especificação `spec`.
+Em aplicações Vue, componentes são os blocos de construção principais da interface do usuário. Componentes são portanto a unidade natural de isolamento quando se trata sobre validar o comportamento da aplicação. A partir de uma perspectiva de granularidade, testes de componente situam-se em algum lugar sobre os testes unitários e podem ser considerados uma forma de testes de integração. Grande parte da aplicação Vue deve ser coberta por testes de componente e recomendamos que cada componente Vue tenha o seu próprio arquivo `spec`.
 
-Os testes de componente devem capturar problemas relativos as propriedades do teu componente, eventos, ranhuras que ele fornece, estilos, classes, gatilhos do ciclo de vida, e muito mais.
+Testes de componente devem capturar problemas relativos as propriedades do componente, eventos, _slots_ que ele fornece, estilos, classes, gatilhos do ciclo de vida, e mais.
 
-Os testes de componente não devem imitar os componentes filhos, mas testar as interações entre o teu componente e os seus componentes filhos ao interagir com os componentes como o utilizador faria. Por exemplo, um teste de componente deve clicar sobre um elemento como um utilizador faria ao invés de interagir programaticamente com o componente.
+Testes de componente não devem simular componentes filhos, mas testar as interações entre o componente e os seus filhos ao interagir com os componentes como o usuário faria. Por exemplo, um teste de componente seria clicar em um elemento como um usuário, ao invés de interagir de maneira programática com o componente.
 
-Os testes de componente deve concentrar-se sobre interfaces públicas do componente em vez dos detalhes de implementação interna. Para a maior parte dos componentes, a interface pública está limitada a: eventos emitidos, propriedades, e ranhuras. Quando estiveres a testar, lembra-te de **testar o que um componente faz, e não como ele o faz**.
+Os testes de componente devem se concentrar sobre interfaces públicas do componente em vez dos detalhes de implementação interna. Para a maioria dos componentes, a interface pública é limitada a: eventos emitidos, propriedades, e _slots_. Ao testar, lembremos de **testar o que um componente faz, e não como ele faz**.
 
 **FAZER**
 
-- Para lógica **Visual**: afirmar saída correta do interpretador baseada nas propriedades e ranhuras introduzidas.
-- Para lógica **Comportamental**: afirmar atualizações ou eventos emitidos corretos do interpretador em resposta aos eventos de entrada do utilizador.
+- Para lógica **Visual**: afirme a intepretação correta baseada nas propriedades e _slots_ inseridos.
+- Para lógica **Comportamental**: afirme atualizações de interpretação corretas ou eventos emitidos em resposta às ações feitas pelo usuário.
 
-  No exemplo abaixo, demonstraremos um componente `Stepper` que tem um elemento de DOM rotulado "increment" e pode ser clicado. Nós passamos uma propriedade chamada `max` que impedi o `Stepper` de ser incrementado além de `2`, assim se clicarmos o botão 3 vezes, a interface do utilizador deve continuar a dizer `2`.
+  No exemplo abaixo, demonstraremos um componente `Stepper` que tem um elemento DOM rotulado "increment" e pode ser clicado. Passamos uma propriedade chamada `max` que impede o `Stepper` de ser incrementado além de `2`, assim se clicarmos no botão 3 vezes, a interface do usuário deve continuar a mostrar `2`.
 
-  Nós não sabemos nada a respeito da implementação do `Stepper`, apenas que a "entrada" é a propriedade `max` e a "saída" é o estado do DOM como o utilizador o verá.
+  Não sabemos nada sobre a implementação do `Stepper`, apenas que a "entrada" é a propriedade `max` e a "saída" é o estado do DOM como o usuário enxergará.
 
 <VTCodeGroup>
   <VTCodeGroupTab label="Vue Test Utils">
@@ -193,21 +193,21 @@ Os testes de componente deve concentrar-se sobre interfaces públicas do compone
 
 - **NÃO FAZER**
 
-  Não afirmar o estado privado de uma instância de componente ou testar métodos privados de um componente. Testar detalhes de implementação torna os testes frágeis, já que eles estão sujeitos a quebrarem ou exigirem atualizações quando a implementação mudar.
+  Não afirmar o estado privado de uma instância de componente ou testar métodos privados de um componente. Testar detalhes de implementação tornam os testes frágeis, já que estão mais sujeitos a quebrarem ou exigirem atualizações quando a implementação mudar.
 
-  O derradeiro trabalho do componente é apresentar a saída correta do DOM, assim os testes que se concentram na saída do DOM fornecem o mesmo nível de garantia de correção (se não mais) enquanto é mais robusto e resiliente para mudar.
+  O trabalho definitivo do componente é apresentar a saída DOM correta, assim os testes que focam na saída DOM fornecem o mesmo nível de garantia de exatidão (se não mais) enquanto são mais robustos e resilientes à mudanças.
 
-  Não depender exclusivamente de testes instantâneos. Afirmação de sequências de caracteres de HTML não descrevem correção. Escreve os testes com intencionalidade.
+  Não depender exclusivamente de testes _snapshot_. Afirmar strings HTML não caracterizam exatidão. Escrevamos testes com intencionalidade.
 
-  Se um método precisa ser testado meticulosamente, considere extraí-lo para uma função utilitária isolada e escrever um teste unitário dedicado para ele. Se poder ser extraído suavemente, pode ser testado como uma parte de um componente, integração, ou teste ponta-a-ponta que o cubra.
+  Se um método precisa ser testado minuciosamente, considere extraí-lo em uma função utilitária isolada e escrever um teste unitário dedicado para ele. Se ele não puder ser extraído de maneira limpa, ele pode ser testado como parte de testes de componente, integração, ou ponta-a-ponta que o cubra.
 
 ### Recomendação {#recommendation-1}
 
-- [Vitest](https://vitest.dev/) para componentes ou funções de composição que apresentam de maneira desgovernada (por exemplo, a função [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) na VueUse). Os componentes e o DOM podem ser testados com o uso da [@testing-library/vue](https://testing-library.com/docs/vue-testing-library/intro).
+- [Vitest](https://vitest.dev/) para componentes ou funções de composição que são interpretados de maneira acéfala (por exemplo, a função [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) de VueUse). Os componentes e o DOM podem ser testados com o uso de [@testing-library/vue](https://testing-library.com/docs/vue-testing-library/intro).
 
-- [Teste de Componente da Cypress](https://on.cypress.io/component) para os componentes cujos comportamento esperado depende da apresentação apropriada dos estilos ou o acionar de eventos de DOM nativos. Pode ser usado com a Testing Library através da [@testing-library/cypress](https://testing-library.com/docs/cypress-testing-library/intro).
+- [Teste de Componente da Cypress](https://on.cypress.io/component) para componentes cujo comportamento esperado depende da interpretação apropriada dos estilos ou do acionamento de eventos DOM nativos. Pode ser usado com a Testing Library através de [@testing-library/cypress](https://testing-library.com/docs/cypress-testing-library/intro).
 
-As principais diferenças entre a Vitest e executores baseados no navegador são velocidade e contexto de execução. Resumidamente, executores baseados em navegador, como Cypress, podem capturar problemas que executores baseados em node, como Vitest, não podem (por exemplo, problemas de estilo, eventos verdadeiros de DOM nativo, cookies, armazenamento local (localStorage), e falhas da rede), mas os executores baseado em navegador são **ordens de magnitude mais lentos do que a Vitest** porque eles abrem um navegador, compilam as tuas folhas de estilos, e muito mais. A Cypress é um executor baseado em navegador que suporta a teste de componente. Leia a [página de comparação da Vitest](https://vitest.dev/guide/comparisons.html#cypress) para informações mais recentes comparando a Vitest e Cypress.
+As principais diferenças entre Vitest e executores baseados no navegador são a velocidade e o contexto de execução. Resumidamente, executores baseados em navegador, como Cypress, podem capturar problemas que executores baseados em node, como Vitest, não podem (por exemplo, problemas de estilo, eventos reais de DOM nativo, cookies, armazenamento local e falhas da rede), mas os executores baseados em navegador são **mais lentos do que Vitest em ordens de magnitude** porque eles abrem um navegador, compilam as folhas de estilo, e mais. Cypress é um executor baseado em navegador que suporta testes de componente. Leia a [página de comparação Vitest](https://vitest.dev/guide/comparisons.html#cypress) para as últimas informações comparando Vitest e Cypress.
 
 ### Bibliotecas de Montagem {#mounting-libraries}
 
