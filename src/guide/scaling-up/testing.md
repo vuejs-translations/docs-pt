@@ -30,7 +30,7 @@ Cada tipo de teste desempenha um papel na estratégia de testes da nossa aplica�
 
 Discutiremos brevemente sobre cada tipo de teste, como podem ser implementados às nossas aplicações Vue, e forneceremos algumas recomendações gerais.
 
-## Testes Unitário {#unit-testing}
+## Testes Unitários {#unit-testing}
 
 Os testes unitários são escritos para verificar se as pequenas e isoladas unidades de código estão funcionando como esperado. Um teste unitário normalmente cobre uma única função, classe, função de composição ou módulo. Testes unitários focam na exatidão lógica e só se preocupam com uma pequena porção da funcionalidade geral da aplicação. Eles podem simular grandes partes do ambiente da nossa aplicação (por exemplo, estado inicial, classes complexas, módulos de terceiros e requisições de rede).
 
