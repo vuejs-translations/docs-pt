@@ -108,20 +108,20 @@ Um componente pode ser testado de duas maneiras:
 
 ## Teste de Componente {#component-testing}
 
-Nas aplicações de Vue, os componentes são os principais blocos de construção da interface visual da aplicação. Os componentes são portanto, a unidade natural de isolamento quando se trata de validar o comportamento da nossa aplicação. A partir duma perspetiva de granularidade, o teste de componente situa-se em algum lugar acima do teste unitário e pode ser considerado uma forma de teste de integração. Grande parte da nossa aplicação de Vue deve ser coberta por um teste de componente e recomendamos que cada componente da Vue tenha o seu próprio ficheiro de especificação.
+Nas aplicações de Vue, os componentes são os principais blocos de construção da interface do utilizador. Os componentes são, portanto, a unidade natural da isolação quando se trata de validar o comportamento da nossa aplicação. Do ponto de vista da granularidade, os testes de componentes situam-se algures acima dos testes unitários e podem ser considerados uma forma de testes de integração. Grande parte da nossa aplicação de Vue deve ser coberta por um teste de componente e recomendamos que cada componente da Vue tenha o seu próprio ficheiro de especificações.
 
-Os testes de componente devem capturar problemas relativos às propriedades do nosso componente, eventos, ranhuras que este fornece, estilos classes, funções gatilhos do ciclo de vida, e muito mais.
+Os testes de componentes devem detetar problemas relacionados com as propriedades, eventos, ranhuras que o componente fornece, estilos, classes, funções gatilhos do ciclo de vida e muito mais.
 
-Os testes de componente não devem simular os componentes filhos, mas testar as interações entre o nosso componente e os seus componentes filhos interagindo com os componentes como um utilizador faria. Por exemplo, um teste de componente deve clicar sobre um elemento como um utilizador faria ao invés de interagir programaticamente com o componente.
+Os testes de componentes não devem simular componentes filhos, mas sim testar as interações entre o nosso componente e seus filhos, interagindo com os componentes como um utilizador faria. Por exemplo, um teste de componente deve clicar num elemento como um utilizador faria, em vez de interagir programaticamente com o componente.
 
-Os testes de componente devem focar-se nas interfaces públicas do componente em vez dos detalhes de implementação interna. Para a maioria dos componentes, a interface pública está limitada aos: eventos emitidos, propriedades, e ranhuras. Quando testarmos, temos que lembrar-nos de **testar o que um componente faz, e não como este o faz**.
+Os testes de componentes devem centrar-se nas interfaces públicas do componente e não nos detalhes de implementação interna. Para a maioria dos componentes, a interface pública é limitada a: eventos emitidos, propriedades e ranhuras. Quando testarmos, lembremos-nos de **testar o que um componente faz, e não como este faz**.
 
 **FAZER**
 
-- Para lógica **Visual**: asserir a saída correta de interpretação baseada nas propriedades e ranhuras introduzidas.
-- Para lógica **Comportamental**: asserir atualizações ou eventos emitidos corretos da interpretação em resposta aos eventos de entrada do utilizador.
+- Para lógica **Visual**: asserir a saída correta da interpretação baseada nas propriedades e ranhuras introduzidas.
+- Para lógica **Comportamental**: asserir atualizações corretas da interpretação ou eventos emitidos em resposta aos eventos de entrada do utilizador.
 
-  No exemplo abaixo, demonstraremos um componente `Stepper` que tem um elemento de DOM rotulado "increment" e pode ser clicado. Nós passamos uma propriedade chamada `max` que impedi o `Stepper` de ser incrementado além de `2`, assim se clicarmos sobre o botão 3 vezes, a interface do utilizador deve continuar a dizer `2`.
+  No exemplo abaixo, demonstramos um componente `Stepper` que tem um elemento de DOM rotulado "increment" e pode ser clicado. Nós passamos uma propriedade chamada `max` que impede o `Stepper` de ser incrementado além de `2`, então se clicarmos no botão 3 vezes, a interface do utilizador ainda deve dizer `2`.
 
   Nós não sabemos nada sobre a implementação do `Stepper`, apenas que a "entrada" é a propriedade `max` e a "saída" é o estado do DOM como o utilizador o verá.
 
@@ -129,7 +129,7 @@ Os testes de componente devem focar-se nas interfaces públicas do componente em
   <VTCodeGroupTab label="Vue Test Utils">
   
   ```js
-  const valueSelector =  '[data-testid=stepper-value]'
+  const valueSelector = '[data-testid=stepper-value]'
   const buttonSelector = '[data-testid=increment]'
 
   const wrapper = mount(Stepper, {
@@ -139,7 +139,7 @@ Os testes de componente devem focar-se nas interfaces públicas do componente em
   })
 
   expect(wrapper.find(valueSelector).text()).toContain('0')
-  
+
   await wrapper.find(buttonSelector).trigger('click')
 
   expect(wrapper.find(valueSelector).text()).toContain('1')
@@ -159,7 +159,7 @@ Os testes de componente devem focar-se nas interfaces públicas do componente em
     }
   })
 
-  cy.get(valueSeletor).should('be.visible').and('contain.text', '0')
+  cy.get(valueSelector).should('be.visible').and('contain.text', '0')
     .get(buttonSelector).click()
     .get(valueSelector).should('contain.text', '1')
   ```
