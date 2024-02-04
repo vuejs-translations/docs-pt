@@ -148,7 +148,7 @@ Nos modelos de marcação da Vue, as expressões de JavaScript podem ser usadas 
 
 ### Somente Expressões {#expressions-only}
 
-Cada vínculo apenas pode conter **uma única expressão**. Uma expressão é um pedaço de código que pode ser avaliada para um valor. Um verificação simples é se pode ser usada depois de `return`.
+Cada vínculo apenas pode conter **uma única expressão**. Uma expressão é um pedaço de código que pode ser avaliada para um valor. Uma verificação simples é se pode ser usada depois de `return`.
 
 Portanto, as seguintes **não** funcionarão:
 
