@@ -211,13 +211,13 @@ As principais diferenças entre a Vitest e outras ferramentas que executam teste
 
 ### Bibliotecas de Montagem {#mounting-libraries}
 
-O teste de componente muitas vezes envolve a montagem do componente a ser testado em isolamento, acionar eventos de entrada de utilizador de maneira simulada, e afirmar sobre a saída do DOM apresentado. Existem bibliotecas utilitárias dedicadas que tornam estas tarefas mais simples.
+O teste de componente muitas vezes envolve a montagem isolada do componente a ser testado, acionar eventos de entrada do utilizador de maneira simulada, e asserir sobre a saída do DOM apresentado. Existem bibliotecas utilitárias dedicadas que simplificam estas tarefas.
 
-- [`@vue/test-utils`](https://github.com/vuejs/test-utils) é a biblioteca de testes de componente de baixo nível oficial que foi escrita para oferecer aos utilizadores acesso às APIs específicas da Vue. É também a biblioteca de baixo nível sobre qual a `@testing-library/vue` é construída.
+- [`@vue/test-utils`](https://github.com/vuejs/test-utils) é a biblioteca oficial de testes de componente de baixo nível escrita para oferecer aos utilizadores acesso às APIs específicas da Vue. É também a biblioteca de baixo nível sobre qual a `@testing-library/vue` foi construída.
 
-- [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) é uma biblioteca de testes de Vue focada em testar componentes sem depender dos detalhes de implementação. A sua diretriz é que quanto mais os testes refletirem a maneira que o software é usado, mas confiança podem fornecer.
+- [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) é uma biblioteca de testes de Vue focada em testar componentes sem depender dos detalhes de implementação. A sua diretriz é que quanto mais os testes refletirem a maneira que o software é usado, mais confiáveis são.
 
-Nós recomendamos usar a `@vue/test-utils` para testar os componentes nas aplicações. A `@testing-library/vue` tem problemas com testes de componente assíncrono com Suspense, então deve ser usada com cautela.
+Nós recomendamos usar a `@vue/test-utils` para testar os componentes nas aplicações. A `@testing-library/vue` tem problemas com testes de componente assíncrono com Suspense, por isto deve ser usada com cautela.
 
 ### Outras Opções {#other-options-1}
 
