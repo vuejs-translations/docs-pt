@@ -193,13 +193,13 @@ Os testes de componentes devem centrar-se nas interfaces públicas do componente
 
 - **NÃO FAZER**
 
-  Não asserir o estado privado da instância dum componente ou testar métodos privados dum componente. Testar detalhes de implementação torna os testes frágeis, uma vez que estes estão sujeitos a quebrarem ou exigem atualizações quando a implementação mudar.
+  Não asserir o estado privado da instância dum componente ou testar métodos privados dum componente. Testar detalhes de implementação fragiliza os testes, uma vez que estes estão sujeitos a quebrarem ou exigem atualizações quando a implementação mudar.
 
   O trabalho definitivo do componente é interpretar a saída correta do DOM, então os testes que focam-se na saída do DOM fornecem o mesmo nível de garantia de exatidão (se não mais) enquanto é mais robusto e resiliente à mudança.
 
-  Não depender exclusivamente dos testes instantâneos. Asserir as sequências de caracteres de HTML não descreve exatidão. Escrever os testes intencionalidade.
+  Não depender exclusivamente dos testes instantâneos. Asserir as sequências de caracteres de HTML não descreve exatidão. Precisamos escrever os testes intencionalidade.
 
-  Se um método precisar ser testado meticulosamente, considere extraí-lo para uma função utilitária autónoma e escrever um teste unitário dedicado para esta. Se não poder ser extraída claramente, pode ser testada como uma parte dum teste de componente, integração, ou de ponta-a-ponta que a cobre.
+  Se um método precisar ser testado meticulosamente, devemos considerar extraí-lo para uma função utilitária autónoma e escrever um teste unitário dedicado a esta. Se não poder ser extraída claramente, pode ser testada como uma parte dum teste de componente, integração, ou de ponta-a-ponta que a cobre.
 
 ### Recomendação {#recommendation-1}
 
