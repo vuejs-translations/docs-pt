@@ -221,7 +221,9 @@ Nós recomendamos usar a `@vue/test-utils` para testar os componentes nas aplica
 
 ### Outras Opções {#other-options-1}
 
-- [Nightwatch](https://v2.nightwatchjs.org/) é uma executor de teste E2E com suporte a Teste de Componente de Vue. ([Projeto de Exemplo](https://github.com/nightwatchjs-community/todo-vue) na versão 2 da Nightwatch)
+- [Nightwatch](https://nightwatchjs.org/) é uma ferramenta de execução de teste de ponto-a-ponta com suporte a Testes de Componente de Vue. ([Projeto de Exemplo](https://github.com/nightwatchjs-community/todo-vue))
+
+- [WebdriverIO](https://webdriver.io/docs/component-testing/vue) para testes de componentes entre os navegadores que dependem da interação nativa do utilizador baseado na automatização padronizada. Esta também pode ser usada com a Testing Library.
 
 ## Testes de Ponta-a-Ponta {#e2e-testing}
 
