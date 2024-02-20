@@ -227,19 +227,19 @@ Nós recomendamos usar a `@vue/test-utils` para testar os componentes nas aplica
 
 ## Testes de Ponta-a-Ponta {#e2e-testing}
 
-Enquanto os testes unitários oferecem aos programadores algum grau de confiança, os testes unitários e de componente estão limitados em suas capacidades de fornecer cobertura holística de uma aplicação quando implementada em produção. Como resultado, os testes de ponta-a-ponta (E2E, sigla em Inglês) oferecem cobertura naquilo que é provavelmente o aspeto mais importante de uma aplicação: aquilo que acontece quando utilizadores de fato usam as tuas aplicações.
+Embora os testes unitários ofereçam aos programadores um certo grau de confiança, os testes unitários e de componentes são limitados na sua capacidade de fornecer uma cobertura holística duma aplicação quando implantada em produção. Consequentemente, os testes de ponta-a-ponta (E2E) fornecem cobertura sobre o que é, sem dúvida, o aspeto mais importante duma aplicação: o que acontece quando os utilizadores usam efetivamente as nossas aplicações.
 
-Os testes de ponta-a-ponta concentram-se sobre o comportamento de aplicações de várias páginas que fazem requisições de rede contra a tua aplicação de Vue construída para produção. Eles muitas vezes envolvem levantar uma base de dados ou outro backend e pode até estar a executar contra um ambiente de qualidade.
+Os testes de ponta-a-ponta concentram-se no comportamento da aplicação de várias páginas que faz requisições de rede contra a nossa aplicação de Vue construída para produção. Estes envolvem frequentemente a criação duma base de dados ou outro backend e podem até ser executadas num ambiente de teste em tempo real.
 
-Os testes de ponta-a-ponta muitas vezes capturarão problemas com o teu roteador, biblioteca de gestão de estado, componentes de alto nível (por exemplo, uma Aplicação (`App`) ou Esquema (`Layout`)), recursos públicos, ou qualquer manipulação de requisição. Conforme mencionado acima, eles capturam problemas críticos que podem ser impossíveis de capturar com testes unitários ou testes de componente.
+Os testes de ponta-a-ponta detetam frequentemente problemas com o nosso roteador, biblioteca de gestão de estados, componentes de alto nível (por exemplo, uma aplicação ou um esquema), recursos públicos ou qualquer tratamento de requisições. Como já foi referido, estes detetam problemas críticos que podem ser impossíveis de detetar com os testes unitários ou testes de componentes.
 
-Os testes de ponta-a-ponta não importam nenhum código da tua aplicação de Vue, mas dependem completamente do teste da tua aplicação com a navegação através de páginas inteiras em um navegador de verdade.
+Os testes de ponta-a-ponta não importam nenhum código da nossa aplicação de Vue, mas dependem completamente de testar a nossa aplicação navegando por páginas inteiras num navegador de verdade.
 
-Os testes ponta-a-ponta validam muitas camadas na tua aplicação. Eles podem tanto mirar a tua aplicação construída localmente, ou mesmo um ambiente de qualidade (staging, em Inglês). O teste contra o teu ambiente de qualidade não apenas inclui o código do teu frontend e servidor estático, mas todos serviços e infraestrutura de backend associados.
+Os testes de ponta-a-ponta validam muitas das camadas da nossa aplicação. Estes podem ser direcionados a nossa aplicação criada localmente ou mesmo a um ambiente de teste em tempo real. Os testes efetuados no nosso ambiente de teste incluem não só o nosso código de frontend e o servidor estático, mas também todos os serviços e infraestruturas de backend associados.
 
-> Quanto mais os teus testes espelharem a maneira que o teu software é usado, mais confiança eles podem dar-te - [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106) - Autor da Testing Library
+> Quanto mais os testes refletirem a maneira que o nosso software é usado, mas confiáveis serão - [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106) - Autor da Testing Library
 
-Por testarem como as ações do utilizador impactam a tua aplicação, os testes E2E são muitas vezes a chave para segurança mais alta nos casos em queremos saber se uma aplicação está devidamente funcional ou não.
+Ao testar como o impacto das ações do utilizador na nossa aplicação, os testes de ponta-a-ponta são muitas vezes a chave para uma maior confiança no bom funcionamento duma aplicação.
 
 ### Escolhendo uma Solução de Testes de Ponta-a-Ponta {#choosing-an-e2e-testing-solution}
 
