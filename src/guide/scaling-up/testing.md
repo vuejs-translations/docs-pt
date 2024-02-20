@@ -227,7 +227,7 @@ Nós recomendamos usar a `@vue/test-utils` para testar os componentes nas aplica
 
 ## Testes de Ponta-a-Ponta {#e2e-testing}
 
-Embora os testes unitários ofereçam aos programadores um certo grau de confiança, os testes unitários e de componentes são limitados na sua capacidade de fornecer uma cobertura holística duma aplicação quando implantada em produção. Consequentemente, os testes de ponta-a-ponta (E2E) fornecem cobertura sobre o que é, sem dúvida, o aspeto mais importante duma aplicação: o que acontece quando os utilizadores usam efetivamente as nossas aplicações.
+Embora os testes unitários ofereçam aos programadores um certo grau de confiança, os testes unitários e de componentes são limitados na sua capacidade de fornecer uma cobertura holística duma aplicação quando implantada em produção. Consequentemente, os testes de ponta-a-ponta fornecem cobertura sobre o que é, sem dúvida, o aspeto mais importante duma aplicação: o que acontece quando os utilizadores usam efetivamente as nossas aplicações.
 
 Os testes de ponta-a-ponta concentram-se no comportamento da aplicação de várias páginas que faz requisições de rede contra a nossa aplicação de Vue construída para produção. Estes envolvem frequentemente a criação duma base de dados ou outro backend e podem até ser executadas num ambiente de teste em tempo real.
 
@@ -249,9 +249,9 @@ Embora os testes de ponta-a-ponta na Web tenham ganho uma reputação negativa d
 
 Um dos principais benefícios pelos quais os testes de ponta-a-ponta são conhecidos é a sua capacidade de testar a nossa aplicação em vários navegadores. Embora possa parecer desejável ter 100% de cobertura entre os navegadores, é importante notar que os testes entre navegadores têm um retorno decrescente nos recursos duma equipa devido ao tempo adicional e à potência da máquina necessários para os executar consistentemente. Como resultado, é importante ter em conta este compromisso ao escolher a quantidade de testes entre navegadores de que a nossa aplicação necessita.
 
-#### Laços de Reações Mais Rápidos {#faster-feedback-loops}
+#### Ciclos de Reações Mais Rápidos {#faster-feedback-loops}
 
-Um dos problemas primários com os testes de ponta-a-ponta (E2E) e o desenvolvimento é que executar o conjunto inteiro leva muito tempo. Normalmente, isto apenas é feito em condutas de integração e implementação contínua (CI/CD). As abstrações de testes de ponta-a-ponta modernas têm ajudado a resolver isto adicionado funcionalidades como execuções paralelas, que permitem as condutas de CI/CD muitas vezes executarem magnitudes mais rápido do que antes. Além disto, quando estiveres a programar localmente, a capacidade de executar seletivamente um único teste para a página sobre a qual estás a trabalhar enquanto também fornece o recarregamento instantâneo dos testes pode ajudar a impulsionar o fluxo de trabalho e produtividade do programador.
+Um dos principais problemas dos testes e do desenvolvimento de ponta-a-ponta é que a execução de todo o conjunto demora muito tempo. Normalmente, isto só é feito em condutas de integração e implantação contínuas. As abstrações modernas de testes de ponta-a-ponta ajudaram a resolver isto adicionando recursos como paralelismo, que permite que a integração contínua e as condutas de implantação contínua sejam executadas com mais rapidez do que antes. Além disto, ao desenvolver localmente, a capacidade de executar seletivamente um único teste para a página em que trabalhamos, ao mesmo tempo que fornece a recarga a quente de testes, podem ajudar a impulsionar o fluxo de trabalho e a produtividade dum programador.
 
 #### Experiência de Depuração de Primeira Classe {#first-class-debugging-experience}
 
