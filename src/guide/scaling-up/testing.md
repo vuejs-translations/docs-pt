@@ -243,7 +243,7 @@ Ao testar como o impacto das ações do utilizador na nossa aplicação, os test
 
 ### Escolhendo uma Solução de Testes de Ponta-a-Ponta {#choosing-an-e2e-testing-solution}
 
-Enquanto o teste de ponta-ponta (E2E) na Web tem ganhado uma reputação negativa por causa testes de pouca confiança e atraso do processos de desenvolvimento, ferramentas de E2E modernas têm feito progressos consideráveis para criar testes mais fiáveis, interativos, e úteis. Quando escolheres uma abstração de testes de ponta-a-ponta, as seguintes seções fornecem algum guia sobre coisas para manter em mente quando estiveres a escolher uma abstração de testes para a tua aplicação.
+Embora os testes de ponta-a-ponta na Web tenham ganho uma reputação negativa de testes não fiáveis e de atrasarem os processos de desenvolvimento, as ferramentas modernas de testes de ponta-a-ponta deram passos adiante para criar testes mais fiáveis, interativos e úteis. Ao escolher uma abstração de testes de ponta-a-ponta, as secções seguintes fornecem algumas orientações sobre os aspetos a ter em conta ao escolher uma abstração de testes para a nossa aplicação.
 
 #### Testes Cruzado de Navegador {#cross-browser-testing}
 
