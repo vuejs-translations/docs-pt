@@ -245,9 +245,9 @@ Ao testar como o impacto das ações do utilizador na nossa aplicação, os test
 
 Embora os testes de ponta-a-ponta na Web tenham ganho uma reputação negativa de testes não fiáveis e de atrasarem os processos de desenvolvimento, as ferramentas modernas de testes de ponta-a-ponta deram passos adiante para criar testes mais fiáveis, interativos e úteis. Ao escolher uma abstração de testes de ponta-a-ponta, as secções seguintes fornecem algumas orientações sobre os aspetos a ter em conta ao escolher uma abstração de testes para a nossa aplicação.
 
-#### Testes Cruzado de Navegador {#cross-browser-testing}
+#### Testes entre Navegadores {#cross-browser-testing}
 
-Um dos benefício primários que o teste de ponta-a-ponta (E2E) é conhecida por ser sua capacidade de testar a tua aplicação através de vários navegadores. Enquanto isto pode parecer desejável para ter 100% cobertura cruzada de navegador, é importante notar que o teste cruzado de navegador tem reduzido os retornos sobre os recursos de uma equipa devido ao tempo adicional e poder de máquina exigido para executá-los consistentemente. Como resultado, é importante ser cuidadoso a respeito deste compromisso quando estiveres a escolher a quantidade de teste cruzado de navegador a tua aplicação precisa.
+Um dos principais benefícios pelos quais os testes de ponta-a-ponta são conhecidos é a sua capacidade de testar a nossa aplicação em vários navegadores. Embora possa parecer desejável ter 100% de cobertura entre os navegadores, é importante notar que os testes entre navegadores têm um retorno decrescente nos recursos duma equipa devido ao tempo adicional e à potência da máquina necessários para os executar consistentemente. Como resultado, é importante ter em conta este compromisso ao escolher a quantidade de testes entre navegadores de que a nossa aplicação necessita.
 
 #### Laços de Reações Mais Rápidos {#faster-feedback-loops}
 
