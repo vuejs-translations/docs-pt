@@ -255,7 +255,7 @@ Um dos principais problemas dos testes e do desenvolvimento de ponta-a-ponta é 
 
 #### Experiência de Depuração de Primeira Classe {#first-class-debugging-experience}
 
-Embora os programadores têm tradicionalmente dependido dos exames de registos em uma janela de terminal para ajudar a determinar o que correu mal em um teste, as abstrações de teste de ponta-a-ponta permitem os programadores influenciar ferramentas com as quais eles já estão familiarizados, por exemplo, ferramentas de programador do navegador.
+Embora os programadores tenham tradicionalmente dependido da analise de registos numa janela de terminal para determinar o que correu mal num teste, as abstrações modernas de teste de ponta-a-ponta permitem que os programadores influenciem ferramentas com as quais já estão familiarizados, por exemplo, as ferramentas de programação do navegador.
 
 #### Visibilidade no Modo Desgovernado {#visibility-in-headless-mode}
 
