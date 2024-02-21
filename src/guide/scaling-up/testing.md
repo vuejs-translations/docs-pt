@@ -352,18 +352,18 @@ Finalmente, atualizamos o `package.json` para adicionar o programa de teste e ex
 > npm test
 ```
 
-### Teste de Funções de Composição {#testing-composables}
+### Testes de Funções de Composição {#testing-composables}
 
-> Esta seção presume que tens lido a seção [Funções de Composição](/guide/reusability/composables.html).
+> Esta secção parte pressupõe a leitura da secção [Funções de Composição](/guide/reusability/composables).
 
-No que diz respeito a testes de funções de composição, podemos dividi-los em duas categorias: funções de composição que não dependem de uma instância de componente hospedeira, e funções de composição que dependem. 
+Quando se trata de testar as funções de composição, podemos dividi-los em duas categorias: funções de composição que dependem duma instância de componente hospedeiro e funções de composição que dependem.
 
-Um constituível que depende de uma instância de componente hospedeira quando usa as seguintes APIs:
+Uma função de composição que depende duma instância de componente hospedeiro quando usa as seguintes APIS:
 
-- Gatilhos do Ciclo de Vida
-- Fornecimento (`provide`) / Injeção (`inject`) 
+- Funções Gatilhos do Ciclo de Vida
+- Fornecer / Injetar
 
-Se uma constituível apenas usar as APis de Reatividade, então ela pode ser testada diretamente invocando-a e afirmando os seus métodos ou estados retornados:
+Se uma função de composição apenas usar as APIs de reatividade, pode ser testado invocando-o diretamente e asserindo o seu estado ou métodos retornados:
 
 ```js
 // counter.js
@@ -393,7 +393,7 @@ test('useCounter', () => {
 })
 ```
 
-Uma constituível que depende dos gatilhos do ciclo de vida ou `provide` / `inject` precisam ser envolvidas em um componente hospedeiro para ser testado. Nós podemos criar um auxiliar como o seguinte:
+Uma função de composição que depende das funções gatilhos do ciclo de vida ou de fornecer e injetar precisa ser envolvida num componente hospedeiro para ser testada. Nós podemos criar um auxiliar como o seguinte:
 
 ```js
 // test-utils.js
@@ -404,13 +404,13 @@ export function withSetup(composable) {
   const app = createApp({
     setup() {
       result = composable()
-      // suprimir aviso de ausência do modelo de marcação
+      // suprimir aviso de modelo de marcação em falta
       return () => {}
     }
   })
   app.mount(document.createElement('div'))
   // retornar o resultado e a instância da aplicação
-  // para teste do fornecimento ou desmontagem
+  // para testar o fornecer ou desmontar
   return [result, app]
 }
 ```
@@ -421,16 +421,16 @@ import { useFoo } from './foo'
 
 test('useFoo', () => {
   const [result, app] = withSetup(() => useFoo(123))
-  // imitar o fornecimento para o teste das injeções
+  // simular o fornecer para testar as injeções
   app.provide(...)
-  // executar as afirmações
+  // executar as asserções
   expect(result.foo.value).toBe(1)
-  // acionar o gatilho de desmontagem se necessário
+  // acionar a função gatilho de desmontagem se necessário
   app.unmount()
 })
 ```
 
-Para funções de composição mais complexas, poderia também ser mais fácil testá-lo escrevendo os testes contra o componente envolvedor usando as técnicas de [Testes de Componente](#component-testing).
+No caso de funções de composição mais complexas, também pode ser mais fácil testá-las escrevendo testes para o componente envolvente usando técnicas de [teste de componentes](#component-testing).
 
 <!--
 TODO more testing recipes can be added in the future e.g.
