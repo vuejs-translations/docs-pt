@@ -269,9 +269,11 @@ Quando os testes de ponta-a-ponta são executados nas condutas de integração o
 
 ### Outras Opções {#other-options-2}
 
-- [Playwright](https://playwright.dev/) é também uma excelente solução de testes de ponta-a-ponta com uma gama maior de suporte de navegador (principalmente o WebKit). Consulte o [Porquê a Playwright](https://playwright.dev/docs/why-playwright) para mais detalhes.
+- [Playwright](https://playwright.dev/) é também uma excelente solução de teste de ponta-a-ponta, com uma gama mais alargada de suporte do navegador (principalmente o WebKit). Consultar o [Por quê a Playwright](https://playwright.dev/docs/why-playwright) por mais detalhes.
 
-- [Nightwatch v2](https://v2.nightwatchjs.org/) é uma solução de testes ponta-a-ponta baseada sno [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Isto dá-lhe a gama de suporte de navegador mais alargada.
+- [Nightwatch](https://nightwatchjs.org/) é uma solução de teste ponta-a-ponta baseada no [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Isto dá-lhe a mais ampla gama de suporte de navegadores.
+
+- [WebdriverIO](https://webdriver.io/) é uma abstração de automatização de testes para Web e móveis baseada no protocolo WebDriver.
 
 ## Receitas {#recipes}
 
