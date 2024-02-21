@@ -277,15 +277,15 @@ Quando os testes de ponta-a-ponta são executados nas condutas de integração o
 
 ## Receitas {#recipes}
 
-### Adicionar a Vitest à um Projeto {#adding-vitest-to-a-project}
+### Adicionando a Vitest a um Projeto {#adding-vitest-to-a-project}
 
-Em um projeto de Vue baseado em Vite, execute:
+Num projeto de Vue baseado na Vite, executamos:
 
 ```sh
 > npm install -D vitest happy-dom @testing-library/vue
 ```
 
-A seguir, atualize a configuração da Vite para adicionar o bloco da opção `test`:
+Em seguida, atualizamos a configuração da Vite para adicionar o bloco de opções `test`:
 
 ```js{6-12}
 // vite.config.js
@@ -294,17 +294,17 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   // ...
   test: {
-    // ativa as APIs de teste global parecidas com as de Jest
+    // ativar as APIs de teste globais semelhantes a jest
     globals: true,
-    // simular a DOM com `happy-dom`
-    // (exige a instalação de `happy-dom` como uma dependência par)
+    // simular o DOM com happy-dom
+    // (exige a instalação do happy-dom como uma dependência de pares)
     environment: 'happy-dom'
   }
 })
 ```
 
 :::tip DICA
-Se estiveres a usar a TypeScript, adicione `vitest/globals` ao campo `types` do teu ficheiro `tsconfig.json`.
+Se nós usarmos a TypeScript, adicionamos `vitest/globals` ao campo `types` no nosso `tsconfig.json`:
 
 ```json
 // tsconfig.json
@@ -318,7 +318,7 @@ Se estiveres a usar a TypeScript, adicione `vitest/globals` ao campo `types` do 
 
 :::
 
-Depois crie um ficheiro terminando em `*.test.js` no teu projeto. Tu podes colocar todos os ficheiros de teste em um diretório de teste na raiz do projeto, ou em diretórios de teste próximos do teus ficheiros de código-fonte. A Vitest procurará automaticamente por eles usando a convenção de nomeação.
+Depois, criamos um ficheiro terminado em `*.test.js` em nosso projeto. Nós podemos colocar todos os ficheiros de teste num diretório de teste na raiz do projeto ou em diretórios de teste junto aos nossos ficheiros de origem. A Vitest procurá-los-á utilizando automaticamente a convenção de nomes:
 
 ```js
 // MyComponent.test.js
@@ -332,12 +332,12 @@ test('it should work', () => {
     }
   })
 
-  // afirmar a saída
+  // asserir a saída
   getByText('...')
 })
 ```
 
-Finalmente, atualizar o teu ficheiro `package.json` para adicionar o programa que executa o teste e executá-lo:
+Finalmente, atualizamos o `package.json` para adicionar o programa de teste e executá-lo:
 
 ```json{4}
 {
