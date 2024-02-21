@@ -265,7 +265,7 @@ Quando os testes de ponta-a-ponta são executados nas condutas de integração o
 
 - [Cypress](https://www.cypress.io/)
 
-  Em geral, acreditamos que a Cypress fornece a solução mais completa de E2E com funcionalidades como uma interface gráfica informativa, excelente capacidade de depuração, afirmações e implementações forjadas, execução paralela, fotografias e muito mais. Conforme mencionado acima, ela também fornece suporte para [Teste de Componente](https://docs.cypress.io/guides/component-testing/introduction). No entanto, ela apenas suporta navegadores baseados no Chromium e a Firefox.
+  Geralmente, acreditamos que o Cypress fornece a solução mais completa de ponta-a-ponta com recursos como uma interface gráfica informativa, excelente capacidade de depuração, asserções e esboços integrados, resistência a falhas, paralelismo e fotografias. Tal como já foi referido, este também suporta o [teste de componentes](https://docs.cypress.io/guides/component-testing/introduction). No entanto, este apenas suporta navegadores baseados no Chromium e no Firefox.
 
 ### Outras Opções {#other-options-2}
 
