@@ -259,7 +259,7 @@ Embora os programadores tenham tradicionalmente dependido da analise de registos
 
 #### Visibilidade no Modo Desgovernado {#visibility-in-headless-mode}
 
-Quando os testes de ponta-a-ponta estão a executar em condutas de integração / implementação contínuas, eles estão muitas vezes a executar em navegadores desgovernados (por exemplo, nenhum navegador visível é aberto para o utilizador observar). Uma funcionalidade crítica das abstrações de testes de ponta-a-ponta modernas é a capacidade de ver fotografias e ou vídeos da aplicação durante os testes, fornecendo alguma compreensão no do porquê dos erros estarem a acontecer. Historicamente, era tedioso manter estas integrações.
+Quando os testes de ponta-a-ponta são executados nas condutas de integração ou implantação contínuas, são frequentemente executados nos navegadores desgovernado (ou seja, não é aberto nenhum navegador visível para o utilizador assistir). Uma funcionalidade crítica das modernas abstrações de teste de ponta-a-ponta é a capacidade de ver fotografias e/ou vídeos da aplicação durante o teste, fornecendo alguma informação sobre a razão pela qual os erros acontecem. Historicamente, era tedioso manter estas integrações.
 
 ### Recomendação {#recommendation-2}
 
