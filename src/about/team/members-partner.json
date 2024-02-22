@@ -21,7 +21,7 @@
   },
   {
     "name": "Daniel Roe",
-    "title": "Arquiteto de Abstração",
+    "title": "Arquiteto da Abstração",
     "company": "Nuxt",
     "projects": [
       {
@@ -33,7 +33,7 @@
         "url": "https://github.com/danielroe/typed-vuex"
       }
     ],
-    "location": "United Kingdom",
+    "location": "Reino Unido",
     "languages": [
       "Inglês"
     ],
@@ -151,7 +151,7 @@
   },
   {
     "name": "Alex Jover",
-    "title": "Consultor de Desempenho da Web e PWA",
+    "title": "Consultor do Desempenho, da Web e PWA",
     "company": "Freelance",
     "projects": [
       {
@@ -368,7 +368,7 @@
   },
   {
     "name": "ChangJoo Park",
-    "title": "Organizador da Comunidade Coreana de Entusiastas de Vue",
+    "title": "Organizador da Comunidade Coreana de Entusiastas da Vue",
     "location": "Seul, Coreia do Sul",
     "languages": [
       "Coreano",
@@ -395,9 +395,8 @@
   },
   {
     "name": "Erick Petrucelli",
-    "title": "Diretor de Engenharia",
-    "company": "Friday Finance",
-    "companyLink": "https://www.fridayfinance.com/",
+    "title": "Engenheiro & Arquiteto de Software, Especialista em UX, Consultor, Educador, Escritor",
+    "company": "Freelance",
     "location": "João Pessoa, Brasil",
     "languages": [
       "Português",
@@ -462,7 +461,7 @@
   },
   {
     "name": "Israel Ortuño",
-    "title": "Programador de Pilha Completa da Web",
+    "title": "Programador da Web",
     "company": "Freelance",
     "projects": [
       {
@@ -502,8 +501,8 @@
   },
   {
     "name": "Grigoriy Beziuk",
-    "title": "Programador de Pilha Completa da Web",
-    "company": "Trabalhador Independente",
+    "title": "Programador da Web",
+    "company": "Trabalhador Autónomo",
     "companyLink": "http://gbezyuk.ru",
     "location": "Moscovo, Rússia",
     "languages": [
