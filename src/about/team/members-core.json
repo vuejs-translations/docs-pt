@@ -56,7 +56,7 @@
   },
   {
     "name": "Eduardo",
-    "title": "Programador e Consultor",
+    "title": "Programador & Consultor",
     "company": "Freelance",
     "location": "Paris, França",
     "languages": [
@@ -124,26 +124,16 @@
   {
     "name": "Jinjiang",
     "title": "Programador",
+    "company": "Bit",
+    "companyLink": "https://bit.dev",
     "projects": [
+      {
+        "label": "vuejs-translations",
+        "url": "https://github.com/vuejs-translations"
+      },
       {
         "label": "cn.vuejs.org",
         "url": "https://cn.vuejs.org"
-      },
-      {
-        "label": "vue-a11y-utils",
-        "url": "https://github.com/jinjiang/vue-a11y-utils"
-      },
-      {
-        "label": "vue-mark-display",
-        "url": "https://github.com/jinjiang/vue-mark-display"
-      },
-      {
-        "label": "mark2slides",
-        "url": "https://github.com/jinjiang/mark2slides"
-      },
-      {
-        "label": "vue-keyboard-over",
-        "url": "https://github.com/jinjiang/vue-keyboard-over"
       }
     ],
     "location": "Singapura",
@@ -151,6 +141,10 @@
       "Chinês",
       "Inglês"
     ],
+    "website": {
+      "label": "jinjiang.me",
+      "url": "https://jinjiang.me"
+    },
     "socials": {
       "github": "jinjiang",
       "twitter": "zhaojinjiang"
@@ -158,7 +152,7 @@
   },
   {
     "name": "Kazupon",
-    "title": "Engenheiro & Programador de Código-Aberto",
+    "title": "Engenheiro & Programador de Código-Aberto A Tempo Parcial",
     "company": "PLAID, Inc.",
     "companyLink": "https://plaid.co.jp",
     "projects": [
@@ -243,7 +237,7 @@
       },
       {
         "label": "portal-vue*",
-        "url": "https://github.com/LinusBorg/portal-vue*"
+        "url": "https://github.com/LinusBorg/portal-vue"
       }
     ],
     "reposPersonal": [
@@ -328,10 +322,6 @@
         "url": "https://github.com/Justineo/vue-awesome"
       },
       {
-        "label": "Justineo/vue-awesome",
-        "url": "https://github.com/Justineo/vue-awesome"
-      },
-      {
         "label": "ecomfe/vue-echarts",
         "url": "https://github.com/ecomfe/vue-echarts"
       },
@@ -386,7 +376,7 @@
   },
   {
     "name": "Natalia Tepluhina",
-    "title": "Engenheira de Frontend do Pessoal",
+    "title": "Engenheira do Frontend",
     "company": "GitLab",
     "companyLink": "https://gitlab.com/",
     "projects": [
@@ -413,7 +403,7 @@
   },
   {
     "name": "Yosuke Ota",
-    "title": "Engenheiro Chefe da Web",
+    "title": "Engenheiro Líder da Web",
     "company": "Future Corporation",
     "companyLink": "https://www.future.co.jp/",
     "projects": [
@@ -469,21 +459,23 @@
   {
     "name": "Anthony Fu",
     "title": "Programador de Código-Aberto",
+    "company": "NuxtLabs",
+    "companyLink": "https://nuxtlabs.com/",
     "projects": [
-      {
-        "label": "composition-api",
-        "url": "https://github.com/vuejs/composition-api"
-      },
       {
         "label": "VueUse",
         "url": "https://github.com/vueuse/vueuse"
+      },
+      {
+        "label": "Vitesse",
+        "url": "https://github.com/antfu/vitesse"
       },
       {
         "label": "vue-demi",
         "url": "https://github.com/vueuse/vue-demi"
       }
     ],
-    "location": "Shanghai, China",
+    "location": "Paris, França",
     "languages": [
       "Chinês",
       "Inglês"
@@ -522,8 +514,12 @@
     "title": "Programador",
     "projects": [
       {
-        "label": "volar",
-        "url": "https://github.com/johnsoncodehk/volar"
+        "label": "@vue/language-tools",
+        "url": "https://github.com/vuejs/language-tools"
+      },
+      {
+        "label": "Volar.js",
+        "url": "https://github.com/volarjs"
       }
     ],
     "location": "Hong Kong, China",
@@ -539,14 +535,14 @@
   },
   {
     "name": "Carlos Rodrigues",
-    "title": "Programador e Consultor",
+    "title": "Programador & Consultor",
     "projects": [
       {
         "label": "vuejs/core",
         "url": "https://github.com/vuejs/core"
       }
     ],
-    "location": "Londres, Reindo Unido",
+    "location": "Londres, Reino Unido",
     "languages": [
       "Inglês",
       "Português"
