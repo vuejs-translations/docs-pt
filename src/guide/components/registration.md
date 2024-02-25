@@ -57,15 +57,15 @@ Isto aplica-se a todos os subcomponentes, o que significa que todos estes três 
 
 Embora conveniente, o registo global tem algumas desvantagens:
 
-1. O registo global impedi os sistemas de construção de remover componentes não usados (mais conhecido como "sacudidura de árvore" ou "tree-shaking"). Se registares globalmente um componente mas acabares não utilizando ele em nenhum lugar na tua aplicação, ele continuará a estar incluído no pacote final.
+1. O registo global impedi os sistemas de construção de remover os componentes que não são usados (mais conhecido como "agitação de árvore" (tree-shaking)). Se registarmos globalmente um componente, mas acabarmos não usando este em nenhum lugar na nossa aplicação, este ainda será incluído no pacote final.
 
-2. O registo global torna o relacionamento de dependência menos explícito em aplicações grandes. Ele torna-o difícil de localizar uma implementação do componente filho a partir de um componente pai que estiver usando-o. Isto pode afetar a sustentabilidade a longo prazo parecido com a utilização muitíssimas variáveis globais.
+2. O registo global torna o relacionamento de dependência menos explícito em grandes aplicações. Este dificulta a localização da implementação dum componente filho a partir dum componente pai que usa o componente filho. Isto pode afetar a sustentabilidade a longo prazo semelhante ao uso de muitas variáveis globais.
 
-O registo local limita a disponibilidade dos componentes registados para o componente atual apenas. Isto torna o relacionamento de dependência mais explícito, e é mais amigável a sacudidura de árvore.
+O registo local limita a disponibilidade dos componentes registados apenas ao componente atual. Este torna o relacionamento de dependências mais explícito, e é mais amigável a agitação da árvore de componentes.
 
 <div class="composition-api">
 
-Quando estiveres utilizando o Componente de Ficheiro Único com `<script setup>`, os componentes importados podem ser utilizados localmente sem o registo:
+Quando usamos o componente de um único ficheiro (SFC) com o `<script setup>`, os componentes importados podem ser usados localmente sem fazer-se o registo:
 
 ```vue
 <script setup>
@@ -77,7 +77,7 @@ import ComponentA from './ComponentA.vue'
 </template>
 ```
 
-No componente que não estiver utilizando `<script setup>`, precisarás utilizar a opção `components`:
+No componente que não estivermos usando o `<script setup>`, precisaremos usar a opção `components`:
 
 ```js
 import ComponentA from './ComponentA.js'
@@ -95,7 +95,7 @@ export default {
 </div>
 <div class="options-api">
 
-O registo local é feito com a utilização da opção `components`:
+O registo local é feito usando a opção `components`:
 
 ```vue
 <script>
@@ -115,7 +115,7 @@ export default {
 
 </div>
 
-Para cada propriedade no objeto `components`, a chave será o nome registado do componente, enquanto o valor conterá a implementação do componente. O exemplo acima está utilizando a abreviação de propriedade da ES2015 e é equivalente à:
+Para cada propriedade no objeto `components`, a chave será o nome do componente registado, enquanto o valor conterá a implementação do componente. O exemplo acima usa a abreviação de propriedade da especificação da ECMAScript de 2015 e é equivalente a:
 
 ```js
 export default {
@@ -126,7 +126,7 @@ export default {
 }
 ```
 
-Nota que **os componentes registados localmente também não _estão_ disponíveis nos componentes descendentes**. Neste caso, `ComponentA` será feito disponível para o componente atual apenas, mas não para quaisquer dos seu componentes filho ou descendente.
+Notemos que **os componentes registados localmente também não _estão_ disponíveis dentro dos componentes descendentes**. Neste caso, `ComponentA` será disponibilizado apenas ao componente atual, e não aos componentes filho ou descendente.
 
 ## Caixa do Nome do Componente {#component-name-casing}
 
