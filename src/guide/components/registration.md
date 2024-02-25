@@ -8,7 +8,7 @@ Um componente da Vue precisa ser "registado" para que a Vue saiba onde localizar
 
 ## Registo Global {#global-registration}
 
-Nós podemos tornar os componentes disponíveis globalmente na [aplicação de Vue](/guide/essentials/application) atual usando o método `app.component()`:
+Nós podemos disponibilizar os componentes globalmente na [aplicação atual de Vue](/guide/essentials/application) usando o método `app.component()`:
 
 ```js
 import { createApp } from 'vue'
@@ -25,7 +25,7 @@ app.component(
 )
 ```
 
-Se estiveres utilizando Componentes de Ficheiro Únicos (SFCs, sigla em Inglês), estarás registando os ficheiros `.vue` importados:
+Se usarmos os componentes compostos por um único ficheiro (SFCs), registaremos os ficheiros `.vue` importados:
 
 ```js
 import MyComponent from './App.vue'
@@ -33,7 +33,7 @@ import MyComponent from './App.vue'
 app.component('MyComponent', MyComponent)
 ```
 
-O método `app.component()` pode ser encadeiado:
+O método `app.component()` pode ser encadeado:
 
 ```js
 app
@@ -42,7 +42,7 @@ app
   .component('ComponentC', ComponentC)
 ```
 
-Os componentes registados globalmente podem ser utilizados no modelo de marcação de qualquer componente dentro esta aplicação:
+Os componentes registados globalmente podem ser usados no modelo de marcação de qualquer componente dentro desta aplicação:
 
 ```vue-html
 <!-- isto funcionará em qualquer componente dentro da aplicação -->
@@ -51,7 +51,7 @@ Os componentes registados globalmente podem ser utilizados no modelo de marcaç�
 <ComponentC/>
 ```
 
-Isto ainda aplica-se a todos subcomponentes, significando que todos estes três componentes também estão disponíveis _dentro de uns dos outros_.
+Isto aplica-se a todos os subcomponentes, o que significa que todos estes três componentes também estarão disponíveis _dentro de uns dos outros_.
 
 ## Registo Local {#local-registration}
 
