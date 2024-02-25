@@ -130,12 +130,12 @@ Notemos que **os componentes registados localmente também não _estão_ dispon�
 
 ## Caixa do Nome do Componente {#component-name-casing}
 
-Ao longo deste guia, estamos utilizando nomes em `PascalCase` quando estamos registando componentes. Isto é porque:
+Durante todo o guia, usaremos os nomes de CaixaPascal quando registarmos os componentes. Isto porque:
 
-1. Os nomes em PascalCase são identificadores de JavaScript válidos. Isto torna-o mais fácil de importar e registar componentes na JavaScript. Ele também ajuda as IDEs com a conclusão automática.
+1. Os nomes de CaixaPascal são identificadores válidos de JavaScript. Isto facilita a importação e registo de componentes na JavaScript. Este também ajuda os ambientes de desenvolvimento integrado com a conclusão automática de código.
 
-2. `<PascalCase />` torna-o mais óbvio de que isto é um componente de Vue ao invés de um elemento de HTML nativo nos modelos de marcação. Ele também diferencia os componentes de Vue dos elementos personalizados (Componentes de Web).
+2. `<PascalCase />` torna mais óbvio de que isto é um componente de Vue ao invés dum elemento de HTML nativo dentro dos modelos de marcação. Este também diferencia os componentes da Vue dos elementos personalizados (componentes da Web).
 
-Isto é o estilo recomendado quando estiveres trabalhando com Componente de Ficheiro Único ou modelos de marcação de sequência de caracteres. No entanto, conforme discutido nas [Advertências de Analise de Modelo de Marcação de DOM](/guide/essentials/component-basics#advertências-de-analise-de-modelo-de-marcação-de-dom), os marcadores em PascalCase não são utilizáveis nos modelos de marcação de DOM.
+Isto é um estilo recomendado quando trabalharmos com o componente de um único ficheiro ou modelos de marcação na forma de sequência de caracteres. No entanto, conforme discutido nas [Advertências da Analise do Modelo de Marcação no DOM](/guide/essentials/component-basics#in-dom-template-parsing-caveats), os marcadores de CaixaPascal não são utilizáveis nos modelos de marcação do DOM.
 
-Felizmente, a Vue suporta a resolução de marcadores em "kebab-case" para os componentes registados utilizando PascalCase. Isto significa que um componente registado como `MyComponent` pode ser referenciado no modelo de marcação através de ambos `<MyComponent>` e `<my-component>`. Isto permite-nos utilizar o mesmo código de registo de componente de JavaScript independentemente da origem do modelo de marcação.
+Felizmente, a Vue suporta a resolução de marcadores de caixa-espetada para os componentes registados usando a CaixaPascal. Isto significa que um componente registado como `MyComponent` pode ser referenciado no modelo de marcação como `<MyComponent>` ou `<my-component>`. Isto permite-nos usar o mesmo código de registo de componente de JavaScript independentemente da origem do modelo de marcação.
