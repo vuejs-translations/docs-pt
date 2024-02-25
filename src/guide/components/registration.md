@@ -1,10 +1,10 @@
 # Registo de Componente {#component-registration}
 
-<VueSchoolLink href="https://vueschool.io/lessons/vue-3-global-vs-local-vue-components" title="Aula Gratuita Sobre Registo de Componente de Vue.js"/>
+> Esta página pressupõe conhecimento dos [Fundamentos dos Componentes](/guide/essentials/component-basics). Nós precisamos ler este artigo se os conceitos dos componentes forem novos para nós.
 
-> Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
+<VueSchoolLink href="https://vueschool.io/lessons/vue-3-global-vs-local-vue-components" title="Aula Grátis de Registo de Componente de Vue.js"/>
 
-Um componente de Vue precisa ser "registado" para que a Vue saiba onde localizar a sua implementação quando for encontrado num modelo de marcação. Existem duas maneiras de registar os componentes: global e local.
+Um componente da Vue precisa ser "registado" para que a Vue saiba onde localizar a sua implementação quando for encontrado num modelo de marcação. Existem duas maneiras de registar os componentes: global e local.
 
 ## Registo Global {#global-registration}
 
