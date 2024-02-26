@@ -2,7 +2,7 @@
 
 ## O Que é a Gestão de Estado? {#what-is-state-management}
 
-Tecnicamente, toda instância de componente de Vue já faz a "gestão" do seu próprio estado reativo. Considere o componente contador como um exemplo:
+Tecnicamente, cada instância de componente da Vue já "gere" o seu próprio estado reativo. Tomemos como exemplo um simples componente de contador:
 
 <div class="composition-api">
 
@@ -19,7 +19,7 @@ function increment() {
 }
 </script>
 
-<!-- visão ou apresentação -->
+<!-- visão -->
 <template>{{ count }}</template>
 ```
 
@@ -44,34 +44,34 @@ export default {
 }
 </script>
 
-<!-- visão ou apresentação -->
+<!-- visão -->
 <template>{{ count }}</template>
 ```
 
 </div>
 
-É uma unidade auto-contida com as seguintes partes:
+É uma unidade autónoma com as seguintes partes:
 
 - O **estado**, a fonte de verdade que orienta a nossa aplicação.
-- A **visão (ou apresentação)**, um mapeamento declarativo do **estado**;
-- As **ações**, as maneiras possíveis que o estado poderia mudar em reação as entradas do utilizador da **visão (ou apresentação)**.
+- A **visão**, um mapeamento declarativo do **estado**;
+- As **ações**, as possíveis maneiras de como o estado poderia mudar em reação às entradas do utilizador a partir da **visão**.
 
-Isto é uma representação simples do conceito do "fluxo de dados de uma via":
+Isto é uma representação simples do conceito de "fluxo de dados unidirecional":
 
 <p style="text-align: center">
   <img alt="diagrama do fluxo de estado" src="./images/state-flow.png" width="252px" style="margin: 40px auto">
 </p>
 
-No entanto, a simplicidade começa a falhar quando temos **vários componentes que partilham um estado comum**:
+No entanto, a simplicidade começa a ser quebrada quando temos **vários componentes que partilham um estado comum**:
 
-1. Várias visões que podem depender da mesma parte do estado.
-2. Ações de visões diferentes que podem precisar mudar a mesma parte do estado.
+1. Várias visões que podem depender do mesmo pedaço de estado.
+2. As ações de diferentes visões podem precisar de alterar o mesmo pedaço de estado.
 
-Para o primeiro caso, uma possível solução é "elevar" o estado partilhado até um componente ancestral comum, e depois passá-lo para baixo como propriedades. No entanto, isso se torna entediante rapidamente em árvores de componente com hierarquias profundas, levando a outro problema conhecido como [Perfuração de Propriedade](/guide/components/provide-inject#prop-drilling).
+Para o primeiro caso, uma possível solução alternativa é "elevar" o estado partilhado até um componente ancestral comum e depois passá-lo como propriedades. No entanto, isto torna-se rapidamente tedioso em árvores de componentes com hierarquias profundas, levando a outro problema conhecido como [Perfuração de Propriedade](/guide/components/provide-inject#prop-drilling).
 
-Para o segundo caso, frequentemente encontramos-nos recorrendo a soluções tais como alcançar instâncias pai/filho diretas através de referências, ou tentando alterar e sincronizar várias cópias do estado por meio de eventos emitidos. Ambos os padrões são frágeis e conduzem rapidamente a um código insustentável.
+Para o segundo caso, muitas vezes recorremos a soluções como procurar instâncias diretas de pais ou filhos por meio de referências de modelos de marcação, ou tentar alterar e sincronizar várias cópias do estado por meio de eventos emitidos. Ambos os padrões são frágeis e conduzem rapidamente a código impossível de manter.
 
-Uma solução mais simples e mais direita é extrair o estado compartilhado para fora dos componentes, e gerenciá-lo em um singleton global. Com isto, nossa árvore de componentes torna-se uma grande "visão", e qualquer componente pode acessar o estado ou disparar as ações, não importa onde eles estão na árvore!
+Uma solução mais simples e direta é extrair o estado partilhado dos componentes e geri-lo num objeto autónomo global. Com isto, a nossa árvore de componentes transforma-se numa grade "visão" e qualquer componente pode aceder ao estado ou desencadear ações, independentemente da sua posição na árvore!
 
 ## Gestão de Estado Simples com API de Reatividade {#simple-state-management-with-reactivity-api}
 
