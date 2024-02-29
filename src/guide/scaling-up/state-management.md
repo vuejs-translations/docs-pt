@@ -77,11 +77,11 @@ Uma solução mais simples e direta é extrair o estado partilhado dos component
 
 <div class="options-api">
 
-Na API de Opções, os dados reativos são declarados com o uso da opção `data()`. Internamente, o objeto retornado por `data()` se torna reativo através da função [`reactive()`](/api/reactivity-core#reactive), que também está disponível como uma API pública.
+Na API de Opções, os dados reativos são declarados usando a opção `data()`. Internamente, o objeto retornado por `data()` é tornado reativo através da função [`reactive()`](/api/reactivity-core#reactive), que também está disponível como uma API pública.
 
 </div>
 
-Quando existir uma parte do estado que deva ser compartilhada por várias instâncias, pode-se usar [`reactive()`](/api/reactivity-core#reactive) para criar um objeto reativo, e então importá-lo em vários componentes:
+Se tivermos um pedaço de estado que deve ser partilhado por várias instâncias, podemos usar [`reactive()`](/api/reactivity-core#reactive) para criar um objeto reativo, e depois importá-lo em vários componentes:
 
 ```js
 // store.js
@@ -151,9 +151,9 @@ export default {
 
 </div>
 
-Agora sempre que o objeto `store` é alterado, ambos `<ComponentA>` e `<ComponentB>` atualizarão suas visualizações automaticamente - agora nós temos uma fonte única de verdade.
+Agora, sempre que o objeto `store` for alterado, tanto `<ComponentA>` como `<ComponentB>` atualizarão suas visões automaticamente — temos agora uma única fonte de verdade.
 
-No entanto, isto também significa que qualquer componente importando `store` pode fazer mutações nela como quiser:
+No entanto, isto também significa que qualquer componente que importe `store` pode alterá-lo como quiser:
 
 ```vue-html{2}
 <template>
@@ -163,7 +163,7 @@ No entanto, isto também significa que qualquer componente importando `store` po
 </template>
 ```
 
-Enquanto isto funciona em casos simples, o estado global que pode ser alterado arbitrariamente por qualquer componente não será muito sustentável a longo prazo. Para garantir que a lógica de mutação de estado esteja centralizada como o próprio estado, é recomendado definir métodos na memória (store, em Inglês) com nomes que expressam a intenção das ações:
+Embora isto funcione em casos simples, o estado global que pode ser arbitrariamente alterado por qualquer componente não será muito sustentável a longo prazo. Para garantir que a lógica de alteração do estado está centralizada, tal como o próprio estado, recomenda-se a definição de métodos na memória com nomes que expressam a intenção das ações:
 
 ```js{6-8}
 // store.js
@@ -187,29 +187,29 @@ export const store = reactive({
 
 <div class="composition-api">
 
-[Experimente na Zona de Testes](https://play.vuejs.org/#eNrNkk1uwyAQha8yYpNEiUzXllPVrtRTeJNSqtLGgGBsVbK4ewdwnT9FWWSTFczwmPc+xMhqa4uhl6xklRdOWQQvsbfPrVadNQ7h1dCqpcYaPp3pYFHwQyteXVxKm0tpM0krnm3IgAqUnd3vUFIFUB1Z8bNOkzoVny+wDTuNcZ1gBI/GSQhzqlQX3/5Gng81pA1t33tEo+FF7JX42bYsT1BaONlRguWqZZMU4C261CWMk3EhTK8RQphm8Twse/BscoUsvdqDkTX3kP3nI6aZwcmdQDUcMPJPabX8TQphtCf0RLqd1csxuqQAJTxtYnEUGtIpAH4pn1Ou17FDScOKhT+QNAVM)
+[Experimentar na Zona de Testes](https://play.vuejs.org/#eNrNkk1uwyAQha8yYpNEiUzXllPVrtRTeJNSqtLGgGBsVbK4ewdwnT9FWWSTFczwmPc+xMhqa4uhl6xklRdOWQQvsbfPrVadNQ7h1dCqpcYaPp3pYFHwQyteXVxKm0tpM0krnm3IgAqUnd3vUFIFUB1Z8bNOkzoVny+wDTuNcZ1gBI/GSQhzqlQX3/5Gng81pA1t33tEo+FF7JX42bYsT1BaONlRguWqZZMU4C261CWMk3EhTK8RQphm8Twse/BscoUsvdqDkTX3kP3nI6aZwcmdQDUcMPJPabX8TQphtCf0RLqd1csxuqQAJTxtYnEUGtIpAH4pn1Ou17FDScOKhT+QNAVM)
 
 </div>
 <div class="options-api">
 
-[Experimente na Zona de Testes](https://play.vuejs.org/#eNrdU8FqhDAU/JVHLruyi+lZ3FIt9Cu82JilaTWR5CkF8d8bE5O1u1so9FYQzAyTvJnRTKTo+3QcOMlIbpgWPT5WUnS90gjPyr4ll1jAWasOdim9UMum3a20vJWWqxSgkvzTyRt+rocWYVpYFoQm8wRsJh+viHLBcyXtk9No2ALkXd/WyC0CyDfW6RVTOiancQM5ku+x7nUxgUGlOcwxn8Ppu7HJ7udqaqz3SYikOQ5aBgT+OA9slt9kasToFnb5OiAqCU+sFezjVBHvRUimeWdT7JOKrFKAl8VvYatdI6RMDRJhdlPtWdQf5mdQP+SHdtyX/IftlH9pJyS1vcQ2NK8ZivFSiL8BsQmmpMG1s1NU79frYA1k8OD+/I3pUA6+CeNdHg6hmoTMX9pPSnk=)
+[Experimentar na Zona de Testes](https://play.vuejs.org/#eNrdU8FqhDAU/JVHLruyi+lZ3FIt9Cu82JilaTWR5CkF8d8bE5O1u1so9FYQzAyTvJnRTKTo+3QcOMlIbpgWPT5WUnS90gjPyr4ll1jAWasOdim9UMum3a20vJWWqxSgkvzTyRt+rocWYVpYFoQm8wRsJh+viHLBcyXtk9No2ALkXd/WyC0CyDfW6RVTOiancQM5ku+x7nUxgUGlOcwxn8Ppu7HJ7udqaqz3SYikOQ5aBgT+OA9slt9kasToFnb5OiAqCU+sFezjVBHvRUimeWdT7JOKrFKAl8VvYatdI6RMDRJhdlPtWdQf5mdQP+SHdtyX/IftlH9pJyS1vcQ2NK8ZivFSiL8BsQmmpMG1s1NU79frYA1k8OD+/I3pUA6+CeNdHg6hmoTMX9pPSnk=)
 
 </div>
 
 :::tip DICA
-Observe que o manipulador de clique usa `store.increment()` com parênteses - isto é necessário para chamar o método com o contexto `this` apropriado já que não é um método do componente.
+Nota que o manipulador de clique usa `store.increment()` com parênteses — isto é necessário para chamar o método com o contexto de `this` apropriado, já que não é um método de componente.
 :::
 
-Apesar de estarmos usando aqui um único objeto reativo como memória, também pode-se compartilhar o estado reativo criado usando outras [APIs de Reatividade](/api/reactivity-core) como `ref()` ou `computed()`, ou mesmo retornar o estado global de um [Constituível](/guide/reusability/composables):
+Embora aqui estejamos usando um único objeto reativo como memória, também podemos partilhar o estado reativo criado usando outras [APIs de Reatividade](/api/reactivity-core), como `ref()` ou `computed()`, ou mesmo retornar o estado global duma [Função de Composição](/guide/reusability/composables):
 
 ```js
 import { ref } from 'vue'
 
-// estado global, criado no escopo do módulo
+// estado global, criado no âmbito do módulo
 const globalCount = ref(1)
 
 export function useCount() {
-  // estado local, criado por cada componente
+  // estado local, criado por componente
   const localCount = ref(1)
 
   return {
@@ -219,7 +219,7 @@ export function useCount() {
 }
 ```
 
-O fato do sistema de reatividade da Vue estar separado do modelo do componente torna-o extremamente flexível.
+O fato de o sistema de reatividade da Vue estar dissociado do modelo de componente torna-o extremamente flexível.
 
 ## Considerações de SSR {#ssr-considerations}
 
