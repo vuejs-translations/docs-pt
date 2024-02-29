@@ -221,9 +221,9 @@ export function useCount() {
 
 O fato de o sistema de reatividade da Vue estar dissociado do modelo de componente torna-o extremamente flexível.
 
-## Considerações de SSR {#ssr-considerations}
+## Considerações da Interpretação do Lado do Servidor {#ssr-considerations}
 
-Se estiveres construindo uma aplicação que influencia a [Interpretação no Lado do Servidor (SSR, sigla em Inglês)](./ssr), o padrão acima pode levar a problemas devido a memória ser uma monotónica (singleton, em Inglês) partilhada através de várias requisições. Isto é discutido em [mais detalhes](./ssr#cross-request-state-pollution) no guia da SSR.
+Se estivermos construindo uma aplicação que recorre à [Interpretação do Lado do Servidor (SSR)](./ssr), o padrão acima pode dar origem a problemas pelo fato da memória ser um simples elemento partilhado entre várias requisições. Esta questão é abordada [mais detalhadamente](./ssr#cross-request-state-pollution) no guia da Interpretação do Lado do Servidor.
 
 ## Pinia {#pinia}
 
