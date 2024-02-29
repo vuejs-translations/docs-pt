@@ -227,17 +227,17 @@ Se estivermos construindo uma aplicação que recorre à [Interpretação do Lad
 
 ## Pinia {#pinia}
 
-Enquanto a nossa simples solução de gerenciamento de estado será suficiente para cenários simples, existem muitas outras coisas para considerar em aplicações de larga-escala em produção.
+Embora a nossa solução de gestão de estado manual satisfaça cenários simples, existe muitos outros aspetos a considerar em aplicações de produção em grande escala:
 
-- Convenções mais fortes para colaboração do time
-- Integração com as Ferramentas de Programação de Vue, incluindo a linha do tempo, inspeção dentro do componente, e a depuração capaz de viajar no tempo
+- Convenções mais fortes para colaboração em equipa
+- Integração com as Ferramentas de Programação da Vue, incluindo linha de tempo, inspeção no componente e depuração de viagens no tempo
 - Substituição de Módulo Instantânea
-- Suporte para Interpretação no Lado do Servidor
+- Suporte à Interpretação do Lado do Servidor
 
-[Pinia](https://pinia.vuejs.org) é uma biblioteca de gestão de estado que implementa tudo que está acima. Ela é mantida pela equipa principal da Vue, e funciona com ambas Vue 2 e Vue 3.
+[Pinia](https://pinia-docs-pt.netlify.app/) é uma biblioteca de gestão de estado que implementa todos itens acima. É mantida pela equipa principal da Vue, e funciona tanto com a Vue 2 como com a Vue 3.
 
-Os usuários existentes podem estar familiarizados com [Vuex](https://vuex.vuejs.org/), a antiga biblioteca oficial de gerenciamento de estado para Vue. Com a Pinia servindo o mesmo propósito no ecossistema, Vuex está agora em modo de manutenção. Ainda funciona, mas não receberá novas funcionalidades. É recomendado usar a Pinia para as aplicações novas.
+Os utilizadores existentes podem estar familiarizados com a [Vuex](https://vuex.vuejs.org/), a anterior biblioteca oficial de gestão de estados da Vue. Com a Pinia a desempenhar o mesmo papel no ecossistema, a Vuex está agora em modo de manutenção. Ela ainda funciona, mas não receberá mais novos recursos. Recomenda-se o uso da Pinia para as novas aplicações.
 
-A Pinia começou como uma exploração de como seria a próxima iteração da Vuex, incorporando muitas ideias das discussões do time principal sobre a Vuex 5. Eventualmente, percebemos que a Pinia já implementa a maior parte daquilo que nós queríamos na Vuex 5, e então decidimos torná-la a nova recomendação.
+A Pinia começou como uma exploração do que poderia ser a próxima iteração da Vuex, incorporando muitas ideias das discussões da equipa principal para a Vuex 5. Eventualmente, percebemos que a Pinia já implementa a maioria do que queríamos na Vuex 5, e decidimos fazer dela a nova recomendação.
 
-Comparada a Vuex, a Pinia fornece uma API mais simples com menos cerimônia, oferece APIs no estilo da API de Composição, e mais importante, possui suporte sólido a inferência de tipo quando usada com TypeScript.
+Em comparação com a Vuex, a Pinia fornece uma API mais simples com menos cerimónias, oferece APIs de estilo da API de Composição e, mais importante, tem um suporte sólido de inferência de tipos quando usada com a TypeScript. 
