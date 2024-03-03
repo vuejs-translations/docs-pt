@@ -10,7 +10,7 @@ A funcionalidade principal da Vue é a **interpretação declarativa**: usando u
 
 <div class="composition-api">
 
-Os estados que podem acionar atualizações quando mudados são considerados **reativos**. Nós podemos declarar o estado reativo usando a API `reactive()` da Vue. Os objetos criados a partir da `reactive()` são [Delegações](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) que funcionam como os objetos normais:
+O estado que pode acionar atualizações quando mudado é considerado **reativo**. Nós podemos declarar o estado reativo usando a API `reactive()` da Vue. Os objetos criados a partir da `reactive()` são [Delegações](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) que funcionam como os objetos normais:
 
 ```js
 import { reactive } from 'vue'
