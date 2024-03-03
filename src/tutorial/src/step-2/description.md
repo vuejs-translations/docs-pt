@@ -6,7 +6,7 @@ O que vemos no editor é um componente de ficheiro único de Vue. Um componente 
 
 </div>
 
-A funcionalidade principal da Vue é a **interpretação declarativa**: usando uma sintaxe de modelo de marcação que estende o HTML, podemos descrever como o HTML deve parecer-se baseado no estado de JavaScript. Quando o estado mudar, o HTML atualiza-se automaticamente.
+A funcionalidade principal da Vue é a **interpretação declarativa**: usando uma sintaxe de modelo de marcação que estende o HTML, podemos descrever como o HTML deveria parecer-se baseado no estado de JavaScript. Quando o estado mudar, o HTML atualiza-se automaticamente.
 
 <div class="composition-api">
 
