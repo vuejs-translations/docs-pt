@@ -93,7 +93,7 @@ function resolveList(data: SponsorData) {
       href="/sponsor/"
       class="sponsor-item action"
       @click="track(true)"
-      >Torna-te um Patrocinador</a
+      >Patrocinar</a
     >
   </div>
 </template>
