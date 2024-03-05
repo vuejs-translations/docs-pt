@@ -18,7 +18,9 @@ Chamada quando a instância for inicializada.
 
 - **Detalhes**
 
-  Chamada imediatamente quando a instância for inicializada, depois da resolução das propriedades, antes de processar outras opções tais como `data()` ou `computed`.
+  Chamada imediatamente quando a instância for inicializada e as propriedades forem resolvidas.
+
+  Depois as propriedades serão definidas como propriedades reativas e o estado tais como `data()` ou `computed` serão configurados.
 
   Nota que o gatilho `setup()` da API de Composição é chamado antes de quaisquer gatilhos da API de Opções, até mesmo antes de `beforeCreate()`.
 
