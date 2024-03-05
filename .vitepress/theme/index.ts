@@ -9,7 +9,7 @@ import {
 } from './components/preferences'
 import SponsorsAside from './components/SponsorsAside.vue'
 import VueSchoolLink from './components/VueSchoolLink.vue'
-import Banner from './components/Banner.vue'
+// import Banner from './components/Banner.vue'
 // import VueMasteryBanner from './components/VueMasteryBanner.vue'
 // import TextAd from './components/TextAd.vue'
 
@@ -17,8 +17,7 @@ export default Object.assign({}, VPTheme, {
   Layout: () => {
     // @ts-ignore
     return h(VPTheme.Layout, null, {
-      banner: () => h(Banner),
-      // banner: () => h(VueMasteryBanner),
+      // banner: () => h(Banner),
       'sidebar-top': () => h(PreferenceSwitch),
       'aside-mid': () => h(SponsorsAside)
     })
