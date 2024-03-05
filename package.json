@@ -10,7 +10,7 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "@vue/repl": "^3.1.0",
+    "@vue/repl": "^3.0.0",
     "@vue/theme": "^2.2.5",
     "dynamics.js": "^1.1.5",
     "gsap": "^3.12.4",
@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@types/markdown-it": "^12.2.3",
-    "@types/node": "^20.10.5",
-    "terser": "^5.26.0"
+    "@types/node": "^20.10.1",
+    "terser": "^5.14.2"
   },
   "pnpm": {
     "overrides": {
