@@ -255,6 +255,23 @@ function inc() {
 }
 ```
 
+:::warning AVISO
+Se tivermos um valor `default` para a propriedade de `defineModel` e não fornecermos nenhum valor a esta propriedade do componente pai, isso pode causar uma dessincronização entre os componentes pai e filho. No exemplo abaixo, a `myRef` do componente pai é indefinida, mas o `model` do componente filho é `1`:
+
+```js
+// componente filho
+const model = defineModel({ default: 1 })
+
+// componente pai
+const myRef = ref()
+```
+
+```html
+<child v-model="myRef"></child>
+```
+
+:::
+
 ### Modificadores e Transformadores {#modifiers-and-transformers}
 
 Para acessar os modificadores usados com a diretiva `v-model`, podemos desestruturar o valor de retorno da `defineModel()` como este:
