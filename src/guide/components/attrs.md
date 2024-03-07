@@ -8,37 +8,39 @@ outline: deep
 
 ## Herança de Atributo {#attribute-inheritance}
 
-Um "atributo que cai" é um atributo ou ouvinte de evento `v-on` que é passado para um componente, mas não é explicitamente declarado nas [propriedades](./props) ou [emissões](./events#declarando-eventos-emitidos) do componente que está recebendo. Exemplos comuns disto incluem atributos de `class`, `style` e `id`.
+Um "atributo de passagem" é um atributo ou ouvinte de evento de `v-on` que é passado a um componente, mas não é explicitamente declarado nas [propriedades](./props) ou [emissões](./events#declaring-emitted-events) do componente recetor. Os exemplos comuns disto incluem os atributos `class`, `style`, e `id`.
 
-Quando um componente interpreta um único elemento de raiz, os atributos que caiem serão automaticamente adicionados aos atributos do elemento de raiz. Por exemplo, dado um componente `<MyButton>` com o seguinte modelo de marcação:
+Quando um componente desenha um único elemento de raiz, os atributos de passagem serão automaticamente adicionados aos atributos do elemento de raiz. Por exemplo, dado um componente `<MyButton>` com o seguinte modelo de marcação:
 
 ```vue-html
 <!-- modelo de marcação do <MyButton> -->
 <button>click me</button>
 ```
 
-E um componente pai utilizando este componente com:
+E um pai que utiliza este componente com:
 
 ```vue-html
 <MyButton class="large" />
 ```
 
-O DOM interpretado final seria:
+O modelo de objeto do documento (DOM) resultante seria:
 
 ```html
 <button class="large">click me</button>
 ```
 
-### Combinação de `class` e `style` {#class-and-style-merging}
+Neste exemplo, `<MyButton>` não declarou `class` como uma propriedade aceita. Portanto, `class` é tratado como um atributo de passagem e automaticamente adicionado ao elemento de raiz do `<MyButton>`.
 
-Se o elemento de raiz do componente filho já tiver atributos `class` ou `style` existente, ele será fundido com os valores de `class` e `style` que são herdados do componente pai. Suponha que mudamos o modelo de marcação do `<MyButton>` no exemplo anterior para:
+### Fusão de `class` e `style` {#class-and-style-merging}
+
+Se o elemento de raiz do componente filho já tiver atributos `class` ou `style` existentes, este será fundido com os valores de `class` e `style` que serão herdados do pai. Suponhamos que alteramos o modelo de marcação do `<MyButton>` no exemplo anterior para:
 
 ```vue-html
 <!-- modelo de marcação do <MyButton> -->
 <button class="btn">click me</button>
 ```
 
-Então o DOM interpretado final agora tornar-se-ia:
+Então, o modelo de objeto do documento (DOM) resultante tornar-se-ia agora:
 
 ```html
 <button class="btn large">click me</button>
