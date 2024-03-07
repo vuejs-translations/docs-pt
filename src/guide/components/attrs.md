@@ -58,20 +58,20 @@ O ouvinte de `click` será adicionado ao elemento de raiz do `<MyButton>`, ou se
 
 ### Herança de Componente Encaixado {#nested-component-inheritance}
 
-Se um componente interpretar um outro componente como seu nó de raiz, por exemplo, refatoramos `<MyButton>` para interpretar um `<BaseButton>` como seu raiz:
+Se um componente desenhar outro componente como seu nó de raiz, por exemplo, nós refizemos `<MyButton>` para desenhar um `<BaseButton>` como sua raiz:
 
 ```vue-html
-<!-- modelo de marcação do <MyButton/> que simplesmente interpreta um outro componente -->
+<!-- modelo de marcação do <MyButton/> que simplesmente desenha um outro componente -->
 <BaseButton />
 ```
 
-Então os atributos que caiem recebidos pelo `<MyButton>` será automaticamente passados para `<BaseButton>`.
+Então os atributos de passagem recebidos por `<MyButton>` serão automaticamente encaminhados ao `<BaseButton>`.
 
 Nota que:
 
-1. Os atributos passados não incluem quaisquer atributos que são declarados como propriedades, ou ouvintes de `v-on` dos eventos declarados pelo `<MyButton>` - em outras palavras, as propriedades e ouvintes declarados têm sido "consumidas" pelo `<MyButton>`.
+1. Os atributos encaminhados não incluem quaisquer atributos que são declarados como propriedades, ou ouvintes de `v-on` de eventos declarados por `<MyButton>` - em outras palavras, as propriedades e os ouvintes declarados foram "consumidos" por `<MyButton>`.
 
-2. Os atributos passados podem ser aceitados como propriedades pelo `<BaseButton>`, se declarados por ele.
+2. Os atributos encaminhados podem ser aceites como propriedades por `<BaseButton>`, se declarados por este.
 
 ## Desativando a Herança de Atributo {#disabling-attribute-inheritance}
 
