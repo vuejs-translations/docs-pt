@@ -46,15 +46,15 @@ Então, o modelo de objeto do documento (DOM) resultante tornar-se-ia agora:
 <button class="btn large">click me</button>
 ```
 
-### Herança do Ouvinte `v-on` {#v-on-listener-inheritance}
+### Herança de Ouvinte de `v-on` {#v-on-listener-inheritance}
 
-A mesmo regra aplica-se aos ouvintes de evento `v-on`:
+A mesma regra se aplica aos ouvintes de eventos de `v-on`:
 
 ```vue-html
 <MyButton @click="onClick" />
 ```
 
-O ouvinte de `click` será adicionado ao elemento de raiz do `<MyButton>`, por exemplo, o elemento `<button>` nativo. Quando o `<button>` nativo for clicado, acionará o método `onClick` do componente pai. Se o `<button>` nativo já tiver um ouvinte de `click` vinculado com `v-on`, então ambos ouvintes acionarão.
+O ouvinte de `click` será adicionado ao elemento de raiz do `<MyButton>`, ou seja, o elemento nativo `<button>`. Quando o `<button>` nativo for clicado, acionará o método `onClick` do componente pai. Se o `<button>` nativo já tiver um ouvinte de `click` vinculado com `v-on`, então ambos os ouvintes serão acionados.
 
 ### Herança de Componente Encaixado {#nested-component-inheritance}
 
