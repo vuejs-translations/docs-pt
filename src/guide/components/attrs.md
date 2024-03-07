@@ -10,7 +10,7 @@ outline: deep
 
 Um "atributo de passagem" é um atributo ou ouvinte de evento de `v-on` que é passado a um componente, mas não é explicitamente declarado nas [propriedades](./props) ou [emissões](./events#declaring-emitted-events) do componente recetor. Os exemplos comuns disto incluem os atributos `class`, `style`, e `id`.
 
-Quando um componente desenha um único elemento de raiz, os atributos de passagem serão automaticamente adicionados aos atributos do elemento de raiz. Por exemplo, dado um componente `<MyButton>` com o seguinte modelo de marcação:
+Quando um componente desenhar um único elemento de raiz, os atributos de passagem serão automaticamente adicionados aos atributos do elemento de raiz. Por exemplo, dado um componente `<MyButton>` com o seguinte modelo de marcação:
 
 ```vue-html
 <!-- modelo de marcação do <MyButton> -->
