@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# Atributos que Caiem {#fallthrough-attributes}
+# Atributos de Passagem {#fallthrough-attributes}
 
-> Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
+> Esta página parte do princípio de que já lemos a secção [Fundamentos dos Componentes](/guide/essentials/component-basics). Nós precisamos de a ler primeiro se formos novos aos componentes.
 
 ## Herança de Atributo {#attribute-inheritance}
 
