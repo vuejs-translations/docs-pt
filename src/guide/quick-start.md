@@ -10,7 +10,7 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 ## Experimentar a Vue Online {#try-vue-online}
 
-- Para termos rapidamente um gosto da Vue, podemos experimentá-la diretamente na nossa [Zona de Testes (ou Zona de Experimentos)](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
+- Para termos rapidamente um gosto da Vue, podemos experimentá-la diretamente na nossa [Zona de Testes](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
 
 - Se preferirmos uma configuração de HTML simples sem quaisquer etapas de construção podemos usar esta [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/) como nosso ponto de partida.
 
@@ -25,7 +25,7 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 :::
 
-Nesta seção introduziremos como estruturar uma [Aplicação de Página Única](/guide/extras/ways-of-using-vue#single-page-application-spa) de Vue na nossa máquina local. O projeto criado usará uma configuração de construção baseada na [Vite](https://pt.vitejs.dev), e nos permitirá usar os [Componentes de Ficheiro Único](/guide/scaling-up/sfc) da Vue.
+Nesta secção introduziremos como estruturar uma [Aplicação de Página Única](/guide/extras/ways-of-using-vue#single-page-application-spa) de Vue na nossa máquina local. O projeto criado usará uma configuração de construção baseada na [Vite](https://pt.vitejs.dev), e nos permitirá usar os [Componentes de Ficheiro Único](/guide/scaling-up/sfc) da Vue.
 
 Temos que certificar-nos de que temos uma versão atualizada da [Node.js](https://nodejs.org) instalada e o nosso diretório de trabalho atual é aquele onde tencionamos criar um projeto. Executamos o seguinte comando na nossa linha de comando (sem o sinal `$`):
 
@@ -118,7 +118,7 @@ Se estivermos inseguros sobre uma opção, por agora podemos simplesmente escolh
 
 Nós devemos ter agora o nosso primeiro projeto de Vue em execução! Nota que os componentes de exemplo no projeto gerado estão escritos usando a [API de Composição](/guide/introduction#composition-api) e o `<script setup>`, ao invés da [API de Opções](/guide/introduction#options-api). Eis algumas dicas adicionais:
 
-- A configuração de ambiente de desenvolvimento integrado recomendada é o editor de texto [Visual Studio Code](https://code.visualstudio.com/) mais a [extensão Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Se usarmos outros editores, temos que consultar a [seção do suporte de ambiente de desenvolvimento integrado](/guide/scaling-up/tooling#ide-support).
+- A configuração de ambiente de desenvolvimento integrado recomendada é o editor de texto [Visual Studio Code](https://code.visualstudio.com/) mais a [Vue - extensão oficial](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Se usarmos outros editores, temos que consultar a [secção do suporte de ambiente de desenvolvimento integrado](/guide/scaling-up/tooling#ide-support).
 - Mais detalhes sobre o ferramental, incluindo a integração com abstrações de backend, são discutidos no [Guia de Ferramental](/guide/scaling-up/tooling).
 - Para sabermos mais sobre a ferramenta de construção subjacente Vite, temos que consultar a [documentação da Vite](https://pt.vitejs.dev).
 - Se escolhermos usar a TypeScript, temos que consultar o [Guia de Uso de TypeScript](typescript/overview).
