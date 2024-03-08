@@ -23,7 +23,7 @@ O nosso [Código de Conduta](/about/coc) é um guia para facilitar enriquecer-no
 
 ### Obter Suporte {#get-support}
 
-- [Conversa da Discord](https://chat.vuejs.org/): Um lugar para os programadores de Vue encontrarem-se e conversar em tempo real.
+- [Conversa da Discord](https://discord.com/invite/vue): Um lugar para os programadores de Vue encontrarem-se e conversar em tempo real.
 - [Fórum](https://forum.vuejs.org/): O melhor lugar para fazer perguntas e obter respostas sobre a Vue e o seu ecossistema.
 - [Comunidade da DEV](https://dev.to/t/vue): Partilhe e discuta tópicos relacionados a Vue na Dev.to.
 - [Encontros](https://events.vuejs.org/meetups): Queres encontrar entusiastas de Vue locais como tu? Tens interesse em tornares-te líder comunitário? Nós temos a ajuda e suporte que precisas exatamente aqui!
