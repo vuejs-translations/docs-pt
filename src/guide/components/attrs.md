@@ -128,13 +128,13 @@ Nós queremos que todos os atributos de passagem como `class` e ouvintes de `v-o
 
 ## Herança de Atributo sobre Vários Nós de Raiz {#attribute-inheritance-on-multiple-root-nodes}
 
-Ao contrário dos componentes com um único nó de raiz, os componente com vários nós de raiz não tem comportamento de cair de atributo. Se `$attrs` não for vinculado explicitamente, um aviso de tempo de execução será emitido.
+Ao contrário dos componentes com um único nó de raiz, os componentes com vários nós de raiz não têm um comportamento automático de passagem de atributo. Se `$attrs` não estiver vinculado explicitamente, um aviso de execução será emitido:
 
 ```vue-html
 <CustomLayout id="custom-layout" @click="changeValue" />
 ```
 
-Se `<CustomLayout>` tiver o seguinte modelo de marcação de várias raízes, existirá um aviso porque a Vue não pode estar certa sobre onde aplicar os atributos que caiem:
+Se `<CustomLayout>` tiver o seguinte modelo de marcação com várias raízes, haverá um aviso porque a Vue não pode ter a certeza de onde aplicar os atributos de passagem:
 
 ```vue-html
 <header>...</header>
