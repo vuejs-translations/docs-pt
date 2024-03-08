@@ -7,6 +7,5 @@ Existem muitos boletins informativos ou blogues dedicados à Vue da comunidade q
 - [Jakub Andrzejewski](https://dev.to/jacobandrewsky)
 - [Weekly Vue News](https://weekly-vue.news/)
 - [Vue.js Developers Newsletter](https://vuejsdevelopers.com/newsletter/)
-- [VueDose](https://vuedose.tips/articles#newsletter)
 
 Se soubermos dum bom boletim informativo que ainda não esteja incluído, podemos enviar um pedido de atualização usando a ligação abaixo!
