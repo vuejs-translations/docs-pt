@@ -73,46 +73,42 @@ Nota que:
 
 2. Os atributos encaminhados podem ser aceites como propriedades por `<BaseButton>`, se declarados por este.
 
-## Desativando a Herança de Atributo {#disabling-attribute-inheritance}
+## Desativação da Herança de Atributo {#disabling-attribute-inheritance}
 
-Se **não** quiseres que um componente herde atributos automaticamente, podes definir `inheritAttrs: false` nas opções do componente.
+Se **não** quisermos que um componente herde automaticamente os atributos, podemos definir `inheritAttrs: false` nas opções do componente.
 
 <div class="composition-api">
 
-Se estiveres utilizando `<script setup>`, precisarás declarar esta opção utilizando um bloco `<script>` normal separado:
+Desde a versão 3.3 também podemos usar [`defineOptions`](/api/sfc-script-setup#defineoptions) diretamente em `<script setup>`:
 
 ```vue
-<script>
-// utilize <script> normal para declarar as opções
-export default {
-  inheritAttrs: false
-}
-</script>
-
 <script setup>
-// ...lógica de "setup"
+defineOptions({
+  inheritAttrs: false
+})
+// ...lógica de configuração
 </script>
 ```
 
 </div>
 
-O cenário comum para desativação da herança de atributo é quando os atributos precisam ser aplicados para outros elementos para além do nó de raiz. Ao definir a opção `inheritAttrs` para `false`, podes conseguir o controlo total sobre onde os atributos que caiem devem ser aplicados.
+O cenário comum para desativar a herança de atributo é quando os atributos precisam ser aplicados a outros elementos além do nó de raiz. Ao definir a opção `inheritAttrs` como `false`, podemos ter total controlo sobre onde os atributos de passagem devem ser aplicados.
 
-Estes atributos que caiem podem ser acessados diretamente nas expressões de modelo de marcação como `$attrs`:
+Estes atributos de passagem podem ser acessados diretamente em expressões de modelo de marcação como `$attrs`:
 
 ```vue-html
 <span>Fallthrough attributes: {{ $attrs }}</span>
 ```
 
-O objeto `$attrs` inclui (por exemplo, `class`, `style`, ouvintes de `v-on`, etc.).
+O objeto `$attrs` inclui todos os atributos que não são declarados pelas opções `props` ou `emits` do componente (por exemplo, `class`, `style`, ouvintes de `v-on`, etc.).
 
 Algumas notas:
 
-- Ao contrário das propriedades, os atributos que caiem preservam sua caixa original na JavaScript, assim um atributo como `foo-bar` precisa ser acessado como `$attrs['foo-bar']`.
+- Ao contrário das propriedades, os atributos de passagem preservam a sua caixa de texto original na JavaScript, por isto um atributo como `foo-bar` precisa de ser acessado como `$attrs['foo-bar']`.
 
-- Um ouvinte de evento de `v-on` como `@click` será exposto sobre o objeto como uma função sob `$attrs.onClick`.
+- Um ouvinte de evento de `v-on` como `@click` será exposto sobre o objeto como uma função sob a `$attrs.onClick`.
 
-Utilizando o nosso exemplo de componente `<MyButton>` da [secção anterior](#herança-de-atributo) - algumas vezes precisamos envolver o atual elemento `<button>` com um `<div>` adicional para propósitos de estilização:
+Usando o nosso exemplo do componente `<MyButton>` da [secção anterior](#attribute-inheritance) — por vezes podemos precisar de envolver o verdadeiro elemento `<button>` com um `<div>` adicional para fins de estilização:
 
 ```vue-html
 <div class="btn-wrapper">
@@ -120,7 +116,7 @@ Utilizando o nosso exemplo de componente `<MyButton>` da [secção anterior](#he
 </div>
 ```
 
-Nós queremos que todos atributos que caiem como `class` e ouvintes de `v-on` sejam aplicados ao `<button>` interno, e não ao `<div>`. Nós podemos alcançar isto com o `inheritAttrs: false` e `v-bind="$attrs"`:
+Nós queremos que todos os atributos de passagem como `class` e ouvintes de `v-on` que sejam aplicados ao `<button>` interno, não ao `<div>` externo. Nós podemos alcançar isto com `inheritAttrs: false` e `v-bind="$attrs"`:
 
 ```vue-html{2}
 <div class="btn-wrapper">
@@ -128,7 +124,7 @@ Nós queremos que todos atributos que caiem como `class` e ouvintes de `v-on` se
 </div>
 ```
 
-Lembra-te de que a [`v-bind` sem um argumento](/guide/essentials/template-syntax#dynamically-binding-multiple-attributes) vincula todas as propriedades de um objeto como atributos do elemento alvo.
+É preciso lembrar que [`v-bind` sem um argumento](/guide/essentials/template-syntax#dynamically-binding-multiple-attributes) vincula todas as propriedades dum objeto como atributos ao elemento de destino.
 
 ## Herança de Atributo sobre Vários Nós de Raiz {#attribute-inheritance-on-multiple-root-nodes}
 

@@ -22,7 +22,7 @@ const nav: ThemeConfig['nav'] = [
         link: 'https://v2.vuejs.org'
       },
       {
-        text: 'Guia de Migração da Vue 2',
+        text: 'Guia de Migração (Vue 2)',
         link: 'https://v3-migration.vuejs.org/pt/'
       }
     ]
@@ -92,7 +92,7 @@ const nav: ThemeConfig['nav'] = [
           { text: 'Blogue', link: 'https://blog.vuejs.org/' },
           { text: 'Twitter', link: 'https://twitter.com/vuejs' },
           { text: 'Eventos', link: 'https://events.vuejs.org/' },
-          { text: 'Boletins Informativos', link: '/ecosystem/newsletters' }
+          { text: 'Periódicos', link: '/ecosystem/newsletters' }
         ]
       }
     ]
