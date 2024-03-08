@@ -150,11 +150,11 @@ O aviso será suprimido se `$attrs` for explicitamente vinculado:
 <footer>...</footer>
 ```
 
-## Acessando Atributos Que Caiem na JavaScript {#accessing-fallthrough-attributes-in-javascript}
+## Acesso aos Atributos de Passagem na JavaScript {#accessing-fallthrough-attributes-in-javascript}
 
 <div class="composition-api">
 
-Se necessário, podemos acessar os atributos que caiem de um componente no `<script setup>` utilizando a API `useAttrs()`:
+Se necessário, podemos acessar os atributos de passagem dum componente no `<script setup>` usando a interface de programação `useAttrs()`:
 
 ```vue
 <script setup>
@@ -164,24 +164,25 @@ const attrs = useAttrs()
 </script>
 ```
 
-Se não estiveres utilizando o `<script setup>`, `attrs` será exposta como uma propriedade do contexto de `setup()`:
+Se não estivermos usando o `<script setup>`, `attrs` será exposta como uma propriedade de contexto de `setup()`:
 
 ```js
 export default {
   setup(props, ctx) {
-    // os atributos que caiem são expostos como ctx.attrs
+    // os atributos de passagem são
+    // expostos como `ctx.attrs`
     console.log(ctx.attrs)
   }
 }
 ```
 
-Nota que apesar do objeto `attrs` sempre refletir os atributos que caiem mais recentes, ele não é reativo (por razões de desempenho). Tu não podes utilizar os observadores para observar as suas mudanças. Se precisares de reatividade, utilize uma propriedade. Alternativamente, podes utilizar `onUpdated()` para realizar os efeitos colaterais com `attrs` mais recente sobre cada atualização.
+Nota que, embora o objeto `attrs` reflita sempre os últimos atributos de passagem, não é reativo (por razões de desempenho). Nós podemos usar observadores para observar as suas alterações. Se precisamos de reatividade, usamos uma propriedade. Alternativamente, podemos usar `onUpdated()` para executar efeitos colaterais com as `attrs` mais recentes em cada atualização.
 
 </div>
 
 <div class="options-api">
 
-Se necessário, podemos acessar os atributos que caiem de um componente através da propriedade de instância `$attrs`:
+Se necessário, podemos acessar os atributos de passagem dum componente através da propriedade de instância `$attrs`:
 
 ```js
 export default {
