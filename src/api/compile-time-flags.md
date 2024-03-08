@@ -26,7 +26,7 @@ Consultar os [Guias de Configuração](#configuration-guides) sobre como configu
 
   Ativa ou desativa o suporta das ferramentas de programação nas construções de produção. Isto resultará em mais código incluído no pacote, então é recomendado ativar isto apenas para fins de depuração.
 
-## `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` <sup class="vt-badge" data-text="3.4+" /> {#VUE_PROD_HYDRATATION_MISMATCH_DETAILS}
+## `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` <sup class="vt-badge" data-text="3.4+" /> {#VUE_PROD_HYDRATION_MISMATCH_DETAILS}
 
 - **Predefinida como:** `false`
 
