@@ -1,6 +1,6 @@
 # Boletins Informativos da Comunidade {#community-newsletters}
 
-Existem muitos excelentes boletins informations ou blogues dedicados a produção de conteúdo sobre a Vue na comunidade trazendo-te as últimas novidades e acontecimentos dentro do ecossistema da Vue. Na lista abaixo está organizado os boletins informativos de produtores de conteúdo com quais nos cruzamos:
+Existem muitos boletins informativos ou blogues dedicados à Vue da comunidade que nos trazem as últimas notícias e acontecimentos no ecossistema da Vue. Eis uma lista não exaustiva dos que estão ativos que encontrámos:
 
 - [Vue.js Feed](https://vuejsfeed.com/)
 - [Michael Thiessen](https://michaelnthiessen.com/newsletter)
@@ -9,4 +9,4 @@ Existem muitos excelentes boletins informations ou blogues dedicados a produçã
 - [Vue.js Developers Newsletter](https://vuejsdevelopers.com/newsletter/)
 - [VueDose](https://vuedose.tips/articles#newsletter)
 
-Se souberes dum excelente boletim informativo que ainda não está listado acima, submeta um pedido de atualização de repositório usando a ligação abaixo!
+Se soubermos dum bom boletim informativo que ainda não esteja incluído, podemos enviar um pedido de atualização usando a ligação abaixo!
