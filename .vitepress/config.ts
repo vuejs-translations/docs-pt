@@ -92,7 +92,7 @@ const nav: ThemeConfig['nav'] = [
           { text: 'Blogue', link: 'https://blog.vuejs.org/' },
           { text: 'Twitter', link: 'https://twitter.com/vuejs' },
           { text: 'Eventos', link: 'https://events.vuejs.org/' },
-          { text: 'Periódicos', link: '/ecosystem/newsletters' }
+          { text: 'Boletins Informativos', link: '/ecosystem/newsletters' }
         ]
       }
     ]
@@ -689,7 +689,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/' },
       { icon: 'twitter', link: 'https://twitter.com/vuejs' },
-      { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
+      { icon: 'discord', link: 'https://discord.com/invite/vue' }
     ],
 
     editLink: {
