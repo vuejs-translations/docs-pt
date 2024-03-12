@@ -45,48 +45,6 @@
         "description": "Equipamento de UI de Vue.js Prémio",
         "url": "https://www.creative-tim.com/product/vue-now-ui-kit-pro?affiliate_id=116187",
         "image": "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-now-ui-kit-pro/vue-now-ui-kit-pro.jpg"
-      },
-      {
-        "name": "Vue Now UI Dashboard Pro",
-        "price": 59,
-        "description": "Modelo de Marcação de Administração de Vue.js Prémio",
-        "url": "https://www.creative-tim.com/product/vue-now-ui-dashboard-pro?affiliate_id=116187",
-        "image": "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-now-ui-dashboard-pro/vue-now-ui-dashboard-pro.jpg"
-      },
-      {
-        "name": "Vue Now UI Kit",
-        "price": 0,
-        "description": "Equipamento de UI de Vue.js Gratuito",
-        "url": "https://www.creative-tim.com/product/vue-now-ui-kit?affiliate_id=116187",
-        "image": "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-now-ui-kit/vue-now-ui-kit.jpg"
-      },
-      {
-        "name": "Vue Light Bootstrap Dashboard Pro",
-        "price": 49,
-        "description": "Modelo de Marcação de Administração de Vue.js Prémio",
-        "url": "https://www.creative-tim.com/product/vue-light-bootstrap-dashboard-pro?affiliate_id=116187",
-        "image": "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-light-bootstrap-dashboard-pro/vue-light-bootstrap-dashboard-pro.jpg"
-      },
-      {
-        "name": "Vue Material Dashboard Pro",
-        "price": 59,
-        "description": "Modelo de Marcação de Administração de Vue.js Prémio",
-        "url": "https://www.creative-tim.com/product/vue-material-dashboard-pro?affiliate_id=116187",
-        "image": "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-material-dashboard-pro/vue-material-dashboard-pro.jpg"
-      },
-      {
-        "name": "Vue Material Kit Pro",
-        "price": 89,
-        "description": "Equipamento de UI de Vue.js Prémio",
-        "url": "https://www.creative-tim.com/product/vue-material-kit-pro?affiliate_id=116187",
-        "image": "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-material-kit-pro/vue-material-kit-pro.jpg"
-      },
-      {
-        "name": "Vue Light Bootstrap Dashboard",
-        "price": 0,
-        "description": "Modelo de Marcação de Administração de Vue.js Gratuito",
-        "url": "https://www.creative-tim.com/product/vue-light-bootstrap-dashboard?affiliate_id=116187",
-        "image": "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-light-bootstrap-dashboard/vue-light-bootstrap-dashboard.jpg"
       }
     ]
   },
@@ -122,6 +80,20 @@
         "description": "Pacote de Modelos de Marcação de Vue.js Gratuito",
         "image": "https://mdbootstrap.com/img/Marketing/mdb-press-pack/vuejs/admin-pack.jpg",
         "price": 0
+      },
+      {
+        "url": "https://mdbootstrap.com/docs/vue/plugins/calendar/?utm_ref_id=82665",
+        "name": "Vue Calendar Bootstrap",
+        "description": "Extensão de Vue.js Prémio",
+        "image": "https://mdbootstrap.com/img/Marketing/mdb-press-pack/vuejs/plugins/calendar.jpg",
+        "price": 199
+      },
+      {
+        "url": "https://mdbootstrap.com/docs/vue/plugins/color-picker/?utm_ref_id=82665",
+        "name": "Vue Color Picker Bootstrap",
+        "description": "Extensão de Vue.js Prémio",
+        "image": "https://mdbootstrap.com/img/Marketing/mdb-press-pack/vuejs/plugins/color-picker.jpg",
+        "price": 199
       }
     ]
   },
@@ -136,6 +108,13 @@
         "description": "Modelo de Marcação de Administração Gratuito",
         "url": "https://www.primefaces.org/sakai-vue/#/?af_id=4218",
         "image": "https://www.primefaces.org/vue-templates/sakai.jpg"
+      },
+      {
+        "name": "Apollo",
+        "price": 59,
+        "description": "Modelo de Marcação de Aplicação de Última Geração",
+        "url": "https://www.primefaces.org/layouts/apollo-vue?af_id=4218",
+        "image": "https://www.primefaces.org/vue-templates/apollo.jpg"
       },
       {
         "name": "Atlantis",
@@ -164,69 +143,6 @@
         "description": "Modelo de Marcação de Administração de Desenho PrimeOne",
         "url": "https://www.primefaces.org/layouts/diamond-vue?af_id=4218",
         "image": "https://www.primefaces.org/vue-templates/diamond.jpg"
-      },
-      {
-        "name": "Poseidon",
-        "price": 59,
-        "description": "Modelo de Marcação de Administração de Desenho PrimeOne",
-        "url": "https://www.primefaces.org/layouts/poseidon-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/poseidon.jpg"
-      },
-      {
-        "name": "Verona",
-        "price": 49,
-        "description": "Modelo de Marcação de Administração de Desenho PrimeOne",
-        "url": "https://www.primefaces.org/layouts/verona-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/verona.jpg"
-      },
-      {
-        "name": "Sapphire",
-        "price": 49,
-        "description": "Modelo de Marcação de Administração de Desenho Material",
-        "url": "https://www.primefaces.org/layouts/sapphire-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/sapphire.jpg"
-      },
-      {
-        "name": "Avalon",
-        "price": 49,
-        "description": "Modelo de Marcação de Administração Inspirado na Bootstrap",
-        "url": "https://www.primefaces.org/layouts/avalon-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/avalon.jpg"
-      },
-      {
-        "name": "Serenity",
-        "price": 49,
-        "description": "Modelo de Marcação de Administração de Desenho Material",
-        "url": "https://www.primefaces.org/layouts/serenity-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/serenity.jpg"
-      },
-      {
-        "name": "Apollo",
-        "price": 49,
-        "description": "Modelo de Marcação de Administração com um Modo Escuro",
-        "url": "https://www.primefaces.org/layouts/apollo-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/apollo.jpg"
-      },
-      {
-        "name": "Babylon",
-        "price": 49,
-        "description": "Modelo de Marcação de Administração com Opções Extensas",
-        "url": "https://www.primefaces.org/layouts/babylon-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/babylon.jpg"
-      },
-      {
-        "name": "Roma",
-        "price": 39,
-        "description": "Modelo de Marcação de Administração com um Sistema de Desenho Limpo",
-        "url": "https://www.primefaces.org/layouts/roma-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/roma.jpg"
-      },
-      {
-        "name": "Prestige",
-        "price": 39,
-        "description": "Modelo de Marcação Altamente Personalizável",
-        "url": "https://www.primefaces.org/layouts/prestige-vue?af_id=4218",
-        "image": "https://www.primefaces.org/vue-templates/prestige.jpg"
       }
     ]
   },
@@ -276,6 +192,55 @@
         "description": "Modelo de Marcação de Administração de Vue com Backend de Node.js",
         "url": "https://flatlogic.com/templates/light-blue-vue-node-js?ref=x-fdkuTAVW",
         "image": "https://flatlogic.com/assets/templates/light_blue_vue_full_nodejs-06f941c849f0a83a3c0d38c728101eace06a7515ea048f12bcd91f165280246f.webp"
+      }
+    ]
+  },
+  {
+    "name": "WrapPixel",
+    "description": "Consulte os modelos de marcação de painel de controlo de administração da vue.js amigáveis ao programador construídos pelos nossos parceiros da [WrapPixel](https://wrappixel.com). Descarregue-os para começares a construir a tua aplicação da Web em tempo real rapidamente para economizar centenas de horas no desenvolvimento e desenho.",
+    "seeMoreUrl": "https://www.wrappixel.com/templates/category/vuejs-templates/",
+    "products": [
+      {
+        "name": "Spike Free VueJs Admin Template",
+        "price": 0,
+        "description": "Modelo de Marcação de Administração de VueJs de Código Aberto e Gratuito",
+        "url": "https://www.wrappixel.com/templates/spike-free-vuejs-admin-template/",
+        "image": "https://www.wrappixel.com/wp-content/uploads/edd/2023/10/spike-free-vuetify-vuejs-admin-template-wp.jpg"
+      },
+      {
+        "name": "Spike Vue3 Admin Dashboard",
+        "price": 49,
+        "description": "Poderoso Tema de Painel de Controlo da Vue 3",
+        "url": "https://www.wrappixel.com/templates/spike-vuejs-admin-dashboard/",
+        "image": "https://www.wrappixel.com/wp-content/uploads/edd/2023/09/spike-vuejs-admin-dashboard-prev-img.jpg"
+      },
+      {
+        "name": "MaterialPro Vue3 Admin Dashboard",
+        "price": 49,
+        "description": "Vue 3 + Vuetify 3 + Vite + Typescript",
+        "url": "https://www.wrappixel.com/templates/materialpro-vuetify-admin/",
+        "image": "https://www.wrappixel.com/wp-content/uploads/edd/2020/05/materialpro-vuejs-dashboard-template-20.jpg"
+      },
+      {
+        "name": "Free MaterialPro Vuetify Admin",
+        "price": 0,
+        "description": "Modelo de Marcação de Painel de Controlo de Vuetify Gratuito",
+        "url": "https://www.wrappixel.com/templates/materialpro-vuetify-admin-lite/",
+        "image": "https://www.wrappixel.com/wp-content/uploads/edd/2020/05/materialpro-vuejs-lite-admin-wp-20.jpg"
+      },
+      {
+        "name": "Free AdminPro VueJs Lite",
+        "price": 0,
+        "description": "Modelo de Marcação de Administração de VueJs de Código Aberto e Gratuito",
+        "url": "https://www.wrappixel.com/templates/adminpro-vuetify-admin-lite/",
+        "image": "https://www.wrappixel.com/wp-content/uploads/edd/2020/11/feature_image.jpg"
+      },
+      {
+        "name": "AdminPro Vue3 + Vuetify Dashboard",
+        "price": 49,
+        "description": "Vue3 + Vite + Vuetify + Typescript",
+        "url": "https://www.wrappixel.com/templates/adminpro-vuetify-dashboard/",
+        "image": "https://www.wrappixel.com/wp-content/uploads/edd/2020/10/adminpro-vuetify-dasboard-template-y.jpg"
       }
     ]
   }
