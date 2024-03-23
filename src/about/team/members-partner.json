@@ -82,6 +82,28 @@
     }
   },
   {
+    "name": "Jos Gerards",
+    "avatarPic": "https://pbs.twimg.com/profile_images/1668258954831446031/RTVopxrO_400x400.jpg",
+    "title": "Gestor de Evento",
+    "company": "Vue.js Amsterdam",
+    "projects": [
+      {
+        "label": "vuejs.amsterdam",
+        "url": "https://vuejs.amsterdam"
+      }
+    ],
+    "location": "Amesterdão, Países Baixos",
+    "languages": [
+      "Neerlandês",
+      "Inglês",
+      "Alemão"
+    ],
+    "socials": {
+      "twitter": "josgerards88",
+      "linkedin": "josgerards"
+    }
+  },
+  {
     "name": "Luke Thomas",
     "avatarPic": "https://pbs.twimg.com/profile_images/1123492769299877888/aviXE_M5_400x400.jpg",
     "title": "Criador",
@@ -101,28 +123,6 @@
     "socials": {
       "twitter": "lukevscostas",
       "linkedin": "luke-kenneth-thomas-578b3916a"
-    }
-  },
-  {
-    "name": "Jos Gerards",
-    "avatarPic": "https://pbs.twimg.com/profile_images/1110510517951627269/LDzDyd4N_400x400.jpg",
-    "title": "Gestor de Evento",
-    "company": "Vue.js Amsterdam",
-    "projects": [
-      {
-        "label": "vuejs.amsterdam",
-        "url": "https://vuejs.amsterdam"
-      }
-    ],
-    "location": "Amesterdão, Países Baixos",
-    "languages": [
-      "Neerlandês",
-      "Inglês",
-      "Alemão"
-    ],
-    "socials": {
-      "twitter": "josgerards88",
-      "linkedin": "josgerards"
     }
   },
   {
