@@ -8,9 +8,9 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 # Introdução Rápida {#quick-start}
 
-## Experimentar a Vue Online {#try-vue-online}
+## Experimentar a Vue no Navegador {#try-vue-online}
 
-- Para termos rapidamente um gosto da Vue, podemos experimentá-la diretamente na nossa [Zona de Testes](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
+- Para termos rapidamente um gostinho de como é programar com a Vue, podemos experimentá-la diretamente na nossa [Zona de Testes](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
 
 - Se preferirmos uma configuração de HTML simples sem quaisquer etapas de construção podemos usar esta [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/) como nosso ponto de partida.
 
@@ -21,7 +21,7 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 :::tip PRÉ-REQUISITOS
 
 - Familiaridade com a linha de comando
-- Versão 16.0 ou superior da [Node.js](https://nodejs.org/) instalada.
+- Instalar a versão 18.3 ou superior da [Node.js](https://nodejs.org/).
 
 :::
 
@@ -421,19 +421,25 @@ Nós podemos ter reparado que o modelo de marcação do componente importado est
 
 ## Próximos Passos {#next-steps}
 
-Se saltaste a [Introdução](/guide/introduction), recomendamos fortemente a leitura da mesma antes de avançarmos para o resto da documentação.
+Se saltamos a [Introdução](/guide/introduction), é recomendado fortemente a leitura da introdução antes de avançarmos para o resto da documentação.
 
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/guide/essentials/application">
     <p class="next-steps-link">Continuar o Guia</p>
-    <p class="next-steps-caption">O guia apresenta todos os aspetos da abstração em detalhes.</p>
+    <p class="next-steps-caption">
+      O guia conduz-nos através de todos os aspetos da abstração com detalhes.
+    </p>
   </a>
   <a class="vt-box" href="/tutorial/">
     <p class="next-steps-link">Experimentar o Tutorial</p>
-    <p class="next-steps-caption">Para aqueles que preferem aprender as coisas na prática.</p>
+    <p class="next-steps-caption">
+      Para o caso de preferirmos aprender através de coisas práticas.
+    </p>
   </a>
   <a class="vt-box" href="/examples/">
     <p class="next-steps-link">Consultar os Exemplos</p>
-    <p class="next-steps-caption">Explore os exemplos de funcionalidades principais e tarefas de interfaces de aplicações comuns.</p>
+    <p class="next-steps-caption">
+      Nós podemos explorar os exemplos de código que apresentam as funcionalidades principais e tarefas comuns da interface do utilizador.
+    </p>
   </a>
 </div>
