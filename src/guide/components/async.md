@@ -1,24 +1,24 @@
 # Componentes Assíncronos {#async-components}
 
-## Utilização Básica {#basic-usage}
+## Uso Básico {#basic-usage}
 
-Em aplicações grandes, podemos precisar dividir a aplicação em pedaços mais pequenos e apenas carregar um componente a partir do servidor quando for necessário. Para tornar isto possível, a Vue tem uma função [`defineAsyncComponent`](/api/general.html#defineasynccomponent):
+Em grandes aplicações, podemos precisar dividir a aplicação em partes menores e apenas carregar um componente do servidor quando for necessário. Para possibilitar isto, a Vue tem uma função [`defineAsyncComponent`](/api/general#defineasynccomponent):
 
 ```js
 import { defineAsyncComponent } from 'vue'
 
 const AsyncComp = defineAsyncComponent(() => {
   return new Promise((resolve, reject) => {
-    // ...carrega o componente do servidor
+    // ...carregar o componente do servidor
     resolve(/* componente carregado */)
   })
 })
-// ... utilize `AsyncComp` como um componente normal
+// ... usar `AsyncComp` como um componente normal
 ```
 
-Conforme podes ver, a `defineAsyncComponent` aceita um função carregadora que retorna uma Promessa. A resposta `resolve` da Promessa deve ser chamada quando tiveres recuperado definição do teu componente do servidor. Tu também podes chamar `reject(reason)` para indicar que o carregamento falhou.
+Como podemos ver, `defineAsyncComponent` aceita uma função carregadora que retorna uma promessa. A função de resposta `resolve` da promessa deve ser chamada quando tivermos recuperado a definição da nosso componente do servidor. Nós também podemos chamar `reject(reason)` para indicar que o carregamento falhou.
 
-A [importação dinâmica de módulo de ECMASCript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports) também retorna uma Promessa, então na maior parte das vezes a utilizaremos em conjunto com a `defineAsyncComponent`. Empacotadores como a Vite e Webpack também suportam a sintaxe, assim podemos a utilizar para importar Componentes de Ficheiro Único (SFCs, sigla em Inglês) de Vue:
+A [importação dinâmica do módulo da ECMAScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) também retorna uma promessa, então na maioria das vezes a usaremos em conjunto com a `defineAsyncComponent`. As empacotadoras como a Vite e Webpack também suportam a sintaxe (e a usarão como pontos de separação do pacote), assim podemos usá-la para importar os componentes de ficheiro único da Vue:
 
 ```js
 import { defineAsyncComponent } from 'vue'
@@ -28,9 +28,9 @@ const AsyncComp = defineAsyncComponent(() =>
 )
 ```
 
-O `AsyncComp` resultante é um componente embrulhador que só chama a função carregadora quando estiver realmente interpretado na página. Além disto, ele passará adiante quaisquer propriedades e ranhuras para o componente interno, assim podes utilizar o embrulhador assíncrono para substituir continuamente o componente original enquanto estiver realizando o carregamento preguiçoso.
+O `AsyncComp` resultante é um componente embrulhador que só chama a função carregadora quando estiver realmente desenhada na página. Além disto, este passará adiante quaisquer propriedades e ranhuras ao componente interno, assim podemos usar o embrulhador assíncrono para substituir perfeitamente o componente original enquanto realizamos o carregamento preguiçoso.
 
-Tal como os componentes normais, os componentes assíncronos podem ser [registados globalmente](/guide/components/registration.html#global-registration) utilizando `app.component()`:
+Tal como acontece com os componentes normais, os componentes assíncronos podem ser [registados globalmente](/guide/components/registration#global-registration) usando `app.component()`:
 
 ```js
 app.component('MyComponent', defineAsyncComponent(() =>
@@ -40,7 +40,7 @@ app.component('MyComponent', defineAsyncComponent(() =>
 
 <div class="options-api">
 
-Tu também podes utilizar a `defineAsyncComponent` quando estiveres [registando um componente localmente](/guide/components/registration.html#local-registration):
+Nós também podemos usar a `defineAsyncComponent` quando estivermos [registando um componente localmente](/guide/components/registration#local-registration):
 
 ```vue
 <script>
@@ -64,7 +64,7 @@ export default {
 
 <div class="composition-api">
 
-Eles também podem ser definidos diretamente dentro do seu componente pai:
+Estes também podem ser definidos diretamente dentro do seu componente pai:
 
 ```vue
 <script setup>
