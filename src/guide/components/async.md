@@ -82,31 +82,33 @@ const AdminPage = defineAsyncComponent(() =>
 
 </div>
 
-## Carregamento e Estados de Erro {#loading-and-error-states}
+## Estados de Carregamento e Erro {#loading-and-error-states}
 
-Operações assíncronas inevitavelmente envolvem carregamento e estados de erro - a `defineAsyncComponent()` suporta a manipulação destes estados através de opções avançadas:
+As operações assíncronas envolvem inevitavelmente os estados de carregamento e erro — a `defineAsyncComponent()` suporta a manipulação destes estados através das opções avançadas:
 
 ```js
 const AsyncComp = defineAsyncComponent({
-  // A função carregadora
+  // a função carregadora
   loader: () => import('./Foo.vue'),
 
-  // Um componente para utilizar enquanto o componente assíncrono está carregando
+  // Um componente a usar enquanto o
+  // componente assíncrono carrega
   loadingComponent: LoadingComponent,
-  // Atraso antes da exibição do componente de carregamento. Predefinido como: 200ms
+  // Espera antes de exibir o componente de
+  // carregamento. Predefinido como: 200ms
   delay: 200,
 
-  // Um componente para utilizar se o carregamento falhar
+  // Um componente a usar se o carregamento falhar
   errorComponent: ErrorComponent,
-  // O componente de erro será mostrado se uma pausa for
-  // fornecida e ultrapassada. Predefinida como: Infinity
+  // O componente de erro será exibido se uma pausa for
+  // fornecida e excedida Predefinida como: Infinity
   timeout: 3000
 })
 ```
 
-Se um componente de carregamento for fornecido, ele será mostrado primeiro enquanto o componente interno estiver sendo carregado. Existe um valor de 200ms predefinido para o atraso antes do componente de carregamento ser exibido - isto é porque em ligações de rede rápidas, um estado de carregamento instantâneo pode ser substituído muito rápido e acabar parecendo como um tremeluzir.
+Se um componente de carregamento for fornecido, este será exibido primeiro enquanto o componente interno estiver sendo carregado. Existe um atraso de 200ms predefinido antes do componente de carregamento ser mostrado — isto porque nas redes rápidas, um estado de carregamento instantâneo pode ser substituído muito rápido e acabar por parecer-se como uma tremulação.
 
-Se um componente de erro for fornecido, ele será mostrado quando a Promessa retorna pela função carregadora for rejeitada. Tu também podes especificar uma pausa para mostrar o componente de erro quando a requisição estiver demorando muito.
+Se um componente de erro for fornecido, este será exibido quando a promessa retornada pela função carregadora for rejeitada. Nós também podemos especificar uma pausa para mostrar o componente de erro quando a requisição estiver a demorar muito.
 
 ## Utilizando com Suspense {#using-with-suspense}
 
