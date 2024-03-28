@@ -110,6 +110,6 @@ Se um componente de carregamento for fornecido, este será exibido primeiro enqu
 
 Se um componente de erro for fornecido, este será exibido quando a promessa retornada pela função carregadora for rejeitada. Nós também podemos especificar uma pausa para mostrar o componente de erro quando a requisição estiver a demorar muito.
 
-## Utilizando com Suspense {#using-with-suspense}
+## Usar com Suspense {#using-with-suspense}
 
-Os componentes assíncronos podem ser utilizados com o componente embutido `<Suspense>`. A interação entre o `<Suspense>` e os componentes assíncronos estão documentadas num [capítulo dedicado ao `<Suspense>`](/guide/built-ins/suspense.html).
+Os componentes assíncronos podem ser usados com o componente embutido `<Suspense>`. A interação entre os componentes `<Suspense>` e assíncronos é documentada no [capítulo dedicado ao `<Suspense>`](/guide/built-ins/suspense).
