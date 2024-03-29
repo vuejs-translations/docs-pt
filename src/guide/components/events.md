@@ -22,7 +22,7 @@ if (typeof window !== 'undefined') {
 
 # Eventos de Componente {#component-events}
 
-> Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
+> Neste material assume-se conhecimento dos [Fundamentos dos Componentes](/guide/essentials/component-basics). Precisamos entender o básico de componentes para acompanhar este material.
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/defining-custom-events-emits" title="Aula Gratuita Sobre a Definição de Eventos Personalizados na Vue.js"/>
