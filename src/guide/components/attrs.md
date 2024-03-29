@@ -4,7 +4,7 @@ outline: deep
 
 # Atributos de Passagem {#fallthrough-attributes}
 
-> Neste material assume-se conhecimento dos [Fundamentos dos Componentes](/guide/essentials/component-basics). Precisamos compreender o básico sobre os componentes.
+> Neste material assume-se conhecimento dos [Fundamentos dos Componentes](/guide/essentials/component-basics). Precisamos entender o básico de componentes para acompanhar este material.
 
 ## Herança de Atributo {#attribute-inheritance}
 
