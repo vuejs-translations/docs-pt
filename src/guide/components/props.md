@@ -3,16 +3,16 @@
 > Neste material assume-se conhecimento dos [Fundamentos dos Componentes](/guide/essentials/component-basics). Precisamos entender o básico de componentes para acompanhar este material.
 
 <div class="options-api">
-  <VueSchoolLink href="https://vueschool.io/lessons/vue-3-reusable-components-with-props" title="Aula Gratuita Sobre Propriedades de Vue.js"/>
+  <VueSchoolLink href="https://vueschool.io/lessons/vue-3-reusable-components-with-props" title="Aula Gratuita de Propriedades de Vue.js"/>
 </div>
 
-## Declaração de Propriedades {#props-declaration}
+## Declaração das Propriedades {#props-declaration}
 
-Os componentes de Vue requerem declaração de propriedades explícita para que a Vue saiba quais propriedades externas passadas para o componente devem ser tratadas como atributos que caiem (os quais discutiremos na [sua secção dedicada](/guide/components/attrs)).
+Os componentes da Vue exigem a declaração explícita das propriedades para que a Vue saiba quais propriedades externas passadas ao componente deve ser tratadas como atributos de passagem (que serão discutidos na [sua secção dedicada](/guide/components/attrs)).
 
 <div class="composition-api">
 
-Nos componentes de ficheiro único utilizando `<script setup>`, as propriedades podem ser declaradas utilizando a macro `defineProps()`:
+Nos componentes de ficheiro único que usam `<script setup>`, as propriedades podem ser declaradas com o uso da macro `defineProps()`:
 
 ```vue
 <script setup>
@@ -22,7 +22,7 @@ console.log(props.foo)
 </script>
 ```
 
-Nos componentes quem não utilizam `<script setup>`, as propriedades são declaradas utilizando a opção [`props`](/api/options-state#props):
+Nos componentes que não usam `<script setup>`, as propriedades são declaradas com o uso da opção [`props`](/api/options-state#props):
 
 ```js
 export default {
@@ -34,13 +34,13 @@ export default {
 }
 ```
 
-Repara que o primeiro argumento passado para `defineProps()` é o mesmo valor fornecido para as opções `props`: a mesma API de opções de propriedades é partilhada entre os dois estilos de declaração.
+Precisamos notar que o argumento passado à `defineProps()` é o mesmo valor fornecido às opções da `props`: a mesma API de opções é partilhada entre os dois estilos de declaração.
 
 </div>
 
 <div class="options-api">
 
-As propriedades são declaradas utilizando a opção [`props`](/api/options-state#props):
+As propriedades são declaradas com o uso da opção [`props`](/api/options-state#props):
 
 ```js
 export default {
@@ -54,7 +54,7 @@ export default {
 
 </div>
 
-Além disto para declarar propriedades utilizando um arranjo de sequências de caracteres, também podemos utilizar a sintaxe de objetos:
+Para além de declararmos as propriedades com o uso de um vetor de sequências de caracteres, também podemos usar a sintaxe de objeto:
 
 <div class="options-api">
 
@@ -92,17 +92,17 @@ export default {
 
 Para cada propriedade na sintaxe de declaração de objeto, a chave é o nome da propriedade, enquanto o valor deve ser a função construtora do tipo esperado.
 
-Isto não apenas documenta o teu componente, mas também avisará outros programadores utilizando o teu componente na consola do navegador caso eles passarem o tipo errado. Nós discutiremos mais em detalhes a respeito da [validação de propriedade](#validação-de-propriedade) mais adiante nesta página.
+Isto não apenas documenta o nosso componente, mas também avisará outros programadores que usam o nosso componente na consola do navegador caso estes passarem o tipo errado. Nós discutiremos mais detalhes sobre [validação de propriedade](#prop-validation) mais adiante nesta página.
 
 <div class="options-api">
 
-Consulte também: [Atribuindo Tipos as Propriedades de Componente](/guide/typescript/options-api#typing-component-props) <sup class="vt-badge ts" />
+Consultar também: [Tipificação das Propriedades do Componente](/guide/typescript/options-api#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
 <div class="composition-api">
 
-Se estiveres utilizando TypeScript com `<script setup>`, também é possível declarar as propriedades utilizando as anotações de tipo puras:
+Se usarmos a TypeScript com `<script setup>`, é possível também declarar as propriedades com o uso de anotações de tipo puras:
 
 ```vue
 <script setup lang="ts">
@@ -113,7 +113,7 @@ defineProps<{
 </script>
 ```
 
-Mais detalhes: [Atribuindo Tipos as Propriedades de Componente](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
+Mais detalhes: [Tipificação das Propriedades do Componente](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
