@@ -1,6 +1,6 @@
 # Ranhuras {#slots}
 
-> Esta página presume que já fizeste leitura dos [Fundamentos de Componentes](/guide/essentials/component-basics). Leia aquele primeiro se fores novo para os componentes.
+> Neste material assume-se conhecimento dos [Fundamentos dos Componentes](/guide/essentials/component-basics). Precisamos entender o básico de componentes para acompanhar este material.
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-component-slots" title="Aula Gratuita Sobre Ranhuras de Vue.js"/>
 
