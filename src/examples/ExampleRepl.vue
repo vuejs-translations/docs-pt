@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Repl, ReplStore } from '@vue/repl'
+import { Repl, useStore, useVueImportMap } from '@vue/repl'
 import CodeMirror from '@vue/repl/codemirror-editor'
 import { data } from './examples.data'
 import {
@@ -17,8 +17,15 @@ import {
   onHashChange
 } from './utils'
 
-const store = new ReplStore({
-  defaultVueRuntimeURL: `https://unpkg.com/vue@${version}/dist/vue.esm-browser.js`
+const { vueVersion, defaultVersion, importMap } = useVueImportMap({
+  runtimeDev: () =>
+    `https://unpkg.com/vue@${
+      vueVersion.value || defaultVersion
+    }/dist/vue.esm-browser.js`
+})
+const store = useStore({
+  vueVersion,
+  builtinImportMap: importMap
 })
 
 const preferComposition = inject('prefer-composition') as Ref<boolean>
@@ -38,7 +45,7 @@ onHashChange(updateExample)
  * - Options vs. Composition
  * - plain HTML vs. SFCs
  */
- function updateExample() {
+function updateExample() {
   let hash = location.hash.slice(1)
   if (!data.hasOwnProperty(hash)) {
     hash = 'hello-world'
@@ -81,7 +88,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .vue-repl {
   max-width: 1105px;
   border-right: 1px solid var(--vt-c-divider-light);
