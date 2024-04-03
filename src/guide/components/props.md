@@ -277,18 +277,18 @@ Será equivalente a:
 <BlogPost :id="post.id" :title="post.title" />
 ```
 
-## Fluxo de Dados de Uma Via {#one-way-data-flow}
+## Fluxo de Dados Unidirecional {#one-way-data-flow}
 
-Todas as propriedades criam uma **vinculação de uma via para baixo** entre a propriedade do componente filho e a propriedade do componente pai: quando a propriedade do componente pai atualiza, ela afluirá para baixo para o componente filho, mas não ao contrário. Isto impedi os componentes filho de acidentalmente alterar o estado do componente pai, o que pode tornar o fluxo de dados da tua aplicação muito mais difícil de entender.
+Todas as propriedades formam um **vínculo unidirecional descendente** entre a propriedade filha e a propriedade pai: quando a propriedade pai é atualizada, esta passa à propriedade filha, mas não o contrário. Isto evita que os componentes filhos alterem acidentalmente o estado do pai, o que pode tornar o fluxo de dados da nossa aplicação mais difícil de compreender.
 
-Além disto, toda vez que o componente pai é atualizado, todas as propriedades no componente filho serão atualizadas com o valor mais recente. Isto significa que **não** deves tentar alterar uma propriedade dentro de um componente filho. Se o fizeres, a Vue avisar-te-á na consola:
+Para além disto, sempre que o componente pai for atualizado, todas as propriedades no componente filho serão atualizadas com valor mais recente. Isto significa que não devemos tentar alterar uma propriedade dentro dum componente filho. Se o fizermos, a Vue avisar-nos-á na consola:
 
 <div class="composition-api">
 
 ```js
 const props = defineProps(['foo'])
 
-// ❌ aviso, "props" sõo para leitura apenas!
+// ❌ aviso, "props" são só de leitura!
 props.foo = 'bar'
 ```
 
@@ -299,7 +299,7 @@ props.foo = 'bar'
 export default {
   props: ['foo'],
   created() {
-    // ❌ aviso, "props" sõo para leitura apenas!
+    // ❌ aviso, "props" são só de leitura!
     this.foo = 'bar'
   }
 }
@@ -307,17 +307,17 @@ export default {
 
 </div>
 
-Existem normalmente dois casos onde é tentador alterar uma propriedade:
+Normalmente, existem dois casos em que é tentar alterar uma propriedade:
 
-1. **A propriedade é utilizada para passar um valor inicial; o componente filho deseja utilizá-la como uma propriedade de dados local mais tarde.** Neste caso, é melhor definir uma propriedade de dados local que utiliza a propriedade como seu valor inicial:
+1. **A propriedade é usada para passar um valor inicial; o componente filho pretende usá-la posteriormente como uma propriedade de dados local.** Neste caso, é melhor definir uma propriedade de dados local que usa uma propriedade como seu valor inicial: 
 
    <div class="composition-api">
 
    ```js
    const props = defineProps(['initialCounter'])
 
-   // "counter" apenas utiliza "props.initialCounter" como valor inicial;
-   // ela está desconectada das futuras atualizações da propriedade.
+   // "counter" só usa "props.initialCounter" como valor inicial;
+   // é desligada de futuras atualizações de propriedade.
    const counter = ref(props.initialCounter)
    ```
 
@@ -329,8 +329,8 @@ Existem normalmente dois casos onde é tentador alterar uma propriedade:
      props: ['initialCounter'],
      data() {
        return {
-         // "counter" apenas utiliza "props.initialCounter" como valor inicial;
-         // ela está desconectada das futuras atualizações da propriedade.
+         // "counter" só usa "props.initialCounter" como valor inicial;
+         // é desligada de futuras atualizações de propriedade.
          counter: this.initialCounter
        }
      }
@@ -339,14 +339,15 @@ Existem normalmente dois casos onde é tentador alterar uma propriedade:
 
    </div>
 
-2. **A propriedade é passada como um valor bruto que precisa ser transformado.** Neste caso, é melhor definir uma propriedade computada utilizando o valor da propriedade:
+2. **A propriedade é passada como um valor bruto que precisa de ser transformado.** Neste caso,é melhor definir uma propriedade computada usando o valor da propriedade:
 
    <div class="composition-api">
 
    ```js
    const props = defineProps(['size'])
 
-   // propriedade computada que atualiza-se quando a propriedade muda
+   // propriedade computada que se atualiza automaticamente
+   // quando a propriedade for alterada
    const normalizedSize = computed(() => props.size.trim().toLowerCase())
    ```
 
@@ -357,7 +358,8 @@ Existem normalmente dois casos onde é tentador alterar uma propriedade:
    export default {
      props: ['size'],
      computed: {
-       // propriedade computada que atualiza-se quando a propriedade muda
+       // propriedade computada que se atualiza automaticamente
+       // quando a propriedade for alterada
        normalizedSize() {
          return this.size.trim().toLowerCase()
        }
