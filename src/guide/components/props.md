@@ -156,21 +156,21 @@ Tecnicamente, também podemos usar a caixaDeCamelo ao passar propriedades a um c
 
 Nós usamos a [CaixaPascal para os marcadores de componente](/guide/components/registration#component-name-casing) quando possível porque melhora a legibilidade do modelo de marcação ao diferenciar os componentes de Vue dos elementos nativos. No entanto, não existe muito benefícios práticos em usar caixaDeCamelo ao passar propriedades, por isto optamos por seguir as seguintes convenções de cada linguagem.
 
-### Propriedades Estáticas versus Propriedades Dinâmicas {#static-vs-dynamic-props}
+### Propriedades Estáticas vs Propriedades Dinâmicas {#static-vs-dynamic-props}
 
-Até aqui, vimos propriedades passadas como valores estáticos, desta maneira:
+Por enquanto, vimos propriedades passadas como valores estáticos, como em:
 
 ```vue-html
 <BlogPost title="My journey with Vue" />
 ```
 
-Também temos visto propriedades atribuídas dinamicamente com a `v-bind` ou com sua forma abreviada `:`, tal como em:
+Também vimos propriedades atribuídas dinamicamente com a `v-bind` ou seu atalho `:`, como em:
 
 ```vue-html
-<!-- Atribui dinamicamente o valor de um variável -->
+<!-- Atribuir dinamicamente o valor duma variável -->
 <BlogPost :title="post.title" />
 
-<!-- Atribui dinamicamente o valor de uma expressão complexa -->
+<!-- Atribuir dinamicamente o valor duma expressão complexa -->
 <BlogPost :title="post.title + ' by ' + post.author.name" />
 ```
 
