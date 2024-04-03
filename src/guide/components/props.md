@@ -369,11 +369,11 @@ Normalmente, existem dois casos em que é tentar alterar uma propriedade:
 
    </div>
 
-### Alterando Propriedades de Objeto / Arranjo {#mutating-object-array-props}
+### Alteração de Propriedades de Objeto ou Vetor {#mutating-object-array-props}
 
-Quando objetos e arranjos são passados como propriedades, embora o componente filho não possa alterar a vinculação da propriedade, ele **será** capaz de alterar o objeto ou propriedades encaixadas do arranjo. Isto é porque na JavaScript os objetos e arranjos são passados por referência, e é exorbitantemente dispendioso para a Vue impedir tais mutações.
+Quando os objetos e os vetores são passados como propriedades, embora o componente filho não possa alterar o vínculo da propriedade, **será** capaz de alterar as propriedades encaixadas do objeto ou do vetor. Isto acontece porque na JavaScript os objetos e vetores são passados por referência, e é excessivamente dispendioso para a Vue evitar tais mutações.
 
-A principal desvantagem de tais mutações é que ela permite ao componente filho afetar o estado do componente pai de uma maneira que não é óbvia para o componente pai, potencialmente tornando mais difícil raciocinar a respeito do fluxo de dados no futuro. Como uma boa prática, deves evitar tais mutações a menos que o componente pai e componente filho estejam fortemente atrelados de propósito. Na maioria dos casos, o componente filho deve [emitir um evento](/guide/components/events) para deixar o componente pai realizar a mutação.
+A principal desvantagem de tais mutações é que permite que o componente filho afete o estado do componente pai duma maneira que não é óbvia para o componente pai, tornando potencialmente mais difícil raciocinar sobre o fluxo de dados no futuro. Como boa prática, devemos evitar essas mutações a menos que o pai e o filho estejam fortemente acoplados por natureza. Na maioria dos casos, o filho deve [emitir um evento](/guide/components/events) para permitir que o pai realize a mutação.
 
 ## Validação de Propriedade {#prop-validation}
 
