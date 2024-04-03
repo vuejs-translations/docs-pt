@@ -117,11 +117,11 @@ Mais detalhes: [Tipificação das Propriedades do Componente](/guide/typescript/
 
 </div>
 
-## Propriedade Passando Detalhes {#prop-passing-details}
+## Detalhes da Passagem de Propriedade {#prop-passing-details}
 
 ### Caixa do Nome de Propriedade {#prop-name-casing}
 
-Nós declaramos nomes de propriedade longos utilizando "camelCase" porque isto evita ter que utilizar aspas quando estivermos utiliza-os como chaves de propriedade, e permite-nos referenciá-los diretamente nas expressões de modelo de marcação porque são identificadores de JavaScript válidos:
+Nós declaramos nomes de propriedades longos usando a caixaDeCamelo porque isto evita ter de usar aspas quando os usamos como chaves de propriedade e permite-nos referenciá-los diretamente em expressões do modelo de marcação porque são identificadores de JavaScript válidos:
 
 <div class="composition-api">
 
@@ -147,13 +147,14 @@ export default {
 ```vue-html
 <span>{{ greetingMessage }}</span>
 ```
-Tecnicamente, também podemos utilizar a "camelCase" quando estamos passando propriedades para um componente filho (exceto nos [modelos de marcação de DOM](/guide/essentials/component-basics#dom-template-parsing-caveats)). No entanto, a convenção é a utilização de "kebab-case" em todos os casos para alinhar com os atributos de HTML:
+
+Tecnicamente, também podemos usar a caixaDeCamelo ao passar propriedades a um componente filho, (exceto nos [modelos de marcação do modelo de objeto do documento incorporado](/guide/essentials/component-basics#in-dom-template-parsing-caveats)). No entanto, a convenção é usar a caixa-espetada em todos os casos para alinhar com os atributos de HTML:
 
 ```vue-html
 <MyComponent greeting-message="hello" />
 ```
 
-Nós utilizamos ["PascalCase" para marcadores de componente](/guide/components/registration#component-name-casing) quando possível porque ele melhora a legibilidade do modelo de marcação diferenciando componentes de Vue dos elementos nativos. No entanto, não existe tantos benefícios práticos para utilização de "camelCase" quando estivermos passando propriedades, então escolhemos seguir cada uma das convenções da linguagem.
+Nós usamos a [CaixaPascal para os marcadores de componente](/guide/components/registration#component-name-casing) quando possível porque melhora a legibilidade do modelo de marcação ao diferenciar os componentes de Vue dos elementos nativos. No entanto, não existe muito benefícios práticos em usar caixaDeCamelo ao passar propriedades, por isto optamos por seguir as seguintes convenções de cada linguagem.
 
 ### Propriedades Estáticas versus Propriedades Dinâmicas {#static-vs-dynamic-props}
 
