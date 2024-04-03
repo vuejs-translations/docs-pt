@@ -174,51 +174,55 @@ Também vimos propriedades atribuídas dinamicamente com a `v-bind` ou seu atalh
 <BlogPost :title="post.title + ' by ' + post.author.name" />
 ```
 
-### Passando Tipos de Valor Diferentes {#passing-different-value-types}
+### Passagem de Diferentes Tipos de Valores {#passing-different-value-types}
 
-Nos dois exemplos acima, nós passamos valores de sequência de caracteres, mas _qualquer_ tipo de valor pode ser passado para uma propriedade.
+Nos dois exemplos acima, passamos valores de sequência de caracteres, mas _qualquer_ tipo de valor pode ser passado a uma propriedade.
 
-#### Number (Número) {#number}
+#### `Number` (Número) {#number}
 
 ```vue-html
-<!-- Embora `42` seja estático, precisamos de `v-bind` para dizer a Vue que -->
-<!-- isto é uma expressão de JavaScript em vez de uma sequência de caracteres. -->
+<!-- Embora `42` seja estático, precisamos de `v-bind` para dizer -->
+<!-- a Vue que isto é uma expressão de JavaScript em vez duma -->
+<!-- sequência de caracteres. -->
 <BlogPost :likes="42" />
 
-<!-- Atribui dinamicamente o valor de uma variável. -->
+<!-- Atribuir dinamicamente ao valor duma variável. -->
 <BlogPost :likes="post.likes" />
 ```
 
-#### Boolean (Booleano) {#boolean}
+#### `Boolean` (Booleano) {#boolean}
 
 ```vue-html
-<!-- Incluir a propriedade sem valor implicará o `true`. -->
+<!-- A inclusão da propriedade sem valor implicará `true`. -->
 <BlogPost is-published />
 
-<!-- Embora `false` seja estático, precisamos de `v-bind` para dizer a Vue que -->
-<!-- isto é uma expressão de JavaScript em vez de uma sequência de caracteres. -->
+<!-- Embora `false` seja estático, precisamos de `v-bind` para dizer -->
+<!-- a Vue que isto é uma expressão de JavaScript em vez duma -->
+<!-- sequência de caracteres. -->
 <BlogPost :is-published="false" />
 
-<!-- Atribui dinamicamente o valor de uma variável. -->
+<!-- Atribuir dinamicamente ao valor duma variável. -->
 <BlogPost :is-published="post.isPublished" />
 ```
 
-#### Array (Arranjo) {#array}
+#### `Array` (Vetor) {#array}
 
 ```vue-html
-<!-- Embora o arranjo seja estático, precisamos de `v-bind` para dizer a Vue que -->
-<!-- isto é uma expressão de JavaScript em vez de uma sequência de caracteres. -->
+<!-- Embora o vetor seja estático, precisamos de `v-bind` para dizer -->
+<!-- a Vue que isto é uma expressão de JavaScript em vez duma -->
+<!-- sequência de caracteres. -->
 <BlogPost :comment-ids="[234, 266, 273]" />
 
-<!-- Atribui dinamicamente o valor de uma variável. -->
+<!-- Atribuir dinamicamente ao valor duma variável. -->
 <BlogPost :comment-ids="post.commentIds" />
 ```
 
-#### Object (Objeto) {#object}
+#### `Object` (Objeto) {#object}
 
 ```vue-html
-<!-- Embora o objeto seja estático, precisamos de `v-bind` para dizer a Vue que -->
-<!-- isto é uma expressão de JavaScript em vez de uma sequência de caracteres. -->
+<!-- Embora o objeto seja estático, precisamos de `v-bind` para dizer -->
+<!-- a Vue que isto é uma expressão de JavaScript em vez duma -->
+<!-- sequência de caracteres. -->
 <BlogPost
   :author="{
     name: 'Veronica',
@@ -226,7 +230,7 @@ Nos dois exemplos acima, nós passamos valores de sequência de caracteres, mas 
   }"
  />
 
-<!-- Atribui dinamicamente o valor de uma variável. -->
+<!-- Atribuir dinamicamente ao valor duma variável. -->
 <BlogPost :author="post.author" />
 ```
 
