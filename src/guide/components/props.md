@@ -234,9 +234,9 @@ Nos dois exemplos acima, passamos valores de sequência de caracteres, mas _qual
 <BlogPost :author="post.author" />
 ```
 
-### Vinculando Várias Propriedades Utilizando um Objeto {#binding-multiple-properties-using-an-object}
+### Vínculo de Várias Propriedades Usando um Objeto {#binding-multiple-properties-using-an-object}
 
-Se quiseres passar todas as propriedades de um objeto como propriedades, podes utilizar a [`v-bind` sem nenhum argumento](/guide/essentials/template-syntax.html#vincular-vários-atributos-dinamicamente) (`v-bind` no lugar de `:prop-name`). Por exemplo, dado um objeto `post`:
+Se quisermos passar todas as propriedades dum objeto como propriedades, podemos usar a [`v-bind` sem um argumento](/guide/essentials/template-syntax#dynamically-binding-multiple-attributes) (`v-bind` em vez de `:prop-name`). Por exemplo, dado um objeto `post`:
 
 <div class="options-api">
 
