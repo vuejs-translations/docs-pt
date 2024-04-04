@@ -377,9 +377,9 @@ A principal desvantagem de tais mutações é que permite que o componente filho
 
 ## Validação de Propriedade {#prop-validation}
 
-Os componentes podem especificar requisitos para suas propriedades, tais como os tipos que já viste. Se um requisito não for cumprido, a Vue avisar-te-á na consola de JavaScript do navegador. Isto é especialmente útil quando estamos programando um componente que está destinado a ser utilizado por outros.
+Os componentes podem especificar requisitos para suas propriedades, como os tipos que já vimos. Se um requisito não for cumprido, a Vue avisar-nos-á na consola de JavaScript do navegador. Isto é especialmente útil quando desenvolvemos um componente que se destina a ser usado por outros.
 
-Para especificar validações de propriedade, podes fornecer um objeto com os requisitos de validação para a <span class="composition-api">macro `defineProps()`</span><span class="options-api">opção `props`</span>, no lugar de um arranjo de sequências de caracteres. Por exemplo:
+Para especificar as validações de propriedade, podemos fornecer um objeto com os requisitos de validação a <span class="composition-api">macro `defineProps()`</span><span class="options-api">opção `props`</span>, no lugar dum vetor de sequências de caracteres. Por exemplo:
 
 <div class="composition-api">
 
@@ -390,7 +390,7 @@ defineProps({
   propA: Number,
   // Vários tipos possíveis
   propB: [String, Number],
-  // Sequência de caracteres (ou string) obrigatória
+  // Sequência de caracteres obrigatória
   propC: {
     type: String,
     required: true
@@ -403,28 +403,30 @@ defineProps({
   // Objeto com um valor predefinido
   propE: {
     type: Object,
-    // Os valores predefinidos de Objeto ou Array devem ser retornados de
-    // uma função de fabricação. A função recebe as propriedades brutas
-    // recebidas pelo componente como argumento.
+    // Os valores predefinidos de objeto ou vetor devem
+    // ser retornados duma função de fábrica. A função
+    // recebe as propriedades brutas recebidas pelo 
+    // componente como argumento.
     default(rawProps) {
       return { message: 'hello' }
     }
   },
   // Função de validação personalizada
+  // propriedades completas passadas como
+  // segundo argumento na 3.4+
   propF: {
-    validator(value) {
-      // O valor deve corresponder a uma destas sequências de caracteres
+    validator(value, props) {
+      // O valor deve corresponder uma destas
+      // sequências de caracteres
       return ['success', 'warning', 'danger'].includes(value)
     }
   },
   // Função com um valor predefinido
   propG: {
     type: Function,
-    /*
-      Ao contrário do valor predefinido de objeto ou arranjo,
-      isto não é uma função de fabricação - isto é uma função
-      que serve como um valor predefinido.
-    */
+    // Ao contrário do objeto ou vetor predefinidos, 
+    // não se trata duma função de fábrica - esta é uma
+    // função que serve de valor predefinido.
     default() {
       return 'Default function'
     }
@@ -432,8 +434,8 @@ defineProps({
 })
 ```
 
-:::tip Dica
-O código dentro argumento de `defineProps()` **não pode acessar outras variáveis declaradas na `<script setup>`**, porque a expressão inteira é movida para um escopo da função externa quando compilado.
+:::tip DICA
+O código dentro do argumento da `defineProps()` **não pode acessar outras variáveis declaradas no `<script setup>`**, porque a expressão inteira é movida para um contexto de função externa quando compilada.
 :::
 
 </div>
@@ -447,7 +449,7 @@ export default {
     propA: Number,
     // Vários tipos possíveis
     propB: [String, Number],
-    // Sequência de caracteres (ou string) obrigatória
+    // Sequência de caracteres obrigatória
     propC: {
       type: String,
       required: true
@@ -460,28 +462,30 @@ export default {
     // Objeto com um valor predefinido
     propE: {
       type: Object,
-      // Os valores predefinidos de Objeto ou Array devem ser retornados de
-      // uma função de fabricação. A função recebe as propriedades brutas
-      // recebidas pelo componente como argumento.
+      // Os valores predefinidos de objeto ou vetor devem
+      // ser retornados duma função de fábrica. A função
+      // recebe as propriedades brutas recebidas pelo 
+      // componente como argumento.
       default(rawProps) {
         return { message: 'hello' }
       }
     },
     // Função de validação personalizada
+    // propriedades completas passadas como
+    // segundo argumento na 3.4+
     propF: {
       validator(value) {
-        // O valor deve corresponder a uma destas sequências de caracteres
+        // O valor deve corresponder uma destas
+        // sequências de caracteres
         return ['success', 'warning', 'danger'].includes(value)
       }
     },
     // Função com um valor predefinido
     propG: {
       type: Function,
-      /*
-        Ao contrário do valor predefinido de objeto ou arranjo,
-        isto não é uma função de fabricação - isto é uma função
-        que serve como um valor predefinido.
-      */
+      // Ao contrário do objeto ou vetor predefinidos, 
+      // não se trata duma função de fábrica - esta é uma
+      // função que serve de valor predefinido.
       default() {
         return 'Default function'
       }
@@ -494,32 +498,32 @@ export default {
 
 Detalhes adicionais:
 
-- Todas propriedades são opcionais por padrão, a menos que `required: true` seja especificado.
+- Todas as propriedades são opcionais por padrão, a menos que `required: true` seja especificado.
 
-- Uma propriedade opcional ausente outra senão `Boolean` terá o valor `undefined`.
+- Uma propriedade opcional ausente que não seja `Boolean` terá o valor `undefined`.
   
-- As propriedades ausentes de `Boolean` serão fundidas ao `false`. Tu deves definir um valor `default` para ela para teres o comportamento desejado.
+- As propriedades ausentes de `Boolean` serão convertidas para `false`. Nós podemos mudar isto definindo um `default: undefined` a esta — isto é, `default: undefined` para comportar-se como uma propriedade não Booleana.
 
-- Se um valor `default` for especificado, ele será utilizado se o valor da propriedade resolvida for `undefined` - isto inclui ambos quando a propriedade está ausente, ou quando valor `undefined` explícito for passado.
+- Se um valor `default` for especificado, esta será usada se o valor da propriedade resolvida for `undefined` — isto inclui tanto quando a propriedade está ausente, ou quando um valor `undefined` explícito é passado.
 
-Quando a validação da propriedade falhar, a Vue produzirá um aviso de consola (se estiveres utilizando a construção de desenvolvimento).
+Quando a validação da propriedade falhar, a Vue produzirá um aviso na consola (se estivermos usando a construção de desenvolvimento).
 
 <div class="composition-api">
 
-Se estiveres utilizando [declarações de propriedades baseadas em tipo](/api/sfc-script-setup#typescript-only-features), a Vue se esforçará em compilar as anotações de tipo para declarações de propriedade de tempo de execução equivalentes. Por exemplo, `defineProps<{ msg: string }>` serão compiladas para `{ msg: { type: String, required: true } }`.
+Se estivermos usando [declarações de propriedades baseadas em tipos](/api/sfc-script-setup#type-only-props-emit-declarations) <sup class="vt-badge ts" />, a Vue tentará o seu melhor para compilar as anotações de tipos em declarações de propriedades equivalentes em execução. Por exemplo, `defineProps<{ msg: string }>` será compilada para `{ msg: { type: String, required: true }}`.
 
 </div>
 <div class="options-api">
 
-:::tip Nota
-Nota que as propriedades são validadas **antes** da instância do componente ser criada, assim as propriedades da instância (por exemplo, `data`, `computed`, etc) não estarão disponíveis dentro das funções `default` ou `validator`.
+:::tip NOTA
+É necessário notar que as propriedades são validadas **antes** da instância dum componente ser criada, portanto as propriedades da instância (por exemplo, `data`, `computed`, etc.) não estarão disponíveis dentro das funções `default` ou `validator`.
 :::
 
 </div>
 
-### Verificações de Tipo de Tempo de Execução {#runtime-type-checks}
+### Verificações de Tipo da Execução {#runtime-type-checks}
 
-Os `type` podem ser um dos seguintes construtores nativos:
+O `type` pode ser um dos seguintes construtores nativos:
 
 - `String`
 - `Number`
@@ -529,8 +533,9 @@ Os `type` podem ser um dos seguintes construtores nativos:
 - `Date`
 - `Function`
 - `Symbol`
+- `Error`
 
-Além disto, `type` também pode ser uma classe ou função construtora personalizada e a asserção será feita com uma verificação de `instanceof`. Por exemplo, dada a seguinte classe:
+Além disto, `type` também pode ser uma classe personalizada ou função construtora e a asserção será feita com uma verificação de `instanceof`. Por exemplo, dada a seguinte classe:
 
 ```js
 class Person {
@@ -541,7 +546,7 @@ class Person {
 }
 ```
 
-Tu poderias utilizá-la como tipo da propriedade:
+Nós poderíamos usá-la como um tipo de propriedade:
 
 <div class="composition-api">
 
@@ -564,11 +569,11 @@ export default {
 
 </div>
 
-para validar aquele valor da propriedade `author` que foi criado com `new Person`.
+A Vue usará `instanceof Person` para validar se o valor da propriedade `author` é de fato uma instância da classe `Person`.
 
-## Fundição de Booleano {#boolean-casting}
+## Conversão Booleana {#boolean-casting}
 
-As propriedades com tipo `Boolean` têm regras de fundição especiais para imitarem o comportamento dos atributos booleanos nativos. Dado o `<MyComponent>` com a seguinte declaração:
+As propriedades do tipo `Boolean` possuem regras especiais de conversão para imitarem o comportamento dos atributos booleanos nativos. Dado um `<MyComponent>` com a seguinte declaração:
 
 <div class="composition-api">
 
@@ -591,23 +596,40 @@ export default {
 
 </div>
 
-O componente pode ser utilizado desta maneira:
+O componente pode ser usado da seguinte maneira:
 
 ```vue-html
-<!-- equivalente a passagem :disabled="true" -->
+<!-- equivalente à passagem de :disabled="true" -->
 <MyComponent disabled />
 
-<!-- equivalente a passagem :disabled="false" -->
+<!-- equivalente à passagem de :disabled="false" -->
 <MyComponent />
 ```
 
-Quando uma propriedade é declarada para permitir vários tipos, por exemplo:
+Quando uma propriedade é declarada para permitir vários tipos, as regras de conversão para `Boolean` também serão aplicadas. No entanto, existe uma vantagem quando ambos `String` e `Boolean` são permitidos — a regra de conversão de `Boolean` só se aplica se `Boolean` aparecer antes de `String`:
 
 <div class="composition-api">
 
 ```js
+// `disabled` será convertido para `true`
 defineProps({
   disabled: [Boolean, Number]
+})
+  
+// `disabled` será convertido para `true`
+defineProps({
+  disabled: [Boolean, String]
+})
+  
+// `disabled` será convertido para `true`
+defineProps({
+  disabled: [Number, Boolean]
+})
+  
+// `disabled` será analisado sintaticamente como
+// uma sequência de caracteres vazia (disabled="")
+defineProps({
+  disabled: [String, Boolean]
 })
 ```
 
@@ -615,13 +637,34 @@ defineProps({
 <div class="options-api">
 
 ```js
+// `disabled` será convertido para `true`
 export default {
   props: {
     disabled: [Boolean, Number]
   }
 }
+  
+// `disabled` será convertido para `true`
+export default {
+  props: {
+    disabled: [Boolean, String]
+  }
+}
+  
+// `disabled` será convertido para `true`
+export default {
+  props: {
+    disabled: [Number, Boolean]
+  }
+}
+  
+// `disabled` será analisado sintaticamente como
+// uma sequência de caracteres vazia (disabled="")
+export default {
+  props: {
+    disabled: [String, Boolean]
+  }
+}
 ```
 
 </div>
-
-As regras de fundição para o `Boolean` aplicar-se-ão independentemente da ordem de aparência de tipo.
