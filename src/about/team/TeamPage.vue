@@ -1,5 +1,8 @@
 <script lang="ts">
-const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
+const shuffleMembers = (
+  members: Member[],
+  pinTheFirstMember = false
+): void => {
   let offset = pinTheFirstMember ? 1 : 0
   // `i` is between `1` and `length - offset`
   // `j` is between `0` and `length - offset - 1`
@@ -7,11 +10,8 @@ const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
   // `offset + j` is between `offset` and `length - 1`
   let i = members.length - offset
   while (i > 0) {
-    const j = Math.floor(Math.random() * i);
-    [
-      members[offset + i - 1],
-      members[offset + j]
-    ] = [
+    const j = Math.floor(Math.random() * i)
+    ;[members[offset + i - 1], members[offset + j]] = [
       members[offset + j],
       members[offset + i - 1]
     ]
@@ -47,29 +47,31 @@ shuffleMembers(membersPartnerData as Member[])
       <template #action>
         <VTLink
           href="https://github.com/vuejs/governance/blob/master/Team-Charter.md"
-        >Aprenda mais acerca das equipas</VTLink>
+        >
+          Saber mais acerca das equipas
+        </VTLink>
       </template>
     </TeamHero>
 
-    <TeamList :members="membersCoreData">
+    <TeamList :members="(membersCoreData as Member[])">
       <template #title>Membros da Equipa Principal</template>
-      <template
-        #lead
-      >Os membros da equipa principal são aqueles que estão ativamente envolvidos na manutenção de um ou mais projetos principais. Eles têm feito contribuições significativas para o ecossistema da Vue, com uma dedicação de longo prazo para o sucesso do projeto e seus utilizadores.</template>
+      <template #lead>
+        Os membros da equipa principal são aqueles que estão ativamente envolvidos na manutenção de um ou mais projetos principais. Eles têm feito contribuições significativas para o ecossistema da Vue, com uma dedicação de longo prazo para o sucesso do projeto e seus utilizadores.
+      </template>
     </TeamList>
 
-    <TeamList :members="membersEmeritiData as Member[]">
+    <TeamList :members="(membersEmeritiData as Member[])">
       <template #title>Equipa Principal Emerita</template>
-      <template
-        #lead
-      >Nesta seção honramos alguns membros da equipa principal que não mais são ativos os quais fizeram contribuições valiosas no passado.</template>
+      <template #lead>
+        Nesta secção honramos alguns membros da equipa principal que já não estão ativos, os quais fizeram contribuições valiosas no passado.
+      </template>
     </TeamList>
 
-    <TeamList :members="membersPartnerData as Member[]">
+    <TeamList :members="(membersPartnerData as Member[])">
       <template #title>Parceiros da Comunidade</template>
-      <template
-        #lead
-      >Alguns membros da comunidade de Vue a tem enriquecido tanto, que merecem menção especial. Temos desenvolvido um relacionamento mais intimo com estes parceiros chaves, muitas vezes coordenando com eles a respeito de futuras funcionalidades e novidades.</template>
+      <template #lead>
+        Existem alguns membros da comunidade da Vue que a enriquecem tanto, que são dignos menção especial. Temos desenvolvido um relacionamento mais intimo com estes parceiros chaves, muitas vezes coordenando com estes sobre as futuras funcionalidades e novidades.
+      </template>
     </TeamList>
   </div>
 </template>

@@ -24,6 +24,10 @@ const avatarUrl = computed(() => {
     `https://www.github.com/${props.member.socials.github}.png`
   )
 })
+
+function arrayify(value: string | string[]): string[] {
+  return Array.isArray(value) ? value : [value]
+}
 </script>
 
 <template>
@@ -65,7 +69,9 @@ const avatarUrl = computed(() => {
           </div>
           <ul class="desc-list">
             <li v-for="project in member.projects" :key="project.label" class="desc-item">
-              <VTLink class="desc-link" :href="project.url" :no-icon="true">{{ project.label }}</VTLink>
+              <VTLink class="desc-link" :href="project.url" :no-icon="true">
+                {{ project.label }}
+              </VTLink>
             </li>
           </ul>
         </section>
@@ -75,7 +81,15 @@ const avatarUrl = computed(() => {
             <h2 class="sr-only">Localização</h2>
             <VTIconMapPin class="desc-icon" />
           </div>
-          <p class="desc-text">{{ member.location }}</p>
+          <ul class="desc-list">
+            <li
+              v-for="location in arrayify(member.location)"
+              :key="location"
+              class="desc-item"
+            >
+              {{ location }}
+            </li>
+          </ul>
         </section>
 
         <section class="desc">
