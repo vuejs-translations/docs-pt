@@ -298,7 +298,7 @@ Então desejaremos interpretar um componente para cada uma, usando `v-for`:
 
 </div>
 
-Repara como a `v-for` é usada para passar os valores dinâmicos da propriedade. Isto é especialmente útil quando não sabemos antecipadamente qual é o exato conteúdo que iremos interpretar.
+Repara como a [sintaxe de `v-bind`](/api/built-in-directives#v-bind) (`:title="post.title"`) é usada para passar os valores dinâmicos da propriedade. Isto é especialmente útil quando não sabemos antecipadamente qual é o exato conteúdo que iremos interpretar.
 
 É tudo o que precisamos saber sobre as propriedades por agora, mas depois de terminarmos a leitura desta página e estivermos confortáveis com o seu conteúdo, recomendamos voltar mais tarde para ler o guia completo sobre as [Propriedades](/guide/components/props).
 
