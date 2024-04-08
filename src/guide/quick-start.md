@@ -417,7 +417,7 @@ Por razões de segurança, os módulos de ECMAScript apenas podem funcionar sobr
 
 Para iniciar um servidor de HTTP local, temos de certificar-nos que temos a [Node.js](https://nodejs.org/en/) instalada, depois executamos `npx serve` a partir da linha de comando no mesmo diretório onde o nosso ficheiro de HTML está. Nós também podemos usar qualquer outro servidor de HTTP que pode servidor ficheiros estáticos com os tipos de tipo de ficheiro corretos.
 
-Nós podemos ter reparado que o modelo de marcação do componente importado está em linha como uma sequência de caracteres de JavaScript. Se usamos o VSCode, podemos instalar a extensão [`es6-string-html`](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) e prefixar as sequências de caracteres com um comentário `/*html*/` para obtermos destacamento da sua sintaxe.
+Nós podemos ter reparado que o modelo de marcação do componente importado está em linha como uma sequência de caracteres de JavaScript. Se usamos o VS Code, podemos instalar a extensão [`es6-string-html`](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) e prefixar as sequências de caracteres com um comentário `/*html*/` para obtermos destacamento da sua sintaxe.
 
 ## Próximos Passos {#next-steps}
 

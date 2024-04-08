@@ -55,13 +55,13 @@ Consulte também:
 
 ### Modo de Aquisição da Volar {#volar-takeover-mode}
 
-> Esta secção apenas aplica-se para VSCode + Volar.
+> Esta secção apenas aplica-se para VS Code + Volar.
 
-Para conseguir colocar os Componentes de Ficheiro Único de Vue e TypeScript funcionando juntos, a Volar cria uma instância de serviço da linguagem TypScript separada conciliadas com suporte especifico de Vue, e utiliza-o nos Componentes de Ficheiro Único de Vue. Ao mesmo tempo, ficheiros de TypeScript simples ainda continuam manipulado pelo serviço da linguagem TypeScript embutido do VSCode, o qual é o porque precisamos da [Extensão de Vue de TypeScript](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) para suportar as importações de Componente de Ficheiro Único nas instâncias de serviço da linguagem TypeScript: uma da Volar, um do serviço embutido do VSCode. Isto é um pouco ineficiente e pode levar a problemas de desempenho em projetos grandes.
+Para conseguir colocar os Componentes de Ficheiro Único de Vue e TypeScript funcionando juntos, a Volar cria uma instância de serviço da linguagem TypScript separada conciliadas com suporte especifico de Vue, e utiliza-o nos Componentes de Ficheiro Único de Vue. Ao mesmo tempo, ficheiros de TypeScript simples ainda continuam manipulado pelo serviço da linguagem TypeScript embutido do VS Code, o qual é o porque precisamos da [Extensão de Vue de TypeScript](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) para suportar as importações de Componente de Ficheiro Único nas instâncias de serviço da linguagem TypeScript: uma da Volar, um do serviço embutido do VS Code. Isto é um pouco ineficiente e pode levar a problemas de desempenho em projetos grandes.
 
 A Volar fornece uma funcionalidade chamada "Modo de Aquisição" (ou "Takeover Mode") para melhorar o desempenho. No modo de aquisição, a Volar fornece suporte para ambos de ficheiros de Vue e TypeScript utilizando uma única instância de serviço da linguagem TypeScript.
 
-Para ativar o Modo de Aquisição, precisas desativar o serviço da linguagem TypeScript embutido do VSCode no **espaço de trabalho do teu projeto apenas** seguindo estas etapas:
+Para ativar o Modo de Aquisição, precisas desativar o serviço da linguagem TypeScript embutido do VS Code no **espaço de trabalho do teu projeto apenas** seguindo estas etapas:
 
 1. No teu espaço de trabalho, coloque a paleta de comando com `Ctrl + Shift + P` (macOS: `Cmd + Shift + P`).
 2. Digite `built` e selecione "Extensions: Show Built-in Extensions" ou "Extensões: Mostrar Extensões Embutidas" (Português)

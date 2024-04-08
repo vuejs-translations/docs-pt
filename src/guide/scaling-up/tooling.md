@@ -53,10 +53,10 @@ Para quem busca uma alternativa mais leve para uso sem etapas de construção, d
 
 ## Suporte de IDE {#ide-support}
 
-- A configuração de IDE recomendada é [VSCode](https://code.visualstudio.com/) + a extensão [Volar](https://github.com/johnsoncodehk/volar). Essa extensão fornece destacamento de sintaxe, suporte a TypeScript, e sensor inteligente para expressões de modelo de marcação e propriedades de componentes.
+- A configuração de IDE recomendada é [VS Code](https://code.visualstudio.com/) + a extensão [Volar](https://github.com/johnsoncodehk/volar). Essa extensão fornece destacamento de sintaxe, suporte a TypeScript, e sensor inteligente para expressões de modelo de marcação e propriedades de componentes.
 
   :::tip DICA
-  Volar substitui [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), a nossa antiga extensão oficial no VSCode para Vue 2. Se o Vetur estiver atualmente instalado, certifique-se de desativá-lo em projetos Vue 3.
+  Volar substitui [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), a nossa antiga extensão oficial no VS Code para Vue 2. Se o Vetur estiver atualmente instalado, certifique-se de desativá-lo em projetos Vue 3.
   :::
 
 - [WebStorm](https://www.jetbrains.com/webstorm/) também fornece um excelente suporte embutido para SFCs do Vue.
@@ -109,7 +109,7 @@ Usuários que anteriormente já usaram Vue CLI podem estar acostumados a ter _li
 
 1. `npm install -D eslint eslint-plugin-vue`, depois siga o [guia de configuração](https://eslint.vuejs.org/user-guide/#usage) do `eslint-plugin-vue`.
 
-2. Configure as extensões IDE de ESLint, por exemplo [ESLint para VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), para que se possa receber o retorno do _linter_ diretamente no seu editor durante o desenvolvimento. Isso também evita processos de _linters_ desnecessários ao iniciar o servidor de desenvolvimento.
+2. Configure as extensões IDE de ESLint, por exemplo [ESLint para VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), para que se possa receber o retorno do _linter_ diretamente no seu editor durante o desenvolvimento. Isso também evita processos de _linters_ desnecessários ao iniciar o servidor de desenvolvimento.
 
 3. Execute o ESLint como parte do comando de construção em produção, para que se possa receber o retorno completo do _linter_ antes de enviar para produção.
 
