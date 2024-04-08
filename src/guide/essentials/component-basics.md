@@ -298,7 +298,7 @@ Então desejaremos interpretar um componente para cada uma, usando `v-for`:
 
 </div>
 
-Repara como a `v-bind` é usada para passar os valores dinâmicos da propriedade. Isto é especialmente útil quando não sabemos antecipadamente qual é o exato conteúdo que iremos interpretar.
+Repara como a `v-for` é usada para passar os valores dinâmicos da propriedade. Isto é especialmente útil quando não sabemos antecipadamente qual é o exato conteúdo que iremos interpretar.
 
 É tudo o que precisamos saber sobre as propriedades por agora, mas depois de terminarmos a leitura desta página e estivermos confortáveis com o seu conteúdo, recomendamos voltar mais tarde para ler o guia completo sobre as [Propriedades](/guide/components/props).
 
@@ -630,4 +630,4 @@ Quando usado sobre os elementos da HTML nativa, o valor do `is` deve ser prefixa
 
 É tudo o que precisamos saber sobre as advertências da analise do modelo de marcação no DOM por agora - e é de fato, o fim dos _Fundamentos_ da Vue. Parabéns! Existe ainda muito mais para se aprender, mas primeiro, recomendamos dar uma pausa para experimentar a Vue por conta própria - construa alguma coisa divertida, ou consulte alguns dos [Exemplos](/examples/) se já não o fizeste.
 
-Depois de estivermos confortáveis com o conhecimento que já digerimos, sigamos com o guia para aprendermos mais sobre os componentes em profundidade.
+Depois de estivermos confortáveis com o conhecimento que já digerimos, podemos seguir com o guia para aprendermos mais sobre os componentes em profundidade.
