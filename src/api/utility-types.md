@@ -79,6 +79,8 @@ Para extrair propriedades de rosto público, isto é, propriedades que o pai é 
 
 Extrai tipos de propriedade a partir dum objeto de opções de propriedades de tempo de execução. Os tipos extraídos são rosto público - isto é, as propriedades que o pai é permitido passar.
 
+- Suportado apenas na 3.3+.
+
 - **Exemplo**
 
   ```ts
