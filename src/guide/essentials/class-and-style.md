@@ -189,12 +189,12 @@ Isto sempre aplicará `errorClass`, mas `activeClass` só será aplicada quando 
 No entanto, isto pode ser um pouco verboso se tivermos várias classes condicionais. É por isto que também é possível usar a sintaxe de objeto dentro da sintaxe de vetor:
 
 ```vue-html
-<div :class="[{ active: isActive }, errorClass]"></div>
+<div :class="[{ activeClass: isActive }, errorClass]"></div>
 ```
 
 ### Com os Componentes {#with-components}
 
-> Esta seção pressupõe o conhecimento de [Componentes](/guide/essentials/component-basics). Não hesite em saltá-la e voltar mais tarde.
+> Esta secção pressupõe o conhecimento de [Componentes](/guide/essentials/component-basics). Não precisamos hesitar em saltá-la e voltar mais tarde.
 
 Quando usamos o atributo `class` sobre um componente com um único elemento de raiz, estas classes serão adicionadas ao elemento de raiz do componente, e combinados com qualquer classe já existente neste.
 
