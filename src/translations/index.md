@@ -16,6 +16,7 @@ aside: false
 - [বাংলা / Bengali](https://bn.vuejs.org) [[código-fonte](https://github.com/vuejs-translations/docs-bn)]
 - [Italiano / Italian](https://it.vuejs.org) [[código-fonte](https://github.com/vuejs-translations/docs-it)]
 - [فارسی / Persian](https://fa.vuejs.org) [[código-fonte](https://github.com/vuejs-translations/docs-fa)]
+- [Русский / Russian](https://ru.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-ru)]
 - [Čeština / Czech](https://cs.vuejs.org/) [[código-fonte](https://github.com/vuejs-translations/docs-cs)]
 
 ## Idiomas com Traduções em Progresso {#work-in-progress-languages}
