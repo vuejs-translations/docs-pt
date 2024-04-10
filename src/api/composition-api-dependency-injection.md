@@ -37,9 +37,9 @@ Fornece um valor que pode ser injetado pelos componentes descendentes.
   </script>
   ```
 
-- **Consulte também**:
+- **Consultar também**:
   - [Guia - Fornecer ou Injetar](/guide/components/provide-inject)
-  - [Guia - Tipos para `provide()` / `inject()`](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" data-text="typescript" />
+  - [Guia - Tipificação de `provide()` / `inject()`](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" data-text="typescript" />
 
 ## `inject()` {#inject}
 
@@ -103,6 +103,16 @@ Injeta um valor fornecido por um componente ancestral ou pela aplicação (atrav
   </script>
   ```
 
-- **Consulte também**:
+- **Consultar também**:
   - [Guia - Fornecer ou Injetar](/guide/components/provide-inject)
-  - [Guia - Tipos para `provide()` e `inject()`](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" data-text="typescript" />
+  - [Guia - Tipificação de `provide()` e `inject()`](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" data-text="typescript" />
+
+## hasInjectionContext() <sup class="vt-badge" data-text="3.3+" /> {#has-injection-context}
+
+Retorna verdadeiro se [`inject()`](#inject) puder ser usada sem aviso por ter sido chamada no lugar errado (por exemplo, fora de `setup()`). Este método foi concebido para ser usado por bibliotecas que querem usar `inject()` internamente sem disparar um aviso ao utilizador final.
+
+- **Tipo**
+
+  ```ts
+  function hasInjectionContext(): boolean
+  ```
