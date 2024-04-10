@@ -120,7 +120,7 @@ Um marcador `<style module>` é compilado como [Módulos de CSS](https://github.
 
 As classes resultantes têm o seu nome gerados com caracteres embaralhados para evitar colisões, alcançando o mesmo efeito de isolar o CSS apenas ao componente atual.
 
-Consulte a [especificação dos Módulos de CSS](https://github.com/css-modules/css-modules) por mais detalhes, tais como [exceções globais](https://github.com/css-modules/css-modules#exceptions) e [composição](https://github.com/css-modules/css-modules#composition).
+Consulte a [especificação dos Módulos de CSS](https://github.com/css-modules/css-modules) por mais detalhes, tais como [exceções globais](https://github.com/css-modules/css-modules/blob/master/docs/composition.md#exceptions) e [composição](https://github.com/css-modules/css-modules#composition).
 
 ### Nome de Injeção Personalizado {#custom-inject-name}
 
