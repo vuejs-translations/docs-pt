@@ -6,8 +6,8 @@ footer: false
 
 :::info Estamos Lendo a Documentação da Vue 3!
 
-- O suporte da Vue 2 terminou no dia **31 de Dezembro de 2023**. Saiba mais sobre a [EOL da Vue 2](https://v2.vuejs.org/eol/).
-- Atualizando a partir da Vue 2? Consultar o [Guia de Migração](https://v3-migration.vuejs.org/pt).
+- O suporte da Vue 2 terminou no dia **31 de Dezembro de 2023**. Saber mais sobre o [Fim da Vida da Vue 2](https://v2.vuejs.org/eol/).
+- Estamos migrando da Vue 2? Consultar o [Guia de Migração](https://v3-migration.vuejs.org/pt).
 :::
 
 <style src="@theme/styles/vue-mastery.css"></style>
@@ -16,7 +16,7 @@ footer: false
     <div class="banner-wrapper">
       <img class="banner" alt="Faixa da Vue Mastery" width="96px" height="56px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vuemastery-graphical-link-96x56.png" />
     </div>
-    <p class="description">Aprenda Vue com a <span>VueMastery.com</span></p>
+    <p class="description">Estudar Vue com a <span>VueMastery.com</span></p>
     <div class="logo-wrapper">
         <img alt="Logótipo da Vue Mastery" width="25px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vue-mastery-logo.png" />
     </div>
@@ -25,7 +25,7 @@ footer: false
 
 ## Que é Vue? {#what-is-vue}
 
-Vue (pronunciado /vjuː/, como **view** ) é uma abstração de JavaScript para construção de interfaces de aplicações de utilizador. Ela constrói sobre a HTML, CSS e JavaScript padrão, e fornece um modelo de programação declarativa baseado em componente que ajuda-nos a desenvolver eficientemente interfaces de utilizador, sejam elas simples ou complexas.
+Vue (pronunciado /vjuː/, como **view** ) é uma abstração de JavaScript para construção de interfaces de aplicações de utilizador. Ela constrói sobre a HTML, CSS e JavaScript padrão, e fornece um modelo de programação declarativa baseado em componente que ajuda-nos a desenvolver eficientemente interfaces de utilizador de qualquer complexidade.
 
 Eis um exemplo minimalista:
 
