@@ -265,13 +265,13 @@ Quando os testes de ponta-a-ponta são executados nas condutas de integração o
 
 - [Cypress](https://www.cypress.io/)
 
-  Geralmente, acreditamos que o Cypress fornece a solução mais completa de ponta-a-ponta com recursos como uma interface gráfica informativa, excelente capacidade de depuração, asserções e esboços integrados, resistência a falhas, paralelismo e fotografias. Tal como já foi referido, este também suporta o [teste de componentes](https://docs.cypress.io/guides/component-testing/introduction). No entanto, este apenas suporta navegadores baseados no Chromium e no Firefox.
+  Geralmente, acreditamos que o Cypress fornece a solução mais completa de ponta-a-ponta com recursos como uma interface gráfica informativa, excelente capacidade de depuração, asserções e esboços integrados, resistência a falhas, paralelismo e fotografias. Tal como já foi referido, este também suporta o [teste de componentes](https://docs.cypress.io/guides/component-testing/introduction). Esta suporta navegadores baseados no Chromium, Firefox, Electron. O suporte de Webkit está disponível, mas marcado como experimental.
 
 ### Outras Opções {#other-options-2}
 
-- [Playwright](https://playwright.dev/) é também uma excelente solução de teste de ponta-a-ponta, com uma gama mais alargada de suporte do navegador (principalmente o WebKit). Consultar o [Por quê a Playwright](https://playwright.dev/docs/why-playwright) por mais detalhes.
+- [Playwright](https://playwright.dev/) é também uma excelente solução de teste de ponta-a-ponta que suporta todos os motores de apresentação modernos incluindo Chromium, Webkit, e Firefox. Podemos testar no Windows, Linux, e macOS, localmente ou sobre integração contínua, desgovernado ou governado com emulação móvel nativa do Google Chrome para Android e Mobile Safari.
 
-- [Nightwatch](https://nightwatchjs.org/) é uma solução de teste ponta-a-ponta baseada no [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Isto dá-lhe a mais ampla gama de suporte de navegadores.
+- [Nightwatch](https://nightwatchjs.org/) é uma solução de teste ponta-a-ponta baseada no [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Isto dá-lhe a mais ampla gama de suporte de navegadores, incluindo teste móvel nativo. As soluções baseadas na Selenium serão mais lentas do que a Playwright ou Cypress.
 
 - [WebdriverIO](https://webdriver.io/) é uma abstração de automatização de testes para Web e móveis baseada no protocolo WebDriver.
 
