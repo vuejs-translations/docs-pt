@@ -57,7 +57,7 @@ Isto aplica-se a todos os subcomponentes, o que significa que todos estes três 
 
 Embora conveniente, o registo global tem algumas desvantagens:
 
-1. O registo global impedi os sistemas de construção de remover os componentes que não são usados (mais conhecido como "agitação de árvore" (tree-shaking)). Se registarmos globalmente um componente, mas acabarmos não usando este em nenhum lugar na nossa aplicação, este ainda será incluído no pacote final.
+1. O registo global impede os sistemas de construção de remover os componentes que não são usados (mais conhecido como "agitação de árvore" (tree-shaking)). Se registarmos globalmente um componente, mas acabarmos não usando este em nenhum lugar na nossa aplicação, este ainda será incluído no pacote final.
 
 2. O registo global torna o relacionamento de dependência menos explícito em grandes aplicações. Este dificulta a localização da implementação dum componente filho a partir dum componente pai que usa o componente filho. Isto pode afetar a sustentabilidade a longo prazo semelhante ao uso de muitas variáveis globais.
 
