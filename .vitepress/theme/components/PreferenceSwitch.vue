@@ -109,7 +109,7 @@ function useToggleFn(
         <a
           class="switch-link"
           title="Sobre o Componente de Ficheiro Único"
-          href="/guide/scaling-up/sfc.html"
+          href="/guide/scaling-up/sfc"
           @click="closeSideBar"
           >?</a
         >
