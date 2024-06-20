@@ -73,7 +73,7 @@ const nav: ThemeConfig['nav'] = [
         ]
       },
       {
-        text: 'Ajuda',
+        text: 'Pedir Ajuda',
         items: [
           {
             text: 'Conversas da Discord',
@@ -597,6 +597,14 @@ export default defineConfigWithTheme<ThemeConfig>({
       {},
       fs.readFileSync(
         path.resolve(__dirname, './inlined-scripts/restorePreference.js'),
+        'utf-8'
+      )
+    ],
+    [
+      'script',
+      {},
+      fs.readFileSync(
+        path.resolve(__dirname, './inlined-scripts/uwu.js'),
         'utf-8'
       )
     ],
