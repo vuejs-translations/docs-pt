@@ -16,12 +16,15 @@ aside: false
 - [বাংলা / Bengali](https://bn.vuejs.org) [[código-fonte](https://github.com/vuejs-translations/docs-bn)]
 - [Italiano / Italian](https://it.vuejs.org) [[código-fonte](https://github.com/vuejs-translations/docs-it)]
 - [فارسی / Persian](https://fa.vuejs.org) [[código-fonte](https://github.com/vuejs-translations/docs-fa)]
-- [Русский / Russian](https://ru.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-ru)]
+- [Русский / Russian](https://ru.vuejs.org/) [[código-fonte](https://github.com/vuejs-translations/docs-ru)]
 - [Čeština / Czech](https://cs.vuejs.org/) [[código-fonte](https://github.com/vuejs-translations/docs-cs)]
+- [繁體中文 / Traditional Chinese](https://zh-hk.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-zh-hk)]
 
 ## Idiomas com Traduções em Progresso {#work-in-progress-languages}
 
 - [العربية / Arabic](https://ar.vuejs.org/) [[código-fonte](https://github.com/vuejs-translations/docs-ar)]
+
+- [Español / Spanish](https://vue3-spanish-docs.netlify.app/) [[código-fonte](https://github.com/icarusgk/vuejs-spanish-docs)]
 
 ## Começando uma nova Tradução {#starting-a-new-translation}
 
