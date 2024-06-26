@@ -580,7 +580,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       'meta',
       {
         property: 'og:image',
-        content: 'https://vuejs.org/images/logo.png'
+        content: 'https://pt.vuejs.org/images/logo.png'
       }
     ],
     ['meta', { name: 'twitter:site', content: '@vuejs' }],
@@ -698,7 +698,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     algolia: {
       indexName: 'vuejs',
       appId: 'ML0LEBN7FQ',
-      apiKey: 'f49cbd92a74532cc55cfbffa5e5a7d01',
+      apiKey: '21cf9df0734770a2448a9da64a700c22',
       searchParameters: {
         facetFilters: ['version:v3']
       }
