@@ -1,6 +1,6 @@
 # Funções Gatilho do Ciclo de Vida {#lifecycle-hooks}
 
-Cada instância do componente de Vue percorre uma séria de etapas de inicialização quando for criado - por exemplo, este precisa definir a observação de dados, compilar o modelo de marcação, montar a instância ao DOM, e atualizar o DOM quando os dados mudarem. Pelo caminho, este também executa funções chamadas de funções gatilhos do ciclo de vida, dando aos utilizadores a oportunidade de adicionar o seu próprio código em estágios específicos.
+Cada instância do componente de Vue percorre uma série de etapas de inicialização quando for criado - por exemplo, este precisa definir a observação de dados, compilar o modelo de marcação, montar a instância ao DOM, e atualizar o DOM quando os dados mudarem. Pelo caminho, este também executa funções chamadas de funções gatilhos do ciclo de vida, dando aos utilizadores a oportunidade de adicionar o seu próprio código em estágios específicos.
 
 ## Registando Funções Gatilho do Ciclo de Vida {#registering-lifecycle-hooks}
 
@@ -57,7 +57,7 @@ Reparemos que isto não significa que a chamada deve ser colocada de maneira lé
 
 ## Diagrama do Ciclo de Vida {#lifecycle-diagram}
 
-Eis um diagrama do ciclo de vida da instância. Nós não precisamos entender completamente o que está acontecendo neste momento, mas conforme aprendermos e construirmos mais, será uma referência útil:
+Eis um diagrama do ciclo de vida da instância. Nós não precisamos entender completamente o que está acontecendo neste momento, mas a medida que aprendermos e construirmos mais, será uma referência útil:
 
 ![Diagrama do Ciclo de Vida do Componente](./images/lifecycle.png)
 
