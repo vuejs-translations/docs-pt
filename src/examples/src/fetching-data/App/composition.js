@@ -6,11 +6,11 @@ const branches = ['main', 'v2-compat']
 export default {
   setup() {
     const currentBranch = ref(branches[0])
-    const commits = ref(null)
+    const commits = ref([])
 
     watchEffect(async () => {
-      // este efeito executará imediatamente e depois
-      // re-executará sempre que `currentBranch.value` mudar
+      // este efeito executar-se-á imediatamente e depois
+      // re-executar-se-á sempre que `currentBranch.value` atualizar-se
       const url = `${API_URL}${currentBranch.value}`
       commits.value = await (await fetch(url)).json()
     })

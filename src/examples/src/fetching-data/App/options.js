@@ -4,16 +4,16 @@ export default {
   data: () => ({
     branches: ['main', 'v2-compat'],
     currentBranch: 'main',
-    commits: null
+    commits: []
   }),
 
   created() {
-    // peça na inicialização
+    // pedir na inicialização
     this.fetchData()
   },
 
   watch: {
-    // re-peça sempre que `currentBranch` mudar
+    // pedir novamente sempre `currentBranch` alterar
     currentBranch: 'fetchData'
   },
 
