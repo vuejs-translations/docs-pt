@@ -47,7 +47,11 @@ Temos que certificar-nos de que temos uma versão atualizada da [Node.js](https:
   <VTCodeGroupTab label="yarn">
 
   ```sh
+  # Para Yarn Moderna (v2+)
   $ yarn create vue@latest
+
+  # Para Yarn ^v4.11
+  $ yarn dlx create-vue@latest
   ```
 
   </VTCodeGroupTab>

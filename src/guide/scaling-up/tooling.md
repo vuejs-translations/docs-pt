@@ -17,11 +17,44 @@ Também é recomendado usar estas zonas de teste online para fornecer exemplos r
 
 ### Vite {#vite}
 
-[Vite](https://vitejs.dev/) é uma ferramenta de compilação rápida e leve com suporte Vue SFC de primeira classe. Foi criada por Evan You, que também é autor do Vue!
+[Vite](https://pt.vitejs.dev/) é uma ferramenta de compilação rápida e leve com suporte Vue SFC de primeira classe. Foi criada por Evan You, que também é autor do Vue!
 
 Para começar com Vite + Vue, simplesmente execute:
 
-<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">$</span> <span style="color:#A6ACCD;">npm init vue@latest</span></span></code></pre></div>
+<VTCodeGroup>
+  <VTCodeGroupTab label="npm">
+
+  ```sh
+  $ npm create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="pnpm">
+  
+  ```sh
+  $ pnpm create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="yarn">
+  
+  ```sh
+  # Para Yarn Moderna (v2+)
+  $ yarn create vue@latest
+  
+  # Para Yarn ^v4.11
+  $ yarn dlx create-vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="bun">
+  
+  ```sh
+  $ bun create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+</VTCodeGroup>
 
 Este comando instalará e executará [create-vue](https://github.com/vuejs/create-vue), a ferramenta de estruturação de projeto oficial do Vue.
 
