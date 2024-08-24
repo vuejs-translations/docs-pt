@@ -395,9 +395,10 @@
   },
   {
     "name": "Erick Petrucelli",
-    "title": "Engenheiro & Arquiteto de Software, Especialista em UX, Consultor, Educador, Escritor",
-    "company": "Freelance",
-    "location": "João Pessoa, Brasil",
+    "title": "Engenheiro de Software Líder, Especialista em UI/UX, Gestor, Professor, Palestrante, Escritor",
+    "company": "LawnStarter",
+    "companyLink": "https://www.lawnstarter.com",
+    "location": "Campinas, Brasil",
     "languages": [
       "Português",
       "Inglês"
