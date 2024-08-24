@@ -145,9 +145,9 @@ Os testes de componentes devem centrar-se nas interfaces públicas do componente
   expect(wrapper.find(valueSelector).text()).toContain('1')
   ```
 
-  </VTCodeGroupTab>
+</VTCodeGroupTab>
 
-  <VTCodeGroupTab label="Cypress">
+<VTCodeGroupTab label="Cypress">
 
   ```js
   const valueSelector = '[data-testid=stepper-value]'
@@ -164,9 +164,9 @@ Os testes de componentes devem centrar-se nas interfaces públicas do componente
     .get(valueSelector).should('contain.text', '1')
   ```
 
-  </VTCodeGroupTab>
+</VTCodeGroupTab>
 
-  <VTCodeGroupTab label="Testing Library">
+<VTCodeGroupTab label="Testing Library">
   
   ```js
   const { getByText } = render(Stepper, {
@@ -191,9 +191,9 @@ Os testes de componentes devem centrar-se nas interfaces públicas do componente
   </VTCodeGroupTab>
 </VTCodeGroup>
 
-- **NÃO FAZER**
+**NÃO FAZER**
 
-  Não asserir o estado privado da instância dum componente ou testar métodos privados dum componente. Testar detalhes de implementação fragiliza os testes, uma vez que estes estão sujeitos a quebrarem ou exigem atualizações quando a implementação mudar.
+- Não asserir o estado privado da instância dum componente ou testar métodos privados dum componente. Testar detalhes de implementação fragiliza os testes, uma vez que estes estão sujeitos a quebrarem ou exigem atualizações quando a implementação mudar.
 
   O trabalho definitivo do componente é interpretar a saída correta do DOM, então os testes que focam-se na saída do DOM fornecem o mesmo nível de garantia de exatidão (se não mais) enquanto é mais robusto e resiliente à mudança.
 
