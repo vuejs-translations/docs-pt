@@ -15,7 +15,7 @@
           <button class="destroy" @click="removeTodo(todo)"></button>
         </div>
         <input v-if="todo === editedTodo" class="edit" type="text" v-model="todo.title"
-          @vnode-mounted="({ el }) => el.focus()" @blur="doneEdit(todo)" @keyup.enter="doneEdit(todo)"
+          @vue-mounted="({ el }) => el.focus()" @blur="doneEdit(todo)" @keyup.enter="doneEdit(todo)"
           @keyup.escape="cancelEdit(todo)">
       </li>
     </ul>
