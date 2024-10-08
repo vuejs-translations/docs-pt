@@ -1,2 +1,2 @@
-Uma implementação da TodoMV completamente em conformidade com especificação
+Uma implementação da TodoMVC completamente em conformidade com a especificação
 https://todomvc.com/
