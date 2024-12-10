@@ -254,9 +254,9 @@ Se formos novos para a Vue, eis a nossa recomendação geral:
 
 - Para uso de produção:
 
-  - Sigamos com a API de Opções se não estivermos a usar ferramentas de construção, ou planeamos usar a Vue primariamente em cenários de menor complexidade, por exemplo otimização progressiva.
+  - Sigamos com a API de Opções se não estivermos a usar ferramentas de construção, ou planejamos usar a Vue primariamente em cenários de menor complexidade, por exemplo otimização progressiva.
 
-  - Sigamos com a API de Composição + Componentes de Ficheiro Único se planeamos construir aplicações completas com a Vue.
+  - Sigamos com a API de Composição + Componentes de Ficheiro Único se planejamos construir aplicações completas com a Vue.
 
 Nós não precisamos de nos comprometer com apenas um estilo durante a fase de aprendizado. O resto da documentação fornecerá exemplos de código em ambos estilos onde for aplicável, e podemos alternar entre os estilos a qualquer momento usando o **interruptor de preferência de API** no canto superior esquerdo da página (em cima do menu lateral).
 
