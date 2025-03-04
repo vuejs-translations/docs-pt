@@ -10,20 +10,20 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "@vue/repl": "^4.4.3",
+    "@vue/repl": "^4.5.1",
     "@vue/theme": "^2.3.0",
     "dynamics.js": "^1.1.5",
     "gsap": "^3.12.7",
-    "vitepress": "^1.5.0",
+    "vitepress": "^1.6.3",
     "vue": "^3.5.13"
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.2",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^20.17.14",
-    "terser": "^5.37.0",
-    "typescript": "^5.7.3",
-    "vue-tsc": "^2.2.0"
+    "@types/node": "^20.17.23",
+    "terser": "^5.39.0",
+    "typescript": "^5.8.2",
+    "vue-tsc": "^2.2.8"
   },
   "packageManager": "pnpm@10.5.2+sha256.79a98daa90248b50815e31460790f118c56fe099113370826caa0153be6daba5"
 }
