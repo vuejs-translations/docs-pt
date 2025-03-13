@@ -44,7 +44,7 @@ A Vue é usada em produção por organizações famosas em capacidades variávei
 
 A Vue 3 é uma das mais otimizadas abstrações de frontend dominante, e lida com a maioria dos casos de uso de aplicação de Web com facilidade, sem a necessidade de otimizações manuais.
 
-Em cenários de testes de esforço, a Vue tem um desempenho superior da React e Angular por uma margem decente na [js-framework-benchmark](https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html). Ela também segue pescoço-a-pescoço contra as mais rápidas abstrações que não usam DOM Virtual em nível de produção na analise comparativa.
+Em cenários de testes de esforço, a Vue tem um desempenho superior da React e Angular por uma margem decente na [js-framework-benchmark](https://krausest.github.io/js-framework-benchmark/current.html). Ela também segue pescoço-a-pescoço contra as mais rápidas abstrações que não usam DOM Virtual em nível de produção na analise comparativa.
 
 Nota que analises comparativas sintéticas como as de cima focam em desempenho de interpretação puro com otimizações dedicadas e podem não ser completamente representantes de resultados de desempenho do mundo real. Se importas-te mais com o desempenho do carregamento da página, és bem-vindo para fazer uma auditoria desta página usando [WebPageTest](https://www.webpagetest.org/lighthouse) ou [PageSpeed Insights](https://pagespeed.web.dev/). Esta página é alimentada pela própria Vue, com pré-interpretação estática, hidratação de página completa e navegação do lado do cliente. Ela pontua 100 em desempenho num Moto G4 emulado com 4x CPU estrangulando sobre redes 4G lentas.
 
