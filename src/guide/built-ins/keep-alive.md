@@ -102,7 +102,7 @@ onActivated(() => {
 
 onDeactivated(() => {
   // chamada quando removida do DOM para o cache
-  // e tamém quando desmontada
+  // e também quando desmontada
 })
 </script>
 ```
