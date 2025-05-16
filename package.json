@@ -23,6 +23,7 @@
     "@types/node": "^20.17.23",
     "terser": "^5.39.0",
     "typescript": "^5.8.2",
+    "vitepress-plugin-llms": "^1.1.4",
     "vue-tsc": "^2.2.8"
   },
   "packageManager": "pnpm@10.5.2+sha256.79a98daa90248b50815e31460790f118c56fe099113370826caa0153be6daba5"
