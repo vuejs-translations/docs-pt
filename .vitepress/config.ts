@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { defineConfigWithTheme, type Plugin } from 'vitepress'
+import { HeadConfig, defineConfigWithTheme, type Plugin } from 'vitepress'
 import type { Config as ThemeConfig } from '@vue/theme'
 import llmstxt from 'vitepress-plugin-llms'
 import baseConfig from '@vue/theme/config'
@@ -61,7 +61,7 @@ const nav: ThemeConfig['nav'] = [
         ]
       },
       {
-        text: 'Cursos',
+        text: 'Cursos Audiovisuais',
         items: [
           {
             text: 'Vue Mastery',
@@ -74,7 +74,7 @@ const nav: ThemeConfig['nav'] = [
         ]
       },
       {
-        text: 'Pedir Ajuda',
+        text: 'Assistência',
         items: [
           {
             text: 'Conversas da Discord',
@@ -117,7 +117,7 @@ const nav: ThemeConfig['nav'] = [
     ]
   },
   {
-    text: 'Patrocinar',
+    text: 'Patrocinador',
     link: '/sponsor/'
   },
   {
@@ -143,7 +143,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Fundamentos',
       items: [
         {
-          text: 'Criando uma Aplicação',
+          text: 'Criação duma Aplicação',
           link: '/guide/essentials/application'
         },
         {
@@ -237,7 +237,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Escalando para Cima',
+      text: 'Ampliação duma Aplicação',
       items: [
         { text: 'Componentes de Ficheiro Único', link: '/guide/scaling-up/sfc' },
         { text: 'Ferramental', link: '/guide/scaling-up/tooling' },
@@ -556,6 +556,17 @@ export const sidebar: ThemeConfig['sidebar'] = {
 // const i18n: ThemeConfig['i18n'] = {
 // }
 
+function inlineScript(file: string): HeadConfig {
+  return [
+    'script',
+    {},
+    fs.readFileSync(
+      path.resolve(__dirname, './inline-scripts/${file}'),
+      'utf8'
+    )
+  ]
+}
+
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
@@ -594,25 +605,11 @@ export default defineConfigWithTheme<ThemeConfig>({
       'link',
       {
         rel: 'preconnect',
-        href: 'https://sponsors.vuejs.org'
+        href: 'https://automation.vuejs.org'
       }
     ],
-    [
-      'script',
-      {},
-      fs.readFileSync(
-        path.resolve(__dirname, './inlined-scripts/restorePreference.js'),
-        'utf-8'
-      )
-    ],
-    [
-      'script',
-      {},
-      fs.readFileSync(
-        path.resolve(__dirname, './inlined-scripts/uwu.js'),
-        'utf-8'
-      )
-    ],
+    inlineScript('restorePreference.js'),
+    inlineScript('uwu.js'),
     [
       'script',
       {
@@ -628,7 +625,8 @@ export default defineConfigWithTheme<ThemeConfig>({
         src: 'https://vueschool.io/banner.js?affiliate=vuejs&type=top',
         async: 'true'
       }
-    ]
+    ],
+    inlineScript('perfops.js')
   ],
 
   themeConfig: {
