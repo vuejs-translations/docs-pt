@@ -13,7 +13,7 @@ importers:
         version: 4.6.1
       '@vue/theme':
         specifier: ^2.3.0
-        version: 2.3.0(@algolia/client-search@5.20.3)(search-insights@2.14.0)(vitepress@1.6.3(@algolia/client-search@5.20.3)(@types/node@20.17.23)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2))(vue@3.5.17(typescript@5.8.2))
+        version: 2.3.0(@algolia/client-search@5.20.3)(search-insights@2.14.0)(vitepress@1.6.3(@algolia/client-search@5.20.3)(@types/node@22.16.2)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2))(vue@3.5.17(typescript@5.8.2))
       dynamics.js:
         specifier: ^1.1.5
         version: 1.1.5
@@ -22,7 +22,7 @@ importers:
         version: 3.12.7
       vitepress:
         specifier: ^1.6.3
-        version: 1.6.3(@algolia/client-search@5.20.3)(@types/node@20.17.23)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2)
+        version: 1.6.3(@algolia/client-search@5.20.3)(@types/node@22.16.2)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2)
       vue:
         specifier: ^3.5.13
         version: 3.5.17(typescript@5.8.2)
@@ -34,11 +34,8 @@ importers:
         specifier: ^14.1.2
         version: 14.1.2
       '@types/node':
-        specifier: ^20.17.23
-        version: 20.17.23
-      terser:
-        specifier: ^5.39.0
-        version: 5.39.0
+        specifier: ^22.7.5
+        version: 22.16.2
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -517,8 +514,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@20.17.23':
-    resolution: {integrity: sha512-8PCGZ1ZJbEZuYNTMqywO+Sj4vSKjSjT6Ua+6RFOYlEvIvKQABPtrNkoVSLSKDb4obYcMhspVKmsw8Cm10NFRUg==}
+  '@types/node@22.16.2':
+    resolution: {integrity: sha512-Cdqa/eJTvt4fC4wmq1Mcc0CPUjp/Qy2FGqLza3z3pKymsI969TcZ54diNJv8UYUgeWxyb8FSbCkhdR6WqmUFhA==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -1138,8 +1135,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+  undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
@@ -1537,15 +1534,19 @@ snapshots:
       '@jridgewell/set-array': 1.2.1
       '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.25
+    optional: true
 
-  '@jridgewell/resolve-uri@3.1.2': {}
+  '@jridgewell/resolve-uri@3.1.2':
+    optional: true
 
-  '@jridgewell/set-array@1.2.1': {}
+  '@jridgewell/set-array@1.2.1':
+    optional: true
 
   '@jridgewell/source-map@0.3.6':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
+    optional: true
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
@@ -1553,6 +1554,7 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+    optional: true
 
   '@rollup/rollup-android-arm-eabi@4.34.9':
     optional: true
@@ -1678,9 +1680,9 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@20.17.23':
+  '@types/node@22.16.2':
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 6.21.0
 
   '@types/unist@3.0.3': {}
 
@@ -1688,9 +1690,9 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-vue@5.2.1(vite@5.4.14(@types/node@20.17.23)(terser@5.39.0))(vue@3.5.17(typescript@5.8.2))':
+  '@vitejs/plugin-vue@5.2.1(vite@5.4.14(@types/node@22.16.2)(terser@5.39.0))(vue@3.5.17(typescript@5.8.2))':
     dependencies:
-      vite: 5.4.14(@types/node@20.17.23)(terser@5.39.0)
+      vite: 5.4.14(@types/node@22.16.2)(terser@5.39.0)
       vue: 3.5.17(typescript@5.8.2)
 
   '@volar/language-core@2.4.11':
@@ -1799,7 +1801,7 @@ snapshots:
 
   '@vue/shared@3.5.17': {}
 
-  '@vue/theme@2.3.0(@algolia/client-search@5.20.3)(search-insights@2.14.0)(vitepress@1.6.3(@algolia/client-search@5.20.3)(@types/node@20.17.23)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2))(vue@3.5.17(typescript@5.8.2))':
+  '@vue/theme@2.3.0(@algolia/client-search@5.20.3)(search-insights@2.14.0)(vitepress@1.6.3(@algolia/client-search@5.20.3)(@types/node@22.16.2)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2))(vue@3.5.17(typescript@5.8.2))':
     dependencies:
       '@docsearch/css': 3.9.0
       '@docsearch/js': 3.9.0(@algolia/client-search@5.20.3)(search-insights@2.14.0)
@@ -1807,7 +1809,7 @@ snapshots:
       body-scroll-lock: 4.0.0-beta.0
       normalize.css: 8.0.1
       tiny-decode: 0.1.3
-      vitepress: 1.6.3(@algolia/client-search@5.20.3)(@types/node@20.17.23)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2)
+      vitepress: 1.6.3(@algolia/client-search@5.20.3)(@types/node@22.16.2)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -1863,7 +1865,8 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  acorn@8.14.0: {}
+  acorn@8.14.0:
+    optional: true
 
   algoliasearch@5.20.3:
     dependencies:
@@ -1905,7 +1908,8 @@ snapshots:
     dependencies:
       balanced-match: 1.0.2
 
-  buffer-from@1.1.2: {}
+  buffer-from@1.1.2:
+    optional: true
 
   byte-size@9.0.1: {}
 
@@ -1931,7 +1935,8 @@ snapshots:
 
   comma-separated-tokens@2.0.3: {}
 
-  commander@2.20.3: {}
+  commander@2.20.3:
+    optional: true
 
   copy-anything@3.0.5:
     dependencies:
@@ -2419,8 +2424,10 @@ snapshots:
     dependencies:
       buffer-from: 1.1.2
       source-map: 0.6.1
+    optional: true
 
-  source-map@0.6.1: {}
+  source-map@0.6.1:
+    optional: true
 
   space-separated-tokens@2.0.2: {}
 
@@ -2457,6 +2464,7 @@ snapshots:
       acorn: 8.14.0
       commander: 2.20.3
       source-map-support: 0.5.21
+    optional: true
 
   tiny-decode@0.1.3:
     dependencies:
@@ -2470,7 +2478,7 @@ snapshots:
 
   typescript@5.8.2: {}
 
-  undici-types@6.19.8: {}
+  undici-types@6.21.0: {}
 
   unified@11.0.5:
     dependencies:
@@ -2521,13 +2529,13 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@5.4.14(@types/node@20.17.23)(terser@5.39.0):
+  vite@5.4.14(@types/node@22.16.2)(terser@5.39.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.6
       rollup: 4.34.9
     optionalDependencies:
-      '@types/node': 20.17.23
+      '@types/node': 22.16.2
       fsevents: 2.3.3
       terser: 5.39.0
 
@@ -2547,7 +2555,7 @@ snapshots:
       - '@75lb/nature'
       - supports-color
 
-  vitepress@1.6.3(@algolia/client-search@5.20.3)(@types/node@20.17.23)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2):
+  vitepress@1.6.3(@algolia/client-search@5.20.3)(@types/node@22.16.2)(postcss@8.5.6)(search-insights@2.14.0)(terser@5.39.0)(typescript@5.8.2):
     dependencies:
       '@docsearch/css': 3.8.2
       '@docsearch/js': 3.8.2(@algolia/client-search@5.20.3)(search-insights@2.14.0)
@@ -2556,7 +2564,7 @@ snapshots:
       '@shikijs/transformers': 2.5.0
       '@shikijs/types': 2.5.0
       '@types/markdown-it': 14.1.2
-      '@vitejs/plugin-vue': 5.2.1(vite@5.4.14(@types/node@20.17.23)(terser@5.39.0))(vue@3.5.17(typescript@5.8.2))
+      '@vitejs/plugin-vue': 5.2.1(vite@5.4.14(@types/node@22.16.2)(terser@5.39.0))(vue@3.5.17(typescript@5.8.2))
       '@vue/devtools-api': 7.7.2
       '@vue/shared': 3.5.13
       '@vueuse/core': 12.7.0(typescript@5.8.2)
@@ -2565,7 +2573,7 @@ snapshots:
       mark.js: 8.11.1
       minisearch: 7.1.2
       shiki: 2.5.0
-      vite: 5.4.14(@types/node@20.17.23)(terser@5.39.0)
+      vite: 5.4.14(@types/node@22.16.2)(terser@5.39.0)
       vue: 3.5.17(typescript@5.8.2)
     optionalDependencies:
       postcss: 8.5.6
