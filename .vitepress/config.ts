@@ -561,7 +561,7 @@ function inlineScript(file: string): HeadConfig {
     'script',
     {},
     fs.readFileSync(
-      path.resolve(__dirname, './inline-scripts/${file}'),
+      path.resolve(__dirname, `./inline-scripts/${file}`),
       'utf8'
     )
   ]
